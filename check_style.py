@@ -45,10 +45,49 @@ DASH_PARENTHETICAL_RE = re.compile(
 LIST_ITEM_RE = re.compile(r"^\s*(?:[-*]|\d+\.)\s+")
 # Sentence-start "No X, no Y..." anaphora — typical verbless rhetorical
 # fragment like "No frameworks, no magic - just Python and an LLM."
-# Requires capital `No` at sentence start to skip "there are no X, no Y..."
-# (which is grammatically complete).
+# Also catches the lazy "There's no X, no Y" / "There is no..." /
+# "There are no..." dodge, which keeps the same anaphora behind a thin
+# subject+verb scaffold.
 ANAPHORIC_NO_RE = re.compile(
-    r"(?:^|[.!?]\s+)No\s+\w+(?:\s+\w+){0,2},\s+no\s+\w+"
+    r"(?:^|[.!?]\s+)"
+    r"(?:There(?:'s|\s+is|\s+are)\s+no|No)"
+    r"\s+\w+(?:\s+\w+){0,2},\s+no\s+\w+"
+)
+# Label-colon paragraph openers: "The problem: ...", "Goal: ...",
+# "Three reasons: ...". Polish.md explains: use colons only to introduce
+# lists, not to label a chunk of prose.
+LABEL_COLON_OPENER_RE = re.compile(
+    r"^(?:The\s+)?[A-Z][a-zA-Z]+(?:\s+[A-Za-z]+){0,2}:\s+\w"
+)
+# Filler sentence-openers: "Now", "Let's", "Let us". Fine in moderation,
+# overuse signals lazy transitions. Flagged at file scope when too many
+# appear, or when two of them sit too close together.
+NOW_LETS_OPENER_RE = re.compile(r"(?:^|[.!?]\s+)(Now|Let's|Let us)\b")
+NOW_LETS_MAX_PER_FILE = 3
+NOW_LETS_MIN_GAP_LINES = 30
+
+# Paragraph opening with a rhetorical question, like "Why do we need
+# search?" or "What does this mean?". Polish.md says: state the point
+# directly instead.
+PARAGRAPH_QUESTION_OPENER_RE = re.compile(
+    r"^(?:Why|How|What|When|Where|Which|Who|Is|Are|Can|Could|Should|Will|Would|Do|Does|Did)\b[^.!?\n]*\?"
+)
+
+# Lazy headings starting with "The X". Catches both the bare "## The
+# problem" and the suffix form "## The RAG idea" / "## The chunking
+# problem" - any heading that opens with "The" and contains one of these
+# vague abstract nouns. Specific nouns are fine ("## The Function URL").
+LAZY_HEADING_LABELS = (
+    "problem", "issue", "challenge", "solution", "goal", "idea",
+    "reason", "answer", "catch", "fix", "approach", "trick",
+    "concept", "point", "result", "way", "story", "principle",
+    "takeaway", "insight", "lesson",
+)
+LAZY_HEADING_RE = re.compile(
+    r"^#{1,6}\s+The\s+.*?\b(?:"
+    + "|".join(LAZY_HEADING_LABELS)
+    + r")\b",
+    re.IGNORECASE,
 )
 
 # Single banned tokens. Whole-word, case-insensitive in prose.
@@ -158,6 +197,17 @@ BANNED_PHRASES: dict[str, str] = {
     "pull request ceremony": "drop the jargon noun",
     "one benefit of": "state the benefit directly",
     "on the table": "say it directly",
+    "in action": "drop the cliche; describe what is actually happening",
+    "the power of": "drop the abstract framing; describe what the design does",
+    "the advantage of": "drop the abstract framing; name the concrete benefit",
+    "the beauty of": "drop the puffery; describe the concrete property",
+    "the magic of": "drop the puffery; describe the concrete mechanism",
+    "the strength of": "drop the abstract framing; name the concrete property",
+    "the elegance of": "drop the puffery; describe the concrete property",
+    "the simplicity of": "drop the abstract framing; describe the concrete property",
+    "suffer": "do not anthropomorphize - inanimate things don't suffer; "
+               "describe what actually goes wrong "
+               "('the answer is wrong', 'the latency doubles')",
 }
 
 # Sentence openers. Capitalized, must start the line (allowing optional list
@@ -256,7 +306,20 @@ LIST_RE = re.compile(r"^\s*[-*]\s|^\s*\d+\.\s")
 BLOCKQUOTE_RE = re.compile(r"^\s*>")
 PYTHON_CHAINED_GET_RE = re.compile(r"\.get\([^)]*\)\.get\(")
 PARAGRAPH_MAX_SENTENCES = 5
+SENTENCE_MAX_WORDS = 20
+SENTENCE_MAX_COMMAS = 3
 SENTENCE_END_RE = re.compile(r"[.!?](?=[\s\"')\]]|$)")
+# Comma-separated enumeration with terminal "and"/"or": "X, Y, and Z",
+# "X, Y, or Z", "X, Y, Z, and W". Suggests converting to a bullet list.
+# Excludes trailing "and so on" / "or so forth" / "and the like" / "and etc",
+# which are clausal padding, not enumerations.
+ENUM_LIST_RE = re.compile(
+    r"\w+(?:\s+\w+){0,3},"
+    r"(?:\s+\w+(?:\s+\w+){0,3},)*"
+    r"\s+(?:and|or)\s+"
+    r"(?!so\s+on|so\s+forth|the\s+like|etc\b)"
+    r"\w+(?:\s+\w+){0,4}"
+)
 ABBREVIATION_RE = re.compile(
     r"\b(?:e\.g|i\.e|etc|vs|cf|Mr|Mrs|Ms|Dr|St|Jr|Sr|U\.S|U\.K|a\.m|p\.m|Inc|Ltd|Co)\.",
     re.IGNORECASE,
@@ -282,6 +345,18 @@ def count_sentences(text: str) -> int:
     return len(SENTENCE_END_RE.findall(text))
 
 
+def split_sentences(text: str) -> list[str]:
+    """Split prose into individual sentences (ignoring abbreviations and code)."""
+    text = re.sub(r"`[^`]*`", " ", text)
+    text = ABBREVIATION_RE.sub("", text)
+    return [s.strip() for s in SENTENCE_END_RE.split(text) if s.strip()]
+
+
+def count_words(text: str) -> int:
+    """Count whitespace-delimited tokens that contain at least one word char."""
+    return sum(1 for token in text.split() if re.search(r"\w", token))
+
+
 def find_gerund_starts(plain: str) -> list[str]:
     flagged: list[str] = []
     line_match = GERUND_LINE_START_RE.match(plain.lstrip())
@@ -296,6 +371,7 @@ def find_gerund_starts(plain: str) -> list[str]:
 
 def check_page(root: Path, path: Path) -> list[str]:
     errors: list[str] = []
+    now_lets_hits: list[tuple[int, str]] = []
     text = path.read_text()
     try:
         rel = path.relative_to(root)
@@ -335,6 +411,36 @@ def check_page(root: Path, path: Path) -> list[str]:
         if sentences > PARAGRAPH_MAX_SENTENCES:
             errors.append(
                 f"{rel}:{start_line}: paragraph has {sentences} sentences (max {PARAGRAPH_MAX_SENTENCES}); split into 2-4 sentence paragraphs"
+            )
+
+        for sentence in split_sentences(joined):
+            wc = count_words(sentence)
+            if wc > SENTENCE_MAX_WORDS:
+                errors.append(
+                    f"{rel}:{start_line}: sentence has {wc} words (max {SENTENCE_MAX_WORDS}); split it into shorter sentences"
+                )
+            commas = sentence.count(",")
+            if commas > SENTENCE_MAX_COMMAS:
+                errors.append(
+                    f"{rel}:{start_line}: sentence has {commas} commas (max {SENTENCE_MAX_COMMAS}); "
+                    "convert the enumeration into a bullet list"
+                )
+            if ENUM_LIST_RE.search(sentence):
+                errors.append(
+                    f"{rel}:{start_line}: comma-separated enumeration with 'and'/'or'; "
+                    "convert to a bullet list"
+                )
+
+        if LABEL_COLON_OPENER_RE.match(joined):
+            errors.append(
+                f"{rel}:{start_line}: label-colon paragraph opener "
+                "('The problem: ...', 'Goal: ...', 'What we want: ...'); "
+                "drop the label and state the point directly"
+            )
+        if PARAGRAPH_QUESTION_OPENER_RE.match(joined):
+            errors.append(
+                f"{rel}:{start_line}: paragraph opens with a rhetorical question; "
+                "state the point directly instead"
             )
 
         for phrase, hint in BANNED_PHRASES.items():
@@ -419,6 +525,11 @@ def check_page(root: Path, path: Path) -> list[str]:
                 errors.append(f"{rel}:{line_no}: heading ends with '?' (use a statement)")
             if DEEP_HEADING_RE.match(line):
                 errors.append(f"{rel}:{line_no}: heading depth ### or deeper not allowed")
+            if LAZY_HEADING_RE.match(line):
+                errors.append(
+                    f"{rel}:{line_no}: lazy heading 'The <problem|issue|...>'; "
+                    "name what the section is actually about"
+                )
             last_heading_line = line_no
             seen_prose_since_heading = False
             continue
@@ -470,8 +581,19 @@ def check_page(root: Path, path: Path) -> list[str]:
             errors.append(f"{rel}:{line_no}: avoid third-person presenter references")
         if ANAPHORIC_NO_RE.search(plain):
             errors.append(
-                f"{rel}:{line_no}: 'No X, no Y' verbless fragment; rewrite with a subject and verb"
+                f"{rel}:{line_no}: 'No X, no Y' verbless fragment; "
+                "rewrite by describing what is actually happening "
+                "('Lambda boots only when a request arrives', "
+                "'we skip the usual API Gateway'). Do NOT just prepend "
+                "'There's' - that satisfies the regex but does not add "
+                "information."
             )
+        if ";" in plain:
+            errors.append(
+                f"{rel}:{line_no}: semicolon in prose; use two sentences instead"
+            )
+        for m in NOW_LETS_OPENER_RE.finditer(plain):
+            now_lets_hits.append((line_no, m.group(1)))
 
         if BARE_URL_RE.search(plain):
             errors.append(f"{rel}:{line_no}: bare URL in prose; use [name](url)")
@@ -494,6 +616,24 @@ def check_page(root: Path, path: Path) -> list[str]:
             )
 
     flush_paragraph()
+
+    if len(now_lets_hits) > NOW_LETS_MAX_PER_FILE:
+        lines = ", ".join(str(ln) for ln, _ in now_lets_hits)
+        errors.append(
+            f"{rel}: file uses {len(now_lets_hits)} 'Now' / 'Let's' "
+            f"sentence-starters (max {NOW_LETS_MAX_PER_FILE}; lines {lines}); "
+            "vary openers - try 'After that', 'Then', 'Next', or drop the "
+            "softener entirely and use a bare imperative"
+        )
+    for (prev_line, prev_word), (this_line, this_word) in zip(now_lets_hits, now_lets_hits[1:]):
+        gap = this_line - prev_line
+        if 0 < gap < NOW_LETS_MIN_GAP_LINES:
+            errors.append(
+                f"{rel}:{this_line}: '{this_word}' opener only {gap} lines "
+                f"after '{prev_word}' on line {prev_line}; "
+                "try 'After that' / 'Then' / 'Next' or drop the softener"
+            )
+
     return errors
 
 
