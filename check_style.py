@@ -72,6 +72,12 @@ NOW_LETS_MIN_GAP_LINES = 30
 PARAGRAPH_QUESTION_OPENER_RE = re.compile(
     r"^(?:Why|How|What|When|Where|Which|Who|Is|Are|Can|Could|Should|Will|Would|Do|Does|Did)\b[^.!?\n]*\?"
 )
+# Cleft "[This/That/It] is what X is/are about" - pointless abstract
+# framing. Polish.md flags clefts as judgment; this specific variant is
+# distinctive enough to script.
+THIS_IS_WHAT_ABOUT_RE = re.compile(
+    r"\b(?:This|That|It)\s+is\s+what\s+\w+(?:\s+\w+){0,3}\s+(?:is|are|was|were)\s+about\b"
+)
 
 # Lazy headings starting with "The X". Catches both the bare "## The
 # problem" and the suffix form "## The RAG idea" / "## The chunking
@@ -309,17 +315,16 @@ PARAGRAPH_MAX_SENTENCES = 5
 SENTENCE_MAX_WORDS = 20
 SENTENCE_MAX_COMMAS = 3
 SENTENCE_END_RE = re.compile(r"[.!?](?=[\s\"')\]]|$)")
-# Comma-separated enumeration with terminal "and"/"or": "X, Y, and Z",
-# "X, Y, or Z", "X, Y, Z, and W". Suggests converting to a bullet list.
-# Excludes trailing "and so on" / "or so forth" / "and the like" / "and etc",
-# which are clausal padding, not enumerations.
-ENUM_LIST_RE = re.compile(
-    r"\w+(?:\s+\w+){0,3},"
-    r"(?:\s+\w+(?:\s+\w+){0,3},)*"
-    r"\s+(?:and|or)\s+"
-    r"(?!so\s+on|so\s+forth|the\s+like|etc\b)"
-    r"\w+(?:\s+\w+){0,4}"
+# Colon-introduced inline list with 3+ items and a terminal and/or.
+# "We use these tools: numpy, pandas, scikit-learn, and matplotlib" -
+# the colon signals enumeration intent, so the items should be bullets.
+COLON_INLINE_LIST_RE = re.compile(
+    r":\s+(?:[^,.;:!?\n]+,\s+){2,}(?:and|or)\s+[^.!?\n]+[.!?]?\s*$"
 )
+# Minimum consecutive sentences sharing a 2-word opener that triggers
+# a "consider a bullet list" flag. Three is the smallest run that reads
+# as repeated parallel structure rather than coincidence.
+PARALLEL_SENTENCE_MIN_RUN = 3
 ABBREVIATION_RE = re.compile(
     r"\b(?:e\.g|i\.e|etc|vs|cf|Mr|Mrs|Ms|Dr|St|Jr|Sr|U\.S|U\.K|a\.m|p\.m|Inc|Ltd|Co)\.",
     re.IGNORECASE,
@@ -407,29 +412,64 @@ def check_page(root: Path, path: Path) -> list[str]:
         joined = strip_inline_code(strip_link_urls(joined_raw))
         joined_lower = joined.lower()
 
-        sentences = count_sentences(joined)
-        if sentences > PARAGRAPH_MAX_SENTENCES:
+        sentence_count = count_sentences(joined)
+        if sentence_count > PARAGRAPH_MAX_SENTENCES:
             errors.append(
-                f"{rel}:{start_line}: paragraph has {sentences} sentences (max {PARAGRAPH_MAX_SENTENCES}); split into 2-4 sentence paragraphs"
+                f"{rel}:{start_line}: paragraph has {sentence_count} sentences (max {PARAGRAPH_MAX_SENTENCES}); split into 2-4 sentence paragraphs"
             )
 
-        for sentence in split_sentences(joined):
+        sentences = split_sentences(joined)
+        for sentence in sentences:
             wc = count_words(sentence)
-            if wc > SENTENCE_MAX_WORDS:
-                errors.append(
-                    f"{rel}:{start_line}: sentence has {wc} words (max {SENTENCE_MAX_WORDS}); split it into shorter sentences"
-                )
             commas = sentence.count(",")
-            if commas > SENTENCE_MAX_COMMAS:
+            too_long = wc > SENTENCE_MAX_WORDS
+            too_many_commas = commas > SENTENCE_MAX_COMMAS
+            if too_long and commas > 0:
+                comma_word = "comma" if commas == 1 else "commas"
+                errors.append(
+                    f"{rel}:{start_line}: sentence has {wc} words and {commas} {comma_word}; "
+                    "split it into shorter sentences, or convert to a bullet list "
+                    "if the commas are enumerating items"
+                )
+            elif too_long:
+                errors.append(
+                    f"{rel}:{start_line}: sentence has {wc} words (max {SENTENCE_MAX_WORDS}); "
+                    "split it into shorter sentences"
+                )
+            elif too_many_commas:
                 errors.append(
                     f"{rel}:{start_line}: sentence has {commas} commas (max {SENTENCE_MAX_COMMAS}); "
                     "convert the enumeration into a bullet list"
                 )
-            if ENUM_LIST_RE.search(sentence):
+            if COLON_INLINE_LIST_RE.search(sentence):
                 errors.append(
-                    f"{rel}:{start_line}: comma-separated enumeration with 'and'/'or'; "
-                    "convert to a bullet list"
+                    f"{rel}:{start_line}: colon-introduced inline list with 3+ items; "
+                    "convert the items into bullets"
                 )
+
+        # Parallel-sentence runs: 3+ adjacent sentences sharing a 2-word
+        # opener almost always read better as bullets. Catches "The agent
+        # does X. The agent does Y. The agent does Z." style prose-lists.
+        def two_word_opener(s):
+            words = s.split()
+            return " ".join(words[:2]).lower() if len(words) >= 2 else ""
+
+        prefixes = [two_word_opener(s) for s in sentences]
+        run_start = 0
+        for i in range(1, len(prefixes) + 1):
+            same = (
+                i < len(prefixes)
+                and prefixes[i]
+                and prefixes[i] == prefixes[run_start]
+            )
+            if not same:
+                run_len = i - run_start
+                if run_len >= PARALLEL_SENTENCE_MIN_RUN and prefixes[run_start]:
+                    errors.append(
+                        f"{rel}:{start_line}: {run_len} consecutive sentences "
+                        f"start with '{prefixes[run_start]}'; convert to a bullet list"
+                    )
+                run_start = i
 
         if LABEL_COLON_OPENER_RE.match(joined):
             errors.append(
@@ -592,6 +632,11 @@ def check_page(root: Path, path: Path) -> list[str]:
             errors.append(
                 f"{rel}:{line_no}: semicolon in prose; use two sentences instead"
             )
+        if THIS_IS_WHAT_ABOUT_RE.search(plain):
+            errors.append(
+                f"{rel}:{line_no}: pointless cleft '[This/That/It] is what X is about'; "
+                "state directly what X does or is"
+            )
         for m in NOW_LETS_OPENER_RE.finditer(plain):
             now_lets_hits.append((line_no, m.group(1)))
 
@@ -650,8 +695,26 @@ def main() -> int:
         errors.extend(check_page(root, page))
 
     if errors:
-        print("Style check failed:")
-        print("\n".join(f"  {error}" for error in errors))
+        # Group errors by file. Each error string starts with the file
+        # path followed by an optional ":<line>:". Print one header per
+        # file so the agent can fix one file at a time.
+        from collections import defaultdict
+        grouped: dict[str, list[str]] = defaultdict(list)
+        for error in errors:
+            # error format: "<file>:<line>: <message>" or "<file>: <message>"
+            head, _, rest = error.partition(":")
+            grouped[head].append(rest.lstrip())
+        def s(n: int, word: str) -> str:
+            return f"{n} {word}{'' if n == 1 else 's'}"
+
+        print(
+            f"Style check failed ({s(len(errors), 'finding')} across "
+            f"{s(len(grouped), 'file')}):"
+        )
+        for file_path in sorted(grouped):
+            print(f"\n{file_path} ({s(len(grouped[file_path]), 'finding')}):")
+            for msg in grouped[file_path]:
+                print(f"  {msg}")
         return 1
 
     print(f"Style check passed ({len(pages)} file{'s' if len(pages) != 1 else ''}).")
