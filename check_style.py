@@ -61,6 +61,10 @@ ANAPHORIC_NO_RE = re.compile(
 LABEL_COLON_OPENER_RE = re.compile(
     r"^(?:The\s+)?[A-Z][a-zA-Z]+(?:\s+[A-Za-z]+){0,2}:\s+\w+\s+\w"
 )
+# Single-word labels that work as callout / admonition blocks. Only
+# `Note:` and `Important:` are exempt - other words ("Tip", "Warning",
+# "Notice", etc.) read as ad-hoc labels and the rule still flags them.
+CALLOUT_LABELS = frozenset({"note", "important"})
 # Filler sentence-openers: "Now", "Let's", "Let us". Fine in moderation,
 # overuse signals lazy transitions. Flagged at file scope when too many
 # appear, or when two of them sit too close together.
@@ -218,6 +222,9 @@ BANNED_PHRASES: dict[str, str] = {
     "the core of": "drop the metaphor; describe what the component actually does",
     "the cornerstone of": "drop the metaphor; describe what the component actually does",
     "the foundation of": "drop the metaphor; describe what the component actually does",
+    "works well": "drop the filler; name the concrete property that fits",
+    "works great": "drop the filler; name the concrete property that fits",
+    "fits well": "drop the filler; name the concrete property that fits",
     "suffer": "do not anthropomorphize - inanimate things don't suffer; "
                "describe what actually goes wrong "
                "('the answer is wrong', 'the latency doubles')",
@@ -479,11 +486,13 @@ def check_page(root: Path, path: Path) -> list[str]:
                 run_start = i
 
         if LABEL_COLON_OPENER_RE.match(joined):
-            errors.append(
-                f"{rel}:{start_line}: label-colon paragraph opener "
-                "('The problem: ...', 'Goal: ...', 'What we want: ...'); "
-                "drop the label and state the point directly"
-            )
+            label_before_colon = joined.split(":", 1)[0].strip().lower()
+            if label_before_colon not in CALLOUT_LABELS:
+                errors.append(
+                    f"{rel}:{start_line}: label-colon paragraph opener "
+                    "('The problem: ...', 'Goal: ...', 'What we want: ...'); "
+                    "drop the label and state the point directly"
+                )
         if PARAGRAPH_QUESTION_OPENER_RE.match(joined):
             errors.append(
                 f"{rel}:{start_line}: paragraph opens with a rhetorical question; "
