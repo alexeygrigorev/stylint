@@ -147,9 +147,16 @@ CALLOUT_LABELS = frozenset({"note", "important"})
 # overuse signals lazy transitions. Counted at file scope: flagged only
 # when there are too many in a single document.
 NOW_LETS_OPENER_RE = re.compile(r"(?:^|[.!?]\s+)(Now|Let's|Let us)\b")
-NOW_LETS_MAX_PER_FILE = 3
-# Redundant combos that should always be removed: "Now let's X" /
-# "Let's now X". Drop both softeners and use the bare imperative.
+NOW_LETS_MAX_PER_FILE = 4
+# Redundant combos: "Now let's X" / "Let's now X". Almost always
+# rewrite, regardless of count. The right rewrite depends on what
+# follows:
+#   - immediately before a code block: drop both softeners, use
+#     the bare imperative ("Now let's run X." -> "Run X.").
+#   - in a paragraph that explains rather than instructs: rewrite
+#     declaratively ("Now let's use X." -> "We use X." or
+#     "This lesson uses X.").
+# Keeping just "Let's" is acceptable but not the preferred fix.
 NOW_LETS_COMBO_RE = re.compile(
     r"(?:^|[.!?]\s+)(Now\s+let's|Let's\s+now)\b",
     re.IGNORECASE,
@@ -711,6 +718,7 @@ def check_page(root: Path, path: Path) -> list[Finding]:
                 if (
                     code_block_start is not None
                     and code_block_line_count > CODE_BLOCK_MAX_LINES
+                    and code_lang not in ("mermaid", "")
                 ):
                     errors.append(Finding(
                         rel, code_block_start, Tag.CODE_TOO_LONG,
@@ -788,7 +796,7 @@ def check_page(root: Path, path: Path) -> list[Finding]:
             errors.append(Finding(rel, line_no, Tag.HR, "horizontal rules are not used"))
         if "—" in line:
             errors.append(Finding(rel, line_no, Tag.EM_DASH, "use a hyphen instead of an em dash"))
-        if DOUBLE_HYPHEN_RE.search(plain):
+        if DOUBLE_HYPHEN_RE.search(plain) and not line.lstrip().startswith("|"):
             errors.append(Finding(rel, line_no, Tag.DOUBLE_HYPHEN, "use a single hyphen, not '--'"))
         if DASH_PARENTHETICAL_RE.search(plain) and not LIST_ITEM_RE.match(line):
             errors.append(Finding(
@@ -824,13 +832,22 @@ def check_page(root: Path, path: Path) -> list[Finding]:
         for m in NOW_LETS_COMBO_RE.finditer(plain):
             errors.append(Finding(
                 rel, line_no, Tag.NOW_LETS_COMBO,
-                f"redundant '{m.group(1)}' opener; drop both and use the bare imperative "
-                "(e.g., 'Now let's run the script.' -> 'Run the script.')",
+                f"redundant '{m.group(1)}' pair - almost always rewrite. "
+                "If the sentence immediately introduces a code block: drop both "
+                "softeners and use the bare imperative ('Now let's run X.' -> 'Run X.'). "
+                "If the sentence is explanatory (mid-paragraph, transition): "
+                "rewrite declaratively ('Now let's use X.' -> 'We use X.' or "
+                "'This lesson uses X.'). Keeping just 'Let's' is acceptable "
+                "but not preferred.",
             ))
 
-        if BARE_URL_RE.search(plain):
+        # Skip URL checks on HTML-tag lines (e.g., <a href="..."> or
+        # <img src="..."> for video thumbnails). URLs inside HTML
+        # attributes are not prose URLs.
+        line_is_html = line.lstrip().startswith("<")
+        if BARE_URL_RE.search(plain) and not line_is_html:
             errors.append(Finding(rel, line_no, Tag.BARE_URL, "bare URL in prose; use [name](url)"))
-        if ANGLE_URL_RE.search(line):
+        if ANGLE_URL_RE.search(line) and not line_is_html:
             errors.append(Finding(rel, line_no, Tag.ANGLE_URL, "angle-bracket URL form not used; use [name](url)"))
 
         for word, hint in BANNED_WORDS.items():
