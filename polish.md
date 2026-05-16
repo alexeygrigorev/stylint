@@ -239,6 +239,42 @@ paragraph of explanation to land, pull it out of the list into
 prose, give it its own short paragraph or subsection, and leave the
 list to the items that actually fit a one-line form.
 
+## When to convert inline enumeration to a bullet list
+
+Detecting "should be a list" is judgment, not just comma-counting.
+Most short inline enumerations read fine as prose; converting all of
+them produces robotic, over-structured pages. Use a list only when
+both of these are true:
+
+- **The items are substantive.** Each item is 3+ words, names a
+  distinct concept, and is parallel in structure to the others. A
+  list of single-word names (`Groq, Gemini, or Ollama`; `search,
+  prompt, and LLM`) reads better inline.
+- **The author has already signalled enumeration.** Two strong
+  signals: a colon that introduces 3+ comma-separated items
+  (`production features: concurrent reads and writes, transactions,
+  or integration with an existing Postgres-based application`); or
+  three or more adjacent sentences sharing the same 1-2 word opener
+  (`Maybe it should search...` `Maybe it should try...` `Maybe it
+  should ask...`). Both are the author writing list shape in prose.
+
+Skip the conversion when:
+
+- The enumeration ends in `and others`, `and more`, `and so on`, or
+  `or similar`. The terminal signals "open-ended example list", which
+  resists bullet form.
+- The commas are clausal, not enumerative (`is trained on tons of
+  data, and when it predicts the next word`). The conjunction joins
+  clauses, not items.
+- The enumeration is two items (`X, and Y`). Two items is a joiner,
+  not a list.
+- Inline reads fine. If converting feels like adding ceremony, keep
+  the prose.
+
+The script catches comma-heavy long sentences and colon-introduced
+runs as candidates; the conversion itself is a judgment call using
+this rule.
+
 ## Anti-duplication when expanding an overview
 
 When the overview lists bullets and the body then expands each one,
