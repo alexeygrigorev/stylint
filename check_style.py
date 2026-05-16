@@ -15,10 +15,87 @@ root are skipped (one path per line, # for comments, glob patterns OK).
 """
 
 import argparse
+from dataclasses import dataclass
+from enum import Enum
 import fnmatch
 from pathlib import Path
 import re
 import sys
+
+
+class Tag(str, Enum):
+    """All rule tags emitted by the linter. The string value is what
+    appears between `[...]` in the formatted output and is what users
+    pass to `--ignore`."""
+
+    # Mechanical markdown
+    BOLD = "bold"
+    ITALIC = "italic"
+    TABLES = "tables"
+    HR = "hr"
+    EM_DASH = "em-dash"
+    DOUBLE_HYPHEN = "double-hyphen"
+    DASH_PARENTHETICAL = "dash-parenthetical"
+    SMART_QUOTES = "smart-quotes"
+    BACKTICKS_IN_LINK = "backticks-in-link"
+    BARE_URL = "bare-url"
+    ANGLE_URL = "angle-url"
+    FRONTMATTER_BLANK = "frontmatter-blank"
+    # Headings
+    HEADING_QUESTION_WORD = "heading-question-word"
+    HEADING_QUESTION_MARK = "heading-question-mark"
+    HEADING_TOO_DEEP = "heading-too-deep"
+    LAZY_HEADING = "lazy-heading"
+    # Code blocks
+    CODE_NO_LANG = "code-no-lang"
+    CODE_TOO_LONG = "code-too-long"
+    CONSECUTIVE_CODE = "consecutive-code"
+    LEAD_IN = "lead-in"
+    CHAINED_GET = "chained-get"
+    DOUBLE_BLANK = "double-blank"
+    # Banned tokens
+    BANNED_WORD = "banned-word"
+    BANNED_PHRASE = "banned-phrase"
+    BANNED_OPENER = "banned-opener"
+    # Voice / fragments
+    THIRD_PERSON = "third-person"
+    ANAPHORIC_NO = "anaphoric-no"
+    SEMICOLON = "semicolon"
+    CLEFT = "cleft"
+    GERUND_OPENER = "gerund-opener"
+    # Paragraph / sentence shape
+    PARAGRAPH_TOO_LONG = "paragraph-too-long"
+    LONG_SENTENCE = "long-sentence"
+    LONG_AND_COMMAS = "long-and-commas"
+    MANY_COMMAS = "many-commas"
+    COLON_INLINE = "colon-inline"
+    PARALLEL_SENTENCES = "parallel-sentences"
+    LABEL_COLON = "label-colon"
+    QUESTION_OPENER = "question-opener"
+    # File-level
+    NOW_LETS_OVERUSE = "now-lets-overuse"
+    NOW_LETS_CLOSE = "now-lets-close"
+
+
+@dataclass(frozen=True)
+class Finding:
+    """One lint finding. `line` is None for file-level rules."""
+
+    file: Path
+    line: int | None
+    tag: Tag
+    message: str
+
+    def format(self) -> str:
+        location = f"{self.file}:{self.line}" if self.line is not None else str(self.file)
+        return f"{location}: [{self.tag.value}] {self.message}"
+
+    def __str__(self) -> str:
+        return self.format()
+
+    def __contains__(self, item: str) -> bool:
+        # Lets `"substring" in finding` work in tests and grep-style checks.
+        return item in self.format()
 
 
 LINK_RE = re.compile(r"\[([^\]]+)\]\([^)]+\)")
@@ -259,6 +336,20 @@ def parse_args() -> argparse.Namespace:
         default=["."],
         help="Files or directories to scan. Defaults to the current directory.",
     )
+    parser.add_argument(
+        "--ignore",
+        default="",
+        metavar="TAGS",
+        help=(
+            "Comma-separated rule tags to suppress (e.g. --ignore tables,long-and-commas). "
+            "Run with --list-tags to see all known tags."
+        ),
+    )
+    parser.add_argument(
+        "--list-tags",
+        action="store_true",
+        help="Print all known rule tags and exit.",
+    )
     return parser.parse_args()
 
 
@@ -400,8 +491,8 @@ def find_gerund_starts(plain: str) -> list[str]:
     return flagged
 
 
-def check_page(root: Path, path: Path) -> list[str]:
-    errors: list[str] = []
+def check_page(root: Path, path: Path) -> list[Finding]:
+    errors: list[Finding] = []
     now_lets_hits: list[tuple[int, str]] = []
     text = path.read_text()
     try:
@@ -412,9 +503,10 @@ def check_page(root: Path, path: Path) -> list[str]:
         parts = text.split("---\n", 2)
         if len(parts) == 3 and parts[2] and not parts[2].startswith("\n"):
             fm_close_line = parts[0].count("\n") + parts[1].count("\n") + 2
-            errors.append(
-                f"{rel}:{fm_close_line + 1}: insert a blank line between frontmatter and body"
-            )
+            errors.append(Finding(
+                rel, fm_close_line + 1, Tag.FRONTMATTER_BLANK,
+                "insert a blank line between frontmatter and body",
+            ))
     body = strip_frontmatter(text)
     fm_lines = text.count("\n") - body.count("\n") if body != text else 0
     line_offset = fm_lines
@@ -440,9 +532,11 @@ def check_page(root: Path, path: Path) -> list[str]:
 
         sentence_count = count_sentences(joined)
         if sentence_count > PARAGRAPH_MAX_SENTENCES:
-            errors.append(
-                f"{rel}:{start_line}: paragraph has {sentence_count} sentences (max {PARAGRAPH_MAX_SENTENCES}); split into 2-4 sentence paragraphs"
-            )
+            errors.append(Finding(
+                rel, start_line, Tag.PARAGRAPH_TOO_LONG,
+                f"paragraph has {sentence_count} sentences (max {PARAGRAPH_MAX_SENTENCES}); "
+                "split into 2-4 sentence paragraphs",
+            ))
 
         sentences = split_sentences(joined)
         for sentence in sentences:
@@ -452,29 +546,33 @@ def check_page(root: Path, path: Path) -> list[str]:
             too_many_commas = commas > SENTENCE_MAX_COMMAS
             if too_long and commas > 0:
                 comma_word = "comma" if commas == 1 else "commas"
-                errors.append(
-                    f"{rel}:{start_line}: [long-and-commas] sentence has {wc} words and {commas} {comma_word}. "
-                    f"Fixes: (1) split into shorter sentences; (2) convert to a bullet list. "
-                    f"{LIST_HEURISTIC_HINT}"
-                )
+                errors.append(Finding(
+                    rel, start_line, Tag.LONG_AND_COMMAS,
+                    f"sentence has {wc} words and {commas} {comma_word}. "
+                    "Fixes: (1) split into shorter sentences; (2) convert to a bullet list. "
+                    f"{LIST_HEURISTIC_HINT}",
+                ))
             elif too_long:
-                errors.append(
-                    f"{rel}:{start_line}: [long-sentence] sentence has {wc} words (max {SENTENCE_MAX_WORDS}). "
-                    f"Fixes: (1) split into shorter sentences; (2) drop filler words; "
-                    f"(3) convert to a list if you find embedded enumeration. {LIST_HEURISTIC_HINT}"
-                )
+                errors.append(Finding(
+                    rel, start_line, Tag.LONG_SENTENCE,
+                    f"sentence has {wc} words (max {SENTENCE_MAX_WORDS}). "
+                    "Fixes: (1) split into shorter sentences; (2) drop filler words; "
+                    f"(3) convert to a list if you find embedded enumeration. {LIST_HEURISTIC_HINT}",
+                ))
             elif too_many_commas:
-                errors.append(
-                    f"{rel}:{start_line}: [many-commas] sentence has {commas} commas (max {SENTENCE_MAX_COMMAS}). "
-                    f"Fixes: (1) convert to a bullet list; (2) split into shorter sentences. "
-                    f"{LIST_HEURISTIC_HINT}"
-                )
+                errors.append(Finding(
+                    rel, start_line, Tag.MANY_COMMAS,
+                    f"sentence has {commas} commas (max {SENTENCE_MAX_COMMAS}). "
+                    "Fixes: (1) convert to a bullet list; (2) split into shorter sentences. "
+                    f"{LIST_HEURISTIC_HINT}",
+                ))
             if COLON_INLINE_LIST_RE.search(sentence):
-                errors.append(
-                    f"{rel}:{start_line}: [colon-inline] colon-introduced inline run of 3+ items. "
-                    f"Fixes: (1) convert items to bullets; (2) drop the colon and let items flow as prose; "
-                    f"(3) split the sentence in two. {LIST_HEURISTIC_HINT}"
-                )
+                errors.append(Finding(
+                    rel, start_line, Tag.COLON_INLINE,
+                    "colon-introduced inline run of 3+ items. "
+                    "Fixes: (1) convert items to bullets; (2) drop the colon and let items flow as prose; "
+                    f"(3) split the sentence in two. {LIST_HEURISTIC_HINT}",
+                ))
 
         # Parallel-sentence runs: 3+ adjacent sentences sharing a 2-word
         # opener almost always read better as bullets. Catches "The agent
@@ -494,36 +592,36 @@ def check_page(root: Path, path: Path) -> list[str]:
             if not same:
                 run_len = i - run_start
                 if run_len >= PARALLEL_SENTENCE_MIN_RUN and prefixes[run_start]:
-                    errors.append(
-                        f"{rel}:{start_line}: [parallel-sentences] {run_len} consecutive sentences "
-                        f"start with '{prefixes[run_start]}'. "
-                        f"Fixes: (1) convert to a bullet list (strong signal: author wrote list shape "
-                        f"in prose); (2) vary the sentence openers if the items aren't really parallel. "
-                        f"{LIST_HEURISTIC_HINT}"
-                    )
+                    errors.append(Finding(
+                        rel, start_line, Tag.PARALLEL_SENTENCES,
+                        f"{run_len} consecutive sentences start with '{prefixes[run_start]}'. "
+                        "Fixes: (1) convert to a bullet list (strong signal: author wrote list shape "
+                        "in prose); (2) vary the sentence openers if the items aren't really parallel. "
+                        f"{LIST_HEURISTIC_HINT}",
+                    ))
                 run_start = i
 
         if LABEL_COLON_OPENER_RE.match(joined):
             label_before_colon = joined.split(":", 1)[0].strip().lower()
             if label_before_colon not in CALLOUT_LABELS:
-                errors.append(
-                    f"{rel}:{start_line}: [label-colon] paragraph opens with a "
-                    "label-colon pattern ('The problem: ...', 'Goal: ...', "
-                    "'What we want: ...'). "
+                errors.append(Finding(
+                    rel, start_line, Tag.LABEL_COLON,
+                    "paragraph opens with a label-colon pattern "
+                    "('The problem: ...', 'Goal: ...', 'What we want: ...'). "
                     "Fixes: (1) drop the label and state the point directly; "
                     "(2) rewrite as a sentence introducing the topic. "
-                    "Exempt callouts: 'Note:' and 'Important:'."
-                )
+                    "Exempt callouts: 'Note:' and 'Important:'.",
+                ))
         if PARAGRAPH_QUESTION_OPENER_RE.match(joined):
-            errors.append(
-                f"{rel}:{start_line}: [question-opener] paragraph opens with a "
-                "rhetorical question. "
+            errors.append(Finding(
+                rel, start_line, Tag.QUESTION_OPENER,
+                "paragraph opens with a rhetorical question. "
                 "Fixes: (1) drop the question and lead with the substantive "
                 "claim it gestures at; (2) rewrite the answer as the opening "
                 "sentence (e.g., 'Why do we need X?' -> 'X exists because...'); "
                 "(3) keep the question only if a real reader is likely to ask "
-                "exactly that wording."
-            )
+                "exactly that wording.",
+            ))
 
         for phrase, hint in BANNED_PHRASES.items():
             if phrase in joined_lower:
@@ -532,14 +630,16 @@ def check_page(root: Path, path: Path) -> list[str]:
                     for _, line in paragraph_lines
                 )
                 if not already_flagged:
-                    errors.append(
-                        f"{rel}:{start_line}: [banned-phrase] '{phrase}' across lines - {hint}"
-                    )
+                    errors.append(Finding(
+                        rel, start_line, Tag.BANNED_PHRASE,
+                        f"'{phrase}' across lines - {hint}",
+                    ))
 
         for word in find_gerund_starts(joined):
-            errors.append(
-                f"{rel}:{start_line}: sentence opens with '-ing' word '{word}'; rewrite if it is a participial phrase"
-            )
+            errors.append(Finding(
+                rel, start_line, Tag.GERUND_OPENER,
+                f"sentence opens with '-ing' word '{word}'; rewrite if it is a participial phrase",
+            ))
 
         paragraph_lines.clear()
 
@@ -549,9 +649,10 @@ def check_page(root: Path, path: Path) -> list[str]:
 
         if not in_code and previous_code_block_end is not None and stripped:
             if starts_fence:
-                errors.append(
-                    f"{rel}:{line_no}: consecutive code blocks need prose between them"
-                )
+                errors.append(Finding(
+                    rel, line_no, Tag.CONSECUTIVE_CODE,
+                    "consecutive code blocks need prose between them",
+                ))
             previous_code_block_end = None
 
         if starts_fence:
@@ -559,13 +660,15 @@ def check_page(root: Path, path: Path) -> list[str]:
             if not in_code:
                 fence_tail = line.lstrip()[3:].strip()
                 if not fence_tail:
-                    errors.append(
-                        f"{rel}:{line_no}: code block missing language tag (use ```python, ```bash, ...)"
-                    )
+                    errors.append(Finding(
+                        rel, line_no, Tag.CODE_NO_LANG,
+                        "code block missing language tag (use ```python, ```bash, ...)",
+                    ))
                 if last_heading_line is not None and not seen_prose_since_heading:
-                    errors.append(
-                        f"{rel}:{line_no}: code block needs a lead-in sentence after the heading on line {last_heading_line}"
-                    )
+                    errors.append(Finding(
+                        rel, line_no, Tag.LEAD_IN,
+                        f"code block needs a lead-in sentence after the heading on line {last_heading_line}",
+                    ))
                 code_lang = fence_tail.lower()
                 code_block_start = line_no
                 code_block_line_count = 0
@@ -575,9 +678,10 @@ def check_page(root: Path, path: Path) -> list[str]:
                     code_block_start is not None
                     and code_block_line_count > CODE_BLOCK_MAX_LINES
                 ):
-                    errors.append(
-                        f"{rel}:{code_block_start}: code block has {code_block_line_count} lines (max {CODE_BLOCK_MAX_LINES}); split with prose"
-                    )
+                    errors.append(Finding(
+                        rel, code_block_start, Tag.CODE_TOO_LONG,
+                        f"code block has {code_block_line_count} lines (max {CODE_BLOCK_MAX_LINES}); split with prose",
+                    ))
                 code_block_start = None
                 code_lang = ""
             in_code = not in_code
@@ -589,29 +693,31 @@ def check_page(root: Path, path: Path) -> list[str]:
             code_block_line_count += 1
             if code_lang == "python":
                 if PYTHON_CHAINED_GET_RE.search(line):
-                    errors.append(
-                        f"{rel}:{line_no}: chained .get(...).get(...) in example; access known keys directly"
-                    )
+                    errors.append(Finding(
+                        rel, line_no, Tag.CHAINED_GET,
+                        "chained .get(...).get(...) in example; access known keys directly",
+                    ))
                 if line.strip() == "" and previous_code_line_blank:
-                    errors.append(
-                        f"{rel}:{line_no}: double blank line in code; use one blank line between definitions"
-                    )
+                    errors.append(Finding(
+                        rel, line_no, Tag.DOUBLE_BLANK,
+                        "double blank line in code; use one blank line between definitions",
+                    ))
                 previous_code_line_blank = line.strip() == ""
             continue
 
         if HEADING_RE.match(line):
             flush_paragraph()
             if QUESTION_HEADING_RE.match(line):
-                errors.append(f"{rel}:{line_no}: avoid question-word headings")
+                errors.append(Finding(rel, line_no, Tag.HEADING_QUESTION_WORD, "avoid question-word headings"))
             if QUESTION_MARK_HEADING_RE.match(line):
-                errors.append(f"{rel}:{line_no}: heading ends with '?' (use a statement)")
+                errors.append(Finding(rel, line_no, Tag.HEADING_QUESTION_MARK, "heading ends with '?' (use a statement)"))
             if DEEP_HEADING_RE.match(line):
-                errors.append(f"{rel}:{line_no}: heading depth ### or deeper not allowed")
+                errors.append(Finding(rel, line_no, Tag.HEADING_TOO_DEEP, "heading depth ### or deeper not allowed"))
             if LAZY_HEADING_RE.match(line):
-                errors.append(
-                    f"{rel}:{line_no}: lazy heading 'The <problem|issue|...>'; "
-                    "name what the section is actually about"
-                )
+                errors.append(Finding(
+                    rel, line_no, Tag.LAZY_HEADING,
+                    "lazy heading 'The <problem|issue|...>'; name what the section is actually about",
+                ))
             last_heading_line = line_no
             seen_prose_since_heading = False
             continue
@@ -621,9 +727,10 @@ def check_page(root: Path, path: Path) -> list[str]:
         elif LIST_RE.match(line):
             flush_paragraph()
             if last_heading_line is not None and not seen_prose_since_heading:
-                errors.append(
-                    f"{rel}:{line_no}: list needs a lead-in sentence after the heading on line {last_heading_line}"
-                )
+                errors.append(Finding(
+                    rel, line_no, Tag.LEAD_IN,
+                    f"list needs a lead-in sentence after the heading on line {last_heading_line}",
+                ))
                 last_heading_line = None
             seen_prose_since_heading = True
         elif BLOCKQUOTE_RE.match(line) or line.startswith("|"):
@@ -637,130 +744,142 @@ def check_page(root: Path, path: Path) -> list[str]:
         plain_lower = plain.lower()
 
         if "**" in plain or "__" in plain:
-            errors.append(f"{rel}:{line_no}: bold markdown is not used")
+            errors.append(Finding(rel, line_no, Tag.BOLD, "bold markdown is not used"))
         if ITALIC_RE.search(plain):
-            errors.append(f"{rel}:{line_no}: italic markdown is not used")
+            errors.append(Finding(rel, line_no, Tag.ITALIC, "italic markdown is not used"))
         if line.startswith("|"):
-            errors.append(f"{rel}:{line_no}: markdown tables are not used")
+            errors.append(Finding(rel, line_no, Tag.TABLES, "markdown tables are not used"))
         if line.strip() == "---":
-            errors.append(f"{rel}:{line_no}: horizontal rules are not used")
+            errors.append(Finding(rel, line_no, Tag.HR, "horizontal rules are not used"))
         if "—" in line:
-            errors.append(f"{rel}:{line_no}: use a hyphen instead of an em dash")
+            errors.append(Finding(rel, line_no, Tag.EM_DASH, "use a hyphen instead of an em dash"))
         if DOUBLE_HYPHEN_RE.search(plain):
-            errors.append(f"{rel}:{line_no}: use a single hyphen, not '--'")
+            errors.append(Finding(rel, line_no, Tag.DOUBLE_HYPHEN, "use a single hyphen, not '--'"))
         if DASH_PARENTHETICAL_RE.search(plain) and not LIST_ITEM_RE.match(line):
-            errors.append(
-                f"{rel}:{line_no}: dash-enclosed parenthetical in prose; "
-                "split into two sentences or simplify"
-            )
+            errors.append(Finding(
+                rel, line_no, Tag.DASH_PARENTHETICAL,
+                "dash-enclosed parenthetical in prose; split into two sentences or simplify",
+            ))
         for char, name in SMART_QUOTES.items():
             if char in line:
-                errors.append(f"{rel}:{line_no}: use straight quotes, not {name}")
+                errors.append(Finding(rel, line_no, Tag.SMART_QUOTES, f"use straight quotes, not {name}"))
         for match in LINK_RE.finditer(line):
             if "`" in match.group(1):
-                errors.append(f"{rel}:{line_no}: do not put backticks inside link text")
+                errors.append(Finding(rel, line_no, Tag.BACKTICKS_IN_LINK, "do not put backticks inside link text"))
         if "Alexey" in plain:
-            errors.append(f"{rel}:{line_no}: avoid third-person presenter references")
+            errors.append(Finding(rel, line_no, Tag.THIRD_PERSON, "avoid third-person presenter references"))
         if ANAPHORIC_NO_RE.search(plain):
-            errors.append(
-                f"{rel}:{line_no}: 'No X, no Y' verbless fragment; "
-                "rewrite by describing what is actually happening "
+            errors.append(Finding(
+                rel, line_no, Tag.ANAPHORIC_NO,
+                "'No X, no Y' verbless fragment. "
+                "Rewrite by describing what is actually happening "
                 "('Lambda boots only when a request arrives', "
                 "'we skip the usual API Gateway'). Do NOT just prepend "
-                "'There's' - that satisfies the regex but does not add "
-                "information."
-            )
+                "'There's' - that satisfies the regex but does not add information.",
+            ))
         if ";" in plain:
-            errors.append(
-                f"{rel}:{line_no}: semicolon in prose; use two sentences instead"
-            )
+            errors.append(Finding(rel, line_no, Tag.SEMICOLON, "semicolon in prose; use two sentences instead"))
         if THIS_IS_WHAT_ABOUT_RE.search(plain):
-            errors.append(
-                f"{rel}:{line_no}: pointless cleft '[This/That/It] is what X is about'; "
-                "state directly what X does or is"
-            )
+            errors.append(Finding(
+                rel, line_no, Tag.CLEFT,
+                "pointless cleft '[This/That/It] is what X is about'; state directly what X does or is",
+            ))
         for m in NOW_LETS_OPENER_RE.finditer(plain):
             now_lets_hits.append((line_no, m.group(1)))
 
         if BARE_URL_RE.search(plain):
-            errors.append(f"{rel}:{line_no}: bare URL in prose; use [name](url)")
+            errors.append(Finding(rel, line_no, Tag.BARE_URL, "bare URL in prose; use [name](url)"))
         if ANGLE_URL_RE.search(line):
-            errors.append(f"{rel}:{line_no}: angle-bracket URL form not used; use [name](url)")
+            errors.append(Finding(rel, line_no, Tag.ANGLE_URL, "angle-bracket URL form not used; use [name](url)"))
 
         for word, hint in BANNED_WORDS.items():
             if WORD_RES[word].search(plain):
-                errors.append(
-                    f"{rel}:{line_no}: [banned-word] '{word}' - {hint}"
-                )
+                errors.append(Finding(rel, line_no, Tag.BANNED_WORD, f"'{word}' - {hint}"))
 
         for phrase, hint in BANNED_PHRASES.items():
             if phrase in plain_lower:
-                errors.append(
-                    f"{rel}:{line_no}: [banned-phrase] '{phrase}' - {hint}"
-                )
+                errors.append(Finding(rel, line_no, Tag.BANNED_PHRASE, f"'{phrase}' - {hint}"))
 
         opener_match = OPENER_RE.match(line)
         if opener_match:
             opener = opener_match.group(1)
-            errors.append(
-                f"{rel}:{line_no}: [banned-opener] '{opener}' - {BANNED_OPENERS[opener]}"
-            )
+            errors.append(Finding(
+                rel, line_no, Tag.BANNED_OPENER,
+                f"'{opener}' - {BANNED_OPENERS[opener]}",
+            ))
 
     flush_paragraph()
 
     if len(now_lets_hits) > NOW_LETS_MAX_PER_FILE:
         lines = ", ".join(str(ln) for ln, _ in now_lets_hits)
-        errors.append(
-            f"{rel}: file uses {len(now_lets_hits)} 'Now' / 'Let's' "
-            f"sentence-starters (max {NOW_LETS_MAX_PER_FILE}; lines {lines}); "
+        errors.append(Finding(
+            rel, None, Tag.NOW_LETS_OVERUSE,
+            f"file uses {len(now_lets_hits)} 'Now' / 'Let's' sentence-starters "
+            f"(max {NOW_LETS_MAX_PER_FILE}; lines {lines}); "
             "vary openers - try 'After that', 'Then', 'Next', or drop the "
-            "softener entirely and use a bare imperative"
-        )
+            "softener entirely and use a bare imperative",
+        ))
     for (prev_line, prev_word), (this_line, this_word) in zip(now_lets_hits, now_lets_hits[1:]):
         gap = this_line - prev_line
         if 0 < gap < NOW_LETS_MIN_GAP_LINES:
-            errors.append(
-                f"{rel}:{this_line}: '{this_word}' opener only {gap} lines "
-                f"after '{prev_word}' on line {prev_line}; "
-                "try 'After that' / 'Then' / 'Next' or drop the softener"
-            )
+            errors.append(Finding(
+                rel, this_line, Tag.NOW_LETS_CLOSE,
+                f"'{this_word}' opener only {gap} lines after '{prev_word}' on line {prev_line}; "
+                "try 'After that' / 'Then' / 'Next' or drop the softener",
+            ))
 
     return errors
 
 
 def main() -> int:
     args = parse_args()
+
+    if args.list_tags:
+        for tag in Tag:
+            print(tag.value)
+        return 0
+
+    valid_tags = {t.value for t in Tag}
+    ignore_list = [t.strip() for t in args.ignore.split(",") if t.strip()]
+    unknown = [t for t in ignore_list if t not in valid_tags]
+    if unknown:
+        print(f"Unknown tag(s) for --ignore: {', '.join(unknown)}", file=sys.stderr)
+        print(f"Run with --list-tags to see known tags.", file=sys.stderr)
+        return 2
+    ignore_tags = {Tag(t) for t in ignore_list}
+
     paths = [Path(p) for p in args.paths]
     pages = iter_markdown_pages(paths)
     if not pages:
         print("No markdown files found.", file=sys.stderr)
         return 0
 
-    errors: list[str] = []
+    findings: list[Finding] = []
     for root, page in pages:
-        errors.extend(check_page(root, page))
+        findings.extend(check_page(root, page))
 
-    if errors:
-        # Group errors by file. Each error string starts with the file
-        # path followed by an optional ":<line>:". Print one header per
-        # file so the agent can fix one file at a time.
+    if ignore_tags:
+        findings = [f for f in findings if f.tag not in ignore_tags]
+
+    if findings:
         from collections import defaultdict
-        grouped: dict[str, list[str]] = defaultdict(list)
-        for error in errors:
-            # error format: "<file>:<line>: <message>" or "<file>: <message>"
-            head, _, rest = error.partition(":")
-            grouped[head].append(rest.lstrip())
+        grouped: dict[str, list[Finding]] = defaultdict(list)
+        for finding in findings:
+            grouped[str(finding.file)].append(finding)
+
         def s(n: int, word: str) -> str:
             return f"{n} {word}{'' if n == 1 else 's'}"
 
         print(
-            f"Style check failed ({s(len(errors), 'finding')} across "
+            f"Style check failed ({s(len(findings), 'finding')} across "
             f"{s(len(grouped), 'file')}):"
         )
         for file_path in sorted(grouped):
-            print(f"\n{file_path} ({s(len(grouped[file_path]), 'finding')}):")
-            for msg in grouped[file_path]:
-                print(f"  {msg}")
+            file_findings = grouped[file_path]
+            print(f"\n{file_path} ({s(len(file_findings), 'finding')}):")
+            for f in file_findings:
+                line_part = f"{f.line}: " if f.line is not None else ""
+                print(f"  {line_part}[{f.tag.value}] {f.message}")
         return 1
 
     print(f"Style check passed ({len(pages)} file{'s' if len(pages) != 1 else ''}).")
