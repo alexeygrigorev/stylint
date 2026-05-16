@@ -32,10 +32,8 @@ Use plain reader-facing verbs:
 - `code repo`, `final code`, or `working version`, not `reference
   implementation`
 
-The mechanical banned phrases (`reference implementation`,
-`this matters because`, `at this point`, `further reading`, etc.) are
-enforced by `check_style.py::BANNED_PHRASES`. The script catches them;
-this doc lists only the judgment calls.
+The script (`check_style.py`) catches mechanical banned phrases via
+its `BANNED_PHRASES` list. This doc lists only the judgment calls.
 
 The rule is not to ban every technical word. Use judgment:
 
@@ -118,10 +116,6 @@ author is walking the reader through a screen-share. The essentials:
   the reader needs, the gotcha that explains a real workaround, and the
   reasoning that justifies a non-obvious choice. Test: would a reader
   following this tomorrow benefit from this detail? If not, drop it.
-- No em dashes (script enforces). Use ` - ` (hyphen with spaces) or
-  rewrite. Two dashes for a parenthetical inside one sentence is also
-  banned - split the sentence instead.
-
 Always explain why. Every design choice, every extracted helper, every
 new section needs the reason, not just the fact. A reader who only
 learns what code exists cannot adapt it to their own project; a reader

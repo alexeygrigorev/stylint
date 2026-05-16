@@ -533,7 +533,7 @@ def check_page(root: Path, path: Path) -> list[str]:
                 )
                 if not already_flagged:
                     errors.append(
-                        f"{rel}:{start_line}: banned phrase '{phrase}' across lines ({hint})"
+                        f"{rel}:{start_line}: [banned-phrase] '{phrase}' across lines - {hint}"
                     )
 
         for word in find_gerund_starts(joined):
@@ -689,17 +689,21 @@ def check_page(root: Path, path: Path) -> list[str]:
 
         for word, hint in BANNED_WORDS.items():
             if WORD_RES[word].search(plain):
-                errors.append(f"{rel}:{line_no}: banned word '{word}' ({hint})")
+                errors.append(
+                    f"{rel}:{line_no}: [banned-word] '{word}' - {hint}"
+                )
 
         for phrase, hint in BANNED_PHRASES.items():
             if phrase in plain_lower:
-                errors.append(f"{rel}:{line_no}: banned phrase '{phrase}' ({hint})")
+                errors.append(
+                    f"{rel}:{line_no}: [banned-phrase] '{phrase}' - {hint}"
+                )
 
         opener_match = OPENER_RE.match(line)
         if opener_match:
             opener = opener_match.group(1)
             errors.append(
-                f"{rel}:{line_no}: banned opener '{opener}' ({BANNED_OPENERS[opener]})"
+                f"{rel}:{line_no}: [banned-opener] '{opener}' - {BANNED_OPENERS[opener]}"
             )
 
     flush_paragraph()

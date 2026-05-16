@@ -100,7 +100,7 @@ def test_frontmatter_with_blank_line_is_clean(tmp_path):
 def test_banned_word_positive(tmp_path, word):
     root, page = make_page(tmp_path, f"This is {word} important.\n")
     errors = check_page(root, page)
-    assert any(f"banned word '{word}'" in e for e in errors)
+    assert any(f"[banned-word] '{word}'" in e for e in errors)
 
 
 def test_banned_word_negative(tmp_path):
@@ -127,7 +127,7 @@ def test_banned_word_negative(tmp_path):
 def test_banned_phrase_single_line_positive(tmp_path, phrase):
     root, page = make_page(tmp_path, f"We talk about {phrase} here.\n")
     errors = check_page(root, page)
-    assert any(f"banned phrase '{phrase}'" in e for e in errors)
+    assert any(f"[banned-phrase] '{phrase}'" in e for e in errors)
 
 
 def test_banned_phrase_single_line_negative(tmp_path):
@@ -146,7 +146,7 @@ def test_banned_phrase_across_lines(tmp_path):
     root, page = make_page(tmp_path, body)
     errors = check_page(root, page)
     assert any(
-        "banned phrase 'reusable principle' across lines" in e for e in errors
+        "[banned-phrase] 'reusable principle' across lines" in e for e in errors
     )
 
 
@@ -155,7 +155,7 @@ def test_banned_phrase_across_lines_does_not_double_fire(tmp_path):
     root, page = make_page(tmp_path, body)
     errors = check_page(root, page)
     assert not any("across lines" in e for e in errors)
-    assert any("banned phrase 'reusable principle'" in e for e in errors)
+    assert any("[banned-phrase] 'reusable principle'" in e for e in errors)
 
 
 # ---------------------------------------------------------------------------
@@ -176,7 +176,7 @@ def test_line_numbers_account_for_frontmatter(tmp_path):
     )
     root, page = make_page(tmp_path, body)
     errors = check_page(root, page)
-    banned_errors = [e for e in errors if "banned word 'delve'" in e]
+    banned_errors = [e for e in errors if "[banned-word] 'delve'" in e]
     assert len(banned_errors) == 1
     assert ":8:" in banned_errors[0]
 
@@ -208,7 +208,7 @@ def test_line_numbers_across_lines_with_frontmatter(tmp_path):
 def test_banned_opener_positive(tmp_path):
     root, page = make_page(tmp_path, "Additionally, we wire up the handler.\n")
     errors = check_page(root, page)
-    assert any("banned opener 'Additionally'" in e for e in errors)
+    assert any("[banned-opener] 'Additionally'" in e for e in errors)
 
 
 def test_banned_opener_negative(tmp_path):
