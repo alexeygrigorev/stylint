@@ -211,6 +211,11 @@ BANNED_PHRASES: dict[str, str] = {
     "the strength of": "drop the abstract framing; name the concrete property",
     "the elegance of": "drop the puffery; describe the concrete property",
     "the simplicity of": "drop the abstract framing; describe the concrete property",
+    "the backbone of": "drop the metaphor; describe what the component actually does",
+    "the heart of": "drop the metaphor; describe what the component actually does",
+    "the core of": "drop the metaphor; describe what the component actually does",
+    "the cornerstone of": "drop the metaphor; describe what the component actually does",
+    "the foundation of": "drop the metaphor; describe what the component actually does",
     "suffer": "do not anthropomorphize - inanimate things don't suffer; "
                "describe what actually goes wrong "
                "('the answer is wrong', 'the latency doubles')",
