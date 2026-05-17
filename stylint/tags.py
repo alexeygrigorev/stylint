@@ -54,6 +54,7 @@ class Tag(str, Enum):
     COLON_INLINE = "colon-inline"
     PARALLEL_SENTENCES = "parallel-sentences"
     LABEL_COLON = "label-colon"
+    META_FRAMING = "meta-framing"
     QUESTION_OPENER = "question-opener"
     # File-level
     NOW_LETS_OVERUSE = "now-lets-overuse"

@@ -157,6 +157,12 @@ can pass that tag to `--ignore`.
   terminal `and`/`or` (likely should be a bullet list).
 - `parallel-sentences` - 3+ adjacent sentences sharing the same 1-2
   word opener (e.g. `Maybe it should... Maybe it should...`).
+- `meta-framing` - sentence has the shape `[The/A/Another] <abstract
+  noun> [of X] is that <claim>` (e.g. `A big advantage of Recorder is
+  that it keeps recording`, `Another limitation is that...`, `The key
+  insight is that...`). Writer announces the shape of the claim
+  instead of stating it. Fix: drop the framing and lead with the
+  claim.
 - `label-colon` - paragraph opens with `The problem:`, `Goal:`,
   `What we want:` followed by prose. `Note:` and `Important:` are
   exempt as callouts.

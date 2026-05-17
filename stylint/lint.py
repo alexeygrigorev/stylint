@@ -166,6 +166,12 @@ def check_page(root: Path, path: Path) -> list[Finding]:
             # skip prose-level inline checks on cell content.
             errors.append(check_table_row(rel, line_no))
             continue
+        elif line.lstrip().startswith("<"):
+            # HTML markup (figure, img, figcaption, video, iframe).
+            # Don't accumulate into paragraph_lines so the word count
+            # of figcaption text + HTML attribute strings doesn't
+            # trigger long-sentence. Still run inline rules below.
+            seen_prose_since_heading = True
         else:
             seen_prose_since_heading = True
             paragraph_lines.append((line_no, stripped))

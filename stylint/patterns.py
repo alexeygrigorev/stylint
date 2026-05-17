@@ -337,6 +337,35 @@ IRREGULAR_PAST_RE = re.compile(
     r"knew|threw|flew|drove|broke|spoke|woke|chose|ate|drank|stole)\s+",
     re.IGNORECASE,
 )
+# Meta-framing: '[The/A/Another] <abstract noun> [of X] is that <claim>'.
+# The writer announces the shape of the claim ('here comes an
+# advantage / limitation / insight / trick') instead of just stating
+# the claim. Same family as label-colon ('The problem: ...') but in
+# sentence form with 'is that' as the marker. Fix: drop the framing
+# noun phrase and lead with the actual claim.
+META_FRAMING_NOUNS = (
+    r"advantage|disadvantage|benefit|drawback|downside|upside|"
+    r"limitation|restriction|constraint|"
+    r"problem|issue|challenge|catch|gotcha|"
+    r"point|idea|insight|takeaway|lesson|"
+    r"trick|secret|magic|beauty|strength|elegance|simplicity|"
+    r"power|value|virtue|"
+    r"principle|intent|goal|reason|motivation|rationale|"
+    r"difference|distinction|"
+    r"hope|fear|"
+    r"fact|truth|reality|thing|"
+    r"key|core|gist|crux|essence"
+)
+META_FRAMING_RE = re.compile(
+    r"(?i)\b(?:the|a|an|another|one)\s+"
+    # 0-2 modifier tokens between the determiner and the framing noun
+    # (e.g. 'a big advantage', 'another phone limitation', 'the key insight')
+    r"(?:[A-Za-z][\w-]*\s+){0,2}"
+    rf"(?:{META_FRAMING_NOUNS})"
+    # optional qualifier: "of/about/with/between X (...)"
+    r"(?:\s+(?:of|about|with|between|to|for|behind)\s+\S+(?:\s+\S+){0,4})?"
+    r"\s+is\s+that\b"
+)
 # Generic verb-led chunk detector: a comma chunk that does NOT start
 # with a determiner/pronoun/preposition is likely verb-led. This
 # catches action chains the curated verb list misses (detects,

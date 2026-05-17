@@ -624,6 +624,49 @@ def test_open_enumeration_does_not_fire(tmp_path):
 
 
 # ---------------------------------------------------------------------------
+# Meta-framing: "[The/A/Another] <noun> [of X] is that <claim>"
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.parametrize(
+    "body",
+    [
+        "A big advantage of Recorder is that it keeps recording in the background.\n",
+        "Another phone limitation is that I cannot browse the file system from there.\n",
+        "The key insight is that the agent uses its own code to build the next version.\n",
+        "The trick is that everything routes through a single state machine.\n",
+        "The point of the exercise is that you learn by doing.\n",
+        "An advantage of the approach is that you can iterate quickly.\n",
+        "The thing is that I have not tested it yet.\n",
+        "One benefit of doing it this way is that you keep ownership.\n",
+    ],
+)
+def test_meta_framing_positive(body, tmp_path):
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert any("meta-framing" in e for e in errors), f"missed: {body!r}"
+
+
+@pytest.mark.parametrize(
+    "body",
+    [
+        # No 'is that' marker -> no fire.
+        "The advantage of Recorder comes from background recording.\n",
+        # 'is that' without a framing noun -> no fire.
+        "It is that simple.\n",
+        # Different verb -> no fire.
+        "The advantage of Recorder explains the workflow.\n",
+        # Plain prose -> no fire.
+        "Recorder keeps recording in the background.\n",
+    ],
+)
+def test_meta_framing_negative(body, tmp_path):
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert not any("meta-framing" in e for e in errors), f"false positive: {body!r}"
+
+
+# ---------------------------------------------------------------------------
 # Smoke test: clean known-good page
 # ---------------------------------------------------------------------------
 

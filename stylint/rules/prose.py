@@ -6,6 +6,7 @@ from ..patterns import (
     COLON_INLINE_LIST_RE,
     LABEL_COLON_OPENER_RE,
     LIST_HEURISTIC_HINT,
+    META_FRAMING_RE,
     PARAGRAPH_MAX_SENTENCES,
     PARAGRAPH_QUESTION_OPENER_RE,
     PARALLEL_COMPLETION_TEST,
@@ -253,6 +254,20 @@ def check_prose_line(plain: str, line_no: int, rel) -> tuple[list[Finding], list
                 line_no,
                 Tag.CLEFT,
                 "pointless cleft '[This/That/It] is what X is about'; state directly what X does or is",
+            )
+        )
+    for match in META_FRAMING_RE.finditer(plain):
+        findings.append(
+            Finding(
+                rel,
+                line_no,
+                Tag.META_FRAMING,
+                f"meta-framing '{match.group(0).strip()}': the writer announces "
+                "the shape of the claim ('here comes an advantage / limitation / "
+                "insight / trick') instead of just stating it. Fix: drop the "
+                "framing noun phrase and lead with the actual claim "
+                "('A big advantage of Recorder is that it keeps recording' -> "
+                "'Recorder keeps recording').",
             )
         )
     for match in NOW_LETS_OPENER_RE.finditer(plain):
