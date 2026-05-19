@@ -7,6 +7,7 @@ import sys
 from .discovery import iter_markdown_pages
 from .lint import check_page
 from .output import print_findings
+from .styleguide import style_guide_file, style_guide_files, style_guide_path
 from .tags import Tag
 from .version import __version__
 
@@ -41,6 +42,17 @@ def parse_args() -> argparse.Namespace:
         action="version",
         version=f"stylint {__version__}",
     )
+    parser.add_argument(
+        "--style-guide",
+        action="store_true",
+        help="Print the installed style guide directory and document paths.",
+    )
+    parser.add_argument(
+        "--print-style-guide",
+        metavar="NAME",
+        choices=["voice", "formatting", "code-style", "polish"],
+        help="Print one bundled style guide document to stdout.",
+    )
     return parser.parse_args()
 
 
@@ -50,6 +62,17 @@ def main() -> int:
     if args.list_tags:
         for tag in Tag:
             print(tag.value)
+        return 0
+
+    if args.style_guide:
+        print(style_guide_path())
+        for name, path in style_guide_files().items():
+            print(f"{name}: {path}")
+        return 0
+
+    if args.print_style_guide:
+        path = style_guide_file(args.print_style_guide)
+        print(path.read_text(encoding="utf-8"), end="")
         return 0
 
     valid_tags = {t.value for t in Tag}

@@ -6,7 +6,7 @@ mechanical checker that catches the worst offenders.
 ## Install
 
 ```bash
-uv tool install git+https://github.com/alexeygrigorev/stylint
+uv tool install stylint
 ```
 
 Or from a local clone:
@@ -22,6 +22,8 @@ Then run:
 stylint docs/
 stylint --list-tags
 stylint --ignore tables docs/
+stylint --style-guide
+stylint --print-style-guide voice
 ```
 
 ## What's here
@@ -34,6 +36,9 @@ stylint --ignore tables docs/
   between definitions).
 - `style-guide/polish.md` - judgment-level prose patterns the script cannot detect
   (plain words over abstractions, banned-but-context-sensitive words).
+- The same style guide docs are bundled in the Python package. Run
+  `stylint --style-guide` to print their installed paths, or
+  `stylint --print-style-guide voice` to print one document.
 - `stylint/` - mechanical checker package. Edit `BANNED_WORDS`,
   `BANNED_PHRASES`, `BANNED_OPENERS` in `stylint/patterns.py` to
   extend the enforced list.
@@ -188,11 +193,15 @@ can pass that tag to `--ignore`.
 
 ## Reading order for a write-up
 
-1. `style-guide/voice.md` while drafting.
-2. `style-guide/formatting.md` for any markdown syntax question.
-3. `style-guide/code-style.md` for example code blocks.
+Run `stylint --style-guide` to locate the installed copies when you
+consume Stylint as a dependency. Run
+`stylint --print-style-guide NAME` to print one document directly.
+
+1. `voice.md` while drafting.
+2. `formatting.md` for any markdown syntax question.
+3. `code-style.md` for example code blocks.
 4. Run `stylint` and fix every reported finding.
-5. `style-guide/polish.md` for a final judgment-level pass.
+5. `polish.md` for a final judgment-level pass.
 
 ## Hooking it into a project
 

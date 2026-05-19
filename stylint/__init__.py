@@ -2,6 +2,7 @@
 
 from .lint import check_page
 from .models import Finding
+from .styleguide import style_guide_file, style_guide_files, style_guide_path
 from .tags import Tag
 from .text import count_sentences, count_words, find_gerund_starts, split_sentences
 from .version import __version__
@@ -14,5 +15,8 @@ __all__ = [
     "count_sentences",
     "count_words",
     "find_gerund_starts",
+    "style_guide_file",
+    "style_guide_files",
+    "style_guide_path",
     "split_sentences",
 ]
