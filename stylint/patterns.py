@@ -128,6 +128,7 @@ BANNED_WORDS: dict[str, str] = {
     "surprisingly": "drop the editorializing",
     "remarkably": "drop the editorializing",
     "faithful": "drop the metaphor; describe the concrete match",
+    "prose": "use 'text', 'explanation', 'paragraph', or a concrete noun",
     "itself": "use sparingly; if it does not change the meaning, drop it",
     "non-negotiable": "drop the corporate-speak; name what is actually required",
 }
@@ -211,6 +212,7 @@ BANNED_PHRASES: dict[str, str] = {
     "is a reminder that": "drop the abstract framing; state the point directly",
     "pull request ceremony": "drop the jargon noun",
     "one benefit of": "state the benefit directly",
+    "one clear": "name the exact value or property instead of using this filler",
     "on the table": "say it directly",
     "in action": "drop the cliche; describe what is actually happening",
     "the power of": "drop the abstract framing; describe what the design does",

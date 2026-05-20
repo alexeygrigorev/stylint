@@ -97,7 +97,7 @@ def test_frontmatter_with_blank_line_is_clean(tmp_path):
 # ---------------------------------------------------------------------------
 
 
-@pytest.mark.parametrize("word", ["very", "delve", "faithful"])
+@pytest.mark.parametrize("word", ["very", "delve", "faithful", "prose"])
 def test_banned_word_positive(tmp_path, word):
     root, page = make_page(tmp_path, f"This is {word} important.\n")
     errors = check_page(root, page)
@@ -105,7 +105,7 @@ def test_banned_word_positive(tmp_path, word):
 
 
 def test_banned_word_negative(tmp_path):
-    root, page = make_page(tmp_path, "This is fine prose with no flagged words.\n")
+    root, page = make_page(tmp_path, "This is fine text with no flagged words.\n")
     errors = check_page(root, page)
     assert not any("banned word" in e for e in errors)
 
@@ -124,6 +124,7 @@ def test_banned_word_negative(tmp_path):
         "tight inner loop",
         "lean on",
         "leaned on",
+        "one clear",
         "reusable principle",
     ],
 )
