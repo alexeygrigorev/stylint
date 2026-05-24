@@ -205,6 +205,14 @@ def test_banned_phrase_pattern_below_negative(tmp_path):
             "content as actor",
         ),
         (
+            "The async lesson showed how to start both tasks.\n",
+            "content as actor",
+        ),
+        (
+            "This section explains the event loop.\n",
+            "content as actor",
+        ),
+        (
             "We need two ideas from Python async.\n",
             "need ... ideas",
         ),

@@ -13,7 +13,7 @@ from .styleguide import (
     style_guide_files,
     style_guide_path,
 )
-from .tags import Tag
+from .tags import DEFAULT_OFF_TAGS, Tag
 from .version import __version__
 
 
@@ -40,6 +40,17 @@ def parse_args() -> argparse.Namespace:
             "Comma-separated rule tags to suppress "
             "(e.g. --ignore tables,long-clause-likely). Run with --list-tags "
             "to see all known tags."
+        ),
+    )
+    parser.add_argument(
+        "--enable",
+        default="",
+        metavar="TAGS",
+        help=(
+            "Comma-separated rule tags to enable that are off by default "
+            "(e.g. --enable backticks-in-link). Off-by-default tags: "
+            + ", ".join(sorted(t.value for t in DEFAULT_OFF_TAGS))
+            + "."
         ),
     )
     parser.add_argument(
@@ -135,6 +146,18 @@ def main() -> int:
         return 2
     ignore_tags = {Tag(t) for t in ignore_list}
 
+    raw_enable = [t.strip() for t in args.enable.split(",") if t.strip()]
+    unknown_enable = [t for t in raw_enable if t not in valid_tags]
+    if unknown_enable:
+        print(
+            f"Unknown tag(s) for --enable: {', '.join(unknown_enable)}",
+            file=sys.stderr,
+        )
+        print("Run with --list-tags to see known tags.", file=sys.stderr)
+        return 2
+    enable_tags = {Tag(t) for t in raw_enable}
+    effective_off = DEFAULT_OFF_TAGS - enable_tags
+
     exclude_patterns = [
         pattern.strip()
         for raw_exclude in args.exclude
@@ -151,6 +174,9 @@ def main() -> int:
     findings = []
     for root, page in pages:
         findings.extend(check_page(root, page))
+
+    if effective_off:
+        findings = [finding for finding in findings if finding.tag not in effective_off]
 
     if ignore_tags:
         findings = [finding for finding in findings if finding.tag not in ignore_tags]

@@ -261,6 +261,15 @@ BANNED_PHRASES: dict[str, str] = {
 # Regex banned phrases. Use these for phrasing families where exact
 # substring matching would miss the pattern.
 BANNED_PHRASE_PATTERNS: dict[str, tuple[re.Pattern[str], str]] = {
+    "pin (verb)": (
+        re.compile(r"\bpin(?:s|ned|ning)?\b", re.IGNORECASE),
+        "drop the verb metaphor; use 'set', 'fix', 'force', or name the "
+        "action. Keep only for the literal git/pip 'pin a version' sense",
+    ),
+    "lock in": (
+        re.compile(r"\block(?:s|ed|ing)?\s+in\b", re.IGNORECASE),
+        "drop the metaphor; use 'set', 'fix', 'force', or name the action",
+    ),
     "the/a ... below": (
         re.compile(
             r"\b(?:the|a|an)\s+[\w`-]+(?:\s+[\w`-]+){0,3}\s+below\b",
@@ -350,7 +359,8 @@ BANNED_PHRASE_PATTERNS: dict[str, tuple[re.Pattern[str], str]] = {
             r"create|creates|created|implement|implements|implemented|"
             r"deploy|deploys|deployed|configure|configures|configured|"
             r"fetch|fetches|fetched|load|loads|loaded|install|installs|"
-            r"installed|start|starts|started)\b",
+            r"installed|start|starts|started|show|shows|showed|explain|"
+            r"explains|explained|teach|teaches|taught)\b",
             re.IGNORECASE,
         ),
         "content does not act; write 'in the previous lesson, we added' "

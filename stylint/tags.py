@@ -64,3 +64,11 @@ class Tag(str, Enum):
     # File-level
     NOW_LETS_OVERUSE = "now-lets-overuse"
     NOW_LETS_COMBO = "now-lets-combo"
+
+
+# Tags that emit findings but are suppressed by the CLI unless the user
+# opts in with --enable. Useful for project-specific rules that some
+# repos want (e.g. AI Engineering Buildcamp) and others do not.
+DEFAULT_OFF_TAGS: frozenset[Tag] = frozenset({
+    Tag.BACKTICKS_IN_LINK,
+})
