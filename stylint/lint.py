@@ -59,6 +59,7 @@ def check_page(root: Path, path: Path) -> list[Finding]:
     blockquote_line_count = 0
     pending_short_label_line: int | None = None
     allow_questions_in_section = False
+    skip_lead_in_for_section = False
 
     paragraph_lines: list[tuple[int, str]] = []
 
@@ -74,6 +75,15 @@ def check_page(root: Path, path: Path) -> list[Finding]:
             or text.startswith("questions ")
             or text.startswith("faq ")
         )
+
+    def heading_skips_lead_in(line: str) -> bool:
+        # Sections that conventionally hold a running list of items with
+        # no narrative intro - placeholder notes blocks, changelogs,
+        # TODO scratchpads. Requiring a lead-in here adds boilerplate
+        # without improving the doc.
+        text = strip_inline_code(strip_link_urls(line))
+        text = text.lstrip("#").strip().lower()
+        return text in {"notes", "todo", "todos", "changelog", "to do"}
 
     def is_short_label_colon_line(value: str) -> bool:
         match = SHORT_LABEL_COLON_RE.match(value)
@@ -231,6 +241,7 @@ def check_page(root: Path, path: Path) -> list[Finding]:
             last_heading_line = line_no
             seen_prose_since_heading = False
             allow_questions_in_section = heading_allows_questions(line)
+            skip_lead_in_for_section = heading_skips_lead_in(line)
             continue
 
         if not stripped:
@@ -239,7 +250,11 @@ def check_page(root: Path, path: Path) -> list[Finding]:
             flush_paragraph()
             clear_short_label_if_pending()
             emit_lead_in_multi_if_pending()
-            if last_heading_line is not None and not seen_prose_since_heading:
+            if (
+                last_heading_line is not None
+                and not seen_prose_since_heading
+                and not skip_lead_in_for_section
+            ):
                 errors.append(Finding(
                     rel, line_no, Tag.LEAD_IN,
                     f"list needs a lead-in sentence after the heading on line {last_heading_line}",
