@@ -484,6 +484,20 @@ def test_question_in_qa_section_negative(tmp_path, heading):
     assert not any("[prose-question]" in e for e in errors)
 
 
+def test_qa_page_allows_questions_under_topic_headings(tmp_path):
+    body = "## Modal\n\nQ: What is Modal?\n\nModal is a serverless cloud.\n"
+    root, page = make_page(tmp_path, body, name="09-qa.md")
+    errors = check_page(root, page)
+    assert not any("[prose-question]" in e for e in errors), errors
+
+
+def test_non_qa_page_still_flags_questions(tmp_path):
+    body = "## Modal\n\nQ: What is Modal?\n\nModal is a serverless cloud.\n"
+    root, page = make_page(tmp_path, body, name="03-setup.md")
+    errors = check_page(root, page)
+    assert any("[prose-question]" in e for e in errors), errors
+
+
 # ---------------------------------------------------------------------------
 # Heading depth (### or deeper)
 # ---------------------------------------------------------------------------

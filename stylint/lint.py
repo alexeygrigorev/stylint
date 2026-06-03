@@ -44,6 +44,9 @@ def check_page(root: Path, path: Path) -> list[Finding]:
                 "insert a blank line between frontmatter and body",
             ))
     body = strip_frontmatter(text)
+    # A dedicated Q&A page (NN-qa.md or qa.md) is allowed to ask questions
+    # throughout, not only under a heading named "Q&A".
+    page_is_qa = path.stem == "qa" or path.stem.endswith("-qa")
     fm_lines = text.count("\n") - body.count("\n") if body != text else 0
     line_offset = fm_lines
     lines = body.splitlines()
@@ -58,7 +61,7 @@ def check_page(root: Path, path: Path) -> list[Finding]:
     blockquote_start: int | None = None
     blockquote_line_count = 0
     pending_short_label_line: int | None = None
-    allow_questions_in_section = False
+    allow_questions_in_section = page_is_qa
     skip_lead_in_for_section = False
 
     paragraph_lines: list[tuple[int, str]] = []
@@ -240,7 +243,7 @@ def check_page(root: Path, path: Path) -> list[Finding]:
             errors.extend(check_banned_line(line, plain, line_no, rel))
             last_heading_line = line_no
             seen_prose_since_heading = False
-            allow_questions_in_section = heading_allows_questions(line)
+            allow_questions_in_section = page_is_qa or heading_allows_questions(line)
             skip_lead_in_for_section = heading_skips_lead_in(line)
             continue
 
