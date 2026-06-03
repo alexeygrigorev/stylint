@@ -222,6 +222,10 @@ def test_banned_phrase_pattern_below_negative(tmp_path):
             "need ... ideas",
         ),
         (
+            "The document field is what makes this ground truth useful.\n",
+            "is what makes this",
+        ),
+        (
             "First, how do we wait for one async call?\n",
             "first, how do we",
         ),
@@ -243,6 +247,10 @@ def test_banned_phrase_new_general_patterns_positive(tmp_path, body, label):
         (
             "A small result was that the command stopped failing.\n",
             "the/a ... result is",
+        ),
+        (
+            "The fix is more room for the model to answer.\n",
+            "the/a ... fix is",
         ),
         (
             "The flow is simple. I open the app and tap Connect.\n",

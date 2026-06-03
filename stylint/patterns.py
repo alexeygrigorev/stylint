@@ -153,6 +153,7 @@ BANNED_PHRASES: dict[str, str] = {
     "at this point": "use 'now' or cut",
     "this gives us": "use 'now we have' / 'we'll use'",
     "this is useful because": "name the use directly",
+    "is what makes this": "rewrite with a direct verb and concrete subject",
     "the point is": "rewrite around what the reader should learn",
     "the point of": "rewrite around what the reader should learn",
     "the intent is": "name the action directly; abstract opener",
@@ -191,6 +192,7 @@ BANNED_PHRASES: dict[str, str] = {
     "low-hanging fruit": "drop the idiom",
     "off the table": "say it directly",
     "at the end of the day": "drop the idiom",
+    "in the first place": "drop the filler idiom",
     "cut to the chase": "drop the idiom",
     "the elephant in the room": "drop the idiom",
     "that bites us": "describe the event neutrally",
@@ -288,6 +290,15 @@ BANNED_PHRASE_PATTERNS: dict[str, tuple[re.Pattern[str], str]] = {
         ),
         "name the actor or concrete output directly: 'we now have', "
         "'this creates', 'the command prints', 'the script returns'",
+    ),
+    "the/a ... fix is": (
+        re.compile(
+            r"(?:^|[.!?]\s+)(?:the|a|an)\s+(?:[A-Za-z][\w-]*\s+){0,2}"
+            r"fix\s+(?:is|was)\b",
+            re.IGNORECASE,
+        ),
+        "name the concrete change instead: 'we raise max_tokens', "
+        "'set X', 'add the flag'",
     ),
     "the/a ... flow is": (
         re.compile(
