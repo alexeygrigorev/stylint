@@ -144,6 +144,7 @@ BANNED_WORDS: dict[str, str] = {
     "inspect": "use 'look at' unless this is an exact API/tool word",
     "love": "use 'like' or name the concrete reason",
     "shape": "use a concrete word like 'structure', 'version', or name the code directly; keep only for NumPy array shapes",
+    "contract": "drop the metaphor; name the concrete thing ('the schema', 'the API', 'the settings'). Keep only for a legal or smart contract",
 }
 
 # Multi-word banned phrases. Substring match, case-insensitive.
