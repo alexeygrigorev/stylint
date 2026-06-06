@@ -145,6 +145,7 @@ BANNED_WORDS: dict[str, str] = {
     "love": "use 'like' or name the concrete reason",
     "shape": "use a concrete word like 'structure', 'version', or name the code directly; keep only for NumPy array shapes",
     "contract": "drop the metaphor; name the concrete thing ('the schema', 'the API', 'the settings'). Keep only for a legal or smart contract",
+    "rhythm": "use 'schedule', 'cadence', 'flow', or the concrete timing",
 }
 
 # Multi-word banned phrases. Substring match, case-insensitive.
@@ -275,6 +276,17 @@ BANNED_PHRASE_PATTERNS: dict[str, tuple[re.Pattern[str], str]] = {
     "lock in": (
         re.compile(r"\block(?:s|ed|ing)?\s+in\b", re.IGNORECASE),
         "drop the metaphor; use 'set', 'fix', 'force', or name the action",
+    ),
+    "walk the text": (
+        re.compile(
+            r"\bwalk(?:s|ed|ing)?\s+(?:through\s+|across\s+|over\s+|down\s+)?"
+            r"the\s+(?:text|string|data|array|list|sequence|file|input|"
+            r"document|characters|chars|tokens|rows|bytes)\b",
+            re.IGNORECASE,
+        ),
+        "don't anthropomorphize iteration - code doesn't 'walk' the text; "
+        "say what it does ('takes a window of N characters', 'iterates over "
+        "the rows', 'slides across the text')",
     ),
     "the/a ... below": (
         re.compile(
