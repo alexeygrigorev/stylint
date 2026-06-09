@@ -181,6 +181,7 @@ BANNED_PHRASES: dict[str, str] = {
     "nothing fancy": "drop the filler; state the concrete benefit",
     "nails it": "use 'works' or name the concrete behavior",
     "marks a pivotal moment": "drop the puffery",
+    "turning point": "drop the puffery; name what actually changed",
     "a testament to": "drop the puffery",
     "reflects broader trends": "drop the puffery",
     "experts argue": "drop the vague attribution",
