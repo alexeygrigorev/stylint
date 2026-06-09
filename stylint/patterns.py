@@ -146,6 +146,7 @@ BANNED_WORDS: dict[str, str] = {
     "shape": "use a concrete word like 'structure', 'version', or name the code directly; keep only for NumPy array shapes",
     "contract": "drop the metaphor; name the concrete thing ('the schema', 'the API', 'the settings'). Keep only for a legal or smart contract",
     "rhythm": "use 'schedule', 'cadence', 'flow', or the concrete timing",
+    "latched": "drop the metaphor; use 'picked it up', 'took it on', or name the action",
 }
 
 # Multi-word banned phrases. Substring match, case-insensitive.
