@@ -6,6 +6,7 @@ from ..patterns import (
     BANNED_PHRASES,
     BANNED_WORDS,
     OPENER_RE,
+    WORD_EXCEPTION_RES,
     WORD_RES,
 )
 from ..models import Finding
@@ -25,10 +26,20 @@ def check_banned_line(line: str, plain: str, line_no: int, rel) -> list[Finding]
     findings: list[Finding] = []
     plain_lower = plain.lower()
     for word, hint in BANNED_WORDS.items():
-        if word == "shape" and ("numpy" in plain_lower or "np." in plain_lower):
+        matches = list(WORD_RES[word].finditer(plain))
+        if not matches:
             continue
-        if WORD_RES[word].search(plain):
-            findings.append(Finding(rel, line_no, Tag.BANNED_WORD, f"'{word}' - {hint}"))
+        exception = WORD_EXCEPTION_RES.get(word)
+        if exception is not None:
+            allowed = [m.span() for m in exception.finditer(plain)]
+            matches = [
+                m
+                for m in matches
+                if not any(start <= m.start() and m.end() <= end for start, end in allowed)
+            ]
+            if not matches:
+                continue
+        findings.append(Finding(rel, line_no, Tag.BANNED_WORD, f"'{word}' - {hint}"))
 
     for phrase, hint in BANNED_PHRASES.items():
         if phrase in plain_lower:

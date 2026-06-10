@@ -444,6 +444,25 @@ WORD_RES: dict[str, re.Pattern[str]] = {
     word: re.compile(r"\b" + re.escape(word) + r"\b", re.IGNORECASE)
     for word in BANNED_WORDS
 }
+
+# Per-word exception contexts. When a banned word appears ONLY inside one of
+# these patterns on a line, it is a valid technical use rather than the banned
+# sense, so it is not flagged. (Code spans and fenced blocks are already
+# stripped before the check, so these only handle valid uses in prose.)
+WORD_EXCEPTION_RES: dict[str, re.Pattern[str]] = {
+    # "shape" is fine for NumPy/tensor array shapes and attribute access:
+    # "X.shape", "a tensor with shape (2, 768)", "the output shape".
+    "shape": re.compile(
+        r"\.shape\b"
+        r"|\bshape\s*[:=]"
+        r"|\b(?:numpy|np|tensor|tensors|array|arrays|ndarray|matrix|matrices|"
+        r"vector|vectors|output|input|embedding|embeddings|batch|hidden|"
+        r"logits|dimension|dimensions)\b[^.!?`]{0,25}\bshapes?\b",
+        re.IGNORECASE,
+    ),
+    # "contract" is fine as the technical term "API contract".
+    "contract": re.compile(r"\bAPIs?\s+contract\b", re.IGNORECASE),
+}
 CODE_BLOCK_MAX_LINES = 40
 BLOCKQUOTE_MAX_LINES = 3
 HEADING_RE = re.compile(r"^#{1,6}\s")
