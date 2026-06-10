@@ -270,6 +270,14 @@ BANNED_PHRASES: dict[str, str] = {
 # Regex banned phrases. Use these for phrasing families where exact
 # substring matching would miss the pattern.
 BANNED_PHRASE_PATTERNS: dict[str, tuple[re.Pattern[str], str]] = {
+    "close the loop": (
+        re.compile(r"\bclos(?:e|es|ed|ing)\s+the\s+loop\b", re.IGNORECASE),
+        "drop the cliche; state plainly what now works or what connects to what",
+    ),
+    "rough edges": (
+        re.compile(r"\b(?:rough|sharp)\s+edges?\b", re.IGNORECASE),
+        "drop the cliche; name the concrete problems or limitations",
+    ),
     "pin (verb)": (
         re.compile(r"\bpin(?:s|ned|ning)?\b", re.IGNORECASE),
         "drop the verb metaphor; use 'set', 'fix', 'force', or name the "

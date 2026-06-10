@@ -15,6 +15,11 @@ classifiers = [
   "Topic :: Text Processing :: Linguistic",
 ]
 
+[project.optional-dependencies]
+# Heavier NLP-based checks (passive voice, ...), enabled with --nlp.
+# Kept out of the base install so default runs stay light and fast.
+nlp = ["nltk>=3.8"]
+
 [project.urls]
 Homepage = "https://github.com/alexeygrigorev/stylint"
 Repository = "https://github.com/alexeygrigorev/stylint"

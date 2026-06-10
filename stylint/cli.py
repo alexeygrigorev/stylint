@@ -64,6 +64,15 @@ def parse_args() -> argparse.Namespace:
         ),
     )
     parser.add_argument(
+        "--nlp",
+        action="store_true",
+        help=(
+            "Enable slower NLP-based checks (passive voice, etc.). Off by "
+            "default; loads an NLP tagger only when set. Requires the "
+            "optional extra: pip install \"stylint[nlp]\"."
+        ),
+    )
+    parser.add_argument(
         "--list-tags",
         action="store_true",
         help="Print all known rule tags and exit.",
@@ -171,9 +180,20 @@ def main() -> int:
         print("No markdown files found.", file=sys.stderr)
         return 0
 
+    if args.nlp:
+        # Surface a missing dependency/data up front with one clean
+        # message instead of failing partway through the first page.
+        from .nlp import NlpUnavailableError, check_line
+
+        try:
+            check_line("warm up the tagger")
+        except NlpUnavailableError as exc:
+            print(str(exc), file=sys.stderr)
+            return 2
+
     findings = []
     for root, page in pages:
-        findings.extend(check_page(root, page))
+        findings.extend(check_page(root, page, nlp=args.nlp))
 
     if effective_off:
         findings = [finding for finding in findings if finding.tag not in effective_off]

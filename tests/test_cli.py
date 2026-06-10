@@ -97,3 +97,78 @@ def test_cli_rejects_unknown_enable_tag(tmp_path, monkeypatch, capsys):
 
     err = capsys.readouterr().err
     assert "Unknown tag(s) for --enable" in err
+
+
+def _write_passive_page(tmp_path):
+    folder = tmp_path / "2099-01-01-passive"
+    folder.mkdir()
+    page = folder / "01-page.md"
+    page.write_text(
+        "The script deletes the file every night.\n"
+        "\n"
+        "The file was deleted by the script.\n"
+    )
+    return folder
+
+
+def test_cli_passive_off_without_nlp_flag(tmp_path, monkeypatch, capsys):
+    folder = _write_passive_page(tmp_path)
+    monkeypatch.setattr(sys, "argv", ["stylint", str(folder)])
+
+    assert main() == 0
+
+    output = capsys.readouterr().out
+    assert "passive-voice" not in output
+
+
+def test_cli_passive_flagged_with_nlp_flag(tmp_path, monkeypatch, capsys):
+    folder = _write_passive_page(tmp_path)
+    monkeypatch.setattr(sys, "argv", ["stylint", str(folder), "--nlp"])
+
+    assert main() == 1
+
+    output = capsys.readouterr().out
+    assert "passive-voice" in output
+    # Passive on line 3, active (line 1) not flagged.
+    assert "3:" in output
+    assert output.count("passive-voice") == 1
+
+
+def test_cli_passive_suppressed_with_ignore(tmp_path, monkeypatch, capsys):
+    folder = _write_passive_page(tmp_path)
+    monkeypatch.setattr(
+        sys, "argv", ["stylint", str(folder), "--nlp", "--ignore", "passive-voice"]
+    )
+
+    assert main() == 0
+
+    output = capsys.readouterr().out
+    assert "passive-voice" not in output
+
+
+def test_cli_list_tags_includes_passive_voice(monkeypatch, capsys):
+    monkeypatch.setattr(sys, "argv", ["stylint", "--list-tags"])
+
+    assert main() == 0
+
+    output = capsys.readouterr().out
+    assert "passive-voice" in output.split()
+
+
+def test_default_import_does_not_load_nltk():
+    """Importing the linter's hot path must not pull in nltk, so default
+    runs stay fast and the dependency stays optional."""
+    import subprocess
+
+    code = (
+        "import sys, stylint.cli, stylint.lint;"
+        "assert 'nltk' not in sys.modules, 'nltk imported on default path';"
+        "print('ok')"
+    )
+    result = subprocess.run(
+        [sys.executable, "-c", code],
+        capture_output=True,
+        text=True,
+    )
+    assert result.returncode == 0, result.stderr
+    assert "ok" in result.stdout

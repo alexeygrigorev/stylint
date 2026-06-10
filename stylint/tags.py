@@ -56,6 +56,7 @@ class Tag(str, Enum):
     COLON_INLINE = "colon-inline"
     PARALLEL_SENTENCES = "parallel-sentences"
     CHOPPY_RHYTHM = "choppy-rhythm"
+    SHORT_LIST_PERIOD = "short-list-period"
     LABEL_COLON = "label-colon"
     META_FRAMING = "meta-framing"
     QUESTION_OPENER = "question-opener"
@@ -64,6 +65,8 @@ class Tag(str, Enum):
     # File-level
     NOW_LETS_OVERUSE = "now-lets-overuse"
     NOW_LETS_COMBO = "now-lets-combo"
+    # NLP-based (only emitted with --nlp; see stylint/nlp.py)
+    PASSIVE_VOICE = "passive-voice"
 
 
 # Tags that emit findings but are suppressed by the CLI unless the user

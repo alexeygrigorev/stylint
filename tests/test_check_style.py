@@ -608,6 +608,31 @@ def test_list_lead_in_required_negative(tmp_path):
     assert not any("list needs a lead-in" in e for e in errors)
 
 
+def test_short_list_period_positive(tmp_path):
+    body = (
+        "Tools:\n\n"
+        "- ChatGPT.\n"
+        "- Claude.\n"
+        "- GitHub Copilot.\n"
+        "- Cursor.\n"
+    )
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert any("[short-list-period]" in e for e in errors)
+
+
+def test_short_list_period_negative_for_sentence_bullets(tmp_path):
+    body = (
+        "Use this list for the steps we take.\n\n"
+        "- Install Docker before module one starts.\n"
+        "- Create a virtual environment for Python.\n"
+        "- Run the notebooks on your laptop.\n"
+    )
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert not any("[short-list-period]" in e for e in errors)
+
+
 # ---------------------------------------------------------------------------
 # Consecutive code blocks
 # ---------------------------------------------------------------------------

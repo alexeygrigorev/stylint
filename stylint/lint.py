@@ -12,15 +12,21 @@ from .rules.markdown import check_markdown_line, check_table_row
 from .rules.prose import check_paragraph, check_prose_line
 from .tags import Tag
 from .text import (
+    count_words,
     strip_double_quoted,
     strip_frontmatter,
     strip_inline_code,
     strip_link_urls,
 )
 
-def check_page(root: Path, path: Path) -> list[Finding]:
+def check_page(root: Path, path: Path, nlp: bool = False) -> list[Finding]:
     errors: list[Finding] = []
     now_lets_hits: list[tuple[int, str]] = []
+    # Lines of prose to run heavier NLP checks over, collected only when
+    # --nlp is on. Code fences/inline code are already excluded because
+    # this list is populated in the prose path below, after the in_code
+    # `continue`, and from `plain` (inline code stripped).
+    nlp_lines: list[tuple[int, str]] = []
     # State that survives flush_paragraph(). Mutable dict so the inner
     # flush can mutate without `nonlocal`. Tracks the start line of the
     # last flushed paragraph that was multi-sentence and ended with ':'
@@ -65,6 +71,31 @@ def check_page(root: Path, path: Path) -> list[Finding]:
     skip_lead_in_for_section = False
 
     paragraph_lines: list[tuple[int, str]] = []
+    list_block: list[tuple[int, str]] = []
+
+    def list_item_text(line: str) -> str:
+        return LIST_ITEM_RE.sub("", line).strip()
+
+    def flush_list_block() -> None:
+        if len(list_block) < 3:
+            list_block.clear()
+            return
+        short_items: list[tuple[int, str]] = []
+        for item_line_no, item_text in list_block:
+            plain_item = strip_inline_code(strip_link_urls(item_text)).strip()
+            words = count_words(plain_item.rstrip("."))
+            if words <= 2:
+                short_items.append((item_line_no, plain_item))
+        if len(short_items) / len(list_block) >= 0.75:
+            for item_line_no, plain_item in short_items:
+                if plain_item.endswith("."):
+                    errors.append(Finding(
+                        rel,
+                        item_line_no,
+                        Tag.SHORT_LIST_PERIOD,
+                        "short list item ends with a period; drop periods from mostly one- or two-word lists",
+                    ))
+        list_block.clear()
 
     def heading_allows_questions(line: str) -> bool:
         text = strip_inline_code(strip_link_urls(line))
@@ -189,6 +220,7 @@ def check_page(root: Path, path: Path) -> list[Finding]:
             previous_code_block_end = None
 
         if starts_fence:
+            flush_list_block()
             flush_paragraph()
             if not in_code:
                 clear_short_label_if_pending()
@@ -231,11 +263,13 @@ def check_page(root: Path, path: Path) -> list[Finding]:
             continue
 
         if FOOTNOTE_DEF_RE.match(line):
+            flush_list_block()
             flush_paragraph()
             emit_short_label_if_pending()
             continue
 
         if HEADING_RE.match(line):
+            flush_list_block()
             flush_paragraph()
             emit_short_label_if_pending()
             errors.extend(check_heading(line, line_no, rel))
@@ -248,9 +282,11 @@ def check_page(root: Path, path: Path) -> list[Finding]:
             continue
 
         if not stripped:
+            flush_list_block()
             flush_paragraph()
         elif LIST_RE.match(line):
             flush_paragraph()
+            list_block.append((line_no, list_item_text(line)))
             clear_short_label_if_pending()
             emit_lead_in_multi_if_pending()
             if (
@@ -265,6 +301,7 @@ def check_page(root: Path, path: Path) -> list[Finding]:
                 last_heading_line = None
             seen_prose_since_heading = True
         elif BLOCKQUOTE_RE.match(line) or line.startswith("|"):
+            flush_list_block()
             flush_paragraph()
             emit_short_label_if_pending()
             seen_prose_since_heading = True
@@ -282,6 +319,7 @@ def check_page(root: Path, path: Path) -> list[Finding]:
             errors.append(check_table_row(rel, line_no))
             continue
         elif line.lstrip().startswith("<"):
+            flush_list_block()
             emit_short_label_if_pending()
             # HTML markup (figure, img, figcaption, video, iframe).
             # Don't accumulate into paragraph_lines so the word count
@@ -289,11 +327,13 @@ def check_page(root: Path, path: Path) -> list[Finding]:
             # trigger long-sentence. Still run inline rules below.
             seen_prose_since_heading = True
         elif is_short_label_colon_line(stripped):
+            flush_list_block()
             flush_paragraph()
             emit_short_label_if_pending()
             pending_short_label_line = line_no
             seen_prose_since_heading = True
         else:
+            flush_list_block()
             emit_short_label_if_pending()
             seen_prose_since_heading = True
             paragraph_lines.append((line_no, stripped))
@@ -304,11 +344,24 @@ def check_page(root: Path, path: Path) -> list[Finding]:
         errors.extend(prose_findings)
         now_lets_hits.extend(line_now_lets_hits)
         errors.extend(check_banned_line(line, plain, line_no, rel))
+        # Skip HTML markup lines for NLP (attribute strings tag poorly).
+        if nlp and not line.lstrip().startswith("<"):
+            nlp_lines.append((line_no, plain))
 
     flush_paragraph()
+    flush_list_block()
     emit_short_label_if_pending()
     flush_blockquote()
 
     errors.extend(check_now_lets_overuse(now_lets_hits, rel))
+
+    if nlp and nlp_lines:
+        from .nlp import check_line
+
+        for line_no, plain in nlp_lines:
+            for nlp_finding in check_line(plain):
+                errors.append(Finding(
+                    rel, line_no, nlp_finding.tag, nlp_finding.message,
+                ))
 
     return errors
