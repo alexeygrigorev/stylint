@@ -6,6 +6,7 @@ from ..patterns import (
     BANNED_PHRASES,
     BANNED_WORDS,
     OPENER_RE,
+    PHRASE_EXCEPTION_RES,
     WORD_EXCEPTION_RES,
     WORD_RES,
 )
@@ -46,8 +47,20 @@ def check_banned_line(line: str, plain: str, line_no: int, rel) -> list[Finding]
             findings.append(Finding(rel, line_no, Tag.BANNED_PHRASE, f"'{phrase}' - {hint}"))
 
     for label, (pattern, hint) in BANNED_PHRASE_PATTERNS.items():
-        if pattern.search(plain):
-            findings.append(Finding(rel, line_no, Tag.BANNED_PHRASE, f"'{label}' - {hint}"))
+        matches = list(pattern.finditer(plain))
+        if not matches:
+            continue
+        exception = PHRASE_EXCEPTION_RES.get(label)
+        if exception is not None:
+            allowed = [m.span() for m in exception.finditer(plain)]
+            matches = [
+                m
+                for m in matches
+                if not any(start <= m.start() and m.end() <= end for start, end in allowed)
+            ]
+            if not matches:
+                continue
+        findings.append(Finding(rel, line_no, Tag.BANNED_PHRASE, f"'{label}' - {hint}"))
 
     opener_match = OPENER_RE.match(line)
     if opener_match:

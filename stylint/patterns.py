@@ -463,6 +463,25 @@ WORD_EXCEPTION_RES: dict[str, re.Pattern[str]] = {
     # "contract" is fine as the technical term "API contract".
     "contract": re.compile(r"\bAPIs?\s+contract\b", re.IGNORECASE),
 }
+
+# Per-phrase exception contexts for BANNED_PHRASE_PATTERNS (same idea as
+# WORD_EXCEPTION_RES).
+PHRASE_EXCEPTION_RES: dict[str, re.Pattern[str]] = {
+    # "pin" is fine in the literal git/pip sense: pinning a version, a
+    # dependency, or a commit (the rule only bans the "hold/fix" metaphor).
+    "pin (verb)": re.compile(
+        r"\bpinned\s+(?:commit|version|dependency|dependencies|sha|tag|release)\b"
+        r"|\bpin(?:s|ned|ning)?\b[^.!?`]{0,25}\b(?:version|versions|dependency|"
+        r"dependencies|commit|commits|python|requires-python|sha|hash|tag|"
+        r"release|uv\.lock|pyproject)\b"
+        r"|\b(?:version|dependency|dependencies|commit|python|requires-python|"
+        r"repo|template|pyproject|toml|uv|prototype)\b[^.!?`]{0,25}"
+        r"\bpin(?:s|ned|ning)?\b"
+        r"|\b(?:the|a|this)\s+(?:\w+\s+)?pin\b"
+        r"|\brelax(?:es|ed|ing)?\s+the\s+pin\b",
+        re.IGNORECASE,
+    ),
+}
 CODE_BLOCK_MAX_LINES = 40
 BLOCKQUOTE_MAX_LINES = 3
 HEADING_RE = re.compile(r"^#{1,6}\s")
