@@ -229,12 +229,37 @@ def test_banned_phrase_pattern_below_negative(tmp_path):
             "First, how do we wait for one async call?\n",
             "first, how do we",
         ),
+        (
+            "The pattern behind these is exposure.\n",
+            "pattern behind ... is",
+        ),
+        (
+            "A pattern behind all of this was poor caching.\n",
+            "pattern behind ... is",
+        ),
+        (
+            "The pattern behind those wins would be consistency.\n",
+            "pattern behind ... is",
+        ),
     ],
 )
 def test_banned_phrase_new_general_patterns_positive(tmp_path, body, label):
     root, page = make_page(tmp_path, body)
     errors = check_page(root, page)
     assert any(f"[banned-phrase] '{label}'" in e for e in errors), errors
+
+
+@pytest.mark.parametrize(
+    "body",
+    [
+        "We hid the pattern behind a helper function.\n",
+        "I reuse the same pattern behind every endpoint.\n",
+    ],
+)
+def test_banned_phrase_pattern_behind_negative(tmp_path, body):
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert not any("pattern behind ... is" in e for e in errors), errors
 
 
 @pytest.mark.parametrize(

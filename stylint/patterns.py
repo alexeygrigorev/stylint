@@ -387,6 +387,16 @@ BANNED_PHRASE_PATTERNS: dict[str, tuple[re.Pattern[str], str]] = {
         ),
         "drop the scaffolding; ask or state the question directly",
     ),
+    "pattern behind ... is": (
+        re.compile(
+            r"\b(?:the|a|an|this|that)?\s*pattern\s+behind\b"
+            r"[^.!?]*?\b(?:is|are|was|were|be|been|being)\b",
+            re.IGNORECASE,
+        ),
+        "abstract summary subject pointing back at the previous sentences; "
+        "write a direct statement with a concrete subject and verb "
+        "(e.g. 'you get exposure')",
+    ),
     "content as actor": (
         re.compile(
             r"\b(?:the\s+)?(?:previous|next|current|this|that)?\s*"
