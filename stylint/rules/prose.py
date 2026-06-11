@@ -6,8 +6,16 @@ from ..patterns import (
     CHOPPY_SENTENCE_MAX_WORDS,
     CHOPPY_SENTENCE_MIN_RUN,
     COLON_INLINE_LIST_RE,
+    CONTRACTION_RES,
+    COUNT_LIST_LEAD_RE,
+    FLAT_DEFINITION_RE,
+    FRAGMENT_ABSTRACT_NOUNS,
+    FRAGMENT_DETERMINERS,
+    FRAGMENT_MAX_WORDS,
+    FRAGMENT_WH,
     LABEL_COLON_OPENER_RE,
     LIST_HEURISTIC_HINT,
+    MERGE_SHORT_MAX_WORDS,
     META_FRAMING_RE,
     PARAGRAPH_MAX_SENTENCES,
     PARAGRAPH_QUESTION_OPENER_RE,
@@ -31,11 +39,14 @@ from ..text import (
     count_sentences,
     count_words,
     find_gerund_starts,
+    is_verbless_fragment,
     split_sentences,
     strip_double_quoted,
     strip_inline_code,
     strip_link_urls,
 )
+
+_FRAGMENT_STRIP = ".,;:!?\"'()[]`-"
 
 __all__ = [
     "ANAPHORIC_NO_RE",
@@ -134,8 +145,10 @@ def check_paragraph(
                         f"sentence has {word_count} words and {commas} {comma_word}, "
                         "and the commas look like clause boundaries (subordinating "
                         "conjunction, chain of actions, or mixed subjects). "
-                        "Fix: split into 2-3 shorter sentences; do NOT convert to "
-                        "bullets - that would break the meaning. "
+                        "Fix: make ONE split at a natural clause boundary, usually "
+                        "into two sentences. Do NOT chop into many short fragments "
+                        "(that trips choppy-rhythm) and do NOT convert to bullets "
+                        "(that would break the meaning). "
                         f"{PARALLEL_COMPLETION_TEST}",
                     )
                 )
@@ -146,7 +159,8 @@ def check_paragraph(
                     start_line,
                     Tag.LONG_SENTENCE,
                     f"sentence has {word_count} words (max {SENTENCE_MAX_WORDS}). "
-                    "Fixes: (1) split into shorter sentences; (2) drop filler words; "
+                    "Fixes: (1) split ONCE at a natural boundary into two sentences, "
+                    "not many short ones; (2) drop filler words; "
                     f"(3) convert to a list if you find embedded enumeration. {LIST_HEURISTIC_HINT}",
                 )
             )
@@ -218,6 +232,81 @@ def check_paragraph(
                     )
                 )
             short_run_start = i
+
+    # Merge candidate: a single very short sentence sitting right before a
+    # longer one, when it is NOT already part of a flagged short run (its
+    # left neighbour is not short). "Retrieval becomes semantic. The data
+    # moves somewhere it survives restarts..." -> join the small clause
+    # onto the longer sentence.
+    word_counts = [count_words(s) for s in sentences]
+    for i in range(len(sentences) - 1):
+        prev_short = i > 0 and word_counts[i - 1] <= CHOPPY_SENTENCE_MAX_WORDS
+        if (
+            word_counts[i] <= MERGE_SHORT_MAX_WORDS
+            and word_counts[i + 1] > CHOPPY_SENTENCE_MAX_WORDS
+            and not prev_short
+        ):
+            findings.append(
+                Finding(
+                    rel,
+                    start_line,
+                    Tag.CHOPPY_RHYTHM,
+                    f"a very short sentence ({word_counts[i]} words) sits right "
+                    "before a longer one; it is too small to stand alone. "
+                    "Fix: merge it into the next sentence with a comma or "
+                    "conjunction ('Retrieval becomes semantic, and the data "
+                    "moves to a store that survives restarts').",
+                )
+            )
+
+    # Chopped label fragments: a short verbless noun-phrase or wh-fragment
+    # used as a pseudo-label/lead-in, terminated by a period. Only fire
+    # inside a multi-sentence paragraph (the fragment is leading into an
+    # explanation). Concrete proper-noun labels stay unflagged.
+    if len(sentences) >= 2:
+        for sentence in sentences:
+            words = sentence.split()
+            wc = len(words)
+            if not 1 <= wc <= FRAGMENT_MAX_WORDS:
+                continue
+            first = words[0].lower().strip(_FRAGMENT_STRIP)
+            is_abstract = first in FRAGMENT_DETERMINERS and any(
+                w.lower().strip(_FRAGMENT_STRIP) in FRAGMENT_ABSTRACT_NOUNS
+                for w in words[1:]
+            )
+            is_wh = first in FRAGMENT_WH
+            if (is_abstract or is_wh) and is_verbless_fragment(sentence):
+                findings.append(
+                    Finding(
+                        rel,
+                        start_line,
+                        Tag.LABEL_FRAGMENT,
+                        f"verbless fragment '{sentence}.' used as a label or "
+                        "lead-in; it has no subject and verb, so the idea is "
+                        "lost. Fixes: (1) fold it into the next sentence so it "
+                        "carries a subject and verb ('The goal behind it was "
+                        "to avoid paying for an idle server'); (2) drop the "
+                        "label and state the point directly. Do NOT just swap "
+                        "the period for a colon - that is the label-colon "
+                        "pattern. Concrete proper-noun labels "
+                        "('Railway.', 'Render.') are fine.",
+                    )
+                )
+
+    # Count-as-list lead-in: the opening sentence announces a count of
+    # items and the paragraph then enumerates them across sentences.
+    if len(sentences) >= 3 and COUNT_LIST_LEAD_RE.search(sentences[0]):
+        findings.append(
+            Finding(
+                rel,
+                start_line,
+                Tag.COUNT_LIST,
+                "the opening sentence announces a count of items ('two "
+                "things', 'three reasons') and the paragraph then lists them. "
+                "That is a list. Fix: convert the items to a bullet list and "
+                "drop the count - the bullets show it.",
+            )
+        )
 
     if LABEL_COLON_OPENER_RE.match(joined):
         label_before_colon = joined.split(":", 1)[0].strip().lower()
@@ -351,6 +440,18 @@ def check_prose_line(plain: str, line_no: int, rel) -> tuple[list[Finding], list
                 "'Recorder keeps recording').",
             )
         )
+    for match in FLAT_DEFINITION_RE.finditer(plain):
+        findings.append(
+            Finding(
+                rel,
+                line_no,
+                Tag.FLAT_DEFINITION,
+                f"flat copular definition '{match.group(0).strip()}...': it just "
+                "equates the subject with a category and reads as dull and "
+                "formal. Prefer active voice or lead with the thing itself: "
+                "'We use X', 'X does Y', or 'We will use `id`, a <description>'.",
+            )
+        )
     for match in REPEATED_AND_RE.finditer(plain):
         findings.append(
             Finding(
@@ -363,6 +464,19 @@ def check_prose_line(plain: str, line_no: int, rel) -> tuple[list[Finding], list
                 "repeated 'and' only when the rhythm is intentional (rare).",
             )
         )
+    for pattern, replacement in CONTRACTION_RES:
+        match = pattern.search(plain)
+        if match:
+            findings.append(
+                Finding(
+                    rel,
+                    line_no,
+                    Tag.CONTRACTION,
+                    f"'{match.group(0)}' -> '{replacement}'. The voice uses "
+                    "contractions. Skip only when the expanded form falls at "
+                    "the end of a sentence or carries deliberate emphasis.",
+                )
+            )
     for match in NOW_LETS_OPENER_RE.finditer(plain):
         now_lets_hits.append((line_no, match.group(1)))
     for match in NOW_LETS_COMBO_RE.finditer(plain):

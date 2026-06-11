@@ -42,6 +42,12 @@ Technical write-ups are first-person walkthroughs.
   are independent.
 - Prefer first-person `we use X` / `I add Y` over declarative
   third-person framings.
+- Name the actor and a concrete verb. Do not let an abstract subject do the
+  work. `The work splits into two processes` becomes `we run two processes`.
+  `Its configuration goes in config.py` becomes `we put the config in
+  config.py`.
+- Use first-person narrative for lived experience. `During the session the
+  trial expired` becomes `during the session I found our trial had ended`.
 - Use present tense for the walkthrough. Write as if the reader is doing the
   work now: `we create`, `we run`, `the app shows`, `the agent calls`.
 - Keep internal process out of published pages: transcripts, scratch files,

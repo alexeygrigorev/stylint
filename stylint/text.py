@@ -8,6 +8,7 @@ from .patterns import (
     CLAUSE_MARKER_RE,
     COLON_BEFORE_COMMAS_RE,
     FOOTNOTE_REF_RE,
+    FRAGMENT_VERB_TOKENS,
     GERUND_LINE_START_RE,
     GERUND_MIDLINE_RE,
     GERUND_NOUN_EXCEPTIONS,
@@ -18,6 +19,34 @@ from .patterns import (
     SENTENCE_END_RE,
     TERMINAL_AND_OR_RE,
 )
+
+_FRAGMENT_STRIP = ".,;:!?\"'()[]`-"
+
+
+def is_verbless_fragment(sentence: str) -> bool:
+    """True when a sentence contains no detectable finite verb, so it reads
+    as a label fragment rather than a complete sentence.
+
+    Heuristic, tuned for the short sentences the label-fragment rule checks:
+    a token counts as a verb if it carries an ``n't`` negation, is one of the
+    curated finite-verb / auxiliary forms, or ends in ``-ing``/``-ed`` (minus
+    the gerund-noun exceptions). Bare ``-s`` is deliberately NOT a verb signal
+    - too many plural nouns end in ``-s`` ('Postgres', 'vectors') - so the
+    common ``-s`` verb forms are listed explicitly in FRAGMENT_VERB_TOKENS."""
+    for raw in sentence.split():
+        low = raw.lower()
+        if "n't" in low:
+            return False
+        tok = low.strip(_FRAGMENT_STRIP)
+        if not tok:
+            continue
+        if tok in FRAGMENT_VERB_TOKENS:
+            return False
+        if tok.endswith("ing") and len(tok) > 4 and tok not in GERUND_NOUN_EXCEPTIONS:
+            return False
+        if tok.endswith("ed") and len(tok) > 3:
+            return False
+    return True
 
 
 def strip_frontmatter(text: str) -> str:

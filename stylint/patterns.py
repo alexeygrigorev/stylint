@@ -147,6 +147,7 @@ BANNED_WORDS: dict[str, str] = {
     "contract": "drop the metaphor; name the concrete thing ('the schema', 'the API', 'the settings'). Keep only for a legal or smart contract",
     "rhythm": "use 'schedule', 'cadence', 'flow', or the concrete timing",
     "latched": "drop the metaphor; use 'picked it up', 'took it on', or name the action",
+    "halves": "drop 'halves'; name the parts directly (the two processes, 'ingest and serve')",
 }
 
 # Multi-word banned phrases. Substring match, case-insensitive.
@@ -371,13 +372,15 @@ BANNED_PHRASE_PATTERNS: dict[str, tuple[re.Pattern[str], str]] = {
         ),
         "drop the label and state the concrete point directly",
     ),
-    "... buys us": (
+    "buy (transactional metaphor)": (
         re.compile(
             r"\b(?:buy|buys|bought|buying)\s+"
-            r"(?:us|you|me|them)\b",
+            r"(?:us|you|me|them|nothing|little|much|anything|everything)\b",
             re.IGNORECASE,
         ),
-        "use 'give' or name the concrete result directly",
+        "drop the transactional metaphor; name the concrete result. "
+        "'buys us X' -> 'gives us X'; 'buys nothing' -> 'is wasted', "
+        "'goes unused', 'does nothing for us'",
     ),
     "the only question ... is": (
         re.compile(
@@ -435,6 +438,62 @@ BANNED_PHRASE_PATTERNS: dict[str, tuple[re.Pattern[str], str]] = {
         ),
         "open with what the reader will build, compare, or do",
     ),
+    "face the call": (
+        re.compile(
+            r"\bfac(?:e|es|ed|ing)\s+(?:the\s+)?(?:same\s+)?call\b",
+            re.IGNORECASE,
+        ),
+        "drop the cliche; name the decision directly "
+        "('you may have to make the same choice')",
+    ),
+    "neither ... nor": (
+        re.compile(
+            r"\bneither\b[^.!?]{0,80}\bnor\b",
+            re.IGNORECASE,
+        ),
+        "drop the 'neither ... nor' construction; it is hard to parse. "
+        "Rewrite positively ('both X and Y read from disk') or with a "
+        "plain negative ('X never hits the network')",
+    ),
+    "has none": (
+        re.compile(
+            r"\b(?:has|have|had|gets?|got)\s+none\b",
+            re.IGNORECASE,
+        ),
+        "vague; name what is actually missing instead of 'none' "
+        "('has no embedder', 'ships without one', 'does not include one')",
+    ),
+    "land (verb)": (
+        re.compile(
+            r"\b(?:to\s+land|land(?:s|ed|ing))\b",
+            re.IGNORECASE,
+        ),
+        "drop the 'land' metaphor; data, files, and walkthroughs do not "
+        "'land'. Say it plainly: 'is committed to git', 'is written to', "
+        "'ends up in', 'goes on Turso', 'arrives'. (The noun 'land' and "
+        "'landing page' are fine.)",
+    ),
+    "abstract subject splits itself": (
+        re.compile(
+            r"\b(?:the\s+)?(?:work|task|job|project|process|pipeline|flow|"
+            r"workflow|build|setup|code|logic)\s+"
+            r"(?:splits?|divides?|breaks?|separates?|falls?)\s+"
+            r"(?:up\s+|down\s+|apart\s+)?into\b",
+            re.IGNORECASE,
+        ),
+        "abstract subject acting on its own - 'the work' does not split "
+        "itself. Prefer active voice with a real actor: 'we split the work "
+        "into ...', 'we run two processes'",
+    ),
+    "worth <gerund>": (
+        re.compile(
+            r"\bworth\s+(?:[a-z]+ing|a\s+(?:look|read|mention|try|shot))\b",
+            re.IGNORECASE,
+        ),
+        "drop the 'worth X' framing; it is passive-sounding filler. State "
+        "the point or the action directly ('we change two things here', "
+        "'these reasons matter because...')",
+    ),
 }
 
 # Sentence openers. Capitalized, must start the line (allowing optional list
@@ -477,6 +536,12 @@ WORD_EXCEPTION_RES: dict[str, re.Pattern[str]] = {
 # Per-phrase exception contexts for BANNED_PHRASE_PATTERNS (same idea as
 # WORD_EXCEPTION_RES).
 PHRASE_EXCEPTION_RES: dict[str, re.Pattern[str]] = {
+    # "landing page" / "landing pad" / "landing zone" are fixed nouns, not
+    # the banned "land" verb metaphor.
+    "land (verb)": re.compile(
+        r"\blanding\s+(?:page|pad|zone)s?\b",
+        re.IGNORECASE,
+    ),
     # "pin" is fine in the literal git/pip sense: pinning a version, a
     # dependency, or a commit (the rule only bans the "hold/fix" metaphor).
     "pin (verb)": re.compile(
@@ -499,16 +564,29 @@ LIST_RE = re.compile(r"^\s*[-*]\s|^\s*\d+\.\s")
 BLOCKQUOTE_RE = re.compile(r"^\s*>")
 PYTHON_CHAINED_GET_RE = re.compile(r"\.get\([^)]*\)\.get\(")
 PARAGRAPH_MAX_SENTENCES = 5
-SENTENCE_MAX_WORDS = 20
+# Upper bound on sentence length. Set at 25, not lower: a tighter cap
+# (we ran 20 for a while) pushes authors to chop flowing sentences into
+# staccato fragments, which reads worse than one slightly-long sentence
+# and trips choppy-rhythm / label-fragment instead. The fix for a real
+# over-length sentence is ONE natural split into two sentences, not many
+# short ones - the rule messages say so.
+SENTENCE_MAX_WORDS = 25
 SENTENCE_MAX_COMMAS = 3
 # Choppy-rhythm threshold: a sentence with at most this many words
-# counts as "short". 3+ short sentences in a row become a staccato
-# rhythm ("Or hand them a new task. I don't have a lot of free time.
-# This is how I make more of it.") that reads worse than one or two
-# joined sentences ("I don't have a lot of free time, so this is how
-# I make more of it.").
+# counts as "short". TWO short sentences in a row already read as
+# staccato - especially with a longer sentence right after - so the run
+# bar is 2, not 3 ("So we make two changes. Retrieval becomes semantic.
+# The data moves somewhere it survives restarts without paying for a
+# server." -> "We make two changes: retrieval becomes semantic, and the
+# data moves to a store that survives restarts without a paid server.").
 CHOPPY_SENTENCE_MAX_WORDS = 9
-CHOPPY_SENTENCE_MIN_RUN = 3
+CHOPPY_SENTENCE_MIN_RUN = 2
+# A single very short sentence (this many words or fewer) sitting right
+# before a longer one is a merge candidate on its own, even when it is
+# not part of a run of short sentences: "Retrieval becomes semantic. The
+# data moves somewhere it survives restarts..." -> join the small clause
+# onto the longer sentence.
+MERGE_SHORT_MAX_WORDS = 4
 SENTENCE_END_RE = re.compile(r"[.!?](?=[\s\"')\]]|$)")
 # Colon-introduced inline list with 3+ items and a terminal and/or.
 # "We use these tools: numpy, pandas, scikit-learn, and matplotlib" -
@@ -700,5 +778,135 @@ PAST_TENSE_FRAGMENT_RE = re.compile(
     r"([A-Za-z][A-Za-z-]{2,}ed|" + PAST_TENSE_FRAGMENT_IRREGULARS + r")\s+"
     r"(?!when\b|while\b|because\b|if\b|that\b|which\b)"
     r"[a-zA-Z0-9`][^.!?\n]{0,120}[.!?]?",
+    re.IGNORECASE,
+)
+
+# Chopped label fragments: a short verbless noun phrase used as a
+# pseudo-label or lead-in, terminated by a period instead of being
+# folded into the sentence it introduces. "The goal behind it. I did
+# not want to pay for a server." / "Why not Postgres. The hosts I
+# looked at..." The reader loses the idea because the fragment carries
+# no subject+verb. Same family as label-colon ("The problem: ...") but
+# with a period. Concrete proper-noun labels ("Railway.", "Render.")
+# are NOT flagged - only abstract determiner+noun fragments and
+# verbless wh-fragments, where meaning actually drops out.
+FRAGMENT_MAX_WORDS = 6
+FRAGMENT_DETERMINERS = frozenset({
+    "the", "a", "an", "this", "that", "our", "its", "my", "their",
+    "these", "those",
+})
+FRAGMENT_WH = frozenset({
+    "why", "what", "how", "when", "where", "which", "who",
+})
+# Abstract head nouns that read as labels rather than concrete subjects.
+# Reuses the lazy-heading label set plus a few more.
+FRAGMENT_ABSTRACT_NOUNS = frozenset(LAZY_HEADING_LABELS) | frozenset({
+    "motivation", "rationale", "intent", "plan", "setup", "target",
+    "thinking", "logic", "tradeoff", "tension", "gist", "crux",
+    "upshot", "aim", "purpose", "difference", "distinction", "rule",
+    "thing", "deal", "case", "situation",
+})
+# Tokens that signal a finite verb / predicate is present, so a short
+# sentence is a real sentence rather than a label fragment. The -ed/-ing
+# inflections are caught separately; bare -s is NOT treated as a verb
+# signal (too many plural nouns end in -s), so the common -s verb forms
+# that show up in tiny sentences are listed explicitly.
+FRAGMENT_VERB_TOKENS = frozenset({
+    "is", "are", "was", "were", "be", "been", "being", "am",
+    "'s", "'re", "'m",
+    "do", "does", "did", "doing", "done",
+    "have", "has", "had", "having",
+    "can", "could", "will", "would", "shall", "should", "may", "might",
+    "must", "ought",
+    "get", "gets", "go", "goes", "let", "lets", "see", "sees",
+    "know", "knows", "want", "wants", "need", "needs", "use", "uses",
+    "make", "makes", "run", "runs", "add", "adds", "set", "sets",
+    "work", "works", "stay", "stays", "keep", "keeps", "help", "helps",
+    "give", "gives", "take", "takes", "put", "puts", "find", "finds",
+    "say", "says", "show", "shows", "mean", "means", "come", "comes",
+    "become", "becomes", "live", "lives", "cost", "costs", "sit", "sits",
+    "pay", "pays", "rent", "rents", "win", "wins", "fit", "fits",
+    "drop", "drops", "end", "ends", "remain", "remains", "exist",
+    "exists", "matter", "matters", "count", "counts", "look", "looks",
+    "feel", "feels", "seem", "seems", "turn", "turns", "start", "starts",
+    "wipe", "wipes", "hold", "holds", "lives", "rebuild", "rebuilds",
+})
+
+# Count-as-list lead-in: a sentence that announces a number of items
+# ("two things", "three reasons", "a few changes") and then enumerates
+# them across following sentences. The count is the author's own signal
+# that the content is a list. Fix: convert to a bullet list and drop the
+# count - the bullets show it.
+COUNT_LIST_LEAD_RE = re.compile(
+    r"\b(?:one|two|three|four|five|six|seven|eight|nine|ten|"
+    r"a\s+few|a\s+couple\s+of|a\s+number\s+of|several|\d+)\s+"
+    r"(?:[a-z]+\s+){0,2}"
+    r"(?:things?|reasons?|points?|changes?|steps?|options?|ways?|"
+    r"problems?|issues?|parts?|items?|factors?|differences?|benefits?|"
+    r"advantages?|approaches?|choices?|properties?|aspects?|areas?|"
+    r"categories?|kinds?|types?|examples?|tasks?|goals?|rules?|"
+    r"process(?:es)?|stages?|phases?|components?|pieces?)\b",
+    re.IGNORECASE,
+)
+
+# Contractions. The voice guide mandates contractions ("it's", "don't",
+# "we'll"). Flag the most common expanded forms and suggest the
+# contraction. Each entry is (compiled pattern, replacement) where the
+# pattern captures the exact span so the message can quote it. The forms
+# here are safe to contract in almost every context; the message still
+# tells the author to skip sentence-final or emphatic cases.
+_CONTRACTION_SPECS: list[tuple[str, str]] = [
+    (r"\bit is\b", "it's"),
+    (r"\bthat is\b", "that's"),
+    (r"\bthere is\b", "there's"),
+    (r"\bhere is\b", "here's"),
+    (r"\bwhat is\b", "what's"),
+    (r"\bwho is\b", "who's"),
+    (r"\bhe is\b", "he's"),
+    (r"\bshe is\b", "she's"),
+    (r"\bI am\b", "I'm"),
+    (r"\bwe are\b", "we're"),
+    (r"\byou are\b", "you're"),
+    (r"\bthey are\b", "they're"),
+    (r"\bwe will\b", "we'll"),
+    (r"\byou will\b", "you'll"),
+    (r"\bI will\b", "I'll"),
+    (r"\bthey will\b", "they'll"),
+    (r"\blet us\b", "let's"),
+    (r"\bdo not\b", "don't"),
+    (r"\bdoes not\b", "doesn't"),
+    (r"\bdid not\b", "didn't"),
+    (r"\bis not\b", "isn't"),
+    (r"\bare not\b", "aren't"),
+    (r"\bwas not\b", "wasn't"),
+    (r"\bwere not\b", "weren't"),
+    (r"\bcannot\b", "can't"),
+    (r"\bcan not\b", "can't"),
+    (r"\bwill not\b", "won't"),
+    (r"\bwould not\b", "wouldn't"),
+    (r"\bshould not\b", "shouldn't"),
+    (r"\bcould not\b", "couldn't"),
+    (r"\bhas not\b", "hasn't"),
+    (r"\bhave not\b", "haven't"),
+    (r"\bhad not\b", "hadn't"),
+]
+CONTRACTION_RES: list[tuple[re.Pattern[str], str]] = [
+    (re.compile(pattern, re.IGNORECASE), replacement)
+    for pattern, replacement in _CONTRACTION_SPECS
+]
+
+# Flat copular definition: a sentence opening with "The/Its/Our <noun>
+# is/are a/an/the ..." that just equates the subject with a category.
+# Reads as dull and formal: "The model is `Xenova/...`, a 384-dim
+# embedder." (code spans are stripped before the check, so the appositive
+# shows up as "is , a"). Prefer active voice or lead with the thing
+# itself: "We use X", "X does Y". The article (a/an/the) after the copula
+# is what marks it as a definition, so "The result is wrong" (predicate
+# adjective) and "The point is clear" do not fire.
+FLAT_DEFINITION_RE = re.compile(
+    r"(?:^|[.!?]\s+)"
+    r"(?:The|Its|Our|Their)\s+"
+    r"(?:[A-Za-z][\w-]*\s+){1,3}"
+    r"(?:is|are)\s*(?:,\s*)?(?:an?|the)\b",
     re.IGNORECASE,
 )

@@ -185,7 +185,8 @@ def test_banned_phrase_pattern_below_negative(tmp_path):
     [
         ("Here's a helper that formats the rows.\n", "here is a ..."),
         ("Here is the helper that formats the rows.\n", "here is a ..."),
-        ("That buys us a shorter prompt.\n", "... buys us"),
+        ("That buys us a shorter prompt.\n", "buy (transactional metaphor)"),
+        ("Most of that weight buys nothing on a free host.\n", "buy (transactional metaphor)"),
         ("## Scope\n\nWe build the app.\n", "scope/source material opener"),
         ("Source material: transcript and notes.\n", "scope/source material opener"),
         ("This write-up is based on a transcript.\n", "this write-up is based on"),
@@ -989,8 +990,8 @@ def test_classify_long_with_commas(sentence, expected):
 def test_long_list_likely_fires_on_colon_enumeration(tmp_path):
     body = (
         "The course covers a fairly wide range of related technologies "
-        "all across the upcoming year: MongoDB, Comet, Opik, Unsloth "
-        "and ZenML.\n"
+        "all across the upcoming year, spanning several different "
+        "ecosystems: MongoDB, Comet, Opik, Unsloth, ScyllaDB and ZenML.\n"
     )
     root, page = make_page(tmp_path, body)
     errors = check_page(root, page)
@@ -1000,9 +1001,9 @@ def test_long_list_likely_fires_on_colon_enumeration(tmp_path):
 
 def test_long_clause_likely_fires_on_chain(tmp_path):
     body = (
-        "Claude segmented the original image into many smaller pieces, "
-        "converted each piece individually, then assembled the result, "
-        "which Codex later refined further.\n"
+        "Claude carefully segmented the original input image into many "
+        "smaller individual pieces, converted each piece on its own, then "
+        "assembled the final result, which Codex later refined even further.\n"
     )
     root, page = make_page(tmp_path, body)
     errors = check_page(root, page)
@@ -1109,7 +1110,8 @@ def test_repeated_and_negative(body, tmp_path):
 
 
 # ---------------------------------------------------------------------------
-# Choppy rhythm: 3+ short sentences in a row
+# Choppy rhythm: 2+ short sentences in a row (or one tiny sentence before a
+# longer one)
 # ---------------------------------------------------------------------------
 
 
@@ -1124,21 +1126,22 @@ def test_choppy_rhythm_positive(tmp_path):
     assert any("choppy-rhythm" in e for e in errors)
 
 
-def test_choppy_rhythm_negative_two_shorts(tmp_path):
-    # Two short sentences in a row: still acceptable, no fire.
+def test_choppy_rhythm_positive_two_shorts(tmp_path):
+    # Two short sentences then a longer one: now flagged (bar is 2, not 3).
     body = (
         "I keep going. It works fine. "
         "Otherwise everything stays the same as it has been for the last several months.\n"
     )
     root, page = make_page(tmp_path, body)
     errors = check_page(root, page)
-    assert not any("choppy-rhythm" in e for e in errors)
+    assert any("choppy-rhythm" in e for e in errors)
 
 
 def test_choppy_rhythm_negative_after_join(tmp_path):
-    # User-style fix: combine two of them. No more choppy run.
+    # User-style fix: combine the short clauses so no two short sentences
+    # sit next to each other.
     body = (
-        "I keep going. Or hand them a new task. "
+        "I keep going, or I hand them a new task. "
         "I don't have a lot of free time, so this is how I make more of it.\n"
     )
     root, page = make_page(tmp_path, body)
@@ -1176,3 +1179,206 @@ def test_clean_page_has_no_errors(tmp_path):
     root, page = make_page(tmp_path, body)
     errors = check_page(root, page)
     assert errors == []
+
+
+# ---------------------------------------------------------------------------
+# Label fragments: short verbless abstract / wh fragments used as labels
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.parametrize(
+    "body",
+    [
+        "The goal behind it. I did not want to pay for a server sitting idle.\n",
+        "Why not Postgres. The hosts I looked at only run it on a trial.\n",
+        "The catch. Free tiers drop the database once the trial ends.\n",
+        "What now. We move the data to a store that survives restarts.\n",
+    ],
+)
+def test_label_fragment_positive(body, tmp_path):
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert any("label-fragment" in e for e in errors), f"missed: {body!r}"
+
+
+@pytest.mark.parametrize(
+    "body",
+    [
+        # Concrete proper-noun labels are deliberate option headers - fine.
+        "Railway. We deployed the previous workshop here and the trial ended.\n",
+        "Render. Free web services do not expire, but persistent disk costs extra.\n",
+        # Real sentences with a verb - not fragments.
+        "The goal is clear. We want search that matches on meaning.\n",
+        "SQLite sidesteps it. The data is a file, not a running server.\n",
+        # Single-sentence paragraph - nothing to lead into.
+        "The reason.\n",
+    ],
+)
+def test_label_fragment_negative(body, tmp_path):
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert not any("label-fragment" in e for e in errors), f"false positive: {body!r}"
+
+
+# ---------------------------------------------------------------------------
+# Count-as-list lead-in
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.parametrize(
+    "body",
+    [
+        "We want to change two things here. Search is keyword only. The index lives in memory.\n",
+        "There are three reasons for this. The first is cost. The second is speed. The third is scale.\n",
+        "We make a few changes. Retrieval becomes semantic. The data moves to Turso.\n",
+    ],
+)
+def test_count_list_positive(body, tmp_path):
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert any("count-list" in e for e in errors), f"missed: {body!r}"
+
+
+@pytest.mark.parametrize(
+    "body",
+    [
+        # Count announced but not enumerated (single follow-on) - no fire.
+        "We changed two things and moved on.\n",
+        # No count in the opening sentence.
+        "The search matches keywords. A reworded question can miss it. We fix that.\n",
+    ],
+)
+def test_count_list_negative(body, tmp_path):
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert not any("count-list" in e for e in errors), f"false positive: {body!r}"
+
+
+# ---------------------------------------------------------------------------
+# Merge candidate: one tiny sentence before a longer one
+# ---------------------------------------------------------------------------
+
+
+def test_merge_short_before_long_positive(tmp_path):
+    body = (
+        "We then move on. Retrieval becomes semantic. "
+        "The data moves to a store that survives a restart without a paid server.\n"
+    )
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert any("choppy-rhythm" in e for e in errors)
+
+
+# ---------------------------------------------------------------------------
+# Contractions
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.parametrize(
+    "body, hint",
+    [
+        ("It is a FastAPI app that runs an agent loop against the model.\n", "it's"),
+        ("The free plan does not expire and keeps the data around.\n", "doesn't"),
+        ("We cannot keep using the trial after it ends.\n", "can't"),
+        ("That is the nudge that pushes you to a paid plan eventually.\n", "that's"),
+    ],
+)
+def test_contraction_positive(body, hint, tmp_path):
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert any("contraction" in e for e in errors), f"missed: {body!r}"
+
+
+def test_contraction_negative(tmp_path):
+    body = "It's a FastAPI app and it doesn't rebuild the index on every boot.\n"
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert not any("contraction" in e for e in errors)
+
+
+# ---------------------------------------------------------------------------
+# Banned phrases: face the call, worth <gerund>
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.parametrize(
+    "body",
+    [
+        "Those reasons matter, since you may face the same call.\n",
+        "You will face the call sooner or later.\n",
+        "Those reasons are worth recording for later.\n",
+        "The setup is worth changing in two places.\n",
+        "It is worth noting that the free plan never expires.\n",
+        "The work splits into two processes that never run at once.\n",
+        "The pipeline breaks into an ingest step and a serve step.\n",
+        "The built index never lands in git.\n",
+        "The walkthrough lands on Turso for the data layer.\n",
+        "We do not want it to land in the repo.\n",
+        "The starting project has none, so we build one.\n",
+        "Neither ingest nor serve hits the network for the model again.\n",
+    ],
+)
+def test_banned_phrase_new_patterns(body, tmp_path):
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert any("banned-phrase" in e for e in errors), f"missed: {body!r}"
+
+
+@pytest.mark.parametrize(
+    "body",
+    [
+        # Literal noun and fixed term - not the banned verb.
+        "The landing page links to the docs.\n",
+        "We deploy the model to the cloud and move on.\n",
+    ],
+)
+def test_land_verb_negative(body, tmp_path):
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert not any("land" in e and "banned-phrase" in e for e in errors), (
+        f"false positive: {body!r}"
+    )
+
+
+# ---------------------------------------------------------------------------
+# Flat copular definition: "The <noun> is a/the <category>"
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.parametrize(
+    "body",
+    [
+        "The model is a 384-dimensional sentence embedder with an ONNX export.\n",
+        "The model is `Xenova/all-MiniLM-L6-v2`, a 384-dimensional embedder.\n",
+        "The data is a file, not a running server you rent.\n",
+        "Its configuration is the shared settings module.\n",
+    ],
+)
+def test_flat_definition_positive(body, tmp_path):
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert any("flat-definition" in e for e in errors), f"missed: {body!r}"
+
+
+@pytest.mark.parametrize(
+    "body",
+    [
+        # Active opener - the preferred shape.
+        "We use `Xenova/all-MiniLM-L6-v2`, a 384-dimensional embedder.\n",
+        # Predicate adjective, not a definition.
+        "The result is wrong on a reworded question.\n",
+        # "It's a ..." opener is fine.
+        "It's a FastAPI app that runs an agent loop.\n",
+    ],
+)
+def test_flat_definition_negative(body, tmp_path):
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert not any("flat-definition" in e for e in errors), f"false positive: {body!r}"
+
+
+def test_halves_banned_word(tmp_path):
+    body = "Both halves of the system share the configuration.\n"
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert any("halves" in e and "banned-word" in e for e in errors)

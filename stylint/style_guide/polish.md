@@ -83,6 +83,21 @@ Watch for these judgment-only patterns:
   does directly.
 - No editorializing unless the source said it. State the fact and move on.
 
+## Drop empty framing sentences
+
+Cut content-free sentences that frame the work without adding information.
+`We start from a finished project.`, `Everything runs on a laptop.`, and `That
+is good for testing.` are true but tell the reader nothing they can act on.
+Lead with the substance instead.
+
+> We start from a finished project. In this workshop we built a snake game,
+> so we already have `App.jsx` and `SnakeGame.jsx` to extend.
+
+becomes
+
+> In the snake-game workshop we built `App.jsx` and `SnakeGame.jsx`, so we
+> already have a working app to extend.
+
 ## Address the reader, not "the user"
 
 Write `you`, not `the user`.
