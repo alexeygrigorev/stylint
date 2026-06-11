@@ -129,6 +129,18 @@ _PARTICIPLE_ALLOWLIST = {
     "supposed",    # "is supposed to" - modal idiom
     "used",        # "is used to" / modal idiom
     "known",       # "is known as/for" - often stative
+    # Stative predicate adjectives: describe a state, not an action done to
+    # the subject, so not the passive the rule targets.
+    "set",         # "is set" - config/flag state, or "set up" (phrasal)
+    "needed",      # "is needed" - predicate adjective
+    "required",    # "is required" - predicate adjective
+    "allowed",     # "is allowed to" - permission state
+    "expected",    # "is expected" - state, not an action
+    "meant",       # "is meant to" - modal idiom
+    "planned",     # "is/are planned" - state / attributive
+    # Adjectives the POS tagger mislabels as past participles (VBN).
+    "simpler",     # comparative adjective, never a participle
+    "fine",        # flat adjective ("that is fine")
 }
 
 # How many tokens after the "be" form we still treat a VBN as the
