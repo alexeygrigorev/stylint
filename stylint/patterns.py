@@ -207,6 +207,8 @@ BANNED_PHRASES: dict[str, str] = {
     "in this section we will": "drop the meta-narration",
     "below you will find": "drop the meta-narration",
     "the next few paragraphs": "drop the meta-narration",
+    "this section is short": "drop the meta-comment about length; go straight to the change",
+    "this part is short": "drop the meta-comment about length; go straight to the change",
     "this write-up is based on": "open with what the reader will build, compare, or do",
     "as we shall see": "drop the meta-narration",
     "for reasons that will become clear": "give the reason on the same line",
@@ -454,6 +456,16 @@ BANNED_PHRASE_PATTERNS: dict[str, tuple[re.Pattern[str], str]] = {
         "drop the 'neither ... nor' construction; it is hard to parse. "
         "Rewrite positively ('both X and Y read from disk') or with a "
         "plain negative ('X never hits the network')",
+    ),
+    "runs on a laptop (filler)": (
+        re.compile(
+            r"\b(?:everything runs|it all runs|you can run "
+            r"(?:everything|the workshop|it all|this(?:\s+workshop)?))\b"
+            r"[^.!?]{0,25}\bon (?:a|your) laptop\b",
+            re.IGNORECASE,
+        ),
+        "drop the filler scene-setting ('runs on a laptop'); list the actual "
+        "prerequisites instead, or cut it",
     ),
     "has none": (
         re.compile(
@@ -905,8 +917,18 @@ CONTRACTION_RES: list[tuple[re.Pattern[str], str]] = [
 # adjective) and "The point is clear" do not fire.
 FLAT_DEFINITION_RE = re.compile(
     r"(?:^|[.!?]\s+)"
-    r"(?:The|Its|Our|Their)\s+"
+    r"(?:The|Its|Our|Their|This|That|These|Those)\s+"
     r"(?:[A-Za-z][\w-]*\s+){1,3}"
     r"(?:is|are)\s*(?:,\s*)?(?:an?|the)\b",
+    re.IGNORECASE,
+)
+# Bare demonstrative definitions: "This is a check.", "These are the steps.",
+# "That is not a real fix." The indefinite article (a/an) marks it as a flat
+# categorization; "the" is left out because "This is the file we edit" usually
+# points at something rather than defining it.
+FLAT_DEFINITION_DEMO_RE = re.compile(
+    r"(?:^|[.!?]\s+)"
+    r"(?:This|That|These|Those)\s+"
+    r"(?:is|are)\s+(?:not\s+)?an?\b",
     re.IGNORECASE,
 )

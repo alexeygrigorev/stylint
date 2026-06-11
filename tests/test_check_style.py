@@ -1382,3 +1382,58 @@ def test_halves_banned_word(tmp_path):
     root, page = make_page(tmp_path, body)
     errors = check_page(root, page)
     assert any("halves" in e and "banned-word" in e for e in errors)
+
+
+# ---------------------------------------------------------------------------
+# Flat definition: demonstrative-led ("This is a ...")
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.parametrize(
+    "body",
+    [
+        "A guardrail wraps a run. This is a check around an agent run.\n",
+        "It runs server-side. This is an HTTP stream to the browser.\n",
+        "We tried a hack. That is not a real fix here.\n",
+        "This workshop is a notebook build, not a deployed app.\n",
+    ],
+)
+def test_flat_definition_demonstrative_positive(body, tmp_path):
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert any("flat-definition" in e for e in errors), f"missed: {body!r}"
+
+
+@pytest.mark.parametrize(
+    "body",
+    [
+        # "This is the file" points at something, not a flat category.
+        "Open the config. This is the file we edit next.\n",
+        # active demonstrative verb, not a copula
+        "This script reads the FAQ and prints the answer.\n",
+    ],
+)
+def test_flat_definition_demonstrative_negative(body, tmp_path):
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert not any("flat-definition" in e for e in errors), f"false positive: {body!r}"
+
+
+# ---------------------------------------------------------------------------
+# Filler-opener bans
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.parametrize(
+    "body",
+    [
+        "You can run everything on a laptop.\n",
+        "Everything runs on a laptop, no GPU needed.\n",
+        "You can run the workshop on a laptop.\n",
+        "This section is short, so let's get to it.\n",
+    ],
+)
+def test_filler_opener_bans(body, tmp_path):
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert any("banned-phrase" in e for e in errors), f"missed: {body!r}"

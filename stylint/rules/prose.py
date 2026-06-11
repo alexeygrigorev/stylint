@@ -8,6 +8,7 @@ from ..patterns import (
     COLON_INLINE_LIST_RE,
     CONTRACTION_RES,
     COUNT_LIST_LEAD_RE,
+    FLAT_DEFINITION_DEMO_RE,
     FLAT_DEFINITION_RE,
     FRAGMENT_ABSTRACT_NOUNS,
     FRAGMENT_DETERMINERS,
@@ -440,18 +441,19 @@ def check_prose_line(plain: str, line_no: int, rel) -> tuple[list[Finding], list
                 "'Recorder keeps recording').",
             )
         )
-    for match in FLAT_DEFINITION_RE.finditer(plain):
-        findings.append(
-            Finding(
-                rel,
-                line_no,
-                Tag.FLAT_DEFINITION,
-                f"flat copular definition '{match.group(0).strip()}...': it just "
-                "equates the subject with a category and reads as dull and "
-                "formal. Prefer active voice or lead with the thing itself: "
-                "'We use X', 'X does Y', or 'We will use `id`, a <description>'.",
+    for regex in (FLAT_DEFINITION_RE, FLAT_DEFINITION_DEMO_RE):
+        for match in regex.finditer(plain):
+            findings.append(
+                Finding(
+                    rel,
+                    line_no,
+                    Tag.FLAT_DEFINITION,
+                    f"flat copular definition '{match.group(0).strip()}...': it just "
+                    "equates the subject with a category and reads as dull and "
+                    "formal. Prefer active voice or lead with the thing itself: "
+                    "'We use X', 'X does Y', or 'We will use `id`, a <description>'.",
+                )
             )
-        )
     for match in REPEATED_AND_RE.finditer(plain):
         findings.append(
             Finding(
