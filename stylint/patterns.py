@@ -485,6 +485,39 @@ BANNED_PHRASE_PATTERNS: dict[str, tuple[re.Pattern[str], str]] = {
         "'ends up in', 'goes on Turso', 'arrives'. (The noun 'land' and "
         "'landing page' are fine.)",
     ),
+    "hand (verb)": (
+        re.compile(
+            r"\b(?:to\s+hand|hand(?:s|ed|ing))\b",
+            re.IGNORECASE,
+        ),
+        "drop the 'hand' metaphor. A tool, system, or workshop does not "
+        "'hand' the reader anything. Use 'give', or say it plainly: 'gives "
+        "you a system', 'you get a repeatable process', 'it sets up'. (The "
+        "noun 'hand', 'hands-on', and 'hand off' are fine.)",
+    ),
+    "built around (framing)": (
+        re.compile(
+            r"\b(?:whole\s+|entire\s+)?(?:workshop|session|course|class|"
+            r"tutorial|lesson|chapter|article|post|talk|guide)\s+is\s+"
+            r"built\s+around\b",
+            re.IGNORECASE,
+        ),
+        "drop the 'built around X' framing. It narrates the document instead "
+        "of delivering it. State the thing directly: 'You run one challenge "
+        "after the session', 'We cover X, then Y'.",
+    ),
+    "structure signposting": (
+        re.compile(
+            r"\bthe\s+(?:first|second|latter|former)\s+half\s+"
+            r"(?:is|covers?|focuses?|deals?|introduces?|explains?|walks?|"
+            r"goes?|gets?|starts?)\b",
+            re.IGNORECASE,
+        ),
+        "drop the 'first half ... second half' signposting. Use 'in the "
+        "first ..., in the second ...' ('in the first part we work on "
+        "mindset, in the second we get practical'), or just write the "
+        "content of each part directly.",
+    ),
     "abstract subject splits itself": (
         re.compile(
             r"\b(?:the\s+)?(?:work|task|job|project|process|pipeline|flow|"
@@ -566,6 +599,15 @@ PHRASE_EXCEPTION_RES: dict[str, re.Pattern[str]] = {
         r"\bpin(?:s|ned|ning)?\b"
         r"|\b(?:the|a|this)\s+(?:\w+\s+)?pin\b"
         r"|\brelax(?:es|ed|ing)?\s+the\s+pin\b",
+        re.IGNORECASE,
+    ),
+    # "hands-on", the phrasal "hand off / over / back / out / in", and
+    # "-handed" compounds are noun/idiom uses, not the banned "hand (someone
+    # something)" giving metaphor.
+    "hand (verb)": re.compile(
+        r"\bhands?-on\b"
+        r"|\b(?:to\s+)?hand(?:s|ed|ing)?\s+(?:off|over|back|out|in)\b"
+        r"|\b[a-z]+-handed\b",
         re.IGNORECASE,
     ),
 }

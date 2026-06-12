@@ -1314,6 +1314,14 @@ def test_contraction_negative(tmp_path):
         "The built index never lands in git.\n",
         "The walkthrough lands on Turso for the data layer.\n",
         "We do not want it to land in the repo.\n",
+        "It also hands you a system you can reuse each week.\n",
+        "The workshop hands the reader a repeatable process.\n",
+        "This handed us a working agent in an afternoon.\n",
+        "We start by handing you the finished project.\n",
+        "The whole workshop is built around one challenge you run later.\n",
+        "This session is built around a single end-to-end example.\n",
+        "The first half is about mindset and the fear of posting.\n",
+        "The second half covers the weekly drafting workflow.\n",
         "The starting project has none, so we build one.\n",
         "Neither ingest nor serve hits the network for the model again.\n",
     ],
@@ -1338,6 +1346,46 @@ def test_land_verb_negative(body, tmp_path):
     assert not any("land" in e and "banned-phrase" in e for e in errors), (
         f"false positive: {body!r}"
     )
+
+
+@pytest.mark.parametrize(
+    "body",
+    [
+        # Noun, fixed term, and phrasal verb - not the banned giving metaphor.
+        "The session is hands-on from the first minute.\n",
+        "We hand off the request to a second agent.\n",
+        "The dispatcher hands off work to the runner.\n",
+        "Avoid a heavy-handed prompt that over-constrains the model.\n",
+        "We hand out the dataset at the start.\n",
+    ],
+)
+def test_hand_verb_negative(body, tmp_path):
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert not any("hand (verb)" in e and "banned-phrase" in e for e in errors), (
+        f"false positive: {body!r}"
+    )
+
+
+@pytest.mark.parametrize(
+    "body",
+    [
+        # Technical "built around" with a non-document subject is fine.
+        "The API is built around a handful of REST endpoints.\n",
+        "Our pipeline is built around a single queue.\n",
+        # "first/second half" of a concrete thing, not the document's shape.
+        "The first half of the dataset is the training split.\n",
+        "We send the first half of the batch, then the rest.\n",
+    ],
+)
+def test_structure_framing_negative(body, tmp_path):
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert not any(
+        ("built around" in e or "structure signposting" in e)
+        and "banned-phrase" in e
+        for e in errors
+    ), f"false positive: {body!r}"
 
 
 # ---------------------------------------------------------------------------
