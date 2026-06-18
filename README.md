@@ -35,6 +35,7 @@ stylint --exclude _docs docs/
 stylint --agents
 stylint --style-guide
 stylint --style-guide voice
+stylint --prompt abstract-subject
 ```
 
 ## Files
@@ -48,11 +49,14 @@ The package has these main files:
 - `stylint/style_guide/code-style.md` - educational code style inside example blocks
   (no defensive `try/except`, no chained `.get()`, one blank line
   between definitions). Print it with `stylint --style-guide code-style`.
-- `stylint/style_guide/polish.md` - judgment-level text patterns the script cannot detect
+- `stylint/style_guide/polish.md` - judgment-level text patterns the script can't detect
   (plain words over abstractions, banned-but-context-sensitive words).
   Print it with `stylint --style-guide polish`.
 - `stylint/style_guide/agents.md` - short agent-facing checklist for which
   guide to read at each editing stage. Print it with `stylint --agents`.
+- `stylint/style_guide/prompt-abstract-subject.md` - required final-pass
+  prompt for abstract nouns used as sentence subjects. Print it with
+  `stylint --prompt abstract-subject`.
 These style guide docs are bundled in the Python package.
 
 Print their installed paths:
@@ -68,6 +72,7 @@ stylint --style-guide voice
 stylint --style-guide formatting
 stylint --style-guide code-style
 stylint --style-guide polish
+stylint --prompt abstract-subject
 ```
 
 - `stylint/` - mechanical checker package. Edit `BANNED_WORDS`,
@@ -146,6 +151,8 @@ Use the full guides in this order:
 3. `code-style.md` for example code blocks.
 4. Run `stylint` and fix every reported finding.
 5. `polish.md` for a final judgment-level pass.
+6. `stylint --prompt abstract-subject` as a required final pass for abstract
+   nouns used as sentence subjects.
 
 ## Hooking it into a project
 

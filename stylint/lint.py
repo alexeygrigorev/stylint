@@ -19,7 +19,25 @@ from .text import (
     strip_link_urls,
 )
 
-def check_page(root: Path, path: Path, nlp: bool = False) -> list[Finding]:
+# A list or code block must be introduced by prose or a short label-colon
+# line. When the block instead follows another structural block (with no
+# introducing sentence between them), it reads as dropped in. These are the
+# preceding-block kinds that count as "not introduced". Code following code
+# is owned by the consecutive-code rule, so it is absent from the code set.
+BLOCK_LABEL = {
+    "list": "a list",
+    "code": "a code block",
+    "table": "a table",
+    "quote": "a blockquote",
+    "html": "an HTML block",
+    "footnote": "a footnote",
+}
+LIST_INTRODUCER_BLOCK_KINDS = frozenset({"code", "table", "quote", "html", "footnote"})
+CODE_INTRODUCER_BLOCK_KINDS = frozenset({"list", "table", "quote", "html", "footnote"})
+
+def check_page(
+    root: Path, path: Path, nlp: bool = False, author_name: str = "Alexey"
+) -> list[Finding]:
     errors: list[Finding] = []
     now_lets_hits: list[tuple[int, str]] = []
     # Lines of prose to run heavier NLP checks over, collected only when
@@ -69,6 +87,10 @@ def check_page(root: Path, path: Path, nlp: bool = False) -> list[Finding]:
     pending_short_label_line: int | None = None
     allow_questions_in_section = page_is_qa
     skip_lead_in_for_section = False
+    # Kind of the last significant content block, used to require an
+    # introducer before lists and code blocks. HTML comments (pipeline
+    # include directives) are transparent and leave this untouched.
+    prev_block_kind = "start"
 
     paragraph_lines: list[tuple[int, str]] = []
     list_block: list[tuple[int, str]] = []
@@ -238,6 +260,15 @@ def check_page(root: Path, path: Path, nlp: bool = False) -> list[Finding]:
                         rel, line_no, Tag.LEAD_IN,
                         f"code block needs a lead-in sentence after the heading on line {last_heading_line}",
                     ))
+                elif (
+                    prev_block_kind in CODE_INTRODUCER_BLOCK_KINDS
+                    and not skip_lead_in_for_section
+                ):
+                    errors.append(Finding(
+                        rel, line_no, Tag.LEAD_IN,
+                        f"code block needs an introducing sentence; it follows "
+                        f"{BLOCK_LABEL[prev_block_kind]} with no lead-in",
+                    ))
                 code_lang = fence_tail.lower()
                 code_block_start = line_no
                 code_block_line_count = 0
@@ -251,6 +282,7 @@ def check_page(root: Path, path: Path, nlp: bool = False) -> list[Finding]:
             in_code = not in_code
             if not in_code:
                 previous_code_block_end = line_no
+                prev_block_kind = "code"
             continue
 
         if in_code:
@@ -266,6 +298,7 @@ def check_page(root: Path, path: Path, nlp: bool = False) -> list[Finding]:
             flush_list_block()
             flush_paragraph()
             emit_short_label_if_pending()
+            prev_block_kind = "footnote"
             continue
 
         if HEADING_RE.match(line):
@@ -279,6 +312,7 @@ def check_page(root: Path, path: Path, nlp: bool = False) -> list[Finding]:
             seen_prose_since_heading = False
             allow_questions_in_section = page_is_qa or heading_allows_questions(line)
             skip_lead_in_for_section = heading_skips_lead_in(line)
+            prev_block_kind = "heading"
             continue
 
         if not stripped:
@@ -289,22 +323,29 @@ def check_page(root: Path, path: Path, nlp: bool = False) -> list[Finding]:
             list_block.append((line_no, list_item_text(line)))
             clear_short_label_if_pending()
             emit_lead_in_multi_if_pending()
-            if (
-                last_heading_line is not None
-                and not seen_prose_since_heading
-                and not skip_lead_in_for_section
-            ):
-                errors.append(Finding(
-                    rel, line_no, Tag.LEAD_IN,
-                    f"list needs a lead-in sentence after the heading on line {last_heading_line}",
-                ))
-                last_heading_line = None
+            # Only the first item of a block carries the introducer
+            # requirement; later items leave prev_block_kind == "list".
+            if prev_block_kind != "list" and not skip_lead_in_for_section:
+                if last_heading_line is not None and not seen_prose_since_heading:
+                    errors.append(Finding(
+                        rel, line_no, Tag.LEAD_IN,
+                        f"list needs a lead-in sentence after the heading on line {last_heading_line}",
+                    ))
+                    last_heading_line = None
+                elif prev_block_kind in LIST_INTRODUCER_BLOCK_KINDS:
+                    errors.append(Finding(
+                        rel, line_no, Tag.LEAD_IN,
+                        f"list needs an introducing sentence; it follows "
+                        f"{BLOCK_LABEL[prev_block_kind]} with no lead-in",
+                    ))
             seen_prose_since_heading = True
+            prev_block_kind = "list"
         elif BLOCKQUOTE_RE.match(line) or line.startswith("|"):
             flush_list_block()
             flush_paragraph()
             emit_short_label_if_pending()
             seen_prose_since_heading = True
+            prev_block_kind = "quote" if BLOCKQUOTE_RE.match(line) else "table"
             if BLOCKQUOTE_RE.match(line):
                 if blockquote_start is None:
                     blockquote_start = line_no
@@ -326,21 +367,32 @@ def check_page(root: Path, path: Path, nlp: bool = False) -> list[Finding]:
             # of figcaption text + HTML attribute strings doesn't
             # trigger long-sentence. Still run inline rules below.
             seen_prose_since_heading = True
+            # HTML comments are pipeline include directives, not content;
+            # leave prev_block_kind so the prose before them still counts
+            # as the introducer for a following list or code block.
+            if not line.lstrip().startswith("<!--"):
+                prev_block_kind = "html"
         elif is_short_label_colon_line(stripped):
             flush_list_block()
             flush_paragraph()
             emit_short_label_if_pending()
             pending_short_label_line = line_no
             seen_prose_since_heading = True
+            prev_block_kind = "label"
         else:
             flush_list_block()
             emit_short_label_if_pending()
             seen_prose_since_heading = True
+            # An indented line under an open list is a wrapped item
+            # continuation, not a new paragraph; keep the block kind as
+            # "list" so a following code block still needs its own lead-in.
+            if not (prev_block_kind == "list" and line[:1].isspace()):
+                prev_block_kind = "prose"
             paragraph_lines.append((line_no, stripped))
 
         plain = strip_inline_code(strip_link_urls(line))
         errors.extend(check_markdown_line(line, plain, line_no, rel))
-        prose_findings, line_now_lets_hits = check_prose_line(plain, line_no, rel)
+        prose_findings, line_now_lets_hits = check_prose_line(plain, line_no, rel, author_name)
         errors.extend(prose_findings)
         now_lets_hits.extend(line_now_lets_hits)
         errors.extend(check_banned_line(line, plain, line_no, rel))

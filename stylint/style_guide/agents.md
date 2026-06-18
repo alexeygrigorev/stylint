@@ -8,6 +8,9 @@ Use this before and after editing technical text.
    snippets.
 4. Run `stylint --style-guide polish` for the final pass: fluff, abstractions,
    bridges, redundant setup, and topic-introducer sentences.
-5. After editing, run the full `stylint` check without `--ignore`.
+5. Run `stylint --prompt abstract-subject` and apply it to the edited files.
+   This required judgment pass catches abstract nouns used as sentence
+   subjects, which the mechanical checker can't catch reliably.
+6. After editing, run the full `stylint` check without `--ignore`.
 
-Use `--ignore` only for investigation. It is not a verification pass.
+Use `--ignore` only for investigation because it isn't a verification pass.

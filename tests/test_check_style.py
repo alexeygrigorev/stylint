@@ -9,6 +9,7 @@ from check_style import (
     count_sentences,
     find_gerund_starts,
 )
+from stylint.patterns import ABSTRACT_SUBJECT_LABELS
 from stylint.text import classify_long_with_commas
 
 
@@ -123,6 +124,12 @@ def test_shape_allowed_for_numpy(tmp_path, body):
     assert not any("[banned-word] 'shape'" in e for e in errors)
 
 
+def test_shape_colon_label_is_not_numpy_exception(tmp_path):
+    root, page = make_page(tmp_path, "The starting point is the same FAQ agent shape:\n")
+    errors = check_page(root, page)
+    assert any("[banned-word] 'shape'" in e for e in errors)
+
+
 # ---------------------------------------------------------------------------
 # Banned phrase, single line
 # ---------------------------------------------------------------------------
@@ -141,6 +148,7 @@ def test_shape_allowed_for_numpy(tmp_path, body):
         "reusable principle",
         "rule of thumb",
         "nothing fancy",
+        "fresh struggle",
         "for follow-up reading",
         "nails it",
         "stands in for",
@@ -247,7 +255,8 @@ def test_banned_phrase_pattern_below_negative(tmp_path):
 def test_banned_phrase_new_general_patterns_positive(tmp_path, body, label):
     root, page = make_page(tmp_path, body)
     errors = check_page(root, page)
-    assert any(f"[banned-phrase] '{label}'" in e for e in errors), errors
+    tag = "abstract-subject" if label in ABSTRACT_SUBJECT_LABELS else "banned-phrase"
+    assert any(f"[{tag}] '{label}'" in e for e in errors), errors
 
 
 @pytest.mark.parametrize(
@@ -303,7 +312,8 @@ def test_banned_phrase_pattern_behind_negative(tmp_path, body):
 def test_banned_phrase_topic_introducer_patterns_positive(tmp_path, body, label):
     root, page = make_page(tmp_path, body)
     errors = check_page(root, page)
-    assert any(f"[banned-phrase] '{label}'" in e for e in errors), errors
+    tag = "abstract-subject" if label in ABSTRACT_SUBJECT_LABELS else "banned-phrase"
+    assert any(f"[{tag}] '{label}'" in e for e in errors), errors
 
 
 @pytest.mark.parametrize(
@@ -349,6 +359,73 @@ def test_banned_phrase_across_lines_does_not_double_fire(tmp_path):
     errors = check_page(root, page)
     assert not any("across lines" in e for e in errors)
     assert any("[banned-phrase] 'reusable principle'" in e for e in errors)
+
+
+# ---------------------------------------------------------------------------
+# Prose-rule phrase checks must also fire when the trigger straddles a
+# hard wrap (markdown prose is line-wrapped). These re-run the relevant
+# regex over the joined paragraph and emit an "across lines" finding.
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.parametrize(
+    "body, expected",
+    [
+        # Pseudo-cleft "X is what made it Y" split at each gap.
+        (
+            "The honest tone is what\nmade it useful to readers.\n",
+            "[cleft] pseudo-cleft 'X is what made it Y' across lines",
+        ),
+        (
+            "The honest tone is what made\nit useful to readers.\n",
+            "[cleft] pseudo-cleft 'X is what made it Y' across lines",
+        ),
+        # Cleft "[This/That/It] is what X is about" split across the wrap.
+        (
+            "We keep it small. That is what the project is\nabout for users.\n",
+            "[cleft] pointless cleft '[This/That/It] is what X is about' across lines",
+        ),
+        # Abstract-subject "a ... pattern is" split after the noun phrase.
+        (
+            "You can ship this two ways. A common\npattern is publishing twice.\n",
+            "[banned-phrase] 'the/a ... pattern is' across lines",
+        ),
+        # Abstract-actor "the growth followed" split across the wrap.
+        (
+            "We shipped the release. The growth\nfollowed.\n",
+            "[banned-phrase] 'the/a ... followed' across lines",
+        ),
+        # Plain banned phrase pattern "at once" split across the wrap.
+        (
+            "We stream tokens rather than buffering the full response at\nonce.\n",
+            "[banned-phrase] 'at once' across lines",
+        ),
+    ],
+)
+def test_prose_phrase_across_lines_positive(tmp_path, body, expected):
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert any(expected in e for e in errors)
+
+
+@pytest.mark.parametrize(
+    "body, expected_tag",
+    [
+        (
+            "The honest tone is what made it useful to readers.\n",
+            "[cleft]",
+        ),
+        (
+            "You can ship this two ways. A common pattern is publishing twice.\n",
+            "[abstract-subject]",
+        ),
+    ],
+)
+def test_prose_phrase_single_line_does_not_double_fire(tmp_path, body, expected_tag):
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert not any("across lines" in e for e in errors)
+    assert any(expected_tag in e for e in errors)
 
 
 # ---------------------------------------------------------------------------
@@ -634,6 +711,91 @@ def test_list_lead_in_required_negative(tmp_path):
     assert not any("list needs a lead-in" in e for e in errors)
 
 
+# ---------------------------------------------------------------------------
+# List / code needs an introducer when it follows another block
+# ---------------------------------------------------------------------------
+
+
+def test_code_after_list_needs_introducer_positive(tmp_path):
+    body = (
+        "## Section\n\nIntro prose for the list.\n\n- first item\n- second item\n\n"
+        "```python\nprint('hi')\n```\n"
+    )
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert any("code block needs an introducing sentence" in e for e in errors)
+    assert any("follows a list" in e for e in errors)
+
+
+def test_code_after_list_with_introducer_negative(tmp_path):
+    body = (
+        "## Section\n\nIntro prose for the list.\n\n- first item\n- second item\n\n"
+        "Now run the script:\n\n```python\nprint('hi')\n```\n"
+    )
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert not any("needs an introducing sentence" in e for e in errors)
+
+
+def test_code_after_wrapped_list_item_needs_introducer_positive(tmp_path):
+    # The last list item wraps onto an indented continuation line; the
+    # code block still follows the list and needs its own lead-in.
+    body = (
+        "## Section\n\nIntro prose for the list.\n\n"
+        "- a first item\n"
+        "- a second item that runs long and wraps onto the\n"
+        "  next line for good measure\n\n"
+        "```python\nprint('hi')\n```\n"
+    )
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert any("code block needs an introducing sentence" in e for e in errors)
+
+
+def test_list_after_code_needs_introducer_positive(tmp_path):
+    body = (
+        "## Section\n\nIntro prose for the code.\n\n```python\nprint('hi')\n```\n\n"
+        "- first item\n- second item\n"
+    )
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert any("list needs an introducing sentence" in e for e in errors)
+    assert any("follows a code block" in e for e in errors)
+
+
+def test_html_comment_is_transparent_for_introducer_negative(tmp_path):
+    # An include directive between the lead-in prose and the code block
+    # must not count as the preceding content.
+    body = (
+        "## Section\n\nCall the async method with await.\n\n"
+        "<!-- include:_includes/show-example-open.html -->\n\n"
+        "```python\nawait run()\n```\n"
+    )
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert not any("needs an introducing sentence" in e for e in errors)
+
+
+def test_consecutive_code_not_double_flagged_as_introducer(tmp_path):
+    # Code after code is owned by the consecutive-code rule, not the
+    # introducer rule.
+    body = (
+        "## Section\n\nIntro prose.\n\n```python\nprint('a')\n```\n\n"
+        "```python\nprint('b')\n```\n"
+    )
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert not any("needs an introducing sentence" in e for e in errors)
+
+
+def test_introducer_skipped_in_notes_section(tmp_path):
+    body = "## Notes\n\n- a bare note\n- another note\n\n```python\nx = 1\n```\n"
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert not any("needs an introducing sentence" in e for e in errors)
+    assert not any("needs a lead-in" in e for e in errors)
+
+
 def test_short_list_period_positive(tmp_path):
     body = (
         "Tools:\n\n"
@@ -713,7 +875,7 @@ def test_smart_quote_flagged(tmp_path):
 def test_em_dash_flagged(tmp_path):
     root, page = make_page(tmp_path, "We use this — sometimes.\n")
     errors = check_page(root, page)
-    assert any("use a hyphen instead of an em dash" in e for e in errors)
+    assert any("[em-dash]" in e for e in errors)
 
 
 def test_table_row_flagged(tmp_path):
@@ -1322,6 +1484,8 @@ def test_contraction_negative(tmp_path):
         "This session is built around a single end-to-end example.\n",
         "The first half is about mindset and the fear of posting.\n",
         "The second half covers the weekly drafting workflow.\n",
+        "We focus on LinkedIn, and this section ends with why.\n",
+        "This part opens with the project setup.\n",
         "The starting project has none, so we build one.\n",
         "Neither ingest nor serve hits the network for the model again.\n",
     ],
@@ -1329,7 +1493,10 @@ def test_contraction_negative(tmp_path):
 def test_banned_phrase_new_patterns(body, tmp_path):
     root, page = make_page(tmp_path, body)
     errors = check_page(root, page)
-    assert any("banned-phrase" in e for e in errors), f"missed: {body!r}"
+    # "abstract subject splits itself" now emits the abstract-subject tag.
+    assert any(
+        "banned-phrase" in e or "abstract-subject" in e for e in errors
+    ), f"missed: {body!r}"
 
 
 @pytest.mark.parametrize(
@@ -1400,6 +1567,9 @@ def test_structure_framing_negative(body, tmp_path):
         "The model is `Xenova/all-MiniLM-L6-v2`, a 384-dimensional embedder.\n",
         "The data is a file, not a running server you rent.\n",
         "Its configuration is the shared settings module.\n",
+        # Subject with a prepositional phrase (4 words before the copula).
+        "The workflow in this workshop is the one I use in practice.\n",
+        "The agent in this workshop is a single loop with one toolset.\n",
     ],
 )
 def test_flat_definition_positive(body, tmp_path):
@@ -1417,6 +1587,10 @@ def test_flat_definition_positive(body, tmp_path):
         "The result is wrong on a reworded question.\n",
         # "It's a ..." opener is fine.
         "It's a FastAPI app that runs an agent loop.\n",
+        # Predicate adjective after an article, with a longer subject: not a
+        # definition ("is the same/best/only/...").
+        "The definition the agent sees is the same as before.\n",
+        "The result of the last run is the best so far.\n",
     ],
 )
 def test_flat_definition_negative(body, tmp_path):
@@ -1485,3 +1659,55 @@ def test_filler_opener_bans(body, tmp_path):
     root, page = make_page(tmp_path, body)
     errors = check_page(root, page)
     assert any("banned-phrase" in e for e in errors), f"missed: {body!r}"
+
+
+@pytest.mark.parametrize(
+    "body, tag",
+    [
+        ("They post two articles at once.\n", "banned-phrase"),  # at once
+        ("The hate was hard to sit with.\n", "banned-phrase"),  # hard to sit with
+        ("It solves the problem for good.\n", "banned-phrase"),  # for good
+        ("You get a wider menu of options.\n", "banned-phrase"),  # menu metaphor
+        ("There was a plot twist.\n", "banned-word"),  # twist
+        ("You need an angle for the post.\n", "banned-word"),  # angle
+        ("A common pattern is to retry.\n", "abstract-subject"),  # the/a pattern is
+        ("The growth followed, and we grew.\n", "abstract-subject"),  # noun followed
+        ("Consistency is what made it useful.\n", "cleft"),  # pseudo-cleft
+    ],
+)
+def test_new_prose_rules_positive(body, tag, tmp_path):
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert any(f"[{tag}]" in e for e in errors), errors
+
+
+@pytest.mark.parametrize(
+    "body",
+    [
+        "Too vague for good results.\n",  # for-good guard spares this
+        "Open the green Code menu and pick New.\n",  # UI menu, not the metaphor
+        "The observer pattern handles events.\n",  # technical 'pattern', not framing
+        "The script followed the protocol exactly.\n",  # transitive 'followed'
+    ],
+)
+def test_new_prose_rules_negative(body, tmp_path):
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert not any(
+        ("banned-phrase" in e or "abstract-subject" in e) for e in errors
+    ), errors
+
+
+@pytest.mark.parametrize(
+    "body, author, flags",
+    [
+        ("Alexey walks through the loop.\n", "Alexey", True),  # default author
+        ("Alexey dropped a database.\n", "Valeriia", False),  # third party, not author
+        ("Valeriia walks through the loop.\n", "Valeriia", True),  # guest's own name
+        ("Alexey walks through the loop.\n", "", False),  # empty disables the check
+    ],
+)
+def test_author_name_third_person(body, author, flags, tmp_path):
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page, author_name=author)
+    assert any("third-person" in e for e in errors) is flags, errors

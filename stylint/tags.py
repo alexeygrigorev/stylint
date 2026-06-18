@@ -39,6 +39,7 @@ class Tag(str, Enum):
     BANNED_WORD = "banned-word"
     BANNED_PHRASE = "banned-phrase"
     BANNED_OPENER = "banned-opener"
+    ABSTRACT_SUBJECT = "abstract-subject"
     # Voice / fragments
     THIRD_PERSON = "third-person"
     ANAPHORIC_NO = "anaphoric-no"

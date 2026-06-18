@@ -9,6 +9,8 @@ from stylint import (
     check_page,
     count_sentences,
     find_gerund_starts,
+    prompt_file,
+    prompt_files,
     style_guide_file,
     style_guide_files,
     style_guide_path,
@@ -22,6 +24,7 @@ def test_package_exports_public_api():
     assert check_page.__name__ == "check_page"
     assert count_sentences("One. Two.") == 2
     assert find_gerund_starts("Reading this, we see the point.") == ["Reading"]
+    assert prompt_file("abstract-subject").name == "prompt-abstract-subject.md"
 
 
 def test_package_exposes_discovery_helpers():
@@ -104,3 +107,16 @@ def test_package_exposes_agents_guide():
     assert path.name == "agents.md"
     text = path.read_text(encoding="utf-8")
     assert text.startswith("Use this before and after editing technical text.")
+    assert "stylint --prompt abstract-subject" in text
+
+
+def test_package_exposes_review_prompts():
+    files = prompt_files()
+
+    assert set(files) == {"abstract-subject"}
+    path = prompt_file("abstract-subject")
+    assert path == files["abstract-subject"]
+    assert path.is_file()
+    assert path.read_text(encoding="utf-8").startswith(
+        "# Review prompt: abstract noun as the subject"
+    )

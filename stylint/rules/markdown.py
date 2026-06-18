@@ -37,16 +37,28 @@ def check_markdown_line(line: str, plain: str, line_no: int, rel) -> list[Findin
     if line.strip() == "---":
         findings.append(Finding(rel, line_no, Tag.HR, "horizontal rules are not used"))
     if "—" in line:
-        findings.append(Finding(rel, line_no, Tag.EM_DASH, "use a hyphen instead of an em dash"))
+        findings.append(Finding(
+            rel, line_no, Tag.EM_DASH,
+            "em dash in prose; replace it with a hyphen. The exception is a "
+            "parenthetical aside set off by two dashes: split that into two "
+            "sentences rather than re-bracketing it with commas.",
+        ))
     if DOUBLE_HYPHEN_RE.search(plain) and not line.lstrip().startswith("|"):
-        findings.append(Finding(rel, line_no, Tag.DOUBLE_HYPHEN, "use a single hyphen, not '--'"))
+        findings.append(Finding(
+            rel, line_no, Tag.DOUBLE_HYPHEN,
+            "double hyphen in prose; use a single hyphen. When two dashes "
+            "bracket a parenthetical aside, split it into two sentences "
+            "instead.",
+        ))
     if DASH_PARENTHETICAL_RE.search(plain) and not LIST_ITEM_RE.match(line):
         findings.append(
             Finding(
                 rel,
                 line_no,
                 Tag.DASH_PARENTHETICAL,
-                "dash-enclosed parenthetical in prose; split into two sentences or simplify",
+                "dash-enclosed parenthetical in prose; split it into two "
+                "sentences or fold the aside into the main clause. Swapping "
+                "the dashes for commas only masks the same interruption.",
             )
         )
     for char, name in SMART_QUOTES.items():

@@ -9,6 +9,8 @@ from .lint import check_page
 from .output import print_findings
 from .styleguide import (
     agents_guide_file,
+    prompt_file,
+    prompt_files,
     style_guide_file,
     style_guide_files,
     style_guide_path,
@@ -64,6 +66,18 @@ def parse_args() -> argparse.Namespace:
         ),
     )
     parser.add_argument(
+        "--author-name",
+        default="Alexey",
+        metavar="NAME",
+        help=(
+            "Name of the page's author/presenter. The third-person check "
+            "flags this name as a self-reference. Defaults to 'Alexey'. "
+            "Pass a guest instructor's name (e.g. --author-name Valeriia) "
+            "so their own name flags while other people's names do not. "
+            "Pass an empty string to disable the check."
+        ),
+    )
+    parser.add_argument(
         "--nlp",
         action="store_true",
         help=(
@@ -83,6 +97,17 @@ def parse_args() -> argparse.Namespace:
         help=(
             "Print the short agent editing checklist: when to read each "
             "style guide and how to verify edits."
+        ),
+    )
+    parser.add_argument(
+        "--prompt",
+        metavar="NAME",
+        nargs="?",
+        const="",
+        help=(
+            "Print a focused review prompt for an LLM or subagent that "
+            "targets one judgment-only smell no regex catches. Pass a name "
+            "(abstract-subject) to print it; pass nothing to list names."
         ),
     )
     parser.add_argument(
@@ -113,6 +138,24 @@ def main() -> int:
 
     if args.agents:
         print(agents_guide_file().read_text(encoding="utf-8"), end="")
+        return 0
+
+    if args.prompt == "":
+        for name in prompt_files():
+            print(name)
+        return 0
+
+    if args.prompt:
+        try:
+            path = prompt_file(args.prompt)
+        except KeyError:
+            print(
+                "Unknown review prompt. Use one of: "
+                + ", ".join(prompt_files()),
+                file=sys.stderr,
+            )
+            return 2
+        print(path.read_text(encoding="utf-8"), end="")
         return 0
 
     if args.style_guide == "":
@@ -193,7 +236,7 @@ def main() -> int:
 
     findings = []
     for root, page in pages:
-        findings.extend(check_page(root, page, nlp=args.nlp))
+        findings.extend(check_page(root, page, nlp=args.nlp, author_name=args.author_name))
 
     if effective_off:
         findings = [finding for finding in findings if finding.tag not in effective_off]

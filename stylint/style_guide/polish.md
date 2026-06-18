@@ -32,6 +32,10 @@ Rewrite these patterns.
   return value back as the response`.
 - Vague evaluative words: `fiddly`, `tricky`, `nice`, `convenient`,
   `clean`, `elegant`, `slick` - name the concrete thing instead.
+- Vague placeholders where a concrete noun belongs: `you need
+  something to aim at`, `something to work with`, `a way to do it`.
+  Name the concrete thing: `you need a structure to follow`,
+  `a target`, `a checklist`.
 - `and friends`, `and so on`, `etc.` - name the category or add concrete items.
 - Heavy noun-phrase subjects pointing at a previous claim: `the
   plain-HTTP contract is also why Lambda runs any language`. Use a
@@ -83,6 +87,43 @@ Watch for these judgment-only patterns:
   does directly.
 - No editorializing unless the source said it. State the fact and move on.
 
+## Don't make an abstract noun the subject
+
+An abstract noun as the grammatical subject of a claim reads as vague and
+detached: it hides who acted and why. The sentence is usually grammatical,
+so a linter cannot catch most of these. Watch for them by hand and rewrite
+with a real actor, a concrete cause, or a person.
+
+- `The growth followed.` -> `Subscribers grew 9% that week.`
+- `The honest account taught them something.` -> `People found it useful
+  because a senior engineer admitted a mistake.`
+- `The hate was hard to sit with.` -> `It was not easy to deal with all
+  the hate.`
+- `The outcomes are concrete.` -> drop the intro and name the outcomes
+  directly: `Two readers asked for a referral.`
+
+The tell is a sentence that opens with `The <abstraction>` (growth, hate,
+account, outcome, struggle, success, impact) and then makes a soft claim
+about it. A few narrow forms are caught mechanically under the
+`abstract-subject` tag, but most need a human eye.
+
+## Don't use "loop" as a vague metaphor
+
+Keep "loop" for a literal loop: a `for` or `while` loop, or the agent,
+tool, runtime, or event loop the code actually runs. "feedback loop" is
+an established term and is fine too. Everywhere else, "loop" standing in
+for a process, workflow, or cycle is a vague metaphor. Name the concrete
+thing instead.
+
+- `The full loop has four stages.` -> `The weekly workflow has four stages.`
+- `This closes the comparison loop.` -> `This completes the comparison.`
+- `Look at the whole product loop.` -> `Look at the whole product lifecycle.`
+- `Set up a fast local loop.` -> `Set up a fast local dev cycle.`
+
+The test: point to the literal loop in the code. If you can (an agent
+loop, a `for` loop), keep it. If you cannot, and it is not "feedback
+loop", rewrite it.
+
 ## Drop empty framing sentences
 
 Cut content-free sentences that frame the work without adding information.
@@ -129,6 +170,14 @@ Subsections inside one section should relate to each other.
 ## Place content where it belongs
 
 If you write a backward or forward reference, move the content.
+
+## Keep modifiers next to what they modify
+
+A modifier stranded far from its target reads ambiguously: the reader
+cannot tell which word it attaches to. In `we published a post about
+dropping a database in front of everyone`, `in front of everyone` could
+attach to the publishing or to the dropping. Put the phrase next to the
+word it describes, or rewrite so only one reading is possible.
 
 ## Punctuation inside quotes
 

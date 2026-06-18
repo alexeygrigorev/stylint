@@ -1,6 +1,7 @@
 """Banned token rule data."""
 
 from ..patterns import (
+    ABSTRACT_SUBJECT_LABELS,
     BANNED_OPENERS,
     BANNED_PHRASE_PATTERNS,
     BANNED_PHRASES,
@@ -60,7 +61,8 @@ def check_banned_line(line: str, plain: str, line_no: int, rel) -> list[Finding]
             ]
             if not matches:
                 continue
-        findings.append(Finding(rel, line_no, Tag.BANNED_PHRASE, f"'{label}' - {hint}"))
+        tag = Tag.ABSTRACT_SUBJECT if label in ABSTRACT_SUBJECT_LABELS else Tag.BANNED_PHRASE
+        findings.append(Finding(rel, line_no, tag, f"'{label}' - {hint}"))
 
     opener_match = OPENER_RE.match(line)
     if opener_match:

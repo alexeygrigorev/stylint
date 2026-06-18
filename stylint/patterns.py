@@ -93,6 +93,13 @@ PARAGRAPH_QUESTION_OPENER_RE = re.compile(
 THIS_IS_WHAT_ABOUT_RE = re.compile(
     r"\b(?:This|That|It)\s+is\s+what\s+\w+(?:\s+\w+){0,3}\s+(?:is|are|was|were)\s+about\b"
 )
+# Pseudo-cleft "X is [exactly] what made it Y" - inflates a plain causal
+# claim into a cleft. Prefer "people found it useful because ...".
+PSEUDO_CLEFT_MADE_RE = re.compile(
+    r"\b(?:is|are|was|were)\s+(?:\w+\s+)?what\s+(?:made|makes|make)\s+"
+    r"(?:it|them|this|that|him|her|us)\b",
+    re.IGNORECASE,
+)
 THIS_IS_CODE_LEAD_IN_RE = re.compile(r"^This is\b.*:\s*$")
 
 # Lazy headings starting with "The X". Catches both the bare "## The
@@ -114,6 +121,8 @@ LAZY_HEADING_RE = re.compile(
 
 # Single banned tokens. Whole-word, case-insensitive in prose.
 BANNED_WORDS: dict[str, str] = {
+    "twist": "drop the narrative cliche; state what actually changed",
+    "angle": "drop the vague writing-jargon; name the focus ('what the post is about', 'the decision you made')",
     "delve": "use 'look at' / 'dig into' / 'explore'",
     "crucial": "drop or use 'important' / 'essential'",
     "pivotal": "drop the puffery",
@@ -177,9 +186,9 @@ BANNED_PHRASES: dict[str, str] = {
     "known-good version": "use 'working version'",
     "a clear pattern emerged": "drop the cliche",
     "here's the catch": "drop the cliche",
-    "plot twist": "drop the cliche",
-    "but there's a twist": "drop the cliche",
     "now for the fun part": "drop the cliche",
+    "fresh struggle": "drop the cliche. Name the concrete feeling or situation ('you don't feel stuck when posting', 'you're not starting from scratch each week')",
+    "hard to sit with": "drop the cliche; say plainly what was difficult ('it was not easy to deal with all the hate')",
     "nothing fancy": "drop the filler; state the concrete benefit",
     "nails it": "use 'works' or name the concrete behavior",
     "marks a pivotal moment": "drop the puffery",
@@ -290,6 +299,47 @@ BANNED_PHRASE_PATTERNS: dict[str, tuple[re.Pattern[str], str]] = {
         re.compile(r"\block(?:s|ed|ing)?\s+in\b", re.IGNORECASE),
         "drop the metaphor; use 'set', 'fix', 'force', or name the action",
     ),
+    "fuel (verb)": (
+        re.compile(r"\bfuel(?:s|ed|ing|led|ling)?\b", re.IGNORECASE),
+        "drop the 'fuel' metaphor; name what it provides ('that backlog "
+        "gives you topics', 'feeds', 'supplies'). Keep only the literal "
+        "noun sense (diesel fuel)",
+    ),
+    "carry (metaphor)": (
+        re.compile(r"\bcarr(?:y|ies|ied|ying)\b", re.IGNORECASE),
+        "drop the 'carry' metaphor; say what it does plainly ('includes', "
+        "'sends', 'holds', 'has', 'persists', 'transfers')",
+    ),
+    "break down (explain)": (
+        re.compile(
+            r"\bbreak(?:s|ing)?\s+down\s+"
+            r"(?:the|a|an|this|that|these|those|how|what|why|your|our|"
+            r"each|every|its)\b",
+            re.IGNORECASE,
+        ),
+        "drop the 'break down' cliche; use 'describe', 'outline', or "
+        "'discuss'. Keep the literal 'fails' sense ('where it breaks down')",
+    ),
+    "makes ... concrete": (
+        re.compile(
+            r"\bma(?:ke|kes|de)\s+(?:[\w'-]+\s+){1,4}concrete\b(?!\s+[a-z])",
+            re.IGNORECASE,
+        ),
+        "drop the 'makes X concrete' cliche; show the concrete thing "
+        "directly (state the points, give the example)",
+    ),
+    "drive home (cliche)": (
+        re.compile(
+            r"\bdr(?:ive|ives|ove|iving|iven)\s+(?:[\w'-]+\s+){0,3}home\b",
+            re.IGNORECASE,
+        ),
+        "drop the 'drive home' cliche; state the point directly",
+    ),
+    "one of these (vague list lead-in)": (
+        re.compile(r"\bone of (?:these|the following)\b", re.IGNORECASE),
+        "name what the list contains instead of 'one of these'; the "
+        "lead-in should describe the items",
+    ),
     "walk the text": (
         re.compile(
             r"\bwalk(?:s|ed|ing)?\s+(?:through\s+|across\s+|over\s+|down\s+)?"
@@ -350,6 +400,16 @@ BANNED_PHRASE_PATTERNS: dict[str, tuple[re.Pattern[str], str]] = {
         ),
         "drop the abstract hurdle label and name the concrete problem",
     ),
+    "the/a ... aim is": (
+        re.compile(
+            r"(?:^|[.!?]\s+)(?:the|a|an|our|my)\s+"
+            r"(?:[A-Za-z][\w-]*\s+){0,2}aims?\s+"
+            r"(?:is|isn't|are|was|wasn't|is\s+not|was\s+not)\b",
+            re.IGNORECASE,
+        ),
+        "drop the 'the aim is' framing; state it directly ('you don't need "
+        "a perfect post, just three clear drafts')",
+    ),
     "the/a ... example:": (
         re.compile(
             r"(?:^|[.!?]\s+)(?:the|a|an|another|recent)\s+"
@@ -402,17 +462,29 @@ BANNED_PHRASE_PATTERNS: dict[str, tuple[re.Pattern[str], str]] = {
         "write a direct statement with a concrete subject and verb "
         "(e.g. 'you get exposure')",
     ),
-    "content as actor": (
+    "the/a ... pattern is": (
         re.compile(
-            r"\b(?:the\s+)?(?:previous|next|current|this|that)?\s*"
-            r"(?:lesson|section|chapter|part|module|unit|workshop|tutorial|"
-            r"guide|page|article|write-up|readme|document|doc)\s+"
-            r"(?:put|puts|placed|places|add|adds|added|build|builds|built|"
-            r"create|creates|created|implement|implements|implemented|"
-            r"deploy|deploys|deployed|configure|configures|configured|"
-            r"fetch|fetches|fetched|load|loads|loaded|install|installs|"
-            r"installed|start|starts|started|show|shows|showed|explain|"
-            r"explains|explained|teach|teaches|taught)\b",
+            r"(?:^|[.!?]\s+)(?:a|an|one|another|the)\s+(?:[A-Za-z][\w-]*\s+){0,2}"
+            r"pattern\s+(?:is|was|here\s+is)\b",
+            re.IGNORECASE,
+        ),
+        "drop the 'pattern' framing; state the approach directly ('publish "
+        "on a blog and republish to Substack')",
+    ),
+    "content as actor": (
+        # A content noun (the workshop/section/part/lesson/page/notebook/...)
+        # as the grammatical subject at the start of a sentence. Intentionally
+        # broad: any word may follow, so copulas and compounds flag too ("the
+        # workshop is one repo", "the workshop code puts...", "the notebooks
+        # have..."). Rewrite with a real actor (we/you) or recast.
+        re.compile(
+            r"(?:^|[.!?]\s+)"
+            r"(?:The|This|That|Next|Last|Previous|Final|Current)\s+"
+            r"(?:[a-z]+\s+)?"
+            r"(?:lessons?|sections?|chapters?|parts?|modules?|units?|"
+            r"tutorials?|workshops?|guides?|pages?|articles?|write-ups?|"
+            r"readmes?|documents?|docs?|notebooks?)\s+"
+            r"[a-z]",
             re.IGNORECASE,
         ),
         "content does not act; write 'in the previous lesson, we added' "
@@ -518,6 +590,17 @@ BANNED_PHRASE_PATTERNS: dict[str, tuple[re.Pattern[str], str]] = {
         "mindset, in the second we get practical'), or just write the "
         "content of each part directly.",
     ),
+    "section self-narration": (
+        re.compile(
+            r"\b(?:this|the)\s+(?:section|part|chapter|page|post)\s+"
+            r"(?:ends?|opens?|closes?|starts?|begins?|finishes?|wraps?)\s+"
+            r"(?:up\s+)?(?:with|by)\b",
+            re.IGNORECASE,
+        ),
+        "don't narrate where content sits in the document ('this section "
+        "ends with why', 'this part opens with setup'). Say what you do "
+        "('we explain why') or just deliver the content.",
+    ),
     "abstract subject splits itself": (
         re.compile(
             r"\b(?:the\s+)?(?:work|task|job|project|process|pipeline|flow|"
@@ -539,7 +622,60 @@ BANNED_PHRASE_PATTERNS: dict[str, tuple[re.Pattern[str], str]] = {
         "the point or the action directly ('we change two things here', "
         "'these reasons matter because...')",
     ),
+    "menu (metaphor)": (
+        re.compile(
+            r"\b(?:wider|broader|bigger|fuller|full|whole)\s+menu\b"
+            r"|\bmenu\s+of\s+(?:options|ideas|choices|topics)\b",
+            re.IGNORECASE,
+        ),
+        "drop the 'menu' metaphor; name the options directly ('post ideas "
+        "fall into three groups')",
+    ),
+    "for good (permanently)": (
+        re.compile(
+            r"\bfor good\b(?!\s+(?:results?|reasons?|measure|practices?|examples?|luck))",
+            re.IGNORECASE,
+        ),
+        "drop 'for good'; it just solves the problem",
+    ),
+    "at once": (
+        re.compile(r"\bat once\b", re.IGNORECASE),
+        "drop 'at once' and let the editor pick the contextual replacement: "
+        "'in one go' / 'in a single call' / 'in one batch' for the "
+        "single-operation sense, or 'at the same time' for the simultaneous "
+        "sense",
+    ),
+    "the/a ... followed": (
+        re.compile(
+            r"(?:^|[.!?]\s+)(?:the|a|an|our)\s+(?:[A-Za-z][\w-]*\s+){0,2}"
+            r"followed(?=[.,;:]|\s+(?:soon|quickly|shortly|naturally|then|next)\b)",
+            re.IGNORECASE,
+        ),
+        "abstract noun as the actor of a vague consequence ('the growth "
+        "followed'). Name what happened and why: 'subscribers grew 9% that "
+        "week because ...'",
+    ),
 }
+
+# Labels in BANNED_PHRASE_PATTERNS that belong to the "abstract noun as the
+# subject/actor of a claim" family. These emit the `abstract-subject` tag
+# instead of the generic `banned-phrase` so the family is filterable and has
+# one home. The smell is broader than any regex can catch deterministically
+# (see polish.md "Don't make an abstract noun the subject"); these patterns
+# only catch the narrow, unambiguous offenders.
+ABSTRACT_SUBJECT_LABELS: frozenset[str] = frozenset({
+    "the/a ... result is",
+    "the/a ... fix is",
+    "the/a ... flow is",
+    "the/a ... setup is",
+    "the/a ... hurdle is",
+    "the/a ... option is",
+    "the/a ... aim is",
+    "the/a ... pattern is",
+    "content as actor",
+    "abstract subject splits itself",
+    "the/a ... followed",
+})
 
 # Sentence openers. Capitalized, must start the line (allowing optional list
 # marker). Match is case-sensitive on the opener token itself.
@@ -568,7 +704,6 @@ WORD_EXCEPTION_RES: dict[str, re.Pattern[str]] = {
     # "X.shape", "a tensor with shape (2, 768)", "the output shape".
     "shape": re.compile(
         r"\.shape\b"
-        r"|\bshape\s*[:=]"
         r"|\b(?:numpy|np|tensor|tensors|array|arrays|ndarray|matrix|matrices|"
         r"vector|vectors|output|input|embedding|embeddings|batch|hidden|"
         r"logits|dimension|dimensions)\b[^.!?`]{0,25}\bshapes?\b",
@@ -960,8 +1095,12 @@ CONTRACTION_RES: list[tuple[re.Pattern[str], str]] = [
 FLAT_DEFINITION_RE = re.compile(
     r"(?:^|[.!?]\s+)"
     r"(?:The|Its|Our|Their|This|That|These|Those)\s+"
-    r"(?:[A-Za-z][\w-]*\s+){1,3}"
-    r"(?:is|are)\s*(?:,\s*)?(?:an?|the)\b",
+    r"(?:[A-Za-z][\w-]*\s+){1,4}"
+    r"(?:is|are)\s*(?:,\s*)?(?:an?|the)\b"
+    # but not "is the same / best / only / first / last / right ...": a
+    # predicate adjective with an article is not a definition.
+    r"(?!\s+(?:same|best|only|first|second|third|last|latest|next|right|"
+    r"wrong|opposite|case|point|default|norm)\b)",
     re.IGNORECASE,
 )
 # Bare demonstrative definitions: "This is a check.", "These are the steps.",

@@ -4,6 +4,8 @@ from .lint import check_page
 from .models import Finding
 from .styleguide import (
     agents_guide_file,
+    prompt_file,
+    prompt_files,
     style_guide_file,
     style_guide_files,
     style_guide_path,
@@ -21,6 +23,8 @@ __all__ = [
     "count_words",
     "agents_guide_file",
     "find_gerund_starts",
+    "prompt_file",
+    "prompt_files",
     "style_guide_file",
     "style_guide_files",
     "style_guide_path",

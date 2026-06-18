@@ -28,6 +28,7 @@ from ..patterns import (
     SENTENCE_MAX_WORDS,
     SHORT_LABEL_COLON_RE,
     THIS_IS_WHAT_ABOUT_RE,
+    PSEUDO_CLEFT_MADE_RE,
     BANNED_PHRASES,
     BANNED_PHRASE_PATTERNS,
     NOW_LETS_COMBO_RE,
@@ -371,6 +372,32 @@ def check_paragraph(
                     )
                 )
 
+    # Cleft regexes (THIS_IS_WHAT_ABOUT_RE, PSEUDO_CLEFT_MADE_RE) fire per
+    # line in check_prose_line, so a cleft straddling a hard wrap slips
+    # through. Re-run them over the joined paragraph and emit only when no
+    # single line already matched, mirroring the banned-phrase mechanism so
+    # single-line behavior is unchanged.
+    for regex, cleft_hint in (
+        (
+            THIS_IS_WHAT_ABOUT_RE,
+            "pointless cleft '[This/That/It] is what X is about' across "
+            "lines; state directly what X does or is",
+        ),
+        (
+            PSEUDO_CLEFT_MADE_RE,
+            "pseudo-cleft 'X is what made it Y' across lines; state the "
+            "cause directly ('people found it useful because ...', 'the "
+            "honest tone earned the goodwill')",
+        ),
+    ):
+        if regex.search(joined):
+            already_flagged = any(
+                regex.search(strip_inline_code(strip_link_urls(line)))
+                for _, line in paragraph_lines
+            )
+            if not already_flagged:
+                findings.append(Finding(rel, start_line, Tag.CLEFT, cleft_hint))
+
     for word in find_gerund_starts(joined):
         findings.append(
             Finding(
@@ -398,10 +425,12 @@ def check_paragraph(
     return findings, pending_multi_colon_line
 
 
-def check_prose_line(plain: str, line_no: int, rel) -> tuple[list[Finding], list[tuple[int, str]]]:
+def check_prose_line(
+    plain: str, line_no: int, rel, author_name: str = "Alexey"
+) -> tuple[list[Finding], list[tuple[int, str]]]:
     findings: list[Finding] = []
     now_lets_hits: list[tuple[int, str]] = []
-    if "Alexey" in strip_double_quoted(plain):
+    if author_name and author_name in strip_double_quoted(plain):
         findings.append(Finding(rel, line_no, Tag.THIRD_PERSON, "avoid third-person presenter references"))
     if ANAPHORIC_NO_RE.search(plain):
         findings.append(
@@ -425,6 +454,17 @@ def check_prose_line(plain: str, line_no: int, rel) -> tuple[list[Finding], list
                 line_no,
                 Tag.CLEFT,
                 "pointless cleft '[This/That/It] is what X is about'; state directly what X does or is",
+            )
+        )
+    if PSEUDO_CLEFT_MADE_RE.search(plain):
+        findings.append(
+            Finding(
+                rel,
+                line_no,
+                Tag.CLEFT,
+                "pseudo-cleft 'X is what made it Y'; state the cause directly "
+                "('people found it useful because ...', 'the honest tone "
+                "earned the goodwill')",
             )
         )
     for match in META_FRAMING_RE.finditer(plain):

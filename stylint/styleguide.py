@@ -35,3 +35,24 @@ def style_guide_file(name: str) -> Path:
 def agents_guide_file() -> Path:
     """Return the short agent-facing guide document."""
     return style_guide_path() / "agents.md"
+
+
+def prompt_files() -> dict[str, Path]:
+    """Return focused review-prompt names mapped to installed paths.
+
+    These are imperative prompts for an LLM or subagent to hunt and fix one
+    judgment-only smell that no regex catches reliably."""
+    guide = style_guide_path()
+    return {
+        "abstract-subject": guide / "prompt-abstract-subject.md",
+    }
+
+
+def prompt_file(name: str) -> Path:
+    """Return one review-prompt document by short name."""
+    normalized = name.removesuffix(".md").removeprefix("prompt-")
+    files = prompt_files()
+    if normalized not in files:
+        names = ", ".join(files)
+        raise KeyError(f"unknown review prompt '{name}' (choose one of: {names})")
+    return files[normalized]

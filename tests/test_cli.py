@@ -42,6 +42,35 @@ def test_cli_prints_agents_checklist(monkeypatch, capsys):
     output = capsys.readouterr().out
     assert output.startswith("Use this before and after editing technical text.")
     assert "stylint --style-guide voice" in output
+    assert "stylint --prompt abstract-subject" in output
+
+
+def test_cli_lists_review_prompts(monkeypatch, capsys):
+    monkeypatch.setattr(sys, "argv", ["stylint", "--prompt"])
+
+    assert main() == 0
+
+    output = capsys.readouterr().out
+    assert "abstract-subject" in output
+
+
+def test_cli_prints_one_review_prompt(monkeypatch, capsys):
+    monkeypatch.setattr(sys, "argv", ["stylint", "--prompt", "abstract-subject"])
+
+    assert main() == 0
+
+    output = capsys.readouterr().out
+    assert output.startswith("# Review prompt: abstract noun as the subject")
+
+
+def test_cli_rejects_unknown_review_prompt(monkeypatch, capsys):
+    monkeypatch.setattr(sys, "argv", ["stylint", "--prompt", "missing"])
+
+    assert main() == 2
+
+    err = capsys.readouterr().err
+    assert "Unknown review prompt" in err
+    assert "abstract-subject" in err
 
 
 def test_cli_help_points_agents_to_checklist(monkeypatch, capsys):
