@@ -37,6 +37,8 @@ HTML = """<!doctype html>
     .arrow { color: #1f6feb; font-weight: 800; padding: 0 3px; }
     .repl { color: #15803d; font-weight: 600; }
     mark { background: #ffdf3d; padding: 0 2px; border-radius: 3px; }
+    .ctx a { color: #1f6feb; text-decoration: underline; text-decoration-thickness: 1px; overflow-wrap: anywhere; }
+    .ctx code, code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 0.86em; background: #eef0f3; padding: 1px 4px; border-radius: 4px; }
 
     /* Three square decision buttons */
     .decide { display: flex; gap: 12px; margin-top: 20px; }
@@ -147,12 +149,12 @@ HTML = """<!doctype html>
         return;
       }
       const item = state.filtered[state.index];
-      const original = item.highlighted_target_sentence || item.highlighted_line || escapeHtml(item.target_sentence || item.line || '');
+      const original = mdHighlight(item.target_sentence || item.line || '', item.phrase || '');
       const transform = item.classifier_rewrite
-        ? `<span class="orig">${original}</span><span class="arrow">&rarr;</span><span class="repl">${escapeHtml(item.classifier_rewrite)}</span>`
+        ? `<span class="orig">${original}</span><span class="arrow">&rarr;</span><span class="repl">${md(item.classifier_rewrite)}</span>`
         : `<span class="orig">${original}</span>`;
-      const before = item.before_sentence ? `<span class="ctx-side">${escapeHtml(item.before_sentence)}</span><span class="gap-lg"></span>` : '';
-      const after = item.after_sentence ? `<span class="gap-sm"></span><span class="ctx-side">${escapeHtml(item.after_sentence)}</span>` : '';
+      const before = item.before_sentence ? `<span class="ctx-side">${md(item.before_sentence)}</span><span class="gap-lg"></span>` : '';
+      const after = item.after_sentence ? `<span class="gap-sm"></span><span class="ctx-side">${md(item.after_sentence)}</span>` : '';
       const label = item.human_label || '';
       const note = item.human_note || '';
       card.innerHTML = `
@@ -226,6 +228,23 @@ HTML = """<!doctype html>
       return String(value).replace(/[&<>"']/g, ch => ({
         '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;'
       }[ch]));
+    }
+
+    // Markdown-lite: links collapse to their text, `code` -> monospace.
+    function md(value) {
+      let s = escapeHtml(String(value));
+      s = s.replace(/\\[([^\\]]+)\\]\\((https?:\\/\\/[^\\s)]+)\\)/g,
+        (m, text, url) => `<a href="${url}" target="_blank" rel="noopener">${text}</a>`);
+      s = s.replace(/`([^`]+)`/g, '<code>$1</code>');
+      return s;
+    }
+
+    // Render markdown-lite and wrap the smell phrase in <mark>.
+    function mdHighlight(text, phrase) {
+      const SOM = '\\u0001', EOM = '\\u0002';
+      let t = String(text);
+      if (phrase && t.includes(phrase)) t = t.replace(phrase, SOM + phrase + EOM);
+      return md(t).replace(SOM, '<mark>').replace(EOM, '</mark>');
     }
 
     load();
