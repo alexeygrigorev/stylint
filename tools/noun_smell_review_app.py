@@ -16,85 +16,76 @@ HTML = """<!doctype html>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Noun Smell Review</title>
   <style>
-    :root { font-family: system-ui, sans-serif; color: #1b1b1f; background: #f7f7f4; line-height: 1.5; }
+    :root { font-family: system-ui, sans-serif; color: #1b1b1f; background: #f7f7f4; line-height: 1.45; }
     body { margin: 0; }
-    header { position: sticky; top: 0; background: #fff; border-bottom: 1px solid #ddd; padding: 10px 18px; z-index: 2; }
-    main { max-width: 960px; margin: 0 auto; padding: 14px 18px; }
-    .toolbar { display: flex; gap: 12px; align-items: baseline; justify-content: space-between; }
-    .filters { margin-top: 18px; }
-    .filters h2 { margin: 0 0 8px; font-size: 16px; }
-    .filter-grid { display: grid; grid-template-columns: repeat(3, minmax(150px, 1fr)); gap: 10px; align-items: end; }
-    label { display: grid; gap: 4px; font-size: 14px; color: #555; }
-    select, button, textarea { font: inherit; }
-    select { min-height: 42px; border: 1px solid #bbb; border-radius: 6px; background: #fff; padding: 7px 9px; }
-    button { border: 1px solid #b8b8b8; background: #fff; padding: 9px 11px; border-radius: 6px; cursor: pointer; min-height: 40px; }
-    button.primary { background: #1f6feb; border-color: #1f6feb; color: white; }
-    button.keep { background: #eef8ef; }
-    button.bad { background: #fff0f0; }
-    button.skip { background: #f3f3f3; }
-    .card { background: white; border: 0; border-radius: 8px; padding: 16px; margin-top: 14px; }
-    .meta { color: #666; font-size: 13px; display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
-    .context { margin: 10px 0; }
-    .context h3, .section h3 { margin: 0 0 6px; font-size: 14px; color: #555; }
-    blockquote { border: 0; margin: 0; padding: 10px 12px; background: #fafafa; border-radius: 6px; }
-    .original blockquote { font-size: 16px; line-height: 1.45; background: #fafafa; color: #555; }
-    .replace blockquote { font-size: 18px; line-height: 1.45; background: #fffdf2; }
-    .rewrite blockquote { font-size: 17px; line-height: 1.45; background: #f4fbf5; }
-    .before-after blockquote { font-size: 15px; color: #666; background: #f7f7f7; }
-    .context-lines blockquote { font-size: 15px; color: #666; background: #f7f7f7; }
-    mark { background: #ffec80; padding: 1px 3px; border-radius: 3px; }
-    textarea { width: 100%; min-height: 70px; box-sizing: border-box; margin-top: 6px; border: 1px solid #bbb; border-radius: 6px; padding: 8px; }
-    .row { display: grid; grid-template-columns: repeat(4, minmax(100px, 1fr)); gap: 8px; margin-top: 10px; }
-    .nav-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 8px; }
-    .pill { border: 1px solid #ddd; border-radius: 999px; padding: 4px 9px; background: #fafafa; }
-    .muted { color: #777; }
+    header { position: sticky; top: 0; background: #fff; border-bottom: 1px solid #e3e3e3; padding: 8px 14px; z-index: 2; }
+    main { max-width: 720px; margin: 0 auto; padding: 10px 12px 28px; }
+    .toolbar { display: flex; gap: 10px; align-items: baseline; justify-content: space-between; }
+    .toolbar strong { font-size: 16px; }
+    .muted { color: #888; }
+    button, select, textarea { font: inherit; }
+
+    .card { background: #fff; border-radius: 10px; padding: 12px 14px; margin-top: 10px; }
+
+    /* Context: one flowing block, target sentence highlighted in place */
+    .ctx { margin: 0; font-size: 16px; line-height: 1.55; }
+    .ctx-side { color: #9a9a9a; }
+    .ctx-target { color: #1b1b1f; }
+    mark { background: #ffe066; padding: 0 2px; border-radius: 3px; }
+
+    /* Transform: original -> suggested rewrite */
+    .rw { margin: 10px 0 0; font-size: 14px; display: grid; grid-template-columns: 1fr auto 1fr; gap: 8px; align-items: center; }
+    .rw-from { color: #8a8a8a; }
+    .rw-arrow { color: #1f6feb; font-weight: 700; font-size: 18px; text-align: center; }
+    .rw-to { color: #1b6b2e; }
+
+    /* Decision row: one compact row */
+    .decide { display: grid; grid-template-columns: 1fr 1fr 0.8fr; gap: 8px; margin-top: 12px; }
+    .decide button { border: 1px solid #cfcfcf; background: #fff; padding: 11px 0; border-radius: 8px; cursor: pointer; font-weight: 600; }
+    .decide .good { background: #eef8ef; border-color: #bcdcc0; color: #1b6b2e; }
+    .decide .bad { background: #fdeeee; border-color: #e4bdbd; color: #a3322f; }
+    .decide .skip { background: #f2f2f2; color: #555; }
+    .decide button.sel { outline: 3px solid #1f6feb; outline-offset: -1px; }
+
+    /* Agent review (secondary, small) */
+    .agent { margin: 12px 0 0; font-size: 13px; color: #555; }
+    .decision { display: inline-block; border-radius: 999px; padding: 2px 8px; border: 1px solid #ccc; background: #fafafa; font-weight: 650; font-size: 12px; }
+    .decision.bad { background: #fff0f0; border-color: #e3aaaa; color: #a3322f; }
+    .decision.keep { background: #eef8ef; border-color: #a8d3ad; color: #1b6b2e; }
+
+    /* Note + nav + meta */
+    label { display: grid; gap: 4px; font-size: 13px; color: #666; }
+    textarea { width: 100%; min-height: 44px; box-sizing: border-box; margin-top: 8px; border: 1px solid #ccc; border-radius: 8px; padding: 8px; font-size: 14px; }
+    .nav { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+    .nav button { border: 1px solid #cfcfcf; background: #fff; padding: 9px 0; border-radius: 8px; cursor: pointer; }
+    .meta { color: #999; font-size: 11px; display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
+    .pill { border: 1px solid #e6e6e6; border-radius: 999px; padding: 2px 8px; background: #fafafa; }
     .path { overflow-wrap: anywhere; }
-    .section { margin-top: 10px; }
-    .decision { display: inline-block; border-radius: 999px; padding: 4px 9px; border: 1px solid #ccc; background: #fafafa; font-weight: 650; }
-    .decision.bad { background: #fff0f0; border-color: #e3aaaa; }
-    .decision.keep { background: #eef8ef; border-color: #a8d3ad; }
-    .explain { margin: 6px 0 0; color: #333; }
-    .agent-summary { background: #fafafa; border-radius: 6px; padding: 9px 10px; }
-    .agent-summary p { margin: 6px 0 0; }
-    .agent-summary p:first-child { margin-top: 0; }
-    .review-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 12px; align-items: start; }
-    .side-panel { display: grid; gap: 10px; }
-    .review-flow { display: grid; gap: 10px; }
-    @media (max-width: 760px) {
-      header { position: static; padding: 12px; }
-      main { padding: 10px 10px 24px; }
-      header { padding: 8px 12px; }
-      .toolbar strong { font-size: 18px; }
-      .filter-grid { grid-template-columns: 1fr; }
-      .card { padding: 14px 12px; margin-top: 10px; }
-      .row { grid-template-columns: 1fr 1fr; }
-      .replace blockquote { font-size: 17px; }
-      .review-grid { grid-template-columns: 1fr; gap: 8px; }
-    }
-    @media (max-width: 420px) {
-      .row { grid-template-columns: 1fr; }
-      .nav-row { grid-template-columns: 1fr; }
-    }
+
+    .filters { margin-top: 10px; }
+    .filters h2 { margin: 0 0 8px; font-size: 14px; color: #555; }
+    .filter-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+    select { min-height: 38px; border: 1px solid #c4c4c4; border-radius: 6px; background: #fff; padding: 6px 8px; }
   </style>
 </head>
-	<body>
-	  <header>
-	    <div class="toolbar">
-	      <strong>Noun Smell Review</strong>
-	      <span id="counter" class="muted"></span>
-	    </div>
-	  </header>
-	  <main>
-	    <section class="card" id="card"></section>
-	    <section class="card filters">
-	      <h2>Queue</h2>
-	      <div class="filter-grid">
-	        <label>Source <select id="source"></select></label>
-	        <label>Smell <select id="smell"></select></label>
-	        <label>Status <select id="status"></select></label>
-	      </div>
-	    </section>
-	  </main>
+<body>
+  <header>
+    <div class="toolbar">
+      <strong>Noun Smell Review</strong>
+      <span id="counter" class="muted"></span>
+    </div>
+  </header>
+  <main>
+    <section class="card" id="card"></section>
+    <section class="card filters">
+      <h2>Queue</h2>
+      <div class="filter-grid">
+        <label>Source <select id="source"></select></label>
+        <label>Smell <select id="smell"></select></label>
+        <label>Status <select id="status"></select></label>
+      </div>
+    </section>
+  </main>
   <script>
     const state = { items: [], filtered: [], index: 0 };
     const $ = (id) => document.getElementById(id);
@@ -109,10 +100,10 @@ HTML = """<!doctype html>
       fill('source', ['all', ...new Set(state.items.map(x => x.source))]);
       fill('smell', ['all', ...new Set(state.items.map(x => x.smell))]);
       fill('status', ['unlabeled', 'all', 'keep', 'bad', 'skip']);
-	      $('source').onchange = applyFilters;
-	      $('smell').onchange = applyFilters;
-	      $('status').onchange = applyFilters;
-	    }
+      $('source').onchange = applyFilters;
+      $('smell').onchange = applyFilters;
+      $('status').onchange = applyFilters;
+    }
 
     function fill(id, values) {
       $(id).innerHTML = values.map(v => `<option value="${v}">${v}</option>`).join('');
@@ -132,22 +123,12 @@ HTML = """<!doctype html>
       render();
     }
 
-	    function move(delta) {
-	      if (!state.filtered.length) return;
-	      state.index = Math.max(0, Math.min(state.filtered.length - 1, state.index + delta));
-	      render();
-	      focusReview();
-	    }
-
-	    function sentenceBlock(title, value, className) {
-	      if (!value) return '';
-	      return `
-	        <div class="context ${className}">
-	          <h3>${title}</h3>
-	          <blockquote>${value}</blockquote>
-	        </div>
-	      `;
-	    }
+    function move(delta) {
+      if (!state.filtered.length) return;
+      state.index = Math.max(0, Math.min(state.filtered.length - 1, state.index + delta));
+      render();
+      focusReview();
+    }
 
     function render() {
       const card = $('card');
@@ -156,71 +137,59 @@ HTML = """<!doctype html>
         card.innerHTML = '<p>No items for these filters.</p>';
         return;
       }
-	      const item = state.filtered[state.index];
-		      card.innerHTML = `
-				        <div class="review-grid">
-				          <div class="review-flow">
-				            ${sentenceBlock('Previous sentence', escapeHtml(item.before_sentence || ''), 'before-after')}
-				            ${sentenceBlock('Text to review', item.highlighted_target_sentence || item.highlighted_line, 'replace')}
-				            ${sentenceBlock('Next sentence', escapeHtml(item.after_sentence || ''), 'before-after')}
-				            ${item.classifier_rewrite ? `
-				              <div class="section rewrite">
-				                <h3>Suggested rewrite</h3>
-				                <blockquote>${escapeHtml(item.classifier_rewrite)}</blockquote>
-				              </div>
-			            ` : ''}
-          </div>
-          <div class="side-panel">
-            <div class="agent-summary">
-	              <p><strong>Agent review:</strong> <span class="decision ${escapeHtml(item.classifier_label || '')}">${escapeHtml(decisionText(item.classifier_label))}</span></p>
-	              ${item.classifier_reason ? `<p>${escapeHtml(item.classifier_reason)}</p>` : ''}
-	            </div>
-            <div class="section">
-              <label>Note<textarea id="note">${escapeHtml(item.human_note || '')}</textarea></label>
-            </div>
-	            <div class="row">
-	              <button class="keep" onclick="labelCurrent('keep')">Good</button>
-	              <button class="bad" onclick="labelCurrent('bad')">Bad</button>
-	              <button class="skip" onclick="labelCurrent('skip')">Skip</button>
-	              <button class="primary" onclick="saveOnly()">Save note</button>
-	            </div>
-	            <div class="nav-row">
-	              <button onclick="move(-1)">Prev</button>
-	              <button onclick="move(1)">Next</button>
-	            </div>
-	          </div>
-	        </div>
-	        <div class="meta">
-	          <span class="pill">${item.id}</span>
-	          <span class="pill">${item.source}</span>
-	          <span class="pill">${item.smell}</span>
-	          <span class="path">${item.path}:${item.line_no}</span>
-	        </div>
-	      `;
-	    }
-
-    function decisionText(label) {
-      if (label === 'bad') return 'Bad: rewrite this';
-      if (label === 'keep') return 'Good: keep';
-      if (label === 'skip') return 'Skip';
-      return 'Unclassified';
+      const item = state.filtered[state.index];
+      const target = item.highlighted_target_sentence || item.highlighted_line || '';
+      const before = item.before_sentence ? `<span class="ctx-side">${escapeHtml(item.before_sentence)}</span> ` : '';
+      const after = item.after_sentence ? ` <span class="ctx-side">${escapeHtml(item.after_sentence)}</span>` : '';
+      const rewrite = item.classifier_rewrite ? `
+        <p class="rw">
+          <span class="rw-from">${escapeHtml(item.target_sentence || item.line || '')}</span>
+          <span class="rw-arrow">&rarr;</span>
+          <span class="rw-to">${escapeHtml(item.classifier_rewrite)}</span>
+        </p>` : '';
+      const label = item.human_label || '';
+      card.innerHTML = `
+        <p class="ctx">${before}<span class="ctx-target">${target}</span>${after}</p>
+        ${rewrite}
+        <div class="decide">
+          <button class="good ${label === 'keep' ? 'sel' : ''}" onclick="labelCurrent('keep')">Good</button>
+          <button class="bad ${label === 'bad' ? 'sel' : ''}" onclick="labelCurrent('bad')">Bad</button>
+          <button class="skip ${label === 'skip' ? 'sel' : ''}" onclick="labelCurrent('skip')">Skip</button>
+        </div>
+        <p class="agent"><span class="decision ${escapeHtml(item.classifier_label || '')}">${escapeHtml(decisionText(item.classifier_label))}</span> ${escapeHtml(item.classifier_reason || '')}</p>
+        <label>Note<textarea id="note" onchange="saveOnly()">${escapeHtml(item.human_note || '')}</textarea></label>
+        <div class="nav">
+          <button onclick="move(-1)">Prev</button>
+          <button onclick="move(1)">Next</button>
+        </div>
+        <div class="meta">
+          <span class="pill">${item.source}</span>
+          <span class="pill">${item.smell}</span>
+          <span class="path">${item.path}:${item.line_no}</span>
+        </div>
+      `;
     }
 
-	    async function labelCurrent(label) {
-	      await save(label);
-	      move(1);
-	    }
+    function decisionText(label) {
+      if (label === 'bad') return 'Agent: bad';
+      if (label === 'keep') return 'Agent: good';
+      if (label === 'skip') return 'Agent: skip';
+      return 'Agent: unclassified';
+    }
 
-	    async function saveOnly() {
-	      const item = state.filtered[state.index];
-	      await save(item.human_label || '');
-	      render();
-	      focusReview();
-	    }
+    async function labelCurrent(label) {
+      await save(label);
+      move(1);
+    }
 
-	    function focusReview() {
-	      $('card').scrollIntoView({ block: 'start', behavior: 'smooth' });
-	    }
+    async function saveOnly() {
+      const item = state.filtered[state.index];
+      await save(item.human_label || '');
+    }
+
+    function focusReview() {
+      $('card').scrollIntoView({ block: 'start', behavior: 'smooth' });
+    }
 
     async function save(label) {
       const item = state.filtered[state.index];
@@ -234,6 +203,15 @@ HTML = """<!doctype html>
       const original = state.items.find(x => x.id === item.id);
       if (original) Object.assign(original, updated);
     }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT') return;
+      if (e.key === 'g') labelCurrent('keep');
+      else if (e.key === 'b') labelCurrent('bad');
+      else if (e.key === 's') labelCurrent('skip');
+      else if (e.key === 'ArrowLeft') move(-1);
+      else if (e.key === 'ArrowRight') move(1);
+    });
 
     function escapeHtml(value) {
       return String(value).replace(/[&<>"']/g, ch => ({
