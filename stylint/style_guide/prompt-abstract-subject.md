@@ -117,9 +117,9 @@ Apply this rule to every sentence:
 5. Rewrite the sentence so a person, command, concrete cause, or concrete thing
    does the work.
 
-For `pattern` rewrite vague framing uses where it means the same approach, but
-leave concrete or natural uses alone: `regex pattern`, `design pattern` and
-`you can see the pattern`.
+`pattern` is now a banned word (the static checker flags every use). Drop it
+everywhere: for regex use `regex` or `regular expression`; otherwise name the
+concrete approach, structure, or repeated action.
 
 For `process`, keep only the literal operating-system sense. That means the
 sentence talks about a PID, signal, worker, or runtime process. Otherwise treat
@@ -162,9 +162,7 @@ Leave these cases alone:
   `The function returns a list.` Leave these alone.
 - Sentences where the abstraction genuinely is the topic and the claim
   is specific: `The latency dropped from 800ms to 120ms.`
-- Precise technical nouns: `The observer pattern handles events.`,
-  `The data structure stores one entry per account.`
-- Natural concrete use: `Once you compare the logs, you can see the pattern.`
+- Precise technical nouns: `The data structure stores one entry per account.`
 - Don't manufacture a cause the source never stated. If you don't know
   why, cut the claim rather than invent one.
 

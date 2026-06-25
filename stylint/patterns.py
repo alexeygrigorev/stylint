@@ -161,6 +161,7 @@ BANNED_WORDS: dict[str, str] = {
     "wire": "use a concrete verb: connect, pass, add, configure, call, or name the exact change",
     "wired": "use a concrete verb: connected, passed, added, configured, called, or name the exact change",
     "wiring": "use a concrete verb: connecting, passing, adding, configuring, calling, or name the exact change",
+    "pattern": "drop the word; for regex use 'regex' or 'regular expression', otherwise name the concrete approach, structure, or repeated action",
 }
 
 # Multi-word banned phrases. Substring match, case-insensitive.

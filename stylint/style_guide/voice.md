@@ -32,6 +32,9 @@ Some words depend on context:
   `the session` or `the live session`. `I used Claude Code for the live build`
   becomes `I used Claude Code in the live session`. Same for `during the build`
   or `in the build` when you mean the recorded session.
+- `decides` reads fine when a person decides. When an agent, router, or other
+  component is the subject (`the agent decides which tool to run`), name the
+  coordinating action instead — prefer `orchestrates`, `routes`, or `picks`.
 
 ## Voice rules
 
