@@ -16,56 +16,65 @@ HTML = """<!doctype html>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Noun Smell Review</title>
   <style>
-    :root { font-family: system-ui, sans-serif; color: #1b1b1f; background: #f7f7f4; line-height: 1.45; }
+    :root { font-family: system-ui, sans-serif; color: #111; background: #fff; line-height: 1.5; }
     body { margin: 0; }
-    header { position: sticky; top: 0; background: #fff; border-bottom: 1px solid #e3e3e3; padding: 8px 14px; z-index: 2; }
-    main { max-width: 720px; margin: 0 auto; padding: 10px 12px 28px; }
+    header { position: sticky; top: 0; background: #fff; border-bottom: 1px solid #ddd; padding: 8px 14px; z-index: 2; }
+    main { max-width: 760px; margin: 0 auto; padding: 12px 14px 32px; }
     .toolbar { display: flex; gap: 10px; align-items: baseline; justify-content: space-between; }
-    .toolbar strong { font-size: 16px; }
-    .muted { color: #888; }
+    .toolbar strong { font-size: 17px; }
+    .muted { color: #777; }
     button, select, textarea { font: inherit; }
 
-    .card { background: #fff; border-radius: 10px; padding: 12px 14px; margin-top: 10px; }
+    .card { background: #fff; border: 1px solid #e6e6e6; border-radius: 12px; padding: 16px 16px 14px; margin-top: 12px; }
 
-    /* Context: one flowing block, target sentence highlighted in place */
-    .ctx { margin: 0; font-size: 16px; line-height: 1.55; }
-    .ctx-side { color: #9a9a9a; }
-    .ctx-target { color: #1b1b1f; }
-    mark { background: #ffe066; padding: 0 2px; border-radius: 3px; }
+    /* The whole review as one inline flow:
+       before  [gap]  original -> replacement  [gap]  after */
+    .ctx { margin: 0; font-size: 20px; line-height: 1.65; }
+    .ctx-side { color: #6a6a6a; }
+    .gap-lg { display: inline-block; width: 1.5em; }
+    .gap-sm { display: inline-block; width: 0.8em; }
+    .orig { color: #1b1b1f; }
+    .arrow { color: #1f6feb; font-weight: 800; padding: 0 3px; }
+    .repl { color: #15803d; font-weight: 600; }
+    mark { background: #ffdf3d; padding: 0 2px; border-radius: 3px; }
 
-    /* Transform: original -> suggested rewrite */
-    .rw { margin: 10px 0 0; font-size: 14px; display: grid; grid-template-columns: 1fr auto 1fr; gap: 8px; align-items: center; }
-    .rw-from { color: #8a8a8a; }
-    .rw-arrow { color: #1f6feb; font-weight: 700; font-size: 18px; text-align: center; }
-    .rw-to { color: #1b6b2e; }
+    /* Three square decision buttons */
+    .decide { display: flex; gap: 12px; margin-top: 20px; }
+    .decide button {
+      flex: 0 0 auto; width: 84px; height: 84px; border-radius: 14px;
+      border: 2px solid #cfcfcf; background: #fff; cursor: pointer;
+      font-size: 15px; font-weight: 700; line-height: 1.15; padding: 4px;
+    }
+    .decide .good { background: #e7f6e9; border-color: #8fce98; color: #15803d; }
+    .decide .bad  { background: #fbe4e4; border-color: #df9b9b; color: #b91c1c; }
+    .decide .skip { background: #f0f0f0; border-color: #cbcbcb; color: #444; }
+    .decide button.sel { box-shadow: 0 0 0 4px #1f6feb55; border-color: #1f6feb; }
 
-    /* Decision row: one compact row */
-    .decide { display: grid; grid-template-columns: 1fr 1fr 0.8fr; gap: 8px; margin-top: 12px; }
-    .decide button { border: 1px solid #cfcfcf; background: #fff; padding: 11px 0; border-radius: 8px; cursor: pointer; font-weight: 600; }
-    .decide .good { background: #eef8ef; border-color: #bcdcc0; color: #1b6b2e; }
-    .decide .bad { background: #fdeeee; border-color: #e4bdbd; color: #a3322f; }
-    .decide .skip { background: #f2f2f2; color: #555; }
-    .decide button.sel { outline: 3px solid #1f6feb; outline-offset: -1px; }
+    /* Agent verdict (small, secondary) */
+    .agent { margin: 16px 0 0; font-size: 14px; color: #444; }
+    .decision { display: inline-block; border-radius: 999px; padding: 2px 9px; border: 1px solid #ccc; background: #f7f7f7; font-weight: 650; font-size: 13px; }
+    .decision.bad  { background: #fde9e9; border-color: #e0a3a3; color: #b91c1c; }
+    .decision.keep { background: #e7f6e9; border-color: #9bd0a3; color: #15803d; }
 
-    /* Agent review (secondary, small) */
-    .agent { margin: 12px 0 0; font-size: 13px; color: #555; }
-    .decision { display: inline-block; border-radius: 999px; padding: 2px 8px; border: 1px solid #ccc; background: #fafafa; font-weight: 650; font-size: 12px; }
-    .decision.bad { background: #fff0f0; border-color: #e3aaaa; color: #a3322f; }
-    .decision.keep { background: #eef8ef; border-color: #a8d3ad; color: #1b6b2e; }
+    /* Collapsible note */
+    details.note-wrap { margin-top: 14px; }
+    details.note-wrap summary { cursor: pointer; color: #1f6feb; font-size: 14px; font-weight: 600; list-style: none; }
+    details.note-wrap summary::-webkit-details-marker { display: none; }
+    details.note-wrap summary::before { content: "+ "; }
+    details.note-wrap[open] summary::before { content: "– "; }
+    textarea { width: 100%; min-height: 56px; box-sizing: border-box; margin-top: 8px; border: 1px solid #c9c9c9; border-radius: 8px; padding: 9px; font-size: 15px; }
 
-    /* Note + nav + meta */
-    label { display: grid; gap: 4px; font-size: 13px; color: #666; }
-    textarea { width: 100%; min-height: 44px; box-sizing: border-box; margin-top: 8px; border: 1px solid #ccc; border-radius: 8px; padding: 8px; font-size: 14px; }
-    .nav { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
-    .nav button { border: 1px solid #cfcfcf; background: #fff; padding: 9px 0; border-radius: 8px; cursor: pointer; }
-    .meta { color: #999; font-size: 11px; display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
-    .pill { border: 1px solid #e6e6e6; border-radius: 999px; padding: 2px 8px; background: #fafafa; }
+    .nav { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 16px; }
+    .nav button { border: 1px solid #cfcfcf; background: #fff; padding: 11px 0; border-radius: 10px; cursor: pointer; font-size: 15px; }
+    .meta { color: #999; font-size: 12px; display: flex; gap: 6px; flex-wrap: wrap; margin-top: 14px; }
+    .pill { border: 1px solid #e6e6e6; border-radius: 999px; padding: 2px 9px; background: #fafafa; }
     .path { overflow-wrap: anywhere; }
 
-    .filters { margin-top: 10px; }
+    .filters { margin-top: 12px; }
     .filters h2 { margin: 0 0 8px; font-size: 14px; color: #555; }
     .filter-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
-    select { min-height: 38px; border: 1px solid #c4c4c4; border-radius: 6px; background: #fff; padding: 6px 8px; }
+    label { display: grid; gap: 4px; font-size: 13px; color: #666; }
+    select { min-height: 40px; border: 1px solid #c4c4c4; border-radius: 8px; background: #fff; padding: 7px 9px; }
   </style>
 </head>
 <body>
@@ -99,7 +108,7 @@ HTML = """<!doctype html>
     function setupFilters() {
       fill('source', ['all', ...new Set(state.items.map(x => x.source))]);
       fill('smell', ['all', ...new Set(state.items.map(x => x.smell))]);
-      fill('status', ['unlabeled', 'all', 'keep', 'bad', 'skip']);
+      fill('status', ['unlabeled', 'all', 'agree', 'disagree', 'skip']);
       $('source').onchange = applyFilters;
       $('smell').onchange = applyFilters;
       $('status').onchange = applyFilters;
@@ -138,26 +147,26 @@ HTML = """<!doctype html>
         return;
       }
       const item = state.filtered[state.index];
-      const target = item.highlighted_target_sentence || item.highlighted_line || '';
-      const before = item.before_sentence ? `<span class="ctx-side">${escapeHtml(item.before_sentence)}</span> ` : '';
-      const after = item.after_sentence ? ` <span class="ctx-side">${escapeHtml(item.after_sentence)}</span>` : '';
-      const rewrite = item.classifier_rewrite ? `
-        <p class="rw">
-          <span class="rw-from">${escapeHtml(item.target_sentence || item.line || '')}</span>
-          <span class="rw-arrow">&rarr;</span>
-          <span class="rw-to">${escapeHtml(item.classifier_rewrite)}</span>
-        </p>` : '';
+      const original = item.highlighted_target_sentence || item.highlighted_line || escapeHtml(item.target_sentence || item.line || '');
+      const transform = item.classifier_rewrite
+        ? `<span class="orig">${original}</span><span class="arrow">&rarr;</span><span class="repl">${escapeHtml(item.classifier_rewrite)}</span>`
+        : `<span class="orig">${original}</span>`;
+      const before = item.before_sentence ? `<span class="ctx-side">${escapeHtml(item.before_sentence)}</span><span class="gap-lg"></span>` : '';
+      const after = item.after_sentence ? `<span class="gap-sm"></span><span class="ctx-side">${escapeHtml(item.after_sentence)}</span>` : '';
       const label = item.human_label || '';
+      const note = item.human_note || '';
       card.innerHTML = `
-        <p class="ctx">${before}<span class="ctx-target">${target}</span>${after}</p>
-        ${rewrite}
+        <p class="ctx">${before}${transform}${after}</p>
         <div class="decide">
-          <button class="good ${label === 'keep' ? 'sel' : ''}" onclick="labelCurrent('keep')">Good</button>
-          <button class="bad ${label === 'bad' ? 'sel' : ''}" onclick="labelCurrent('bad')">Bad</button>
+          <button class="good ${label === 'agree' ? 'sel' : ''}" onclick="labelCurrent('agree')">Agree</button>
+          <button class="bad ${label === 'disagree' ? 'sel' : ''}" onclick="labelCurrent('disagree')">Disagree</button>
           <button class="skip ${label === 'skip' ? 'sel' : ''}" onclick="labelCurrent('skip')">Skip</button>
         </div>
         <p class="agent"><span class="decision ${escapeHtml(item.classifier_label || '')}">${escapeHtml(decisionText(item.classifier_label))}</span> ${escapeHtml(item.classifier_reason || '')}</p>
-        <label>Note<textarea id="note" onchange="saveOnly()">${escapeHtml(item.human_note || '')}</textarea></label>
+        <details class="note-wrap" ${note ? 'open' : ''}>
+          <summary>Add note</summary>
+          <textarea id="note" onchange="saveOnly()">${escapeHtml(note)}</textarea>
+        </details>
         <div class="nav">
           <button onclick="move(-1)">Prev</button>
           <button onclick="move(1)">Next</button>
@@ -171,7 +180,7 @@ HTML = """<!doctype html>
     }
 
     function decisionText(label) {
-      if (label === 'bad') return 'Agent: bad';
+      if (label === 'bad') return 'Agent: not good';
       if (label === 'keep') return 'Agent: good';
       if (label === 'skip') return 'Agent: skip';
       return 'Agent: unclassified';
@@ -206,8 +215,8 @@ HTML = """<!doctype html>
 
     document.addEventListener('keydown', (e) => {
       if (e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT') return;
-      if (e.key === 'g') labelCurrent('keep');
-      else if (e.key === 'b') labelCurrent('bad');
+      if (e.key === 'a') labelCurrent('agree');
+      else if (e.key === 'd') labelCurrent('disagree');
       else if (e.key === 's') labelCurrent('skip');
       else if (e.key === 'ArrowLeft') move(-1);
       else if (e.key === 'ArrowRight') move(1);
