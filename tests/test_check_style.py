@@ -98,7 +98,22 @@ def test_frontmatter_with_blank_line_is_clean(tmp_path):
 # ---------------------------------------------------------------------------
 
 
-@pytest.mark.parametrize("word", ["very", "delve", "faithful", "prose", "shape", "contract", "rhythm"])
+@pytest.mark.parametrize(
+    "word",
+    [
+        "very",
+        "delve",
+        "faithful",
+        "prose",
+        "shape",
+        "contract",
+        "rhythm",
+        "trick",
+        "wire",
+        "wired",
+        "wiring",
+    ],
+)
 def test_banned_word_positive(tmp_path, word):
     root, page = make_page(tmp_path, f"This is {word} important.\n")
     errors = check_page(root, page)
@@ -155,6 +170,7 @@ def test_shape_colon_label_is_not_numpy_exception(tmp_path):
         "packaged up",
         "apply the same pattern",
         "is a good example",
+        "all of this",
     ],
 )
 def test_banned_phrase_single_line_positive(tmp_path, phrase):

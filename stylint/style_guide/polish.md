@@ -107,6 +107,22 @@ account, outcome, struggle, success, impact) and then makes a soft claim
 about it. A few narrow forms are caught mechanically under the
 `abstract-subject` tag, but most need a human eye.
 
+## Don't let a noun phrase hide the decision
+
+A concrete noun can still make the sentence evasive when it acts like a
+decision-maker, author, or self-changing object. The smell is not that the noun
+is abstract. The smell is that the sentence hides who chose the tool, what
+sequence changed, or which constraint forced the design.
+
+- `The database starts as SQLite for local work, with zero setup, and becomes
+  Postgres once we move into containers.` -> `We use SQLite locally because it
+  needs no setup. In containers, we switch to Postgres.`
+- `We start with the frontend, because the frontend defines what the app does.`
+  -> `We start with the frontend because the screens force us to name the game
+  states, API calls, and data the backend must support.`
+
+Use `stylint --prompt noun-phrase-smell` for this judgment pass.
+
 ## Don't use "loop" as a vague metaphor
 
 Keep "loop" for a literal loop: a `for` or `while` loop, or the agent,

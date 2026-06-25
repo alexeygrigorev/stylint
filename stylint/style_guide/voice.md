@@ -27,6 +27,11 @@ Some words depend on context:
 - `production` is a normal engineering word. Keep it when it names real
   production concerns. Replace it when the sentence only means "real",
   "larger", or "more complete".
+- `build` is fine for constructing the app (`we build the agent`, `the build
+  step`), but never use it for the workshop session itself. Call the session
+  `the session` or `the live session`. `I used Claude Code for the live build`
+  becomes `I used Claude Code in the live session`. Same for `during the build`
+  or `in the build` when you mean the recorded session.
 
 ## Voice rules
 
@@ -46,6 +51,18 @@ Technical write-ups are first-person walkthroughs.
   work. `The work splits into two processes` becomes `we run two processes`.
   `Its configuration goes in config.py` becomes `we put the config in
   config.py`.
+- Don't let a noun phrase do the deciding or explaining. When a component,
+  file, label, or summary noun is the subject of a verb like `is`, `becomes`,
+  `defines`, `moves`, `lets`, or `needs`, the real actor — a person, a command,
+  a constraint — is usually hidden behind it. This is a separate trap from the
+  abstract-subject rule above: the noun can be perfectly concrete (`the
+  backend`, `Option 1`, `the file`) and the sentence still hides who acts.
+  `Option 1 is the baseline` becomes `we start from the simplest version`. `The
+  backend becomes the API contract` becomes `we treat the OpenAPI spec as the
+  contract`. `The app lets you submit a score` becomes `you can submit a score`.
+  Keep sentences where the noun really is the actor: `the function returns a
+  list`, `Docker Compose starts Postgres`. The `noun-phrase-smell` review prompt
+  has the full pattern list and fixes.
 - Use first-person narrative for lived experience. `During the session the
   trial expired` becomes `during the session I found our trial had ended`.
 - Use present tense for the walkthrough. Write as if the reader is doing the

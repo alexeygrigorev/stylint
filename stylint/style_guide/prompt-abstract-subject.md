@@ -1,8 +1,9 @@
 # Review prompt: abstract noun as the subject
 
-Review the text for abstract nouns used as grammatical subjects. A linter
-can't catch this reliably, so use judgment. Fix only genuine offenders and
-leave concrete, well-grounded sentences alone.
+Review the text for abstract nouns used as grammatical subjects, and be strict.
+A linter can't catch this reliably, so you must scan for the surface patterns
+in this prompt before using judgment. Fix genuine offenders and leave concrete,
+well-grounded sentences alone.
 
 ## Target
 
@@ -19,6 +20,18 @@ Common abstract subjects include:
 - ideas
 - habits
 - values
+- summary nouns that stand in for what the writer just described
+- document parts that stand in for the author or reader
+
+Scan for these nouns when they appear as the subject:
+
+- `growth`, `impact`, `success`, `failure`, `result`, `outcome`
+- `approach`, `process`, `workflow`, `flow`, `setup`, `pattern`
+- `principle`, `idea`, `lesson`, `takeaway`, `insight`, `strategy`
+- `habit`, `practice`, `routine`, `step`, `rule`
+- `experience`, `struggle`, `challenge`, `problem`, `hurdle`
+- `story`, `account`, `post`, `section`, `part`, `workshop`, `README`,
+  `tutorial`, `guide`
 
 The determiner and number don't matter. Check subjects even when they start
 with small words like `the` or `our`.
@@ -26,6 +39,16 @@ with small words like `the` or `our`.
 The verb may be a weak copula such as `is` or `was`. It may also be an
 active verb the abstraction can't literally do, such as `keeps` or
 `drives`.
+
+Scan especially for these verb families after an abstract subject:
+
+- state verbs: `is`, `was`, `becomes`, `stays`, `remains`
+- causation verbs: `makes`, `keeps`, `drives`, `forces`, `creates`, `builds`
+- sequence verbs: `starts`, `continues`, `follows`, `ends`, `moves`
+- explanation verbs: `shows`, `teaches`, `explains`, `proves`, `reminds`
+- document-action verbs: `covers`, `walks through`, `introduces`, `turns`,
+  `sets up`
+- blocking or waiting verbs: `blocks`, `waits`, `hangs`
 
 Treat this as a covert passive because it hides the actor without using
 passive grammar. We write in an active, personal voice, so keep a real
@@ -38,11 +61,46 @@ These forms usually need a rewrite:
 - `A few rules keep the code clean.`
 - `Two habits make you consistent.`
 - `These steps build trust.`
+- `The same pattern works in three places.`
 - An abstraction "does" something it can't literally do:
   `The honest account taught them something.`
 - A pseudo-cleft that inflates a plain cause: `X is what made it useful.`,
   `Consistency is what grows a LinkedIn account.`
 - A document part as the actor: `This part turns that into a routine.`
+
+## Search checklist
+
+Don't only read for the examples.
+
+Make a deliberate pass for these patterns:
+
+- `The <abstract noun> is/was...`
+- `A/An <abstract noun> is/was...`
+- `<Abstract noun> makes/keeps/drives/forces/creates/builds...`
+- `<Abstract noun> followed/continues/starts/ends...`
+- `This/That/These/Those <summary noun>...`
+- `This section/part/workshop/README/tutorial <action verb>...`
+- `The process/workflow/step <action verb>...`
+- `<Abstract noun> is what made/makes...`
+- `<Abstract noun> is why...`
+- `<Abstract noun> means...`
+- `<Abstract noun> lets/allows/enables...`
+
+If the sentence starts with a determiner or number, slow down and find the real
+subject:
+
+- `the`
+- `this`
+- `that`
+- `these`
+- `those`
+- `a`
+- `an`
+- `one`
+- `two`
+- a number
+
+Many missed cases hide behind small determiners.
 
 ## The test (generalize, don't pattern-match)
 
@@ -51,10 +109,23 @@ Don't match the examples literally.
 Apply this rule to every sentence:
 
 1. Find the grammatical subject (what the main verb is about).
-2. Ask: can you point at it? If yes, leave it alone.
-3. If the subject is an abstraction doing the verb, it's the smell. The
-   determiner, number, and verb type don't matter.
-4. Rewrite so a person or a concrete thing does the work.
+2. Ask whether the subject is a person, command, tool, file, endpoint, function,
+   or another concrete actor, which may be fine.
+3. Ask whether the subject is a summary label for previous text. That's likely
+   the smell.
+4. Ask whether the subject can literally do the verb. If not, rewrite it.
+5. Rewrite the sentence so a person, command, concrete cause, or concrete thing
+   does the work.
+
+For `pattern` rewrite vague framing uses where it means the same approach, but
+leave concrete or natural uses alone: `regex pattern`, `design pattern` and
+`you can see the pattern`.
+
+For `process`, keep only the literal operating-system sense. That means the
+sentence talks about a PID, signal, worker, or runtime process. Otherwise treat
+`process` as a workflow label and rewrite it. `The process blocks on long
+polling` should become `The bot waits for messages with long polling` or `Long
+polling keeps the bot waiting for messages`.
 
 ## Fix
 
@@ -78,6 +149,10 @@ sentence only announces what comes next, delete it.
   routine.`
 - `Two habits make you consistent.` -> `You stay consistent by keeping
   two habits.` (a person does the work, not the habits)
+- `The same pattern works in three places.` -> `I now use the same AWS gate in
+  three places.`
+- `The process blocks on long polling.` -> `The bot waits for messages with
+  long polling.`
 
 ## Leave Alone
 
@@ -87,6 +162,9 @@ Leave these cases alone:
   `The function returns a list.` Leave these alone.
 - Sentences where the abstraction genuinely is the topic and the claim
   is specific: `The latency dropped from 800ms to 120ms.`
+- Precise technical nouns: `The observer pattern handles events.`,
+  `The data structure stores one entry per account.`
+- Natural concrete use: `Once you compare the logs, you can see the pattern.`
 - Don't manufacture a cause the source never stated. If you don't know
   why, cut the claim rather than invent one.
 

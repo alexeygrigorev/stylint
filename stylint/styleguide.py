@@ -45,6 +45,7 @@ def prompt_files() -> dict[str, Path]:
     guide = style_guide_path()
     return {
         "abstract-subject": guide / "prompt-abstract-subject.md",
+        "noun-phrase-smell": guide / "prompt-noun-phrase-smell.md",
     }
 
 

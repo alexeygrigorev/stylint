@@ -157,6 +157,10 @@ BANNED_WORDS: dict[str, str] = {
     "rhythm": "use 'schedule', 'cadence', 'flow', or the concrete timing",
     "latched": "drop the metaphor; use 'picked it up', 'took it on', or name the action",
     "halves": "drop 'halves'; name the parts directly (the two processes, 'ingest and serve')",
+    "trick": "drop the framing; there is no trick, just state the action directly ('ask the agent to...', 'we do X')",
+    "wire": "use a concrete verb: connect, pass, add, configure, call, or name the exact change",
+    "wired": "use a concrete verb: connected, passed, added, configured, called, or name the exact change",
+    "wiring": "use a concrete verb: connecting, passing, adding, configuring, calling, or name the exact change",
 }
 
 # Multi-word banned phrases. Substring match, case-insensitive.
@@ -177,6 +181,8 @@ BANNED_PHRASES: dict[str, str] = {
     "the longer answer": "drop the preamble; give the answer",
     "the long answer": "drop the preamble; give the answer",
     "the important difference": "rewrite as a direct contrast",
+    "the live build": "the workshop session is not a 'build'; use 'the live session' / 'the session'",
+    "for the live build": "the workshop session is not a 'build'; use 'in the live session'",
     "reference implementation": "use 'finished app' / 'example app' / 'working version'",
     "demo artifact": "name the file/app/output",
     "framework-agnostic": "use 'works across frameworks'",
@@ -274,6 +280,7 @@ BANNED_PHRASES: dict[str, str] = {
     "works well": "drop the filler; name the concrete property that fits",
     "works great": "drop the filler; name the concrete property that fits",
     "fits well": "drop the filler; name the concrete property that fits",
+    "all of this": "name the concrete actions, files, screens, or behavior",
     "suffer": "do not anthropomorphize - inanimate things don't suffer; "
                "describe what actually goes wrong "
                "('the answer is wrong', 'the latency doubles')",

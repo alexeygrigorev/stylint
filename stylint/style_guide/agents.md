@@ -11,6 +11,9 @@ Use this before and after editing technical text.
 5. Run `stylint --prompt abstract-subject` and apply it to the edited files.
    This required judgment pass catches abstract nouns used as sentence
    subjects, which the mechanical checker can't catch reliably.
-6. After editing, run the full `stylint` check without `--ignore`.
+6. Run `stylint --prompt noun-phrase-smell` and apply it to the edited files.
+   This required judgment pass catches concrete noun phrases that hide the
+   person, decision, sequence, or design constraint.
+7. After editing, run the full `stylint` check without `--ignore`.
 
 Use `--ignore` only for investigation because it isn't a verification pass.

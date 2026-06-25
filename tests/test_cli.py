@@ -52,6 +52,7 @@ def test_cli_lists_review_prompts(monkeypatch, capsys):
 
     output = capsys.readouterr().out
     assert "abstract-subject" in output
+    assert "noun-phrase-smell" in output
 
 
 def test_cli_prints_one_review_prompt(monkeypatch, capsys):
@@ -71,6 +72,7 @@ def test_cli_rejects_unknown_review_prompt(monkeypatch, capsys):
     err = capsys.readouterr().err
     assert "Unknown review prompt" in err
     assert "abstract-subject" in err
+    assert "noun-phrase-smell" in err
 
 
 def test_cli_help_points_agents_to_checklist(monkeypatch, capsys):
