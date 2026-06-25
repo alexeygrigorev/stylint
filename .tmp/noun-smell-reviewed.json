@@ -28,7 +28,7 @@
     "classifier_label": "bad",
     "classifier_reason": "The code is credited with staying easy instead of naming the reader experience.",
     "classifier_rewrite": "You can read this code directly, and the single-component structure is easy to follow.",
-    "human_label": "",
+    "human_label": "keep",
     "human_note": ""
   },
   {
@@ -60,8 +60,8 @@
     "classifier_label": "keep",
     "classifier_reason": "This describes the app's literal initial game state.",
     "classifier_rewrite": "",
-    "human_label": "",
-    "human_note": ""
+    "human_label": "keep",
+    "human_note": "This is good but The game behavior sits in one place is not "
   },
   {
     "id": "workshop-concrete_noun_phrase-0003",
@@ -92,8 +92,8 @@
     "classifier_label": "bad",
     "classifier_reason": "The build is made the actor for extra scope requirements.",
     "classifier_rewrite": "That build is bigger than this workshop because we would have to add an API contract, persistence, deployment, and tests.",
-    "human_label": "",
-    "human_note": ""
+    "human_label": "bad",
+    "human_note": "It's a bad sentence in general, and the wold build is not good here "
   },
   {
     "id": "workshop-concrete_noun_phrase-0004",
@@ -124,8 +124,8 @@
     "classifier_label": "bad",
     "classifier_reason": "The file is credited with keeping the design in one component.",
     "classifier_rewrite": "Start with [snake-chatgpt/src/App.jsx](https://github.com/alexeygrigorev/workshops/blob/main/vibe-coding/snake-chatgpt/src/App.jsx), a short file where the whole game lives in one component.",
-    "human_label": "",
-    "human_note": ""
+    "human_label": "agree",
+    "human_note": ".The core state is snake, food, direction, and gameOver. This is smell though "
   },
   {
     "id": "workshop-concrete_noun_phrase-0005",
@@ -156,7 +156,7 @@
     "classifier_label": "bad",
     "classifier_reason": "The app is made the actor for setup work the reader must do.",
     "classifier_rewrite": "That means you still need to create a local shell around the Claude chat app file.",
-    "human_label": "",
+    "human_label": "agree",
     "human_note": ""
   },
   {
@@ -188,8 +188,8 @@
     "classifier_label": "keep",
     "classifier_reason": "The subject is a concrete folder in the repo, and the sentence describes the files it contains.",
     "classifier_rewrite": "",
-    "human_label": "",
-    "human_note": ""
+    "human_label": "disagree",
+    "human_note": "No, we can see from the to-do tutorial "
   },
   {
     "id": "workshop-abstract_subject-0002",
@@ -220,8 +220,8 @@
     "classifier_label": "keep",
     "classifier_reason": "The subject is the first framework being tried, not the workshop.",
     "classifier_rewrite": "",
-    "human_label": "",
-    "human_note": ""
+    "human_label": "agree",
+    "human_note": "but for production you usually reach for a real agent framework. - ban \"reach for\", use use instead. "
   },
   {
     "id": "workshop-abstract_subject-0003",
@@ -252,7 +252,7 @@
     "classifier_label": "keep",
     "classifier_reason": "The subject is the tools, and the sentence states their concrete implementation.",
     "classifier_rewrite": "",
-    "human_label": "",
+    "human_label": "agree",
     "human_note": ""
   },
   {
@@ -282,7 +282,7 @@
     "classifier_label": "bad",
     "classifier_reason": "The abstract phrase \"workshop goal\" is the subject.",
     "classifier_rewrite": "We stay with one FAQ agent here to compare the basic tool loop across implementations.",
-    "human_label": "",
+    "human_label": "agree",
     "human_note": ""
   },
   {
@@ -314,8 +314,8 @@
     "classifier_label": "bad",
     "classifier_reason": "The abstract subject \"idea\" carries the sentence.",
     "classifier_rewrite": "We keep the same FAQ-agent task, while each framework gives you a different interface.",
-    "human_label": "",
-    "human_note": ""
+    "human_label": "agree",
+    "human_note": "We repeat the agent on purpose is clumsy "
   },
   {
     "id": "workshop-concrete_noun_phrase-0006",
@@ -346,7 +346,7 @@
     "classifier_label": "bad",
     "classifier_reason": "The code is credited with staying unchanged instead of naming the edit boundary.",
     "classifier_rewrite": "This requires an Anthropic API key in your environment, but you leave the rest of the tool code the same.",
-    "human_label": "",
+    "human_label": "disagree",
     "human_note": ""
   },
   {
@@ -378,8 +378,8 @@
     "classifier_label": "bad",
     "classifier_reason": "The setup is made the actor for usefulness instead of naming the real documentation use.",
     "classifier_rewrite": "In real projects, point the same setup at current documentation instead of a small FAQ.",
-    "human_label": "",
-    "human_note": ""
+    "human_label": "agree",
+    "human_note": "Agree but don't use \"point to\", let's ban this phrase"
   },
   {
     "id": "workshop-abstract_subject-0006",
@@ -410,40 +410,8 @@
     "classifier_label": "bad",
     "classifier_reason": "A workshop section acts as the subject and performs the action.",
     "classifier_rewrite": "In the first half of the workshop, we keep the tools inside the notebook so you can see the agent loop directly.",
-    "human_label": "",
-    "human_note": ""
-  },
-  {
-    "id": "workshop-concrete_noun_phrase-0008",
-    "smell": "concrete_noun_phrase",
-    "source": "workshop",
-    "path": "2025/2025-09-01-building-ai-agents-mcp-pydanticai-openai/README.md",
-    "line_no": 41,
-    "line": "The first half of the workshop keeps the tools inside the notebook so you can see the agent loop directly.",
-    "highlighted_line": "The first half of <mark>the workshop keeps</mark> the tools inside the notebook so you can see the agent loop directly.",
-    "phrase": "the workshop keeps",
-    "start": 18,
-    "end": 36,
-    "before": [
-      "The FAQ data comes from the Data Engineering Zoomcamp FAQ."
-    ],
-    "after": [
-      "The second half moves the same tools into `mcp_faq/`, which makes them reusable by any MCP client."
-    ],
-    "signals": [
-      "\\b(?P<phrase>(?:The|This|That|These|Those|A|An|One|Two|Three|\\d+)?\\s*(?:Docker\\ "
-    ],
-    "paragraph": "The FAQ data comes from the Data Engineering Zoomcamp FAQ. The first half of the workshop keeps the tools inside the notebook so you can see the agent loop directly. The second half moves the same tools into `mcp_faq/`, which makes them reusable by any MCP client.",
-    "highlighted_paragraph": "The FAQ data comes from the Data Engineering Zoomcamp FAQ. The first half of <mark>the workshop keeps</mark> the tools inside the notebook so you can see the agent loop directly. The second half moves the same tools into `mcp_faq/`, which makes them reusable by any MCP client.",
-    "target_sentence": "The first half of the workshop keeps the tools inside the notebook so you can see the agent loop directly.",
-    "highlighted_target_sentence": "The first half of <mark>the workshop keeps</mark> the tools inside the notebook so you can see the agent loop directly.",
-    "before_sentence": "The FAQ data comes from the Data Engineering Zoomcamp FAQ.",
-    "after_sentence": "The second half moves the same tools into `mcp_faq/`, which makes them reusable by any MCP client.",
-    "classifier_label": "bad",
-    "classifier_reason": "The workshop is credited with an authoring sequence choice.",
-    "classifier_rewrite": "In the first half of the workshop, we keep the tools inside the notebook so you can see the agent loop directly.",
-    "human_label": "",
-    "human_note": ""
+    "human_label": "agree",
+    "human_note": "The second half moves the same tools same smell"
   },
   {
     "id": "workshop-concrete_noun_phrase-0009",
@@ -472,7 +440,7 @@
     "classifier_label": "keep",
     "classifier_reason": "This is literal source-file content: the file contains the definitions.",
     "classifier_rewrite": "",
-    "human_label": "",
+    "human_label": "disagree",
     "human_note": ""
   },
   {
@@ -502,8 +470,8 @@
     "classifier_label": "keep",
     "classifier_reason": "The Temporal workflow literally orchestrates the activity order.",
     "classifier_rewrite": "",
-    "human_label": "",
-    "human_note": ""
+    "human_label": "agree",
+    "human_note": "I don't like the use of word decides, let's use orchestrate instead "
   },
   {
     "id": "workshop-abstract_subject-0007",
@@ -534,39 +502,7 @@
     "classifier_label": "bad",
     "classifier_reason": "The workflow is an abstract process acting as the keeper of external work.",
     "classifier_rewrite": "We tell Temporal that we trust these imports and still keep the external work inside activities.",
-    "human_label": "",
-    "human_note": ""
-  },
-  {
-    "id": "workshop-concrete_noun_phrase-0011",
-    "smell": "concrete_noun_phrase",
-    "source": "workshop",
-    "path": "2025/2025-12-16-youtube-ai-agent-temporal/06-worker-execution.md",
-    "line_no": 27,
-    "line": "We tell Temporal that we trust these imports and the workflow still keeps the external work inside activities.",
-    "highlighted_line": "We tell Temporal that we trust these imports and <mark>the workflow still keeps</mark> the external work inside activities.",
-    "phrase": "the workflow still keeps",
-    "start": 49,
-    "end": 73,
-    "before": [
-      "Our activity module imports clients such as Elasticsearch and YouTube Transcript API."
-    ],
-    "after": [
-      "The timeout on each activity is part of the design, since a network call shouldn't hang forever."
-    ],
-    "signals": [
-      "\\b(?P<phrase>(?:The|This|That|These|Those|A|An|One|Two|Three|\\d+)?\\s*(?:Docker\\ "
-    ],
-    "paragraph": "Use the `imports_passed_through` block because Temporal's Python sandbox is strict about imports inside workflows. Our activity module imports clients such as Elasticsearch and YouTube Transcript API. We tell Temporal that we trust these imports and the workflow still keeps the external work inside activities.",
-    "highlighted_paragraph": "Use the `imports_passed_through` block because Temporal&#x27;s Python sandbox is strict about imports inside workflows. Our activity module imports clients such as Elasticsearch and YouTube Transcript API. We tell Temporal that we trust these imports and <mark>the workflow still keeps</mark> the external work inside activities.",
-    "target_sentence": "We tell Temporal that we trust these imports and the workflow still keeps the external work inside activities.",
-    "highlighted_target_sentence": "We tell Temporal that we trust these imports and <mark>the workflow still keeps</mark> the external work inside activities.",
-    "before_sentence": "Our activity module imports clients such as Elasticsearch and YouTube Transcript API.",
-    "after_sentence": "The timeout on each activity is part of the design, since a network call shouldn't hang forever.",
-    "classifier_label": "bad",
-    "classifier_reason": "The workflow is credited with a design boundary the authors keep.",
-    "classifier_rewrite": "We tell Temporal that we trust these imports and still keep the external work inside activities.",
-    "human_label": "",
+    "human_label": "agree",
     "human_note": ""
   },
   {
@@ -598,7 +534,7 @@
     "classifier_label": "keep",
     "classifier_reason": "The subject is a concrete code body and the sentence states a specific implementation fact.",
     "classifier_rewrite": "",
-    "human_label": "",
+    "human_label": "agree",
     "human_note": ""
   },
   {
@@ -630,7 +566,7 @@
     "classifier_label": "keep",
     "classifier_reason": "The workflow is a concrete Temporal unit here, and the sentence describes its execution behavior.",
     "classifier_rewrite": "",
-    "human_label": "",
+    "human_label": "agree",
     "human_note": ""
   },
   {
@@ -662,40 +598,8 @@
     "classifier_label": "bad",
     "classifier_reason": "The workshop is treated as the actor that keeps the version simple.",
     "classifier_rewrite": "Temporal can handle that pattern, but we keep the first version simple.",
-    "human_label": "",
-    "human_note": ""
-  },
-  {
-    "id": "workshop-concrete_noun_phrase-0012",
-    "smell": "concrete_noun_phrase",
-    "source": "workshop",
-    "path": "2025/2025-12-16-youtube-ai-agent-temporal/11-deferred-items.md",
-    "line_no": 22,
-    "line": "Temporal can handle that pattern, but the workshop keeps the first version simple.",
-    "highlighted_line": "Temporal can handle that pattern, but <mark>the workshop keeps</mark> the first version simple.",
-    "phrase": "the workshop keeps",
-    "start": 38,
-    "end": 56,
-    "before": [
-      "Batch podcast videos in groups of five or ten, then run those batches in parallel."
-    ],
-    "after": [
-      "[02-fetch-transcripts.md](02-fetch-transcripts.md) shows `fetch_transcript_cached`, and [04-discover-and-ingest.md](04-discover-and-ingest.md) shows direct YouTube fetching with proxy support."
-    ],
-    "signals": [
-      "\\b(?P<phrase>(?:The|This|That|These|Those|A|An|One|Two|Three|\\d+)?\\s*(?:Docker\\ "
-    ],
-    "paragraph": "That's readable and easy to debug, but it's also slower than it needs to be. Batch podcast videos in groups of five or ten, then run those batches in parallel. Temporal can handle that pattern, but the workshop keeps the first version simple.",
-    "highlighted_paragraph": "That&#x27;s readable and easy to debug, but it&#x27;s also slower than it needs to be. Batch podcast videos in groups of five or ten, then run those batches in parallel. Temporal can handle that pattern, but <mark>the workshop keeps</mark> the first version simple.",
-    "target_sentence": "Temporal can handle that pattern, but the workshop keeps the first version simple.",
-    "highlighted_target_sentence": "Temporal can handle that pattern, but <mark>the workshop keeps</mark> the first version simple.",
-    "before_sentence": "Batch podcast videos in groups of five or ten, then run those batches in parallel.",
-    "after_sentence": "[02-fetch-transcripts.md](02-fetch-transcripts.md) shows `fetch_transcript_cached`, and [04-discover-and-ingest.md](04-discover-and-ingest.md) shows direct YouTube fetching with proxy support.",
-    "classifier_label": "bad",
-    "classifier_reason": "The workshop is credited with the author's simplification decision.",
-    "classifier_rewrite": "Temporal can handle that pattern, but we keep the first version simple in this workshop.",
-    "human_label": "",
-    "human_note": ""
+    "human_label": "agree",
+    "human_note": "Temporal can handle that pattern, but\n\nDidn't w eban the use of pattern except when it's regexp or design?"
   },
   {
     "id": "workshop-concrete_noun_phrase-0013",
@@ -822,38 +726,6 @@
     "classifier_label": "bad",
     "classifier_reason": "The workshop is treated as the actor that keeps the prompt explicit.",
     "classifier_rewrite": "A stronger model may infer the pattern from tool descriptions, but we keep it explicit.",
-    "human_label": "",
-    "human_note": ""
-  },
-  {
-    "id": "workshop-concrete_noun_phrase-0015",
-    "smell": "concrete_noun_phrase",
-    "source": "workshop",
-    "path": "2026/01/2026-01-16-coding-agent-skills-commands/08-slash-commands.md",
-    "line_no": 217,
-    "line": "A stronger model may infer the pattern from tool descriptions, but the workshop keeps it explicit.",
-    "highlighted_line": "A stronger model may infer the pattern from tool descriptions, but <mark>the workshop keeps</mark> it explicit.",
-    "phrase": "the workshop keeps",
-    "start": 67,
-    "end": 85,
-    "before": [
-      "This is wordier than the skill-only version because `gpt-4o-mini` benefits from direct instructions."
-    ],
-    "after": [
-      "The agent should call `execute_command`, load `kid.md`, and return a playful app idea."
-    ],
-    "signals": [
-      "\\b(?P<phrase>(?:The|This|That|These|Those|A|An|One|Two|Three|\\d+)?\\s*(?:Docker\\ "
-    ],
-    "paragraph": "This is wordier than the skill-only version because `gpt-4o-mini` benefits from direct instructions. A stronger model may infer the pattern from tool descriptions, but the workshop keeps it explicit.",
-    "highlighted_paragraph": "This is wordier than the skill-only version because `gpt-4o-mini` benefits from direct instructions. A stronger model may infer the pattern from tool descriptions, but <mark>the workshop keeps</mark> it explicit.",
-    "target_sentence": "A stronger model may infer the pattern from tool descriptions, but the workshop keeps it explicit.",
-    "highlighted_target_sentence": "A stronger model may infer the pattern from tool descriptions, but <mark>the workshop keeps</mark> it explicit.",
-    "before_sentence": "This is wordier than the skill-only version because `gpt-4o-mini` benefits from direct instructions.",
-    "after_sentence": "The agent should call `execute_command`, load `kid.md`, and return a playful app idea.",
-    "classifier_label": "bad",
-    "classifier_reason": "The workshop is credited with the author's explicitness choice.",
-    "classifier_rewrite": "A stronger model may infer the pattern from tool descriptions, but we keep it explicit in the workshop.",
     "human_label": "",
     "human_note": ""
   },
@@ -1267,38 +1139,6 @@
     "after_sentence": "Each note goes through the same steps.",
     "classifier_label": "bad",
     "classifier_reason": "The workflow is an abstract subject that keeps the reader in control.",
-    "classifier_rewrite": "You stay in control of the substance and use the model for the first pass.",
-    "human_label": "",
-    "human_note": ""
-  },
-  {
-    "id": "workshop-concrete_noun_phrase-0021",
-    "smell": "concrete_noun_phrase",
-    "source": "workshop",
-    "path": "2026/04/2026-04-28-personal-brand-for-developers/06-draft-with-ai.md",
-    "line_no": 11,
-    "line": "The workflow keeps you in control of the substance and uses the model for the first pass.",
-    "highlighted_line": "<mark>The workflow keeps</mark> you in control of the substance and uses the model for the first pass.",
-    "phrase": "The workflow keeps",
-    "start": 0,
-    "end": 18,
-    "before": [
-      "An AI assistant is good at turning messy notes into structure, but it shouldn't decide what you think."
-    ],
-    "after": [
-      "Each note goes through the same steps."
-    ],
-    "signals": [
-      "\\b(?P<phrase>(?:The|This|That|These|Those|A|An|One|Two|Three|\\d+)?\\s*(?:Docker\\ "
-    ],
-    "paragraph": "An AI assistant is good at turning messy notes into structure, but it shouldn't decide what you think. The workflow keeps you in control of the substance and uses the model for the first pass.",
-    "highlighted_paragraph": "An AI assistant is good at turning messy notes into structure, but it shouldn&#x27;t decide what you think. <mark>The workflow keeps</mark> you in control of the substance and uses the model for the first pass.",
-    "target_sentence": "The workflow keeps you in control of the substance and uses the model for the first pass.",
-    "highlighted_target_sentence": "<mark>The workflow keeps</mark> you in control of the substance and uses the model for the first pass.",
-    "before_sentence": "An AI assistant is good at turning messy notes into structure, but it shouldn't decide what you think.",
-    "after_sentence": "Each note goes through the same steps.",
-    "classifier_label": "bad",
-    "classifier_reason": "The workflow is credited with keeping control instead of addressing the reader.",
     "classifier_rewrite": "You stay in control of the substance and use the model for the first pass.",
     "human_label": "",
     "human_note": ""
@@ -1780,38 +1620,6 @@
     "classifier_label": "keep",
     "classifier_reason": "The subject is a concrete code class and the sentence states its history.",
     "classifier_rewrite": "",
-    "human_label": "",
-    "human_note": ""
-  },
-  {
-    "id": "workshop-concrete_noun_phrase-0027",
-    "smell": "concrete_noun_phrase",
-    "source": "workshop",
-    "path": "2026/05/2026-05-14-build-your-own-search-engine/README.md",
-    "line_no": 4,
-    "line": "The `TextSearch` class built during the workshop became the basis for the [minsearch](https://github.com/alexeygrigorev/minsearch) library used in later RAG and agent workshops.",
-    "highlighted_line": "The `TextSearch` class built during <mark>the workshop became</mark> the basis for the [minsearch](https://github.com/alexeygrigorev/minsearch) library used in later RAG and agent workshops.",
-    "phrase": "the workshop became",
-    "start": 36,
-    "end": 55,
-    "before": [
-      "From there we move through SVD/LSA and BERT embeddings to vector search."
-    ],
-    "after": [
-      "Originally delivered at a [DataTalks.Club](https://www.youtube.com/@DataTalksClub) live session in 2024, updated in 2026 with refreshed examples and tooling."
-    ],
-    "signals": [
-      "\\b(?P<phrase>(?:The|This|That|These|Those|A|An|One|Two|Three|\\d+)?\\s*(?:Docker\\ "
-    ],
-    "paragraph": "We build a search engine from scratch over DataTalks.Club Zoomcamp FAQ documents. We start with TF-IDF text search, then add cosine similarity and field boosting. From there we move through SVD/LSA and BERT embeddings to vector search. The `TextSearch` class built during the workshop became the basis for the [minsearch](https://github.com/alexeygrigorev/minsearch) library used in later RAG and agent workshops.",
-    "highlighted_paragraph": "We build a search engine from scratch over DataTalks.Club Zoomcamp FAQ documents. We start with TF-IDF text search, then add cosine similarity and field boosting. From there we move through SVD/LSA and BERT embeddings to vector search. The `TextSearch` class built during <mark>the workshop became</mark> the basis for the [minsearch](https://github.com/alexeygrigorev/minsearch) library used in later RAG and agent workshops.",
-    "target_sentence": "The `TextSearch` class built during the workshop became the basis for the [minsearch](https://github.com/alexeygrigorev/minsearch) library used in later RAG and agent workshops.",
-    "highlighted_target_sentence": "The `TextSearch` class built during <mark>the workshop became</mark> the basis for the [minsearch](https://github.com/alexeygrigorev/minsearch) library used in later RAG and agent workshops.",
-    "before_sentence": "From there we move through SVD/LSA and BERT embeddings to vector search.",
-    "after_sentence": "Originally delivered at a [DataTalks.Club](https://www.youtube.com/@DataTalksClub) live session in 2024, updated in 2026 with refreshed examples and tooling.",
-    "classifier_label": "bad",
-    "classifier_reason": "The class is made the actor for later library extraction.",
-    "classifier_rewrite": "After the workshop, we used the `TextSearch` class as the basis for the [minsearch](https://github.com/alexeygrigorev/minsearch) library used in later RAG and agent workshops.",
     "human_label": "",
     "human_note": ""
   },
@@ -2868,38 +2676,6 @@
     "human_note": ""
   },
   {
-    "id": "telegram-abstract_subject-0003",
-    "smell": "abstract_subject",
-    "source": "telegram",
-    "path": "articles/agent-team-of-teams.md",
-    "line_no": 41,
-    "line": "The point was to make them genuinely negotiate - to say \"this part is fine, this part is not\" - rather than rubber-stamp the first idea[^5].",
-    "highlighted_line": "The point was to make them genuinely negotiate - to say &quot;this part is fine, <mark>this part is</mark> not&quot; - rather than rubber-stamp the first idea[^5].",
-    "phrase": "this part is",
-    "start": 76,
-    "end": 88,
-    "before": [
-      "All three agents are on equal footing, so each of them is a critical reviewer with the right to push back."
-    ],
-    "after": [
-      "In the end they discussed it among themselves for somewhere between half an hour and an hour, arrived at a protocol, and committed it[^5]."
-    ],
-    "signals": [
-      "\\b(?P<phrase>(?:The|This|That|These|Those|A|An|One|Two|Three|\\d+)\\s+(?:experienc"
-    ],
-    "paragraph": "I also told them not to just agree with each other and follow along. All three agents are on equal footing, so each of them is a critical reviewer with the right to push back. The point was to make them genuinely negotiate - to say \"this part is fine, this part is not\" - rather than rubber-stamp the first idea[^5].",
-    "highlighted_paragraph": "I also told them not to just agree with each other and follow along. All three agents are on equal footing, so each of them is a critical reviewer with the right to push back. The point was to make them genuinely negotiate - to say &quot;this part is fine, <mark>this part is</mark> not&quot; - rather than rubber-stamp the first idea[^5].",
-    "target_sentence": "The point was to make them genuinely negotiate - to say \"this part is fine, this part is not\" - rather than rubber-stamp the first idea[^5].",
-    "highlighted_target_sentence": "The point was to make them genuinely negotiate - to say &quot;this part is fine, <mark>this part is</mark> not&quot; - rather than rubber-stamp the first idea[^5].",
-    "before_sentence": "All three agents are on equal footing, so each of them is a critical reviewer with the right to push back.",
-    "after_sentence": "In the end they discussed it among themselves for somewhere between half an hour and an hour, arrived at a protocol, and committed it[^5].",
-    "classifier_label": "bad",
-    "classifier_reason": "The sentence starts from the abstract point instead of the actor's intent.",
-    "classifier_rewrite": "I wanted them to genuinely negotiate - to say \"this part is fine, this part is not\" - rather than rubber-stamp the first idea[^5].",
-    "human_label": "",
-    "human_note": ""
-  },
-  {
     "id": "telegram-concrete_noun_phrase-0002",
     "smell": "concrete_noun_phrase",
     "source": "telegram",
@@ -3467,38 +3243,6 @@
     "highlighted_paragraph": "Ideally both. I want to be exposed to problems and figure out how to solve them. Defining <mark>the problem is</mark> my bottleneck - once I build the moment by having a clear idea of what the problem is then getting started and doing the work comes easy.",
     "target_sentence": "Defining the problem is my bottleneck - once I build the moment by having a clear idea of what the problem is then getting started and doing the work comes easy.",
     "highlighted_target_sentence": "Defining <mark>the problem is</mark> my bottleneck - once I build the moment by having a clear idea of what the problem is then getting started and doing the work comes easy.",
-    "before_sentence": "I want to be exposed to problems and figure out how to solve them.",
-    "after_sentence": "What do you hope to achieve with this plan in the next 6 to 8 weeks?",
-    "classifier_label": "keep",
-    "classifier_reason": "The subject is the action of defining the problem, not an abstract noun hiding an actor.",
-    "classifier_rewrite": "",
-    "human_label": "",
-    "human_note": ""
-  },
-  {
-    "id": "telegram-abstract_subject-0017",
-    "smell": "abstract_subject",
-    "source": "telegram",
-    "path": "articles/ai-shipping-labs/plans/20260420_vancesca-dinh.md",
-    "line_no": 120,
-    "line": "Defining the problem is my bottleneck - once I build the moment by having a clear idea of what the problem is then getting started and doing the work comes easy.",
-    "highlighted_line": "Defining the problem is my bottleneck - once I build the moment by having a clear idea of what <mark>the problem is</mark> then getting started and doing the work comes easy.",
-    "phrase": "the problem is",
-    "start": 95,
-    "end": 109,
-    "before": [
-      "I want to be exposed to problems and figure out how to solve them."
-    ],
-    "after": [
-      "What do you hope to achieve with this plan in the next 6 to 8 weeks?"
-    ],
-    "signals": [
-      "\\b(?P<phrase>(?:The|This|That|These|Those|A|An|One|Two|Three|\\d+)\\s+(?:experienc"
-    ],
-    "paragraph": "Ideally both. I want to be exposed to problems and figure out how to solve them. Defining the problem is my bottleneck - once I build the moment by having a clear idea of what the problem is then getting started and doing the work comes easy.",
-    "highlighted_paragraph": "Ideally both. I want to be exposed to problems and figure out how to solve them. Defining the problem is my bottleneck - once I build the moment by having a clear idea of what <mark>the problem is</mark> then getting started and doing the work comes easy.",
-    "target_sentence": "Defining the problem is my bottleneck - once I build the moment by having a clear idea of what the problem is then getting started and doing the work comes easy.",
-    "highlighted_target_sentence": "Defining the problem is my bottleneck - once I build the moment by having a clear idea of what <mark>the problem is</mark> then getting started and doing the work comes easy.",
     "before_sentence": "I want to be exposed to problems and figure out how to solve them.",
     "after_sentence": "What do you hope to achieve with this plan in the next 6 to 8 weeks?",
     "classifier_label": "keep",
@@ -4493,38 +4237,6 @@
     "after_sentence": "For example, ML Zoomcamp will be in September, so it would be good to have something like this ready by then[^2].",
     "classifier_label": "bad",
     "classifier_reason": "Idea hides who should revisit the proposal.",
-    "classifier_rewrite": "Come back to this roughly three months later, once AI Shipping Labs is debugged, the process is running, and people are busy with it[^2].",
-    "human_label": "",
-    "human_note": ""
-  },
-  {
-    "id": "telegram-abstract_subject-0043",
-    "smell": "abstract_subject",
-    "source": "telegram",
-    "path": "articles/ideas/data-talks-club-platform.md",
-    "line_no": 30,
-    "line": "The idea is worth coming back to roughly three months later, once AI Shipping Labs is debugged, the process is running, and people are busy with it[^2].",
-    "highlighted_line": "The idea is worth coming back to roughly three months later, once AI Shipping Labs is debugged, <mark>the process is</mark> running, and people are busy with it[^2].",
-    "phrase": "the process is",
-    "start": 96,
-    "end": 110,
-    "before": [
-      "By the time AI Shipping Labs is done, there will be more knowledge about how to implement this kind of thing."
-    ],
-    "after": [
-      "For example, ML Zoomcamp will be in September, so it would be good to have something like this ready by then[^2]."
-    ],
-    "signals": [
-      "\\b(?P<phrase>(?:The|This|That|These|Those|A|An|One|Two|Three|\\d+)\\s+(?:experienc"
-    ],
-    "paragraph": "By the time AI Shipping Labs is done, there will be more knowledge about how to implement this kind of thing. The idea is worth coming back to roughly three months later, once AI Shipping Labs is debugged, the process is running, and people are busy with it[^2].",
-    "highlighted_paragraph": "By the time AI Shipping Labs is done, there will be more knowledge about how to implement this kind of thing. The idea is worth coming back to roughly three months later, once AI Shipping Labs is debugged, <mark>the process is</mark> running, and people are busy with it[^2].",
-    "target_sentence": "The idea is worth coming back to roughly three months later, once AI Shipping Labs is debugged, the process is running, and people are busy with it[^2].",
-    "highlighted_target_sentence": "The idea is worth coming back to roughly three months later, once AI Shipping Labs is debugged, <mark>the process is</mark> running, and people are busy with it[^2].",
-    "before_sentence": "By the time AI Shipping Labs is done, there will be more knowledge about how to implement this kind of thing.",
-    "after_sentence": "For example, ML Zoomcamp will be in September, so it would be good to have something like this ready by then[^2].",
-    "classifier_label": "bad",
-    "classifier_reason": "The same sentence has abstract framing around the proposal and process.",
     "classifier_rewrite": "Come back to this roughly three months later, once AI Shipping Labs is debugged, the process is running, and people are busy with it[^2].",
     "human_label": "",
     "human_note": ""
@@ -5773,38 +5485,6 @@
     "after_sentence": "Claude Code runs inside this terminal, which means the user can chat with the AI agent while having their entire vault folder structure visible in the sidebar.",
     "classifier_label": "bad",
     "classifier_reason": "Setup is abstract sequence framing.",
-    "classifier_rewrite": "Start by installing the Terminal plugin for Obsidian, which embeds a terminal window directly in the Obsidian interface.",
-    "human_label": "",
-    "human_note": ""
-  },
-  {
-    "id": "telegram-concrete_noun_phrase-0023",
-    "smell": "concrete_noun_phrase",
-    "source": "telegram",
-    "path": "articles/research/ai-note-taking-tools.md",
-    "line_no": 27,
-    "line": "The setup starts with installing the Terminal plugin for Obsidian, which embeds a terminal window directly in the Obsidian interface.",
-    "highlighted_line": "<mark>The setup starts</mark> with installing the Terminal plugin for Obsidian, which embeds a terminal window directly in the Obsidian interface.",
-    "phrase": "The setup starts",
-    "start": 0,
-    "end": 16,
-    "before": [
-      "The core insight is that Obsidian vaults are just folders of markdown files on the filesystem, which makes them a natural workspace for Claude Code to read, create, and organize content."
-    ],
-    "after": [
-      "Claude Code runs inside this terminal, which means the user can chat with the AI agent while having their entire vault folder structure visible in the sidebar."
-    ],
-    "signals": [
-      "\\b(?P<phrase>(?:The|This|That|These|Those|A|An|One|Two|Three|\\d+)?\\s*(?:Docker\\ "
-    ],
-    "paragraph": "The setup starts with installing the Terminal plugin for Obsidian, which embeds a terminal window directly in the Obsidian interface. Claude Code runs inside this terminal, which means the user can chat with the AI agent while having their entire vault folder structure visible in the sidebar. The author describes this as \"a constant reminder of what I'm doing, the context around it, and also see newly created resources as they appear.\"",
-    "highlighted_paragraph": "<mark>The setup starts</mark> with installing the Terminal plugin for Obsidian, which embeds a terminal window directly in the Obsidian interface. Claude Code runs inside this terminal, which means the user can chat with the AI agent while having their entire vault folder structure visible in the sidebar. The author describes this as &quot;a constant reminder of what I&#x27;m doing, the context around it, and also see newly created resources as they appear.&quot;",
-    "target_sentence": "The setup starts with installing the Terminal plugin for Obsidian, which embeds a terminal window directly in the Obsidian interface.",
-    "highlighted_target_sentence": "<mark>The setup starts</mark> with installing the Terminal plugin for Obsidian, which embeds a terminal window directly in the Obsidian interface.",
-    "before_sentence": "The core insight is that Obsidian vaults are just folders of markdown files on the filesystem, which makes them a natural workspace for Claude Code to read, create, and organize content.",
-    "after_sentence": "Claude Code runs inside this terminal, which means the user can chat with the AI agent while having their entire vault folder structure visible in the sidebar.",
-    "classifier_label": "bad",
-    "classifier_reason": "The setup is treated as the actor starting the sequence.",
     "classifier_rewrite": "Start by installing the Terminal plugin for Obsidian, which embeds a terminal window directly in the Obsidian interface.",
     "human_label": "",
     "human_note": ""
@@ -8007,70 +7687,6 @@
     "after_sentence": "But overall, the splitting is often excessive compared to how a person would structure the article.",
     "classifier_label": "keep",
     "classifier_reason": "Section splitting is the precise feature being evaluated.",
-    "classifier_rewrite": "",
-    "human_label": "",
-    "human_note": ""
-  },
-  {
-    "id": "telegram-abstract_subject-0122",
-    "smell": "abstract_subject",
-    "source": "telegram",
-    "path": "articles/writing-assistant-improvement-ideas.md",
-    "line_no": 34,
-    "line": "Sometimes the section splitting is convenient because it helps understand what each part is about (e.g., \"this part is about renaming, this part is about API design\").",
-    "highlighted_line": "Sometimes the section splitting is convenient because it helps understand what each part is about (e.g., &quot;<mark>this part is</mark> about renaming, this part is about API design&quot;).",
-    "phrase": "this part is",
-    "start": 106,
-    "end": 118,
-    "before": [
-      "That naming detail doesn't need its own section - it's not a separate topic or critical information."
-    ],
-    "after": [
-      "But overall, the splitting is often excessive compared to how a person would structure the article."
-    ],
-    "signals": [
-      "\\b(?P<phrase>(?:The|This|That|These|Those|A|An|One|Two|Three|\\d+)\\s+(?:experienc"
-    ],
-    "paragraph": "Sometimes the section splitting is convenient because it helps understand what each part is about (e.g., \"this part is about renaming, this part is about API design\"). But overall, the splitting is often excessive compared to how a person would structure the article. Optimization would mean splitting less frequently.[^3]",
-    "highlighted_paragraph": "Sometimes the section splitting is convenient because it helps understand what each part is about (e.g., &quot;<mark>this part is</mark> about renaming, this part is about API design&quot;). But overall, the splitting is often excessive compared to how a person would structure the article. Optimization would mean splitting less frequently.[^3]",
-    "target_sentence": "Sometimes the section splitting is convenient because it helps understand what each part is about (e.g., \"this part is about renaming, this part is about API design\").",
-    "highlighted_target_sentence": "Sometimes the section splitting is convenient because it helps understand what each part is about (e.g., &quot;<mark>this part is</mark> about renaming, this part is about API design&quot;).",
-    "before_sentence": "That naming detail doesn't need its own section - it's not a separate topic or critical information.",
-    "after_sentence": "But overall, the splitting is often excessive compared to how a person would structure the article.",
-    "classifier_label": "keep",
-    "classifier_reason": "The phrase is inside an example quote about section labels.",
-    "classifier_rewrite": "",
-    "human_label": "",
-    "human_note": ""
-  },
-  {
-    "id": "telegram-abstract_subject-0123",
-    "smell": "abstract_subject",
-    "source": "telegram",
-    "path": "articles/writing-assistant-improvement-ideas.md",
-    "line_no": 34,
-    "line": "Sometimes the section splitting is convenient because it helps understand what each part is about (e.g., \"this part is about renaming, this part is about API design\").",
-    "highlighted_line": "Sometimes the section splitting is convenient because it helps understand what each part is about (e.g., &quot;this part is about renaming, <mark>this part is</mark> about API design&quot;).",
-    "phrase": "this part is",
-    "start": 135,
-    "end": 147,
-    "before": [
-      "That naming detail doesn't need its own section - it's not a separate topic or critical information."
-    ],
-    "after": [
-      "But overall, the splitting is often excessive compared to how a person would structure the article."
-    ],
-    "signals": [
-      "\\b(?P<phrase>(?:The|This|That|These|Those|A|An|One|Two|Three|\\d+)\\s+(?:experienc"
-    ],
-    "paragraph": "Sometimes the section splitting is convenient because it helps understand what each part is about (e.g., \"this part is about renaming, this part is about API design\"). But overall, the splitting is often excessive compared to how a person would structure the article. Optimization would mean splitting less frequently.[^3]",
-    "highlighted_paragraph": "Sometimes the section splitting is convenient because it helps understand what each part is about (e.g., &quot;this part is about renaming, <mark>this part is</mark> about API design&quot;). But overall, the splitting is often excessive compared to how a person would structure the article. Optimization would mean splitting less frequently.[^3]",
-    "target_sentence": "Sometimes the section splitting is convenient because it helps understand what each part is about (e.g., \"this part is about renaming, this part is about API design\").",
-    "highlighted_target_sentence": "Sometimes the section splitting is convenient because it helps understand what each part is about (e.g., &quot;this part is about renaming, <mark>this part is</mark> about API design&quot;).",
-    "before_sentence": "That naming detail doesn't need its own section - it's not a separate topic or critical information.",
-    "after_sentence": "But overall, the splitting is often excessive compared to how a person would structure the article.",
-    "classifier_label": "keep",
-    "classifier_reason": "The phrase is inside an example quote about section labels.",
     "classifier_rewrite": "",
     "human_label": "",
     "human_note": ""

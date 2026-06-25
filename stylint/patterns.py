@@ -306,6 +306,17 @@ BANNED_PHRASE_PATTERNS: dict[str, tuple[re.Pattern[str], str]] = {
         re.compile(r"\block(?:s|ed|ing)?\s+in\b", re.IGNORECASE),
         "drop the metaphor; use 'set', 'fix', 'force', or name the action",
     ),
+    "reach for (metaphor)": (
+        re.compile(r"\breach(?:es|ed|ing)?\s+for\b", re.IGNORECASE),
+        "drop the 'reach for' metaphor; use 'use', 'choose', or name the "
+        "action ('for production you usually use a real agent framework')",
+    ),
+    "point to (metaphor)": (
+        re.compile(r"\bpoint(?:s|ed|ing)?\s+to\b", re.IGNORECASE),
+        "drop the 'point to' metaphor; use 'show', 'reference', 'link to', "
+        "or name the action. Keep only the literal pointer sense (DNS "
+        "record, symlink, URL, variable)",
+    ),
     "fuel (verb)": (
         re.compile(r"\bfuel(?:s|ed|ing|led|ling)?\b", re.IGNORECASE),
         "drop the 'fuel' metaphor; name what it provides ('that backlog "
@@ -741,6 +752,22 @@ PHRASE_EXCEPTION_RES: dict[str, re.Pattern[str]] = {
         r"\bpin(?:s|ned|ning)?\b"
         r"|\b(?:the|a|this)\s+(?:\w+\s+)?pin\b"
         r"|\brelax(?:es|ed|ing)?\s+the\s+pin\b",
+        re.IGNORECASE,
+    ),
+    # "point to" is fine in literal pointer senses: DNS records, symlinks,
+    # URLs, domains, variables, and file paths all legitimately "point to" a
+    # target. The rule only bans the vague metaphor ("the tests point to a
+    # problem").
+    "point to (metaphor)": re.compile(
+        r"\bpoint(?:s|ed|ing)?\s+to\b[^.!?`]{0,30}\b(?:dns|record|records|"
+        r"cname|domain|domains|subdomain|symlink|symlinks|pointer|pointers|"
+        r"url|urls|uri|variable|variables|address|addresses|endpoint|"
+        r"endpoints|path|paths|file|directory|bucket|repo|repository|branch|"
+        r"commit|ip)\b"
+        r"|\b(?:dns|record|records|cname|domain|domains|subdomain|symlink|"
+        r"symlinks|pointer|pointers|url|urls|uri|variable|variables|address|"
+        r"addresses|endpoint|endpoints|path|paths|file|directory|bucket|repo|"
+        r"repository|branch|commit|ip)\b[^.!?`]{0,30}\bpoint(?:s|ed|ing)?\s+to\b",
         re.IGNORECASE,
     ),
     # "hands-on", the phrasal "hand off / over / back / out / in", and
