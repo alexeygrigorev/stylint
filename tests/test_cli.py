@@ -203,3 +203,80 @@ def test_default_import_does_not_load_nltk():
     )
     assert result.returncode == 0, result.stderr
     assert "ok" in result.stdout
+
+
+def test_cli_explain_content_as_actor(monkeypatch, capsys):
+    monkeypatch.setattr(sys, "argv", ["stylint", "--explain", "content-as-actor"])
+
+    assert main() == 0
+
+    output = capsys.readouterr().out
+    assert "abstract-subject" in output
+    assert "What it catches" in output
+    assert "Examples" in output
+    assert "before:" in output
+    assert "after:" in output
+
+
+def test_cli_explain_accepts_spaces_and_underscores(monkeypatch, capsys):
+    for form in ("content as actor", "content_as_actor"):
+        monkeypatch.setattr(sys, "argv", ["stylint", "--explain", form])
+
+        assert main() == 0
+
+        output = capsys.readouterr().out
+        assert "abstract-subject" in output
+
+
+def test_cli_explain_long_clause_likely(monkeypatch, capsys):
+    monkeypatch.setattr(sys, "argv", ["stylint", "--explain", "long-clause-likely"])
+
+    assert main() == 0
+
+    output = capsys.readouterr().out
+    assert "long-clause-likely" in output
+    assert "clause" in output.lower()
+
+
+def test_cli_explain_abstract_subject(monkeypatch, capsys):
+    monkeypatch.setattr(sys, "argv", ["stylint", "--explain", "abstract-subject"])
+
+    assert main() == 0
+
+    output = capsys.readouterr().out
+    assert "abstract-subject" in output
+    assert "content as actor" in output
+
+
+def test_cli_explain_rejects_unknown_tag(monkeypatch, capsys):
+    monkeypatch.setattr(sys, "argv", ["stylint", "--explain", "does-not-exist"])
+
+    assert main() == 2
+
+    err = capsys.readouterr().err
+    assert "Unknown tag for --explain" in err
+
+
+def test_cli_explain_no_arg_lists_tags(monkeypatch, capsys):
+    monkeypatch.setattr(sys, "argv", ["stylint", "--explain"])
+
+    assert main() == 0
+
+    output = capsys.readouterr().out
+    tags = output.split()
+    assert "abstract-subject" in tags
+    assert "long-clause-likely" in tags
+    assert "passive-voice" in tags
+
+
+def test_cli_list_tags_lists_all_tags(monkeypatch, capsys):
+    from stylint.tags import Tag
+
+    monkeypatch.setattr(sys, "argv", ["stylint", "--list-tags"])
+
+    assert main() == 0
+
+    output = capsys.readouterr().out
+    listed = set(output.split())
+    expected = {t.value for t in Tag}
+    assert listed == expected

@@ -7,6 +7,7 @@ import sys
 from .discovery import iter_markdown_pages
 from .lint import check_page
 from .output import print_findings
+from . import explanations
 from .styleguide import (
     agents_guide_file,
     prompt_file,
@@ -92,6 +93,18 @@ def parse_args() -> argparse.Namespace:
         help="Print all known rule tags and exit.",
     )
     parser.add_argument(
+        "--explain",
+        metavar="TAG",
+        nargs="?",
+        const="",
+        help=(
+            "Print a detailed explanation for one rule tag and exit. "
+            "Accepts hyphens, underscores, or spaces, and also resolves "
+            "pattern labels (e.g. 'content as actor'). Pass nothing to "
+            "list all explainable tags."
+        ),
+    )
+    parser.add_argument(
         "--agents",
         action="store_true",
         help=(
@@ -134,6 +147,25 @@ def main() -> int:
     if args.list_tags:
         for tag in Tag:
             print(tag.value)
+        return 0
+
+    if args.explain == "":
+        for tag in explanations.all_tags():
+            print(tag)
+        return 0
+
+    if args.explain:
+        try:
+            entry = explanations.explain(args.explain)
+        except KeyError:
+            print(
+                f"Unknown tag for --explain: '{args.explain}'. "
+                "Run with --explain (no argument) or --list-tags to see "
+                "known tags.",
+                file=sys.stderr,
+            )
+            return 2
+        print(entry.render())
         return 0
 
     if args.agents:
