@@ -67,6 +67,16 @@ These forms usually need a rewrite:
 - A pseudo-cleft that inflates a plain cause: `X is what made it useful.`,
   `Consistency is what grows a LinkedIn account.`
 - A document part as the actor: `This part turns that into a routine.`
+- A flat copular opener that announces a topic with an abstract noun as
+  the subject: `A common question in the onboarding interviews is what
+  to build for a portfolio.` These read as dull and detached and hide
+  the actor. Rewrite with a person doing the asking: `People often ask
+  me, in the onboarding interviews, what to build for a portfolio.`
+  Other variants to catch: `The reason ... is ...`, `The problem ...
+  is ...`, `The goal ... is ...`, `A useful check ... is ...`,
+  `The interesting part ... is ...`, `The first step ... is ...`. Any
+  sentence that opens with `A/The <abstract noun> ... is ...` is a
+  suspect and usually needs a real actor.
 
 ## Search checklist
 
@@ -102,6 +112,11 @@ subject:
 
 Many missed cases hide behind small determiners.
 
+Check the opening sentence of every page especially hard. Openings lean
+on flat copular framings (`A common question ... is ...`,
+`The reason ... is ...`, `The goal ... is ...`) more than body
+sentences do, and they set the tone for the whole page. If a page
+opening has an abstract noun as its subject, almost always rewrite it.
 ## The test (generalize, don't pattern-match)
 
 Don't match the examples literally.
