@@ -162,6 +162,7 @@ BANNED_WORDS: dict[str, str] = {
     "wired": "use a concrete verb: connected, passed, added, configured, called, or name the exact change",
     "wiring": "use a concrete verb: connecting, passing, adding, configuring, calling, or name the exact change",
     "pattern": "drop the word; for regex use 'regex' or 'regular expression', otherwise name the concrete approach, structure, or repeated action",
+    "trapped": "data, files, and logs are not 'trapped' - say 'stuck in', 'held in', or describe the concrete problem instead",
 }
 
 # Multi-word banned phrases. Substring match, case-insensitive.

@@ -29,7 +29,9 @@ Use these block conventions:
 
 - For plain output, prompts, folder trees, and `.env` examples, use
   ` ```text `.
-- For shell transcripts, use ` ```console ` and a `$` prefix on commands.
+- For shell commands the reader should run, use ` ```bash ` and no `$`
+  prompt marker. Put command output in a separate ` ```text ` block when the
+  output matters.
 - A 30-line dataclass can stay together. A 30-line function that does four
   things should become four blocks.
 - Import statements live in the block where the library is first

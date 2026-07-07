@@ -18,6 +18,7 @@ from .styleguide import (
 )
 from .tags import DEFAULT_OFF_TAGS, Tag
 from .version import __version__
+from .autofix import apply_auto_fixes
 
 
 def parse_args() -> argparse.Namespace:
@@ -127,6 +128,15 @@ def parse_args() -> argparse.Namespace:
         "--version",
         action="version",
         version=f"stylint {__version__}",
+    )
+    parser.add_argument(
+        "--fix",
+        action="store_true",
+        help=(
+            "Auto-fix mechanical findings in place. Currently fixes "
+            "contractions (e.g. 'do not' -> 'don't'). Re-runs the "
+            "check after fixing and prints remaining findings."
+        ),
     )
     parser.add_argument(
         "--style-guide",
@@ -275,6 +285,22 @@ def main() -> int:
 
     if ignore_tags:
         findings = [finding for finding in findings if finding.tag not in ignore_tags]
+
+    if args.fix:
+        fixed = apply_auto_fixes(findings, pages)
+        if fixed:
+            suffix = "s" if fixed != 1 else ""
+            print(f"Auto-fixed {fixed} contraction{suffix} in place.")
+        # Re-run the check to show remaining findings
+        findings = []
+        for root, page in pages:
+            findings.extend(
+                check_page(root, page, nlp=args.nlp, author_name=args.author_name)
+            )
+        if effective_off:
+            findings = [f for f in findings if f.tag not in effective_off]
+        if ignore_tags:
+            findings = [f for f in findings if f.tag not in ignore_tags]
 
     if findings:
         print_findings(findings)

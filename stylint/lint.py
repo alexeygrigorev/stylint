@@ -5,7 +5,11 @@ from pathlib import Path
 from .models import Finding
 from .patterns import *
 from .rules.banned import check_banned_line
-from .rules.code import check_code_block_length, check_python_code_line
+from .rules.code import (
+    check_code_block_length,
+    check_code_prompt_line,
+    check_python_code_line,
+)
 from .rules.file_level import check_now_lets_overuse
 from .rules.headings import check_heading
 from .rules.markdown import check_markdown_line, check_table_row
@@ -287,6 +291,7 @@ def check_page(
 
         if in_code:
             code_block_line_count += 1
+            errors.extend(check_code_prompt_line(line, code_lang, line_no, rel))
             if code_lang == "python":
                 errors.extend(
                     check_python_code_line(line, previous_code_line_blank, line_no, rel)

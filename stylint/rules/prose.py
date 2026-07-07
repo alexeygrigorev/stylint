@@ -42,6 +42,7 @@ from ..text import (
     count_words,
     find_gerund_starts,
     is_verbless_fragment,
+    suggest_split_point,
     split_sentences,
     strip_double_quoted,
     strip_inline_code,
@@ -139,6 +140,8 @@ def check_paragraph(
                     )
                 )
             else:
+                split_hint = suggest_split_point(sentence)
+                split_msg = f" Suggested split: '{split_hint}'" if split_hint else ""
                 findings.append(
                     Finding(
                         rel,
@@ -150,7 +153,7 @@ def check_paragraph(
                         "Fix: make ONE split at a natural clause boundary, usually "
                         "into two sentences. Do NOT chop into many short fragments "
                         "(that trips choppy-rhythm) and do NOT convert to bullets "
-                        "(that would break the meaning). "
+                        f"(that would break the meaning).{split_msg} "
                         f"{PARALLEL_COMPLETION_TEST}",
                     )
                 )
@@ -167,13 +170,15 @@ def check_paragraph(
                 )
             )
         elif too_many_commas:
+            split_hint = suggest_split_point(sentence)
+            split_msg = f" Suggested split: '{split_hint}'" if split_hint else ""
             findings.append(
                 Finding(
                     rel,
                     start_line,
                     Tag.MANY_COMMAS,
                     f"sentence has {commas} commas (max {SENTENCE_MAX_COMMAS}). "
-                    "Fixes: (1) convert to a bullet list; (2) split into shorter sentences. "
+                    f"Fixes: (1) convert to a bullet list; (2) split into shorter sentences.{split_msg} "
                     f"{LIST_HEURISTIC_HINT}",
                 )
             )

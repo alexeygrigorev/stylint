@@ -182,3 +182,63 @@ def find_gerund_starts(plain: str) -> list[str]:
         if word.lower() not in GERUND_NOUN_EXCEPTIONS:
             flagged.append(word)
     return flagged
+def suggest_split_point(sentence: str) -> str | None:
+    """Suggest where to split a long sentence at a clause boundary.
+
+    Finds all clause-boundary commas (those followed by a subordinating
+    conjunction) and picks the one that produces the most balanced
+    split - neither part should be shorter than ~5 words, to avoid
+    creating a choppy-rhythm or merge-short finding.
+
+    Returns a snippet like ``'... body, which contains. ->'`` showing
+    the split point, or None if no good split point exists.
+    """
+    matches = list(CLAUSE_MARKER_RE.finditer(sentence))
+    if not matches:
+        return None
+
+    best = None
+    best_score = 0
+    total_words = count_words(sentence)
+    for m in matches:
+        # Split after the comma + conjunction
+        split_pos = m.end()
+        first_part = sentence[:split_pos]
+        second_part = sentence[split_pos:]
+        first_words = count_words(first_part)
+        second_words = count_words(second_part)
+        # Prefer splits where both parts are at least 5 words and
+        # the smaller part is as large as possible (most balanced).
+        min_part = min(first_words, second_words)
+        if min_part < 5:
+            continue
+        if min_part > best_score:
+            best_score = min_part
+            best = m
+
+    if best is None:
+        # Fallback: pick the first clause boundary even if unbalanced
+        best = matches[0]
+
+    # Build a snippet showing the split: text up to and including the
+    # conjunction, then a marker, then the rest.
+    split_pos = best.end()
+    before = sentence[:split_pos].strip()
+    after = sentence[split_pos:].strip()
+    # Truncate long parts on word boundaries
+    if len(before) > 60:
+        # Keep the last ~50 chars, break after the first complete word
+        tail = before[-50:]
+        space = tail.find(" ")
+        if space >= 0:
+            before = "..." + tail[space + 1:]
+        else:
+            before = "..." + tail
+    if len(after) > 60:
+        head = after[:50]
+        space = head.rfind(" ")
+        if space > 0:
+            after = head[:space] + "..."
+        else:
+            after = head + "..."
+    return f"{before}. -> {after}"

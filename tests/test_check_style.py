@@ -676,6 +676,32 @@ def test_code_block_short_negative(tmp_path):
 
 
 # ---------------------------------------------------------------------------
+# Shell command prompt markers
+# ---------------------------------------------------------------------------
+
+
+def test_code_block_shell_prompt_positive(tmp_path):
+    body = "Run the command:\n\n```bash\n$ npm run fetch-faq\n```\n"
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert any("remove the prompt marker" in e for e in errors)
+
+
+def test_code_block_shell_prompt_negative(tmp_path):
+    body = "Run the command:\n\n```bash\nnpm run fetch-faq\n```\n"
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert not any("remove the prompt marker" in e for e in errors)
+
+
+def test_code_block_shell_prompt_ignored_in_non_shell_code(tmp_path):
+    body = 'Show the value:\n\n```python\nprompt = "$ npm run fetch-faq"\n```\n'
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert not any("remove the prompt marker" in e for e in errors)
+
+
+# ---------------------------------------------------------------------------
 # Code block needs lead-in after heading
 # ---------------------------------------------------------------------------
 

@@ -30,6 +30,7 @@ class Tag(str, Enum):
     # Code blocks
     CODE_NO_LANG = "code-no-lang"
     CODE_TOO_LONG = "code-too-long"
+    CODE_PROMPT = "code-prompt"
     CONSECUTIVE_CODE = "consecutive-code"
     LEAD_IN = "lead-in"
     LEAD_IN_MULTI = "lead-in-multi"

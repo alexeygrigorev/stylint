@@ -6,6 +6,23 @@ from ..tags import Tag
 
 __all__ = ["CODE_BLOCK_MAX_LINES", "PYTHON_CHAINED_GET_RE"]
 
+SHELL_LANGS = frozenset({"bash", "sh", "shell", "zsh", "console"})
+
+
+def check_code_prompt_line(line: str, code_lang: str, line_no: int, rel) -> list[Finding]:
+    if code_lang not in SHELL_LANGS:
+        return []
+    if not line.lstrip().startswith("$ "):
+        return []
+    return [
+        Finding(
+            rel,
+            line_no,
+            Tag.CODE_PROMPT,
+            "shell command in code block starts with '$ '; remove the prompt marker",
+        )
+    ]
+
 
 def check_python_code_line(
     line: str,
