@@ -112,6 +112,10 @@ def test_frontmatter_with_blank_line_is_clean(tmp_path):
         "wire",
         "wired",
         "wiring",
+        "signal",
+        "signals",
+        "signaled",
+        "signaling",
     ],
 )
 def test_banned_word_positive(tmp_path, word):

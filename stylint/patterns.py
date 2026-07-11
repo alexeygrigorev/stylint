@@ -162,6 +162,7 @@ BANNED_WORDS: dict[str, str] = {
     "wired": "use a concrete verb: connected, passed, added, configured, called, or name the exact change",
     "wiring": "use a concrete verb: connecting, passing, adding, configuring, calling, or name the exact change",
     "pattern": "drop the word; for regex use 'regex' or 'regular expression', otherwise name the concrete approach, structure, or repeated action",
+    "signal": "use 'show', 'indicate', 'evidence', or name the concrete thing directly",
     "trapped": "data, files, and logs are not 'trapped' - say 'stuck in', 'held in', or describe the concrete problem instead",
 }
 
@@ -710,8 +711,19 @@ BANNED_OPENERS: dict[str, str] = {
 OPENER_RE = re.compile(
     r"^(?:[-*]\s+|\d+\.\s+)?(" + "|".join(re.escape(w) for w in BANNED_OPENERS) + r")\b"
 )
+# Optional inflection suffixes for banned words that also need to match
+# their common morphological forms. Default is empty string (whole-word
+# match only). Words listed here get the suffix appended before the
+# trailing word boundary.
+BANNED_WORD_SUFFIXES: dict[str, str] = {
+    "signal": r"(?:s|ed|ing|ling)?",  # signal, signals, signaled, signaling, signalling
+}
+
 WORD_RES: dict[str, re.Pattern[str]] = {
-    word: re.compile(r"\b" + re.escape(word) + r"\b", re.IGNORECASE)
+    word: re.compile(
+        r"\b" + re.escape(word) + BANNED_WORD_SUFFIXES.get(word, "") + r"\b",
+        re.IGNORECASE,
+    )
     for word in BANNED_WORDS
 }
 

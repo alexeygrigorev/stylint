@@ -41,7 +41,10 @@ def check_banned_line(line: str, plain: str, line_no: int, rel) -> list[Finding]
             ]
             if not matches:
                 continue
-        findings.append(Finding(rel, line_no, Tag.BANNED_WORD, f"'{word}' - {hint}"))
+        for m in matches:
+            findings.append(
+                Finding(rel, line_no, Tag.BANNED_WORD, f"'{m.group()}' - {hint}")
+            )
 
     for phrase, hint in BANNED_PHRASES.items():
         if phrase in plain_lower:
