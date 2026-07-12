@@ -682,9 +682,10 @@ BANNED_PHRASE_PATTERNS: dict[str, tuple[re.Pattern[str], str]] = {
         "followed'). Name what happened and why: 'subscribers grew 9% that "
         "week because ...'",
     ),
-    "the ... question": (
+    "the ... question (issue framing)": (
         re.compile(
-            r"(?:^|[.!?]\s+)the\s+(?:[a-z]+(?:\s+|\s*-\s*)){0,3}question\b",
+            r"(?:^|[.!?]\s+)the\s+(?:[a-z]+(?:\s+|\s*-\s*)){0,3}question\b"
+            r"(?=\s+(?:is|was|remains|comes|arises|of))",
             re.IGNORECASE,
         ),
         "drop 'the X question' framing; state the topic directly "
