@@ -164,6 +164,9 @@ BANNED_WORDS: dict[str, str] = {
     "pattern": "drop the word; for regex use 'regex' or 'regular expression', otherwise name the concrete approach, structure, or repeated action",
     "signal": "use 'show', 'indicate', 'evidence', or name the concrete thing directly",
     "trapped": "data, files, and logs are not 'trapped' - say 'stuck in', 'held in', or describe the concrete problem instead",
+    "wrinkle": "drop the cliche; name the complication directly ('one complication is', 'a detail we need to handle')",
+    "terse": "use 'short', 'compact', or name what makes them short",
+    "loose": "say what is actually wrong with the code: 'a single function with no structure', 'hardcoded dependencies', 'not reusable'. 'Loose' is vague",
 }
 
 # Multi-word banned phrases. Substring match, case-insensitive.
@@ -243,6 +246,9 @@ BANNED_PHRASES: dict[str, str] = {
     "tight loop": "describe the actual workflow (rebuild time, edit-test cycle)",
     "lean on": "use a direct verb: use / depend on / rely on / ask",
     "leaned on": "use a direct verb: used / depended on / relied on / asked",
+    "lean into": "use a direct verb: focus on / invest in / build for / embrace",
+    "leaned into": "use a direct verb: focused on / invested in / built for / embraced",
+    "leaned hard": "use a direct verb: focused heavily on / invested heavily in",
     "reusable principle": "name the workflow or habit directly",
     "serves as": "use 'is'",
     "stands as": "use 'is'",
@@ -580,7 +586,7 @@ BANNED_PHRASE_PATTERNS: dict[str, tuple[re.Pattern[str], str]] = {
     ),
     "hand (verb)": (
         re.compile(
-            r"\b(?:to\s+hand|hand(?:s|ed|ing))\b",
+            r"\b(?:to\s+hand|hand(?:s|ed|ing)?)\b",
             re.IGNORECASE,
         ),
         "drop the 'hand' metaphor. A tool, system, or workshop does not "
@@ -675,6 +681,14 @@ BANNED_PHRASE_PATTERNS: dict[str, tuple[re.Pattern[str], str]] = {
         "abstract noun as the actor of a vague consequence ('the growth "
         "followed'). Name what happened and why: 'subscribers grew 9% that "
         "week because ...'",
+    ),
+    "the ... question": (
+        re.compile(
+            r"(?:^|[.!?]\s+)the\s+(?:[a-z]+(?:\s+|\s*-\s*)){0,3}question\b",
+            re.IGNORECASE,
+        ),
+        "drop 'the X question' framing; state the topic directly "
+        "('cost', 'the cost of running the eval', 'whether prompt caching applies')",
     ),
 }
 
