@@ -749,6 +749,15 @@ WORD_RES: dict[str, re.Pattern[str]] = {
 WORD_EXCEPTION_RES: dict[str, re.Pattern[str]] = {
     # "shape" is fine for NumPy/tensor array shapes and attribute access:
     # "X.shape", "a tensor with shape (2, 768)", "the output shape".
+    # "signal" is fine in technical contexts: OS signals (SIGTERM), queue
+    # sentinels, or a programmatic flag/field that indicates state.
+    "signal": re.compile(
+        r"\b(?:os\s+)?signals?\s+(?:from|to|handler|processing|flow)\b"
+        r"|\bsignal(?:s|ed|ing)?\s+(?:the|a|an)\s+(?:end|start|stop|done|completion)\b"
+        r"|\b(?:is|as|the)\s+signal\s+(?:that|for|to)\b"
+        r"|\bsignals?\s+(?:propagat|handl|flow|rout)\b",
+        re.IGNORECASE,
+    ),
     "shape": re.compile(
         r"\.shape\b"
         r"|\b(?:numpy|np|tensor|tensors|array|arrays|ndarray|matrix|matrices|"
