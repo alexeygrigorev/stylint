@@ -805,7 +805,8 @@ PHRASE_EXCEPTION_RES: dict[str, re.Pattern[str]] = {
         r"\bhands?-on\b"
         r"|\b(?:to\s+)?hand(?:s|ed|ing)?\s+(?:off|over|back|out|in)\b"
         r"|\b[a-z]+-handed\b"
-        r"|\bhand-written\b",
+        r"|\bhand-written\b"
+        r"|\bby hand\b",
         re.IGNORECASE,
     ),
 }
