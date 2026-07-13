@@ -170,7 +170,6 @@ BANNED_WORDS: dict[str, str] = {
     "harden": "use 'make more robust', 'add safeguards to', or name the specific improvement",
     "hardens": "use 'makes more robust', 'adds safeguards to', or name the specific improvement",
     "foreground": "use 'highlight', 'emphasize', 'draw attention to', or name what you actually do",
-    "ship": "use 'deploy', 'publish', 'release', 'put into production', or name the concrete action. Keep only for the literal shipping sense",
 }
 
 # Multi-word banned phrases. Substring match, case-insensitive.
