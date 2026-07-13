@@ -697,8 +697,19 @@ BANNED_PHRASE_PATTERNS: dict[str, tuple[re.Pattern[str], str]] = {
             r"(?=\s+(?:is|was|remains|comes|arises|of))",
             re.IGNORECASE,
         ),
-        "drop 'the X question' framing; state the topic directly "
-        "('cost', 'the cost of running the eval', 'whether prompt caching applies')",
+       "drop 'the X question' framing; state the topic directly "
+       "('cost', 'the cost of running the eval', 'whether prompt caching applies')",
+   ),
+    "folder/file as actor": (
+        re.compile(
+            r"\b(?:a|the|this)\s+(?:separate\s+|new\s+)?"
+            r"(?:folder|file|directory|repo|repository)\s+"
+            r"(?:holds|contains|ships|houses|stores|provides|gives|owns)\b",
+            re.IGNORECASE,
+        ),
+        "a folder or file does not 'hold' or 'ship' anything - "
+        "use a real subject: 'the Flex code is in a separate folder', "
+        "'the repo contains...' becomes 'we keep... in the repo'",
     ),
 }
 
@@ -720,6 +731,7 @@ ABSTRACT_SUBJECT_LABELS: frozenset[str] = frozenset({
     "content as actor",
     "abstract subject splits itself",
     "the/a ... followed",
+    "folder/file as actor",
 })
 
 # Sentence openers. Capitalized, must start the line (allowing optional list
