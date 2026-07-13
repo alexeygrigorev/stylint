@@ -167,6 +167,10 @@ BANNED_WORDS: dict[str, str] = {
     "wrinkle": "drop the cliche; name the complication directly ('one complication is', 'a detail we need to handle')",
     "terse": "use 'short', 'compact', or name what makes them short",
     "loose": "say what is actually wrong with the code: 'a single function with no structure', 'hardcoded dependencies', 'not reusable'. 'Loose' is vague",
+    "harden": "use 'make more robust', 'add safeguards to', or name the specific improvement",
+    "hardens": "use 'makes more robust', 'adds safeguards to', or name the specific improvement",
+    "foreground": "use 'highlight', 'emphasize', 'draw attention to', or name what you actually do",
+    "ship": "use 'deploy', 'publish', 'release', 'put into production', or name the concrete action. Keep only for the literal shipping sense",
 }
 
 # Multi-word banned phrases. Substring match, case-insensitive.
@@ -290,6 +294,11 @@ BANNED_PHRASES: dict[str, str] = {
     "works great": "drop the filler; name the concrete property that fits",
     "fits well": "drop the filler; name the concrete property that fits",
     "all of this": "name the concrete actions, files, screens, or behavior",
+    "source of truth": "name what the file or system actually is: 'the canonical version', 'the editable version', 'the version we edit'",
+    "audience member": "state the content directly without attributing it to an audience member. The workshop is standalone",
+    "an audience member": "state the content directly without attributing it to an audience member. The workshop is standalone",
+    "in the live session": "the workshop is standalone - state what happened directly, not when or to whom",
+    "the live session": "the workshop is standalone - state what happened directly, not when or to whom",
     "suffer": "do not anthropomorphize - inanimate things don't suffer; "
                "describe what actually goes wrong "
                "('the answer is wrong', 'the latency doubles')",
