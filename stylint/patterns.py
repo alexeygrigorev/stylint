@@ -23,6 +23,9 @@ SMART_QUOTES = {
     "“": "left smart double quote",
     "”": "right smart double quote",
 }
+# Logical punctuation keeps a closing period or comma outside quotation
+# marks, even when the quoted text is a complete sentence.
+QUOTE_PUNCTUATION_RE = re.compile(r'"[^"\n]+(?P<punct>[.,])"')
 BARE_URL_RE = re.compile(r"\bhttps?://")
 ANGLE_URL_RE = re.compile(r"<https?://")
 DOUBLE_HYPHEN_RE = re.compile(r"(?<![<!/])--(?![/>])")

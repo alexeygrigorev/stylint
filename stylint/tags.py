@@ -17,6 +17,7 @@ class Tag(str, Enum):
     DOUBLE_HYPHEN = "double-hyphen"
     DASH_PARENTHETICAL = "dash-parenthetical"
     SMART_QUOTES = "smart-quotes"
+    QUOTE_PUNCTUATION = "quote-punctuation"
     BACKTICKS_IN_LINK = "backticks-in-link"
     BARE_URL = "bare-url"
     ANGLE_URL = "angle-url"

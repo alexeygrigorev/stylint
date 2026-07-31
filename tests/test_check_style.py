@@ -918,6 +918,39 @@ def test_smart_quote_flagged(tmp_path):
     assert any("smart double quote" in e for e in errors)
 
 
+@pytest.mark.parametrize(
+    "body",
+    [
+        'We call this "spec-driven development."\n',
+        'The answer is "yes," but we still verify it.\n',
+        'Read ["The complete guide."](https://example.com).\n',
+        'She said "This is a complete sentence."\n',
+    ],
+)
+def test_quote_punctuation_flagged(tmp_path, body):
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert any("[quote-punctuation]" in e for e in errors)
+
+
+@pytest.mark.parametrize(
+    "body",
+    [
+        'We call this "spec-driven development".\n',
+        'The answer is "yes", but we still verify it.\n',
+        'She asked, "Is this correct?"\n',
+        'She shouted, "Stop!"\n',
+        'Use `"value,"` in this example.\n',
+        '> The source says "keep this punctuation."\n',
+        '<span title="A label.">Text</span>\n',
+    ],
+)
+def test_quote_punctuation_negative(tmp_path, body):
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert not any("[quote-punctuation]" in e for e in errors)
+
+
 def test_em_dash_flagged(tmp_path):
     root, page = make_page(tmp_path, "We use this — sometimes.\n")
     errors = check_page(root, page)

@@ -141,6 +141,18 @@ _EXPLANATIONS: dict[str, Explanation] = {
             ("She used curly double quotes.", "She used straight quotes."),
         ),
     ),
+    Tag.QUOTE_PUNCTUATION.value: _E(
+        Tag.QUOTE_PUNCTUATION.value, "Punctuation inside quotation marks",
+        "A closing period or comma appears inside quotation marks. Use "
+        "logical punctuation: keep the punctuation outside unless it is "
+        "part of code or another verbatim block.",
+        (
+            ('We call this "spec-driven development."',
+             'We call this "spec-driven development".'),
+            ('The answer is "yes," but we still verify it.',
+             'The answer is "yes", but we still verify it.'),
+        ),
+    ),
     Tag.BACKTICKS_IN_LINK.value: _E(
         Tag.BACKTICKS_IN_LINK.value, "Backticks inside link text",
         "Link text contains backticks, e.g. [`module`](url). Remove the "

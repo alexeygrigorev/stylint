@@ -197,7 +197,13 @@ word it describes, or rewrite so only one reading is possible.
 
 ## Punctuation inside quotes
 
-Only put punctuation inside quotes when the quote is a full sentence.
+Use logical punctuation. Put periods and commas after the closing quotation
+mark, even when the quote is a full sentence:
+
+- `We call this "spec-driven development".`
+- `The answer is "yes", but we still verify it.`
+
+Keep question marks and exclamation marks with the text they apply to.
 
 ## Wordy verb constructions
 

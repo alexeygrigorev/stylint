@@ -7,6 +7,7 @@ from ..patterns import (
     DOUBLE_HYPHEN_RE,
     ITALIC_RE,
     LINK_RE,
+    QUOTE_PUNCTUATION_RE,
     SMART_QUOTES,
 )
 from ..models import Finding
@@ -20,6 +21,7 @@ __all__ = [
     "DOUBLE_HYPHEN_RE",
     "ITALIC_RE",
     "LINK_RE",
+    "QUOTE_PUNCTUATION_RE",
     "SMART_QUOTES",
 ]
 
@@ -64,6 +66,16 @@ def check_markdown_line(line: str, plain: str, line_no: int, rel) -> list[Findin
     for char, name in SMART_QUOTES.items():
         if char in line:
             findings.append(Finding(rel, line_no, Tag.SMART_QUOTES, f"use straight quotes, not {name}"))
+    if not line.lstrip().startswith("<"):
+        match = QUOTE_PUNCTUATION_RE.search(plain)
+        if match:
+            punctuation = match.group("punct")
+            findings.append(Finding(
+                rel,
+                line_no,
+                Tag.QUOTE_PUNCTUATION,
+                f"move the closing {punctuation!r} outside the quotation mark",
+            ))
     for match in LINK_RE.finditer(line):
         if "`" in match.group(1):
             findings.append(
