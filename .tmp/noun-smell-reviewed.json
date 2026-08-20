@@ -6908,7 +6908,7 @@
       "The linter flags them as `meta-framing` so they get rewritten into direct statements [^5]."
     ],
     "after": [
-      "This came up while I was preparing the [Working from a Phone](https://alexeyondata.substack.com/p/the-system-i-built-to-ship-code-from) article for the next newsletter.[^7] I noticed I had written \"I leaned on GitHub Copilot...\" and \"I also lean on Makefiles heavily.\" I did not like the phrasing."
+      "This came up while I was preparing the [Working from a Phone](https://aishippingblog.com/p/the-system-i-built-to-ship-code-from) article for the next newsletter.[^7] I noticed I had written \"I leaned on GitHub Copilot...\" and \"I also lean on Makefiles heavily.\" I did not like the phrasing."
     ],
     "signals": [
       "\\b(?P<phrase>(?:The|This|That|These|Those|A|An|One|Two|Three|\\d+)\\s+(?:experienc"
@@ -6918,7 +6918,7 @@
     "target_sentence": "The rule list keeps growing.",
     "highlighted_target_sentence": "<mark>The rule list keeps</mark> growing.",
     "before_sentence": "The linter flags them as `meta-framing` so they get rewritten into direct statements [^5].",
-    "after_sentence": "This came up while I was preparing the [Working from a Phone](https://alexeyondata.substack.com/p/the-system-i-built-to-ship-code-from) article for the next newsletter.[^7] I noticed I had written \"I leaned on GitHub Copilot...\" and \"I also lean on Makefiles heavily.\" I did not like the phrasing.",
+    "after_sentence": "This came up while I was preparing the [Working from a Phone](https://aishippingblog.com/p/the-system-i-built-to-ship-code-from) article for the next newsletter.[^7] I noticed I had written \"I leaned on GitHub Copilot...\" and \"I also lean on Makefiles heavily.\" I did not like the phrasing.",
     "classifier_label": "keep",
     "classifier_reason": "Rule list is a concrete list whose size can literally grow.",
     "classifier_rewrite": "",
@@ -7217,8 +7217,8 @@
     "source": "telegram",
     "path": "articles/weekly-log.md",
     "line_no": 85,
-    "line": "It is the next step from the mobile workflow described in [Working from a Phone](https://alexeyondata.substack.com/p/the-system-i-built-to-ship-code-from): last week I mentioned that some parts of that process were still being set up, and pocketshell is about packaging everything into one box where I can do everything I need to do[^48].",
-    "highlighted_line": "It is the next step from the mobile workflow described in [Working from a Phone](https://alexeyondata.substack.com/p/the-system-i-built-to-ship-code-from): last week I mentioned that some parts of <mark>that process were</mark> still being set up, and pocketshell is about packaging everything into one box where I can do everything I need to do[^48].",
+    "line": "It is the next step from the mobile workflow described in [Working from a Phone](https://aishippingblog.com/p/the-system-i-built-to-ship-code-from): last week I mentioned that some parts of that process were still being set up, and pocketshell is about packaging everything into one box where I can do everything I need to do[^48].",
+    "highlighted_line": "It is the next step from the mobile workflow described in [Working from a Phone](https://aishippingblog.com/p/the-system-i-built-to-ship-code-from): last week I mentioned that some parts of <mark>that process were</mark> still being set up, and pocketshell is about packaging everything into one box where I can do everything I need to do[^48].",
     "phrase": "that process were",
     "start": 197,
     "end": 214,
@@ -7231,10 +7231,10 @@
     "signals": [
       "\\b(?P<phrase>(?:The|This|That|These|Those|A|An|One|Two|Three|\\d+)\\s+(?:experienc"
     ],
-    "paragraph": "pocketshell, the Android app that packages my phone-based development workflow, reached a state where I can actually use it this week while continuing to build it[^47]. It is the next step from the mobile workflow described in [Working from a Phone](https://alexeyondata.substack.com/p/the-system-i-built-to-ship-code-from): last week I mentioned that some parts of that process were still being set up, and pocketshell is about packaging everything into one box where I can do everything I need to do[^48].",
-    "highlighted_paragraph": "pocketshell, the Android app that packages my phone-based development workflow, reached a state where I can actually use it this week while continuing to build it[^47]. It is the next step from the mobile workflow described in [Working from a Phone](https://alexeyondata.substack.com/p/the-system-i-built-to-ship-code-from): last week I mentioned that some parts of <mark>that process were</mark> still being set up, and pocketshell is about packaging everything into one box where I can do everything I need to do[^48].",
-    "target_sentence": "It is the next step from the mobile workflow described in [Working from a Phone](https://alexeyondata.substack.com/p/the-system-i-built-to-ship-code-from): last week I mentioned that some parts of that process were still being set up, and pocketshell is about packaging everything into one box where I can do everything I need to do[^48].",
-    "highlighted_target_sentence": "It is the next step from the mobile workflow described in [Working from a Phone](https://alexeyondata.substack.com/p/the-system-i-built-to-ship-code-from): last week I mentioned that some parts of <mark>that process were</mark> still being set up, and pocketshell is about packaging everything into one box where I can do everything I need to do[^48].",
+    "paragraph": "pocketshell, the Android app that packages my phone-based development workflow, reached a state where I can actually use it this week while continuing to build it[^47]. It is the next step from the mobile workflow described in [Working from a Phone](https://aishippingblog.com/p/the-system-i-built-to-ship-code-from): last week I mentioned that some parts of that process were still being set up, and pocketshell is about packaging everything into one box where I can do everything I need to do[^48].",
+    "highlighted_paragraph": "pocketshell, the Android app that packages my phone-based development workflow, reached a state where I can actually use it this week while continuing to build it[^47]. It is the next step from the mobile workflow described in [Working from a Phone](https://aishippingblog.com/p/the-system-i-built-to-ship-code-from): last week I mentioned that some parts of <mark>that process were</mark> still being set up, and pocketshell is about packaging everything into one box where I can do everything I need to do[^48].",
+    "target_sentence": "It is the next step from the mobile workflow described in [Working from a Phone](https://aishippingblog.com/p/the-system-i-built-to-ship-code-from): last week I mentioned that some parts of that process were still being set up, and pocketshell is about packaging everything into one box where I can do everything I need to do[^48].",
+    "highlighted_target_sentence": "It is the next step from the mobile workflow described in [Working from a Phone](https://aishippingblog.com/p/the-system-i-built-to-ship-code-from): last week I mentioned that some parts of <mark>that process were</mark> still being set up, and pocketshell is about packaging everything into one box where I can do everything I need to do[^48].",
     "before_sentence": "pocketshell, the Android app that packages my phone-based development workflow, reached a state where I can actually use it this week while continuing to build it[^47].",
     "after_sentence": "Ran an experiment on it: coordinating three coding agents - Codex, Claude Code, and OpenCode - as three team managers that find each other, divide up the work, and collaborate on the same repo.",
     "classifier_label": "keep",
@@ -7258,17 +7258,17 @@
       "This time I decided to make it simpler, and I finally understood how."
     ],
     "after": [
-      "So I added a new function to Automator (the Slack moderation bot I have [written about before](https://alexeyondata.substack.com/p/building-and-maintaining-a-slack))."
+      "So I added a new function to Automator (the Slack moderation bot I have [written about before](https://aishippingblog.com/p/building-and-maintaining-a-slack))."
     ],
     "signals": [
       "\\b(?P<phrase>(?:The|This|That|These|Those|A|An|One|Two|Three|\\d+)\\s+(?:experienc"
     ],
-    "paragraph": "I already had a moderation system for this but never finished it. This time I decided to make it simpler, and I finally understood how. The problem is that Slack has no way to ban a user through the API. So I added a new function to Automator (the Slack moderation bot I have [written about before](https://alexeyondata.substack.com/p/building-and-maintaining-a-slack)). Now I add a reaction to a message, and the bot finds that user's messages from the last 24 hours and deletes them from all channels - even channels I am not a member of. After all the messages are deleted, the bot sends me a message with the user's ID, which I can copy, paste into the admin panel, and use to unambiguously identify and ban the person[^43][^44].",
-    "highlighted_paragraph": "I already had a moderation system for this but never finished it. This time I decided to make it simpler, and I finally understood how. <mark>The problem is</mark> that Slack has no way to ban a user through the API. So I added a new function to Automator (the Slack moderation bot I have [written about before](https://alexeyondata.substack.com/p/building-and-maintaining-a-slack)). Now I add a reaction to a message, and the bot finds that user&#x27;s messages from the last 24 hours and deletes them from all channels - even channels I am not a member of. After all the messages are deleted, the bot sends me a message with the user&#x27;s ID, which I can copy, paste into the admin panel, and use to unambiguously identify and ban the person[^43][^44].",
+    "paragraph": "I already had a moderation system for this but never finished it. This time I decided to make it simpler, and I finally understood how. The problem is that Slack has no way to ban a user through the API. So I added a new function to Automator (the Slack moderation bot I have [written about before](https://aishippingblog.com/p/building-and-maintaining-a-slack)). Now I add a reaction to a message, and the bot finds that user's messages from the last 24 hours and deletes them from all channels - even channels I am not a member of. After all the messages are deleted, the bot sends me a message with the user's ID, which I can copy, paste into the admin panel, and use to unambiguously identify and ban the person[^43][^44].",
+    "highlighted_paragraph": "I already had a moderation system for this but never finished it. This time I decided to make it simpler, and I finally understood how. <mark>The problem is</mark> that Slack has no way to ban a user through the API. So I added a new function to Automator (the Slack moderation bot I have [written about before](https://aishippingblog.com/p/building-and-maintaining-a-slack)). Now I add a reaction to a message, and the bot finds that user&#x27;s messages from the last 24 hours and deletes them from all channels - even channels I am not a member of. After all the messages are deleted, the bot sends me a message with the user&#x27;s ID, which I can copy, paste into the admin panel, and use to unambiguously identify and ban the person[^43][^44].",
     "target_sentence": "The problem is that Slack has no way to ban a user through the API.",
     "highlighted_target_sentence": "<mark>The problem is</mark> that Slack has no way to ban a user through the API.",
     "before_sentence": "This time I decided to make it simpler, and I finally understood how.",
-    "after_sentence": "So I added a new function to Automator (the Slack moderation bot I have [written about before](https://alexeyondata.substack.com/p/building-and-maintaining-a-slack)).",
+    "after_sentence": "So I added a new function to Automator (the Slack moderation bot I have [written about before](https://aishippingblog.com/p/building-and-maintaining-a-slack)).",
     "classifier_label": "keep",
     "classifier_reason": "Problem names a precise Slack API limitation.",
     "classifier_rewrite": "",
@@ -7290,7 +7290,7 @@
       "Worked on a workshop I am running next week, together with O'Reilly on their O'Reilly Learning platform, about guardrails: [Building an Agent with Guardrails](https://aishippinglabs.com/workshops/2026-05-26-agent-with-guardrails)[^45][^46]."
     ],
     "after": [
-      "I am collecting all the workshops I have run at conferences and elsewhere in [one place](https://alexeyondata.substack.com/p/11-workshops-to-build-production), and this one is no exception."
+      "I am collecting all the workshops I have run at conferences and elsewhere in [one place](https://aishippingblog.com/p/11-workshops-to-build-production), and this one is no exception."
     ],
     "signals": [
       "\\b(?P<phrase>(?:The|This|That|These|Those|A|An|One|Two|Three|\\d+)\\s+(?:experienc"
@@ -7300,7 +7300,7 @@
     "target_sentence": "The workshop builds a FAQ agent and layers guardrails around it - input guardrails that check topic and intent, output guardrails that catch unsafe promises and policy violations, and concurrent multi-guardrail checks to keep latency low[^46].",
     "highlighted_target_sentence": "<mark>The workshop builds</mark> a FAQ agent and layers guardrails around it - input guardrails that check topic and intent, output guardrails that catch unsafe promises and policy violations, and concurrent multi-guardrail checks to keep latency low[^46].",
     "before_sentence": "Worked on a workshop I am running next week, together with O'Reilly on their O'Reilly Learning platform, about guardrails: [Building an Agent with Guardrails](https://aishippinglabs.com/workshops/2026-05-26-agent-with-guardrails)[^45][^46].",
-    "after_sentence": "I am collecting all the workshops I have run at conferences and elsewhere in [one place](https://alexeyondata.substack.com/p/11-workshops-to-build-production), and this one is no exception.",
+    "after_sentence": "I am collecting all the workshops I have run at conferences and elsewhere in [one place](https://aishippingblog.com/p/11-workshops-to-build-production), and this one is no exception.",
     "classifier_label": "bad",
     "classifier_reason": "Workshop is a document/event subject doing the building.",
     "classifier_rewrite": "In the workshop, we build a FAQ agent and layer guardrails around it - input guardrails that check topic and intent, output guardrails that catch unsafe promises and policy violations, and concurrent multi-guardrail checks to keep latency low[^46].",
@@ -7711,8 +7711,8 @@
     "signals": [
       "\\ball of this\\b"
     ],
-    "paragraph": "The existing FAQ assistant was created by Alex Litvinov, who I have [written about before](https://alexeyondata.substack.com/p/from-google-docs-to-an-automated) [^2]. Recently it ran out of money, and Alex had to top it up. On top of that, Alex hosts it on Fly, and it is used by services like Milvus. All of this costs money, and Alex pays for it [^2].",
-    "highlighted_paragraph": "The existing FAQ assistant was created by Alex Litvinov, who I have [written about before](https://alexeyondata.substack.com/p/from-google-docs-to-an-automated) [^2]. Recently it ran out of money, and Alex had to top it up. On top of that, Alex hosts it on Fly, and it is used by services like Milvus. <mark>All of this</mark> costs money, and Alex pays for it [^2].",
+    "paragraph": "The existing FAQ assistant was created by Alex Litvinov, who I have [written about before](https://aishippingblog.com/p/from-google-docs-to-an-automated) [^2]. Recently it ran out of money, and Alex had to top it up. On top of that, Alex hosts it on Fly, and it is used by services like Milvus. All of this costs money, and Alex pays for it [^2].",
+    "highlighted_paragraph": "The existing FAQ assistant was created by Alex Litvinov, who I have [written about before](https://aishippingblog.com/p/from-google-docs-to-an-automated) [^2]. Recently it ran out of money, and Alex had to top it up. On top of that, Alex hosts it on Fly, and it is used by services like Milvus. <mark>All of this</mark> costs money, and Alex pays for it [^2].",
     "target_sentence": "All of this costs money, and Alex pays for it [^2].",
     "highlighted_target_sentence": "<mark>All of this</mark> costs money, and Alex pays for it [^2].",
     "before_sentence": "On top of that, Alex hosts it on Fly, and it is used by services like Milvus.",
