@@ -74,7 +74,7 @@ The review answers three fixed prompts:
 - which examples need updating
 - which timelines did we miss and why
 
-In the January review we updated the urgency examples and shortened the mute from seven days to three. Shorter mutes get used, while week-long mutes felt too heavy to apply. The document stays useful because we reread it every quarter.
+In the January review we updated the urgency examples and shortened the mute from seven days to three. Shorter mutes get used, while week-long mutes felt too heavy to apply. It stays useful because we reread it every quarter.
 
 ## Results After Three Months
 

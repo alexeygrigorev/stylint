@@ -16,7 +16,7 @@ In this post, I'll share:
 
 I started by listing every tool, version, and date in the material. I scanned slides, notebooks, and starter code for version pins and screenshots. The scan covered 41 samples, 18 notebooks, and 96 slides.
 
-I tracked findings in a small Markdown table replacement file called `refresh.md` with one bullet per issue. I used bullets because they diff cleanly in Git and render in any editor. Each bullet named the file, the stale item, and the replacement.
+I tracked findings in a small Markdown table replacement file called `refresh.md` with a bullet for every issue. I used bullets because they diff cleanly in Git and render in any editor. Each bullet named the file, the stale item, and the replacement.
 
 The audit command was simple:
 
@@ -24,7 +24,7 @@ The audit command was simple:
 uv run python scripts/scan_versions.py --course course-v3 --output refresh.md
 ```
 
-The command prints version strings, screenshot dates, and linked API endpoints. It found 14 stale pins, nine outdated screenshots, and two dead endpoints. The full scan took 11 seconds on my laptop.
+The command prints version strings, screenshot dates, and linked API endpoints. It found 14 stale version pins, nine outdated screenshots, and two dead endpoints. The full scan took 11 seconds on my laptop.
 
 I ranked issues by learner impact rather than file order. Broken installs came first, while outdated screenshots came last. That ranking kept the refresh focused on failures that blocked progress.
 
@@ -34,7 +34,7 @@ Four of six assignments needed no changes beyond version bumps. Their learning g
 
 I ran each assignment fresh in a clean virtual environment. The check used Python 3.12, fresh installs, and the starter code learners download. Three assignments passed in under six minutes each.
 
-One assignment failed on a changed CSV header. The dataset owner had renamed two columns in December. I updated the loader and added a header check, which took 40 minutes including a rerun.
+One assignment failed on a changed CSV header because the dataset owner had renamed two columns in December. I updated the loader and added a header check, which took 40 minutes including a rerun.
 
 The rule I took from that day: preserve anything that still teaches, and change only what blocks learners. Rewrites feel productive, but they introduce new errors into material that already works.
 
@@ -42,7 +42,7 @@ I also kept the assignment IDs stable across the refresh. Past forum answers ref
 
 ## 3. Update Tests Before Slides
 
-I updated the automated checks before touching any slide. The course has 112 checks that verify installs, imports, outputs, and file layout. Those checks define done more precisely than prose.
+I updated the automated checks before touching any slide. The course has 112 checks that verify installs, imports, outputs, and file layout. Those checks define done more precisely than written explanations.
 
 I ran the suite first to record failures:
 
@@ -70,16 +70,16 @@ I also added errata markers to three lessons with minor wording issues. The mark
 
 ## 5. Publish Changes With A Changelog
 
-I published a one-page changelog with the refreshed material. The page lists changed files, new versions, and assignment status. It also names two known issues I chose to defer.
+I published a one-page changelog with the refreshed material. In the changelog, I list changed files, new versions, and assignment status. It also names two known issues I chose to defer.
 
 The changelog groups entries for quick scanning:
 
-- updated library pins across 14 samples
+- updated library version pins across 14 samples
 - fixed CSV loader and added header checks
 - refreshed nine videos totaling 94 minutes
 - deferred two optional API lessons to summer
 
-I linked the changelog from the course homepage and the first lesson. Support questions about versions dropped from 23 to six in the next cohort. The page took 50 minutes to write and saved several hours of forum replies.
+I linked the changelog from the course homepage and the first lesson. Support questions about versions dropped from 23 to six in the next cohort. I spent 50 minutes writing the page, and it saved several hours of forum replies.
 
 The refresh took 38 hours across four weeks. Full rewrite estimates had ranged from 120 to 160 hours, so the targeted pass saved about three weeks. Learner completion rose from 54 to 61 percent, though the cohort differed in other ways.
 

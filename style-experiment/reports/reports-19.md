@@ -13,3 +13,7 @@ All five assigned articles use their manifest titles and exact filename conventi
 Final command: `uv run stylint style-experiment/articles/141-project-launch-checklist.md style-experiment/articles/142-personal-api-rate-limits.md style-experiment/articles/143-transcript-quote-finder.md style-experiment/articles/144-course-exercise-generator.md style-experiment/articles/145-data-dictionary-first.md`
 
 Result: `Style check passed (5 files).`
+
+# Batch 19 - Second Delivery
+
+- `175-course-live-session-setup.md` - 910 words - lint passed

@@ -1,8 +1,8 @@
 # Writing Handoff Notes for the Next Coding Agent Session
 
-I wrote this synthetic style exercise as a how-to guide, and all session details are fictional. In March 2026 I reopened a coding agent session after a weekend break and stared at 14 changed files with no memory of why three tests were skipped. The prior session had run for six hours and burned 112,000 tokens.
+I wrote this synthetic style exercise as a how-to guide, and all session details are fictional. In March 2026 I reopened a coding agent session after a weekend break. I stared at 14 changed files with no memory of why three tests were skipped. The prior session had run for six hours and burned 112,000 tokens.
 
-I had trusted the agent transcript to carry the context forward. I scrolled through 340 tool calls looking for the decision about Postgres indexes and never found it. The new session rebuilt the same migration I had already rejected on Friday.
+I had trusted the agent transcript to persist the context. I scrolled through 340 tool calls looking for the decision about Postgres indexes and never found it. The new session rebuilt the same migration I had already rejected on Friday.
 
 In this post, I'll share:
 
@@ -26,7 +26,7 @@ git status --short && git log --oneline -5
 
 I paste the output at the top of the note and add one line about the test suite. Last Tuesday the note said three tests failed in `test_billing.py` after the index change. That line saved 20 minutes the next morning.
 
-My mistake was writing long summaries that repeated the transcript. The rule I took from it: a handoff note carries decisions and pointers, and the transcript keeps the raw history.
+My mistake was writing long summaries that repeated the transcript. The rule I took from it: a handoff note holds decisions and pointers, and the transcript keeps the raw history.
 
 ## Decisions And Open Questions
 
@@ -38,11 +38,11 @@ A recent note about queue workers held three entries:
 - postpone Postgres LISTEN because no one has run it in production
 - use 30-second visibility timeout after the March incident with 43 stuck tasks
 
-I mark open questions separately so the next session does not treat them as settled. I write the question, the two options under review, and the test that would settle it. One note left the batch size open between 500 and 2,000 rows pending a timing run.
+I mark open questions separately so the next session doesn't treat them as settled. I write the question, the two options under review, and the test that would settle it. One note left the batch size open between 500 and 2,000 rows pending a timing run.
 
 I also note who needs to confirm product choices. I wrote that Marina from billing must approve the refund window before I change the cron schedule. That line stopped the agent from editing the schedule in the next session.
 
-The section works because it names the reason alongside the choice. A later session can reverse a decision when the reason no longer holds. Without the reason, every old choice looks like a rule.
+Entries name the reason alongside the choice, so the section works. A later session can reverse a decision when the reason no longer holds. Without the reason, every old choice looks like a rule.
 
 ## Next Task With Acceptance Checks
 
@@ -64,7 +64,7 @@ I learned to state what the task excludes. I wrote that the retry task excludes 
 
 ## Known Risks Before Closing
 
-Risks go last because they shape how bold the next session should be. I list database locks, missing backups, and external service limits. Each risk gets one line with the file or table involved.
+Risks go last because they set how bold the next session should be. I list database locks, missing backups, and external service limits. Each risk gets one line with the file or table involved.
 
 A March note listed two risks for a billing migration:
 
@@ -75,7 +75,7 @@ I add the rollback step next to each risky change. I wrote that the migration ro
 
 I also flag credentials and production access. I wrote that the staging key expires on Friday and the production database allows reads only from the office network. Those two lines stopped a midnight deploy attempt that would have failed on permissions.
 
-The risk list stays short at three items or fewer. Longer lists hide the real danger among routine caveats. I move smaller worries into code comments where the next reader will see them in context.
+The risk list stays short at three entries or fewer. Longer lists hide the real danger among routine caveats. I move smaller worries into code comments where the next reader will see them in context.
 
 ## Results After 30 Days
 

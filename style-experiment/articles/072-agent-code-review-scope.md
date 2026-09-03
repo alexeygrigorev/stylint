@@ -10,8 +10,9 @@ separate frontend.
 
 The request said, "Use structured logging for the upload endpoint". The agent
 interpreted that as permission to standardize logging across the backend and to
-adjust frontend calls that consumed the old error structure. In this post, I'll
-share:
+adjust frontend calls that consumed the old error structure.
+
+In this post, I'll share:
 
 - the scope file I now create for every agent task,
 - how I separate allowed, forbidden, and review-only paths,
@@ -36,8 +37,8 @@ what to accomplish, and a scope file tells it what it may disturb.
 
 ## Write the scope file first
 
-I created `.agent/scope.md` in the fictional repository. The file has three
-short parts:
+I created `.agent/scope.md` in the fictional repository, and the file has
+three short parts:
 
 - the first names the outcome and the primary module,
 - the second lists paths the agent may edit,
@@ -63,7 +64,7 @@ Review-only:
 - app/uploads/models.py
 ```
 
-Allowed paths are the only write targets, and forbidden paths are hard
+The allowed paths are the only write targets, and forbidden paths are hard
 boundaries. Review-only paths require a proposal in the plan, a code reference,
 and my approval before an edit. The distinction matters because reading a model
 or configuration file is often useful, while editing it changes behavior for
@@ -133,8 +134,9 @@ the output. A validation change should show both accepted and rejected inputs.
 A migration should show the command, the rollback command, and the result on a
 copy of the database.
 
-For the logging task, the scoped agent changed 5 files and 247 lines. The test
-diff covered three cases:
+For the logging task, the scoped agent changed 5 files and 247 lines.
+
+The test diff covered three cases:
 
 - a successful upload,
 - a rejected file type,
@@ -145,21 +147,24 @@ user data, so I replaced it with a hash.
 
 ## Results From the Trial
 
-I used this policy for 17 tasks over 3 weeks. The work included:
+I used this policy for 17 tasks over 3 weeks.
+
+The work included:
 
 - bug fixes,
 - small features,
 - test additions,
-- dependency updates.
+- dependency updates
 
-Twelve finished inside the original scope. Four requested an expansion through
-the plan. One ignored the scope, and the wrapper rejected its first write.
+Twelve finished inside the original scope, and four requested an expansion
+through the plan. One ignored the scope, and the wrapper rejected its first
+write.
 
 The median changed file count fell from 9 to 3. The median review time fell
 from about 28 minutes to 9. Those numbers include my own learning curve, so I
 would treat them as directional evidence, not a controlled benchmark.
 
-Expansion was usually justified. Two tasks needed a shared helper, and one
+The expansion was usually justified. Two tasks needed a shared helper, and one
 needed to update a generated client after an API change. In each case, the
 agent listed the exact path, the reason, and the callers. I approved it in a
 follow-up message, and the wrapper logged the approval.

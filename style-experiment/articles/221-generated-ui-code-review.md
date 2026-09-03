@@ -26,7 +26,7 @@ The review habit that paid off was screenshotting every screen before reading co
 
 Layout drift clustered in spacing and alignment rather than in big structural mistakes. The sidebar was 16 pixels too narrow, card padding used three different values, and the filter row wrapped at widths where the mockup stays flat. Twelve of the 34 issues were spacing alone.
 
-Missing states were the bigger gap. The generated page handled the happy path with data, and it ignored everything else.
+Missing states were the bigger gap. The first pass handled the happy path with data, and it ignored everything else.
 
 I collected the five absent states in a list for the agent:
 
@@ -54,7 +54,7 @@ I measured contrast with the browser dev tools, and the worst pair scored 2.8 to
 
 One fix deserves a longer note. The agent had built the date filter as a `div` with a click handler, so keyboard users couldn't reach it. I replaced it with a native `select` element, which brought keyboard support and mobile pickers for free. There's a habit here - the habit of building clickable divs, and native elements avoid it.
 
-I reran the checks after the fixes with axe DevTools. The page went from 14 flagged items to zero, and the second run took eleven minutes.
+I reran the checks after the fixes with axe DevTools. The checks went from 14 flagged items to zero, and the second run took eleven minutes.
 
 ## Design Tokens and Cleanup
 

@@ -32,7 +32,9 @@ The useful question changed from "can the model build this?" to "can I review wh
 
 I start with one paragraph and no implementation words. It states who uses the app, what they do and what success looks like. For the expense tracker, I wrote that a household of two people records shared expenses in euros and reviews monthly totals.
 
-Then I add explicit constraints. My first list had these five entries:
+Then I add explicit constraints.
+
+My first list had these five entries:
 
 - store amounts as integer cents
 - support only euros in the first version
@@ -46,7 +48,9 @@ Each constraint names a decision the agent shouldn't make. The two-user rule was
 
 Next I write each API endpoint as four lines: method, path, input and response. I use plain text at this stage, even when the final app will use HTML forms. The exercise forces me to decide what data changes and who may change it.
 
-For the first version, I wrote endpoints for adding, listing and sharing expenses. The project notes specified one endpoint:
+For the first version, I wrote endpoints for adding, listing and sharing expenses.
+
+The project notes specified one endpoint:
 
 ```text
 POST /expenses
@@ -62,7 +66,9 @@ This block exposed a missing decision about the "shared" field. It could mean sp
 
 After the interface notes exist, I ask the coding agent to propose a backlog. The prompt includes the goal, constraints and endpoints. I also give it a definition of done: every task must be small enough for one focused review.
 
-The first proposal contained 18 tasks, and I rejected five and rewrote four. The final backlog grouped 13 tasks into three milestones:
+The first proposal contained 18 tasks, and I rejected five and rewrote four.
+
+The final backlog grouped 13 tasks into three milestones:
 
 - a login route and SQLite schema
 - create, list and update expense endpoints

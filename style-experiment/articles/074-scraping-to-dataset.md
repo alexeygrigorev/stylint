@@ -8,8 +8,10 @@ someone else can check.
 I gave myself about 4 hours. I could ship an imperfect dataset if it had a
 clear scope and a validation report.
 
-The goal was a table of event names, dates, venues, and ticket types, grouped
-by neighborhood. In this post, I'll share:
+The goal was a table of event names, dates, venues, and ticket types grouped
+by neighborhood.
+
+In this post, I'll share:
 
 - the scrape and its politeness rules,
 - how I normalized inconsistent fields,
@@ -48,7 +50,8 @@ pages made the parse step repeatable. When I changed the parser 40 minutes
 later, I didn't need to touch the site again.
 
 The first parser failed in a useful way. It assumed every venue was in a
-`venue-name` element. On 73 pages, that element held a neighborhood instead.
+`venue-name` element, and on 73 pages that element held a neighborhood
+instead.
 
 I changed the parser to extract both fields and record the selector used. That
 choice made later cleaning decisions easier.
@@ -81,7 +84,9 @@ abbreviation St to Saint, and preserved casing. Then I created a lookup table
 with 273 unique raw values. For each, I added a canonical name and a confidence
 score from 1 to 3.
 
-Ticket fields were the least reliable. I saw words such as "donation",
+Ticket fields were the least reliable.
+
+I saw words such as "donation",
 "free before 22:00", and "from €12", so I mapped them into these categories:
 
 - free,
@@ -168,8 +173,8 @@ Three tasks remain open:
 - resolve 46 neighborhoods that map to transit stops,
 - compare a second capture date with the first.
 
-I could have spent another afternoon on each. For the original question, the
-current scope was enough. With it, I counted events by neighborhood, identified
+I could have spent another afternoon on each, but for the original question
+the current scope was enough. With it, I counted events by neighborhood, identified
 the largest venue clusters, and measured how often ticket information was
 absent.
 

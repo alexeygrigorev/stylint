@@ -8,8 +8,9 @@ one-paragraph summaries removed exactly the disagreement I wanted to remember.
 The problem was easy to see once I compared a summary with the transcript.
 
 The guest made one claim, the host offered a careful objection, and the guest
-narrowed the claim. My summary made it sound like a clean consensus. In this
-post, I'll share five parts of the revised workflow:
+narrowed the claim. My summary made it sound like a clean consensus.
+
+In this post, I'll share five parts of the revised workflow:
 
 - the summary format I now use for long conversations,
 - how I preserve counterpoints and the order of the argument,
@@ -92,10 +93,10 @@ changed subjects.
 
 ## Timestamps and retrieval
 
-Every section starts with a minute range. That small field changed how I use
-the notes. In March, I needed one exact exchange for a workshop exercise, and
-the timestamp sent me to minute 54 instead of forcing me to scan the transcript
-again.
+Every section starts with a minute range, and that small field changed how I
+use the notes. In March, I needed one exact exchange for a workshop exercise.
+The timestamp sent me to minute 54 instead of forcing me to scan the
+transcript again.
 
 The builder creates an index with five fields:
 

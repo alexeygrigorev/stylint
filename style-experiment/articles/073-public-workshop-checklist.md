@@ -9,8 +9,9 @@ My first public session taught me the answer by failing pleasantly. The main
 example ran, but installation took 18 minutes for two participants, and I had
 no short fallback prepared.
 
-People were patient, but the ending felt rushed. In this post, I'll share five
-parts of my workshop checklist:
+People were patient, but the ending felt rushed.
+
+In this post, I'll share five parts of my workshop checklist:
 
 - how I rehearse the learner's path,
 - what I check in the shared environment,
@@ -35,8 +36,8 @@ The March rehearsal found three problems:
 - the sample dataset was 340 MB instead of the promised 80 MB,
 - one Python version check failed on Python 3.13.
 
-I fixed all three and repeated the clean setup. The second pass took 9 minutes,
-down from 24. That's still long enough to damage a 3-hour schedule, so I added
+I fixed all three and repeated the clean setup, and the second pass took 9
+minutes, down from 24. That's still long enough to damage a 3-hour schedule, so I added
 a pre-install session 24 hours earlier.
 
 During the main rehearsal, I speak the instructions out loud and time each
@@ -46,15 +47,16 @@ appendix. My target leaves 20 minutes unused.
 
 ## Check the environment and the room
 
-Two days before the workshop, I run an environment test script. The script
-checks these dependencies and resources:
+Two days before the workshop, I run an environment test script.
+
+The script checks these dependencies and resources:
 
 - Python,
 - Node,
 - Docker (a tool for running isolated applications),
 - Git,
 - network access,
-- disk space.
+- disk space
 
 It prints a version and a pass or fail result for each item.
 
@@ -85,7 +87,7 @@ demonstration. The delay stayed under 4 minutes.
 I also post the schedule and a one-page setup guide one day ahead.
 
 In the guide, I list install commands, the workshop repository name, and the
-exact first command. The guide also gives the start time in UTC. It promises no
+exact first command. In it, I also give the start time in UTC. It promises no
 result the learner can't verify.
 
 ## Build fallbacks for the likely failures
@@ -130,7 +132,7 @@ the session.
 
 Follow-up starts before the workshop. I create a private feedback form with
 five questions and a public repository. The repository has top-level folders
-for setup, exercises, and solutions. The README states what each folder
+for setup, exercises, and solutions. In the README, I state what each folder
 contains.
 
 During the session, the co-host records timestamps for questions we postpone.

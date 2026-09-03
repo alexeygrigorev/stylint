@@ -10,8 +10,9 @@ The system translated short customer-support replies and generated a daily
 score against 180 labeled cases. Scores moved by a few tenths of a point all
 the time, so checking every wiggle was useless.
 
-We needed alerts that represented actionable changes. In this post, I'll share
-five parts of our alerting setup:
+We needed alerts that represented actionable changes.
+
+In this post, I'll share five parts of our alerting setup:
 
 - the four metrics we chose for alerts,
 - how we set thresholds from past scores,
@@ -104,8 +105,8 @@ freshness check before evaluation and reduced the noise class to zero in week
 3.
 
 The false-alarm budget changed one threshold. The initial latency warning at
-2.1 seconds fired during every Friday batch job. Moving it to 2.5 seconds kept
-the page threshold unchanged and made the warning useful again.
+2.1 seconds fired during every Friday batch job. Moving it to 2.5 seconds
+kept the page threshold unchanged and made the warning useful again.
 
 ## Give every alert an owner and a first action
 
@@ -129,12 +130,12 @@ time, retrieval, model, or rendering. The retrieval runbook asks for the index
 build time and the last source update. Each runbook ends with the command or
 dashboard link needed for that step.
 
-We also defined escalation. A warning goes to the team channel, while a page
+We also defined escalation, and a warning goes to the team channel, while a page
 goes to the on-call engineer. If the owner can't identify a cause in 30
 minutes, a second engineer joins. If safety failures exceed 5 cases in a day,
 automatic suggestions stop until a human reviews the sample.
 
-Those rules weren't abstract. On June 3, safety failures rose from 0 to 3. The
+Those rules weren't abstract, and on June 3, safety failures rose from 0 to 3. The
 alert arrived at 09:12, and the on-call engineer paused suggestions by 09:19.
 She found a terminology dictionary change and restored service after a review
 at 12:40.

@@ -22,7 +22,9 @@ With that scope, I could fix the useful path in one afternoon instead of turning
 
 ## 2. Fix the Environment
 
-I created a lock file for notebook 03 rather than upgrading the whole repository. The study used these packages:
+I created a lock file for notebook 03 rather than upgrading the whole repository.
+
+The study used these packages:
 
 - Python 3.11
 - pandas
@@ -48,7 +50,7 @@ The system Python packages stayed out of the lock file. They weren't needed by t
 
 ## 3. Separate Inputs and Outputs
 
-The original notebook stored these file types together:
+I stored these file types together in the original notebook:
 
 - downloaded schedules
 - cleaned parquet files
@@ -65,13 +67,13 @@ I reorganized notebook 03 around four directories:
 
 Each downloaded file gets a `manifest.csv` row with its source name, download date, byte size, and SHA-256 checksum. The checksum is enough to tell whether a later export changed the study population.
 
-I restricted notebook reads to `inputs/`. Intermediate cleanup writes to `work/`, and publication artifacts write to `outputs/`. A rerun may regenerate every derived file, but it can't modify the immutable directory.
+I restricted notebook reads to `inputs/`, intermediate cleanup writes to `work/`, and publication artifacts write to `outputs/`. A rerun may regenerate every derived file, but it can't modify the immutable directory.
 
 For the meeting, I reran from the original 1.9 GB input set. The final output contained four CSV tables and nine PNG figures.
 
 ## 4. Write Runtime Notes
 
-Code and a lock file weren't enough. I also added a runtime note. The note records the exact command, machine class, expected duration, and known nondeterminism.
+Code and a lock file weren't enough, so I also added a runtime note. The note records the exact command, machine class, expected duration, and known nondeterminism.
 
 The first note for notebook 03 has five lines:
 
@@ -108,6 +110,6 @@ uv run scripts/check-notebook-outputs notebooks/03
 
 The script exits successfully when all 13 expected artifacts match their schemas. It reports a changed CSV checksum with the old and new SHA-256 values and the rows that differ most in numeric columns.
 
-That failure report caught one real issue during testing. A filter used local time instead of the schedule timezone, so the row count changed from 412,806 to 413,114. Fixing it changed several chart points, and the meeting still used the corrected result.
+That failure report caught a real issue during testing. A filter used local time instead of the schedule timezone, so the row count changed from 412,806 to 413,114. Fixing it changed several chart points, and the meeting still used the corrected result.
 
 The project is now reproducible enough for its purpose, and it's still a notebook. I'll write about promoting a stable notebook path into a small library in a future article. Subscribe for updates.

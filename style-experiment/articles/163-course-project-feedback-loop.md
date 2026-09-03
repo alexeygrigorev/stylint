@@ -42,7 +42,7 @@ A project called Transitdelay, a fictional bus-delay dashboard, included these i
 
 I capped evidence at one screen. If a learner needed more, the pipeline probably needed a smaller verification path. Three projects moved manual checks into scripts while preparing evidence, and that was the behavior I wanted.
 
-Peer review also changed after learners added evidence. Reviewers stopped arguing about style and started reproducing results. In week 4, each project received two peer reviews. Eighty-two percent of their comments referenced a command, file, test, or output.
+Peer review also changed after learners added evidence, and reviewers stopped arguing about style and started reproducing results. In week 4, each project received two peer reviews. Eighty-two percent of their comments referenced a command, file, test, or output.
 
 ## 3. Review With the Same Checklist
 

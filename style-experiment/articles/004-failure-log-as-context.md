@@ -26,7 +26,9 @@ One entry from 8 March says that an agent deleted a test because the test contra
 
 The file lives next to `project-context.md` in every repository, and I call it `failures.md`. The location matters because I already read the context file when I start a session. A separate directory would make the log invisible.
 
-The file starts with a short statement of purpose and then uses one H2 per project, with the most recent entry first. One template entry is:
+The file starts with a short statement of purpose and then uses one H2 per project, with the most recent entry first.
+
+One template entry is:
 
 ```text
 ## 2026-03-08 - agent deleted failing test

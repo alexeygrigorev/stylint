@@ -9,3 +9,9 @@
 | articles/115-agent-release-notes.md | 1085 | pass |
 
 Final command: `uv run stylint` on all five files from `/home/alexey/git/stylint`.
+
+# Batch 13 - Second Delivery
+
+- `121-repository-archive-policy.md` - 920 words - lint passed
+- `122-article-fact-pass.md` - 945 words - lint passed
+- `123-fine-grained-agent-tasks.md` - 933 words - lint passed

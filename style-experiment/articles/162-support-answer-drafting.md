@@ -85,7 +85,10 @@ I ran the workflow for four fictional weeks on 164 tickets. Median drafting time
 
 That best number needs its caveat. More than one-third of drafts still required edits, and all billing drafts stayed fully human-written. The workflow reduced lookup work, but it didn't remove judgment about policy exceptions.
 
-Two source changes produced most of the improvement. We rewrote the import runbook after eight evidence failures. We added a compatibility matrix after four tickets asked the same upgrade question in different words.
+Most of the improvement came from source changes:
+
+- We rewrote the import runbook after eight evidence failures.
+- We added a compatibility matrix after four tickets asked the same upgrade question in different words.
 
 Support quality also improved: customers received fewer replies that referenced deleted settings. The assistant's links also made it easier for another teammate to review an answer while I was offline.
 

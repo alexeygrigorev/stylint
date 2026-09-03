@@ -22,7 +22,9 @@ The blog platform exports one CSV row per search with the query text and the res
 
 I loaded the export into SQLite and counted exact repeats first. QueryLens, a small Python script that tallies searches, printed the top 50 queries with their result counts. The top 50 covered 720 searches, which is more than a third of the monthly total.
 
-Zero-result terms clustered harder than I expected. The top 20 dead ends accounted for 210 of the 340 empty searches, and most repeated weekly. I exported those 20 terms with counts into a work sheet:
+Zero-result terms clustered harder than I expected. The top 20 dead ends accounted for 210 of the 340 empty searches, and most repeated weekly.
+
+I exported those 20 terms with counts into a work sheet:
 
 ```text
 csv merge large files - 34 searches, 0 results
@@ -30,7 +32,7 @@ agent eval checklist - 28 searches, 0 results
 postgres partition guide - 22 searches, 0 results
 ```
 
-I keep the raw log for three months so seasonal queries stay visible. February emphasized partitioning and evaluations, while December had emphasized gift-guide style roundups. One month alone would have hidden that rhythm.
+I keep the raw log for three months so seasonal queries stay visible. February emphasized partitioning and evaluations, while December had emphasized gift-guide style roundups. One month alone would have hidden that cadence.
 
 ## Grouping Raw Queries Into Clusters
 
@@ -59,7 +61,7 @@ The command reads the export, normalizes text and writes one JSON file with clus
 
 My earlier topic picks came from 14 reader emails and 22 comments. Those messages asked for advanced agent research and career advice, so I wrote three posts on those themes. Each drew 300 to 500 views against a site average of 1,100 views per post.
 
-The log showed why those posts missed. Advanced research drew 12 searches total in February, while CSV merging drew 61 searches. I had written for the readers who write emails and ignored the readers who only search.
+The log showed why those posts missed. Queries about advanced agent research drew 12 searches total in February, while CSV merging drew 61 searches. I had written for the readers who write emails and ignored the readers who only search.
 
 The rule I took from those misses: emails show intensity, and only logs show breadth.
 
@@ -69,7 +71,9 @@ The April picks tested the rule directly. I wrote the CSV merging guide and the 
 
 Six gaps exceed my writing capacity for one month, so I score each cluster before drafting. The score adds monthly searches, documentation fit and drafting effort into one number. High searches with low effort come first, and low searches with high effort wait.
 
-I scored the March clusters in a work sheet with one row per gap. The sheet records searches, competing posts and an effort estimate in hours:
+I scored the March clusters in a work sheet with one row per gap.
+
+The sheet records searches, competing posts and an effort estimate in hours:
 
 ```bash
 uv run python scripts/score_gaps.py --clusters clusters.json

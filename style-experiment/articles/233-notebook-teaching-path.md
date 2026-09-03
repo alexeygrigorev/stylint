@@ -20,9 +20,9 @@ My worst workshop moment came last November. I opened a notebook with 48 cells a
 
 I had prepared for two hours and I had tested the first five cells only. The middle of the notebook called a CSV from `/tmp` and that file had vanished weeks earlier. I improvised with a smaller dataset and I lost 20 minutes of class time.
 
-A second failure came from mixed skill levels in one file. The same notebook introduced Pandas filtering and then jumped to custom loss functions without warning. Beginners felt lost and advanced students felt bored in the same ten minutes.
+A second failure came from mixed skill levels in one file. In the same notebook, I introduced Pandas filtering and then jumped to custom loss functions without warning. Beginners felt lost and advanced students felt bored in the same ten minutes.
 
-The rule I took from those sessions: I order teaching material from one concept to the next without hidden state, and I keep every cell runnable in order.
+The rule I took from those sessions: I order teaching material from one concept to the next without hidden state. I also keep every cell runnable in order.
 
 I chose a separate teaching folder because I don't want to edit originals during class prep. I keep cleaned scripts, small datasets, and exercise prompts in that folder. That split keeps experiments messy and lessons runnable at the same time.
 

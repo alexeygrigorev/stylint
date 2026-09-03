@@ -18,7 +18,7 @@ In this post, I'll share:
 
 The archive lived in one shared folder with 214 files and 1.9 GB of history. File names mixed dates, initials and version tags from hurried uploads. A typical name looked like `ml2023_week4_v2_final.pdf`, and three files shared that exact name.
 
-I listed every file with size and page count and text layer presence. That inventory took one Python script and about six minutes on my ThinkPad. The numbers gave me a map with 148 clean files and 41 scans and 25 slide decks.
+I listed every file with size, page count, and text layer presence. That inventory took one Python script and about six minutes on my ThinkPad. The numbers gave me a map with 148 clean files, 41 scans, and 25 slide decks.
 
 The inventory also exposed duplicates I hadn't expected to find there. Eleven files were byte-identical copies under different names, and six more differed only in their cover page. I removed the exact copies and kept a small alias file so old links still resolve.
 
@@ -34,7 +34,7 @@ I had skipped the layout check, and that omission broke nearly every downstream 
 
 The fix started with a small classifier that labels each page before any extraction runs.
 
-The classifier uses page size and text density and image count:
+The classifier uses page size, text density, and image count:
 
 ```bash
 uv run python scripts/label_pages.py --input ./pdfs --db ./lessons.db
@@ -54,15 +54,15 @@ The rules catch the errors I kept seeing in the first run:
 - author names that match footer boilerplate
 - resource links that return connection errors
 
-Records that fail any rule move to a review queue built with FastAPI and one screen per page. Each screen shows the page image and the extracted fields and three buttons for accept or edit or skip. I kept the layout tight so review stays fast during a long session.
+Records that fail any rule move to a review queue built with FastAPI and one screen per page. Each screen shows the page image, the extracted fields, and three buttons for accept or edit or skip. I kept the layout tight so review stays fast during a long session.
 
 I reviewed 96 flagged records across three evenings in March 2026, spending about 25 minutes per session. Most fixes took under a minute, and only seven records needed a second look with the slide deck open. That's a manageable rate for an archive of this size.
 
 ## Export Format That Stuck
 
-I moved accepted records to a clean table with one row per lesson and stable identifiers. Each lesson gets an identifier like `ml2023-w04` plus title and date and author. I freeze that table before every export so reruns stay comparable.
+I moved accepted records to a clean table with one row per lesson and stable identifiers. Each lesson gets an identifier like `ml2023-w04` plus title, date, and author. I freeze that table before every export so reruns stay comparable.
 
-The export itself is one JSON file per cohort year plus a small index file.
+The export is one JSON file per cohort year plus a small index file.
 
 A sample record uses six fixed fields:
 

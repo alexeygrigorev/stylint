@@ -86,6 +86,6 @@ The first drill failed because the seed script assumed a newer Postgres version 
 
 I spent about five hours on six runs, spread across half a year. Disk use has never passed 62% since the first cleanup. I have seen zero certificate warnings since March, and no update has caused an incident.
 
-The runbook taught me a narrower lesson than automate everything with cron. I check the server every month instead of waiting for emergencies, and I follow the fixed order each time. The document is four pages, and the slowest step was writing the first version from scattered notes.
+The runbook taught me a narrower lesson than automate everything with cron. I check the server every month instead of waiting for emergencies, and I follow the fixed order each time. The runbook is four pages, and the slowest step was writing the first version from scattered notes.
 
 I'll write about the off-site copy setup in a future post with real numbers. If you want to follow along, don't forget to subscribe.

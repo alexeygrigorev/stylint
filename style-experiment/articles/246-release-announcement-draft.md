@@ -36,9 +36,15 @@ I keep the sorted list in the release folder as the announcement source. It name
 
 ## Benefits Before Mechanics
 
-The announcement opens with the three changes that matter most, stated as outcomes. Version 0.9.0 scans idle folders 4 times faster, retries failed uploads without duplicates, and warns before deleting unseen files. Those three lines sit above everything else on the page.
+The announcement opens with the changes that matter most, stated as outcomes:
 
-Mechanics follow only after the reader knows the payoff. The scan section gets one paragraph on scheduling, and the retry section gets one on queue ordering. Each paragraph names the behavior change first and the implementation second.
+- Version 0.9.0 scans idle folders 4 times faster.
+- It retries failed uploads without duplicates.
+- It warns before deleting unseen files.
+
+Those lines sit above everything else on the page.
+
+Mechanics follow only after the reader knows the payoff. I give the scan section one paragraph on scheduling, and the retry section gets one on queue ordering. Each paragraph names the behavior change first and the implementation second.
 
 I cut every sentence that described code without a visible effect. The threading refactor lost its paragraph, and nobody asked where it went.
 
@@ -56,7 +62,7 @@ That skeleton fits on an index card, and I check each release against it. Twice 
 
 ## Examples Readers Can Copy
 
-I ship every major change with commands a reader can paste into a terminal. The scan section shows before-and-after timing on a 12 GB photo folder. The retry section shows the log lines that prove duplicates are gone.
+I ship every major change with commands a reader can paste into a terminal. In the scan section, I show before-and-after timing on a 12 GB photo folder. In the retry section, I show the log lines that prove duplicates are gone.
 
 I generate each example by running the commands myself:
 

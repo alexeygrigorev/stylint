@@ -4,7 +4,7 @@ Our June 2026 workshop met in a basement classroom with one access point and 34 
 
 I wrote this piece as a synthetic style exercise, and every project and measurement is invented.
 
-I had brought slides, but slides don't run a workshop. For the July session in the same venue, I prepared an offline kit with local copies of every package, dataset, notebook, and command.
+I had brought slides, but slides don't run a workshop. For the July session in the same venue, I prepared an offline kit. It held local copies of every package, dataset, notebook, and command.
 
 In this post, I'll cover:
 
@@ -70,7 +70,7 @@ The exercise schedule held:
 - 15 minutes for the paper fallback exercise
 - 10 minutes for questions
 
-We finished six minutes late, which felt like a win for a room with one shared access point. The Pi's average page load was 2.3 seconds, and the access point never dropped during the session. The slowest step remained importing the virtual machine on two older Windows laptops.
+We finished six minutes late, which felt like a win for a room with a single shared access point. The Pi's average page load was 2.3 seconds, and the access point never dropped during the session. The slowest step remained importing the virtual machine on two older Windows laptops.
 
 Feedback forms came from 29 students. Twenty-five of them rated the hands-on part useful or highly useful on the form, and three asked for more time on data cleaning.
 

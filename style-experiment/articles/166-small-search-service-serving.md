@@ -10,11 +10,11 @@ In this post, I'll share:
 - how I updated the index without stopping searches
 - what changed after four weeks of use
 
-## Why a Tiny Server
+## A Tiny Server Was Enough
 
 The index was only 212 MB in memory. A single virtual machine with 2 vCPU and 4 GB of RAM handled that comfortably. I had used the same class of server for three side projects, so its behavior was familiar.
 
-The search logic used Python, DuckDB, and a small reranker. Moving it behind a service preserved the ranking I had already tested. A hosted search product might have solved operations, but I would have had to translate the ranking and pay for a second copy of the data.
+The search logic used Python, DuckDB, and a small reranker. Moving it behind a service preserved the ranking I had already tested. A hosted search product might have solved operations. I would have had to translate the ranking and pay for a second copy of the data.
 
 I set a narrow target first: answer 95% of searches in under 120 milliseconds and serve up to 30 requests per second. That covered the workshop of 80 people and left room for normal sharing.
 
@@ -22,18 +22,20 @@ I set a narrow target first: answer 95% of searches in under 120 milliseconds an
 
 My first API accepted every parameter as an optional query string. The UI could send a page size of 500, a negative offset, or a topic filter shaped like `data+eng`. One test request returned 40 MB of JSON and locked the tab.
 
-That failure taught me to publish a narrow query contract. The service now accepts these fields:
+That failure taught me to publish narrow query limits.
+
+The service now accepts these fields:
 
 - `q`, with one to 120 characters
 - `topic`, from a fixed list of 14 course areas
 - `limit`, from 5 to 25 results
 - `page`, starting at 1
 
-Pydantic rejects anything outside those limits. Malformed input gets HTTP 421 with a field name and a human-readable reason. Valid search requests stay close to 2 KB.
+Pydantic rejects anything outside those limits. Pydantic returns HTTP 421 for malformed input, with a field name and a human-readable reason. Valid search requests stay close to 2 KB.
 
 I also fixed result behavior before users could discover every corner. Empty queries return the 25 most recently updated documents. A query with only punctuation returns the same default set and reports `applied_query: false`.
 
-For the UI, I added three fields to each result: title, course section, and a 28-word excerpt. The excerpt uses fixed sentence boundaries rather than an arbitrary character cut. A helper corrected a title on day two, and the change took one line.
+For the UI, I added title, course section, and a 28-word excerpt to each result. The excerpt uses fixed sentence boundaries rather than an arbitrary character cut. A helper corrected a title on day two, and the change took one line.
 
 ## Health Checks
 
@@ -50,15 +52,15 @@ The first route reports that the process accepts requests. The second runs a two
 
 Every minute, a script searches four known phrases. Two are common course phrases, and two use unusual spelling. It records latency, result count, and the top document ID in Prometheus. The top ID matters because a ranking change can still return correct-looking counts.
 
-I also added a daily fixture with 20 question-and-document pairs. The fixture checks that a known course page appears in the top five. On April 1, it caught a tokenizer update that had pushed 19 of the 20 correct pages below position 40.
+I also added a daily fixture with 20 question-and-document pairs. The fixture checks that a known course page appears in the top five. On April 1, it caught a tokenizer update that had pushed 19 of the 20 correct pages past position 40.
 
 ## Updates Without Downtime
 
 Course materials changed several times each week. My first update script deleted the old index and wrote a new one in place. A search arriving during that window got an error, and one student hit exactly that race.
 
-The better design writes to a versioned directory. Each build lands in `/data/index/vN`, and a small manifest file records its checksum, document count, and creation time. After validation, the service changes one symlink. Old requests finish against the old file, while new requests open the new file.
+The better design writes to a versioned directory. Each build is written to `/data/index/vN`, and a small manifest file records its checksum, document count, and creation time. After validation, the service changes one symlink. Old requests finish against the old file, while new requests open the new file.
 
-A build takes 3 to 5 minutes. Validation loads the candidate index, runs the four probe searches, and compares 100 random query results with a snapshot. The snapshot isn't a quality judgment; it makes accidental changes visible.
+A build takes 3 to 5 minutes. Validation loads the candidate index, runs the four probe searches, and compares 100 random query results with a snapshot. The snapshot isn't a quality judgment, but it makes accidental changes visible.
 
 I keep the previous two versions. A bad update can be restored in one command, and the manifest tells me which corpus commit produced it.
 
@@ -72,9 +74,9 @@ The second surprise was stale browser links. Six documents changed path names, a
 
 Cost stayed at €8 per month for the server and 40 GB of disk. More important, the three helpers stopped asking me to run searches for them.
 
-## What I Learned
+## Lessons From Running the Service
 
-A small search service is mostly a set of promises: input limits, latency targets, health behavior, and rollback steps. Writing those promises down made the service easier to trust than the laptop script.
+A small search service is mostly a set of promises - input limits, latency targets, health behavior, and rollback steps. Writing those promises down made the service easier to trust than the laptop script.
 
 I still don't cache query results. With this traffic, the database answers quickly enough, and caching would hide ranking changes during course updates.
 

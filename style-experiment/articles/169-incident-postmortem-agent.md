@@ -2,7 +2,7 @@
 
 This synthetic style exercise invents the incident, logs, and agent output. At 02:14 on June 18, 2026, the fictional billing API for a project called Meterhaus returned HTTP 500 for 19 minutes. I was asleep, the on-call engineer restarted one worker, and the dashboard recovered before I saw the page.
 
-The next morning, I had 1,900 log lines, four Slack threads, two Grafana screenshots, and a deploy that looked suspicious. I wanted a factual timeline, but I didn't want an agent to invent a cause.
+The next morning, I had 1,900 log lines and four Slack threads, plus two Grafana screenshots. One of the deploys looked suspicious. I wanted a factual timeline, but I didn't want an agent to invent a cause.
 
 In this post, I'll share:
 
@@ -14,9 +14,9 @@ In this post, I'll share:
 
 ## Prepare the Evidence
 
-My first instinct was to paste logs into Claude Code and ask for a postmortem. That produced fluent prose and two unsupported claims. It said configuration drift caused the failure, but the material contained no configuration diff.
+My first instinct was to paste logs into Claude Code and ask for a postmortem. That produced fluent text and two unsupported claims. It said configuration drift caused the failure, but the material contained no configuration diff.
 
-So I narrowed the job. The agent could organize and quote evidence; it couldn't name the root cause. I also removed customer names, API keys, and request bodies before giving it files.
+So I narrowed the job. The agent could organize and quote evidence, but it couldn't name the root cause. I also removed customer names, API keys, and request bodies before giving it files.
 
 The evidence bundle had four parts:
 
@@ -29,11 +29,11 @@ Each file stayed under 2 MB, and timestamps used UTC. I added a short note defin
 
 ## Extract the Timeline
 
-The agent prompt asked for one row per event, with a timestamp, source file, line number, and verbatim evidence. It could group repeated messages only if it preserved the first and last occurrence.
+The agent prompt asked for one row per event with a timestamp, a source file, a line number, and verbatim evidence. It could group repeated messages only if it preserved the first and last occurrence.
 
-The first draft had 47 events. Many were repeated health checks or retries. I asked it to mark those as `noise` instead of deleting them, so I could check what it had excluded. The second draft had 23 events, plus a noise appendix.
+The first draft had 47 events, and many were repeated health checks or retries. I asked it to mark those as `noise` instead of deleting them, so I could check what it had excluded. The second draft had 23 events, plus a noise appendix.
 
-Here is the format it used:
+It used this format:
 
 ```text
 02:14:06 | logs.jsonl:482 | first 500 in window
@@ -42,7 +42,7 @@ Here is the format it used:
 02:33:12 | logs.jsonl:1508 | first successful charge after restart
 ```
 
-This moved the work forward because every claim had a place to be checked. The agent also flagged a gap between 02:26 and 02:31 where neither logs nor metrics explained the partial recovery.
+This moved the work forward because every claim had a place to be checked. The agent also flagged a gap between 02:26 and 02:31 where no log or metric explained the partial recovery.
 
 That gap forced the useful question. The on-call engineer remembered a second restart, and the missing Slack message provided the 02:31 timestamp.
 
@@ -57,7 +57,7 @@ The phases were clear:
 - 02:24 to 02:33, restart reduces the error rate
 - 02:33 onward, traffic returns to normal
 
-The agent noticed that worker-4 emitted an out-of-memory message 90 seconds before the first HTTP 500. That was a good observation. It did not prove causation, so the summary called it a candidate event.
+The agent noticed that worker-4 emitted an out-of-memory message 90 seconds before the first HTTP 500. That was a good observation. It didn't prove causation, so the summary called it a candidate event.
 
 It also connected the deploy list to behavior. Deployment 431 changed a batch size from 50 to 120. Worker memory rose after that time, but the deployment happened 41 minutes before the incident. The draft marked it as context, not cause.
 
@@ -67,11 +67,11 @@ This distinction was the biggest quality improvement. The agent could say what h
 
 I read the draft with the on-call engineer and the developer who owned the billing worker. We spent 45 minutes on 23 timeline rows. The agent's structure stayed intact, but four facts changed.
 
-First, the 41% error-rate line used a Prometheus query that included health checks. The corrected peak was 33%. Second, the restart command used a different worker name than the log suggested. Third, the 02:31 restart was manual, while the first restart came from systemd. Fourth, we already had a memory alert; it waited five minutes and fired at 02:19.
+First, the 41% error-rate line used a Prometheus query that included health checks. The corrected peak was 33%. Second, the restart command used a different worker name than the log suggested. Third, the 02:31 restart was manual, while the first restart came from systemd. Fourth, we already had a memory alert, but it waited five minutes and fired at 02:19.
 
 We rejected the phrase "rapid recovery" because some charges entered a retry queue and completed 11 minutes late. The customer-facing note later said "delayed completion" instead.
 
-Human review also added impact numbers. There were 638 failed requests and 212 delayed charges. The finance team confirmed that no charge was lost, which mattered more than the error rate.
+Human review also added impact numbers: 638 failed requests and 212 delayed charges. The finance team confirmed that no charge was lost, which mattered more than the error rate.
 
 ## Change the System
 
@@ -87,7 +87,7 @@ The load test reproduced the failure after 7 minutes. It showed that worker memo
 
 The postmortem took 4 hours and 20 minutes. Extracting the timeline took the agent about 6 minutes, but checking and correcting its work took most of the session.
 
-## What I Learned
+## Takeaways
 
 An agent is useful for turning scattered evidence into a checkable draft. It's a poor root-cause oracle. Giving it a narrow job produced facts I could defend and gaps I could fill.
 

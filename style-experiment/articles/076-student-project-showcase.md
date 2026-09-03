@@ -10,7 +10,7 @@ In this post, I'll share:
 - the evidence requests that worked
 - the review pass I ran before publishing
 - how I published limits alongside results
-- lessons I'll carry into the next cohort
+- lessons I'll take into the next cohort
 
 ## Demo Day Pressures
 
@@ -54,7 +54,7 @@ We grouped findings into three buckets:
 - plausible claims with missing logs
 - claims that needed a rewrite before publishing
 
-Six teams landed in the first bucket with no changes. Seven teams needed one clarification, usually the split size or the random seed. Three teams rewrote their headline after we found leakage, a tiny test set, or a manual step.
+Six teams ended up in the first bucket with no changes. Seven teams needed one clarification, usually the split size or the random seed. Three teams rewrote their headline after we found leakage, a tiny test set, or a manual step.
 
 One team had trained on the test split by accident. They were embarrassed and offered to withdraw from the recap. I told them the mistake was common and the fix was instructive, so we published their corrected score with a note about the error.
 
@@ -62,7 +62,14 @@ That review took about 11 hours across both reviewers. It felt slow during the w
 
 ## Publishing Limits Alongside Results
 
-The published recap gave each team one section with four parts. I used the team name, the problem statement, the evidence, and the limits. Every section linked the repository and the demo recording.
+The published recap gave each team one section with the same parts:
+
+- the team name
+- the problem statement
+- the evidence
+- the limits
+
+Every section linked the repository and the demo recording.
 
 A typical entry read like this in my draft file:
 
@@ -72,7 +79,7 @@ on 380 labeled questions, with code and video linked, and it still
 fails on multilingual queries and long PDFs.
 ```
 
-The limits section mattered most to readers. I asked each team for two concrete limits and one next step. Hiring managers later told me those lines helped them assess junior work fairly.
+Readers responded most to the limits section. I asked each team for two concrete limits and one next step. Hiring managers later told me those lines helped them assess junior work fairly.
 
 The recap covered all 16 teams and ran about 2,400 words. It took six hours to edit because I standardized verbs and checked every metric against the forms. Page views reached 1,900 in the first month, which doubled the prior cohort recap.
 
@@ -84,6 +91,6 @@ The show worked because evidence became part of the grade. Teams earned points f
 
 I'll keep the form shorter next time and send it before demo day. Teams should collect commands and recordings during the build, not after the applause. Early collection will cut the reminder round I ran this year.
 
-The deeper lesson stayed with me beyond logistics. Students write stronger claims when reviewers ask for artifacts instead of adjectives. A command, a split, and a video teach more than a score alone.
+I kept the deeper lesson well beyond logistics. Students write stronger claims when reviewers ask for artifacts instead of adjectives. A command, a split, and a video teach more than a score alone.
 
 I'll run the same review pass in the autumn cohort and publish the template alongside the recap. If you want to follow along, don't forget to subscribe.

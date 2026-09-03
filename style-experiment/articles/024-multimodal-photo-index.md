@@ -64,7 +64,7 @@ privacy_status, review_note
 
 Each image gets a UUID (Universally Unique Identifier) as its `photo_id`, so renamed files don't break references. The caption stays immutable after approval. If the model output changes, the row gets a new version and points back to the approved caption.
 
-Tags have three layers. The room and instructor fields come from a card visible in the first photo of each session, while project names come from the workshop schedule.
+Tags have three layers, and the room and instructor fields come from a card visible in the first photo of each session. Project names come from the workshop schedule.
 
 Free-form object labels come from the model and support queries such as "laptop", "sticky notes", or "network diagram".
 
@@ -95,13 +95,13 @@ It assigns one of three states:
 - `review`: person checks faces, screens, or printed names
 - `shareable`: approved for a public recap
 
-The model starts conservatively. A readable name, email address, phone number, or screen with account information produces `review`.
+The model starts conservatively and flags a readable name, email address, phone number or screen with account information as `review`.
 
 Crowd shots with small faces also go to review.
 
 Of the generated set, 890 photos became `shareable`, 241 required review, and 153 stayed private. I agreed with 219 of the 241 review decisions. The other 22 had only generic laptop screens and no readable text.
 
-I also wrote a rule for children and non-participants. The fictional workshop had neither group, but the filter still defaults to `private` when a face doesn't match a signed media consent record.
+I also wrote a rule for children and non-participants. Neither group appeared in the fictional workshop, but the filter still defaults to `private` when a face doesn't match a signed media consent record.
 
 ## Search the Finished Index
 
