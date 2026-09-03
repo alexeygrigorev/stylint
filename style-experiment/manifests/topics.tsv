@@ -1,0 +1,251 @@
+id	slug	title	worker	template	angle
+001	local-rag-notebook-search	How I Replaced a Notebook Search Script with a Local RAG Index	01	build-log	turn messy markdown notes into a searchable local index
+002	voice-notes-to-outline	The Workflow I Use to Turn Voice Notes into an Article Outline	01	how-to-guide	brain dump, transcribe, group, outline, revise
+003	coding-agent-task-backlog	Specs First: Turning a Vague App Idea into a Task Backlog	01	how-to-guide	make coding-agent instructions reviewable
+004	failure-log-as-context	Why I Keep a Failure Log Next to My Project Context	01	analysis-essay	recurring mistakes become reusable instructions
+005	mini-evaluation-set	How I Build a Mini Evaluation Set Before Touching a Prompt	01	how-to-guide	start with twenty real cases and a pass rule
+006	static-site-agent-review	The Review Checklist I Use Before Publishing an Agent-Edited Site	01	build-log	inspect routes, copy, links, metadata, and mobile layout
+007	quiet-automation-boundaries	Where I Stop Automating a Writing Workflow	01	analysis-essay	human judgment belongs at selection and publication
+008	content-calendar-from-notes	Building a Content Calendar from Six Months of Raw Notes	01	build-log	group ideas by problem, proof, and audience
+009	fast-api-contract-first	The Contract-First Workflow That Keeps Generated APIs Usable	01	how-to-guide	OpenAPI before implementation and tests
+010	agent-project-kickoff	The Project Kickoff Template I Give a Coding Agent	01	how-to-guide	goal, constraints, interfaces, data, review gates
+011	markdown-source-of-truth	Why Markdown Remains My Source of Truth	02	analysis-essay	portable diffs beat another proprietary database
+012	notebook-to-library	Moving a Teaching Notebook into a Small Python Library	02	build-log	extract functions, add tests, publish, keep notebook
+013	agent-skill-checklist	The Checklist I Use Before Turning a Workflow into a Skill	02	analysis-essay	repetition, stable inputs, verifiable output
+014	phone-code-review	A Phone-First Code Review Workflow That Does Not Feel Punishing	02	build-log	small diffs, CI output, screenshots, and short comments
+015	faq-answer-curation	Curating FAQ Answers Without Turning It into a Full-Time Job	02	build-log	dedupe, route, answer templates, freshness review
+016	test-the-agent-output	Testing the Output, Not the Prompt	02	analysis-essay	behavior contracts make agents maintainable
+017	local-model-prototype	When I Prototype with a Local Model and When I Switch to an API	02	analysis-essay	privacy, latency, cost, and quality thresholds
+018	course-notes-pipeline	A Pipeline for Turning Course Recordings into Searchable Notes	02	build-log	transcripts, sections, summaries, quiz questions
+019	repo-onboarding-context	Writing an Onboarding Context File a New Agent Can Actually Use	02	how-to-guide	map commands, architecture, risks, and review rules
+020	small-dataset-decisions	Making Product Decisions with a Small, Biased Dataset	02	analysis-essay	state the sampling frame and use directional evidence
+021	portfolio-project-selection	Choosing a Portfolio Project When Everything Looks Interesting	03	how-to-guide	job descriptions reveal problems worth building
+022	slack-community-intake	Building a Lightweight Intake Queue for Community Questions	03	build-log	routing, tags, stale-thread cleanup, and escalation
+023	agent-budget-caps	How I Set Budget Caps for Long-Running Agent Jobs	03	build-log	token, wall-clock, retry, and diff-size limits
+024	multimodal-photo-index	Indexing Workshop Photos with Descriptions and Tags	03	build-log	captions, location, project, and privacy filters
+025	documentation-drift	Finding Documentation Drift Before Users Find It	03	how-to-guide	link commands to tests and scheduled audits
+026	prompt-version-control	Versioning Prompts Like Small Functions	03	how-to-guide	name, input contract, examples, regression set
+027	telegram-draft-reviewer	Extending a Telegram Assistant with a Draft Review Step	03	build-log	message context, revision rules, and approval
+028	job-description-taxonomy	Creating a Job Description Taxonomy from Free-Text Skills	03	analysis-essay	normalize enough to count, no more
+029	container-dev-parity	Keeping Local Development and Production Containers Close	03	how-to-guide	one compose contract and environment checks
+030	long-running-agent-recovery	Making Long Agent Runs Recoverable	03	build-log	checkpoints, logs, artifacts, and restart instructions
+031	meeting-transcript-actions	Turning Meeting Transcripts into Actions Without Losing Context	04	build-log	speaker intent, decisions, blockers, and evidence links
+032	personal-knowledge-api	A Personal Knowledge API for Reused Ideas	04	build-log	notes, embeddings, citations, and simple endpoints
+033	agent-review-diffs	Reviewing Large Agent Diffs in Small Batches	04	how-to-guide	sort by interface, behavior, tests, then polish
+034	course-project-rubric	Designing a Rubric That Students Can Self-Apply	04	how-to-guide	functioning demo, tests, README, limitations
+035	content-idea-validation	Validating Article Ideas with Search Queries and Community Questions	04	build-log	cluster demand, check competition, pick a real angle
+036	local-file-monitor	Building a Local File Monitor for Writing Intake	04	build-log	normalize files, extract metadata, and move processed items
+037	agent-tool-permissions	A Practical Way to Scope Tool Permissions for Agents	04	how-to-guide	read-only defaults and explicit write paths
+038	small-lib-release-checklist	The Release Checklist I Use for a Small Python Library	04	how-to-guide	version, tests, build, metadata, tag, publish
+039	multilingual-support-questions	Handling Multilingual Support Questions in a Course FAQ	04	build-log	detect language, retrieve once, answer consistently
+040	experiment-notebook-cleanup	Cleaning Up an Experiment Notebook After a Sprint	04	build-log	separate exploration from repeatable paths
+041	qa-agent-equivalence-tests	Writing Equivalence Tests for a QA Agent	05	how-to-guide	group inputs by behavior instead of guessing examples
+042	observability-for-writing-bot	Adding Observability to a Writing Bot	05	build-log	request IDs, transcript latency, failure classes, dashboards
+043	readme-first-development	Readme-First Development for Tiny Projects	05	how-to-guide	promise the interface before automating details
+044	course-deadline-automation	Automating Course Deadline Reminders Without Becoming Noisy	05	build-log	segment users, escalation rules, and quiet hours
+045	agent-context-trimming	Trimming Agent Context Without Removing the Wrong Things	05	build-log	keep contracts, decisions, failures, and recent evidence
+046	portfolio-readme-review	A Review Process for Portfolio READMEs	05	build-log	first screen, reproduction, evidence, limitations
+047	data-freshness-checks	Adding Freshness Checks to a Retrieval System	05	how-to-guide	source dates, expected update cadence, stale flags
+048	voice-interface-friction	Where Voice Input Helps and Where It Gets in the Way	05	analysis-essay	great for capture, poor for precise review
+049	judge-prompt-alignment	Aligning a Judge Prompt with Human Review	05	how-to-guide	rubric, disagreement sample, threshold, revision
+050	project-retro-template	The Project Retro Template I Reuse After Every Build	05	how-to-guide	outcome, evidence, surprises, next rule
+051	minimal-agent-harness	Building a Minimal Harness Around a Coding Agent	06	build-log	input queue, permissions, run log, and result contract
+052	support-ticket-clustering	Clustering Support Tickets Without Pretending They Are Clean	06	build-log	normalize, sample, label, and accept mixed intents
+053	course-cohort-launch	Launching a Small Course Cohort with Mostly Existing Tools	06	build-log	registration, reminders, platform, feedback loop
+054	static-analysis-for-prose	Using Static Analysis to Enforce a Writing Style	06	build-log	detect mechanical habits and leave judgment to review
+055	agent-run-cost-report	Creating a Cost Report for Agent-Assisted Development	06	build-log	tokens, retries, wall clock, and avoided manual work
+056	multi-source-link-brief	A Brief Format for Multi-Source Research	06	how-to-guide	question, evidence, contradiction, decision
+057	cli-tool-ergonomics	Making a Small CLI Tool Pleasant Enough to Keep Using	06	build-log	one command, predictable flags, helpful failure output
+058	synthetic-test-data	Rules for Synthetic Test Data in Agent Evaluations	06	analysis-essay	useful for coverage, risky as proof of reality
+059	personal-analytics-dashboard	A Private Dashboard for My Publishing Workflow	06	build-log	drafts, publish dates, sources, and review latency
+060	retry-policies-for-webhooks	Designing Retry Policies for Webhook-Driven Automations	06	how-to-guide	idempotency, backoff, dead-letter queue, alerts
+061	faq-routing-model	Wiring a Simple Router in Front of a FAQ Assistant	07	build-log	intent classes, confidence thresholds, fallback paths
+062	agent-team-handoffs	Designing Handoffs in a Small Agent Team	07	how-to-guide	explicit artifacts beat chatty coordination
+063	course-feedback-to-curriculum	Turning Course Feedback into Next-Cohort Changes	07	build-log	cluster comments, map to modules, pick five changes
+064	private-incident-notebook	Keeping an Incident Notebook That Survives the Urgency	07	build-log	timeline, symptoms, hypotheses, actions, follow-ups
+065	markdown-to-social-drafts	Generating Social Drafts from a Finished Article	07	build-log	preserve the core claim and adapt to each surface
+066	llm-cache-boundaries	Caching LLM Responses Without Creating Stale Answers	07	analysis-essay	cache deterministic inputs and expose freshness
+067	tool-integration-spike	Running a Tool Integration Spike Before Building the Feature	07	how-to-guide	success criteria, smallest path, stop time
+068	content-archaeology	Content Archaeology: Finding Reusable Ideas in Old Notes	07	build-log	index, cluster, rank, and turn one cluster into a draft
+069	github-issue-to-spec	Turning a GitHub Issue into a Testable Specification	07	how-to-guide	user outcome, boundary cases, acceptance checks
+070	local-dev-credentials	Managing Local Credentials Without Spreading Dotfiles Everywhere	07	build-log	one loader, project scope, redacted logs
+071	podcast-transcript-summaries	Summarizing Podcast Transcripts Without Flattening the Argument	08	build-log	segment claims, preserve counterpoints, add timestamps
+072	agent-code-review-scope	Scoping What a Coding Agent May Change	08	how-to-guide	allowed paths, forbidden paths, review checklist
+073	public-workshop-checklist	The Checklist I Use to Run a Public Workshop	08	how-to-guide	rehearsal, environment, fallback, follow-up artifacts
+074	scraping-to-dataset	From Web Page to Usable Dataset in One Afternoon	08	build-log	scrape, normalize, sample, validate, document
+075	evaluation-dashboard-alerts	Adding Alerts to an Evaluation Dashboard	08	build-log	thresholds, false-alarm budget, ownership
+076	student-project-showcase	Preparing a Student Project Showcase Without Overclaiming	08	build-log	ask for evidence and publish limitations too
+077	personal-search-benchmark	Benchmarking Two Local Search Options on My Own Notes	08	build-log	define queries, labels, metrics, and deployment cost
+078	agent-diagram-generation	Generating Architecture Diagrams from Structured Project Data	08	build-log	components, edges, validation, render step
+079	course-material-refresh	Refreshing Course Material Without Rewriting Everything	08	how-to-guide	replace stale tools, preserve assignments, update tests
+080	weekly-review-automation	Automating the Boring Parts of My Weekly Review	08	build-log	collect metrics, draft highlights, leave choices manual
+081	prompt-regression-pack	Creating a Regression Pack for a Prompt I Reuse Weekly	09	how-to-guide	collect cases, expected outcomes, and diff changes
+082	slack-question-router	Adding a Router to a Slack Question Queue	09	build-log	classify, answer, escalate, and archive
+083	agent-plan-review	Reviewing an Agent Plan Before Letting It Edit Code	09	build-log	check goal, interfaces, tests, and rollback
+084	offline-course-kit	Preparing an Offline Course Kit That Works Without Network Access	09	how-to-guide	local copies, printed fallback, environment checks
+085	blog-to-newsletter-repurpose	Repurposing a Blog Post into a Newsletter Issue	09	build-log	keep the claim, cut the setup, add a next step
+086	vector-search-cost-control	Controlling the Cost of a Small Vector Search Service	09	build-log	embedding budget, caching, and retention rules
+087	long-context-experiment	Testing Whether a Long Context Actually Helps My Workflow	09	build-log	same tasks, three context sizes, timed review
+088	project-name-generator	Building a Tiny Tool for Naming Side Projects	09	build-log	word lists, collision checks, and human choice
+089	agent-error-taxonomy	Classifying the Ways a Coding Agent Fails	09	analysis-essay	separate instruction, context, tool, and judgment errors
+090	openapi-to-client-tests	Generating Client Tests from an OpenAPI Contract	09	how-to-guide	request examples, status rules, and failure cases
+091	local-website-backup	A Simple Backup System for My Static Sites	10	build-log	versioned artifacts, restore test, and alerting
+092	article-outline-review	Using an Agent as an Article Outline Reviewer	10	build-log	audience, promise, evidence, and missing objections
+093	retrieval-failure-cases	Collecting Retrieval Failure Cases as a Team Habit	10	how-to-guide	log misses, label cause, and add to the test set
+094	coding-agent-handoff-notes	Writing Handoff Notes for the Next Coding Agent Session	10	how-to-guide	current state, decisions, next task, known risks
+095	workshop-feedback-pipeline	Turning Workshop Feedback into a Public Recap	10	build-log	survey data, anonymization, themes, and follow-up
+096	community-helper-playbook	A Playbook for Community Helpers	10	how-to-guide	welcome, diagnose, answer, and escalate
+097	codebase-tour-agent	Building an Agent That Gives a Guided Tour of a Repository	10	build-log	entry points, dependency graph, examples, and limits
+098	prototype-to-production-gap	Closing the Prototype-to-Production Gap in Small Steps	10	analysis-essay	persistence, auth, tests, deployment, and support
+099	personal-command-menu	Creating a Personal Command Menu for Repeated Work	10	build-log	discover commands, group tasks, and document defaults
+100	evaluation-set-versioning	Versioning Evaluation Sets with the Code That Uses Them	10	how-to-guide	immutable cases, change notes, and score comparisons
+101	database-migration-checklist	The Database Migration Checklist I Should Have Used Sooner	11	how-to-guide	backup, expand, migrate, contract, verify
+102	browser-recording-to-bug-report	Turning a Browser Recording into a Reproducible Bug Report	11	build-log	steps, state, console output, and expected result
+103	teaching-notes-index	Indexing Ten Years of Teaching Notes	11	build-log	extract topics, examples, exercises, and version
+104	agent-memory-file	Using a Single Memory File Instead of a Complex Memory System	11	analysis-essay	append decisions and prune stale context
+105	semantic-search-smoke-tests	Writing Smoke Tests for Semantic Search	11	how-to-guide	canary queries, expected neighbors, and latency budget
+106	local-event-recap	Publishing a Local Event Recap While It Still Matters	11	build-log	photos, quotes, slides, and follow-up resources
+107	api-failure-modes	Documenting API Failure Modes Before They Happen	11	how-to-guide	timeouts, validation, quota, and recovery
+108	content-research-folder	Organizing Research for an Article Before Writing It	11	build-log	questions, sources, evidence, and contradictions
+109	agent-work-log	Making Agents Produce Work Logs I Can Review Later	11	build-log	task, action, evidence, output, and decision points
+110	course-starter-template	Designing a Course Starter Template Students Can Extend	11	how-to-guide	few files, clear commands, and a small test suite
+111	github-actions-runtime-cuts	Cutting Runtime from a GitHub Actions Workflow	12	build-log	caching, matrix pruning, and honest measurements
+112	article-diagram-workflow	Creating a Simple Architecture Diagram for an Article	12	build-log	components, boundaries, data flow, and caption
+113	multimodal-slide-review	Using Vision Models to Review Slide Layouts	12	build-log	contrast, overflow, alignment, and narrative order
+114	faq-answer-quality-rubric	Defining a Quality Rubric for FAQ Answers	12	how-to-guide	correct, current, complete, concise, and kind
+115	agent-release-notes	Generating Release Notes Without Inventing Impact	12	build-log	diff grouping, issue links, and human editing
+116	data-cleaning-decisions	Writing Down Data-Cleaning Decisions Before I Regret Them	12	build-log	normalization, exclusions, missing values, and provenance
+117	personal-rss-pipeline	A Personal RSS Pipeline That Survives a Busy Week	12	build-log	fetch, filter, summarize, and decide what to read
+118	local-server-service-registry	Keeping Track of Services on My Home Server	12	build-log	names, ports, owners, logs, and health checks
+119	research-question-to-spec	Moving from a Research Question to a Buildable Specification	12	how-to-guide	hypothesis, data, method, success rule, and scope
+120	prompt-injection-checklist	A Checklist for Reducing Prompt Injection Risk	12	how-to-guide	separate instructions, limit tools, validate output
+121	repository-archive-policy	Deciding Which Experimental Repositories to Archive	13	analysis-essay	preserve lessons and reduce maintenance debt
+122	article-fact-pass	Running a Fact Pass on a Technical Article	13	how-to-guide	names, versions, commands, links, and claims
+123	fine-grained-agent-tasks	Splitting a Large Feature into Agent-Sized Tasks	13	how-to-guide	narrow outcome, touched files, and acceptance checks
+124	course-forum-analytics	Using Forum Analytics to Find Confusing Course Material	13	build-log	view paths, repeated questions, homework failures
+125	personal-image-search	Building Personal Image Search Without a Heavy Stack	13	build-log	captions, metadata, embeddings, and a small UI
+126	agent-testing-seams	Testing the Seams in an AI-Assisted Application	13	how-to-guide	contract, integration, and one user path
+127	content-backlog-prune	Pruning a Content Backlog That Became a Junk Drawer	13	build-log	last touched, demand, effort, and unique point
+128	local-llm-batch-jobs	Running Batch Jobs with a Local Model Overnight	13	build-log	queue, checkpointing, output validation, and costs
+129	code-review-priority-order	The Order I Review AI-Generated Code In	13	how-to-guide	interface, state, errors, tests, and naming
+130	user-guide-from-conversation	Turning Support Conversations into a User Guide	13	build-log	cluster questions, write tasks, and link from product
+131	conference-talk-to-article	Converting a Conference Talk into a Standalone Article	14	build-log	transcript, examples, structure, and reader context
+132	agent-plan-format	A Plan Format That Makes Agent Work Easier to Review	14	how-to-guide	goal, constraints, steps, evidence, and stop rule
+133	personal-dashboard-data-collection	Collecting Data for a Personal Dashboard Without Creeping on Myself	14	build-log	events, retention, aggregation, and access controls
+134	course-demo-failures	Preparing for Demo Failures in a Live Course	14	how-to-guide	rehearsal, snapshots, fallback, and recovery script
+135	small-model-router	Routing Requests Between a Small Model and a Larger One	14	build-log	task classes, confidence, fallback, and cost tracking
+136	documentation-anchors	Creating Stable Anchors in Fast-Changing Documentation	14	build-log	canonical terms, redirects, and link tests
+137	agent-web-research-budget	Budgeting Web Research for an Agent	14	how-to-guide	question scope, source limit, and stopping condition
+138	community-moderation-metrics	Measuring Moderation Work Without Ranking People	14	build-log	volume, response time, outcomes, and moderator load
+139	tiny-etl-pipeline	A Tiny ETL Pipeline for Course Enrollment Data	15	build-log	extract, validate, load, reconcile, and alert
+140	prompt-portfolio	Keeping a Portfolio of Prompts Instead of One Giant Prompt	15	analysis-essay	narrow prompts compose and test better
+141	project-launch-checklist	The Launch Checklist for a Small AI Project	15	how-to-guide	usage, docs, support, monitoring, and rollback
+142	personal-api-rate-limits	Adding Rate Limits to a Personal API	15	build-log	key, quota, queue, and error messages
+143	transcript-quote-finder	Finding Quotable Passages in Long Transcripts	15	build-log	claim detection, timestamps, and human selection
+144	course-exercise-generator	Generating Course Exercises from Existing Material	15	build-log	learning goal, dataset, constraints, and rubric
+145	data-dictionary-first	Starting a Data Project with a Data Dictionary	15	how-to-guide	fields, types, owners, examples, and caveats
+146	agent-sandbox-setup	Setting Up a Sandbox for Risky Agent Work	15	how-to-guide	snapshots, network limits, fake credentials, cleanup
+147	readme-example-first	Writing a README Around the First Useful Example	16	build-log	install, run, expected output, and limitations
+148	writing-assistant-latency	Reducing Latency in a Writing Assistant	16	build-log	queueing, streaming, cache hits, and perceived speed
+149	community-project-catalog	Creating a Catalog of Community Projects	16	build-log	submissions, screenshots, links, and status fields
+150	retrieval-eval-labeling	Labeling Retrieval Results Without Burning a Week	16	how-to-guide	sampling, binary judgments, disagreements, and audits
+151	long-article-editing-pass	Editing a Long Article in Four Passes	16	how-to-guide	structure, evidence, sentences, and publication details
+152	personal-time-tracking-tool	Building a Minimal Time Tracking Tool I Actually Use	16	build-log	one command, local storage, weekly summary
+153	agent-test-generation	Using an Agent to Generate Tests from a Specification	16	build-log	golden path, boundary cases, fixtures, and review
+154	course-platform-migration	Migrating Course Content Between Platforms	16	build-log	export, mapping, redirects, and learner communication
+155	interview-question-bank	Maintaining an Interview Question Bank with Worked Answers	17	build-log	topic, difficulty, expected reasoning, and pitfalls
+156	article-series-planning	Planning an Article Series Before Publishing Part One	17	how-to-guide	promise, dependency order, recurring example, cadence
+157	private-benchmark-set	Creating a Private Benchmark Set for My Own Tools	17	build-log	real queries, labels, baselines, and refresh policy
+158	agent-diff-size-limits	Keeping Agent Diffs Small Enough to Review	17	analysis-essay	scope limits protect both quality and attention
+159	server-disk-forensics	Figuring Out Why a Server Ran Out of Disk Space	17	build-log	logs, caches, images, retention, and monitoring
+160	workshop-recording-edit	Publishing a Workshop Recording with Useful Chapters	17	build-log	transcript, sections, links, and correction pass
+161	local-config-validator	Writing a Validator for My Local Project Configurations	18	build-log	schema, helpful errors, defaults, and CI integration
+162	support-answer-drafting	Drafting Support Answers with a Retrieval Assistant	18	build-log	question, sources, confidence, and final edit
+163	course-project-feedback-loop	Scaling Project Feedback with a Checklist and Short Recordings	18	how-to-guide	functioning demo, tests, README, and next step
+164	voice-note-captioning	Turning Voice Notes into Captions for Screenshots	18	build-log	context, privacy, nouns, and publication surface
+165	notebook-experiment-reproducibility	Making a One-Off Notebook Reproducible Enough to Rerun	18	how-to-guide	pinned versions, inputs, outputs, and runtime notes
+166	small-search-service-serving	Serving a Small Search Index from a Tiny Server	18	build-log	loading, queries, health checks, and updates
+167	coding-agent-onboarding-script	Creating an Onboarding Script for a New Coding Agent	18	how-to-guide	install, verify, run task, and inspect output
+168	article-feedback-triage	Triaging Feedback on a Draft Without Losing the Argument	18	build-log	structure comments, evidence gaps, and line edits
+169	incident-postmortem-agent	Using an Agent to Draft an Incident Postmortem	19	build-log	timeline extraction, evidence links, and human review
+170	personal-project-dashboard	Building a Dashboard for Side Projects and Deadlines	19	build-log	status fields, next actions, and weekly snapshot
+171	code-sample-updater	Updating Code Samples After a Library Release	19	how-to-guide	version matrix, failures, fixes, and changelog notes
+172	community-question-of-week	Running a Question of the Week from Community Threads	19	build-log	selection, answer, credit, and reuse
+173	prompt-output-schema	Constraining Prompt Output with a Simple Schema	19	how-to-guide	fields, types, examples, validation, and fallback
+174	blog-search-analytics	Using Blog Search Queries to Find Missing Articles	19	build-log	query logs, zero-result terms, and topic gaps
+175	course-live-session-setup	Preparing a Live Session for Two Time Zones	19	how-to-guide	recording, chat, examples, and homework handoff
+176	server-log-summarizer	Summarizing Server Logs into Daily Highlights	20	build-log	parsing, grouping, anomaly flags, and delivery
+177	side-project-scope-contract	Writing a Scope Contract for a Side Project	20	how-to-guide	one user, one path, one month, and done criteria
+178	agent-credential-handling	Keeping Credentials Away from Agent Logs	20	how-to-guide	secret references, masking, rotation, and audit paths
+179	podcast-notes-to-course-module	Turning Podcast Notes into a Course Module Draft	20	build-log	claims, exercises, examples, and assessment
+180	static-gallery-generator	Generating a Fast Photo Gallery for a Workshop Recap	20	build-log	images, captions, sizes, HTML, and deploy step
+181	feature-request-routing	Routing Feature Requests from Conversations to Issues	21	build-log	deduplicate, group, evidence, and maintain a roadmap
+182	model-upgrade-checklist	The Checklist I Use Before Switching to a New Model	21	how-to-guide	evaluation set, cost, latency, regressions, and rollback
+183	course-cheatsheet-layout	Designing a Cheatsheet Students Print and Use	21	build-log	commands, decisions, warnings, and links
+184	agent-context-audit	Auditing What Context an Agent Actually Used	21	build-log	prompts, retrievals, decisions, and missing evidence
+185	local-site-search-analytics	Adding Privacy-Preserving Search Analytics to a Blog	21	build-log	events, aggregation, retention, and zero-result reports
+186	tiny-vector-cache	Caching Embeddings for a Small Personal Project	21	build-log	key inputs, storage format, invalidation, and size
+187	project-status-note	A Weekly Project Status Note That Fits on One Screen	22	how-to-guide	done, learned, next, blocked, and help needed
+188	talk-outline-workshop	Using an Agent to Workshop a Conference Talk Outline	22	build-log	audience, promise, examples, and time budget
+189	image-generation-review	Checklist for Reviewing AI-Generated Interface Images	22	how-to-guide	contrast, spacing, states, labels, and device sizes
+190	content-cleanup-script	Writing a Script to Find Orphaned Article Assets	22	build-log	references, exclusions, dry run, and delete mode
+191	shared-team-agent-profile	Creating a Shared Agent Profile for a Small Team	22	how-to-guide	conventions, commands, review rules, and exceptions
+192	rss-to-weekly-digest	Turning an RSS Queue into a Weekly Digest	22	build-log	filter, group, summarize, and link clearly
+193	student-demo-day-prep	Preparing a Demo Day Where Students Actually Show Work	22	how-to-guide	timing, rehearsal, backup video, and feedback form
+194	document-extraction-pipeline	Extracting Structured Data from Course PDFs	23	build-log	parsing, validation, review queue, and export
+195	personal-search-ranking	Ranking My Own Search Results by Recency and Usefulness	23	build-log	features, weights, judgments, and visible reasons
+196	agent-usage-policy	Writing an Agent Usage Policy for Personal Projects	23	analysis-essay	permissions, review, secrets, and deploy boundaries
+197	tiny-webhook-inspector	Building a Webhook Inspector for Debugging Integrations	23	build-log	receive, store, redact, replay, and compare
+198	course-resource-curation	Curating Resources Without Sending Students into a Rabbit Hole	23	how-to-guide	learning goal, order, time estimate, and optional depth
+199	draft-to-podcast-script	Converting an Article Draft into a Podcast Script	24	build-log	spoken transitions, examples, and pronunciation pass
+200	release-retrospective-template	A Retrospective Template for Library Releases	24	how-to-guide	scope, incidents, feedback, metrics, and changes
+201	local-file-renamer	Building a Renamer for Screenshots and Voice Notes	24	build-log	date, project, content, collision rules, and preview
+202	agent-tool-choice-tests	Testing Whether an Agent Chooses the Right Tool	24	how-to-guide	scenario, expected call, result, and cost
+203	project-idea-portfolio	Keeping a Portfolio of Project Ideas Instead of Starting All of Them	24	analysis-essay	capture demand and postpone implementation
+204	searchable-course-archive	Making a Course Archive Searchable for Alumni	25	build-log	import, normalize, index, update, and access control
+205	writing-style-linter-rule	Adding a New Rule to My Writing Style Linter	25	build-log	pattern, examples, false positives, and tests
+206	static-api-mock	Generating a Static Mock API from an OpenAPI File	25	how-to-guide	examples, status codes, latency, and frontend use
+207	course-assignment-dependencies	Making Assignment Dependencies Obvious to Students	25	build-log	prerequisites, starter code, checks, and recovery
+208	multi-agent-progress-board	Creating a Progress Board for Parallel Agent Work	25	build-log	task ownership, status, artifacts, and merge queue
+209	local-observation-notebook	Keeping an Observation Notebook for System Behavior	26	build-log	hypothesis, chart, anomaly, and decision
+210	small-lib-documentation-site	Publishing Documentation for a Tiny Python Library	26	how-to-guide	quickstart, API reference, examples, and versioning
+211	agent-browser-tests	Adding Browser Tests to an AI-Assisted Web App	26	how-to-guide	user paths, fixtures, screenshots, and flake control
+212	newsletter-archive-search	Making My Newsletter Archive Searchable	26	build-log	export, cleanup, indexing, and related posts
+213	bug-report-to-test-case	Converting a Bug Report into a Test Case	26	how-to-guide	minimal input, expected failure, regression, and label
+214	project-asset-inventory	Creating an Inventory of Assets Across Side Projects	26	build-log	paths, licenses, owners, and reuse candidates
+215	live-coding-fallbacks	Preparing Fallbacks for a Live Coding Session	27	how-to-guide	backup repo, snapshots, scripted steps, and recovery
+216	model-latency-profile	Profiling Latency Across an AI Application	27	build-log	request stages, percentiles, logs, and improvements
+217	article-source-bundle	Publishing a Source Bundle for a Technical Article	27	build-log	data subset, scripts, README, license, and reproduction
+218	course-video-chapters	Adding Chapters to Course Videos from Transcripts	27	build-log	segment boundaries, titles, links, and quality check
+219	community-code-of-conduct-ops	Making a Code of Conduct Operational	27	how-to-guide	reporting, triage, outcomes, and periodic review
+220	server-maintenance-runbook	Writing a Runbook for Monthly Server Maintenance	28	how-to-guide	backups, updates, disk, certificates, and recovery
+221	generated-ui-code-review	Reviewing Generated UI Code Against a Mockup	28	build-log	layout, states, accessibility, and design tokens
+222	course-enrollment-funnel	Understanding a Free Course Enrollment Funnel	28	build-log	visits, registrations, activation, and completion
+223	tiny-notification-service	A Tiny Notification Service for Personal Automations	28	build-log	events, channels, dedupe, and quiet rules
+224	prompt-context-manifest	Creating a Context Manifest for a Long Agent Job	28	how-to-guide	files, roles, limits, and refresh instructions
+225	article-title-testing	Choosing an Article Title with a Simple Decision Record	29	build-log	candidates, search intent, clarity, and promise
+226	personal-data-export	parsing and Reusing Personal Data Exports	29	build-log	schema surprises, cleanup, privacy, and queries
+227	agent-code-comment-policy	Writing a Comment Policy for AI-Generated Code	29	analysis-essay	explain decisions and avoid narration
+228	workshop-material-versioning	Versioning Workshop Materials Between Cohorts	29	how-to-guide	changelog, exercise IDs, compatibility, and archive
+229	tiny-queue-monitor	Monitoring a Background Job Queue on a Small Server	29	build-log	depth, age, failures, retries, and alerts
+230	blog-post-checklist	The Checklist I Run Before Pressing Publish	30	how-to-guide	claim, evidence, links, images, and next step
+231	dependency-upgrade-agent	Using an Agent to Upgrade Dependencies in Small Steps	30	build-log	lockfile, tests, release notes, and rollback
+232	course-platform-api-client	Writing a Client for a Course Platform API	30	build-log	auth, pagination, retries, validation, and cache
+233	notebook-teaching-path	Turning Experimental Notebooks into a Teaching Path	30	build-log	concepts, order, exercises, and cleanup
+234	local-file-classifier	Classifying Files in a Messy Intake Folder	30	build-log	rules, confidence, overrides, and processed archive
+235	project-privacy-review	A Privacy Review for a Personal AI Project	31	how-to-guide	data inventory, retention, access, and deletion
+236	writing-bot-error-messages	Designing Error Messages for a Telegram Assistant	31	build-log	causes, next action, examples, and quiet retries
+237	generated-code-ownership	Deciding Who Owns AI-Generated Code	31	analysis-essay	author reviews and owns behavior
+238	course-cohort-retro	Running a Cohort Retrospective That Produces Changes	31	how-to-guide	survey, interviews, themes, and five decisions
+239	searchable-codebase-examples	Indexing Code Examples Across My Repositories	31	build-log	extraction, tags, query examples, and updates
+240	server-config-as-data	Treating Server Configuration as Reviewable Data	32	how-to-guide	schema, changes, validation, and rollback
+241	article-update-policy	Deciding When to Update an Old Article	32	analysis-essay	traffic, correctness, effort, and changelog
+242	tiny-feature-flag-system	A Tiny Feature Flag System for Side Projects	32	build-log	keys, defaults, overrides, and cleanup
+243	agent-review-checklist-library	Building a Library of Review Checklists for Agent Work	32	how-to-guide	context by task type and failure history
+244	course-project-starter-choice	Choosing Between Starter Code and a Blank Repository	33	analysis-essay	scaffolding helps early and constrains later
+245	local-documents-search	Searching PDFs and Slides on My Own Machine	33	build-log	extraction, metadata, ranking, and access
+246	release-announcement-draft	Drafting a Release Announcement from Actual Changes	33	build-log	audience, benefits, examples, and upgrade notes
+247	automation-failure-review	Reviewing Automations That Silently Stopped Working	33	build-log	alerts, causes, fixes, and monitoring changes
+248	synthetic-project-lab	A Lab for Comparing Writing Styles on the Same Project Idea	33	build-log	fixed brief, variants, review rubric, and findings
+249	generated-article-audit	Auditing Generated Articles Before They Touch a Blog	33	how-to-guide	facts, structure, voice, links, and disclosure
+250	style-corpus-lessons	What I Learned Comparing 250 Generated Articles to a Real Archive	10	build-log	brief, workers, linting, review, and useful patterns

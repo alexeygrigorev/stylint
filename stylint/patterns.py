@@ -317,6 +317,11 @@ BANNED_PHRASE_PATTERNS: dict[str, tuple[re.Pattern[str], str]] = {
         re.compile(r"\b(?:rough|sharp)\s+edges?\b", re.IGNORECASE),
         "drop the cliche; name the concrete problems or limitations",
     ),
+    "failure mode": (
+        re.compile(r"\bfailure\s+modes?\b", re.IGNORECASE),
+        "name the concrete problem (timeouts, 500 responses, slow queries, "
+        "late data) instead of 'failure mode'",
+    ),
     "pin (verb)": (
         re.compile(r"\bpin(?:s|ned|ning)?\b", re.IGNORECASE),
         "drop the verb metaphor; use 'set', 'fix', 'force', or name the "

@@ -1581,6 +1581,19 @@ def test_banned_phrase_new_patterns(body, tmp_path):
 @pytest.mark.parametrize(
     "body",
     [
+        "We support every failure mode.\n",
+        "The failure modes overlap.\n",
+    ],
+)
+def test_banned_phrase_failure_mode_positive(body, tmp_path):
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert any("[banned-phrase] 'failure mode'" in e for e in errors)
+
+
+@pytest.mark.parametrize(
+    "body",
+    [
         # Literal noun and fixed term - not the banned verb.
         "The landing page links to the docs.\n",
         "We deploy the model to the cloud and move on.\n",
