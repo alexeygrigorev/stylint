@@ -431,7 +431,12 @@ def check_paragraph(
 
 
 def check_prose_line(
-    plain: str, line_no: int, rel, author_name: str = "Alexey"
+    plain: str,
+    line_no: int,
+    rel,
+    author_name: str = "Alexey",
+    *,
+    is_list_lead_in: bool = False,
 ) -> tuple[list[Finding], list[tuple[int, str]]]:
     findings: list[Finding] = []
     now_lets_hits: list[tuple[int, str]] = []
@@ -518,7 +523,18 @@ def check_prose_line(
         )
     for pattern, replacement in CONTRACTION_RES:
         match = pattern.search(plain)
-        if match:
+        # A bare "we will:" is a natural heading for a roadmap, while
+        # "we will cover:" is ordinary prose and should still contract.
+        # Only exempt the will -> 'll forms when will is the final word
+        # before the colon that introduces a real Markdown list.
+        will_is_list_lead_in = (
+            is_list_lead_in
+            and replacement.lower().endswith("'ll")
+            and plain[match.end():].strip() == ":"
+            if match
+            else False
+        )
+        if match and not will_is_list_lead_in:
             findings.append(
                 Finding(
                     rel,

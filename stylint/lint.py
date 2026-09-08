@@ -101,6 +101,15 @@ def check_page(
     voice_paragraphs: list[list[tuple[int, str]]] = []
     list_block: list[tuple[int, str]] = []
 
+    def is_list_lead_in(line_index: int) -> bool:
+        """Return whether a colon-terminated line directly introduces a list."""
+        if not lines[line_index].rstrip().endswith(":"):
+            return False
+        next_index = line_index + 1
+        while next_index < len(lines) and not lines[next_index].strip():
+            next_index += 1
+        return next_index < len(lines) and LIST_RE.match(lines[next_index]) is not None
+
     def list_item_text(line: str) -> str:
         return LIST_ITEM_RE.sub("", line).strip()
 
@@ -234,7 +243,8 @@ def check_page(
         ))
         flush_state["this_is_code_lead_in_line"] = None
 
-    for line_no, line in enumerate(lines, start=1 + line_offset):
+    for line_index, line in enumerate(lines):
+        line_no = line_index + 1 + line_offset
         stripped = line.strip()
         starts_fence = line.lstrip().startswith("```")
 
@@ -401,7 +411,13 @@ def check_page(
 
         plain = strip_inline_code(strip_link_urls(line))
         errors.extend(check_markdown_line(line, plain, line_no, rel))
-        prose_findings, line_now_lets_hits = check_prose_line(plain, line_no, rel, author_name)
+        prose_findings, line_now_lets_hits = check_prose_line(
+            plain,
+            line_no,
+            rel,
+            author_name,
+            is_list_lead_in=is_list_lead_in(line_index),
+        )
         errors.extend(prose_findings)
         now_lets_hits.extend(line_now_lets_hits)
         errors.extend(check_banned_line(line, plain, line_no, rel))

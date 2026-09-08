@@ -566,7 +566,8 @@ _EXPLANATIONS: dict[str, Explanation] = {
         "An expanded form appears that should be contracted in this voice "
         "(it is becomes it's, do not becomes don't, we will becomes we'll, "
         "etc.). The voice uses contractions. Skip only at the end of a "
-        "sentence or for deliberate emphasis.",
+        "sentence, when 'will' is the final word before a list-introducing "
+        "colon, or for deliberate emphasis.",
         (
             ("It is a feature.", "It's a feature."),
             ("We will add tests.", "We'll add tests."),

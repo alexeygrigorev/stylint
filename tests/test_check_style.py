@@ -1546,6 +1546,30 @@ def test_contraction_negative(tmp_path):
     assert not any("contraction" in e for e in errors)
 
 
+def test_will_stays_expanded_in_list_lead_in(tmp_path):
+    body = (
+        "Today we will:\n\n"
+        "- Use Pydantic AI to make it easier to implement agents\n"
+        "- Add citations so readers can check the sources\n"
+        "- Generate a labelled test set with an LLM\n"
+        "- Record what the agent does, so we can evaluate it later\n"
+    )
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert not any("[contraction]" in e for e in errors)
+
+
+def test_will_still_contracts_when_followed_by_list_action(tmp_path):
+    body = (
+        "In particular, we will cover:\n\n"
+        "- Score its answers automatically with an LLM judge\n"
+        "- Run the labelled test set through the whole agent\n"
+    )
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert any("[contraction] 'we will' -> 'we'll'" in e for e in errors)
+
+
 # ---------------------------------------------------------------------------
 # Banned phrases: face the call, worth <gerund>
 # ---------------------------------------------------------------------------
