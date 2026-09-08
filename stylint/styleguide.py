@@ -19,6 +19,7 @@ def style_guide_files() -> dict[str, Path]:
         "formatting": guide / "formatting.md",
         "code-style": guide / "code-style.md",
         "polish": guide / "polish.md",
+        "alexey": guide / "alexey.md",
     }
 
 
@@ -38,14 +39,17 @@ def agents_guide_file() -> Path:
 
 
 def prompt_files() -> dict[str, Path]:
-    """Return focused review-prompt names mapped to installed paths.
+    """Return drafting and review-prompt names mapped to installed paths.
 
-    These are imperative prompts for an LLM or subagent to hunt and fix one
-    judgment-only smell that no regex catches reliably."""
+    These cover source briefing, author voice, and judgment-only smells that
+    no regex catches reliably."""
     guide = style_guide_path()
     return {
         "abstract-subject": guide / "prompt-abstract-subject.md",
         "noun-phrase-smell": guide / "prompt-noun-phrase-smell.md",
+        "alexey-brief": guide / "prompt-alexey-brief.md",
+        "alexey-draft": guide / "prompt-alexey-draft.md",
+        "alexey-rewrite": guide / "prompt-alexey-rewrite.md",
     }
 
 

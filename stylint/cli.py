@@ -119,9 +119,9 @@ def parse_args() -> argparse.Namespace:
         nargs="?",
         const="",
         help=(
-            "Print a focused review prompt for an LLM or subagent that "
-            "targets one judgment-only smell no regex catches. Pass a name "
-            "(abstract-subject) to print it; pass nothing to list names."
+            "Print a drafting or review prompt for an LLM or subagent. "
+            "Pass a name (alexey-draft, alexey-rewrite, abstract-subject) "
+            "to print it; pass nothing to list names."
         ),
     )
     parser.add_argument(
@@ -145,7 +145,7 @@ def parse_args() -> argparse.Namespace:
         const="",
         help=(
             "Print the installed style guide paths. Pass a guide name "
-            "(voice, formatting, code-style, polish) to print that document."
+            "(voice, formatting, code-style, polish, alexey) to print that document."
         ),
     )
     return parser.parse_args()

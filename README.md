@@ -172,3 +172,58 @@ Or run it from CI.
 
 `stylint` prints the mechanical findings. The bundled guides cover tone,
 structure, source material, and other judgment calls.
+
+## Drafting in Alexey's voice
+
+The author profile uses the Substack archive to guide AI drafts.
+
+Start with source notes that preserve facts and reasons for decisions:
+
+```bash
+stylint --style-guide alexey
+stylint --prompt alexey-brief
+stylint --prompt alexey-draft
+```
+
+Give the brief prompt and your notes to the writing agent. Then give the
+resulting brief to the agent with the draft prompt.
+
+For an existing AI draft, use the source brief with the rewrite prompt:
+
+```bash
+stylint --prompt alexey-rewrite
+stylint path/to/draft.md
+```
+
+Use these commands to print prompts, then pass them to your writing agent.
+Review the draft against the source after editing. A clean lint result
+doesn't establish that the wording sounds like you.
+
+The [archive analysis and Luna experiment](research/alexey-voice/README.md)
+include source evidence, original drafts, corrections and observed limits.
+The [comparison tool](tools/README.md#voice-comparison) measures reference text
+without changing it and runs stylint on AI candidates.
+
+The [100-article Luna experiment](research/luna-100/README.md) extends that
+work with two treatments of each of 50 archive articles. It preserves the
+drafts and revisions so you can compare the edits.
+
+Two checks came from recurring differences between those drafts and the
+reference articles:
+
+- `dense-paragraph-run` flags four consecutive paragraphs with at least
+  three sentences and 50 words each, prompting a review of where the
+  subject changes.
+- `evaluative-framing` flags lead-ins such as "The useful part is" and
+  "That was the point", prompting you to state the observation or remove
+  the redundant recap.
+
+Print the reasoning and exceptions for either check:
+
+```bash
+stylint --explain dense-paragraph-run
+stylint --explain evaluative-framing
+```
+
+These checks express drafting preferences without attempting to identify
+AI authorship.

@@ -2,7 +2,21 @@
 
 import sys
 
+import pytest
+
 from stylint.cli import main
+
+
+@pytest.mark.parametrize('option,name,title', [
+    ('--style-guide', 'alexey', "# Alexey's published voice"),
+    ('--prompt', 'alexey-brief', "# Brief prompt: preserve the author's material"),
+    ('--prompt', 'alexey-draft', "# Draft prompt: Alexey's voice"),
+    ('--prompt', 'alexey-rewrite', "# Rewrite prompt: Alexey's voice"),
+])
+def test_cli_prints_author_resources(monkeypatch, capsys, option, name, title):
+    monkeypatch.setattr(sys, 'argv', ['stylint', option, name])
+    assert main() == 0
+    assert capsys.readouterr().out.startswith(title)
 
 
 def test_cli_lists_style_guide_paths(monkeypatch, capsys):

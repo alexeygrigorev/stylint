@@ -88,7 +88,7 @@ def test_package_exposes_bundled_style_guide():
     files = style_guide_files()
 
     assert guide_path.is_dir()
-    assert set(files) == {"voice", "formatting", "code-style", "polish"}
+    assert set(files) == {"voice", "formatting", "code-style", "polish", "alexey"}
     for path in files.values():
         assert path.is_file()
         assert path.parent == guide_path
@@ -115,7 +115,7 @@ def test_package_exposes_agents_guide():
 def test_package_exposes_review_prompts():
     files = prompt_files()
 
-    assert set(files) == {"abstract-subject", "noun-phrase-smell"}
+    assert set(files) == {"abstract-subject", "noun-phrase-smell", "alexey-brief", "alexey-draft", "alexey-rewrite"}
     path = prompt_file("abstract-subject")
     assert path == files["abstract-subject"]
     assert path.is_file()

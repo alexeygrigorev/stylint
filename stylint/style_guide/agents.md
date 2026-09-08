@@ -1,5 +1,12 @@
 Use this before and after editing technical text.
 
+For AI drafts in Alexey's Substack voice, also read
+`stylint --style-guide alexey`. Prepare source notes with
+`stylint --prompt alexey-brief`. Use `stylint --prompt alexey-draft` with
+source notes to draft, or `stylint --prompt alexey-rewrite` with the source
+and an existing AI draft. Preserve facts and reasons for decisions before
+polishing. The author's requested form takes priority over a fixed template.
+
 1. Run `stylint --style-guide voice` before rewriting paragraphs: tone, cuts,
    and how personal the writing should be.
 2. Run `stylint --style-guide formatting` when changing headings, lists, code
