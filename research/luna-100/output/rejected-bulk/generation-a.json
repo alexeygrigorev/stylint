@@ -1,0 +1,211 @@
+{
+  "model": "gpt-5.6-luna",
+  "batch": "A",
+  "articles": [
+    {
+      "id": "001",
+      "filename": "001-account.md",
+      "word_count": 621,
+      "uncertainty": "Source-grounded draft; wording and attribution should receive human review."
+    },
+    {
+      "id": "002",
+      "filename": "002-explanation.md",
+      "word_count": 628,
+      "uncertainty": "Source-grounded draft; wording and attribution should receive human review."
+    },
+    {
+      "id": "003",
+      "filename": "003-account.md",
+      "word_count": 621,
+      "uncertainty": "Source-grounded draft; wording and attribution should receive human review."
+    },
+    {
+      "id": "004",
+      "filename": "004-explanation.md",
+      "word_count": 631,
+      "uncertainty": "Source-grounded draft; wording and attribution should receive human review."
+    },
+    {
+      "id": "005",
+      "filename": "005-account.md",
+      "word_count": 630,
+      "uncertainty": "Source-grounded draft; wording and attribution should receive human review."
+    },
+    {
+      "id": "006",
+      "filename": "006-explanation.md",
+      "word_count": 641,
+      "uncertainty": "Source-grounded draft; wording and attribution should receive human review."
+    },
+    {
+      "id": "007",
+      "filename": "007-account.md",
+      "word_count": 703,
+      "uncertainty": "Source-grounded draft; wording and attribution should receive human review."
+    },
+    {
+      "id": "008",
+      "filename": "008-explanation.md",
+      "word_count": 714,
+      "uncertainty": "Source-grounded draft; wording and attribution should receive human review."
+    },
+    {
+      "id": "009",
+      "filename": "009-account.md",
+      "word_count": 693,
+      "uncertainty": "Source-grounded draft; wording and attribution should receive human review."
+    },
+    {
+      "id": "010",
+      "filename": "010-explanation.md",
+      "word_count": 705,
+      "uncertainty": "Source-grounded draft; wording and attribution should receive human review."
+    },
+    {
+      "id": "011",
+      "filename": "011-account.md",
+      "word_count": 634,
+      "uncertainty": "Source-grounded draft; wording and attribution should receive human review."
+    },
+    {
+      "id": "012",
+      "filename": "012-explanation.md",
+      "word_count": 644,
+      "uncertainty": "Source-grounded draft; wording and attribution should receive human review."
+    },
+    {
+      "id": "013",
+      "filename": "013-account.md",
+      "word_count": 629,
+      "uncertainty": "Source-grounded draft; wording and attribution should receive human review."
+    },
+    {
+      "id": "014",
+      "filename": "014-explanation.md",
+      "word_count": 640,
+      "uncertainty": "Source-grounded draft; wording and attribution should receive human review."
+    },
+    {
+      "id": "015",
+      "filename": "015-account.md",
+      "word_count": 624,
+      "uncertainty": "Source-grounded draft; wording and attribution should receive human review."
+    },
+    {
+      "id": "016",
+      "filename": "016-explanation.md",
+      "word_count": 634,
+      "uncertainty": "Source-grounded draft; wording and attribution should receive human review."
+    },
+    {
+      "id": "017",
+      "filename": "017-account.md",
+      "word_count": 634,
+      "uncertainty": "Source-grounded draft; wording and attribution should receive human review."
+    },
+    {
+      "id": "018",
+      "filename": "018-explanation.md",
+      "word_count": 644,
+      "uncertainty": "Source-grounded draft; wording and attribution should receive human review."
+    },
+    {
+      "id": "019",
+      "filename": "019-account.md",
+      "word_count": 611,
+      "uncertainty": "Source-grounded draft; wording and attribution should receive human review."
+    },
+    {
+      "id": "020",
+      "filename": "020-explanation.md",
+      "word_count": 621,
+      "uncertainty": "Source-grounded draft; wording and attribution should receive human review."
+    },
+    {
+      "id": "021",
+      "filename": "021-account.md",
+      "word_count": 610,
+      "uncertainty": "Source-grounded draft; wording and attribution should receive human review."
+    },
+    {
+      "id": "022",
+      "filename": "022-explanation.md",
+      "word_count": 617,
+      "uncertainty": "Source-grounded draft; wording and attribution should receive human review."
+    },
+    {
+      "id": "023",
+      "filename": "023-account.md",
+      "word_count": 621,
+      "uncertainty": "Source-grounded draft; wording and attribution should receive human review."
+    },
+    {
+      "id": "024",
+      "filename": "024-explanation.md",
+      "word_count": 630,
+      "uncertainty": "Source-grounded draft; wording and attribution should receive human review."
+    },
+    {
+      "id": "025",
+      "filename": "025-account.md",
+      "word_count": 601,
+      "uncertainty": "Source-grounded draft; wording and attribution should receive human review."
+    },
+    {
+      "id": "026",
+      "filename": "026-explanation.md",
+      "word_count": 611,
+      "uncertainty": "Source-grounded draft; wording and attribution should receive human review."
+    },
+    {
+      "id": "027",
+      "filename": "027-account.md",
+      "word_count": 637,
+      "uncertainty": "Source-grounded draft; wording and attribution should receive human review."
+    },
+    {
+      "id": "028",
+      "filename": "028-explanation.md",
+      "word_count": 646,
+      "uncertainty": "Source-grounded draft; wording and attribution should receive human review."
+    },
+    {
+      "id": "029",
+      "filename": "029-account.md",
+      "word_count": 613,
+      "uncertainty": "Source-grounded draft; wording and attribution should receive human review."
+    },
+    {
+      "id": "030",
+      "filename": "030-explanation.md",
+      "word_count": 625,
+      "uncertainty": "Source-grounded draft; wording and attribution should receive human review."
+    },
+    {
+      "id": "031",
+      "filename": "031-account.md",
+      "word_count": 595,
+      "uncertainty": "Source-grounded draft; wording and attribution should receive human review."
+    },
+    {
+      "id": "032",
+      "filename": "032-explanation.md",
+      "word_count": 607,
+      "uncertainty": "Source-grounded draft; wording and attribution should receive human review."
+    },
+    {
+      "id": "033",
+      "filename": "033-account.md",
+      "word_count": 604,
+      "uncertainty": "Source-grounded draft; wording and attribution should receive human review."
+    },
+    {
+      "id": "034",
+      "filename": "034-explanation.md",
+      "word_count": 613,
+      "uncertainty": "Source-grounded draft; wording and attribution should receive human review."
+    }
+  ],
+  "uncertainty": "Drafts were generated from the supplied local source bodies and voice profile. The requested prompt-alexey-draft.md was not present at the referenced path, so the available alexey.md profile was used."
+}

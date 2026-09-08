@@ -1,0 +1,31 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-03-04-what-1000-job-descriptions-reveal.md",
+  "original_path": "research/luna-100/output/round-1/028-explanation.md",
+  "revised_path": "research/luna-100/output/round-2/028-explanation.md",
+  "word_count": 582,
+  "required_facts_checked": [
+    "The study analyzed more than 1,000 job descriptions and classified 889 into three categories.",
+    "AI-first roles were about 70 percent and worked on LLM/GenAI systems, RAG, agents, evaluation and production deployment.",
+    "AI-support roles were about 28.5 percent and focused on infrastructure and platforms around AI.",
+    "Traditional ML/DL roles were under 2 percent and used standard ML or deep-learning tools under the AI Engineer title.",
+    "The practical definition centered on owning foundation-model system design, evaluation and production operation.",
+    "Roles were 95.6 percent production-focused, nearly 50 percent backend-heavy and 20 percent often full-stack.",
+    "RAG appeared in 35.9 percent, prompt engineering in 29.1 percent, LLM integration in 25.4 percent, agents in 14.4 percent and fine-tuning in 8.5 percent.",
+    "Python appeared in 82.5 percent, with TypeScript at 23.4 percent, React at 14.8 percent and FastAPI at 10.7 percent.",
+    "Operations and cloud appeared in 17.4 percent and 13.4 percent; AWS, Docker, CI/CD and Kubernetes formed a common infrastructure baseline.",
+    "Classical ML accounted for 9.5 percent overall, with PyTorch at 22.0 percent and TensorFlow at 12.9 percent within that group.",
+    "The study's day-to-day layers include core end-to-end RAG and agent work, common retrieval/platform work and secondary frontend, performance, fine-tuning or security work.",
+    "Framework mentions were spread across LangChain, LangGraph and LlamaIndex, with no single framework dominating."
+  ],
+  "unsupported_claims_removed": [
+    "Removed any implication that the dataset's percentages define every AI Engineer role or guarantee a hiring outcome.",
+    "Removed prescriptions for a specific framework and unsupported claims about framework longevity."
+  ],
+  "substantive_edits": [
+    "Rewrote the article as a reader-facing explanation of the study's categories, skill frequencies and responsibility layers.",
+    "Preserved exact percentages while separating observed market signals from the practical definition drawn from them.",
+    "Explained why architecture and production fundamentals matter more than loyalty to one application framework."
+  ],
+  "full_final_lint_findings": [],
+  "unresolved_source_conflicts": []
+}

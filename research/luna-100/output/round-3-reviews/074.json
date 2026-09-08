@@ -1,0 +1,16 @@
+{
+  "id": "074",
+  "source_path": "research/luna-100/sources/raw/2026-07-11-my-pypi-release-pipeline-for-python.md",
+  "source_sha256": "a263a863890fb7a579ccf7507710a6793918b6f8d1b30fa1604c2e480c626e03",
+  "before_path": "research/luna-100/output/round-2/074-explanation.md",
+  "before_sha256": "d9ac30c427920875ea2acc7af1379b0e873a36d302ef16a065413efe089fee0f",
+  "after_path": "research/luna-100/output/round-3/074-explanation.md",
+  "after_sha256": "91eb1c73c40aa24c2331a88c53755b80d97ffa24b10dd0f492cd664c4dbfac01",
+  "revision_author": "parent",
+  "substantive_edits": [
+    "Rephrased an exact source sentence while retaining Hatch, hatchling and uv responsibilities."
+  ],
+  "new_rules_findings": 0,
+  "full_default_findings": 0,
+  "unresolved_source_conflicts": []
+}

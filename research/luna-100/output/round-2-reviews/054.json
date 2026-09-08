@@ -1,0 +1,30 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-05-02-9-real-life-ai-projects-from-ai-engineering.md",
+  "original_path": "research/luna-100/output/round-1/054-explanation.md",
+  "revised_path": "research/luna-100/output/round-2/054-explanation.md",
+  "word_count": 453,
+  "required_facts_checked": [
+    "The cohort projects covered personal, professional and health-related tasks.",
+    "bAIpacking retrieves race evidence for cyclist equipment and uses PostgreSQL, RAG and offline judging.",
+    "Meal-Map uses 28 documents and nine tools, with 20-request and $0.50 daily limits and deterministic fallback.",
+    "Decision Memory indexes around 21 documents and returns structured decision cards with monitoring.",
+    "VoiceIssue creates GitHub issues from Telegram voice and requires confirmation before creating the issue.",
+    "The medical transcription app uses local Whisper, diarisation and local Llama entirely offline.",
+    "Cyber Sachet answers in English and Nepali with citations and uses intent-selected tools and evaluation.",
+    "SnapSplit reruns OCR and escalates mismatches to human review.",
+    "AMR combines BM25 and BioBERT retrieval through reciprocal-rank fusion over 15 sources.",
+    "The regulation assistant uses local retrieval, Brave Search, Jina Reader and legal services across European, US and Dutch jurisdictions."
+  ],
+  "brief_corrections": [],
+  "unsupported_claims_removed": [
+    "Removed claims of uniform project outcomes or adoption.",
+    "Removed unsupported motives and performance claims for the student systems."
+  ],
+  "substantive_edits": [
+    "Rewrote the nine-project summary around recurring design patterns while naming each student.",
+    "Preserved project-specific limits, offline operation, cost controls, citations and human escalation.",
+    "Connected retrieval, evaluation and operational safeguards without claiming they produced identical results."
+  ],
+  "full_final_lint_findings": [],
+  "unresolved_source_conflicts": []
+}

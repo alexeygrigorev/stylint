@@ -1,0 +1,57 @@
+{
+  "id": "098",
+  "source_path": "research/luna-100/sources/raw/2026-08-31-coding-agent-building-blocks-reusable.md",
+  "mode": "explanation",
+  "article_purpose": "explanation of the supported workflow or idea",
+  "author_attribution_notes": "Keep Alexey’s first-person framing only for actions and observations explicitly present in the supplied source; preserve attribution to DataTalks.Club, AI Shipping Labs, and other projects where named.",
+  "required_facts": [
+    {
+      "fact": "This is the fifth article in a series based on , the free course we run at DataTalks.Club.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-31-coding-agent-building-blocks-reusable.md (source sentence 1)"
+    },
+    {
+      "fact": "All articles in the series:\n\n* Part 1: \n* Part 2: \n* Part 3: \n* Part 4: \n* Part 5:  (this article)\n\nIn this article, I want to cover the two most important aspects of working with coding assistants: skills and subagents.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-31-coding-agent-building-blocks-reusable.md (source sentence 2)"
+    },
+    {
+      "fact": "* A skill describes how to perform a repeatable task.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-31-coding-agent-building-blocks-reusable.md (source sentence 3)"
+    },
+    {
+      "fact": "* A subagent is an agent that runs in a separate context with clear task instructions.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-31-coding-agent-building-blocks-reusable.md (source sentence 4)"
+    },
+    {
+      "fact": "In addition, I’ll cover my process for creating skills and show how to run multiple agents in parallel and turn your coding agent into a task orchestrator.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-31-coding-agent-building-blocks-reusable.md (source sentence 5)"
+    },
+    {
+      "fact": "Getting these concepts is enough to work with coding agents productively, and you most likely won’t need anything else.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-31-coding-agent-building-blocks-reusable.md (source sentence 6)"
+    },
+    {
+      "fact": "This article is loosely based on a live workshop I did for the course.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-31-coding-agent-building-blocks-reusable.md (source sentence 7)"
+    },
+    {
+      "fact": "In the workshop, I had to improvise, so the content doesn’t directly map to this article.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-31-coding-agent-building-blocks-reusable.md (source sentence 8)"
+    },
+    {
+      "fact": "But it’s still going to be useful, so check it out.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-31-coding-agent-building-blocks-reusable.md (source sentence 9)"
+    },
+    {
+      "fact": "## From Markdown Files to Skills and Subagents\n\nIn Part 1 of the course, , we touched on both skills and subagents, but I didn’t define them explicitly.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-31-coding-agent-building-blocks-reusable.md (source sentence 10)"
+    },
+    {
+      "fact": "Specifically, we created a few documents:\n\n* `_docs/process.md` and the other project documents contained reusable instructions (see )\n* `_docs/team/pm.md`, `_docs/team/software-engineer.md`, and `_docs/team/qa-engineer.md` described specia",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-31-coding-agent-building-blocks-reusable.md (source sentence 11)"
+    },
+    {
+      "fact": "I wanted to keep the discussion high-level and not focus on the mechanics of any specific implementation.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-31-coding-agent-building-blocks-reusable.md (source sentence 12)"
+    }
+  ]
+}

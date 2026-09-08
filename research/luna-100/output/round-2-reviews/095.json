@@ -1,0 +1,21 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-08-31-ai-dev-tools-zoomcamp-2026-starts.md",
+  "original_path": "research/luna-100/output/round-1/095-account.md",
+  "revised_path": "research/luna-100/output/round-2/095-account.md",
+  "word_count": 420,
+  "required_facts_checked": [
+    {"claim": "The cohort starts on August 31, 2026.", "status": "present", "evidence": "source: starts today (August 31)"},
+    {"claim": "The course is free.", "status": "present", "evidence": "source: The course is free"},
+    {"claim": "The course has five modules.", "status": "present", "evidence": "source: Part 1 through Part 5"},
+    {"claim": "Module 1 covers specification, loop, and graph engineering.", "status": "present", "evidence": "source: specification, loop and graph engineering"},
+    {"claim": "Module 2 builds a frontend, backend, and database application.", "status": "present", "evidence": "source: frontend, backend, and a database"},
+    {"claim": "Module 3 covers testing, containers, and deployment.", "status": "present", "evidence": "source: Test, Containerize, and Deploy"},
+    {"claim": "Module 4 covers DevOps and observability.", "status": "present", "evidence": "source: DevOps and Observability"},
+    {"claim": "Module 5 covers coding-agent capabilities.", "status": "present", "evidence": "source: Coding Agent Capabilities"},
+    {"claim": "The final project requires frontend, backend, and persistent storage.", "status": "present", "evidence": "source: frontend and backend... persistent storage"}
+  ],
+  "unsupported_claims_removed": [],
+  "substantive_edits": ["Reorganized the course account by module and retained the cohort logistics.", "Kept generated code as a reviewable starting point rather than presenting it as finished work.", "Preserved final-project, peer-review, and certificate qualifications."],
+  "full_final_lint_findings": [],
+  "unresolved_source_conflicts": []
+}

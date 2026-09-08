@@ -1,0 +1,31 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-04-24-from-google-docs-to-an-automated.md",
+  "original_path": "research/luna-100/output/round-1/050-explanation.md",
+  "revised_path": "research/luna-100/output/round-2/050-explanation.md",
+  "word_count": 666,
+  "required_facts_checked": [
+    "DataTalks.Club cohorts bring repeated questions into Slack, including joining, Windows setup, homework submission and broken steps.",
+    "The FAQ grew to about 1,300 entries across Zoomcamps, with roughly 500 in the Data Engineering Zoomcamp FAQ.",
+    "Community member Alex Litvinov built the RAG-powered Slack bot.",
+    "The bot ingests FAQ entries, Slack history, GitHub repositories and YouTube subtitles, with structure-preserving chunks.",
+    "The bot uses a daily Prefect pipeline in Docker, LlamaIndex, BAAI/bge-base-en-v1.5 embeddings, Zilliz Cloud, Cohere Rerank and GPT-4o-mini among its components.",
+    "The bot keeps separate course query engines, routes by Slack channel ID, retrieves 20 candidates, applies time weighting and reranks to four.",
+    "The FAQ migrated from Google Docs to Git and a static website after moderation and parsing problems.",
+    "The migration downloads DOCX, extracts content with Python's docx module, cleans formatting with GPT-4o and stores course/module/question Markdown files with frontmatter.",
+    "Jekyll conflicted with dbt's Jinja syntax, so a custom Python generator with GitHub Copilot help produced HTML and JSON exports.",
+    "The generator exports courses.json and per-course JSON for programmatic indexing with minsearch.",
+    "Fred Pearce built the GitHub Actions workflow around the FAQ Automation Bot.",
+    "The bot returns NEW, UPDATE or DUPLICATE decisions and human review with Claude Code remains in the loop."
+  ],
+  "unsupported_claims_removed": [
+    "Removed claims that the bot or generator was error-free, fully autonomous or reusable outside this project.",
+    "Removed unsupported causal explanations beyond the documented vandalism, parsing and contribution-friction problems."
+  ],
+  "substantive_edits": [
+    "Rewrote the workflow as a source-first explanation from repeated Slack questions through retrieval, migration, generation and issue automation.",
+    "Attributed Alex Litvinov's bot and Fred Pearce's GitHub Actions work explicitly.",
+    "Preserved the human Claude Code review step and the structured NEW, UPDATE and DUPLICATE decision model."
+  ],
+  "full_final_lint_findings": [],
+  "unresolved_source_conflicts": []
+}

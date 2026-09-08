@@ -1,0 +1,17 @@
+{
+  "id": "039",
+  "source_path": "research/luna-100/sources/raw/2026-03-27-5-useful-utilities-i-built-with-ai.md",
+  "source_sha256": "e031736e99187168f8e480139386c994d6f1ed241dda208f22cbdaa5148db935",
+  "before_path": "research/luna-100/output/round-2/039-account.md",
+  "before_sha256": "763bb5838fda433bb0bcd3f9c05ddf8e06366f81cdb83fad5ce9794565c427f9",
+  "after_path": "research/luna-100/output/round-3/039-account.md",
+  "after_sha256": "8d44cfa83aea755379625571816e15376d941c4aaef053c8989c11fee64aa9f6",
+  "revision_author": "parent",
+  "substantive_edits": [
+    "Preserved both .env and .envrc support.",
+    "Deleted a repetitive final ownership/flexibility verdict."
+  ],
+  "new_rules_findings": 0,
+  "full_default_findings": 0,
+  "unresolved_source_conflicts": []
+}

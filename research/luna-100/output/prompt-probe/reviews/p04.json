@@ -1,0 +1,29 @@
+{
+  "id": "p04",
+  "source_path": "research/luna-100/sources/raw/2026-05-08-building-an-ai-book-generator-with.md",
+  "revised_path": "research/luna-100/output/prompt-probe/revised/p04-explanation.md",
+  "word_count": 459,
+  "source_checks": [
+    "Streamlit planning",
+    "Gemini outline refinement",
+    "BookPlan plan.yaml",
+    "shared plan interface",
+    "chapter progress markers",
+    "section/chapter implementations",
+    "skip existing and _ready",
+    "cost tracking",
+    "audio EPUB KDP",
+    "fireworks 21/45min/$4",
+    "no sales guarantee"
+  ],
+  "substantive_edits": [
+    "Reframed as a plan-first workflow explanation",
+    "Made file and process actors concrete",
+    "Preserved resumability and cost qualifications"
+  ],
+  "unsupported_claims_removed": [
+    "Removed unsupported success, certainty and commercial claims."
+  ],
+  "full_final_stylint_findings": [],
+  "unresolved_source_conflicts": []
+}

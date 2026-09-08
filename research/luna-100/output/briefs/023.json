@@ -1,0 +1,18 @@
+{
+  "id": "023",
+  "source_path": "research/luna-100/sources/raw/2026-02-26-what-is-an-ai-engineer-my-perspective.md",
+  "purpose": "personal account of Alexey's working definition and perspective on the AI Engineer role",
+  "required_facts": [
+    {"fact": "Alexey's perspective is based on around 15 years in software engineering, 12 years building machine learning systems, teaching, and regular conversations with practitioners.", "evidence": "Source line 41: experience and teaching context are stated."},
+    {"fact": "He defines an AI Engineer as responsible for integrating AI into a product and operating systems that can be evaluated, maintained, and improved.", "evidence": "Source line 45: working definition is explicit."},
+    {"fact": "The role includes translating product requirements into scoped AI problems and selecting and integrating models and tools.", "evidence": "Source lines 50-53: responsibilities are listed."},
+    {"fact": "Prompt design and versioning, success metrics, test suites, deployment, monitoring, cost optimization, and security are part of the work.", "evidence": "Source lines 54-57: operational responsibilities are listed."},
+    {"fact": "AI Engineering overlaps with data science and ML engineering but focuses on integration, prompt design, structured outputs, evaluation, and reliability when foundation models are accessed through APIs.", "evidence": "Source lines 61-65: relationship and distinction are explained."},
+    {"fact": "In established ML organizations, AI work can be distributed among existing members or delegated to dedicated AI Engineers.", "evidence": "Source lines 70-75: organizational alternatives are described."},
+    {"fact": "In startups, AI Engineers often act as product-focused generalists moving from experimentation to production hardening.", "evidence": "Source line 77: startup role shape is stated."},
+    {"fact": "Key skills include RAG pipelines, tool-using agents, structured evaluation, monitoring and observability, and end-to-end system design.", "evidence": "Source lines 85-113: five skill areas and their details are described."},
+    {"fact": "RAG work includes ingesting, chunking, embedding, searching, and grounding responses in source content.", "evidence": "Source lines 85-89: RAG responsibilities are specified."},
+    {"fact": "The companion example moves from a simple AI feature in an online classifieds site to RAG and agentic systems.", "evidence": "Source line 117: example progression is stated."}
+  ],
+  "author_attribution": "Present the definition as Alexey's stated perspective, preserving that organizational context changes the role and that it is not a universal title definition."
+}

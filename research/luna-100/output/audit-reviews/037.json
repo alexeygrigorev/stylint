@@ -1,0 +1,36 @@
+{
+  "article_id": "037",
+  "source_path": "research/luna-100/sources/raw/2026-03-20-i-turned-my-telegram-bot-into-a-multi.md",
+  "article_path": "research/luna-100/output/round-3/037-account.md",
+  "factual_checks": [
+    {
+      "draft": "article-summarizer uses Jina Reader",
+      "source": "Source describes article-summarizer fetching pages and adding structured summaries.",
+      "status": "supported"
+    },
+    {
+      "draft": "resource-describer produces two to four sentences",
+      "source": "Source gives this purpose and length.",
+      "status": "supported"
+    },
+    {
+      "draft": "verify-content compares generated content with original voice messages",
+      "source": "Source says the verifier compares output with original messages and restores omitted information.",
+      "status": "supported"
+    },
+    {
+      "draft": "MP4 or M4A files can be processed",
+      "source": "Source describes regular audio files after debugging ingestion and transcription; exact extensions should be checked.",
+      "status": "needs_qualification"
+    }
+  ],
+  "missing_or_needs_correction": [
+    "The account omits the source's explicit reason for multi-agent work: long external URLs consumed the main context and caused compaction and lost details.",
+    "The source says Telegram backgrounding stops voice-note recording and motivated regular audio files; retain that causal chain.",
+    "The ending is restrained and source-grounded."
+  ],
+  "attribution_review": "Alexey's workflow is correctly presented as his own. No third-party project is reassigned.",
+  "source_copying": "No complete source sentence was checked as copied.",
+  "required_corrections": [],
+  "history_note": "Earlier audit alleged omission of compaction, but exact round-3 draft paragraphs 1-2 explicitly state context filled quickly, compaction happened more often, and details were lost. That earlier finding is false and is withdrawn."
+}

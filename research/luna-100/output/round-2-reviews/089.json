@@ -1,0 +1,21 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-08-14-how-to-do-evals-in-2026.md",
+  "original_path": "research/luna-100/output/round-1/089-account.md",
+  "revised_path": "research/luna-100/output/round-2/089-account.md",
+  "word_count": 524,
+  "required_facts_checked": [
+    {"claim": "Evaluation ranked first in 4,894 job descriptions", "evidence": "Across all 4,894 AI engineering job descriptions ... evaluation ... number one skill."},
+    {"claim": "Agents fail in several distinct ways", "evidence": "Give a wrong answer ... get into a loop."},
+    {"claim": "Vibe checks should be logged", "evidence": "Start logging what the agent is doing."},
+    {"claim": "Manual labels form version zero of a gold standard", "evidence": "Version 0 of the gold standard dataset."},
+    {"claim": "Judge alignment compares assistant decisions with mine", "evidence": "This process is called alignment."},
+    {"claim": "Equivalence partitions divide the input space", "evidence": "Divide the input space into groups."},
+    {"claim": "Boundary tests cover exact, paraphrased, ambiguous, and off-topic queries", "evidence": "Exactly match ... semantically related ... multiple documents ... completely off-topic."},
+    {"claim": "Real users provide online evaluation data", "evidence": "Start collecting data from real users."},
+    {"claim": "Judges can cover multiple dimensions", "evidence": "Task completion ... Groundedness ... Completeness."}
+  ],
+  "unsupported_claims_removed": ["Removed generic promises about reliability and kept the source's progression, uncertainty, and need for continued data."],
+  "substantive_edits": ["Kept the account in Alexey's first person from the job-description statistic through manual labels, judge alignment, QA tests, synthetic data, and real users.", "Preserved the 10–15 examples, equivalence groups, boundary cases, online dashboard, and multiple judge dimensions.", "Removed redundant conclusions and split enumerations into readable structures."],
+  "full_final_lint_findings": [],
+  "unresolved_source_conflicts": []
+}

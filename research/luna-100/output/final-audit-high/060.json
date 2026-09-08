@@ -1,0 +1,24 @@
+{
+  "article_id": "060",
+  "source_path": "research/luna-100/sources/raw/2026-05-22-the-system-i-built-to-ship-code-from.md",
+  "article_path": "research/luna-100/output/round-3/060-explanation.md",
+  "source_sha256": "3379d8ac856b1d4efce6854ee09557f1a861d303b64a4b894282ecd117ead6c2",
+  "article_sha256": "ae0b17287d0dd4fce685f7c389f99afb5f65e6cd63025084e943afbf75cbe13f",
+  "fact_checks": [
+    {"draft_quote": "coding agents that run on a dedicated Linux server", "source_quote": "I now rent a dedicated Linux server available 24/7", "status": "supported"},
+    {"draft_quote": "I connect through Termius on Android and run Claude Code, Codex, and OpenCode inside tmux", "source_quote": "On Android, I use an SSH client called Termius", "status": "supported"},
+    {"draft_quote": "The connection can drop while I'm travelling without stopping the agent's work", "source_quote": "If I lose my connection, the work doesn’t stop", "status": "supported"},
+    {"draft_quote": "AWS access is limited to a sandbox account through a temporary one-hour session", "source_quote": "They can only reach a sandbox AWS account with a temporary 1-hour session", "status": "supported"},
+    {"draft_quote": "Real deployments go through CI", "source_quote": "Real deployments are always triggered through CI", "status": "supported"},
+    {"draft_quote": "I asked an agent to port my Python ssh-auto-forward tool to Android", "source_quote": "I handed the Python source to an agent and told it to port the entire logic over to a native Android app", "status": "supported"},
+    {"draft_quote": "I use Typeless to turn dictation into cleaned-up terminal input", "source_quote": "Typeless processes my stream of thought into clean, structured text", "status": "supported"},
+    {"draft_quote": "Codex built a temporary HTML page where I could mark preferences and add comments", "source_quote": "a small HTML page where I can review the visuals", "status": "supported"}
+  ],
+  "optional_coverage": ["The draft omits the source's conference and family-travel setup, the exact Android port name, and the article's 4–5 hour total; these are optional narrative details."],
+  "unsupported_claims": [],
+  "causality_and_qualifiers": "The draft retains the server-versus-GitHub-Actions motivation, tmux persistence, sandbox/CI boundary, offline recording qualification, and visual-review workflow.",
+  "personal_voice": "Supported. The draft consistently presents Alexey's own setup and avoids assigning his phone tools or workflows to others.",
+  "ending_review": "The ending describes the supported article-production workflow and does not add a generic repeated conclusion.",
+  "source_copying_review": "No full source sentence is reproduced; the checks use short factual fragments.",
+  "required_corrections": []
+}

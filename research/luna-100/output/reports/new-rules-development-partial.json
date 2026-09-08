@@ -1,0 +1,550 @@
+{
+  "files": 65,
+  "matches": [
+    {
+      "path": "research/luna-100/output/round-1/001-account.md",
+      "findings": [
+        {
+          "tag": "evaluative-framing",
+          "line": 15,
+          "message": "'The important part for me is' announces an evaluation before stating it. Name the action, constraint or consequence directly. If the preceding text already explains it, delete the recap instead of replacing it with another summary label. Preserve the author's actual judgment and its qualifications."
+        },
+        {
+          "tag": "dense-paragraph-run",
+          "line": 3,
+          "message": "7 consecutive paragraphs each contain at least 3 sentences and 50 words (starting on lines 3, 5, 7, 9, 11, 13, 15). Break paragraphs where the subject moves from a need to an action, observation or decision. Keep related sentences together and preserve facts; don't pad, shorten every sentence, or add decorative headings just to break the run."
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-1/002-explanation.md",
+      "findings": [
+        {
+          "tag": "dense-paragraph-run",
+          "line": 3,
+          "message": "7 consecutive paragraphs each contain at least 3 sentences and 50 words (starting on lines 3, 5, 7, 9, 11, 13, 15). Break paragraphs where the subject moves from a need to an action, observation or decision. Keep related sentences together and preserve facts; don't pad, shorten every sentence, or add decorative headings just to break the run."
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-1/003-account.md",
+      "findings": [
+        {
+          "tag": "evaluative-framing",
+          "line": 15,
+          "message": "'That was the point' announces an evaluation before stating it. Name the action, constraint or consequence directly. If the preceding text already explains it, delete the recap instead of replacing it with another summary label. Preserve the author's actual judgment and its qualifications."
+        },
+        {
+          "tag": "dense-paragraph-run",
+          "line": 3,
+          "message": "6 consecutive paragraphs each contain at least 3 sentences and 50 words (starting on lines 3, 5, 7, 9, 11, 13). Break paragraphs where the subject moves from a need to an action, observation or decision. Keep related sentences together and preserve facts; don't pad, shorten every sentence, or add decorative headings just to break the run."
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-1/004-explanation.md",
+      "findings": [
+        {
+          "tag": "dense-paragraph-run",
+          "line": 5,
+          "message": "6 consecutive paragraphs each contain at least 3 sentences and 50 words (starting on lines 5, 7, 9, 11, 13, 15). Break paragraphs where the subject moves from a need to an action, observation or decision. Keep related sentences together and preserve facts; don't pad, shorten every sentence, or add decorative headings just to break the run."
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-1/005-account.md",
+      "findings": [
+        {
+          "tag": "dense-paragraph-run",
+          "line": 3,
+          "message": "7 consecutive paragraphs each contain at least 3 sentences and 50 words (starting on lines 3, 5, 7, 9, 11, 13, 15). Break paragraphs where the subject moves from a need to an action, observation or decision. Keep related sentences together and preserve facts; don't pad, shorten every sentence, or add decorative headings just to break the run."
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-1/006-explanation.md",
+      "findings": [
+        {
+          "tag": "dense-paragraph-run",
+          "line": 3,
+          "message": "8 consecutive paragraphs each contain at least 3 sentences and 50 words (starting on lines 3, 5, 7, 9, 11, 13, 15, 17). Break paragraphs where the subject moves from a need to an action, observation or decision. Keep related sentences together and preserve facts; don't pad, shorten every sentence, or add decorative headings just to break the run."
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-1/007-account.md",
+      "findings": [
+        {
+          "tag": "dense-paragraph-run",
+          "line": 5,
+          "message": "5 consecutive paragraphs each contain at least 3 sentences and 50 words (starting on lines 5, 7, 9, 11, 13). Break paragraphs where the subject moves from a need to an action, observation or decision. Keep related sentences together and preserve facts; don't pad, shorten every sentence, or add decorative headings just to break the run."
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-1/008-explanation.md",
+      "findings": [
+        {
+          "tag": "dense-paragraph-run",
+          "line": 3,
+          "message": "5 consecutive paragraphs each contain at least 3 sentences and 50 words (starting on lines 3, 5, 7, 9, 11). Break paragraphs where the subject moves from a need to an action, observation or decision. Keep related sentences together and preserve facts; don't pad, shorten every sentence, or add decorative headings just to break the run."
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-1/011-account.md",
+      "findings": [
+        {
+          "tag": "dense-paragraph-run",
+          "line": 3,
+          "message": "8 consecutive paragraphs each contain at least 3 sentences and 50 words (starting on lines 3, 5, 7, 9, 11, 13, 15, 17). Break paragraphs where the subject moves from a need to an action, observation or decision. Keep related sentences together and preserve facts; don't pad, shorten every sentence, or add decorative headings just to break the run."
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-1/012-explanation.md",
+      "findings": [
+        {
+          "tag": "dense-paragraph-run",
+          "line": 3,
+          "message": "8 consecutive paragraphs each contain at least 3 sentences and 50 words (starting on lines 3, 5, 7, 9, 11, 13, 15, 17). Break paragraphs where the subject moves from a need to an action, observation or decision. Keep related sentences together and preserve facts; don't pad, shorten every sentence, or add decorative headings just to break the run."
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-1/014-explanation.md",
+      "findings": [
+        {
+          "tag": "dense-paragraph-run",
+          "line": 5,
+          "message": "5 consecutive paragraphs each contain at least 3 sentences and 50 words (starting on lines 5, 7, 9, 11, 13). Break paragraphs where the subject moves from a need to an action, observation or decision. Keep related sentences together and preserve facts; don't pad, shorten every sentence, or add decorative headings just to break the run."
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-1/015-account.md",
+      "findings": [
+        {
+          "tag": "dense-paragraph-run",
+          "line": 3,
+          "message": "5 consecutive paragraphs each contain at least 3 sentences and 50 words (starting on lines 3, 5, 7, 9, 11). Break paragraphs where the subject moves from a need to an action, observation or decision. Keep related sentences together and preserve facts; don't pad, shorten every sentence, or add decorative headings just to break the run."
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-1/016-explanation.md",
+      "findings": [
+        {
+          "tag": "dense-paragraph-run",
+          "line": 3,
+          "message": "8 consecutive paragraphs each contain at least 3 sentences and 50 words (starting on lines 3, 5, 7, 9, 11, 13, 15, 17). Break paragraphs where the subject moves from a need to an action, observation or decision. Keep related sentences together and preserve facts; don't pad, shorten every sentence, or add decorative headings just to break the run."
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-1/017-account.md",
+      "findings": [
+        {
+          "tag": "dense-paragraph-run",
+          "line": 5,
+          "message": "6 consecutive paragraphs each contain at least 3 sentences and 50 words (starting on lines 5, 7, 9, 11, 13, 15). Break paragraphs where the subject moves from a need to an action, observation or decision. Keep related sentences together and preserve facts; don't pad, shorten every sentence, or add decorative headings just to break the run."
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-1/018-explanation.md",
+      "findings": [
+        {
+          "tag": "dense-paragraph-run",
+          "line": 7,
+          "message": "6 consecutive paragraphs each contain at least 3 sentences and 50 words (starting on lines 7, 9, 11, 13, 15, 17). Break paragraphs where the subject moves from a need to an action, observation or decision. Keep related sentences together and preserve facts; don't pad, shorten every sentence, or add decorative headings just to break the run."
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-1/021-account.md",
+      "findings": [
+        {
+          "tag": "dense-paragraph-run",
+          "line": 3,
+          "message": "6 consecutive paragraphs each contain at least 3 sentences and 50 words (starting on lines 3, 5, 7, 9, 11, 13). Break paragraphs where the subject moves from a need to an action, observation or decision. Keep related sentences together and preserve facts; don't pad, shorten every sentence, or add decorative headings just to break the run."
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-1/022-explanation.md",
+      "findings": [
+        {
+          "tag": "dense-paragraph-run",
+          "line": 3,
+          "message": "8 consecutive paragraphs each contain at least 3 sentences and 50 words (starting on lines 3, 5, 7, 9, 11, 13, 15, 17). Break paragraphs where the subject moves from a need to an action, observation or decision. Keep related sentences together and preserve facts; don't pad, shorten every sentence, or add decorative headings just to break the run."
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-1/023-account.md",
+      "findings": [
+        {
+          "tag": "dense-paragraph-run",
+          "line": 3,
+          "message": "6 consecutive paragraphs each contain at least 3 sentences and 50 words (starting on lines 3, 5, 7, 9, 11, 13). Break paragraphs where the subject moves from a need to an action, observation or decision. Keep related sentences together and preserve facts; don't pad, shorten every sentence, or add decorative headings just to break the run."
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-1/024-explanation.md",
+      "findings": [
+        {
+          "tag": "dense-paragraph-run",
+          "line": 5,
+          "message": "5 consecutive paragraphs each contain at least 3 sentences and 50 words (starting on lines 5, 7, 9, 11, 13). Break paragraphs where the subject moves from a need to an action, observation or decision. Keep related sentences together and preserve facts; don't pad, shorten every sentence, or add decorative headings just to break the run."
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-1/025-account.md",
+      "findings": [
+        {
+          "tag": "dense-paragraph-run",
+          "line": 3,
+          "message": "6 consecutive paragraphs each contain at least 3 sentences and 50 words (starting on lines 3, 5, 7, 9, 11, 13). Break paragraphs where the subject moves from a need to an action, observation or decision. Keep related sentences together and preserve facts; don't pad, shorten every sentence, or add decorative headings just to break the run."
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-1/035-account.md",
+      "findings": [
+        {
+          "tag": "dense-paragraph-run",
+          "line": 3,
+          "message": "6 consecutive paragraphs each contain at least 3 sentences and 50 words (starting on lines 3, 5, 7, 9, 11, 13). Break paragraphs where the subject moves from a need to an action, observation or decision. Keep related sentences together and preserve facts; don't pad, shorten every sentence, or add decorative headings just to break the run."
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-1/036-explanation.md",
+      "findings": [
+        {
+          "tag": "evaluative-framing",
+          "line": 3,
+          "message": "'The important part is' announces an evaluation before stating it. Name the action, constraint or consequence directly. If the preceding text already explains it, delete the recap instead of replacing it with another summary label. Preserve the author's actual judgment and its qualifications."
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-1/037-account.md",
+      "findings": [
+        {
+          "tag": "dense-paragraph-run",
+          "line": 3,
+          "message": "7 consecutive paragraphs each contain at least 3 sentences and 50 words (starting on lines 3, 5, 7, 9, 11, 13, 15). Break paragraphs where the subject moves from a need to an action, observation or decision. Keep related sentences together and preserve facts; don't pad, shorten every sentence, or add decorative headings just to break the run."
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-1/041-account.md",
+      "findings": [
+        {
+          "tag": "dense-paragraph-run",
+          "line": 3,
+          "message": "7 consecutive paragraphs each contain at least 3 sentences and 50 words (starting on lines 3, 5, 7, 9, 11, 13, 15). Break paragraphs where the subject moves from a need to an action, observation or decision. Keep related sentences together and preserve facts; don't pad, shorten every sentence, or add decorative headings just to break the run."
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-1/042-explanation.md",
+      "findings": [
+        {
+          "tag": "dense-paragraph-run",
+          "line": 19,
+          "message": "4 consecutive paragraphs each contain at least 3 sentences and 50 words (starting on lines 19, 21, 23, 25). Break paragraphs where the subject moves from a need to an action, observation or decision. Keep related sentences together and preserve facts; don't pad, shorten every sentence, or add decorative headings just to break the run."
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-1/043-account.md",
+      "findings": [
+        {
+          "tag": "evaluative-framing",
+          "line": 3,
+          "message": "'The interesting part is' announces an evaluation before stating it. Name the action, constraint or consequence directly. If the preceding text already explains it, delete the recap instead of replacing it with another summary label. Preserve the author's actual judgment and its qualifications."
+        },
+        {
+          "tag": "dense-paragraph-run",
+          "line": 9,
+          "message": "4 consecutive paragraphs each contain at least 3 sentences and 50 words (starting on lines 9, 11, 13, 15). Break paragraphs where the subject moves from a need to an action, observation or decision. Keep related sentences together and preserve facts; don't pad, shorten every sentence, or add decorative headings just to break the run."
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-1/044-explanation.md",
+      "findings": [
+        {
+          "tag": "dense-paragraph-run",
+          "line": 3,
+          "message": "6 consecutive paragraphs each contain at least 3 sentences and 50 words (starting on lines 3, 5, 7, 9, 11, 13). Break paragraphs where the subject moves from a need to an action, observation or decision. Keep related sentences together and preserve facts; don't pad, shorten every sentence, or add decorative headings just to break the run."
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-1/045-account.md",
+      "findings": [
+        {
+          "tag": "dense-paragraph-run",
+          "line": 3,
+          "message": "5 consecutive paragraphs each contain at least 3 sentences and 50 words (starting on lines 3, 5, 7, 9, 11). Break paragraphs where the subject moves from a need to an action, observation or decision. Keep related sentences together and preserve facts; don't pad, shorten every sentence, or add decorative headings just to break the run."
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-1/046-explanation.md",
+      "findings": [
+        {
+          "tag": "dense-paragraph-run",
+          "line": 3,
+          "message": "8 consecutive paragraphs each contain at least 3 sentences and 50 words (starting on lines 3, 5, 7, 9, 11, 13, 15, 17). Break paragraphs where the subject moves from a need to an action, observation or decision. Keep related sentences together and preserve facts; don't pad, shorten every sentence, or add decorative headings just to break the run."
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-1/047-account.md",
+      "findings": [
+        {
+          "tag": "dense-paragraph-run",
+          "line": 3,
+          "message": "6 consecutive paragraphs each contain at least 3 sentences and 50 words (starting on lines 3, 5, 7, 9, 11, 13). Break paragraphs where the subject moves from a need to an action, observation or decision. Keep related sentences together and preserve facts; don't pad, shorten every sentence, or add decorative headings just to break the run."
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-1/048-explanation.md",
+      "findings": [
+        {
+          "tag": "dense-paragraph-run",
+          "line": 7,
+          "message": "4 consecutive paragraphs each contain at least 3 sentences and 50 words (starting on lines 7, 9, 11, 13). Break paragraphs where the subject moves from a need to an action, observation or decision. Keep related sentences together and preserve facts; don't pad, shorten every sentence, or add decorative headings just to break the run."
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-1/051-account.md",
+      "findings": [
+        {
+          "tag": "dense-paragraph-run",
+          "line": 3,
+          "message": "7 consecutive paragraphs each contain at least 3 sentences and 50 words (starting on lines 3, 5, 7, 9, 11, 13, 15). Break paragraphs where the subject moves from a need to an action, observation or decision. Keep related sentences together and preserve facts; don't pad, shorten every sentence, or add decorative headings just to break the run."
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-1/052-explanation.md",
+      "findings": [
+        {
+          "tag": "dense-paragraph-run",
+          "line": 5,
+          "message": "7 consecutive paragraphs each contain at least 3 sentences and 50 words (starting on lines 5, 7, 9, 11, 13, 15, 17). Break paragraphs where the subject moves from a need to an action, observation or decision. Keep related sentences together and preserve facts; don't pad, shorten every sentence, or add decorative headings just to break the run."
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-1/053-account.md",
+      "findings": [
+        {
+          "tag": "dense-paragraph-run",
+          "line": 5,
+          "message": "4 consecutive paragraphs each contain at least 3 sentences and 50 words (starting on lines 5, 7, 9, 11). Break paragraphs where the subject moves from a need to an action, observation or decision. Keep related sentences together and preserve facts; don't pad, shorten every sentence, or add decorative headings just to break the run."
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-1/054-explanation.md",
+      "findings": [
+        {
+          "tag": "dense-paragraph-run",
+          "line": 5,
+          "message": "7 consecutive paragraphs each contain at least 3 sentences and 50 words (starting on lines 5, 7, 9, 11, 13, 15, 17). Break paragraphs where the subject moves from a need to an action, observation or decision. Keep related sentences together and preserve facts; don't pad, shorten every sentence, or add decorative headings just to break the run."
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-1/055-account.md",
+      "findings": [
+        {
+          "tag": "dense-paragraph-run",
+          "line": 3,
+          "message": "5 consecutive paragraphs each contain at least 3 sentences and 50 words (starting on lines 3, 5, 7, 9, 11). Break paragraphs where the subject moves from a need to an action, observation or decision. Keep related sentences together and preserve facts; don't pad, shorten every sentence, or add decorative headings just to break the run."
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-1/058-explanation.md",
+      "findings": [
+        {
+          "tag": "dense-paragraph-run",
+          "line": 3,
+          "message": "4 consecutive paragraphs each contain at least 3 sentences and 50 words (starting on lines 3, 5, 7, 9). Break paragraphs where the subject moves from a need to an action, observation or decision. Keep related sentences together and preserve facts; don't pad, shorten every sentence, or add decorative headings just to break the run."
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-1/071-account.md",
+      "findings": [
+        {
+          "tag": "dense-paragraph-run",
+          "line": 3,
+          "message": "8 consecutive paragraphs each contain at least 3 sentences and 50 words (starting on lines 3, 5, 7, 9, 11, 13, 15, 17). Break paragraphs where the subject moves from a need to an action, observation or decision. Keep related sentences together and preserve facts; don't pad, shorten every sentence, or add decorative headings just to break the run."
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-1/072-explanation.md",
+      "findings": [
+        {
+          "tag": "dense-paragraph-run",
+          "line": 3,
+          "message": "5 consecutive paragraphs each contain at least 3 sentences and 50 words (starting on lines 3, 5, 7, 9, 11). Break paragraphs where the subject moves from a need to an action, observation or decision. Keep related sentences together and preserve facts; don't pad, shorten every sentence, or add decorative headings just to break the run."
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-1/073-account.md",
+      "findings": [
+        {
+          "tag": "dense-paragraph-run",
+          "line": 3,
+          "message": "7 consecutive paragraphs each contain at least 3 sentences and 50 words (starting on lines 3, 5, 7, 9, 11, 13, 15). Break paragraphs where the subject moves from a need to an action, observation or decision. Keep related sentences together and preserve facts; don't pad, shorten every sentence, or add decorative headings just to break the run."
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-1/075-account.md",
+      "findings": [
+        {
+          "tag": "dense-paragraph-run",
+          "line": 3,
+          "message": "7 consecutive paragraphs each contain at least 3 sentences and 50 words (starting on lines 3, 5, 7, 9, 11, 13, 15). Break paragraphs where the subject moves from a need to an action, observation or decision. Keep related sentences together and preserve facts; don't pad, shorten every sentence, or add decorative headings just to break the run."
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-1/076-explanation.md",
+      "findings": [
+        {
+          "tag": "dense-paragraph-run",
+          "line": 5,
+          "message": "6 consecutive paragraphs each contain at least 3 sentences and 50 words (starting on lines 5, 7, 9, 11, 13, 15). Break paragraphs where the subject moves from a need to an action, observation or decision. Keep related sentences together and preserve facts; don't pad, shorten every sentence, or add decorative headings just to break the run."
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-1/077-account.md",
+      "findings": [
+        {
+          "tag": "dense-paragraph-run",
+          "line": 5,
+          "message": "7 consecutive paragraphs each contain at least 3 sentences and 50 words (starting on lines 5, 7, 9, 11, 13, 15, 17). Break paragraphs where the subject moves from a need to an action, observation or decision. Keep related sentences together and preserve facts; don't pad, shorten every sentence, or add decorative headings just to break the run."
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-1/078-explanation.md",
+      "findings": [
+        {
+          "tag": "evaluative-framing",
+          "line": 3,
+          "message": "'The useful part is' announces an evaluation before stating it. Name the action, constraint or consequence directly. If the preceding text already explains it, delete the recap instead of replacing it with another summary label. Preserve the author's actual judgment and its qualifications."
+        },
+        {
+          "tag": "dense-paragraph-run",
+          "line": 7,
+          "message": "5 consecutive paragraphs each contain at least 3 sentences and 50 words (starting on lines 7, 9, 11, 13, 15). Break paragraphs where the subject moves from a need to an action, observation or decision. Keep related sentences together and preserve facts; don't pad, shorten every sentence, or add decorative headings just to break the run."
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-1/081-account.md",
+      "findings": [
+        {
+          "tag": "dense-paragraph-run",
+          "line": 5,
+          "message": "4 consecutive paragraphs each contain at least 3 sentences and 50 words (starting on lines 5, 7, 9, 11). Break paragraphs where the subject moves from a need to an action, observation or decision. Keep related sentences together and preserve facts; don't pad, shorten every sentence, or add decorative headings just to break the run."
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-1/082-explanation.md",
+      "findings": [
+        {
+          "tag": "dense-paragraph-run",
+          "line": 9,
+          "message": "5 consecutive paragraphs each contain at least 3 sentences and 50 words (starting on lines 9, 11, 13, 15, 17). Break paragraphs where the subject moves from a need to an action, observation or decision. Keep related sentences together and preserve facts; don't pad, shorten every sentence, or add decorative headings just to break the run."
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-1/083-account.md",
+      "findings": [
+        {
+          "tag": "dense-paragraph-run",
+          "line": 9,
+          "message": "5 consecutive paragraphs each contain at least 3 sentences and 50 words (starting on lines 9, 11, 13, 15, 17). Break paragraphs where the subject moves from a need to an action, observation or decision. Keep related sentences together and preserve facts; don't pad, shorten every sentence, or add decorative headings just to break the run."
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-1/085-account.md",
+      "findings": [
+        {
+          "tag": "dense-paragraph-run",
+          "line": 7,
+          "message": "4 consecutive paragraphs each contain at least 3 sentences and 50 words (starting on lines 7, 9, 11, 13). Break paragraphs where the subject moves from a need to an action, observation or decision. Keep related sentences together and preserve facts; don't pad, shorten every sentence, or add decorative headings just to break the run."
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-1/086-explanation.md",
+      "findings": [
+        {
+          "tag": "dense-paragraph-run",
+          "line": 7,
+          "message": "6 consecutive paragraphs each contain at least 3 sentences and 50 words (starting on lines 7, 9, 11, 13, 15, 17). Break paragraphs where the subject moves from a need to an action, observation or decision. Keep related sentences together and preserve facts; don't pad, shorten every sentence, or add decorative headings just to break the run."
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-1/091-account.md",
+      "findings": [
+        {
+          "tag": "dense-paragraph-run",
+          "line": 7,
+          "message": "4 consecutive paragraphs each contain at least 3 sentences and 50 words (starting on lines 7, 9, 11, 13). Break paragraphs where the subject moves from a need to an action, observation or decision. Keep related sentences together and preserve facts; don't pad, shorten every sentence, or add decorative headings just to break the run."
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-1/093-account.md",
+      "findings": [
+        {
+          "tag": "evaluative-framing",
+          "line": 5,
+          "message": "'The important part is' announces an evaluation before stating it. Name the action, constraint or consequence directly. If the preceding text already explains it, delete the recap instead of replacing it with another summary label. Preserve the author's actual judgment and its qualifications."
+        },
+        {
+          "tag": "dense-paragraph-run",
+          "line": 11,
+          "message": "4 consecutive paragraphs each contain at least 3 sentences and 50 words (starting on lines 11, 13, 15, 17). Break paragraphs where the subject moves from a need to an action, observation or decision. Keep related sentences together and preserve facts; don't pad, shorten every sentence, or add decorative headings just to break the run."
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-1/094-explanation.md",
+      "findings": [
+        {
+          "tag": "dense-paragraph-run",
+          "line": 7,
+          "message": "5 consecutive paragraphs each contain at least 3 sentences and 50 words (starting on lines 7, 9, 11, 13, 15). Break paragraphs where the subject moves from a need to an action, observation or decision. Keep related sentences together and preserve facts; don't pad, shorten every sentence, or add decorative headings just to break the run."
+        }
+      ]
+    }
+  ]
+}

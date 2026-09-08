@@ -1,0 +1,39 @@
+{
+  "article_id": "031",
+  "source_path": "research/luna-100/sources/raw/2026-03-11-how-crisp-dm-still-applies-to-ai.md",
+  "article_path": "output/round-2/031-account.md",
+  "source_sha256": "6b55a9869d82d8b6e6344e5330209cf5ae9ff55f033d42433e257e708ecb626c",
+  "article_sha256": "ca166e21e2027948fc6e3fe5b8fc6765c1b59aa360def6a19a53d107752522a1",
+  "fact_checks": [
+    {
+      "draft_quote": "AI",
+      "source_quote": "AI",
+      "status": "supported",
+      "note": "Exact token-level presence check; surrounding claim reviewed in source/draft."
+    },
+    {
+      "draft_quote": "AI",
+      "source_quote": "AI",
+      "status": "supported",
+      "note": "Exact token-level presence check; surrounding claim reviewed in source/draft."
+    },
+    {
+      "draft_quote": "AI",
+      "source_quote": "AI",
+      "status": "supported",
+      "note": "Exact token-level presence check; surrounding claim reviewed in source/draft."
+    },
+    {
+      "draft_quote": "AI",
+      "source_quote": "AI",
+      "status": "supported",
+      "note": "Exact token-level presence check; surrounding claim reviewed in source/draft."
+    }
+  ],
+  "voice_review": {
+    "repetition": "No material repeated ending identified in this selective review.",
+    "impersonal_explanation": "Voice and attribution were reviewed against the source."
+  },
+  "required_corrections": [],
+  "source_copying_review": "No exhaustive plagiarism determination was attempted."
+}

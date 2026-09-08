@@ -1,0 +1,26 @@
+{
+  "id": "p02",
+  "source_path": "research/luna-100/sources/raw/2026-02-13-what-is-an-ai-engineer-in-2026-join.md",
+  "revised_path": "research/luna-100/output/prompt-probe/revised/p02-explanation.md",
+  "word_count": 476,
+  "source_checks": [
+    "five research sources",
+    "15+ years and Buildcamp",
+    "1500+ jobs and alternate titles",
+    "interview stories and Grok",
+    "direct conversations public/private",
+    "60 repositories",
+    "agent search limitations",
+    "manual aggregation"
+  ],
+  "substantive_edits": [
+    "Changed flat definitions to active teaching prose",
+    "Separated source roles and limitations",
+    "Removed repeated closing summary"
+  ],
+  "unsupported_claims_removed": [
+    "Removed unsupported success, certainty and commercial claims."
+  ],
+  "full_final_stylint_findings": [],
+  "unresolved_source_conflicts": []
+}

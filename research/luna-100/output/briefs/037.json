@@ -1,0 +1,18 @@
+{
+  "id": "037",
+  "source_path": "research/luna-100/sources/raw/2026-03-20-i-turned-my-telegram-bot-into-a-multi.md",
+  "purpose": "Personal account of building and using a Telegram writing assistant",
+  "required_facts": [
+    {"fact": "Alexey collected background work in Telegram.", "evidence": "Origin Story"},
+    {"fact": "The raw stream included voice notes, files, screenshots, and text.", "evidence": "Origin Story"},
+    {"fact": "ChatGPT helped refine the workflow and produce summary.md.", "evidence": "How I Implemented"},
+    {"fact": "Claude Code built the first working version from the specification.", "evidence": "How I Implemented"},
+    {"fact": "The bot is connected to a GitHub repository.", "evidence": "How I Implemented"},
+    {"fact": "The /process command processes accumulated material in a batch.", "evidence": "Final Version"},
+    {"fact": "Articles are updated incrementally.", "evidence": "Final Version"},
+    {"fact": "Processing commits changes and sends a commit link to Telegram.", "evidence": "Versioning and Feedback"},
+    {"fact": "Whisper via Groq transcribes voice messages.", "evidence": "Technical Capabilities"},
+    {"fact": "The assistant can translate Russian input into English and process images and links.", "evidence": "Technical Capabilities"}
+  ],
+  "author_attribution": "This is Alexey's own project and workflow; implementation capabilities are limited to those described in the source."
+}

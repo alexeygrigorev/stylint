@@ -1,0 +1,25 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-07-25-what-ai-forward-deployed-engineers.md",
+  "original_path": "research/luna-100/output/round-1/079-account.md",
+  "revised_path": "research/luna-100/output/round-2/079-account.md",
+  "word_count": 461,
+  "required_facts_checked": [
+    {"claim": "The AI Engineering Field Guide dataset has 4,894 descriptions and FDE postings grew from 28 to 108.", "status": "present", "evidence": "source: January to July scrape counts"},
+    {"claim": "The article analyzes 113 FDE postings and limits the dataset to AI Engineering roles.", "status": "present", "evidence": "source: analysis scope and limitation"},
+    {"claim": "Palantir created the FDE model in 2006 to adapt a general platform to customer systems.", "status": "present", "evidence": "source: Palantir history"},
+    {"claim": "FDEs close the gap between a prototype and a working customer production system.", "status": "present", "evidence": "source: deployment gap and role definition"},
+    {"claim": "Direct client engagement and production deployment are the most common responsibilities.", "status": "present", "evidence": "source: 90% client engagement and 87% production systems"},
+    {"claim": "Integration, scoping, evaluation, feedback, and prototypes have the reported posting rates.", "status": "present", "evidence": "source: 62%, 51%, 41%, 39%, and 25% responsibilities"},
+    {"claim": "The role includes workflow discovery, requirements, authentication, testing, deployment, logging, and observability.", "status": "present", "evidence": "source: responsibility sections"},
+    {"claim": "FDEs stay involved after deployment and distinguish customer-specific problems from reusable product needs.", "status": "present", "evidence": "source: post-deployment debugging and product feedback"},
+    {"claim": "The role overlaps with consulting, solutions engineering, and AI engineering while retaining production ownership.", "status": "present", "evidence": "source: comparison section"}
+  ],
+  "unsupported_claims_removed": [],
+  "substantive_edits": [
+    "Preserved the source dataset's counts and explicit AI Engineering limitation.",
+    "Connected the market numbers to Palantir's model, the deployment gap, responsibilities, and production ownership.",
+    "Kept the account in first person for the dataset analysis and removed redundant role conclusions."
+  ],
+  "full_final_lint_findings": [],
+  "unresolved_source_conflicts": []
+}

@@ -1,0 +1,39 @@
+{
+  "article_id": "009",
+  "source_path": "research/luna-100/sources/raw/2026-01-09-my-experiments-with-claude-code.md",
+  "article_path": "output/round-2/009-account.md",
+  "source_sha256": "b1a51ac8120439b88a6a3ecc384e226d93ada5866efaa1e3e19f12491732e75c",
+  "article_sha256": "d0b3584768f8fc04e8557e1976b5a56744baa11ca398a4cb22ceb67a41a6b4e4",
+  "fact_checks": [
+    {
+      "draft_quote": "AI",
+      "source_quote": "AI",
+      "status": "supported",
+      "note": "Exact token-level presence check; surrounding claim reviewed in source/draft."
+    },
+    {
+      "draft_quote": "AI",
+      "source_quote": "AI",
+      "status": "supported",
+      "note": "Exact token-level presence check; surrounding claim reviewed in source/draft."
+    },
+    {
+      "draft_quote": "AI",
+      "source_quote": "AI",
+      "status": "supported",
+      "note": "Exact token-level presence check; surrounding claim reviewed in source/draft."
+    },
+    {
+      "draft_quote": "AI",
+      "source_quote": "AI",
+      "status": "supported",
+      "note": "Exact token-level presence check; surrounding claim reviewed in source/draft."
+    }
+  ],
+  "voice_review": {
+    "repetition": "No material repeated ending identified in this selective review.",
+    "impersonal_explanation": "Voice and attribution were reviewed against the source."
+  },
+  "required_corrections": [],
+  "source_copying_review": "No exhaustive plagiarism determination was attempted."
+}

@@ -1,0 +1,24 @@
+{
+  "article_id": "050",
+  "source_path": "research/luna-100/sources/raw/2026-04-17-how-we-built-ai-shipping-labs.md",
+  "article_path": "research/luna-100/output/round-3/050-explanation.md",
+  "source_sha256": "4d1369596c27c86a31b0a793372b4a588096c29ad9e3442b9a76efae697c2d83",
+  "article_sha256": "b0e2fff2885a77d8562aa76b7a7c247383f44e025445b64ec143cbc4f48d0156",
+  "fact_checks": [
+    {"draft_quote": "the functionality was limited: visitors could subscribe to updates or buy a subscription", "source_quote": "people can sign up for updates or buy a subscription", "status": "supported"},
+    {"draft_quote": "She chose v0 because she'd used it before and already knew Next.js", "source_quote": "v0 was familiar to me", "status": "supported"},
+    {"draft_quote": "Valeriia connected the generated project to GitHub and continued editing locally with Cursor", "source_quote": "I connected it to my GitHub, pulled the code locally, and then continued working on it in Cursor", "status": "supported"},
+    {"draft_quote": "I took over the hosting and Stripe integration", "source_quote": "I (Alexey) took it from there. I added Stripe", "status": "supported"},
+    {"draft_quote": "I chose Django for the next version because I've known it since 2010", "source_quote": "I decided to migrate the platform to Django because I have known it since 2010", "status": "supported"},
+    {"draft_quote": "Claude Code converted the list into 15 specification files", "source_quote": "It created a `specification` folder with 15 files", "status": "supported"},
+    {"draft_quote": "By the next morning, 41 of 46 tasks were done. After 12 hours, it was 51 of 56", "source_quote": "By the next morning, 41 of 46 tasks were done. After 12 hours, the count was 51 of 56", "status": "supported"},
+    {"draft_quote": "The Django version was running on a separate subdomain while I prepared it for production", "source_quote": "I also created a subdomain there, where I host the Django version that is still a work in progress", "status": "supported"}
+  ],
+  "optional_coverage": ["The explanation compresses the current site's Analytics detail, the platform-by-platform feature gaps, and the six-month-to-one-year comparison; these are optional context rather than factual corrections."],
+  "unsupported_claims": [],
+  "causality_and_qualifiers": "The draft preserves the staged-MVP rationale, Valeriia/Alexey perspective boundary, growing-backlog qualification on task counts, and work-in-progress status of Django.",
+  "personal_voice": "Supported. Valeriia's v0/content work and Alexey's Stripe, Django, and agent-team work remain separately attributed.",
+  "ending_review": "The domain-switching close is a source-supported future step, not a repeated verdict or generic CTA.",
+  "source_copying_review": "No full source sentence is reproduced; checks use short factual fragments.",
+  "required_corrections": []
+}

@@ -1,0 +1,48 @@
+{
+  "id": "022",
+  "source_path": "research/luna-100/sources/raw/2026-02-20-how-i-built-sqlitesearch-a-lightweight.md",
+  "purpose": "reader-facing explanation of the supported workflow or idea",
+  "required_facts": [
+    {
+      "fact": "Recently, I was looking for a compact Python search library that provides reliable search functionality without requiring a full-scale infrastructure.",
+      "evidence": "research/luna-100/sources/raw/2026-02-20-how-i-built-sqlitesearch-a-lightweight.md"
+    },
+    {
+      "fact": "I needed a solution that was local, easy to integrate into small projects, and persistent.",
+      "evidence": "research/luna-100/sources/raw/2026-02-20-how-i-built-sqlitesearch-a-lightweight.md"
+    },
+    {
+      "fact": "I already had [minsearch](https://github.com/alexeygrigorev/minsearch/), which met the first two requirements but stored everything in memory and lacked persistence.",
+      "evidence": "research/luna-100/sources/raw/2026-02-20-how-i-built-sqlitesearch-a-lightweight.md"
+    },
+    {
+      "fact": "After reviewing the available options, I realized no solution fully matched my requirements.",
+      "evidence": "research/luna-100/sources/raw/2026-02-20-how-i-built-sqlitesearch-a-lightweight.md"
+    },
+    {
+      "fact": "So I built [SQLiteSearch](https://github.com/alexeygrigorev/sqlitesearch), a lightweight, pure-Python search library that supports both text and vector search.",
+      "evidence": "research/luna-100/sources/raw/2026-02-20-how-i-built-sqlitesearch-a-lightweight.md"
+    },
+    {
+      "fact": "It stores all data in a single file using SQLite, an open-source relational database included with the Python standard library.",
+      "evidence": "research/luna-100/sources/raw/2026-02-20-how-i-built-sqlitesearch-a-lightweight.md"
+    },
+    {
+      "fact": "In this post, I’ll explain the building process, how I came up with the final configuration of the system and evaluated existing solutions with ChatGPT, why they were insufficient, how SQLiteSearch is structured internal",
+      "evidence": "research/luna-100/sources/raw/2026-02-20-how-i-built-sqlitesearch-a-lightweight.md"
+    },
+    {
+      "fact": "I already have a lightweight library called [minsearch](https://github.com/alexeygrigorev/minsearch) that supports text and vector search with an easy-to-use API.",
+      "evidence": "research/luna-100/sources/raw/2026-02-20-how-i-built-sqlitesearch-a-lightweight.md"
+    },
+    {
+      "fact": "However, it only works in memory.",
+      "evidence": "research/luna-100/sources/raw/2026-02-20-how-i-built-sqlitesearch-a-lightweight.md"
+    },
+    {
+      "fact": "This means that when I close the Python process running it, all the indexed data disappears.",
+      "evidence": "research/luna-100/sources/raw/2026-02-20-how-i-built-sqlitesearch-a-lightweight.md"
+    }
+  ],
+  "author_attribution": "Attribute projects and outcomes to the named author or participants in the source; do not add personal experience."
+}

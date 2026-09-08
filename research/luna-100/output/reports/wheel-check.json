@@ -1,0 +1,11 @@
+{
+  "wheel": "/tmp/stylint-luna-100-wheel/stylint-0.1.1-py3-none-any.whl",
+  "sha256": "0308fe04dcc48a0f6558f04100fb7d8437b4338d18501721a673243e80e1a066",
+  "bundled_files_match_checkout": {
+    "stylint/rules/voice.py": true,
+    "stylint/style_guide/alexey.md": true,
+    "stylint/style_guide/prompt-alexey-brief.md": true,
+    "stylint/style_guide/prompt-alexey-draft.md": true,
+    "stylint/style_guide/prompt-alexey-rewrite.md": true
+  }
+}

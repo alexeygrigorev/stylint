@@ -1,0 +1,26 @@
+{
+  "id": "p01",
+  "source_path": "research/luna-100/sources/raw/2026-02-13-what-is-an-ai-engineer-in-2026-join.md",
+  "revised_path": "research/luna-100/output/prompt-probe/revised/p01-account.md",
+  "word_count": 444,
+  "source_checks": [
+    "new title inconsistent",
+    "Buildcamp Office Hours prompted research",
+    "15+ years experience",
+    "1500+ postings",
+    "Twitter/X Reddit/Grok",
+    "direct conversations",
+    "around 60 repositories",
+    "agents missed/hallucinated and aided queries"
+  ],
+  "substantive_edits": [
+    "Cut repeated final premise",
+    "Changed flat source labels to active first-person explanation",
+    "Split dense source and preserved uncertainty"
+  ],
+  "unsupported_claims_removed": [
+    "Removed unsupported success, certainty and commercial claims."
+  ],
+  "full_final_stylint_findings": [],
+  "unresolved_source_conflicts": []
+}

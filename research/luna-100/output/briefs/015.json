@@ -1,0 +1,18 @@
+{
+  "id": "015",
+  "source_path": "research/luna-100/sources/raw/2026-01-30-telegram-assistant.md",
+  "purpose": "personal account of Alexey building a Telegram-based writing assistant for organizing background work into article drafts",
+  "required_facts": [
+    {"fact": "Alexey wanted to share the early thinking, experiments, and workflows normally hidden behind finished public work.", "evidence": "Source lines 3-7: the background-work motivation is stated."},
+    {"fact": "The initial workflow used a Telegram chat as a brain dump for ideas that helped create the first newsletter editions.", "evidence": "Source line 18: the initial chat and newsletter role are described."},
+    {"fact": "The chat accumulated voice notes, files, screenshots, partial thoughts, corrections, and follow-ups that were difficult to categorize.", "evidence": "Source lines 23-26: the unstructured backlog and switching friction are described."},
+    {"fact": "Turning the stream into structured material required manual rereading, sorting, and stitching and was slow and mentally expensive.", "evidence": "Source lines 26-30: manual processing cost is stated."},
+    {"fact": "ChatGPT was used to refine the workflow and save the conversation as summary.md, which became the system specification.", "evidence": "Source lines 34-41: specification creation and ChatGPT's role are described."},
+    {"fact": "Claude Code followed the specification to build the first working version, a Telegram bot connected to a GitHub repository.", "evidence": "Source lines 46-50: implementation, repository, and testing are described."},
+    {"fact": "The /process command batches accumulated material, assigns items to existing or new articles, and updates articles incrementally.", "evidence": "Source lines 63-70: capture and processing workflow are specified."},
+    {"fact": "Each processing run creates a GitHub commit with a change explanation and sends the commit link back to Telegram.", "evidence": "Source lines 72-77: versioning and feedback behavior are described."},
+    {"fact": "The /check-tasks command processes bug reports and feature suggestions and can update the prompt or code before committing changes.", "evidence": "Source lines 79-84: configuration update flow is stated."},
+    {"fact": "The assistant uses Whisper via Groq, Groq Vision, translation into English, link summarization, and Git-based diffs as focused capabilities.", "evidence": "Source lines 95-117: transcription, image, multilingual, link, and Git orchestration capabilities are described."}
+  ],
+  "author_attribution": "Attribute the assistant, workflow, and implementation choices to Alexey; preserve the distinction between capturing background work and publishing reviewed articles."
+}

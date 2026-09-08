@@ -1,0 +1,21 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-08-28-from-idea-to-production.md",
+  "original_path": "research/luna-100/output/round-1/093-account.md",
+  "revised_path": "research/luna-100/output/round-2/093-account.md",
+  "word_count": 433,
+  "required_facts_checked": [
+    {"claim": "The framework has Build, Deploy, and Operate stages.", "status": "present", "evidence": "source: I showed how to do it in 3 stages"},
+    {"claim": "The specification begins with a dictation-mode conversation.", "status": "present", "evidence": "source: open it in dictation mode"},
+    {"claim": "The frontend is built before the backend with a service layer.", "status": "present", "evidence": "source: I build the frontend before the backend"},
+    {"claim": "A manual scenario anchors the user journey.", "status": "present", "evidence": "source: Come up with a test"},
+    {"claim": "The service layer becomes an OpenAPI specification.", "status": "present", "evidence": "source: create the API specification"},
+    {"claim": "The backend starts with an in-memory store and later uses SQLite.", "status": "present", "evidence": "source: mocked database... SQLite"},
+    {"claim": "Postgres and containerization support deployment.", "status": "present", "evidence": "source: Containerize it... Add Postgres support"},
+    {"claim": "CI/CD runs tests, deploys, and verifies health.", "status": "present", "evidence": "source: validates that the deploy is successful"},
+    {"claim": "The complete sequence contains 28 steps.", "status": "present", "evidence": "source: 28 concrete steps"}
+  ],
+  "unsupported_claims_removed": [],
+  "substantive_edits": ["Recast the sequence as a first-person account while keeping each stage and handoff source-supported.", "Restored the manual scenario, OpenAPI derivation, persistence progression, and health verification.", "Kept the final production boundary modest rather than implying a complete system."],
+  "full_final_lint_findings": [],
+  "unresolved_source_conflicts": []
+}

@@ -1,0 +1,18 @@
+{
+  "id": "036",
+  "source_path": "research/luna-100/sources/raw/2026-03-16-karpathys-autoresearch-went-viral.md",
+  "purpose": "Explanation of the controlled autoresearch experiment workflow",
+  "required_facts": [
+    {"fact": "Autoresearch delegates the experiment loop to an agent.", "evidence": "Core Idea"},
+    {"fact": "prepare.py is fixed and contains evaluation logic.", "evidence": "Repository Structure"},
+    {"fact": "train.py is the editable artifact.", "evidence": "Repository Structure"},
+    {"fact": "program.md describes agent behavior in natural language.", "evidence": "Repository Structure"},
+    {"fact": "A baseline is recorded before experiments begin.", "evidence": "Repository Structure"},
+    {"fact": "Each run edits, commits, executes, and evaluates train.py.", "evidence": "Experiment loop"},
+    {"fact": "Non-improving changes are rolled back.", "evidence": "Experiment loop"},
+    {"fact": "A fixed time budget keeps comparisons meaningful.", "evidence": "Optimization Process"},
+    {"fact": "Validation bits per byte is lower-is-better in the example.", "evidence": "Optimization Process"},
+    {"fact": "The pattern could be applied to writing style prompts.", "evidence": "Project Idea"}
+  ],
+  "author_attribution": "The workflow is explained from Alexey's reading of Karpathy's project; no authorship of autoresearch is claimed."
+}

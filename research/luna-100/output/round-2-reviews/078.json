@@ -1,0 +1,25 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-07-22-ai-native-development-specifications.md",
+  "original_path": "research/luna-100/output/round-1/078-explanation.md",
+  "revised_path": "research/luna-100/output/round-2/078-explanation.md",
+  "word_count": 601,
+  "required_facts_checked": [
+    {"claim": "Unclear tasks make agents fill in missing decisions, even when the result looks convincing.", "status": "present", "evidence": "source: vague task and capable agent behavior"},
+    {"claim": "Spec-driven development records users, problems, and expected behavior before code.", "status": "present", "evidence": "source: specs before code"},
+    {"claim": "A chat assistant can clarify a vague idea and save the plan before backlog creation.", "status": "present", "evidence": "source: one question at a time and plan.md"},
+    {"claim": "Backlog tasks should be session-sized and independent, with MVP scope reviewed.", "status": "present", "evidence": "source: task decomposition and scope review"},
+    {"claim": "AGENTS.md and linked documents provide context engineering between sessions.", "status": "present", "evidence": "source: AGENTS.md, CLAUDE.md, process and testing documents"},
+    {"claim": "Loop engineering resumes work until a checkable condition is true.", "status": "present", "evidence": "source: groomed issues or passing tests as stop conditions"},
+    {"claim": "A software engineer implements a groomed issue while QA verifies without fixing code.", "status": "present", "evidence": "source: engineer and QA role definitions"},
+    {"claim": "Graph engineering assigns PM, engineer, and QA responsibilities through an orchestrator.", "status": "present", "evidence": "source: orchestrator lifecycle"},
+    {"claim": "The multi-agent process costs more time and tokens than a direct loop.", "status": "present", "evidence": "source: explicit complexity qualification"}
+  ],
+  "unsupported_claims_removed": [],
+  "substantive_edits": [
+    "Recast the article as Alexey's teaching explanation of specification, context, loop, and graph engineering.",
+    "Preserved the session-sized backlog, living documents, checkable stopping condition, QA independence, and complexity qualification.",
+    "Removed the draft's repeated summary language and tightened the orchestrator lifecycle."
+  ],
+  "full_final_lint_findings": [],
+  "unresolved_source_conflicts": []
+}

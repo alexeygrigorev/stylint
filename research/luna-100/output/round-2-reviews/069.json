@@ -1,0 +1,28 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-06-26-six-projects-that-didnt-make-it.md",
+  "original_path": "research/luna-100/output/round-1/069-account.md",
+  "revised_path": "research/luna-100/output/round-2/069-account.md",
+  "word_count": 747,
+  "required_facts_checked": [
+    {"claim": "The author has 195 personal GitHub repositories and projects in two organizations.", "status": "present", "evidence": "source: \"195 repositories\" and DataTalks.Club and AI Shipping Labs"},
+    {"claim": "Code Explainer was a Streamlit app built in October 2025.", "status": "present", "evidence": "source: \"October 2025\" and Streamlit"},
+    {"claim": "Claude Code made a separate repository-reading interface unnecessary.", "status": "present", "evidence": "source: agents could clone, read, and answer directly"},
+    {"claim": "The fitness tracker requirements included workout details and unfinished-session persistence.", "status": "present", "evidence": "source: presets, warm-ups, weights, repetitions, and saved unfinished sessions"},
+    {"claim": "The metabolism simulator used a Ralph Wiggum loop and failed to make logging reliable.", "status": "present", "evidence": "source: Ralph Wiggum; food and exercise logging failed"},
+    {"claim": "The simulator displayed demo data instead of fixing a broken API.", "status": "present", "evidence": "source: displayed demo data while API remained broken"},
+    {"claim": "CodeHive attempted a multi-agent pipeline and became too ambitious.", "status": "present", "evidence": "source: orchestrator, PM, SWE, QA, on-call and multiple providers"},
+    {"claim": "Litehive used local state, worktrees, recovery, logs, and provider engines but did not become stable.", "status": "present", "evidence": "source: SQLite, worktrees, task recovery, logs, agent engines, more than a month"},
+    {"claim": "Heru, Quse, and Merm were smaller tools with distinct surviving uses.", "status": "present", "evidence": "source: provider handling, quota checks, and pure Python Mermaid renderer"}
+  ],
+  "unsupported_claims_removed": [
+    "The original claim that repositories had empty commit histories was unsupported and was removed."
+  ],
+  "substantive_edits": [
+    "Removed the invented empty-commit-history claim and retained the supported repository count.",
+    "Reorganized the account around Code Explainer, the fitness and metabolism experiments, the CodeHive/Litehive lineage, and the surviving tools.",
+    "Restored source-supported implementation details and outcomes while separating the author's observations from the projects' behavior.",
+    "Split dense sentences and paragraphs for readability without adding headings or boilerplate."
+  ],
+  "full_final_lint_findings": [],
+  "unresolved_source_conflicts": []
+}

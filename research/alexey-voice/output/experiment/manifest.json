@@ -1,0 +1,333 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-07",
+  "purpose": "Prompt calibration and review examples; not model training or human-approved preferences.",
+  "sources": {
+    "minsearch": {
+      "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-05-29-minsearch-the-small-search-library.md",
+      "sha256": "3d89fffff6bc331db36e78834bbeaf7f68cefc0b659c7d7ac0b9b76a5cbe3ed2",
+      "supporting_lines": {
+        "M1": [
+          7,
+          9
+        ],
+        "M2": [
+          26
+        ],
+        "M3": [
+          28
+        ],
+        "M4": [
+          30
+        ],
+        "M5": [
+          32
+        ],
+        "M6": [
+          40,
+          44
+        ],
+        "M7": [
+          54,
+          56
+        ],
+        "M8": [
+          78,
+          80
+        ],
+        "M9": [
+          82
+        ],
+        "M10": [
+          114,
+          118,
+          120
+        ]
+      },
+      "required_fact_ids": [
+        "M1",
+        "M3",
+        "M4",
+        "M6",
+        "M7",
+        "M8",
+        "M9",
+        "M10"
+      ]
+    },
+    "phone": {
+      "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-05-22-the-system-i-built-to-ship-code-from.md",
+      "sha256": "ec31ca9a192e3ca83f844f95fdb9de7a8c3696baffb56934fbd4157412448677",
+      "supporting_lines": {
+        "P1": [
+          7,
+          13,
+          15,
+          18,
+          20,
+          22,
+          24
+        ],
+        "P2": [
+          44
+        ],
+        "P3": [
+          46
+        ],
+        "P4": [
+          48
+        ],
+        "P5": [
+          52
+        ],
+        "P6": [
+          54
+        ],
+        "P7": [
+          57,
+          65,
+          67
+        ],
+        "P8": [
+          69,
+          70,
+          71
+        ],
+        "P9": [
+          77
+        ]
+      },
+      "required_fact_ids": [
+        "P1",
+        "P2",
+        "P3",
+        "P4",
+        "P5",
+        "P6",
+        "P7",
+        "P8"
+      ]
+    },
+    "sqlitesearch": {
+      "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-02-20-how-i-built-sqlitesearch-a-lightweight.md",
+      "sha256": "c279de0307a81bef85ed4496a0faaa1ae02daed3b027466a7a2e8523ea73b78d",
+      "supporting_lines": {
+        "S1": [
+          19
+        ],
+        "S2": [
+          23
+        ],
+        "S3": [
+          25
+        ],
+        "S4": [
+          29,
+          30,
+          31,
+          32,
+          33,
+          34
+        ],
+        "S5": [
+          42,
+          44,
+          58
+        ],
+        "S6": [
+          64
+        ],
+        "S7": [
+          66
+        ],
+        "S8": [
+          68,
+          74,
+          80
+        ],
+        "S9": [
+          97,
+          99
+        ]
+      },
+      "required_fact_ids": [
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7",
+        "S8",
+        "S9"
+      ]
+    }
+  },
+  "generations": [
+    {
+      "case": "minsearch",
+      "condition": "baseline",
+      "agent": "luna_baseline",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "low",
+      "prompt": "baseline-prompt.txt",
+      "brief": "briefs/minsearch.md",
+      "output": "baseline/minsearch.md",
+      "lint_during_generation": false,
+      "original_article_access": false
+    },
+    {
+      "case": "phone",
+      "condition": "baseline",
+      "agent": "luna_baseline",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "low",
+      "prompt": "baseline-prompt.txt",
+      "brief": "briefs/phone.md",
+      "output": "baseline/phone.md",
+      "lint_during_generation": false,
+      "original_article_access": false
+    },
+    {
+      "case": "minsearch",
+      "condition": "guided",
+      "agent": "luna_guided",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "low",
+      "prompt": "prompts/alexey-draft-v1.md",
+      "brief": "briefs/minsearch.md",
+      "output": "guided/minsearch.md",
+      "lint_during_generation": false,
+      "original_article_access": false
+    },
+    {
+      "case": "phone",
+      "condition": "guided",
+      "agent": "luna_guided",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "low",
+      "prompt": "prompts/alexey-draft-v1.md",
+      "brief": "briefs/phone.md",
+      "output": "guided/phone.md",
+      "lint_during_generation": false,
+      "original_article_access": false
+    },
+    {
+      "case": "minsearch",
+      "condition": "rewritten",
+      "agent": "luna_rewrite",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "low",
+      "prompt": "prompts/alexey-rewrite-v2.md",
+      "brief": "briefs/minsearch.md",
+      "output": "rewritten/minsearch.md",
+      "lint_during_generation": false,
+      "original_article_access": false,
+      "input_draft": "baseline/minsearch.md"
+    },
+    {
+      "case": "phone",
+      "condition": "rewritten",
+      "agent": "luna_rewrite",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "low",
+      "prompt": "prompts/alexey-rewrite-v2.md",
+      "brief": "briefs/phone.md",
+      "output": "rewritten/phone.md",
+      "lint_during_generation": false,
+      "original_article_access": false,
+      "input_draft": "baseline/phone.md"
+    },
+    {
+      "case": "sqlitesearch",
+      "condition": "held-out-topic",
+      "agent": "luna_holdout",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "low",
+      "prompt": "prompts/alexey-draft-v2.md",
+      "brief": "briefs/sqlitesearch.md",
+      "output": "holdout/sqlitesearch-raw.md",
+      "lint_during_generation": false,
+      "original_article_access": false
+    },
+    {
+      "case": "sqlitesearch",
+      "condition": "same-topic-clean-brief-resample",
+      "agent": "luna_clean_brief",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "low",
+      "prompt": "prompts/alexey-draft-v2.md",
+      "brief": "briefs-v2/sqlitesearch.md",
+      "output": "holdout/sqlitesearch-clean-brief.md",
+      "lint_during_generation": false,
+      "original_article_access": false
+    }
+  ],
+  "corrections": [
+    {
+      "case": "minsearch",
+      "editor": "parent assistant",
+      "input": "rewritten/minsearch.md",
+      "output": "corrected/minsearch.md",
+      "checks": [
+        "source ledger",
+        "abstract-subject review",
+        "noun-phrase-smell review",
+        "full default stylint without ignored tags"
+      ]
+    },
+    {
+      "case": "phone",
+      "editor": "parent assistant",
+      "input": "rewritten/phone.md",
+      "output": "corrected/phone.md",
+      "checks": [
+        "source ledger",
+        "abstract-subject review",
+        "noun-phrase-smell review",
+        "full default stylint without ignored tags"
+      ]
+    },
+    {
+      "case": "sqlitesearch",
+      "editor": "parent assistant",
+      "input": "holdout/sqlitesearch-clean-brief.md",
+      "output": "corrected/sqlitesearch.md",
+      "checks": [
+        "source ledger",
+        "abstract-subject review",
+        "noun-phrase-smell review",
+        "full default stylint without ignored tags"
+      ]
+    }
+  ],
+  "isolation": "Each generation group used a fresh task context; two pilot cases share that group context. General system instructions still apply. Parent had source access.",
+  "generation_policy": "Read only listed inputs, write assigned output, preserve first completed draft, no stylint. Rewrite condition reads baseline drafts. Parent performs final lint and editing.",
+  "prompt_revisions": {
+    "v1": "Initial positive author guidance.",
+    "v2": "Separate scope instructions from publishable facts, preserve explicit chronology, request normal contractions.",
+    "alexey-brief": "Added after the held-out topic exposed instruction leakage. The clean brief was prepared manually; this briefing prompt was not itself tested on an LLM."
+  },
+  "hashes": {
+    "baseline/minsearch.md": "5a3cae33a6d78aeca3245a518267f56364f4e075300c6f2cd126664ce50bc9e4",
+    "baseline/phone.md": "28b82c2f2a0eb41731a9631f2751a124bf92f1c22cd5bbafd06d0569651ef8fd",
+    "baseline-prompt.txt": "1ffcba30729b11dd2f28a46ea6e208828cdbfcf3d33b61dac6ddc965b1fdd0e9",
+    "briefs/minsearch.md": "435fff8966977c41ced2684d03cfc6707afdcd49ecaef26df71065194ec5355d",
+    "briefs/phone.md": "74054eb93b58f0979471ed64b8fca083100882a8edfce8243f5b6aae416f2263",
+    "briefs/sqlitesearch.md": "de0a6892d7cd54dcb14a65f3c3e0b814ad3fcd6a2087ed37ec600f335a6f06d8",
+    "briefs-v2/sqlitesearch.md": "63172ae495d35a215b3f3ad9d36aad75e82c61574bb854658a49f1889b7b5ecb",
+    "corrected/minsearch.md": "e750094c075073c177dc8b5e411ec83aa10365bf6a80aa862e42b07a01f09bb6",
+    "corrected/phone.md": "092aabb2c91c71a4aa4185ff1c26ea20116307cf5bbbb8a4afc7175820529f57",
+    "corrected/sqlitesearch.md": "b7ef4b0143aa968e44f37433e1012b253ff3429cad8a89d8e401f2a3b47b16b4",
+    "guided/minsearch.md": "d54a4fb94096175d1a542096796597c0c567bf2db2cd45b1c4cd3c07a97924ef",
+    "guided/phone.md": "bd681e258765d52ee4bbfeb775b0c82650d17d4897fa899e0cfcd7a9311cf460",
+    "holdout/sqlitesearch-clean-brief.md": "f25d4122a93baafb56166daec137b30f23898fd783aa7e83b2bb393a336057b7",
+    "holdout/sqlitesearch-raw.md": "8241d7117e514f6f1b67f82e34db5a1b0ae730b4fd4fb355725461a8e23f2d09",
+    "prompts/alexey-brief-v1.md": "f9fce80ca2c1b268bf2ca5eaaf784a7b9f9e94191ca1be6d826c10d1576a78b9",
+    "prompts/alexey-draft-v1.md": "0d1c2206c2faf45ef70e0708bee8df93bf501386115335279d262d4116c5b2fa",
+    "prompts/alexey-draft-v2.md": "2026836780f23812c9478d019e3db49becb21c809e85dac6c8c285a921df7e76",
+    "prompts/alexey-rewrite-v2.md": "69a3abb9fe3cccaf92dd36f5907f9d96c88d85b0af952567333c14d51bdbddcc",
+    "rewritten/minsearch.md": "b0e23210c6eaf215c47aeda881107e5f348c06840214ba1dfd6de45b696810b0",
+    "rewritten/phone.md": "74110c8d16023e1cd87594885a1585f6295ef975c7fad66c448c3655e4c7aa93"
+  }
+}

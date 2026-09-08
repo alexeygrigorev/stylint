@@ -1,0 +1,57 @@
+{
+  "id": "088",
+  "source_path": "research/luna-100/sources/raw/2026-08-10-deploy-a-full-stack-app-with-ai-coding.md",
+  "mode": "explanation",
+  "article_purpose": "explanation of the supported workflow or idea",
+  "author_attribution_notes": "Keep Alexey’s first-person framing only for actions and observations explicitly present in the supplied source; preserve attribution to DataTalks.Club, AI Shipping Labs, and other projects where named.",
+  "required_facts": [
+    {
+      "fact": "This is the third article in a series for , the free course we run at DataTalks.Club.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-10-deploy-a-full-stack-app-with-ai-coding.md (source sentence 1)"
+    },
+    {
+      "fact": "All articles in the series:\n\n* Part 1: \n* Part 2: \n* Part 3:  (this article)\n* Part 4: \n* Part 5: TBA\n\nIn this article, I want to take a web application and make it accessible for everyone on the internet.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-10-deploy-a-full-stack-app-with-ai-coding.md (source sentence 2)"
+    },
+    {
+      "fact": "We will:\n\n* Take the application that’s already working locally\n* Containerize the application\n* Switch from SQLite to Postgres\n* Add integration tests\n* Deploy to AWS\n* Set up CI/CD via GitHub Actions\n\nIt’s based on the second half of the ",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-10-deploy-a-full-stack-app-with-ai-coding.md (source sentence 3)"
+    },
+    {
+      "fact": "## Recap\n\nIn the , we started building an application for system-design interviews.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-10-deploy-a-full-stack-app-with-ai-coding.md (source sentence 4)"
+    },
+    {
+      "fact": "An interviewer creates a session and shares a link with a candidate.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-10-deploy-a-full-stack-app-with-ai-coding.md (source sentence 5)"
+    },
+    {
+      "fact": "When the candidate updates something on the canvas, the interviewer sees the updates in real time.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-10-deploy-a-full-stack-app-with-ai-coding.md (source sentence 6)"
+    },
+    {
+      "fact": "* First, we created the frontend only with React\n* Then we created an OpenAPI specification for defining the frontend-backend API\n* Next, we created the backend from this specification\n* We added database support with SQLite and SQLAlchemy\n",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-10-deploy-a-full-stack-app-with-ai-coding.md (source sentence 7)"
+    },
+    {
+      "fact": "## Containerization\n\nWhen we run the application locally, we need to execute two commands: one for the frontend and one for the backend.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-10-deploy-a-full-stack-app-with-ai-coding.md (source sentence 8)"
+    },
+    {
+      "fact": "Let’s run them in two separate terminals:\n\n\n\nSo, we have two services, and we need to deploy them to production.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-10-deploy-a-full-stack-app-with-ai-coding.md (source sentence 9)"
+    },
+    {
+      "fact": "We may think that we need two containers: one for the frontend and one for the backend.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-10-deploy-a-full-stack-app-with-ai-coding.md (source sentence 10)"
+    },
+    {
+      "fact": "During development, we run the frontend as a separate service because we use Vite.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-10-deploy-a-full-stack-app-with-ai-coding.md (source sentence 11)"
+    },
+    {
+      "fact": "Vite watches the frontend code and refreshes the page when we make changes.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-10-deploy-a-full-stack-app-with-ai-coding.md (source sentence 12)"
+    }
+  ]
+}

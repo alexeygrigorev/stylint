@@ -1,0 +1,82 @@
+schema_version: 1
+sources:
+  - id: website
+    title: "2025-12-05-how-i-rebuilt-my-website-in-10-minutes.md"
+    type: article
+    locator: "/home/alexey/git/telegram-writing-assistant/reference/substack/2025-12-05-how-i-rebuilt-my-website-in-10-minutes.md"
+    captured: 2026-09-07
+    published: 2025-12-05
+    authority: personal
+    summary: "An early personal experiment, with a short chronological opener and no mandatory roadmap."
+    page: wiki/sources/website.md
+    status: selected
+  - id: minsearch
+    title: "2026-05-29-minsearch-the-small-search-library.md"
+    type: article
+    locator: "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-05-29-minsearch-the-small-search-library.md"
+    captured: 2026-09-07
+    published: 2026-05-29
+    authority: personal
+    summary: "A library retrospective connecting teaching constraints to implementation choices."
+    page: wiki/sources/minsearch.md
+    status: selected
+  - id: phone
+    title: "2026-05-22-the-system-i-built-to-ship-code-from.md"
+    type: article
+    locator: "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-05-22-the-system-i-built-to-ship-code-from.md"
+    captured: 2026-09-07
+    published: 2026-05-22
+    authority: personal
+    summary: "A personal workflow explanation with everyday motives and explicit writing provenance."
+    page: wiki/sources/phone.md
+    status: selected
+  - id: database
+    title: "2026-03-06-how-i-dropped-our-production-database.md"
+    type: article
+    locator: "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-03-06-how-i-dropped-our-production-database.md"
+    captured: 2026-09-07
+    published: 2026-03-06
+    authority: personal
+    summary: "An incident account preserving the sequence of mistaken decisions."
+    page: wiki/sources/database.md
+    status: selected
+  - id: abandoned
+    title: "2026-06-26-six-projects-that-didnt-make-it.md"
+    type: article
+    locator: "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-06-26-six-projects-that-didnt-make-it.md"
+    captured: 2026-09-07
+    published: 2026-06-26
+    authority: personal
+    summary: "A reflective account of abandoned projects with unresolved outcomes."
+    page: wiki/sources/abandoned.md
+    status: selected
+  - id: readme
+    title: "2026-07-16-how-to-write-a-good-readme.md"
+    type: article
+    locator: "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-07-16-how-to-write-a-good-readme.md"
+    captured: 2026-09-07
+    published: 2026-07-16
+    authority: personal
+    summary: "A teaching article that opens with the reader and explains review criteria."
+    page: wiki/sources/readme.md
+    status: selected
+  - id: launch
+    title: "2026-08-31-ai-dev-tools-zoomcamp-2026-starts.md"
+    type: article
+    locator: "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-08-31-ai-dev-tools-zoomcamp-2026-starts.md"
+    captured: 2026-09-07
+    published: 2026-08-31
+    authority: personal
+    summary: "A recent announcement with dates, links, and a curriculum."
+    page: wiki/sources/launch.md
+    status: selected
+  - id: sqlitesearch
+    title: SQLiteSearch origin and implementation
+    type: article
+    locator: "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-02-20-how-i-built-sqlitesearch-a-lightweight.md"
+    captured: 2026-09-07
+    published: 2026-02-20
+    authority: personal
+    summary: A reserved topic connecting persistence, familiarity with LSH, API compatibility and a plan for implementation.
+    page: wiki/sources/sqlitesearch.md
+    status: selected

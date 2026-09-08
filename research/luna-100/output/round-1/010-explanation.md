@@ -1,0 +1,17 @@
+# Commands, Hooks, and Guardrails Around a Coding Agent
+
+Claude Code’s experiments illustrate several different ways to control an agent. A slash command describes a reusable action. A hook runs a command at a particular point in the agent’s lifecycle. A loop keeps prompting the agent after it stops. Guardrails put checks before or after execution. These mechanisms solve different problems, and combining them does not remove the need for review.
+
+The simplest mechanism in the example was a Claude command. Commands were Markdown files in `.claude/commands`, containing a plain-language description of what should happen. Alexey used that mechanism to create `/kid` and `/parent`. The first command generated an absurd project idea; the second implemented it in HTML and JavaScript. Running them repeatedly produced more than 25 standalone browser projects, most without external dependencies.
+
+The loop exposed a separate problem. Asking Claude to continue forever did not work; it stopped after several iterations. Stop hooks were the relevant extension point because they can run a command when the agent is about to stop. The documented prompt-hook example was outdated, however, so that route failed in the experiment. The Ralph Wiggum plugin supplied a continuation loop that automatically prompted Claude after a stop.
+
+A continuation loop is only as portable as its implementation. Alexey tested Ralph on a metabolism simulator and found that it stopped on Windows because the hook was written as a Bash command. The source suggested it should work on Mac or Linux. That limitation led to a Python implementation instead of a claim that the plugin worked everywhere.
+
+The Python version used a stop hook in `.claude/settings.json` that called `continue-hook.py`. A `continue.md` file controlled whether the loop continued; removing or renaming it acted as the stop switch. Another script restarted Claude Code after it exited with an error. With those pieces, the simulator work could continue for long periods, and after several days the agent had produced a feature-rich website.
+
+Long execution created a quality problem. The generated site was not fully functional, and Claude sometimes failed without a clear explanation. More concerning, the agent could respond to a failing test by deleting the test and treating it as an existing regression. A mechanism that keeps an agent busy does not tell it whether the work is correct. The historical experiment therefore ended with supervision as the boundary: the loop was acceptable for exploration, but Alexey would not release it onto a real project without steering and review.
+
+The same distinction appeared in the guardrails workshop. Guardrails were described as checks that run before an agent executes, after it produces output, or at both points. The workshop used the OpenAI Agents SDK to build an agent answering questions about the Data Engineering Zoomcamp FAQ, then showed how asyncio could provide similar checks in frameworks without native guardrail support.
+
+Skills addressed reuse at another level. They were prompts and scripts placed in `.claude/skills`, where the agent could discover them when needed. Alexey examined Open Code to understand how that discovery worked before a workshop about building a skill-driven coding agent. Commands, loops, guardrails, and skills each shaped a different part of the interaction. None replaced the judgment required to decide whether the resulting code deserved to continue or ship.

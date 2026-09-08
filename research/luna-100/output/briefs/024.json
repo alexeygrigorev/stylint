@@ -1,0 +1,18 @@
+{
+  "id": "024",
+  "source_path": "research/luna-100/sources/raw/2026-02-26-what-is-an-ai-engineer-my-perspective.md",
+  "purpose": "reader-facing explanation of AI Engineering responsibilities, organizational settings, and core skills",
+  "required_facts": [
+    {"fact": "An AI Engineer integrates AI into a product and keeps the system reliable, evaluated, maintained, and improved.", "evidence": "Source line 45: the role definition is stated."},
+    {"fact": "The role translates product requirements into scoped AI problems and selects appropriate models and tools.", "evidence": "Source lines 50-53: problem and integration responsibilities are listed."},
+    {"fact": "Prompt versioning, success metrics, comprehensive tests, deployment, monitoring, cost optimization, and security are included.", "evidence": "Source lines 54-57: responsibilities are enumerated."},
+    {"fact": "Unlike a typical data-science or ML-engineering distinction, AI Engineering often uses third-party foundation models through APIs.", "evidence": "Source lines 61-65: model-provider context and role distinction are explained."},
+    {"fact": "AI Engineering work may be distributed across data scientists, ML engineers, and software engineers in organizations with established ML teams.", "evidence": "Source lines 70-75: distributed responsibility is described."},
+    {"fact": "Dedicated AI Engineers may sit in product engineering, centralized AI platform, or applied ML groups.", "evidence": "Source line 75: dedicated-role settings are listed."},
+    {"fact": "Startups often use a product-focused generalist who moves from experimentation to production hardening.", "evidence": "Source line 77: startup role shape is stated."},
+    {"fact": "RAG skill includes ingestion, chunking, embeddings, semantic search, and grounded response generation.", "evidence": "Source lines 85-89: RAG pipeline components are specified."},
+    {"fact": "Agentic skill includes function calling, structured tools, MCP integration, and reasoning flows for tool use.", "evidence": "Source lines 91-95: agentic-system components are described."},
+    {"fact": "Evaluation and observability include real-input tests, datasets, quality metrics, logging, failure tracking, dashboards, and quality-drift analysis.", "evidence": "Source lines 97-107: evaluation and monitoring practices are listed."}
+  ],
+  "author_attribution": "Explain the responsibilities and skills as Alexey's documented perspective, retaining the qualification that organizational maturity changes the role."
+}

@@ -1,0 +1,724 @@
+{
+  "articles": 100,
+  "briefs": 100,
+  "unique_documents": 100,
+  "min_words": 443,
+  "max_words": 546,
+  "target_length_violations": [
+    {
+      "id": "035",
+      "words": 443
+    },
+    {
+      "id": "063",
+      "words": 443
+    },
+    {
+      "id": "088",
+      "words": 448
+    }
+  ],
+  "word_count": "Whitespace-separated including title; some generator counts differed. Originals retained, corrected in round 2.",
+  "documents": [
+    {
+      "id": "001",
+      "file": "001-account.md",
+      "words": 478,
+      "sha256": "a8f8acdc1da3fad9184a84b0679f697cee7637d8d01424c4807ee329e4fcea28",
+      "brief_sha256": "19196f35817e5b16f8cbc34a233e72e056f191450a0bd8a03197be5f8fb2dd12"
+    },
+    {
+      "id": "002",
+      "file": "002-explanation.md",
+      "words": 524,
+      "sha256": "d371027ac6845bc6ba1541974ef9ddf3d59b65b994e5f8f41d2e47228fd74eab",
+      "brief_sha256": "bcb908220feb5385b2e3818db76151c71e2c5ad367be47f5ec57c68fc5a21c17"
+    },
+    {
+      "id": "003",
+      "file": "003-account.md",
+      "words": 517,
+      "sha256": "ccda386659f352bef19d5fa063a0e65b5ab28c5df3c9ac62006fd5c7d8646838",
+      "brief_sha256": "f590f46e5f0e4b1c182f8d41c36f76d9af4cbc38c9b4c0a27c2efec756e92385"
+    },
+    {
+      "id": "004",
+      "file": "004-explanation.md",
+      "words": 525,
+      "sha256": "dfa12a29c5df566a3fc4f44e355aec5cc63da9b945f5de641d467346d616b7ad",
+      "brief_sha256": "c1adc7c4ed61c09c11a42ecaad3c9e0eaf8507b8037ce52bda5e16896b1e563b"
+    },
+    {
+      "id": "005",
+      "file": "005-account.md",
+      "words": 494,
+      "sha256": "9bd3049e1ecc04cb1ab5692c6f064b7074891c4e9073bc7b4809881d964a779f",
+      "brief_sha256": "233c164317d36d255f2c65e71f0552d73480e75198c56e325fb71fef5870271e"
+    },
+    {
+      "id": "006",
+      "file": "006-explanation.md",
+      "words": 522,
+      "sha256": "76e8f101bd91165a59a94a775422397080e44793acc320890b0c297d032dc1ad",
+      "brief_sha256": "84abf16ebd0035799d87ab9f61b66aad1e171ee90c6f8c7096accd32fe39237f"
+    },
+    {
+      "id": "007",
+      "file": "007-account.md",
+      "words": 518,
+      "sha256": "a07258e95f697d9a5badad4a76cbcfa71448ecab30c629f8dae5b72c826e6a53",
+      "brief_sha256": "3ebb6405d34db55eed1e973dc4fb3caa544c94d026b779dbd705738e452cba45"
+    },
+    {
+      "id": "008",
+      "file": "008-explanation.md",
+      "words": 535,
+      "sha256": "032ff72b4f444302aa2d1165082c7a75adcff6f537e845f178ab17d2000334e6",
+      "brief_sha256": "998c699d36a97e65e87a5b3196c8a46790194411781523ad3154769e83d8893e"
+    },
+    {
+      "id": "009",
+      "file": "009-account.md",
+      "words": 514,
+      "sha256": "226f1b81a3c6d1dd5ca275c0a6aa346bb4f52c9f48ec118dbe62e5c3901159fe",
+      "brief_sha256": "2abdd0c47146e3f1577f1280617a1c5b01fe6344211e0b103f65dc4f92a35bbf"
+    },
+    {
+      "id": "010",
+      "file": "010-explanation.md",
+      "words": 541,
+      "sha256": "78719cd4833c88540130e46cf0e32b0676532981a5e7f5800104268acca54473",
+      "brief_sha256": "9fe0b82e649b5a81c508de2649c981d00e7ab2d52bf1bea26091266f0659b63b"
+    },
+    {
+      "id": "011",
+      "file": "011-account.md",
+      "words": 492,
+      "sha256": "b24f1ec5c44873a655574dfcd01641aa7115dc875c7f0e39471f102a4f7f6029",
+      "brief_sha256": "8cdf398a774d0b75cbde2dab683abc5077080dbcd9bc37b5165246b01066de95"
+    },
+    {
+      "id": "012",
+      "file": "012-explanation.md",
+      "words": 486,
+      "sha256": "60701426bc0f6786e645081f6b1871a8a04967d2585ea8a5dfec38301ff942a0",
+      "brief_sha256": "0491bb94d2e47e434076f349e0547bd7e17d964a4655f2ca9950d963afb337ba"
+    },
+    {
+      "id": "013",
+      "file": "013-account.md",
+      "words": 484,
+      "sha256": "f959306085860654de64458ac630d85a0f8cae58e8ca9826c3b2d5601fd832a5",
+      "brief_sha256": "814b5ee6299a4dd71754fb49dd28ed24fcfcb85944dd0960395d86e1e58e6aec"
+    },
+    {
+      "id": "014",
+      "file": "014-explanation.md",
+      "words": 484,
+      "sha256": "d3d91858a150a5feca0fafdd65b92843a05bd7599500ab75b9fbfe7ca5e2172b",
+      "brief_sha256": "8c8dd4f146ef791f4a8b2720a27f4813b09aedf0fd8b13f460d7eb172327ad2f"
+    },
+    {
+      "id": "015",
+      "file": "015-account.md",
+      "words": 499,
+      "sha256": "2914615e8345e77764f0f2b8373dae756ea273d7baa176cb9c266fef1cafc990",
+      "brief_sha256": "1554f2b09bb128951a3c20eff6223a96aaa87547d9909ccc70931ad0a04ec8f4"
+    },
+    {
+      "id": "016",
+      "file": "016-explanation.md",
+      "words": 481,
+      "sha256": "685eb9053d4d4bb65f5593c0dc547ea88a42d5d903d5757d25f826c9a5f1b780",
+      "brief_sha256": "d1b7d1212822ee886e80be4f01951e3c33b98cdb6e7989a76d03756cdc02d03e"
+    },
+    {
+      "id": "017",
+      "file": "017-account.md",
+      "words": 467,
+      "sha256": "c7e63555fa3f6b3eb960a4ed2d19f166734062174d0c2e72d280c49d0f0f56a2",
+      "brief_sha256": "ff175e0993b45345db27d992dad0c9139a0d531d6c12009f18981ef98d3106ab"
+    },
+    {
+      "id": "018",
+      "file": "018-explanation.md",
+      "words": 502,
+      "sha256": "4e2b3f5d08ad1c9644ba094d0336208ec5411e5e214db19d3c78ac1710081237",
+      "brief_sha256": "6f77e821799ed018f0a018d04837b182e40a658de785747fd11c1bce37f2dd79"
+    },
+    {
+      "id": "019",
+      "file": "019-account.md",
+      "words": 464,
+      "sha256": "75e81944ddc9d4c461641e43d43737c51af6f4646b37ac0dde50fe7c05ab15d6",
+      "brief_sha256": "5a18d1f04e6b7445d5528d480084a0ff182a8b882fc544f62ea4de4c981ed3b5"
+    },
+    {
+      "id": "020",
+      "file": "020-explanation.md",
+      "words": 498,
+      "sha256": "c720ef96cfa5a01bbb6946cc462dd78d29d55d93fe6914f6514447dfad67a898",
+      "brief_sha256": "507039c4ae3a220889226febd1bf6aa81fbafddc9e49505da1f9538a7eec0991"
+    },
+    {
+      "id": "021",
+      "file": "021-account.md",
+      "words": 515,
+      "sha256": "d39b85febe4cd43f4949ba4ff72acc4c3cac5a117ba57afc09b1ead5678c144b",
+      "brief_sha256": "1f91a6d15bd16fde9d2afbda28d28ca0bf50e140041667d9b1225bca04c96a1a"
+    },
+    {
+      "id": "022",
+      "file": "022-explanation.md",
+      "words": 505,
+      "sha256": "7755bfd3960d74384831ee1402a2337331be3d9521f8daa6f88cc14cf3f6bc62",
+      "brief_sha256": "60b2eaa2c57c1afd8a87d1721b0ce76c46fec6ae724139891fce7fea111903e0"
+    },
+    {
+      "id": "023",
+      "file": "023-account.md",
+      "words": 512,
+      "sha256": "c310aa90b0cf6f93a1ce9f3cbc391707b1888894471750b1e68ebf80b7de03da",
+      "brief_sha256": "121e1e3433542677be28e2fae4f3df7bf86b31c27e43ac01b8fd6bc8e3183228"
+    },
+    {
+      "id": "024",
+      "file": "024-explanation.md",
+      "words": 503,
+      "sha256": "da6c423d87a7d7a60173ae2843138e7838d4a136a3ee723fdd21d0105749cb07",
+      "brief_sha256": "02633329b294447dd99383405e28ccb3efa048593a6a526dec786a6b5765e66c"
+    },
+    {
+      "id": "025",
+      "file": "025-account.md",
+      "words": 510,
+      "sha256": "fbeacd523039b91c4d55c61c19da851bfef621d7d81c5f8a330d244959edcaa7",
+      "brief_sha256": "925ef1abcf018769404828b424b58b69c2a0e8ce59833eb5cb15788cbe08a55f"
+    },
+    {
+      "id": "026",
+      "file": "026-explanation.md",
+      "words": 463,
+      "sha256": "1a31ee87b29833ecc7e210b451c165f97ee0e786838eb839bbaa1f2566fd6a1f",
+      "brief_sha256": "8fd2f8a3c8f769fcf07c0464d8c2714f2eb8b1632b0a47055a504d16db05d288"
+    },
+    {
+      "id": "027",
+      "file": "027-account.md",
+      "words": 470,
+      "sha256": "b668d1e2be68db3b7d52e5e9c5c3e9a799a39eddc61cf8ca50dab0c3572edb33",
+      "brief_sha256": "8c56e6362705523d2319e68b0b2710dea32e3facc99eda6c328fba722b6d13b4"
+    },
+    {
+      "id": "028",
+      "file": "028-explanation.md",
+      "words": 482,
+      "sha256": "4527b6a45485ece45d86dcf4ead271491e1dc61e77706a0a077c71a950fc8713",
+      "brief_sha256": "b4a62022e4577530df81e379b8572654609787fddb995677d1f02284575ae3ce"
+    },
+    {
+      "id": "029",
+      "file": "029-account.md",
+      "words": 492,
+      "sha256": "88febf807cfaf53f0778011719f9248a89d384e850558bdbe87821616687c07a",
+      "brief_sha256": "22fda23ccbb1f711cb0b93440aedabb94f7ab01c4b3af6e4b544c50af495ca88"
+    },
+    {
+      "id": "030",
+      "file": "030-explanation.md",
+      "words": 493,
+      "sha256": "0f6018b602e2060699199e888b2be885c9c41fedf355719af2a897aa3c152423",
+      "brief_sha256": "476e0ed1ae519553040dab16ce6773ff93376305a80a4f4a97e0e753cd1c30e2"
+    },
+    {
+      "id": "031",
+      "file": "031-account.md",
+      "words": 490,
+      "sha256": "7219e844514e79abb12558121f1ce6c6798bdae87e79d39edafb61f836c52fd6",
+      "brief_sha256": "d1a7736c226aa4489a88fc4974d892af841cb54e3bc1ddfc349b19f27ffb55a8"
+    },
+    {
+      "id": "032",
+      "file": "032-explanation.md",
+      "words": 481,
+      "sha256": "a286c929e6c26aa675244438740a478ff53ffb8fb4567ee83777ec8101f5ac02",
+      "brief_sha256": "d97cb9951e33ff99604b9a41a0ad1ea76be7848dd9795090edcfe71ceca1d3a9"
+    },
+    {
+      "id": "033",
+      "file": "033-account.md",
+      "words": 486,
+      "sha256": "f1d6bd3f7e71c020c3d7652bde25cb8240fb25c8887f4da844ccb82502dc237c",
+      "brief_sha256": "fd2c53f51c5efba7c7c00931af9aa2cbcf572880814c20565416eb56a0c5e17f"
+    },
+    {
+      "id": "034",
+      "file": "034-explanation.md",
+      "words": 487,
+      "sha256": "d646a9d6405c603090e025dfab1a291353af391778cea49fc16c6a7fa487a80b",
+      "brief_sha256": "37b7714f43b17f3ec10ec6ded915a4e375fd7a5cdfe57213949012553418510c"
+    },
+    {
+      "id": "035",
+      "file": "035-account.md",
+      "words": 443,
+      "sha256": "702018fd7975d45ef5579c2fceca27568d36039529875237b2c91264581e7a96",
+      "brief_sha256": "a46a2cbfbd92dd03cd6b30dd9fa83aab46e7a86986dc33148c08255d3f8206ce"
+    },
+    {
+      "id": "036",
+      "file": "036-explanation.md",
+      "words": 476,
+      "sha256": "700b2c400079c13b894235e881e47c7bb5862e537b42739b14c6a32026168457",
+      "brief_sha256": "a3fa01c0d226b62805c545ba82e4e61ee94f09f17984efa6e87167034f594b59"
+    },
+    {
+      "id": "037",
+      "file": "037-account.md",
+      "words": 491,
+      "sha256": "f5768893147d37c2bcf50d1b61a23e728ab742ca6ed3156e8be4cec3a2b1371f",
+      "brief_sha256": "fb20d64afe169c608a7d766ac2d535e06aa657b794d237d5ddc6932cf90194ae"
+    },
+    {
+      "id": "038",
+      "file": "038-explanation.md",
+      "words": 468,
+      "sha256": "9b8f526964265f917889c58e92eb4dfdc3e1696bb6e5e857d2e342ee929957d5",
+      "brief_sha256": "b48c30c323a6969dfe28f4fbfb742a94baceaf516036cc8570dec33ef3b3762f"
+    },
+    {
+      "id": "039",
+      "file": "039-account.md",
+      "words": 459,
+      "sha256": "b3e16fc1ccc873a2c9aa89bfafe60596f5b0fdd5ab0804afd70e238eaf441f49",
+      "brief_sha256": "2670b4394ab2421d00a15dd1f903bb2ddd3189fb207d0056748715290b5a3c87"
+    },
+    {
+      "id": "040",
+      "file": "040-explanation.md",
+      "words": 486,
+      "sha256": "c327ff6c84e1f2f65c79e50c5e1c07f1daf414a6790130fe8e8ae17fb2058f4b",
+      "brief_sha256": "fc9738e589dea51ea33bf5ad1307c7184e9eda6d103141b6f09d787818176bf1"
+    },
+    {
+      "id": "041",
+      "file": "041-account.md",
+      "words": 495,
+      "sha256": "f7783e3530598706553818086d63640af83a699d8946f6b12d927005c80bb043",
+      "brief_sha256": "d5f3dd2dc3d25d8286a3009d3f552d721dda89f353dbf073b5e772e91e3f4577"
+    },
+    {
+      "id": "042",
+      "file": "042-explanation.md",
+      "words": 512,
+      "sha256": "9e1994f98f6c3f7c2839499d41a02ae9ad14a1cff7c8cc51f284ff9e3dab4c78",
+      "brief_sha256": "65af0f5e0d7d44cc43c4318ac9ec4958196d7c7317110ffac5b90fa79b193358"
+    },
+    {
+      "id": "043",
+      "file": "043-account.md",
+      "words": 457,
+      "sha256": "797f373c5f98cde6ec02c4d02bc1ce04870f9e5d91745d334c0cf88c8ca1e442",
+      "brief_sha256": "5f97021b00cd3b039aa8ea670f55f772dc0f8bd87a135574d19407d8c01926a6"
+    },
+    {
+      "id": "044",
+      "file": "044-explanation.md",
+      "words": 490,
+      "sha256": "1a58dc153f5fe919efb30233f13dd41c0aed5835405ebfbc9513b277d29043d5",
+      "brief_sha256": "6f2f3888993f355adcfe6e1b2f5293b585cbd3ff7b064da12d5c5bdf6f891185"
+    },
+    {
+      "id": "045",
+      "file": "045-account.md",
+      "words": 476,
+      "sha256": "88dd923c8c7e564df8dab17c7da9b199bb2d42ba5a13f5f555456884bfde547f",
+      "brief_sha256": "b1dba975f31b99f2cd683b0f1a7506a63ab7b85e6cf1a74c230c97a0b837fae9"
+    },
+    {
+      "id": "046",
+      "file": "046-explanation.md",
+      "words": 468,
+      "sha256": "c2ad23d5e2976129848dec2189ff761ffb7a227cf5c7589d0dcd5e702a9a49ee",
+      "brief_sha256": "7d7b59fe124f61faed819a3578a1b14c3b196760ed5ae2b4ad9d87041fb0dfd5"
+    },
+    {
+      "id": "047",
+      "file": "047-account.md",
+      "words": 471,
+      "sha256": "eb6ee8a78752bf9e12a1f55634e4642b54ee60da7fd44c6e237f910ee3cd306f",
+      "brief_sha256": "d15b27f5d738d7783c58dd5b9a109e1e3ab1606ff27f85a01db3ce5ed73c16c2"
+    },
+    {
+      "id": "048",
+      "file": "048-explanation.md",
+      "words": 483,
+      "sha256": "eb7a57d0b212a33ea5bf28db563f0ba94c161dcec83f7036fc5349705bfee721",
+      "brief_sha256": "c71cfcfede4d8d154b627201a58f4a23e0a1020b94ace7c997cb27352d31068d"
+    },
+    {
+      "id": "049",
+      "file": "049-account.md",
+      "words": 482,
+      "sha256": "d26f7ec3c1181b49596ef76ddadaee36ed95d9ce06da548c635c0c2bff08d492",
+      "brief_sha256": "04f5d885511b33e7ba9649718d16df3ecc05597b7ce50e33ebac5bbaafa23b5c"
+    },
+    {
+      "id": "050",
+      "file": "050-explanation.md",
+      "words": 471,
+      "sha256": "066fe68ffe707ec2ae0e93b1a9091ea96cb2a4fc7f976bfb7d062b3131615e63",
+      "brief_sha256": "2ecc8207bc8db228157ea314f78708f449d1c9dc9992303a39b847754e55ff2d"
+    },
+    {
+      "id": "051",
+      "file": "051-account.md",
+      "words": 474,
+      "sha256": "faf8827836fb7bd96ac7ee186d3c2768d18e6f7380e6d2423198328a18d23299",
+      "brief_sha256": "0920dea2a2b1e6c731cb3472fa039ace426e3d0a1adf95609c74f878707bcafb"
+    },
+    {
+      "id": "052",
+      "file": "052-explanation.md",
+      "words": 487,
+      "sha256": "3813d235f1a56dbdf451e3bc37a4a0378fd63134501fc2ecfed0b0f8a44736ae",
+      "brief_sha256": "d8b6a0d7ff4dbd58c93cb4a862a19712409881d5fb8e86f8dbad53b22bba6174"
+    },
+    {
+      "id": "053",
+      "file": "053-account.md",
+      "words": 477,
+      "sha256": "af0f896af980c30e73daef050564ac561404ef73ef0e070aa56f939c6e0a8f0b",
+      "brief_sha256": "9921782334369090e7c03222d35dbe8fa53e7f4343e85d4d6032cbc5ccf7366a"
+    },
+    {
+      "id": "054",
+      "file": "054-explanation.md",
+      "words": 471,
+      "sha256": "93932587dddccd162269c7e91ff692ebb0e6a75a2ebebd4d49b403b48cfa139f",
+      "brief_sha256": "e31133607874c689c7e01471dffad77c38318547dd4c0b1e581216662d4f1b50"
+    },
+    {
+      "id": "055",
+      "file": "055-account.md",
+      "words": 492,
+      "sha256": "6d775a993738499e10f3410c9e0324b3e75eec61ff7697a3cd71ef53b57d8ee4",
+      "brief_sha256": "256ee587efdd136c7739694546861bce0dd481c38fc223b747508e4d0b4a8e21"
+    },
+    {
+      "id": "056",
+      "file": "056-explanation.md",
+      "words": 451,
+      "sha256": "3f37a46f057636325668cfff8459566b39ae1f0e25770ad6be1a16db66354e25",
+      "brief_sha256": "20cfb5154e275698c9bc222e93ee493199775035250d94baa4ce91b3bc8055fa"
+    },
+    {
+      "id": "057",
+      "file": "057-account.md",
+      "words": 459,
+      "sha256": "f2e3f8f638541290b33938abe97bf10cd06fa10501c2f6239d05d9212d11fa10",
+      "brief_sha256": "24eb8f37138139e0e0ece24ec4f6bcfeee7ed63591b2d72565e476b5f0a84744"
+    },
+    {
+      "id": "058",
+      "file": "058-explanation.md",
+      "words": 470,
+      "sha256": "336fc322f528f63c9fd17681d55a3d24b9bb005c9287006e57a129ff996e2ba0",
+      "brief_sha256": "b5a67e489942579988d41ec223ac1c997a4c1296ac79dbe21920684603e2a31d"
+    },
+    {
+      "id": "059",
+      "file": "059-account.md",
+      "words": 465,
+      "sha256": "a88c923737bfa89236818ecef0d19ce7feab950098d9f6ff29f604f736c653cd",
+      "brief_sha256": "ad1f0c084c62627781a28fb9b7c846be53894055502d79ea42e2b9c57757ce18"
+    },
+    {
+      "id": "060",
+      "file": "060-explanation.md",
+      "words": 488,
+      "sha256": "8607734851f2cd3880585abe4c5d73ef197618766dd29eb24a7d8965132f89ad",
+      "brief_sha256": "1e72619674a62eff9e18ff6f425fbef37c20937d1632567989579fecd0a13055"
+    },
+    {
+      "id": "061",
+      "file": "061-account.md",
+      "words": 453,
+      "sha256": "706ce70c024e1423de32d5941c773be255097a0da29d90f09c74a6c371212f9b",
+      "brief_sha256": "b27447e145360a5d040d38c9d5808a52785a251afb0c8e8dad812acc1898e090"
+    },
+    {
+      "id": "062",
+      "file": "062-explanation.md",
+      "words": 460,
+      "sha256": "f5f992cfe3363a2feb3dfec45ea5e5f9a7cd9d3c5167910961f59741bf79ec2f",
+      "brief_sha256": "a02e2d0635b006c6a18f340fb48b441eb51669a76f93171b18177d51bb8ffd77"
+    },
+    {
+      "id": "063",
+      "file": "063-account.md",
+      "words": 443,
+      "sha256": "0982b6e26b292af58ea7cc71642e8cd813a6e8e088f8795687badb3d37e9253a",
+      "brief_sha256": "dbe46c4b43b18c44fb7371f3d05795646956aa4f3f236c9f75893771a5c5f843"
+    },
+    {
+      "id": "064",
+      "file": "064-explanation.md",
+      "words": 462,
+      "sha256": "6e8fa43bc59f50f0159f52fffc95f1b9c16ce7e169513813c18e8b5fe0bc5f1d",
+      "brief_sha256": "6a6a68e5b10ab55a09ca6aa105050c7503c60a3fa4269d7784feb30fd9e64e5c"
+    },
+    {
+      "id": "065",
+      "file": "065-account.md",
+      "words": 469,
+      "sha256": "b969a5572957cf0120fe4a4ebe55187c12222d7253659374e71553e6f75e0b37",
+      "brief_sha256": "68981a8973a9c3b1ecfda9717186f1c4f4e282258ca016659f7637b3fceacdf6"
+    },
+    {
+      "id": "066",
+      "file": "066-explanation.md",
+      "words": 455,
+      "sha256": "031c0b586b9a077f3e31d4da731c229f505d46785f40cedc2a01acccdbce8c4f",
+      "brief_sha256": "c949adff0b8562638f145b2814cd989c66ad14a04d94962f709f584b26f36224"
+    },
+    {
+      "id": "067",
+      "file": "067-account.md",
+      "words": 473,
+      "sha256": "5fda817b74460dd103d493f63130e2932998a645096c4f2925466bddf3ae4e20",
+      "brief_sha256": "7dc4f641b9b7c8e2af388dc7e5d4034b92fc706071c4ed355f85cb118b519a48"
+    },
+    {
+      "id": "068",
+      "file": "068-explanation.md",
+      "words": 475,
+      "sha256": "cc4bb831ed624b2d7c9c548eba409861ceacb2ca252d6a8bd9694452949eca03",
+      "brief_sha256": "12ece6af7b0010c832aa418f540c230634db5f1cafa9109d2fbe50559966bf96"
+    },
+    {
+      "id": "069",
+      "file": "069-account.md",
+      "words": 546,
+      "sha256": "dbb21d734a1a34afdeab14e41a57f818e1e6d216f89999c7e40390e7a3c6d18b",
+      "brief_sha256": "2435c419c3ffc486696fddf6e27192768cb7616d078a1de96d6e825e0df87079"
+    },
+    {
+      "id": "070",
+      "file": "070-explanation.md",
+      "words": 508,
+      "sha256": "3353604f0a727f03b2d52fe2340f7057c6b8dcc98c2ef1a55cb472a44cd7d2dd",
+      "brief_sha256": "d64e3b3c4f5af105cc5c2ff3d99c6d1a037e96d8db1aa61e44213885b4985a4a"
+    },
+    {
+      "id": "071",
+      "file": "071-account.md",
+      "words": 523,
+      "sha256": "8f12acdb8657caff0953ac0006d56ab0db36a570bbc4d05d3fc207c239c78314",
+      "brief_sha256": "4b425819f592e4428ba04bc397ed3ec16c618adb5e8c7d5d58ff0faf2bf0dae5"
+    },
+    {
+      "id": "072",
+      "file": "072-explanation.md",
+      "words": 452,
+      "sha256": "99c1c41495310e5d2b67d33539ae45fd3584f066db8e4049ecf7ddf3393cddef",
+      "brief_sha256": "cd317f854d116862a1f3fd02e00808551e08d6426ff1d61dd83c6d41793c0054"
+    },
+    {
+      "id": "073",
+      "file": "073-account.md",
+      "words": 470,
+      "sha256": "7280d38dd1ab5079b1b15980b0e2d46ef2ff1f8c5d91ceadd568465a31e66131",
+      "brief_sha256": "723f02401556e75d1726e9378695b0e094f389548c50485a86644ae86d0be1a9"
+    },
+    {
+      "id": "074",
+      "file": "074-explanation.md",
+      "words": 455,
+      "sha256": "86fefdea60055cf4eef9ebe1530ffa80b97d0148fd43e7959dd39108d1208a4a",
+      "brief_sha256": "48d973b11abc96cd7426ba80a2d683faa433e05b9669c80bea5809da007d2406"
+    },
+    {
+      "id": "075",
+      "file": "075-account.md",
+      "words": 455,
+      "sha256": "48b4e0bb642996dc164632f5026c3a10d21d15a630826c23f23dccef0a764eb1",
+      "brief_sha256": "19854d1d3a8cb9d4271067b5d0160a754f7dd34a60c3de1b7bf0731d879f40d5"
+    },
+    {
+      "id": "076",
+      "file": "076-explanation.md",
+      "words": 475,
+      "sha256": "43883ec59143f9c73387542f8a82bd2ea03b0e1df73266eb4a2ca7f7d4bf0281",
+      "brief_sha256": "b70f02315c15e1d4a94b1ff51f273f60445c58b1a270a92c1475f77be30b8ffe"
+    },
+    {
+      "id": "077",
+      "file": "077-account.md",
+      "words": 474,
+      "sha256": "5a34f3059c223813844b2e576df6d097ebdaf973c1ca742fe9528a3a4ae0a65b",
+      "brief_sha256": "b168e478a63220f5dc2a8ce8225debc8735b4a61ab662034653c78548f5ca41a"
+    },
+    {
+      "id": "078",
+      "file": "078-explanation.md",
+      "words": 457,
+      "sha256": "16dd81021289447305d1b91bfdbede58adefbd919eeed0fd3f87ec7ae717a4d9",
+      "brief_sha256": "3f3169797b45a19ca554a658e920a541339914bc6017cef3c6ab39845fa427b2"
+    },
+    {
+      "id": "079",
+      "file": "079-account.md",
+      "words": 452,
+      "sha256": "d10ed57aa9fa1bc3d6350c22e6fdc46d7871001660d06f9aac0ec6f8059af1fe",
+      "brief_sha256": "db3a1a4646873d141f751b5cd57217b483e1a038de67c5d9a6fd726f27a8dfd6"
+    },
+    {
+      "id": "080",
+      "file": "080-explanation.md",
+      "words": 454,
+      "sha256": "df0325e447fc0dbdd88aec7613b357c3b4d5fe02d261a4139140931a97a96b4b",
+      "brief_sha256": "d717b5a415204c982e3af559484cfd090dd9847e913890da5f4de3948931090e"
+    },
+    {
+      "id": "081",
+      "file": "081-account.md",
+      "words": 468,
+      "sha256": "60da99a2edaff507ea573711c8d50ef2c91f552afeb8cba0b88c22caaad48b1f",
+      "brief_sha256": "3a3de0ae9ee6baa8491fa273608ae9645d7bfe32d6024687dd453ef22526b0e2"
+    },
+    {
+      "id": "082",
+      "file": "082-explanation.md",
+      "words": 454,
+      "sha256": "37ea04436ad491bbe662ac272cf3d31e76fddc2437b855018ef8aee12e4bf07b",
+      "brief_sha256": "93b05a025b2ca3dd85502962ab5c271a3d59887361d5b732fd938f79c4467cce"
+    },
+    {
+      "id": "083",
+      "file": "083-account.md",
+      "words": 452,
+      "sha256": "038a0fd4feca0e5be9e880a07355d28455bdf8ddb5719e8dd7d2668569c6a1b9",
+      "brief_sha256": "c3c8b83c82cba7db8084875057131dbdb4093fa92c5cab955fcb2c92af3c4322"
+    },
+    {
+      "id": "084",
+      "file": "084-explanation.md",
+      "words": 457,
+      "sha256": "16063a9bf7b166c36fab05835106119cfd716d880de9d5153886dea75ca3f5d3",
+      "brief_sha256": "680d0947429967bbdb195f7ca0ad01b45c88bc6c3c3f11b9bcfbee5c7f09579e"
+    },
+    {
+      "id": "085",
+      "file": "085-account.md",
+      "words": 468,
+      "sha256": "e005767cbb1b0495309d5f9c2bd6a2b07417ba7d73851815d19c492ab29119c3",
+      "brief_sha256": "2ee301ddeee616b18fafb4b96a567be5b3b7b4cdab2974d8cd8091844625b9a9"
+    },
+    {
+      "id": "086",
+      "file": "086-explanation.md",
+      "words": 465,
+      "sha256": "d552530523f8ae128cfb37c2a8c8dff567fca2eba845359eaad54e934ac3c157",
+      "brief_sha256": "5e4ea4ac364db52d3ece40ee3933bcd986570554a4d29883ea52aac40c605815"
+    },
+    {
+      "id": "087",
+      "file": "087-account.md",
+      "words": 453,
+      "sha256": "b17275cc47b2d8397413d5b7ea726ccd9ef76ed9533580205a84fbafb1dd7618",
+      "brief_sha256": "cc19609f4dbb0c04181cd284f8a81c8f06535de4146532a1bd26ae12713c4eea"
+    },
+    {
+      "id": "088",
+      "file": "088-explanation.md",
+      "words": 448,
+      "sha256": "508995874da40a71456c8a661f770851d5479f11879d17404afd81b8c51d6d06",
+      "brief_sha256": "7ec20844d8b8ace5653d15838aef2082414d7b142fa774a20a4fbb8f1972ec6d"
+    },
+    {
+      "id": "089",
+      "file": "089-account.md",
+      "words": 482,
+      "sha256": "c553ef19447d408a5e534405a2a9e00d955d1702bae03a8e74395521b637278c",
+      "brief_sha256": "3ae9b7db36c40fe74d737f0f56680c3cd9a3ea945fa0a56b3a0e8bab37f0f203"
+    },
+    {
+      "id": "090",
+      "file": "090-explanation.md",
+      "words": 456,
+      "sha256": "9ceaa25a74ade9fe0bbf0025d2fe98b94de5dce8fb608f366d63bd2676987e02",
+      "brief_sha256": "8d3be4303693225e7b769c650ffa0f0bd53306481c74cd9434ab6f03012a0730"
+    },
+    {
+      "id": "091",
+      "file": "091-account.md",
+      "words": 472,
+      "sha256": "592b315b5f38d5ce0ba1327f2df36f5e5375a75c78eb7d70ca1afa9b3c437c2c",
+      "brief_sha256": "f2910f9eb21aae036e325c5861eecc30b4a787dce0596c6f1645203b8ded154f"
+    },
+    {
+      "id": "092",
+      "file": "092-explanation.md",
+      "words": 452,
+      "sha256": "710250342a4500a249e996be61d4c837618c87803789f2ca4245a2c7edf1935d",
+      "brief_sha256": "97bc81372f5793aa9053ea8ccf8f0a89249dcff3a91934a66166c63718c0176d"
+    },
+    {
+      "id": "093",
+      "file": "093-account.md",
+      "words": 452,
+      "sha256": "602d09bc66c60b70b61c0ff62f5c5a493b61f23b1b181027acadf52c40522281",
+      "brief_sha256": "75caa69d256049ba2bc772ba013a66932b2fff0d48a8db26a886be252173e25a"
+    },
+    {
+      "id": "094",
+      "file": "094-explanation.md",
+      "words": 454,
+      "sha256": "fdc672fa61070c27975637eec72cf9d38291dcf0a1e9b004903365e742759827",
+      "brief_sha256": "3457956f84a75947fc07412cb13a7ea19dc11af5b024bdd1632f74fe7235630a"
+    },
+    {
+      "id": "095",
+      "file": "095-account.md",
+      "words": 454,
+      "sha256": "c4f327ef0e9ad0e26636a01ef52373f3b5552b53c72d8aba5459ec8d60daa59e",
+      "brief_sha256": "5ff41d7593659f293a23a34021a40905d398cb7744f40af24cd1ff1651d3410e"
+    },
+    {
+      "id": "096",
+      "file": "096-explanation.md",
+      "words": 450,
+      "sha256": "71fe7b94323ef09bb2309fd26fea3f5884c20031a12a1c6ac3e79804e424aef4",
+      "brief_sha256": "b94252e3de2c7955579ae8f4aae839cba0aedd53b5a0c76feae1154aa083ea49"
+    },
+    {
+      "id": "097",
+      "file": "097-account.md",
+      "words": 452,
+      "sha256": "00344ca29822cfebcde9c5bba41c029ecb3f36808ed2ee207dcab184bad9bb78",
+      "brief_sha256": "dd3e65c23c6a9fea7158179f161afd3a5a27246af5aa01c960ffddb0d58c1a64"
+    },
+    {
+      "id": "098",
+      "file": "098-explanation.md",
+      "words": 459,
+      "sha256": "1f7cbf01d051db0becdd533e37d25785f6cc08f5e8639ad38c239fd8c1c84dc0",
+      "brief_sha256": "0fb93ea2a1aee05822bb9c2d8576a97212dcc69847151aa4d774e498a19fd476"
+    },
+    {
+      "id": "099",
+      "file": "099-account.md",
+      "words": 458,
+      "sha256": "9a0e60c0f14dc6332689243a1fe3f54c174b5ec74f97d799dce42353fc7effe0",
+      "brief_sha256": "597c69f035f2fff502f708427a22aa29cca5d61f7049dbe2457b35890303749d"
+    },
+    {
+      "id": "100",
+      "file": "100-explanation.md",
+      "words": 461,
+      "sha256": "2deaeaeaeb4b0efb5e2a28a25aa5d9f0c64018f24987907c0c5bd15ffff51d93",
+      "brief_sha256": "8acc5a157c7ecd916c9381999822fbf54fd347611360e8dd8e3e262f69854da5"
+    }
+  ]
+}

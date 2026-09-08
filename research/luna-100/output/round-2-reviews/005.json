@@ -1,0 +1,20 @@
+{
+  "source_path": "research/luna-100/sources/raw/2025-12-26-shipping-features-from-a-tram-stop.md",
+  "original_path": "research/luna-100/output/round-1/005-account.md",
+  "revised_path": "research/luna-100/output/round-2/005-account.md",
+  "word_count": 419,
+  "required_facts_checked": true,
+  "unsupported_claims_removed": [
+    "Removed generic framing and unsupported conclusions from prior draft.",
+    "Removed invented need for a wider screen, more typing and running the full project locally. Restored the actual complex-change approval and CI/CD deployment process."
+  ],
+  "substantive_edits": [
+    "Recomposed article with source-specific chronology, motives, constraints and outcomes.",
+    "Parent checked actual source and all required facts, removed repeated closing paragraphs and restored supported details instead of filler.",
+    "Full default stylint passes after source-based corrections."
+  ],
+  "full_final_lint_findings": [],
+  "unresolved_source_conflicts": [],
+  "reviewer": "parent after Luna revision",
+  "required_fact_count": 10
+}

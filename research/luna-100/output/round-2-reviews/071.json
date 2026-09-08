@@ -1,0 +1,27 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-07-03-choosing-a-portfolio-project-the.md",
+  "original_path": "research/luna-100/output/round-1/071-account.md",
+  "revised_path": "research/luna-100/output/round-2/071-account.md",
+  "word_count": 531,
+  "required_facts_checked": [
+    {"claim": "The author prepares plans for AI Shipping Labs members and is asked what to build for a portfolio.", "status": "present", "evidence": "source opening: plans for members and portfolio questions"},
+    {"claim": "A GitHub portfolio can support hiring, collaboration, freelance, and other opportunities.", "status": "present", "evidence": "source: active GitHub portfolio improves visibility and opportunities"},
+    {"claim": "Portfolio projects can include personal utilities, take-home work, hackathons, community, or open source.", "status": "present", "evidence": "source: listed portfolio types"},
+    {"claim": "The process starts with a domain and five to ten relevant companies.", "status": "present", "evidence": "source steps one and two"},
+    {"claim": "Job descriptions provide responsibilities, context, and skills, while engineering material shows real systems and problems.", "status": "present", "evidence": "source distinction between job descriptions and engineering blogs"},
+    {"claim": "Technology names are clues for extracting problems rather than project ideas by themselves.", "status": "present", "evidence": "source: tech stack is a clue, not a project idea"},
+    {"claim": "Problems should be grouped across companies before candidates are proposed.", "status": "present", "evidence": "source steps four and five"},
+    {"claim": "The final technology stack remains the author's decision and should be kept small enough to finish.", "status": "present", "evidence": "source: agent suggests, final decision is yours; avoid too many tools"},
+    {"claim": "Evaluation, monitoring, tests, and a concise README belong in the project plan.", "status": "present", "evidence": "source: evaluation harness, logs, tests, README"},
+    {"claim": "A project that works end to end on real input is stronger than an unused elaborate repository.", "status": "present", "evidence": "source: usable end-to-end project is stronger"}
+  ],
+  "unsupported_claims_removed": [],
+  "substantive_edits": [
+    "Recast the framework as the author's working selection process while preserving the six research steps.",
+    "Kept attribution for AI Shipping Labs, hiring managers, and target companies.",
+    "Made source provenance, evaluation, README content, and end-to-end use explicit.",
+    "Split enumerations and dense paragraphs to satisfy the full lint run."
+  ],
+  "full_final_lint_findings": [],
+  "unresolved_source_conflicts": []
+}

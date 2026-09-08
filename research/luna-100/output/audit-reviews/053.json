@@ -1,0 +1,27 @@
+{
+  "article_id": "053",
+  "source_path": "sources/raw/2026-05-02-9-real-life-ai-projects-from-ai-engineering.md",
+  "article_path": "output/round-2/053-account.md",
+  "source_sha256": "716956f7267fe789e7bb5678db2813a77785c5a2c58f85f595d3abc0fa9d92db",
+  "article_sha256": "e0e618d459edb34b3d1b79c7e8df0549f37f0bc51841b232cf6e78695a609b50",
+  "fact_checks": [
+    {
+      "draft_quote": "bAIpacking Agent for long-distance cyclists",
+      "source_quote": "helps long‑distance cyclists decide which tires, drivetrain, and bags to use for specific races",
+      "status": "supported"
+    },
+    {
+      "draft_quote": "28 documents",
+      "source_quote": "4 public‑domain nutrition sources chunked into 28 documents",
+      "status": "supported"
+    },
+    {
+      "draft_quote": "20 LLM requests and $0.50 per day",
+      "source_quote": "limits calls to 20 LLM requests per session and $0.50 of cost per day",
+      "status": "supported"
+    }
+  ],
+  "voice_issues": [],
+  "required_corrections": [],
+  "source_copying_review": "No exhaustive plagiarism determination was attempted; comparisons are factual checks only."
+}

@@ -1,0 +1,58 @@
+{
+  "id": "068",
+  "source_path": "research/luna-100/sources/raw/2026-06-19-the-system-i-built-for-aws-access.md",
+  "article_purpose": "explanation",
+  "author_attribution_notes": "Facts and project ownership are attributed to the source author; no additional personal experience or results added.",
+  "required_facts": [
+    {
+      "id": 1,
+      "claim": "These workshops require participants to have access to cloud resources such as AWS.",
+      "source_evidence": "These workshops require participants to have access to cloud resources such as AWS."
+    },
+    {
+      "id": 2,
+      "claim": "This is okay when people come prepared, but often it’s not the case.",
+      "source_evidence": "This is okay when people come prepared, but often it’s not the case."
+    },
+    {
+      "id": 3,
+      "claim": "This happened when Exasol, a database company, asked me to run a workshop for them.",
+      "source_evidence": "This happened when Exasol, a database company, asked me to run a workshop for them."
+    },
+    {
+      "id": 4,
+      "claim": "They released a new version of their database, Exasol Personal.",
+      "source_evidence": "They released a new version of their database, Exasol Personal."
+    },
+    {
+      "id": 5,
+      "claim": "It’s normally a paid service, but this edition runs in your own AWS account.",
+      "source_evidence": "It’s normally a paid service, but this edition runs in your own AWS account."
+    },
+    {
+      "id": 6,
+      "claim": "You need an account and a few permissions, then you can create a cluster and use it from your laptop.",
+      "source_evidence": "You need an account and a few permissions, then you can create a cluster and use it from your laptop."
+    },
+    {
+      "id": 7,
+      "claim": "For me, it was very easy to set it up.",
+      "source_evidence": "For me, it was very easy to set it up."
+    },
+    {
+      "id": 8,
+      "claim": "But then I started thinking about how to make it scale to 50-60 workshop participants, who will most likely be unprepared.",
+      "source_evidence": "But then I started thinking about how to make it scale to 50-60 workshop participants, who will most likely be unprepared."
+    },
+    {
+      "id": 9,
+      "claim": "So I needed to find a way for the participants to provision resources in my AWS account without giving them my AWS keys.",
+      "source_evidence": "So I needed to find a way for the participants to provision resources in my AWS account without giving them my AWS keys."
+    },
+    {
+      "id": 10,
+      "claim": "The solution I found turned out to be useful not only for workshops, but also for coding agents.",
+      "source_evidence": "The solution I found turned out to be useful not only for workshops, but also for coding agents."
+    }
+  ]
+}

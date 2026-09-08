@@ -1,0 +1,18 @@
+{
+  "id": "011",
+  "source_path": "research/luna-100/sources/raw/2026-01-16-how-i-reviewed-2500-ai-bootcamp-scholarship.md",
+  "purpose": "personal account of Alexey's scholarship selection process for more than 2,500 AI Bootcamp applications",
+  "required_facts": [
+    {"fact": "The scholarship was opened for motivated students who lacked the budget for the paid AI Bootcamp.", "evidence": "Source line 3: the scholarship purpose is stated."},
+    {"fact": "The application round received more than 2,500 applications, far more than the available places.", "evidence": "Source line 6: application volume and competition are stated."},
+    {"fact": "The scholarship targeted people already doing meaningful work who wanted to scale existing impact, rather than beginners or general career exploration.", "evidence": "Source line 34: the intended candidate profile is described."},
+    {"fact": "Motivation was the first selection signal, and empty, generic, job-focused, tool-focused, or short-term income applications were filtered early.", "evidence": "Source line 39: the early motivation filter is specified."},
+    {"fact": "Strong applications described a specific problem, who benefited, and why the training mattered at that time.", "evidence": "Source line 42: the required specificity is stated."},
+    {"fact": "Depth and alignment included understanding the Bootcamp, connecting it to current work, and explaining the need for production-focused training.", "evidence": "Source line 45: depth, alignment, and production training are described."},
+    {"fact": "Likelihood of completion was assessed through signals such as long-term projects, concrete plans, and accountability structures.", "evidence": "Source line 48: completion signals are listed."},
+    {"fact": "Claude Code performed an AI-assisted preliminary review using custom slash commands and parallel sub-agents.", "evidence": "Source lines 54-59: the preliminary review, commands, and parallel processing are described."},
+    {"fact": "The first pass produced a top 50 group that Alexey reviewed personally after shuffling applications to reduce bias.", "evidence": "Source line 66: top 50 selection, shuffling, and manual review are stated."},
+    {"fact": "Final review prioritized authenticity, clarity of intent, and likelihood of follow-through over numeric scores.", "evidence": "Source line 66: qualitative factors and score verification are described."}
+  ],
+  "author_attribution": "Attribute the selection criteria, automation, and final judgments to Alexey; preserve that non-selection could reflect mismatch or limited places rather than weak work."
+}

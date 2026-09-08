@@ -1,0 +1,17 @@
+# Five Signals for Understanding the AI Engineer Role
+
+The title AI Engineer was appearing more often, but the role did not have a common definition. Companies, teams, and problems shaped it differently, so job descriptions could be inconsistent or contradictory. A useful investigation therefore needed several kinds of evidence rather than one authoritative label.
+
+The first signal was structured personal experience. Alexey had worked with machine learning and AI for more than 15 years and taught at the AI Engineering Buildcamp. That experience provided a working hypothesis about an AI Engineer’s day, responsibilities, and required skills. It was a starting point to compare against external evidence, not proof that every company used the role in the same way.
+
+The second signal was demand from employers. More than 1,500 job postings had been collected from the previous three months across cities including Los Angeles, New York, London, Amsterdam, and Berlin. The dataset included roles whose titles were different but whose work involved AI or generative AI. Examining names, responsibilities, tools, and overlap with ML Engineer positions could show how the market described the role in practice.
+
+The third signal came from interview stories on Twitter/X and Reddit. Engineers often shared questions they had been asked and described what their jobs involved. Research agents, including Grok for X posts, helped collect this informal material. These discussions were useful because they could reveal recent interview patterns that did not appear in official job descriptions, although they were less standardized than the job-posting dataset.
+
+The fourth signal was direct conversation. Planned interviews included people who hire AI Engineers, DataTalks.Club community members who were interviewing or already working in the role, and engineers found through LinkedIn. Some conversations could become public podcast episodes, while others would stay private and still contribute to the analysis. Together with social-media stories, these conversations were intended to illuminate interview structure, evaluation criteria, and hiring decisions.
+
+The fifth signal was the work candidates actually submitted. Around 60 public GitHub repositories contained take-home assignment solutions. The researcher tried deep-research agents from Google and OpenAI to find more repositories, but the agents did not reliably return the requested number and sometimes invented additional results after finding one real repository. They were more useful for generating stronger search queries. The final workflow combined agent-generated queries with manual review and aggregation.
+
+These sources answered different questions. Experience supplied a model of the role. Job postings showed what employers requested. Interview discussions and conversations exposed how people were evaluated. Take-home repositories showed what candidates were asked to build. Comparing the signals could reveal where the title had stable meaning and where it was still being negotiated by companies and candidates.
+
+The method also preserved uncertainty. A social-media post was not equivalent to a job dataset, and an agent-found repository was not accepted without checking. The goal was not to announce a timeless definition. It was to study a changing role through the evidence available from employers, practitioners, interview processes, and candidate work.

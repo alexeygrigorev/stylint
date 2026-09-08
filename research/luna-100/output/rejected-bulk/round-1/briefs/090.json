@@ -1,0 +1,57 @@
+{
+  "id": "090",
+  "source_path": "research/luna-100/sources/raw/2026-08-14-how-to-do-evals-in-2026.md",
+  "mode": "explanation",
+  "article_purpose": "explanation of the supported workflow or idea",
+  "author_attribution_notes": "Keep Alexey’s first-person framing only for actions and observations explicitly present in the supplied source; preserve attribution to DataTalks.Club, AI Shipping Labs, and other projects where named.",
+  "required_facts": [
+    {
+      "fact": "Across all 4,894 AI engineering job descriptions that I collected for the , evaluation consistently comes as the number one skill that AI Engineers must have.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-14-how-to-do-evals-in-2026.md (source sentence 1)"
+    },
+    {
+      "fact": "In interviews, you’ll definitely hear something like “how do you evaluate a RAG pipeline?” or “how do you measure agent performance?”.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-14-how-to-do-evals-in-2026.md (source sentence 2)"
+    },
+    {
+      "fact": "If you don’t include evals in your home assignment, it’s a red flag.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-14-how-to-do-evals-in-2026.md (source sentence 3)"
+    },
+    {
+      "fact": "Why is it such an important skill?",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-14-how-to-do-evals-in-2026.md (source sentence 4)"
+    },
+    {
+      "fact": "It’s easy to build an agent these days.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-14-how-to-do-evals-in-2026.md (source sentence 5)"
+    },
+    {
+      "fact": "I show how to do it in my .",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-14-how-to-do-evals-in-2026.md (source sentence 6)"
+    },
+    {
+      "fact": "You need to get an OpenAI key, take any agentic framework, define the instructions and the tools, and that’s it.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-14-how-to-do-evals-in-2026.md (source sentence 7)"
+    },
+    {
+      "fact": "But this agent will break in so many ways.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-14-how-to-do-evals-in-2026.md (source sentence 8)"
+    },
+    {
+      "fact": "It will:\n\n* Give a wrong answer\n* Confidently hallucinate a plausible answer\n* Finish without giving any answer\n* Get into a loop and call the same tool over and over again\n* Exhaust the context\n* Call a tool with invalid arguments\n\nThat’s ",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-14-how-to-do-evals-in-2026.md (source sentence 9)"
+    },
+    {
+      "fact": "To make sure this agent works reliably, you need to test and evaluate it.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-14-how-to-do-evals-in-2026.md (source sentence 10)"
+    },
+    {
+      "fact": "You don’t know how the agent is performing.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-14-how-to-do-evals-in-2026.md (source sentence 11)"
+    },
+    {
+      "fact": "You also can’t really change anything: every change you introduce may break the system in many ways, including the areas where you least expect it.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-14-how-to-do-evals-in-2026.md (source sentence 12)"
+    }
+  ]
+}

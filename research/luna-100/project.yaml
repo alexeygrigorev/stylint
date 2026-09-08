@@ -1,0 +1,10 @@
+schema_version: 1
+id: luna-100-article-style-calibration
+title: "Luna 100 article style calibration"
+mode: building
+status: verified
+created: 2026-09-07
+seed_sha256: 90ee121c2061e93faa59fa0700481242a7dfe8c9b9759be9ee7bf23d3ae085c9
+source_roots:
+  - "/home/alexey/git/telegram-writing-assistant/reference/substack"
+target_repo: "/home/alexey/git/stylint"

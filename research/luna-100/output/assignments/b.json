@@ -1,0 +1,342 @@
+[
+  {
+    "id": "035",
+    "source_id": "s18",
+    "source_path": "research/luna-100/sources/raw/2026-03-16-karpathys-autoresearch-went-viral.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-03-16-karpathys-autoresearch-went-viral.md",
+    "split": "development",
+    "mode": "account",
+    "output": "035-account.md",
+    "brief": "035.json"
+  },
+  {
+    "id": "036",
+    "source_id": "s18",
+    "source_path": "research/luna-100/sources/raw/2026-03-16-karpathys-autoresearch-went-viral.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-03-16-karpathys-autoresearch-went-viral.md",
+    "split": "development",
+    "mode": "explanation",
+    "output": "036-explanation.md",
+    "brief": "036.json"
+  },
+  {
+    "id": "037",
+    "source_id": "s19",
+    "source_path": "research/luna-100/sources/raw/2026-03-20-i-turned-my-telegram-bot-into-a-multi.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-03-20-i-turned-my-telegram-bot-into-a-multi.md",
+    "split": "development",
+    "mode": "account",
+    "output": "037-account.md",
+    "brief": "037.json"
+  },
+  {
+    "id": "038",
+    "source_id": "s19",
+    "source_path": "research/luna-100/sources/raw/2026-03-20-i-turned-my-telegram-bot-into-a-multi.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-03-20-i-turned-my-telegram-bot-into-a-multi.md",
+    "split": "development",
+    "mode": "explanation",
+    "output": "038-explanation.md",
+    "brief": "038.json"
+  },
+  {
+    "id": "039",
+    "source_id": "s20",
+    "source_path": "research/luna-100/sources/raw/2026-03-27-5-useful-utilities-i-built-with-ai.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-03-27-5-useful-utilities-i-built-with-ai.md",
+    "split": "holdout",
+    "mode": "account",
+    "output": "039-account.md",
+    "brief": "039.json"
+  },
+  {
+    "id": "040",
+    "source_id": "s20",
+    "source_path": "research/luna-100/sources/raw/2026-03-27-5-useful-utilities-i-built-with-ai.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-03-27-5-useful-utilities-i-built-with-ai.md",
+    "split": "holdout",
+    "mode": "explanation",
+    "output": "040-explanation.md",
+    "brief": "040.json"
+  },
+  {
+    "id": "041",
+    "source_id": "s21",
+    "source_path": "research/luna-100/sources/raw/2026-04-03-i-built-an-ai-agent-team-for-software.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-04-03-i-built-an-ai-agent-team-for-software.md",
+    "split": "development",
+    "mode": "account",
+    "output": "041-account.md",
+    "brief": "041.json"
+  },
+  {
+    "id": "042",
+    "source_id": "s21",
+    "source_path": "research/luna-100/sources/raw/2026-04-03-i-built-an-ai-agent-team-for-software.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-04-03-i-built-an-ai-agent-team-for-software.md",
+    "split": "development",
+    "mode": "explanation",
+    "output": "042-explanation.md",
+    "brief": "042.json"
+  },
+  {
+    "id": "043",
+    "source_id": "s22",
+    "source_path": "research/luna-100/sources/raw/2026-04-07-an-unexpected-entry-into-ai-memory.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-04-07-an-unexpected-entry-into-ai-memory.md",
+    "split": "development",
+    "mode": "account",
+    "output": "043-account.md",
+    "brief": "043.json"
+  },
+  {
+    "id": "044",
+    "source_id": "s22",
+    "source_path": "research/luna-100/sources/raw/2026-04-07-an-unexpected-entry-into-ai-memory.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-04-07-an-unexpected-entry-into-ai-memory.md",
+    "split": "development",
+    "mode": "explanation",
+    "output": "044-explanation.md",
+    "brief": "044.json"
+  },
+  {
+    "id": "045",
+    "source_id": "s23",
+    "source_path": "research/luna-100/sources/raw/2026-04-07-last-call-for-ai-engineering-buildcamp.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-04-07-last-call-for-ai-engineering-buildcamp.md",
+    "split": "development",
+    "mode": "account",
+    "output": "045-account.md",
+    "brief": "045.json"
+  },
+  {
+    "id": "046",
+    "source_id": "s23",
+    "source_path": "research/luna-100/sources/raw/2026-04-07-last-call-for-ai-engineering-buildcamp.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-04-07-last-call-for-ai-engineering-buildcamp.md",
+    "split": "development",
+    "mode": "explanation",
+    "output": "046-explanation.md",
+    "brief": "046.json"
+  },
+  {
+    "id": "047",
+    "source_id": "s24",
+    "source_path": "research/luna-100/sources/raw/2026-04-10-tired-of-learning-ai-alone-were-launching.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-04-10-tired-of-learning-ai-alone-were-launching.md",
+    "split": "development",
+    "mode": "account",
+    "output": "047-account.md",
+    "brief": "047.json"
+  },
+  {
+    "id": "048",
+    "source_id": "s24",
+    "source_path": "research/luna-100/sources/raw/2026-04-10-tired-of-learning-ai-alone-were-launching.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-04-10-tired-of-learning-ai-alone-were-launching.md",
+    "split": "development",
+    "mode": "explanation",
+    "output": "048-explanation.md",
+    "brief": "048.json"
+  },
+  {
+    "id": "049",
+    "source_id": "s25",
+    "source_path": "research/luna-100/sources/raw/2026-04-17-how-we-built-ai-shipping-labs.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-04-17-how-we-built-ai-shipping-labs.md",
+    "split": "holdout",
+    "mode": "account",
+    "output": "049-account.md",
+    "brief": "049.json"
+  },
+  {
+    "id": "050",
+    "source_id": "s25",
+    "source_path": "research/luna-100/sources/raw/2026-04-17-how-we-built-ai-shipping-labs.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-04-17-how-we-built-ai-shipping-labs.md",
+    "split": "holdout",
+    "mode": "explanation",
+    "output": "050-explanation.md",
+    "brief": "050.json"
+  },
+  {
+    "id": "051",
+    "source_id": "s26",
+    "source_path": "research/luna-100/sources/raw/2026-04-24-from-google-docs-to-an-automated.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-04-24-from-google-docs-to-an-automated.md",
+    "split": "development",
+    "mode": "account",
+    "output": "051-account.md",
+    "brief": "051.json"
+  },
+  {
+    "id": "052",
+    "source_id": "s26",
+    "source_path": "research/luna-100/sources/raw/2026-04-24-from-google-docs-to-an-automated.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-04-24-from-google-docs-to-an-automated.md",
+    "split": "development",
+    "mode": "explanation",
+    "output": "052-explanation.md",
+    "brief": "052.json"
+  },
+  {
+    "id": "053",
+    "source_id": "s27",
+    "source_path": "research/luna-100/sources/raw/2026-05-02-9-real-life-ai-projects-from-ai-engineering.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-05-02-9-real-life-ai-projects-from-ai-engineering.md",
+    "split": "development",
+    "mode": "account",
+    "output": "053-account.md",
+    "brief": "053.json"
+  },
+  {
+    "id": "054",
+    "source_id": "s27",
+    "source_path": "research/luna-100/sources/raw/2026-05-02-9-real-life-ai-projects-from-ai-engineering.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-05-02-9-real-life-ai-projects-from-ai-engineering.md",
+    "split": "development",
+    "mode": "explanation",
+    "output": "054-explanation.md",
+    "brief": "054.json"
+  },
+  {
+    "id": "055",
+    "source_id": "s28",
+    "source_path": "research/luna-100/sources/raw/2026-05-08-building-an-ai-book-generator-with.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-05-08-building-an-ai-book-generator-with.md",
+    "split": "development",
+    "mode": "account",
+    "output": "055-account.md",
+    "brief": "055.json"
+  },
+  {
+    "id": "056",
+    "source_id": "s28",
+    "source_path": "research/luna-100/sources/raw/2026-05-08-building-an-ai-book-generator-with.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-05-08-building-an-ai-book-generator-with.md",
+    "split": "development",
+    "mode": "explanation",
+    "output": "056-explanation.md",
+    "brief": "056.json"
+  },
+  {
+    "id": "057",
+    "source_id": "s29",
+    "source_path": "research/luna-100/sources/raw/2026-05-15-11-workshops-to-build-production.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-05-15-11-workshops-to-build-production.md",
+    "split": "development",
+    "mode": "account",
+    "output": "057-account.md",
+    "brief": "057.json"
+  },
+  {
+    "id": "058",
+    "source_id": "s29",
+    "source_path": "research/luna-100/sources/raw/2026-05-15-11-workshops-to-build-production.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-05-15-11-workshops-to-build-production.md",
+    "split": "development",
+    "mode": "explanation",
+    "output": "058-explanation.md",
+    "brief": "058.json"
+  },
+  {
+    "id": "059",
+    "source_id": "s30",
+    "source_path": "research/luna-100/sources/raw/2026-05-22-the-system-i-built-to-ship-code-from.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-05-22-the-system-i-built-to-ship-code-from.md",
+    "split": "holdout",
+    "mode": "account",
+    "output": "059-account.md",
+    "brief": "059.json"
+  },
+  {
+    "id": "060",
+    "source_id": "s30",
+    "source_path": "research/luna-100/sources/raw/2026-05-22-the-system-i-built-to-ship-code-from.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-05-22-the-system-i-built-to-ship-code-from.md",
+    "split": "holdout",
+    "mode": "explanation",
+    "output": "060-explanation.md",
+    "brief": "060.json"
+  },
+  {
+    "id": "061",
+    "source_id": "s31",
+    "source_path": "research/luna-100/sources/raw/2026-05-29-minsearch-the-small-search-library.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-05-29-minsearch-the-small-search-library.md",
+    "split": "development",
+    "mode": "account",
+    "output": "061-account.md",
+    "brief": "061.json"
+  },
+  {
+    "id": "062",
+    "source_id": "s31",
+    "source_path": "research/luna-100/sources/raw/2026-05-29-minsearch-the-small-search-library.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-05-29-minsearch-the-small-search-library.md",
+    "split": "development",
+    "mode": "explanation",
+    "output": "062-explanation.md",
+    "brief": "062.json"
+  },
+  {
+    "id": "063",
+    "source_id": "s32",
+    "source_path": "research/luna-100/sources/raw/2026-06-05-how-to-set-up-your-coding-agent-a.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-06-05-how-to-set-up-your-coding-agent-a.md",
+    "split": "development",
+    "mode": "account",
+    "output": "063-account.md",
+    "brief": "063.json"
+  },
+  {
+    "id": "064",
+    "source_id": "s32",
+    "source_path": "research/luna-100/sources/raw/2026-06-05-how-to-set-up-your-coding-agent-a.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-06-05-how-to-set-up-your-coding-agent-a.md",
+    "split": "development",
+    "mode": "explanation",
+    "output": "064-explanation.md",
+    "brief": "064.json"
+  },
+  {
+    "id": "065",
+    "source_id": "s33",
+    "source_path": "research/luna-100/sources/raw/2026-06-12-ai-design-for-non-designers.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-06-12-ai-design-for-non-designers.md",
+    "split": "development",
+    "mode": "account",
+    "output": "065-account.md",
+    "brief": "065.json"
+  },
+  {
+    "id": "066",
+    "source_id": "s33",
+    "source_path": "research/luna-100/sources/raw/2026-06-12-ai-design-for-non-designers.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-06-12-ai-design-for-non-designers.md",
+    "split": "development",
+    "mode": "explanation",
+    "output": "066-explanation.md",
+    "brief": "066.json"
+  },
+  {
+    "id": "067",
+    "source_id": "s34",
+    "source_path": "research/luna-100/sources/raw/2026-06-19-the-system-i-built-for-aws-access.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-06-19-the-system-i-built-for-aws-access.md",
+    "split": "development",
+    "mode": "account",
+    "output": "067-account.md",
+    "brief": "067.json"
+  },
+  {
+    "id": "068",
+    "source_id": "s34",
+    "source_path": "research/luna-100/sources/raw/2026-06-19-the-system-i-built-for-aws-access.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-06-19-the-system-i-built-for-aws-access.md",
+    "split": "development",
+    "mode": "explanation",
+    "output": "068-explanation.md",
+    "brief": "068.json"
+  }
+]

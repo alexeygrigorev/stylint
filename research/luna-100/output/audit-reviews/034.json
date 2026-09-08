@@ -1,0 +1,41 @@
+{
+  "article_id": "034",
+  "source_path": "research/luna-100/sources/raw/2026-03-13-ai-set-up-my-infra-in-10-minutes.md",
+  "article_path": "research/luna-100/output/round-2/034-explanation.md",
+  "factual_checks": [
+    {
+      "draft": "about 40 minutes design iteration",
+      "source": "The source says about 40 minutes refining spacing, alignment, and placement.",
+      "status": "supported"
+    },
+    {
+      "draft": "ratings around 8 out of 10 ... looked quite different",
+      "source": "The source says the evaluator gave high scores despite visible differences and the loop stopped too early.",
+      "status": "supported"
+    },
+    {
+      "draft": "A background-only run continued for 44 iterations",
+      "source": "The source says the background-only experiment ran 44 iterations and failed to converge.",
+      "status": "supported"
+    },
+    {
+      "draft": "hosting setup took ten minutes",
+      "source": "The source says the whole infrastructure setup took ten minutes versus several hours typically.",
+      "status": "supported"
+    },
+    {
+      "draft": "I needed to keep reviewing ... myself",
+      "source": "The source concludes that manual review and corrections were still needed for visual work.",
+      "status": "supported"
+    }
+  ],
+  "missing_or_needs_correction": [
+    "The article accurately contrasts visual evaluation with infrastructure configuration. It is selective but preserves the key constraints and the ten-minute setup.",
+    "The phrase 'hosting setup took ten minutes' remains qualified as this specific setup, not a universal hosting time.",
+    "No invented cause or generic unsupported result was found."
+  ],
+  "attribution_review": "Claude, Gemini Flash, Opus 4.6, and Claude Code are correctly attributed to their respective roles. The article does not attribute the manual feedback to the models.",
+  "source_copying": "No complete source sentence was identified in this review.",
+  "required_corrections": [],
+  "review_correction_note": "Earlier audit wording incorrectly said GoDaddy, Cloudflare, S3, CloudFront, and HTTPS were omitted; the exact draft includes the relevant infrastructure details or their surrounding setup. No correction is required on that point."
+}

@@ -1,0 +1,18 @@
+{
+  "id": "013",
+  "source_path": "research/luna-100/sources/raw/2026-01-23-ai-bootcamp-becomes-ai-engineering.md",
+  "purpose": "personal account of renaming and restructuring Alexey's AI agents course into AI Engineering Buildcamp",
+  "required_facts": [
+    {"fact": "The course was renamed, significantly restructured, and given expanded optional framework coverage after first-cohort feedback.", "evidence": "Source lines 3-9: the three changes and their reason are stated."},
+    {"fact": "Around 90 percent of the material was being re-recorded for the second cohort, starting in two days.", "evidence": "Source line 11: re-recording scope and timing are given."},
+    {"fact": "The new name was AI Engineering Buildcamp because it better represented hands-on AI systems built with an engineering mindset.", "evidence": "Source lines 15-17: the new name and rationale are described."},
+    {"fact": "Participants were expected to build real systems, practice trade-offs, reliability, and maintainability, and finish with reusable results.", "evidence": "Source lines 19-24: participant outcomes are listed."},
+    {"fact": "Participants began a Capstone in Week 1, refined it conceptually and through implementation, and spent the final two weeks building and polishing it.", "evidence": "Source line 29: Capstone timing and progression are stated."},
+    {"fact": "Homework included more than six guided mini-projects such as FAQ assistants, YouTube Q&A, documentation, coding, and deep research agents.", "evidence": "Source line 31: mini-project count and examples are listed."},
+    {"fact": "First-cohort feedback said the content was dense and valuable but the pace too fast.", "evidence": "Source lines 35-37: participant feedback is quoted."},
+    {"fact": "The redesigned course was longer and less dense, with a main path around one framework and optional bonus material.", "evidence": "Source lines 39-46: the new structure and core/optional split are described."},
+    {"fact": "The agents section began without a framework, implementing tool calling and control loops manually before introducing PydanticAI as the main framework.", "evidence": "Source lines 55-66: framework sequence and rationale are specified."},
+    {"fact": "Optional material covered LangChain, LangGraph, OpenAI Agents SDK, Google Agent Development Kit, CrewAI, and alternative model providers.", "evidence": "Source lines 68-75: optional frameworks and providers are listed."}
+  ],
+  "author_attribution": "Attribute course decisions and participant feedback to Alexey and the first cohort as documented; preserve the stated focus on hands-on engineering."
+}

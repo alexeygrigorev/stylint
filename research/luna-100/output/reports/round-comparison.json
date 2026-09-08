@@ -1,0 +1,863 @@
+{
+  "round-1-development": {
+    "generated": {
+      "documents": 80,
+      "prose_words": 38065,
+      "median_per_document": {
+        "words": 471.5,
+        "paragraphs": 8.0,
+        "sentences": 33.0,
+        "sentence_words_median": 14.0,
+        "sentence_words_p90": 22.0,
+        "paragraph_sentences_median": 4.0,
+        "short_sentences_pct": 22.719,
+        "long_sentences_pct": 5.556,
+        "first_person_per_1000_words": 3.195,
+        "because_so_but_per_1000_words": 8.36,
+        "contractions_per_1000_words": 0.0
+      }
+    },
+    "reference": {
+      "documents": 40,
+      "prose_words": 59761,
+      "median_per_document": {
+        "words": 1341.0,
+        "paragraphs": 49.0,
+        "sentences": 92.5,
+        "sentence_words_median": 14.0,
+        "sentence_words_p90": 23.75,
+        "paragraph_sentences_median": 1.0,
+        "short_sentences_pct": 25.682,
+        "long_sentences_pct": 7.425,
+        "first_person_per_1000_words": 20.622,
+        "because_so_but_per_1000_words": 8.243,
+        "contractions_per_1000_words": 6.96
+      }
+    },
+    "generated_by_mode": {
+      "account": {
+        "documents": 40,
+        "prose_words": 19164,
+        "median_per_document": {
+          "words": 475.5,
+          "paragraphs": 8.0,
+          "sentences": 32.0,
+          "sentence_words_median": 14.5,
+          "sentence_words_p90": 22.1,
+          "paragraph_sentences_median": 4.0,
+          "short_sentences_pct": 20.294,
+          "long_sentences_pct": 3.28,
+          "first_person_per_1000_words": 24.314,
+          "because_so_but_per_1000_words": 8.248,
+          "contractions_per_1000_words": 0.0
+        }
+      },
+      "explanation": {
+        "documents": 40,
+        "prose_words": 18901,
+        "median_per_document": {
+          "words": 468.0,
+          "paragraphs": 8.0,
+          "sentences": 34.0,
+          "sentence_words_median": 13.0,
+          "sentence_words_p90": 21.95,
+          "paragraph_sentences_median": 4.0,
+          "short_sentences_pct": 27.526,
+          "long_sentences_pct": 5.635,
+          "first_person_per_1000_words": 0.0,
+          "because_so_but_per_1000_words": 8.529,
+          "contractions_per_1000_words": 0.0
+        }
+      }
+    },
+    "lint": {
+      "findings": 1152,
+      "files_without_findings": 0,
+      "tags": {
+        "abstract-subject": 56,
+        "long-list-likely": 6,
+        "smart-quotes": 85,
+        "semicolon": 21,
+        "evaluative-framing": 6,
+        "colon-inline": 58,
+        "dense-paragraph-run": 64,
+        "heading-question-word": 27,
+        "flat-definition": 29,
+        "long-clause-likely": 94,
+        "contraction": 221,
+        "banned-word": 76,
+        "many-commas": 158,
+        "paragraph-too-long": 51,
+        "long-sentence": 4,
+        "banned-phrase": 48,
+        "repeated-and": 18,
+        "third-person": 7,
+        "count-list": 15,
+        "choppy-rhythm": 79,
+        "past-tense-fragment": 12,
+        "prose-question": 9,
+        "parallel-sentences": 1,
+        "meta-framing": 1,
+        "label-fragment": 4,
+        "question-opener": 1,
+        "gerund-opener": 1
+      }
+    },
+    "exact_source_overlap": [
+      {
+        "id": "005",
+        "exact_source_sentences": [
+          "Most of the work happened on my smartphone while I was commuting to pick up my kid."
+        ]
+      },
+      {
+        "id": "016",
+        "exact_source_sentences": [
+          "For each item, it decides whether the content belongs to an existing article or should start a new one."
+        ]
+      }
+    ],
+    "repeated_generated_sentences": []
+  },
+  "round-1-holdout": {
+    "generated": {
+      "documents": 20,
+      "prose_words": 9530,
+      "median_per_document": {
+        "words": 475.5,
+        "paragraphs": 8.0,
+        "sentences": 32.5,
+        "sentence_words_median": 14.25,
+        "sentence_words_p90": 22.05,
+        "paragraph_sentences_median": 4.0,
+        "short_sentences_pct": 24.621,
+        "long_sentences_pct": 6.066,
+        "first_person_per_1000_words": 8.678,
+        "because_so_but_per_1000_words": 10.309,
+        "contractions_per_1000_words": 0.0
+      }
+    },
+    "reference": {
+      "documents": 10,
+      "prose_words": 14407,
+      "median_per_document": {
+        "words": 1532.5,
+        "paragraphs": 51.0,
+        "sentences": 100.5,
+        "sentence_words_median": 13.5,
+        "sentence_words_p90": 23.5,
+        "paragraph_sentences_median": 1.0,
+        "short_sentences_pct": 27.737,
+        "long_sentences_pct": 6.356,
+        "first_person_per_1000_words": 38.971,
+        "because_so_but_per_1000_words": 10.867,
+        "contractions_per_1000_words": 5.682
+      }
+    },
+    "generated_by_mode": {
+      "account": {
+        "documents": 10,
+        "prose_words": 4752,
+        "median_per_document": {
+          "words": 473.5,
+          "paragraphs": 8.0,
+          "sentences": 32.0,
+          "sentence_words_median": 14.75,
+          "sentence_words_p90": 22.05,
+          "paragraph_sentences_median": 4.0,
+          "short_sentences_pct": 24.621,
+          "long_sentences_pct": 6.25,
+          "first_person_per_1000_words": 30.648,
+          "because_so_but_per_1000_words": 12.732,
+          "contractions_per_1000_words": 0.0
+        }
+      },
+      "explanation": {
+        "documents": 10,
+        "prose_words": 4778,
+        "median_per_document": {
+          "words": 475.5,
+          "paragraphs": 8.0,
+          "sentences": 34.0,
+          "sentence_words_median": 14.0,
+          "sentence_words_p90": 22.15,
+          "paragraph_sentences_median": 4.0,
+          "short_sentences_pct": 24.166,
+          "long_sentences_pct": 5.643,
+          "first_person_per_1000_words": 0.0,
+          "because_so_but_per_1000_words": 9.465,
+          "contractions_per_1000_words": 0.0
+        }
+      }
+    },
+    "lint": {
+      "findings": 297,
+      "files_without_findings": 0,
+      "tags": {
+        "long-clause-likely": 29,
+        "repeated-and": 4,
+        "paragraph-too-long": 17,
+        "past-tense-fragment": 4,
+        "many-commas": 33,
+        "banned-phrase": 6,
+        "contraction": 74,
+        "semicolon": 6,
+        "abstract-subject": 7,
+        "dense-paragraph-run": 18,
+        "smart-quotes": 16,
+        "count-list": 2,
+        "third-person": 5,
+        "heading-question-word": 7,
+        "banned-word": 26,
+        "long-sentence": 1,
+        "choppy-rhythm": 19,
+        "long-list-likely": 3,
+        "colon-inline": 17,
+        "flat-definition": 3
+      }
+    },
+    "exact_source_overlap": [
+      {
+        "id": "033",
+        "exact_source_sentences": [
+          "In January, I ran a two-day workshop in Berlin and needed to give certificates to everyone who attended."
+        ]
+      }
+    ],
+    "repeated_generated_sentences": []
+  },
+  "round-1": {
+    "generated": {
+      "documents": 100,
+      "prose_words": 47595,
+      "median_per_document": {
+        "words": 471.5,
+        "paragraphs": 8.0,
+        "sentences": 33.0,
+        "sentence_words_median": 14.0,
+        "sentence_words_p90": 22.0,
+        "paragraph_sentences_median": 4.0,
+        "short_sentences_pct": 23.333,
+        "long_sentences_pct": 5.556,
+        "first_person_per_1000_words": 4.294,
+        "because_so_but_per_1000_words": 8.621,
+        "contractions_per_1000_words": 0.0
+      }
+    },
+    "reference": {
+      "documents": 50,
+      "prose_words": 74168,
+      "median_per_document": {
+        "words": 1381.5,
+        "paragraphs": 50.5,
+        "sentences": 92.5,
+        "sentence_words_median": 14.0,
+        "sentence_words_p90": 23.75,
+        "paragraph_sentences_median": 1.0,
+        "short_sentences_pct": 25.91,
+        "long_sentences_pct": 7.027,
+        "first_person_per_1000_words": 22.694,
+        "because_so_but_per_1000_words": 9.03,
+        "contractions_per_1000_words": 6.163
+      }
+    },
+    "generated_by_mode": {
+      "account": {
+        "documents": 50,
+        "prose_words": 23916,
+        "median_per_document": {
+          "words": 475.5,
+          "paragraphs": 8.0,
+          "sentences": 32.0,
+          "sentence_words_median": 14.5,
+          "sentence_words_p90": 22.1,
+          "paragraph_sentences_median": 4.0,
+          "short_sentences_pct": 20.588,
+          "long_sentences_pct": 3.333,
+          "first_person_per_1000_words": 26.834,
+          "because_so_but_per_1000_words": 8.735,
+          "contractions_per_1000_words": 0.0
+        }
+      },
+      "explanation": {
+        "documents": 50,
+        "prose_words": 23679,
+        "median_per_document": {
+          "words": 468.5,
+          "paragraphs": 8.0,
+          "sentences": 34.0,
+          "sentence_words_median": 13.5,
+          "sentence_words_p90": 21.95,
+          "paragraph_sentences_median": 4.0,
+          "short_sentences_pct": 26.97,
+          "long_sentences_pct": 5.635,
+          "first_person_per_1000_words": 0.0,
+          "because_so_but_per_1000_words": 8.566,
+          "contractions_per_1000_words": 0.0
+        }
+      }
+    },
+    "lint": {
+      "findings": 1449,
+      "files_without_findings": 0,
+      "tags": {
+        "abstract-subject": 63,
+        "long-list-likely": 9,
+        "smart-quotes": 101,
+        "semicolon": 27,
+        "evaluative-framing": 6,
+        "colon-inline": 75,
+        "dense-paragraph-run": 82,
+        "heading-question-word": 34,
+        "flat-definition": 32,
+        "long-clause-likely": 123,
+        "contraction": 295,
+        "banned-word": 102,
+        "many-commas": 191,
+        "paragraph-too-long": 68,
+        "long-sentence": 5,
+        "banned-phrase": 54,
+        "repeated-and": 22,
+        "third-person": 12,
+        "count-list": 17,
+        "choppy-rhythm": 98,
+        "past-tense-fragment": 16,
+        "prose-question": 9,
+        "parallel-sentences": 1,
+        "meta-framing": 1,
+        "label-fragment": 4,
+        "question-opener": 1,
+        "gerund-opener": 1
+      }
+    },
+    "exact_source_overlap": [
+      {
+        "id": "005",
+        "exact_source_sentences": [
+          "Most of the work happened on my smartphone while I was commuting to pick up my kid."
+        ]
+      },
+      {
+        "id": "016",
+        "exact_source_sentences": [
+          "For each item, it decides whether the content belongs to an existing article or should start a new one."
+        ]
+      },
+      {
+        "id": "033",
+        "exact_source_sentences": [
+          "In January, I ran a two-day workshop in Berlin and needed to give certificates to everyone who attended."
+        ]
+      }
+    ],
+    "repeated_generated_sentences": []
+  },
+  "round-2-development": {
+    "generated": {
+      "documents": 80,
+      "prose_words": 38810,
+      "median_per_document": {
+        "words": 470.5,
+        "paragraphs": 12.0,
+        "sentences": 36.0,
+        "sentence_words_median": 13.5,
+        "sentence_words_p90": 20.0,
+        "paragraph_sentences_median": 3.0,
+        "short_sentences_pct": 23.799,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 11.854,
+        "because_so_but_per_1000_words": 6.659,
+        "contractions_per_1000_words": 4.69
+      }
+    },
+    "reference": {
+      "documents": 40,
+      "prose_words": 59761,
+      "median_per_document": {
+        "words": 1341.0,
+        "paragraphs": 49.0,
+        "sentences": 92.5,
+        "sentence_words_median": 14.0,
+        "sentence_words_p90": 23.75,
+        "paragraph_sentences_median": 1.0,
+        "short_sentences_pct": 25.682,
+        "long_sentences_pct": 7.425,
+        "first_person_per_1000_words": 20.622,
+        "because_so_but_per_1000_words": 8.243,
+        "contractions_per_1000_words": 6.96
+      }
+    },
+    "generated_by_mode": {
+      "account": {
+        "documents": 40,
+        "prose_words": 19804,
+        "median_per_document": {
+          "words": 482.0,
+          "paragraphs": 12.0,
+          "sentences": 36.0,
+          "sentence_words_median": 14.0,
+          "sentence_words_p90": 20.0,
+          "paragraph_sentences_median": 3.0,
+          "short_sentences_pct": 23.206,
+          "long_sentences_pct": 0.0,
+          "first_person_per_1000_words": 34.692,
+          "because_so_but_per_1000_words": 7.576,
+          "contractions_per_1000_words": 5.941
+        }
+      },
+      "explanation": {
+        "documents": 40,
+        "prose_words": 19006,
+        "median_per_document": {
+          "words": 459.5,
+          "paragraphs": 11.5,
+          "sentences": 35.5,
+          "sentence_words_median": 13.0,
+          "sentence_words_p90": 20.0,
+          "paragraph_sentences_median": 3.0,
+          "short_sentences_pct": 25.0,
+          "long_sentences_pct": 0.0,
+          "first_person_per_1000_words": 2.429,
+          "because_so_but_per_1000_words": 4.879,
+          "contractions_per_1000_words": 3.899
+        }
+      }
+    },
+    "lint": {
+      "findings": 0,
+      "files_without_findings": 80,
+      "tags": {}
+    },
+    "exact_source_overlap": [
+      {
+        "id": "056",
+        "exact_source_sentences": [
+          "Once plan.yaml exists, the writing scripts no longer need the chat history."
+        ]
+      },
+      {
+        "id": "074",
+        "exact_source_sentences": [
+          "I use Hatch with hatchling as the build backend and uv for tooling."
+        ]
+      }
+    ],
+    "repeated_generated_sentences": []
+  },
+  "round-2-holdout": {
+    "generated": {
+      "documents": 20,
+      "prose_words": 9663,
+      "median_per_document": {
+        "words": 461.5,
+        "paragraphs": 12.5,
+        "sentences": 34.0,
+        "sentence_words_median": 13.0,
+        "sentence_words_p90": 20.5,
+        "paragraph_sentences_median": 3.0,
+        "short_sentences_pct": 21.584,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 43.41,
+        "because_so_but_per_1000_words": 10.094,
+        "contractions_per_1000_words": 7.582
+      }
+    },
+    "reference": {
+      "documents": 10,
+      "prose_words": 14407,
+      "median_per_document": {
+        "words": 1532.5,
+        "paragraphs": 51.0,
+        "sentences": 100.5,
+        "sentence_words_median": 13.5,
+        "sentence_words_p90": 23.5,
+        "paragraph_sentences_median": 1.0,
+        "short_sentences_pct": 27.737,
+        "long_sentences_pct": 6.356,
+        "first_person_per_1000_words": 38.971,
+        "because_so_but_per_1000_words": 10.867,
+        "contractions_per_1000_words": 5.682
+      }
+    },
+    "generated_by_mode": {
+      "account": {
+        "documents": 10,
+        "prose_words": 4943,
+        "median_per_document": {
+          "words": 480.0,
+          "paragraphs": 13.0,
+          "sentences": 37.0,
+          "sentence_words_median": 13.0,
+          "sentence_words_p90": 20.5,
+          "paragraph_sentences_median": 3.0,
+          "short_sentences_pct": 21.833,
+          "long_sentences_pct": 0.0,
+          "first_person_per_1000_words": 47.898,
+          "because_so_but_per_1000_words": 12.424,
+          "contractions_per_1000_words": 9.619
+        }
+      },
+      "explanation": {
+        "documents": 10,
+        "prose_words": 4720,
+        "median_per_document": {
+          "words": 451.0,
+          "paragraphs": 11.5,
+          "sentences": 34.0,
+          "sentence_words_median": 12.75,
+          "sentence_words_p90": 20.5,
+          "paragraph_sentences_median": 3.0,
+          "short_sentences_pct": 20.114,
+          "long_sentences_pct": 0.0,
+          "first_person_per_1000_words": 21.811,
+          "because_so_but_per_1000_words": 8.667,
+          "contractions_per_1000_words": 4.675
+        }
+      }
+    },
+    "lint": {
+      "findings": 1,
+      "files_without_findings": 19,
+      "tags": {
+        "banned-word": 1
+      }
+    },
+    "exact_source_overlap": [],
+    "repeated_generated_sentences": []
+  },
+  "round-2": {
+    "generated": {
+      "documents": 100,
+      "prose_words": 48473,
+      "median_per_document": {
+        "words": 466.5,
+        "paragraphs": 12.0,
+        "sentences": 35.5,
+        "sentence_words_median": 13.0,
+        "sentence_words_p90": 20.0,
+        "paragraph_sentences_median": 3.0,
+        "short_sentences_pct": 23.077,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 14.77,
+        "because_so_but_per_1000_words": 6.891,
+        "contractions_per_1000_words": 5.199
+      }
+    },
+    "reference": {
+      "documents": 50,
+      "prose_words": 74168,
+      "median_per_document": {
+        "words": 1381.5,
+        "paragraphs": 50.5,
+        "sentences": 92.5,
+        "sentence_words_median": 14.0,
+        "sentence_words_p90": 23.75,
+        "paragraph_sentences_median": 1.0,
+        "short_sentences_pct": 25.91,
+        "long_sentences_pct": 7.027,
+        "first_person_per_1000_words": 22.694,
+        "because_so_but_per_1000_words": 9.03,
+        "contractions_per_1000_words": 6.163
+      }
+    },
+    "generated_by_mode": {
+      "account": {
+        "documents": 50,
+        "prose_words": 24747,
+        "median_per_document": {
+          "words": 482.0,
+          "paragraphs": 12.5,
+          "sentences": 36.0,
+          "sentence_words_median": 14.0,
+          "sentence_words_p90": 20.0,
+          "paragraph_sentences_median": 3.0,
+          "short_sentences_pct": 22.902,
+          "long_sentences_pct": 0.0,
+          "first_person_per_1000_words": 35.855,
+          "because_so_but_per_1000_words": 8.441,
+          "contractions_per_1000_words": 6.218
+        }
+      },
+      "explanation": {
+        "documents": 50,
+        "prose_words": 23726,
+        "median_per_document": {
+          "words": 456.0,
+          "paragraphs": 11.5,
+          "sentences": 34.0,
+          "sentence_words_median": 13.0,
+          "sentence_words_p90": 20.0,
+          "paragraph_sentences_median": 3.0,
+          "short_sentences_pct": 23.913,
+          "long_sentences_pct": 0.0,
+          "first_person_per_1000_words": 4.821,
+          "because_so_but_per_1000_words": 6.424,
+          "contractions_per_1000_words": 3.899
+        }
+      }
+    },
+    "lint": {
+      "findings": 1,
+      "files_without_findings": 99,
+      "tags": {
+        "banned-word": 1
+      }
+    },
+    "exact_source_overlap": [
+      {
+        "id": "056",
+        "exact_source_sentences": [
+          "Once plan.yaml exists, the writing scripts no longer need the chat history."
+        ]
+      },
+      {
+        "id": "074",
+        "exact_source_sentences": [
+          "I use Hatch with hatchling as the build backend and uv for tooling."
+        ]
+      }
+    ],
+    "repeated_generated_sentences": []
+  },
+  "round-3-development": {
+    "generated": {
+      "documents": 80,
+      "prose_words": 38671,
+      "median_per_document": {
+        "words": 468.5,
+        "paragraphs": 12.0,
+        "sentences": 35.0,
+        "sentence_words_median": 13.5,
+        "sentence_words_p90": 20.0,
+        "paragraph_sentences_median": 3.0,
+        "short_sentences_pct": 23.684,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 12.474,
+        "because_so_but_per_1000_words": 6.708,
+        "contractions_per_1000_words": 4.652
+      }
+    },
+    "reference": {
+      "documents": 40,
+      "prose_words": 59761,
+      "median_per_document": {
+        "words": 1341.0,
+        "paragraphs": 49.0,
+        "sentences": 92.5,
+        "sentence_words_median": 14.0,
+        "sentence_words_p90": 23.75,
+        "paragraph_sentences_median": 1.0,
+        "short_sentences_pct": 25.682,
+        "long_sentences_pct": 7.425,
+        "first_person_per_1000_words": 20.622,
+        "because_so_but_per_1000_words": 8.243,
+        "contractions_per_1000_words": 6.96
+      }
+    },
+    "generated_by_mode": {
+      "account": {
+        "documents": 40,
+        "prose_words": 19810,
+        "median_per_document": {
+          "words": 482.0,
+          "paragraphs": 12.0,
+          "sentences": 35.5,
+          "sentence_words_median": 14.0,
+          "sentence_words_p90": 20.0,
+          "paragraph_sentences_median": 3.0,
+          "short_sentences_pct": 23.128,
+          "long_sentences_pct": 0.0,
+          "first_person_per_1000_words": 35.718,
+          "because_so_but_per_1000_words": 7.78,
+          "contractions_per_1000_words": 5.697
+        }
+      },
+      "explanation": {
+        "documents": 40,
+        "prose_words": 18861,
+        "median_per_document": {
+          "words": 450.0,
+          "paragraphs": 11.5,
+          "sentences": 34.5,
+          "sentence_words_median": 13.0,
+          "sentence_words_p90": 19.9,
+          "paragraph_sentences_median": 3.0,
+          "short_sentences_pct": 25.0,
+          "long_sentences_pct": 0.0,
+          "first_person_per_1000_words": 3.08,
+          "because_so_but_per_1000_words": 4.879,
+          "contractions_per_1000_words": 3.899
+        }
+      }
+    },
+    "lint": {
+      "findings": 0,
+      "files_without_findings": 80,
+      "tags": {}
+    },
+    "exact_source_overlap": [],
+    "repeated_generated_sentences": []
+  },
+  "round-3-holdout": {
+    "generated": {
+      "documents": 20,
+      "prose_words": 9478,
+      "median_per_document": {
+        "words": 460.0,
+        "paragraphs": 12.5,
+        "sentences": 34.0,
+        "sentence_words_median": 13.0,
+        "sentence_words_p90": 20.0,
+        "paragraph_sentences_median": 3.0,
+        "short_sentences_pct": 22.829,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 40.233,
+        "because_so_but_per_1000_words": 9.636,
+        "contractions_per_1000_words": 9.037
+      }
+    },
+    "reference": {
+      "documents": 10,
+      "prose_words": 14407,
+      "median_per_document": {
+        "words": 1532.5,
+        "paragraphs": 51.0,
+        "sentences": 100.5,
+        "sentence_words_median": 13.5,
+        "sentence_words_p90": 23.5,
+        "paragraph_sentences_median": 1.0,
+        "short_sentences_pct": 27.737,
+        "long_sentences_pct": 6.356,
+        "first_person_per_1000_words": 38.971,
+        "because_so_but_per_1000_words": 10.867,
+        "contractions_per_1000_words": 5.682
+      }
+    },
+    "generated_by_mode": {
+      "account": {
+        "documents": 10,
+        "prose_words": 4894,
+        "median_per_document": {
+          "words": 480.0,
+          "paragraphs": 13.0,
+          "sentences": 36.5,
+          "sentence_words_median": 13.0,
+          "sentence_words_p90": 20.5,
+          "paragraph_sentences_median": 3.0,
+          "short_sentences_pct": 21.833,
+          "long_sentences_pct": 0.0,
+          "first_person_per_1000_words": 47.898,
+          "because_so_but_per_1000_words": 11.545,
+          "contractions_per_1000_words": 9.05
+        }
+      },
+      "explanation": {
+        "documents": 10,
+        "prose_words": 4584,
+        "median_per_document": {
+          "words": 451.0,
+          "paragraphs": 11.5,
+          "sentences": 34.0,
+          "sentence_words_median": 12.75,
+          "sentence_words_p90": 19.85,
+          "paragraph_sentences_median": 3.0,
+          "short_sentences_pct": 23.247,
+          "long_sentences_pct": 0.0,
+          "first_person_per_1000_words": 30.184,
+          "because_so_but_per_1000_words": 8.667,
+          "contractions_per_1000_words": 8.18
+        }
+      }
+    },
+    "lint": {
+      "findings": 1,
+      "files_without_findings": 19,
+      "tags": {
+        "banned-word": 1
+      }
+    },
+    "exact_source_overlap": [],
+    "repeated_generated_sentences": []
+  },
+  "round-3": {
+    "generated": {
+      "documents": 100,
+      "prose_words": 48149,
+      "median_per_document": {
+        "words": 464.5,
+        "paragraphs": 12.0,
+        "sentences": 35.0,
+        "sentence_words_median": 13.0,
+        "sentence_words_p90": 20.0,
+        "paragraph_sentences_median": 3.0,
+        "short_sentences_pct": 23.303,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 17.279,
+        "because_so_but_per_1000_words": 6.976,
+        "contractions_per_1000_words": 5.199
+      }
+    },
+    "reference": {
+      "documents": 50,
+      "prose_words": 74168,
+      "median_per_document": {
+        "words": 1381.5,
+        "paragraphs": 50.5,
+        "sentences": 92.5,
+        "sentence_words_median": 14.0,
+        "sentence_words_p90": 23.75,
+        "paragraph_sentences_median": 1.0,
+        "short_sentences_pct": 25.91,
+        "long_sentences_pct": 7.027,
+        "first_person_per_1000_words": 22.694,
+        "because_so_but_per_1000_words": 9.03,
+        "contractions_per_1000_words": 6.163
+      }
+    },
+    "generated_by_mode": {
+      "account": {
+        "documents": 50,
+        "prose_words": 24704,
+        "median_per_document": {
+          "words": 482.0,
+          "paragraphs": 12.0,
+          "sentences": 36.0,
+          "sentence_words_median": 14.0,
+          "sentence_words_p90": 20.0,
+          "paragraph_sentences_median": 3.0,
+          "short_sentences_pct": 22.902,
+          "long_sentences_pct": 0.0,
+          "first_person_per_1000_words": 35.855,
+          "because_so_but_per_1000_words": 8.511,
+          "contractions_per_1000_words": 6.082
+        }
+      },
+      "explanation": {
+        "documents": 50,
+        "prose_words": 23445,
+        "median_per_document": {
+          "words": 450.0,
+          "paragraphs": 11.5,
+          "sentences": 34.0,
+          "sentence_words_median": 13.0,
+          "sentence_words_p90": 19.9,
+          "paragraph_sentences_median": 3.0,
+          "short_sentences_pct": 24.456,
+          "long_sentences_pct": 0.0,
+          "first_person_per_1000_words": 6.612,
+          "because_so_but_per_1000_words": 6.424,
+          "contractions_per_1000_words": 4.397
+        }
+      }
+    },
+    "lint": {
+      "findings": 1,
+      "files_without_findings": 99,
+      "tags": {
+        "banned-word": 1
+      }
+    },
+    "exact_source_overlap": [],
+    "repeated_generated_sentences": []
+  }
+}

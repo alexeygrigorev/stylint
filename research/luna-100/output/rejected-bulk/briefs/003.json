@@ -1,0 +1,48 @@
+{
+  "id": "003",
+  "source_path": "research/luna-100/sources/raw/2025-12-19-5-ideas-for-ai-agents-and-openais.md",
+  "purpose": "personal account of the reported work",
+  "required_facts": [
+    {
+      "fact": "The goal for this cohort was to move beyond simple prompts and build robust, end-to-end AI applications and agentic workflows: systems that allow AI models interact with databases, manage external tools, and handle messy",
+      "evidence": "research/luna-100/sources/raw/2025-12-19-5-ideas-for-ai-agents-and-openais.md"
+    },
+    {
+      "fact": "Asked Gemini to illustrate the AI Bootcamp Demo Day and got another cool image Four students and I presented what we’ve been building over the last couple of months.",
+      "evidence": "research/luna-100/sources/raw/2025-12-19-5-ideas-for-ai-agents-and-openais.md"
+    },
+    {
+      "fact": "In this post, I want to walk through the architecture, the tech stacks, and the specific engineering challenges we solved in these projects.",
+      "evidence": "research/luna-100/sources/raw/2025-12-19-5-ideas-for-ai-agents-and-openais.md"
+    },
+    {
+      "fact": "To-Do List Agent I started by presenting a reference project I built to help students understand the requirements.",
+      "evidence": "research/luna-100/sources/raw/2025-12-19-5-ideas-for-ai-agents-and-openais.md"
+    },
+    {
+      "fact": "The idea is an [agent that interacts with a simple to-do list application](https://github.com/alexeygrigorev/my-daily-tasks-agent).",
+      "evidence": "research/luna-100/sources/raw/2025-12-19-5-ideas-for-ai-agents-and-openais.md"
+    },
+    {
+      "fact": "I used Lovable to prototype the frontend and FastAPI (Python) for the backend.",
+      "evidence": "research/luna-100/sources/raw/2025-12-19-5-ideas-for-ai-agents-and-openais.md"
+    },
+    {
+      "fact": "The agent does not use RAG or a knowledge base.",
+      "evidence": "research/luna-100/sources/raw/2025-12-19-5-ideas-for-ai-agents-and-openais.md"
+    },
+    {
+      "fact": "Instead, it relies on the backend's OpenAPI specification.",
+      "evidence": "research/luna-100/sources/raw/2025-12-19-5-ideas-for-ai-agents-and-openais.md"
+    },
+    {
+      "fact": "I fed this specification to the model so it could create tools to get tasks or mark them as complete.",
+      "evidence": "research/luna-100/sources/raw/2025-12-19-5-ideas-for-ai-agents-and-openais.md"
+    },
+    {
+      "fact": "To monitor the system, I used Logfire, which tracks the entire session, including the specific tools used and the cost of each interaction.",
+      "evidence": "research/luna-100/sources/raw/2025-12-19-5-ideas-for-ai-agents-and-openais.md"
+    }
+  ],
+  "author_attribution": "Attribute projects and outcomes to the named author or participants in the source; do not add personal experience."
+}

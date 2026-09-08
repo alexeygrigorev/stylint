@@ -1,0 +1,18 @@
+{
+  "id": "003",
+  "source_path": "research/luna-100/sources/raw/2025-12-19-5-ideas-for-ai-agents-and-openais.md",
+  "purpose": "personal account of Alexey's AI Bootcamp Demo Day and the projects presented there",
+  "required_facts": [
+    {"fact": "Alexey hosted the first AI Bootcamp Demo Day on December 15.", "evidence": "Source line 3: the event date and host are stated."},
+    {"fact": "Graduates from the first AI Bootcamp iteration showcased final projects at the live event.", "evidence": "Source line 3: graduates presented their final projects."},
+    {"fact": "The cohort aimed to build end-to-end applications and agentic workflows involving databases, external tools, and messy data.", "evidence": "Source line 5: the cohort goal is described beyond simple prompts."},
+    {"fact": "Four students and Alexey presented projects built over the previous couple of months.", "evidence": "Source line 10: four students and Alexey presented what they had been building."},
+    {"fact": "Alexey presented a to-do agent built with a Lovable frontend prototype and FastAPI Python backend.", "evidence": "Source line 16: the reference project and its frontend and backend technologies are identified."},
+    {"fact": "The to-do agent used the backend OpenAPI specification instead of RAG or a knowledge base.", "evidence": "Source line 19: the agent's OpenAPI-based design and absence of RAG are stated."},
+    {"fact": "Alexey used Logfire to monitor tool calls and interaction costs and wrote 18 pytest tests.", "evidence": "Source line 19: Logfire monitoring and the 18 tests are specified."},
+    {"fact": "Scott DeGeest's agent tracked SEC cybersecurity disclosures and handled XML and PDF files.", "evidence": "Source lines 26-28: purpose, SEC source, and input formats are described."},
+    {"fact": "Carlos Pumar-Frohberg used MongoDB and Neo4j with an orchestrator for Stack Exchange satisfaction analysis.", "evidence": "Source lines 37-39: project goal, data stores, and routing design are described."},
+    {"fact": "Vancesca Dinh built a Habit Builder around Huberman Lab and medical publications, while Asia Amodeo built an Elasticsearch-backed Gmail email agent.", "evidence": "Source lines 48-50 and 59-61: both participants and their project designs are described."}
+  ],
+  "author_attribution": "Keep project outcomes attributed to Alexey, Scott DeGeest, Carlos Pumar-Frohberg, Vancesca Dinh, and Asia Amodeo as named in the source."
+}

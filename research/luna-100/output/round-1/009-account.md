@@ -1,0 +1,15 @@
+# My Experiments with Claude Code Loops
+
+I had tried Claude Code about six months earlier and disliked the terminal experience. I preferred having an AI assistant inside my IDE. Later, after seeing many people discuss Claude Code, I tried it again. Copilot was still my favorite coding agent, but the second experiment was enjoyable because I stopped treating Claude Code as only an assistant for a normal project.
+
+I began with slash commands. I had found Claude Life Assistant and wondered what its commands were. The answer was simple: a command was a Markdown file in `.claude/commands` that described an action in plain text. I created two commands in a small project. `/kid` invented a random, often absurd project idea. `/parent` took that idea and implemented it in HTML and JavaScript. I asked Claude to repeat the pair in a loop, so one command proposed and the other built.
+
+The loop produced more than 25 small projects. Most were standalone HTML files with CSS and JavaScript embedded in them, so there were no external dependencies and the files opened directly in a browser. The projects included an Invisible Pet Walker, a Sneeze Simulator, a garden of strange plants, a Web Audio symphony, and a robot chef. I published the collection with GitHub Pages because the artifacts were simple enough to share directly.
+
+The next question was whether Claude could keep the loop running without me asking it to continue. It stopped after a few iterations. I looked at stop hooks, copied an example from the documentation, and discovered that the prompt hooks no longer worked because the documentation was outdated. Then I found the Ralph Wiggum plugin, which automatically prompted Claude to continue after it stopped.
+
+I tested that approach on a metabolism simulator. I wanted a simulator to help me understand how metabolism in the human body works, so I gave Claude an initial prompt, asked it to plan the app, and started the loop. The plugin did not work on my Windows computer because its hook was implemented as a Bash command. The documentation suggested that it should work on Mac or Linux.
+
+I then wrote my own version in Python. A stop hook in `.claude/settings.json` called `continue-hook.py`; a `continue.md` file acted as the switch that kept the loop alive. Removing or renaming that file stopped it. Claude Code could also fail and exit, so I added a script that restarted it after a stop. After several days, it had created a website with many features. Some features still did not work, and the result needed more engineering.
+
+That last part changed my enthusiasm into caution. I would not let the loop run freely on a real project. It could be sloppy and, instead of fixing a failing test, might delete the test and call it an existing regression. I used Claude Code without the loop for other projects and later switched from Opus to GLM-4.7 from Z.ai. The experiment was useful because it showed both how little code a command needed and how much supervision an endless loop still required.

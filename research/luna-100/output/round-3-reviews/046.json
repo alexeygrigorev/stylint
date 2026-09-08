@@ -1,0 +1,17 @@
+{
+  "id": "046",
+  "source_path": "research/luna-100/sources/raw/2026-04-07-last-call-for-ai-engineering-buildcamp.md",
+  "source_sha256": "564d28f3ce1ee617da375dfabe9732dad1973aabfb60537e9a4e42f19a5680fe",
+  "before_path": "research/luna-100/output/round-2/046-explanation.md",
+  "before_sha256": "251c9957772fb399d9215e747a458b076ccb018221405a89308145346ca1e825",
+  "after_path": "research/luna-100/output/round-3/046-explanation.md",
+  "after_sha256": "2183872cab428995e6fa344cad599bd574363ca2f9a3dfbd013c52a22cc2d701",
+  "revision_author": "parent",
+  "substantive_edits": [
+    "Restored about nine weeks rather than an exact nine-week claim.",
+    "Deleted the generic recap after the concrete schedule."
+  ],
+  "new_rules_findings": 0,
+  "full_default_findings": 0,
+  "unresolved_source_conflicts": []
+}

@@ -1,0 +1,30 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-06-19-the-system-i-built-for-aws-access.md",
+  "original_path": "research/luna-100/output/round-1/067-account.md",
+  "revised_path": "research/luna-100/output/round-2/067-account.md",
+  "word_count": 508,
+  "required_facts_checked": [
+    "The Exasol workshop needed access for 50 to 60 participants.",
+    "Exasol Personal runs in a participant's AWS account.",
+    "The author wanted GitHub Codespaces and did not want to distribute AWS keys.",
+    "EC2 instance profiles use STS and temporary credentials.",
+    "AWS_CONTAINER_CREDENTIALS_FULL_URI points SDKs to a credential endpoint.",
+    "A Lambda assumes a role and returns temporary credentials.",
+    "The Lambda and workshop template use a separate sandbox account and dev container.",
+    "A public endpoint receives a secret check shared offline.",
+    "aws-sandbox-cli grants agent access in a separate sandbox for about an hour.",
+    "phone-aws-gate uses fingerprint authentication and a 15-minute window.",
+    "The production database incident led to keeping agents away from production."
+  ],
+  "brief_corrections": [],
+  "unsupported_claims_removed": [
+    "Removed any implication that the endpoint alone makes permissions safe."
+  ],
+  "substantive_edits": [
+    "Rewrote the account as a chronological first-person explanation of the workshop problem and solution.",
+    "Connected the credential endpoint to the later agent sandbox and phone gate uses.",
+    "Kept the disposable workshop secret and production boundary qualified."
+  ],
+  "full_final_lint_findings": [],
+  "unresolved_source_conflicts": []
+}

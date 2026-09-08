@@ -1,0 +1,21 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-08-18-devops-and-observability-for-an-ai.md",
+  "original_path": "research/luna-100/output/round-1/091-account.md",
+  "revised_path": "research/luna-100/output/round-2/091-account.md",
+  "word_count": 472,
+  "required_facts_checked": [
+    {"claim": "Development and production are separate copies of the environment.", "status": "present", "evidence": "source: two copies of the same environment"},
+    {"claim": "A manual workflow promotes the tested development version.", "status": "present", "evidence": "source: manual GitHub Actions workflow"},
+    {"claim": "The image is built once and pushed to Amazon ECR.", "status": "present", "evidence": "source: For AWS, we can use Amazon ECR"},
+    {"claim": "Timestamp and commit-hash tags identify the artifact.", "status": "present", "evidence": "source: timestamp and short commit hash"},
+    {"claim": "OpenTelemetry supplies metrics, logs, and traces.", "status": "present", "evidence": "source: OpenTelemetry is the industry standard"},
+    {"claim": "Prometheus, Loki, Tempo, and Grafana form the self-hosted stack.", "status": "present", "evidence": "source: Prometheus for metrics, Loki for logs, Tempo for traces, Grafana for dashboards"},
+    {"claim": "Application metrics include rooms, participants, canvas elements, and component failures.", "status": "present", "evidence": "source: interview rooms created, active participants, canvas elements"},
+    {"claim": "An actionable alert represents repeated user-impacting failures.", "status": "present", "evidence": "source: Add an actionable alert"},
+    {"claim": "A minute-polling headless agent can investigate an alert.", "status": "present", "evidence": "source: polls the observability alert API"}
+  ],
+  "unsupported_claims_removed": [],
+  "substantive_edits": ["Reorganized the account around environment separation, immutable promotion, observability, and response.", "Kept the workshop proof-of-concept limits and future production concerns explicit.", "Restored concrete telemetry destinations and application metrics."],
+  "full_final_lint_findings": [],
+  "unresolved_source_conflicts": []
+}

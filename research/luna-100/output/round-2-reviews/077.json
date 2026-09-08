@@ -1,0 +1,26 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-07-22-ai-native-development-specifications.md",
+  "original_path": "research/luna-100/output/round-1/077-account.md",
+  "revised_path": "research/luna-100/output/round-2/077-account.md",
+  "word_count": 490,
+  "required_facts_checked": [
+    {"claim": "A vague weekly-feedback request produced the wrong command-line product.", "status": "present", "evidence": "source: weekly-feedback tracked wins, issues, blockers, and next steps"},
+    {"claim": "The intended product was a web retrospective using Start, Stop, and Continue.", "status": "present", "evidence": "source: desired web team retrospective"},
+    {"claim": "The author now brainstorms in ChatGPT dictation mode one question at a time.", "status": "present", "evidence": "source: chat assistant and short questions"},
+    {"claim": "The retrospective decisions cover contributors, visibility, reveal, clustering, voting, and later recordings.", "status": "present", "evidence": "source: clarified behavior and recording outside first version"},
+    {"claim": "The decisions are saved as plan.md before implementation.", "status": "present", "evidence": "source: download Markdown specification as plan.md"},
+    {"claim": "Django was chosen because the author knows it well enough to review.", "status": "present", "evidence": "source: stack choice"},
+    {"claim": "GitHub Issues become the canonical backlog after MVP filtering.", "status": "present", "evidence": "source: move remaining tasks into GitHub Issues"},
+    {"claim": "AGENTS.md, CLAUDE.md, and linked _docs preserve context between sessions.", "status": "present", "evidence": "source: context engineering files"},
+    {"claim": "PM, engineer, and QA roles separate grooming, implementation, and verification.", "status": "present", "evidence": "source: role definitions and PASS/FAIL QA"},
+    {"claim": "A loop needs a checkable stop condition.", "status": "present", "evidence": "source: all issues groomed is checkable; make code better is not"}
+  ],
+  "unsupported_claims_removed": [],
+  "substantive_edits": [
+    "Kept the author's first-person workflow and the concrete retroloop failure caused by a vague request.",
+    "Restored plan.md, Django, GitHub Issues, AGENTS.md, CLAUDE.md, linked documents, and the role sequence.",
+    "Removed the redundant final verdict and kept the stop-condition explanation tied to the workflow."
+  ],
+  "full_final_lint_findings": [],
+  "unresolved_source_conflicts": []
+}

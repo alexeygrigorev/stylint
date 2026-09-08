@@ -1,0 +1,38 @@
+{
+  "instructions": "Compare each pair against its source. Choose baseline, corrected, tie, or neither; leave blank until Alexey reviews. Record concrete preferred wording. Do not copy agent judgments into human labels.",
+  "cases": [
+    {
+      "case": "minsearch",
+      "source": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-05-29-minsearch-the-small-search-library.md",
+      "baseline": "baseline/minsearch.md",
+      "corrected": "corrected/minsearch.md",
+      "preferred": null,
+      "sounds_like_me": null,
+      "factual_problem": null,
+      "preferred_replacement": null,
+      "notes": null
+    },
+    {
+      "case": "phone",
+      "source": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-05-22-the-system-i-built-to-ship-code-from.md",
+      "baseline": "baseline/phone.md",
+      "corrected": "corrected/phone.md",
+      "preferred": null,
+      "sounds_like_me": null,
+      "factual_problem": null,
+      "preferred_replacement": null,
+      "notes": null
+    },
+    {
+      "case": "sqlitesearch",
+      "source": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-02-20-how-i-built-sqlitesearch-a-lightweight.md",
+      "baseline": "holdout/sqlitesearch-clean-brief.md",
+      "corrected": "corrected/sqlitesearch.md",
+      "preferred": null,
+      "sounds_like_me": null,
+      "factual_problem": null,
+      "preferred_replacement": null,
+      "notes": null
+    }
+  ]
+}

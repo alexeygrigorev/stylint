@@ -1,0 +1,18 @@
+{
+  "id": "019",
+  "source_path": "research/luna-100/sources/raw/2026-02-13-what-is-an-ai-engineer-in-2026-join.md",
+  "purpose": "personal account of why Alexey began researching the still-forming AI Engineer role",
+  "required_facts": [
+    {"fact": "AI Engineer and Gen AI Engineer titles had become more common on job boards, LinkedIn, and community discussions, while the role lacked a stable definition.", "evidence": "Source lines 1-6: title growth, role ambiguity, and inconsistent expectations are stated."},
+    {"fact": "As the AI Engineering Buildcamp instructor, Alexey found the role relevant to course participants and hiring questions.", "evidence": "Source line 16: course context and relevance are described."},
+    {"fact": "A participant asked during Office Hours for concrete examples of AI Engineer take-home interview assignments.", "evidence": "Source line 16: the practical question is stated."},
+    {"fact": "Alexey had more than 15 years of ML and AI experience but was not currently employed as an AI Engineer.", "evidence": "Source lines 18 and 30: experience and current employment qualification are given."},
+    {"fact": "He began collecting actual data rather than relying only on indirect exposure or conversations.", "evidence": "Source line 18: the research motivation is stated."},
+    {"fact": "The research combined personal experience, structured data collection, and practitioner conversations.", "evidence": "Source lines 20 and 24: research signals and the three-part input plan are described."},
+    {"fact": "More than 1,500 job postings from three months across cities including Los Angeles, New York, London, Amsterdam, and Berlin were collected.", "evidence": "Source line 39: dataset size, period, and locations are stated."},
+    {"fact": "Twitter/X and Reddit interview discussions were used to capture informal, recent patterns.", "evidence": "Source lines 52-59: social sources and their purpose are described."},
+    {"fact": "Planned conversations included hiring managers, DataTalks.Club members, and engineers working in AI Engineering roles.", "evidence": "Source lines 61-74: conversation groups and privacy/publicity are specified."},
+    {"fact": "Around 60 public GitHub repositories with take-home solutions were collected, with manual review needed because research agents hallucinated or missed requested results.", "evidence": "Source lines 78-89: repository dataset and hybrid collection workflow are described."}
+  ],
+  "author_attribution": "Attribute the research motivation, uncertainty, and data-collection choices to Alexey; preserve that the role remained evolving rather than defined."
+}

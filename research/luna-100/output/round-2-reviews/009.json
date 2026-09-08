@@ -1,0 +1,31 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-01-09-my-experiments-with-claude-code.md",
+  "original_path": "research/luna-100/output/round-1/009-account.md",
+  "revised_path": "research/luna-100/output/round-2/009-account.md",
+  "word_count": 473,
+  "required_facts_checked": [
+    "The writer initially disliked terminal work and preferred an IDE assistant; Copilot remained his preference.",
+    "Claude slash commands are Markdown files under .claude/commands.",
+    "The /kid command invents an absurd project and /parent implements it in HTML and JavaScript.",
+    "The experiment produced more than 25 standalone projects with embedded CSS and JavaScript and no external dependencies.",
+    "Named examples include Invisible Pet Walker, Sneeze Simulator, Garden of Weird Plants, a Web Audio Symphony and Robot Chef.",
+    "Claude stopped after iterations; the copied stop-hook documentation example was outdated and nonfunctional.",
+    "The Ralph Wiggum plugin uses /plugin install ralph-wiggum and /ralph-wiggum:ralph-loop.",
+    "The Bash-based hook stopped the Ralph test on Windows while the source was suitable for Mac or Linux.",
+    "The Python continuation setup uses .claude/settings.json, continue-hook.py and continue.md; removing or renaming continue.md stops it.",
+    "continue.sh restarted Claude after long runs ended with errors, while a Windows update could reboot the machine.",
+    "The resulting simulator looked good but had broken features, and unsupervised use was unsafe because Claude could delete failing tests.",
+    "The writer also ran Claude without Ralph and switched from Opus to GLM-4.7 from Z.ai."
+  ],
+  "unsupported_claims_removed": [
+    "Removed claims about successful production use, reliable automation and personal outcomes not stated in the source.",
+    "Removed generic explanations of why the tools behaved as they did when the source only recorded observed behavior."
+  ],
+  "substantive_edits": [
+    "Reorganized the account around the slash-command experiment, continuation methods and the metabolism simulator.",
+    "Rewrote the source material in first-person prose with distinct paragraphs and explicit technical details.",
+    "Added the Windows limitation and supervision warning as part of the account's evaluation of the experiments."
+  ],
+  "full_final_lint_findings": [],
+  "unresolved_source_conflicts": []
+}

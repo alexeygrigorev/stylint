@@ -1,0 +1,27 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-07-11-my-pypi-release-pipeline-for-python.md",
+  "original_path": "research/luna-100/output/round-1/073-account.md",
+  "revised_path": "research/luna-100/output/round-2/073-account.md",
+  "word_count": 519,
+  "required_facts_checked": [
+    {"claim": "The author published his first Python library in early 2021 and has released 24 packages on PyPI.", "status": "present", "evidence": "source opening: early 2021 and 24 packages"},
+    {"claim": "Coding agents in 2025 led to more frequent library creation and motivated automation.", "status": "present", "evidence": "source: agents led to more libraries and automated process"},
+    {"claim": "The process starts from a specific problem and checks existing tools before packaging.", "status": "present", "evidence": "source: problem first; brainstorm and check with ChatGPT"},
+    {"claim": "PyPI's JSON endpoint uses 404 for an available name and 200 for a taken name.", "status": "present", "evidence": "source endpoint and response codes"},
+    {"claim": "Heru and Quse have names tied to their purposes or origins.", "status": "present", "evidence": "source: Heru ruling agents; Quse quota use"},
+    {"claim": "Public GitHub repositories provide visibility and a larger Actions quota.", "status": "present", "evidence": "source: public repo visibility and larger quota"},
+    {"claim": "The package skeleton uses Hatch or hatchling with uv, tests, pyproject.toml, README, Makefile, lock file, and version 0.0.1.", "status": "present", "evidence": "source standard skeleton"},
+    {"claim": "Manual publishing tests installation on Test PyPI before publishing to PyPI.", "status": "present", "evidence": "source manual Test PyPI then real index"},
+    {"claim": "Tag-triggered CI builds with uv, checks the version tag, and publishes through the official PyPI action.", "status": "present", "evidence": "source GitHub Actions workflow"},
+    {"claim": "The PyPI token is stored as a repository secret, and three reusable skills cover setup and release.", "status": "present", "evidence": "source PYPI_API_TOKEN and init-library/setup-pypi-ci/release"}
+  ],
+  "unsupported_claims_removed": [],
+  "substantive_edits": [
+    "Revised the account into a chronological release process from problem selection through CI publication.",
+    "Kept exact endpoint behavior, version, tool names, tag convention, action, and secret name.",
+    "Separated manual Test PyPI validation from tag-triggered CI and reusable skills.",
+    "Split dense package and pipeline lists while preserving the author's reasons for automation."
+  ],
+  "full_final_lint_findings": [],
+  "unresolved_source_conflicts": []
+}

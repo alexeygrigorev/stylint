@@ -1,0 +1,42 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-04-07-an-unexpected-entry-into-ai-memory.md",
+  "original_path": "research/luna-100/output/round-2/044-explanation.md",
+  "revised_path": "research/luna-100/output/round-2/044-explanation.md",
+  "word_count": 439,
+  "required_fact_evidence": [
+    {
+      "claim": "LLMs are stateless",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "RAG retrieves chunks from indexes",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "MemPalace assigns rooms and levels",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "AAAK is its compression dialect",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "knowledge and navigation graphs are used",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "memory operations avoid LLM API calls",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "MCP provides integration",
+      "evidence": "Verified against assigned source"
+    }
+  ],
+  "substantive_edits": [
+    "Recomposed article independently around assigned explanation purpose."
+  ],
+  "unsupported_claims_removed": [],
+  "unresolved_source_conflicts": [],
+  "full_final_lint_findings": []
+}

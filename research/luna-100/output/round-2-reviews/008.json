@@ -1,0 +1,27 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-01-02-benefits-of-learning-in-public-and.md",
+  "original_path": "research/luna-100/output/round-1/008-explanation.md",
+  "revised_path": "research/luna-100/output/round-2/008-explanation.md",
+  "word_count": 526,
+  "required_facts_checked": [
+    "Visibility and recruiter discovery: Pastor Soto and Meta example",
+    "Clearer understanding through writing: Eugene Yan and evaluation metrics",
+    "Peer feedback: Will McGugan and Dashel Ruiz Perez",
+    "Credibility over time: Admond, Shawn and Pastor",
+    "Accountability: Dashel and Aaisha",
+    "Support when stuck: community and Pastor corrections",
+    "Visible portfolio: Daniel Egbo notebooks and repositories",
+    "Unexpected opportunity: Will McGugan investor attention"
+  ],
+  "unsupported_claims_removed": [
+    "Removed generic claims about guaranteed career outcomes",
+    "Removed unsupported summary language"
+  ],
+  "substantive_edits": [
+    "Recomposed the explanation around eight distinct benefits",
+    "Restored source-specific examples and qualifications",
+    "Removed repetitive framing and malformed punctuation"
+  ],
+  "full_final_lint_findings": [],
+  "unresolved_source_conflicts": []
+}

@@ -1,0 +1,23 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-08-31-coding-agent-building-blocks-reusable.md",
+  "original_path": "research/luna-100/output/round-1/098-explanation.md",
+  "revised_path": "research/luna-100/output/round-2/098-explanation.md",
+  "word_count": 464,
+  "source_sha256": "fc995aa71c6b49c260ce678af89d2b78633ac02bd82a4134e1210e226440d31c",
+  "article_sha256": "7fb7dbd7632c2d6d6c908952ce7cd4a74dfc5c336743c76328e900146e3f2925",
+  "full_final_lint_findings": [],
+  "required_fact_evidence": [
+    {
+      "claim": "skills preserve repeatable procedures",
+      "evidence": "assigned source"
+    },
+    {
+      "claim": "subagents isolate roles and context",
+      "evidence": "assigned source"
+    },
+    {
+      "claim": "orchestrator manages PM/SWE/QA",
+      "evidence": "assigned source"
+    }
+  ]
+}

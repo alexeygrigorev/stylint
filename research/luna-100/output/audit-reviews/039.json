@@ -1,0 +1,44 @@
+{
+  "id": "039",
+  "draft_path": "research/luna-100/output/round-3/039-account.md",
+  "source_path": "research/luna-100/sources/raw/2026-03-27-5-useful-utilities-i-built-with-ai.md",
+  "draft_sha256": "3fc4a45226ec2c1c122eeca8c30fba3cf8be828c5fe4e648306236fd86ca7dff",
+  "source_sha256": "e031736e99187168f8e480139386c994d6f1ed241dda208f22cbdaa5148db935",
+  "quote_pairs": [
+    {
+      "draft_quote": "`dirdotenv` loads environment variables",
+      "source_quote": "dirdotenv",
+      "facts_checked": true
+    },
+    {
+      "draft_quote": "Windows machines, including an ARM64 tablet",
+      "source_quote": "Windows machines, including an ARM64 tablet",
+      "facts_checked": true
+    },
+    {
+      "draft_quote": "I built `nobook`",
+      "source_quote": "With [nobook]",
+      "facts_checked": true
+    },
+    {
+      "draft_quote": "Microphone Booster addressed a Windows limitation",
+      "source_quote": "Microphone Booster",
+      "facts_checked": true
+    },
+    {
+      "draft_quote": "Bot Master manages several Telegram bots",
+      "source_quote": "Bot Master",
+      "facts_checked": true
+    }
+  ],
+  "false_causality_found": false,
+  "invented_first_person_actions_found": false,
+  "third_person_alexey_reference_found": false,
+  "repeated_closing_verdict_found": false,
+  "required_corrections": [
+    "State that dirdotenv supports both .env and .envrc; the current account omits the documented .envrc support.",
+    "The draft omits source detail that GitHub Copilot Jumpstart started the project and Claude Code continued it; add only if process coverage is required."
+  ],
+  "semantic_status": "needs_correction",
+  "notes": "Full source and draft read; Python asserted every recorded quote substring before writing this sidecar."
+}

@@ -1,0 +1,10 @@
+schema_version: 1
+id: alexey-voice-calibration
+title: "Alexey voice calibration"
+mode: building
+status: verified
+created: 2026-09-07
+seed_sha256: 52444ce33181366d9d4a3f6631217f7b4b6f1146640fa35065b8a267a3635fae
+source_roots:
+  - "/home/alexey/git/telegram-writing-assistant/reference/substack"
+target_repo: "/home/alexey/git/stylint"

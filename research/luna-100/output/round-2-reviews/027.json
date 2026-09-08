@@ -1,0 +1,31 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-03-04-what-1000-job-descriptions-reveal.md",
+  "original_path": "research/luna-100/output/round-1/027-account.md",
+  "revised_path": "research/luna-100/output/round-2/027-account.md",
+  "word_count": 534,
+  "required_facts_checked": [
+    "The study analyzed more than 1,000 AI Engineer job descriptions from Berlin, Amsterdam, London, Los Angeles and New York.",
+    "An LLM classified 889 descriptions into AI-first, AI-support and traditional ML/DL categories.",
+    "AI-first roles were about 70 percent and involved LLM or GenAI systems, RAG, agents, evaluation and production deployment.",
+    "AI-support roles were about 28.5 percent and covered platforms, GPU/inference infrastructure, pipelines, deployment, monitoring and experimentation interfaces.",
+    "Traditional ML/DL roles were fewer than 2 percent and resembled ML Engineer or Research Engineer work.",
+    "The proposed definition centered on owning the design, evaluation and production operation of foundation-model systems.",
+    "Roles were 95.6 percent production-focused, nearly 50 percent backend-heavy and about 20 percent often full-stack.",
+    "RAG appeared in 35.9 percent, prompt engineering in 29.1 percent, LLM integration in 25.4 percent, agents in 14.4 percent and fine-tuning in 8.5 percent.",
+    "Python appeared in 82.5 percent, TypeScript in 23.4 percent, React in 14.8 percent and FastAPI in 10.7 percent.",
+    "Operations and cloud appeared in 17.4 percent and 13.4 percent; AWS, Docker, CI/CD and Kubernetes were the leading infrastructure mentions.",
+    "Classical ML was 9.5 percent overall, with PyTorch at 22.0 percent within that group and TensorFlow at 12.9 percent.",
+    "LangChain, LangGraph and LlamaIndex were present but no single GenAI framework dominated."
+  ],
+  "unsupported_claims_removed": [
+    "Removed claims that would treat this dataset's percentages as an eternal or universal definition of AI Engineering.",
+    "Removed unsupported hiring predictions and personal anecdotes not present in the market study."
+  ],
+  "substantive_edits": [
+    "Rewrote the study as a first-person account of the analysis and its interpretation.",
+    "Grouped the exact percentages by role category, GenAI skills, application layer, operations and frameworks.",
+    "Preserved the distinction between the study's observed market signals and the proposed practical definition."
+  ],
+  "full_final_lint_findings": [],
+  "unresolved_source_conflicts": []
+}

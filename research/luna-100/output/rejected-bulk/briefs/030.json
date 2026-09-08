@@ -1,0 +1,48 @@
+{
+  "id": "030",
+  "source_path": "research/luna-100/sources/raw/2026-03-06-how-i-dropped-our-production-database.md",
+  "purpose": "reader-facing explanation of the supported workflow or idea",
+  "required_facts": [
+    {
+      "fact": "I’m working on expanding the [AI Shipping Labs website](https://aishippinglabs.com/) and wanted to migrate its current version from static GitHub Pages to AWS.",
+      "evidence": "research/luna-100/sources/raw/2026-03-06-how-i-dropped-our-production-database.md"
+    },
+    {
+      "fact": "And later, replace the original Next.js setup with a Django version.",
+      "evidence": "research/luna-100/sources/raw/2026-03-06-how-i-dropped-our-production-database.md"
+    },
+    {
+      "fact": "Move the current static site from GitHub Pages to AWS S3 2.",
+      "evidence": "research/luna-100/sources/raw/2026-03-06-how-i-dropped-our-production-database.md"
+    },
+    {
+      "fact": "Move DNS to AWS so the domain is fully managed there 3.",
+      "evidence": "research/luna-100/sources/raw/2026-03-06-how-i-dropped-our-production-database.md"
+    },
+    {
+      "fact": "Deploy the new Django version on a subdomain 4.",
+      "evidence": "research/luna-100/sources/raw/2026-03-06-how-i-dropped-our-production-database.md"
+    },
+    {
+      "fact": "When everything works, switch the main domain to Django This way, everything would already be inside AWS, and the final switch would be seamless.",
+      "evidence": "research/luna-100/sources/raw/2026-03-06-how-i-dropped-our-production-database.md"
+    },
+    {
+      "fact": "The migration strategy itself was reasonable, but the problems came from how I executed it.",
+      "evidence": "research/luna-100/sources/raw/2026-03-06-how-i-dropped-our-production-database.md"
+    },
+    {
+      "fact": "I was overly reliant on my Claude Code agent, which accidentally wiped all production infrastructure for the [DataTalks.Club course management platform](https://courses.datatalks.club/) that stored data for 2.5 years of ",
+      "evidence": "research/luna-100/sources/raw/2026-03-06-how-i-dropped-our-production-database.md"
+    },
+    {
+      "fact": "To make matters worse, all automated snapshots were deleted too.",
+      "evidence": "research/luna-100/sources/raw/2026-03-06-how-i-dropped-our-production-database.md"
+    },
+    {
+      "fact": "I had to upgrade to AWS Business Support, which costs me an extra 10% for quicker assistance.",
+      "evidence": "research/luna-100/sources/raw/2026-03-06-how-i-dropped-our-production-database.md"
+    }
+  ],
+  "author_attribution": "Attribute projects and outcomes to the named author or participants in the source; do not add personal experience."
+}

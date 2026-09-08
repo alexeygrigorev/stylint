@@ -1,0 +1,29 @@
+schema_version: 1
+sources:
+  - id: archive
+    title: Alexey published Substack archive
+    type: corpus
+    locator: /home/alexey/git/telegram-writing-assistant/reference/substack
+    captured: 2026-09-07
+    authority: personal
+    summary: Fifty substantive article bodies selected from 54 posts, source-grouped into development and held-out sets.
+    page: wiki/sources/archive.md
+    status: selected
+  - id: luna100
+    title: Luna generation and revision experiment
+    type: experiment
+    locator: /home/alexey/git/stylint/research/luna-100/output
+    captured: 2026-09-08
+    authority: primary
+    summary: One hundred raw Luna articles, three saved corpus states, differential rules and four additional prompt probes.
+    page: wiki/sources/luna100.md
+    status: selected
+  - id: pilot
+    title: Initial voice calibration
+    type: experiment
+    locator: /home/alexey/git/stylint/research/alexey-voice/README.md
+    captured: 2026-09-07
+    authority: primary
+    summary: Fact-preserving briefs helped; prompts alone left generic recaps and instruction leakage.
+    page: wiki/sources/pilot.md
+    status: selected

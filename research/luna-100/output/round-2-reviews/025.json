@@ -1,0 +1,30 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-02-27-chatgpt-data-viewer.md",
+  "original_path": "research/luna-100/output/round-1/025-account.md",
+  "revised_path": "research/luna-100/output/round-2/025-account.md",
+  "word_count": 537,
+  "required_facts_checked": [
+    "The writer used ChatGPT in dictation mode for brainstorming and outlined a possible AI Engineering Buildcamp continuation after the September 2025 cohort launched.",
+    "ChatGPT search, manual scrolling and keyword searches failed to locate the conversation.",
+    "The ChatGPT export was 775 MB, and its incomplete ZIP archive could not be opened by Windows even after two downloads.",
+    "Claude Code extracted important content, but conversations.json was about 155 MB and impractical to search manually.",
+    "ChatGPT Data Viewer was built overnight with Claude Code to visualize and search the history.",
+    "The interface idea was a GitHub-like contribution graph with date-based conversation views and planned API endpoints for statistics, contribution data and conversation lists.",
+    "The workflow used no tests or TDD, and the writer did not examine the code while Claude managed implementation.",
+    "The first working version stabilized in one or two iterations and took approximately two to three hours.",
+    "The architecture used FastAPI, a Vite-bundled vanilla JavaScript frontend, minsearch and one FastAPI server serving the frontend.",
+    "The archive contained 2,808 conversations and 45,247 messages spanning 2022-12-21 to 2026-02-06.",
+    "The lost Buildcamp conversation appeared in the first search results, and caching was added after initial indexing took time."
+  ],
+  "unsupported_claims_removed": [
+    "Removed claims about test coverage, code quality or production readiness that the source explicitly did not establish.",
+    "Removed unsupported explanations for why ChatGPT's search and the ZIP archive failed."
+  ],
+  "substantive_edits": [
+    "Rewrote the account around the failed retrieval, export problem, implementation workflow and indexed results.",
+    "Kept human actions distinct from Claude Code's extraction and implementation actions.",
+    "Preserved the approximate timing, archive sizes, conversation counts and explicit absence of tests and code inspection."
+  ],
+  "full_final_lint_findings": [],
+  "unresolved_source_conflicts": []
+}

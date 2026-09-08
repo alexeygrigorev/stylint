@@ -1,0 +1,18 @@
+{
+  "id": "071",
+  "source_path": "research/luna-100/sources/raw/2026-07-03-choosing-a-portfolio-project-the.md",
+  "article_purpose": "account",
+  "author_attribution_notes": "Framework and first-person recommendations are Alexey's; examples and company research remain source-attributed.",
+  "required_facts": [
+    {"claim":"Portfolio work can improve hiring visibility","source_evidence":"an active portfolio that you usually store on your GitHub profile raises your chances of getting hired"},
+    {"claim":"Portfolio projects have several categories","source_evidence":"I divide all the projects into several categories"},
+    {"claim":"Role-targeted projects start from a domain","source_evidence":"You pick a domain, research the companies in it, and build something that speaks to their work"},
+    {"claim":"The framework has six selection steps","source_evidence":"And here are the 6 steps that describe the project selection process"},
+    {"claim":"Research uses job descriptions and engineering blogs","source_evidence":"Use two sources: job descriptions and engineering blogs"},
+    {"claim":"Shared problems are preferred","source_evidence":"Find problems that are common across the domain"},
+    {"claim":"Technology should match target companies","source_evidence":"choose technologies that target companies already use"},
+    {"claim":"Projects need evaluation and monitoring","source_evidence":"A project that generates output but never checks whether the output is correct is still incomplete"},
+    {"claim":"README should be quickly scannable","source_evidence":"The README should explain, in a minute or less"},
+    {"claim":"A usable end-to-end project is stronger","source_evidence":"A project that runs and produces results is stronger"}
+  ]
+}

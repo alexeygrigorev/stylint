@@ -1,0 +1,20 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-08-03-build-and-ship-a-full-stack-app-with.md",
+  "original_path": "research/luna-100/output/round-1/083-account.md",
+  "revised_path": "research/luna-100/output/round-2/083-account.md",
+  "word_count": 448,
+  "required_facts_checked": [
+    {"claim": "The application supports system-design interviews", "evidence": "I built an application for system-design interviews."},
+    {"claim": "WebSockets connect both frontends to one room", "evidence": "Both frontends connect to the same room through WebSockets."},
+    {"claim": "FastAPI and SQLite are used", "evidence": "FastAPI backend ... saves them to SQLite."},
+    {"claim": "The frontend begins with mocked backend calls", "evidence": "Generate a frontend that uses mocked backend calls."},
+    {"claim": "OpenAPI defines the frontend-backend interface", "evidence": "Establish backend-frontend contract."},
+    {"claim": "An in-memory backend precedes persistence", "evidence": "Let's start with an in-memory store."},
+    {"claim": "SQLite and SQLAlchemy add persistence", "evidence": "Add persistence with SQLite and SQLAlchemy."},
+    {"claim": "Two browser windows test synchronization", "evidence": "Open two browser windows."}
+  ],
+  "unsupported_claims_removed": ["Removed the draft's implication that the staged workflow guaranteed correctness; retained the observed CORS and connection failures."],
+  "substantive_edits": ["Kept the first-person workshop chronology and the reason for testing each boundary.", "Clarified the specification, mock service, OpenAPI, in-memory, two-browser, and SQLite stages.", "Reworked paragraph boundaries and list-like API details for readable, source-faithful prose."],
+  "full_final_lint_findings": [],
+  "unresolved_source_conflicts": []
+}

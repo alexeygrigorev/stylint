@@ -1,0 +1,48 @@
+{
+  "id": "018",
+  "source_path": "research/luna-100/sources/raw/2026-02-06-building-and-maintaining-a-slack.md",
+  "purpose": "reader-facing explanation of the supported workflow or idea",
+  "required_facts": [
+    {
+      "fact": "Moderating a community at this scale is time-consuming.",
+      "evidence": "research/luna-100/sources/raw/2026-02-06-building-and-maintaining-a-slack.md"
+    },
+    {
+      "fact": "We also run “shameless-promotion” channels, and as the community grew, I introduced [rules and message templates](https://alexeygrigorev.notion.site/Shameless-channels-template-f565ac6aa2064f7190382f2ffd82c876) for posti",
+      "evidence": "research/luna-100/sources/raw/2026-02-06-building-and-maintaining-a-slack.md"
+    },
+    {
+      "fact": "I had to manually delete messages that violated the rules and send DMs explaining the reasons to those people.",
+      "evidence": "research/luna-100/sources/raw/2026-02-06-building-and-maintaining-a-slack.md"
+    },
+    {
+      "fact": "It quickly became impractical because it required a lot of manual steps That is what pushed me to build an automation tool that could delete messages violating the rules and send a direct message explaining why.",
+      "evidence": "research/luna-100/sources/raw/2026-02-06-building-and-maintaining-a-slack.md"
+    },
+    {
+      "fact": "The number of messages deleted in the past week, grouped by reaction type.",
+      "evidence": "research/luna-100/sources/raw/2026-02-06-building-and-maintaining-a-slack.md"
+    },
+    {
+      "fact": "Without AuTomator, deleting these messages and sending direct messages with an explanation would all have been manual work.",
+      "evidence": "research/luna-100/sources/raw/2026-02-06-building-and-maintaining-a-slack.md"
+    },
+    {
+      "fact": "That is why I built the [AuTomator bot](https://github.com/alexeygrigorev/au-tomator-lambda) back in June 2022 and kept adding features as new needs came up.",
+      "evidence": "research/luna-100/sources/raw/2026-02-06-building-and-maintaining-a-slack.md"
+    },
+    {
+      "fact": "Recently, the bot broke, and I fixed it using Claude Code, which saved me at least two hours of debugging.",
+      "evidence": "research/luna-100/sources/raw/2026-02-06-building-and-maintaining-a-slack.md"
+    },
+    {
+      "fact": "In this post, I walk through how the bot is built and how I used AI to diagnose and fix it.",
+      "evidence": "research/luna-100/sources/raw/2026-02-06-building-and-maintaining-a-slack.md"
+    },
+    {
+      "fact": "It is split into three Lambdas, each with a clear responsibility.",
+      "evidence": "research/luna-100/sources/raw/2026-02-06-building-and-maintaining-a-slack.md"
+    }
+  ],
+  "author_attribution": "Attribute projects and outcomes to the named author or participants in the source; do not add personal experience."
+}

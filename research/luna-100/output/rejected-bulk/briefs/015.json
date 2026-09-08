@@ -1,0 +1,48 @@
+{
+  "id": "015",
+  "source_path": "research/luna-100/sources/raw/2026-01-30-telegram-assistant.md",
+  "purpose": "personal account of the reported work",
+  "required_facts": [
+    {
+      "fact": "This includes early thinking, small experiments, and intermediate workflows that usually disappear once a final result is ready.",
+      "evidence": "research/luna-100/sources/raw/2026-01-30-telegram-assistant.md"
+    },
+    {
+      "fact": "That means you can only see the final results of my work: finished projects, talks, or materials.",
+      "evidence": "research/luna-100/sources/raw/2026-01-30-telegram-assistant.md"
+    },
+    {
+      "fact": "Everything that led to them remains invisible.",
+      "evidence": "research/luna-100/sources/raw/2026-01-30-telegram-assistant.md"
+    },
+    {
+      "fact": "As I started this Substack, I realized I want to share my background work too because it’s an important part of what I do.",
+      "evidence": "research/luna-100/sources/raw/2026-01-30-telegram-assistant.md"
+    },
+    {
+      "fact": "It helps you understand how I approach my projects and, hopefully, gives you new ideas.",
+      "evidence": "research/luna-100/sources/raw/2026-01-30-telegram-assistant.md"
+    },
+    {
+      "fact": "Repository with my [Telegram-based writing assistant](https://github.com/alexeygrigorev/telegram-writing-assistant/tree/master) To help myself capture that background work, I built a [Telegram-based writing assistant](ht",
+      "evidence": "research/luna-100/sources/raw/2026-01-30-telegram-assistant.md"
+    },
+    {
+      "fact": "It can process my raw voice notes, files, and text messages into structured articles and store them in a GitHub repository.",
+      "evidence": "research/luna-100/sources/raw/2026-01-30-telegram-assistant.md"
+    },
+    {
+      "fact": "I want to explain how I built the system, how it works, and how you can adapt the same approach for your own workflow.",
+      "evidence": "research/luna-100/sources/raw/2026-01-30-telegram-assistant.md"
+    },
+    {
+      "fact": "I just created a new chat for my team and me, and collected my ideas there so we could use them to produce content.",
+      "evidence": "research/luna-100/sources/raw/2026-01-30-telegram-assistant.md"
+    },
+    {
+      "fact": "That was a great starting point and a key factor in creating the [first editions of this newsletter](https://alexeyondata.substack.com/).",
+      "evidence": "research/luna-100/sources/raw/2026-01-30-telegram-assistant.md"
+    }
+  ],
+  "author_attribution": "Attribute projects and outcomes to the named author or participants in the source; do not add personal experience."
+}

@@ -1,0 +1,18 @@
+{
+  "id": "014",
+  "source_path": "research/luna-100/sources/raw/2026-01-23-ai-bootcamp-becomes-ai-engineering.md",
+  "purpose": "reader-facing explanation of the AI Engineering Buildcamp's project sequence, framework strategy, and core/optional structure",
+  "required_facts": [
+    {"fact": "AI Engineering Buildcamp was defined as a project-driven course focused on building AI systems with an engineering mindset.", "evidence": "Source lines 15-17 and 27: name, rationale, and project-driven description are stated."},
+    {"fact": "The Capstone starts in Week 1, is refined conceptually and through implementation, and is built and polished during the final two weeks.", "evidence": "Source line 29: the Capstone sequence is described."},
+    {"fact": "More than six guided mini-projects cover FAQ assistants, YouTube Q&A systems, documentation agents, coding agents, and deep research agents.", "evidence": "Source line 31: mini-project count and examples are given."},
+    {"fact": "The structure was changed after participants said the content was dense and the pace too fast.", "evidence": "Source lines 35-39: feedback and redesign reason are stated."},
+    {"fact": "The redesigned version was longer, less dense, and organized around a main path plus optional bonus material.", "evidence": "Source lines 41-46: core and optional structure are specified."},
+    {"fact": "The course first implements agents without a framework, including manual tool calling and control loops.", "evidence": "Source line 57: framework-free foundation is described."},
+    {"fact": "The manual foundation is intended to support understanding framework internals, source code, debugging, and cases where an existing framework does not fit.", "evidence": "Source lines 59-64: the four reasons for the approach are listed."},
+    {"fact": "PydanticAI is introduced as the primary framework after the foundation, with attention to typing, validation, testing, and production concerns.", "evidence": "Source line 66: primary framework and deeper concerns are stated."},
+    {"fact": "LangChain, LangGraph, OpenAI Agents SDK, Google Agent Development Kit, and CrewAI are optional frameworks.", "evidence": "Source lines 68-73: optional framework list is given."},
+    {"fact": "OpenAI is the main model provider, while Groq, Anthropic, Gemini, and Z.ai are also covered.", "evidence": "Source line 75: provider coverage is specified."}
+  ],
+  "author_attribution": "Explain the course design as documented by Alexey and preserve the distinction between the primary path and optional coverage."
+}

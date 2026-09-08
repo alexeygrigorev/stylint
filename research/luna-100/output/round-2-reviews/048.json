@@ -1,0 +1,42 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-04-10-tired-of-learning-ai-alone-were-launching.md",
+  "original_path": "research/luna-100/output/round-1/048-explanation.md",
+  "revised_path": "research/luna-100/output/round-2/048-explanation.md",
+  "word_count": 488,
+  "required_fact_evidence": [
+    {
+      "claim": "Slack onboarding",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "accountability circles",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "sprint deadlines",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "building sessions 1.5-2 hours",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "group learning",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "career support",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "planned mini-courses",
+      "evidence": "Verified against assigned source"
+    }
+  ],
+  "substantive_edits": [
+    "Recomposed explanation as direct teaching about the community workflow."
+  ],
+  "unsupported_claims_removed": [],
+  "unresolved_source_conflicts": [],
+  "full_final_lint_findings": []
+}

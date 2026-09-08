@@ -1,0 +1,18 @@
+{
+  "id": "026",
+  "source_path": "research/luna-100/sources/raw/2026-02-27-chatgpt-data-viewer.md",
+  "purpose": "reader-facing explanation of the ChatGPT Data Viewer input, architecture, search, and limitations",
+  "required_facts": [
+    {"fact": "The viewer was created after ChatGPT search failed to find an earlier course conversation and manual scrolling was ineffective.", "evidence": "Source lines 3-9: lost conversation, failed search, export, and resulting tool idea are described."},
+    {"fact": "The ChatGPT export download was 775 MB and the ZIP was incomplete and unreadable by Windows.", "evidence": "Source lines 22-32: notification, file size, and corrupted archive are stated."},
+    {"fact": "Claude Code extracted important content from the archive, including conversations.json of about 155 MB and chat.html of about 160 MB.", "evidence": "Source lines 37-42: extraction and export files are described."},
+    {"fact": "The initial interface idea was a GitHub-style contribution graph with date-based conversation details.", "evidence": "Source line 49: contribution graph and date interaction are specified."},
+    {"fact": "Claude helped with the UI mockup and API response format, and the planned architecture used FastAPI with Vite and vanilla JavaScript.", "evidence": "Source lines 51-64: design and architecture planning are described."},
+    {"fact": "The workflow used no tests or Test-Driven Development, and Claude managed implementation without Alexey examining the code.", "evidence": "Source lines 68-75: development limitations are explicit."},
+    {"fact": "The first stable version took one or two iterations and about two to three hours.", "evidence": "Source line 82: iteration count and total time are stated."},
+    {"fact": "The backend used FastAPI, the frontend used Vite-bundled vanilla JavaScript, minsearch powered search, and one FastAPI server served the frontend.", "evidence": "Source lines 89-96: architecture and single-server deployment are described."},
+    {"fact": "The archive contained 2,808 conversations and 45,247 messages spanning 2022-12-21 to 2026-02-06.", "evidence": "Source lines 100-107: usage statistics and time span are listed."},
+    {"fact": "The first search found the course conversation, while caching was added after initial indexing took time.", "evidence": "Source lines 123-127: search result and indexing bottleneck are described."}
+  ],
+  "author_attribution": "Explain the historical implementation as Alexey documented it, retaining the absence of tests and the distinction between a usable tool and possible future polish."
+}

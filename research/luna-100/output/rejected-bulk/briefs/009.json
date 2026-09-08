@@ -1,0 +1,48 @@
+{
+  "id": "009",
+  "source_path": "research/luna-100/sources/raw/2026-01-09-my-experiments-with-claude-code.md",
+  "purpose": "personal account of the reported work",
+  "required_facts": [
+    {
+      "fact": "I used Claude Code briefly half a year ago.",
+      "evidence": "research/luna-100/sources/raw/2026-01-09-my-experiments-with-claude-code.md"
+    },
+    {
+      "fact": "I didn’t like the terminal experience and preferred to have an AI assistant in my IDE.",
+      "evidence": "research/luna-100/sources/raw/2026-01-09-my-experiments-with-claude-code.md"
+    },
+    {
+      "fact": "But recently a lot of people have been talking about Claude Code on social media, so I decided to give it another try.",
+      "evidence": "research/luna-100/sources/raw/2026-01-09-my-experiments-with-claude-code.md"
+    },
+    {
+      "fact": "Even though it hasn’t become my favorite coding agent (it’s still Copilot), I actually enjoyed using it.",
+      "evidence": "research/luna-100/sources/raw/2026-01-09-my-experiments-with-claude-code.md"
+    },
+    {
+      "fact": "Here and in the next posts I’ll share with you what I did and what I learned.",
+      "evidence": "research/luna-100/sources/raw/2026-01-09-my-experiments-with-claude-code.md"
+    },
+    {
+      "fact": "A few weeks ago I came across [Claude Life Assistant](https://github.com/lout33/claude_life_assistant/tree/5dbef44d6f860bb7d477c4000b1ce88bc31464e0), “a personal coach that lives in your filesystem”.",
+      "evidence": "research/luna-100/sources/raw/2026-01-09-my-experiments-with-claude-code.md"
+    },
+    {
+      "fact": "I looked at the Quick Start and wondered, “What are these commands?” So I decided to figure it out.",
+      "evidence": "research/luna-100/sources/raw/2026-01-09-my-experiments-with-claude-code.md"
+    },
+    {
+      "fact": "Out of curiosity, I created a new project two commands: `/kid` and `/parent`.",
+      "evidence": "research/luna-100/sources/raw/2026-01-09-my-experiments-with-claude-code.md"
+    },
+    {
+      "fact": "[The kid](https://raw.githubusercontent.com/alexeygrigorev/claude-code-kid-parent/refs/heads/main/.claude/commands/kid.md) comes up with a completely random, often absurd project idea.",
+      "evidence": "research/luna-100/sources/raw/2026-01-09-my-experiments-with-claude-code.md"
+    },
+    {
+      "fact": "[The parent](https://raw.githubusercontent.com/alexeygrigorev/claude-code-kid-parent/refs/heads/main/.claude/commands/parent.md) takes that idea and implements it in HTML+JavaScript.",
+      "evidence": "research/luna-100/sources/raw/2026-01-09-my-experiments-with-claude-code.md"
+    }
+  ],
+  "author_attribution": "Attribute projects and outcomes to the named author or participants in the source; do not add personal experience."
+}

@@ -1,0 +1,20 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-06-12-ai-design-for-non-designers.md",
+  "original_path": "research/luna-100/output/round-1/065-account.md",
+  "revised_path": "research/luna-100/output/round-2/065-account.md",
+  "word_count": 485,
+  "required_facts_checked": [
+    {"claim": "One-shot designs repeat grids, crowded headers, and columns.", "status": "present", "evidence": "source: feature grid, actions to the right of the title, and split columns"},
+    {"claim": "The author's early sites used Bootstrap.", "status": "present", "evidence": "source: DataTalks.Club website built in 2020 used Bootstrap"},
+    {"claim": "The first Codex redesign of the course platform looked generic.", "status": "present", "evidence": "source: first redesign looked like many other AI websites"},
+    {"claim": "GPT Image mockups supplied a better visual direction.", "status": "present", "evidence": "source: supplied screenshots and asked for redesigned mockups"},
+    {"claim": "GitHub Primer became the documented design system.", "status": "present", "evidence": "source: suggested GitHub Primer and documented it in design-system.md"},
+    {"claim": "The workflow combines mockups, implementation, review, and recorded rules.", "status": "present", "evidence": "source: describe, generate, implement, review, and record"},
+    {"claim": "Pocket Shell used the same mockup approach.", "status": "present", "evidence": "source: photographed Android screens and used redesigned screenshots"},
+    {"claim": "The author remains a non-designer and qualifies the result.", "status": "present", "evidence": "source: I am not a designer; current screens are better though the app is in progress"}
+  ],
+  "unsupported_claims_removed": [],
+  "substantive_edits": ["Rebuilt the account around the author's progression from Bootstrap sites to mockup-guided Codex work.", "Separated visual reference from the durable design-system decision.", "Preserved the qualified Pocket Shell result and the author's non-designer attribution."],
+  "full_final_lint_findings": [],
+  "unresolved_source_conflicts": []
+}

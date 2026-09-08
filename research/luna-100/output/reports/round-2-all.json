@@ -1,0 +1,3802 @@
+{
+  "schema_version": 1,
+  "round": "round-2",
+  "split": "all",
+  "missing": [],
+  "reference": {
+    "documents": 50,
+    "prose_words": 74168,
+    "median_per_document": {
+      "words": 1381.5,
+      "paragraphs": 50.5,
+      "sentences": 92.5,
+      "sentence_words_median": 14.0,
+      "sentence_words_p90": 23.75,
+      "paragraph_sentences_median": 1.0,
+      "short_sentences_pct": 25.91,
+      "long_sentences_pct": 7.027,
+      "first_person_per_1000_words": 22.694,
+      "because_so_but_per_1000_words": 9.03,
+      "contractions_per_1000_words": 6.163
+    }
+  },
+  "generated": {
+    "documents": 100,
+    "prose_words": 48473,
+    "median_per_document": {
+      "words": 466.5,
+      "paragraphs": 12.0,
+      "sentences": 35.5,
+      "sentence_words_median": 13.0,
+      "sentence_words_p90": 20.0,
+      "paragraph_sentences_median": 3.0,
+      "short_sentences_pct": 23.077,
+      "long_sentences_pct": 0.0,
+      "first_person_per_1000_words": 14.77,
+      "because_so_but_per_1000_words": 6.891,
+      "contractions_per_1000_words": 5.199
+    }
+  },
+  "generated_by_mode": {
+    "account": {
+      "documents": 50,
+      "prose_words": 24747,
+      "median_per_document": {
+        "words": 482.0,
+        "paragraphs": 12.5,
+        "sentences": 36.0,
+        "sentence_words_median": 14.0,
+        "sentence_words_p90": 20.0,
+        "paragraph_sentences_median": 3.0,
+        "short_sentences_pct": 22.902,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 35.855,
+        "because_so_but_per_1000_words": 8.441,
+        "contractions_per_1000_words": 6.218
+      }
+    },
+    "explanation": {
+      "documents": 50,
+      "prose_words": 23726,
+      "median_per_document": {
+        "words": 456.0,
+        "paragraphs": 11.5,
+        "sentences": 34.0,
+        "sentence_words_median": 13.0,
+        "sentence_words_p90": 20.0,
+        "paragraph_sentences_median": 3.0,
+        "short_sentences_pct": 23.913,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 4.821,
+        "because_so_but_per_1000_words": 6.424,
+        "contractions_per_1000_words": 3.899
+      }
+    }
+  },
+  "lint": {
+    "findings": 1,
+    "files_without_findings": 99,
+    "tags": {
+      "banned-word": 1
+    }
+  },
+  "enriched_ngrams": [
+    {
+      "phrase": "starts with a",
+      "generated_documents": 8,
+      "reference_documents": 1,
+      "generated_document_pct": 8.0,
+      "reference_document_pct": 2.0,
+      "generated_occurrences_per_10000_words": 1.857,
+      "reference_occurrences_per_10000_words": 0.135,
+      "example_files": [
+        "040",
+        "052",
+        "072",
+        "073",
+        "079",
+        "081",
+        "093",
+        "099"
+      ]
+    },
+    {
+      "phrase": "i keep the",
+      "generated_documents": 6,
+      "reference_documents": 0,
+      "generated_document_pct": 6.0,
+      "reference_document_pct": 0.0,
+      "generated_occurrences_per_10000_words": 1.238,
+      "reference_occurrences_per_10000_words": 0.0,
+      "example_files": [
+        "016",
+        "017",
+        "042",
+        "073",
+        "075",
+        "091"
+      ]
+    },
+    {
+      "phrase": "integration and end to end",
+      "generated_documents": 5,
+      "reference_documents": 0,
+      "generated_document_pct": 5.0,
+      "reference_document_pct": 0.0,
+      "generated_occurrences_per_10000_words": 1.032,
+      "reference_occurrences_per_10000_words": 0.0,
+      "example_files": [
+        "070",
+        "087",
+        "088",
+        "093",
+        "096"
+      ]
+    },
+    {
+      "phrase": "integration and end to",
+      "generated_documents": 5,
+      "reference_documents": 0,
+      "generated_document_pct": 5.0,
+      "reference_document_pct": 0.0,
+      "generated_occurrences_per_10000_words": 1.032,
+      "reference_occurrences_per_10000_words": 0.0,
+      "example_files": [
+        "070",
+        "087",
+        "088",
+        "093",
+        "096"
+      ]
+    },
+    {
+      "phrase": "an in memory",
+      "generated_documents": 5,
+      "reference_documents": 0,
+      "generated_document_pct": 5.0,
+      "reference_document_pct": 0.0,
+      "generated_occurrences_per_10000_words": 1.238,
+      "reference_occurrences_per_10000_words": 0.0,
+      "example_files": [
+        "021",
+        "022",
+        "083",
+        "084",
+        "094"
+      ]
+    }
+  ],
+  "exploratory_shapes": {
+    "summary_label": {
+      "reference": {
+        "documents": 0,
+        "occurrences": 0,
+        "examples": []
+      },
+      "generated": {
+        "documents": 0,
+        "occurrences": 0,
+        "examples": []
+      }
+    },
+    "vague_payoff": {
+      "reference": {
+        "documents": 12,
+        "occurrences": 18,
+        "examples": [
+          {
+            "path": "research/luna-100/sources/raw/2026-01-02-benefits-of-learning-in-public-and.md",
+            "sentence": "But by batching and reducing effort, you make publishing easy enough to stick with, and that’s what makes it useful over time."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-02-27-chatgpt-data-viewer.md",
+            "sentence": "This made browsing older material much easier than relying on the web UI."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-03-20-i-turned-my-telegram-bot-into-a-multi.md",
+            "sentence": "Overall, these changes made the workflow more manageable and reliable."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-03-27-5-useful-utilities-i-built-with-ai.md",
+            "sentence": "That architecture matters because it keeps the system simple."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-03-27-5-useful-utilities-i-built-with-ai.md",
+            "sentence": "There is also a command-line mode, which makes the format useful outside Jupyter."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-04-03-i-built-an-ai-agent-team-for-software.md",
+            "sentence": "Each role has a narrow set of responsibilities, which makes it harder to skip steps and easier to see where something went wrong."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-04-10-tired-of-learning-ai-alone-were-launching.md",
+            "sentence": "Having a cohort makes it much easier to stay on track."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-04-17-how-we-built-ai-shipping-labs.md",
+            "sentence": "The resulting .md files were not perfect and still required some manual editing afterward, but the scripts handled most of the repetitive work and made it practical to move the newsletter archive to the site."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-04-24-from-google-docs-to-an-automated.md",
+            "sentence": "The Slack bot made the FAQ much easier to use."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-04-24-from-google-docs-to-an-automated.md",
+            "sentence": "I originally wrote it for LLM Zoomcamp, where RAG is one of the course topics, and the FAQ made a useful dataset for experimentation."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-04-24-from-google-docs-to-an-automated.md",
+            "sentence": "This structure made the FAQ much easier to maintain."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-04-24-from-google-docs-to-an-automated.md",
+            "sentence": "This made the FAQ much easier to reuse."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-05-08-building-an-ai-book-generator-with.md",
+            "sentence": "This makes the generator easier to monitor during long runs."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-05-29-minsearch-the-small-search-library.md",
+            "sentence": "That made minsearch useful for teaching."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-05-29-minsearch-the-small-search-library.md",
+            "sentence": "It grew because the examples kept needing more practical features."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-06-26-six-projects-that-didnt-make-it.md",
+            "sentence": "That made it easier to try other projects afterward."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-06-26-six-projects-that-didnt-make-it.md",
+            "sentence": "Now Copilot’s pricing makes it less useful, so I stopped relying on it."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-07-03-choosing-a-portfolio-project-the.md",
+            "sentence": "That makes the method easier for someone else to repeat."
+          }
+        ]
+      },
+      "generated": {
+        "documents": 14,
+        "occurrences": 18,
+        "examples": [
+          {
+            "path": "research/luna-100/output/round-2/010-explanation.md",
+            "sentence": "Each file contains a plain-language description of the action, which makes a command easier to look at than a hidden prompt."
+          },
+          {
+            "path": "research/luna-100/output/round-2/010-explanation.md",
+            "sentence": "Keeping those roles separate makes the system easier to understand."
+          },
+          {
+            "path": "research/luna-100/output/round-2/011-account.md",
+            "sentence": "Claude Code could run several commands in parallel through sub-agents, which made large batches manageable while keeping the evaluation logic consistent."
+          },
+          {
+            "path": "research/luna-100/output/round-2/038-explanation.md",
+            "sentence": "A correction can become part of the skill after it repeats, while separating research, drafting, and checking keeps concrete problems visible."
+          },
+          {
+            "path": "research/luna-100/output/round-2/039-account.md",
+            "sentence": "AI made it easier to explore shell hooks and SSH tunneling."
+          },
+          {
+            "path": "research/luna-100/output/round-2/047-account.md",
+            "sentence": "A cohort makes it easier to keep going through a course or new material."
+          },
+          {
+            "path": "research/luna-100/output/round-2/048-explanation.md",
+            "sentence": "A cohort makes it easier to continue through a course or new material."
+          },
+          {
+            "path": "research/luna-100/output/round-2/050-explanation.md",
+            "sentence": "The Slack bot made the FAQ easier to use, but Google Docs still had moderation and maintenance problems."
+          },
+          {
+            "path": "research/luna-100/output/round-2/050-explanation.md",
+            "sentence": "This structure made individual questions easier to review, update and reorder under version control."
+          },
+          {
+            "path": "research/luna-100/output/round-2/051-account.md",
+            "sentence": "The bot made the FAQ easier to use, but Google Docs still caused maintenance problems."
+          },
+          {
+            "path": "research/luna-100/output/round-2/051-account.md",
+            "sentence": "This made questions easier to review, update and reorder under version control."
+          },
+          {
+            "path": "research/luna-100/output/round-2/056-explanation.md",
+            "sentence": "The repository also has a section-based implementation for longer books, but the chapter-based path makes the workflow easier to see."
+          },
+          {
+            "path": "research/luna-100/output/round-2/069-account.md",
+            "sentence": "Coding agents made it easier to try ideas, so I also created more projects that never became part of my regular work."
+          },
+          {
+            "path": "research/luna-100/output/round-2/083-account.md",
+            "sentence": "CORS problems and smaller failures appeared before they were mixed with database work, which made them easier to find."
+          },
+          {
+            "path": "research/luna-100/output/round-2/087-account.md",
+            "sentence": "It was still a workshop-sized system, so I kept the infrastructure simple and left the main user flow unchanged."
+          },
+          {
+            "path": "research/luna-100/output/round-2/087-account.md",
+            "sentence": "SQLAlchemy made the change manageable because the application already had a database abstraction."
+          },
+          {
+            "path": "research/luna-100/output/round-2/092-explanation.md",
+            "sentence": "Infrastructure as code makes a second environment easier to create and keep close to the first."
+          },
+          {
+            "path": "research/luna-100/output/round-2/098-explanation.md",
+            "sentence": "Treating them as separate pieces makes the setup easier to change."
+          }
+        ]
+      }
+    },
+    "vague_demonstrative": {
+      "reference": {
+        "documents": 25,
+        "occurrences": 44,
+        "examples": [
+          {
+            "path": "research/luna-100/sources/raw/2025-12-12-how-i-built-a-fully-automated-image.md",
+            "sentence": "This keeps the style but removes awkward constructions."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2025-12-12-how-i-built-a-fully-automated-image.md",
+            "sentence": "This keeps the input queue clean and prevents re-processing the same image."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2025-12-26-shipping-features-from-a-tram-stop.md",
+            "sentence": "That means I can check that the page renders correctly and that buttons and links behave as expected."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-01-16-how-i-reviewed-2500-ai-bootcamp-scholarship.md",
+            "sentence": "One more thing that helped a lot in this workflow is voice dictation."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-01-16-how-i-reviewed-2500-ai-bootcamp-scholarship.md",
+            "sentence": "This makes editing and refinement much faster, especially for longer texts."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-01-23-ai-bootcamp-becomes-ai-engineering.md",
+            "sentence": "This makes the underlying mechanics explicit before any abstractions are introduced."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-01-30-telegram-assistant.md",
+            "sentence": "That means you can only see the final results of my work: finished projects, talks, or materials."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-01-30-telegram-assistant.md",
+            "sentence": "This makes images first-class inputs that can be referenced in articles rather than remaining as detached chat artifacts."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-01-30-telegram-assistant.md",
+            "sentence": "This keeps external references integrated with the surrounding context."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-02-20-how-i-built-sqlitesearch-a-lightweight.md",
+            "sentence": "This means that when I close the Python process running it, all the indexed data disappears."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-02-20-how-i-built-sqlitesearch-a-lightweight.md",
+            "sentence": "This makes SQLiteSearch lightweight."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-02-27-chatgpt-data-viewer.md",
+            "sentence": "This made browsing older material much easier than relying on the web UI."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-03-06-how-i-dropped-our-production-database.md",
+            "sentence": "That made no sense: the infrastructure already existed."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-03-06-how-i-dropped-our-production-database.md",
+            "sentence": "This gives me a fresh copy of production every day."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-03-11-how-crisp-dm-still-applies-to-ai.md",
+            "sentence": "These fields can provide additional context that helps the AI system generate structured outputs."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-03-13-ai-set-up-my-infra-in-10-minutes.md",
+            "sentence": "This made it difficult to evaluate whether Opus could independently reproduce the design."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-03-13-ai-set-up-my-infra-in-10-minutes.md",
+            "sentence": "I hope this makes the program more accessible to those who need it most."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-03-20-i-turned-my-telegram-bot-into-a-multi.md",
+            "sentence": "That makes it inconvenient to capture longer thoughts."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-04-07-an-unexpected-entry-into-ai-memory.md",
+            "sentence": "Here’s what that means in practice."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-04-10-tired-of-learning-ai-alone-were-launching.md",
+            "sentence": "That made me want a smaller group where I could go deeper: live sessions, solving problems together, exchanging experiences."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-04-24-from-google-docs-to-an-automated.md",
+            "sentence": "That made contributions very easy and helped the FAQ grow over time."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-04-24-from-google-docs-to-an-automated.md",
+            "sentence": "This gave me a setup that matched the FAQ structure much better:"
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-04-24-from-google-docs-to-an-automated.md",
+            "sentence": "This made the FAQ much easier to reuse."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-05-08-building-an-ai-book-generator-with.md",
+            "sentence": "This makes the quality of the initial plan important."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-05-08-building-an-ai-book-generator-with.md",
+            "sentence": "This makes the generator easier to monitor during long runs."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-05-29-minsearch-the-small-search-library.md",
+            "sentence": "That made minsearch useful for teaching."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-05-29-minsearch-the-small-search-library.md",
+            "sentence": "It’s an inverted index that keeps the same fit and search methods, but it also lets you append documents one at a time."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-06-05-how-to-set-up-your-coding-agent-a.md",
+            "sentence": "It’s the productized version of the Ralph loop: a loop that keeps feeding work to a the agent, until a certain condition is met."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-06-26-six-projects-that-didnt-make-it.md",
+            "sentence": "That made it easier to try other projects afterward."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-07-03-choosing-a-portfolio-project-the.md",
+            "sentence": "For example, I have a tool called ssh-autoforward that helps me manage my remote servers."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-07-03-choosing-a-portfolio-project-the.md",
+            "sentence": "That makes the method easier for someone else to repeat."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-07-03-choosing-a-portfolio-project-the.md",
+            "sentence": "This gives you options before you commit."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-07-16-how-to-write-a-good-readme.md",
+            "sentence": "A README that makes this difficult can cost the author course points."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-07-16-how-to-write-a-good-readme.md",
+            "sentence": "Throughout the article, I will use one running example: Fitness Assistant, a RAG application that helps users find exercises and suitable alternatives."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-07-16-how-to-write-a-good-readme.md",
+            "sentence": "A conversational AI that helps users choose exercises and find alternatives."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-07-16-how-to-write-a-good-readme.md",
+            "sentence": "[Project name] is a [type of system] that helps [specific user] do [task or achieve an outcome]."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-07-16-how-to-write-a-good-readme.md",
+            "sentence": "A support assistant that helps DataTalks.Club students find answers across course materials."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-07-16-how-to-write-a-good-readme.md",
+            "sentence": "This helps the reviewer navigate the repository and shows that you assessed the project against the same criteria they will use."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-07-22-ai-native-development-specifications.md",
+            "sentence": "In June 2026, Addy Osmani published the Loop Engineering essay that gave it a name, and Peter Steinberger compressed the idea into one tweet:"
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-08-08-getting-an-ai-engineering-job.md",
+            "sentence": "It’s okay to be explicit about it with the company that made the offer."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-08-10-deploy-a-full-stack-app-with-ai-coding.md",
+            "sentence": "This means we don’t need a separate container for the frontend: the backend can serve these files."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-08-14-how-to-do-evals-in-2026.md",
+            "sentence": "This gives you a “version 0” of the gold standard dataset - the dataset you will use for evaluating your system (sometimes it’s also called the “ground truth” dataset)."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-08-28-from-idea-to-production.md",
+            "sentence": "For an app that helps you find study partners, it could be something like:"
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-08-28-from-idea-to-production.md",
+            "sentence": "It’s also useful to track 5xx error codes and for each error send an alert (or configure a threshold that makes sense for your application)."
+          }
+        ]
+      },
+      "generated": {
+        "documents": 22,
+        "occurrences": 27,
+        "examples": [
+          {
+            "path": "research/luna-100/output/round-2/008-explanation.md",
+            "sentence": "Pastor's imperfect explanations created discussions that helped him correct mistakes."
+          },
+          {
+            "path": "research/luna-100/output/round-2/014-explanation.md",
+            "sentence": "This helps you understand how an agent framework works internally."
+          },
+          {
+            "path": "research/luna-100/output/round-2/015-account.md",
+            "sentence": "That helped with the first editions, but the chat soon became difficult to organize."
+          },
+          {
+            "path": "research/luna-100/output/round-2/021-account.md",
+            "sentence": "That makes the library a fit for small personal and course projects where persistent search matters more than production-scale infrastructure."
+          },
+          {
+            "path": "research/luna-100/output/round-2/033-account.md",
+            "sentence": "That made it difficult to tell whether it could reproduce the design independently."
+          },
+          {
+            "path": "research/luna-100/output/round-2/037-account.md",
+            "sentence": "That makes it possible to see what the assistant changed rather than relying on an invisible conversation."
+          },
+          {
+            "path": "research/luna-100/output/round-2/043-account.md",
+            "sentence": "That matters because language models are stateless."
+          },
+          {
+            "path": "research/luna-100/output/round-2/044-explanation.md",
+            "sentence": "A plain similarity search can find related text while missing the broader relationship that gives the fact meaning."
+          },
+          {
+            "path": "research/luna-100/output/round-2/050-explanation.md",
+            "sentence": "This matters when an answer depends on a deadline, cohort logistics or a temporary instruction."
+          },
+          {
+            "path": "research/luna-100/output/round-2/050-explanation.md",
+            "sentence": "That made the website a readable interface and a structured dataset."
+          },
+          {
+            "path": "research/luna-100/output/round-2/051-account.md",
+            "sentence": "That matters when answers depend on deadlines, cohort logistics or temporary instructions."
+          },
+          {
+            "path": "research/luna-100/output/round-2/051-account.md",
+            "sentence": "This made questions easier to review, update and reorder under version control."
+          },
+          {
+            "path": "research/luna-100/output/round-2/060-explanation.md",
+            "sentence": "That gives me a permanent environment I can customize, unlike the GitHub Actions environment that disappeared after each Copilot task."
+          },
+          {
+            "path": "research/luna-100/output/round-2/069-account.md",
+            "sentence": "That made the application look functional while the backend was broken."
+          },
+          {
+            "path": "research/luna-100/output/round-2/071-account.md",
+            "sentence": "A shared theme gives me a project that makes sense in more than one interview."
+          },
+          {
+            "path": "research/luna-100/output/round-2/072-explanation.md",
+            "sentence": "This makes the options comparable before implementation begins."
+          },
+          {
+            "path": "research/luna-100/output/round-2/072-explanation.md",
+            "sentence": "This gives the project a domain-relevant stack to discuss in an interview."
+          },
+          {
+            "path": "research/luna-100/output/round-2/073-account.md",
+            "sentence": "This gives me a short description for the next step."
+          },
+          {
+            "path": "research/luna-100/output/round-2/074-explanation.md",
+            "sentence": "This gives you a brief for the package and can show that the idea already exists elsewhere."
+          },
+          {
+            "path": "research/luna-100/output/round-2/075-account.md",
+            "sentence": "It's a retrieval application that helps people choose exercises and alternatives."
+          },
+          {
+            "path": "research/luna-100/output/round-2/075-account.md",
+            "sentence": "That keeps the repository from sounding more complete than it actually is."
+          },
+          {
+            "path": "research/luna-100/output/round-2/077-account.md",
+            "sentence": "That gives me a known state to return to when an agent takes a project in the wrong direction."
+          },
+          {
+            "path": "research/luna-100/output/round-2/082-explanation.md",
+            "sentence": "That keeps the data work visible instead of hiding it behind a more complicated retrieval stack."
+          },
+          {
+            "path": "research/luna-100/output/round-2/092-explanation.md",
+            "sentence": "This gives the team a place to find regressions before users receive every change."
+          },
+          {
+            "path": "research/luna-100/output/round-2/092-explanation.md",
+            "sentence": "This keeps the release artifact tied to the checks that preceded promotion."
+          },
+          {
+            "path": "research/luna-100/output/round-2/096-explanation.md",
+            "sentence": "Students test the behavior that matters."
+          },
+          {
+            "path": "research/luna-100/output/round-2/097-account.md",
+            "sentence": "This makes the release steps reusable without hiding what they do."
+          }
+        ]
+      }
+    },
+    "enough_close": {
+      "reference": {
+        "documents": 2,
+        "occurrences": 2,
+        "examples": [
+          {
+            "path": "research/luna-100/sources/raw/2026-04-17-how-we-built-ai-shipping-labs.md",
+            "sentence": "The wording was not final yet, but it was enough to start building the web interface."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-04-24-from-google-docs-to-an-automated.md",
+            "sentence": "It was enough to prove that the decision logic worked, but it was still a prototype, not something you would want to run on every GitHub issue."
+          }
+        ]
+      },
+      "generated": {
+        "documents": 1,
+        "occurrences": 1,
+        "examples": [
+          {
+            "path": "research/luna-100/output/round-2/038-explanation.md",
+            "sentence": "That was enough for the first version."
+          }
+        ]
+      }
+    },
+    "importance_narration": {
+      "reference": {
+        "documents": 4,
+        "occurrences": 4,
+        "examples": [
+          {
+            "path": "research/luna-100/sources/raw/2025-12-19-5-ideas-for-ai-agents-and-openais.md",
+            "sentence": "A key part of her presentation showed the need for guardrails, as she found the agent would obediently “draw a cute pig” or translate text into Romanian if asked, which was not the intended use."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-04-17-how-we-built-ai-shipping-labs.md",
+            "sentence": "For me, learning is the main point."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-07-25-what-ai-forward-deployed-engineers.md",
+            "sentence": "The main difference is the type of code FDEs write, how long they work with one customer, and the involvement in production deployment."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-08-31-coding-agent-building-blocks-reusable.md",
+            "sentence": "The main difference between a plain markdown file that we used previously and a skill is that the skill is automatically discoverable."
+          }
+        ]
+      },
+      "generated": {
+        "documents": 2,
+        "occurrences": 2,
+        "examples": [
+          {
+            "path": "research/luna-100/output/round-2/042-explanation.md",
+            "sentence": "That's the useful part of an agent team: independent checks around the work, with a clear place to send a task when it fails."
+          },
+          {
+            "path": "research/luna-100/output/round-2/065-account.md",
+            "sentence": "When a page needs correction, the useful part of that correction belongs in the system."
+          }
+        ]
+      }
+    },
+    "intention_frame": {
+      "reference": {
+        "documents": 1,
+        "occurrences": 1,
+        "examples": [
+          {
+            "path": "research/luna-100/sources/raw/2026-04-03-i-built-an-ai-agent-team-for-software.md",
+            "sentence": "GitHub Issues work well when I want visible coordination and agent reports attached to each task."
+          }
+        ]
+      },
+      "generated": {
+        "documents": 1,
+        "occurrences": 1,
+        "examples": [
+          {
+            "path": "research/luna-100/output/round-2/097-account.md",
+            "sentence": "PM, software-engineer, and QA documents described specialized responsibilities, and I wanted to make two concepts explicit."
+          }
+        ]
+      }
+    },
+    "scope_disclaimer": {
+      "reference": {
+        "documents": 1,
+        "occurrences": 1,
+        "examples": [
+          {
+            "path": "research/luna-100/sources/raw/2026-06-19-the-system-i-built-for-aws-access.md",
+            "sentence": "This post isn’t about that incident."
+          }
+        ]
+      },
+      "generated": {
+        "documents": 1,
+        "occurrences": 1,
+        "examples": [
+          {
+            "path": "research/luna-100/output/round-2/062-explanation.md",
+            "sentence": "You can use exact keywords, numeric ranges, or date ranges, and keyword fields are optional when the example doesn't need them."
+          }
+        ]
+      }
+    },
+    "comparison_frame": {
+      "reference": {
+        "documents": 37,
+        "occurrences": 116,
+        "examples": [
+          {
+            "path": "research/luna-100/sources/raw/2026-01-02-benefits-of-learning-in-public-and.md",
+            "sentence": "Turning personal notes into public explanations pushed him to properly understand topics like evaluation metrics instead of skimming them."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-01-02-benefits-of-learning-in-public-and.md",
+            "sentence": "Within Zoomcamps, Dashel Ruiz Perez pointed out that seeing others share progress in Slack made learning feel collective rather than isolating."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-01-02-benefits-of-learning-in-public-and.md",
+            "sentence": "Learning in public turned problems into shared problem-solving instead of private frustration."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-01-09-my-experiments-with-claude-code.md",
+            "sentence": "There are now more than 25 projects."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-01-09-my-experiments-with-claude-code.md",
+            "sentence": "At times it’s very sloppy and lazy: instead of fixing a test, it may simply delete it “because it’s an existing regression”."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-01-16-how-i-reviewed-2500-ai-bootcamp-scholarship.md",
+            "sentence": "This time, I received 2,500+ applications, far more than the number of available spots."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-01-16-how-i-reviewed-2500-ai-bootcamp-scholarship.md",
+            "sentence": "Clear plans to scale an existing project, reach a community, or multiply impact stand out far more than abstract learning goals."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-01-16-how-i-reviewed-2500-ai-bootcamp-scholarship.md",
+            "sentence": "Instead of building a custom agent in code, I relied on clear instructions, a strong model, and reusable command-based workflows defined in Markdown."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-01-16-how-i-reviewed-2500-ai-bootcamp-scholarship.md",
+            "sentence": "At this stage, qualitative factors such as authenticity, clarity of intent, and likelihood of follow-through mattered more than any numeric score."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-01-16-how-i-reviewed-2500-ai-bootcamp-scholarship.md",
+            "sentence": "Experience with real projects, persistence, and learning in public matter much more than any single opportunity."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-01-16-how-i-reviewed-2500-ai-bootcamp-scholarship.md",
+            "sentence": "So, instead of rewriting everything manually, I used the latest stream as input to automatically generate structured, illustrated documentation."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-01-23-ai-bootcamp-becomes-ai-engineering.md",
+            "sentence": "I decided to rename the course because the new name better reflects what it is about: building AI systems with an engineering mindset through hands-on work instead of learning theory in isolation."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-01-30-telegram-assistant.md",
+            "sentence": "Articles are updated incrementally rather than regenerated from scratch."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-01-30-telegram-assistant.md",
+            "sentence": "This makes images first-class inputs that can be referenced in articles rather than remaining as detached chat artifacts."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-01-30-telegram-assistant.md",
+            "sentence": "Relevant content is summarized and incorporated into the appropriate article, rather than being stored as raw URLs."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-02-06-building-and-maintaining-a-slack.md",
+            "sentence": "DataTalks.Club community has grown to more than 88,000 people and lives across many Slack channels."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-02-06-building-and-maintaining-a-slack.md",
+            "sentence": "For me, urgent maintenance, operational tasks, and situations where execution matters more than careful design are where Claude Code fits most."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-02-13-what-is-an-ai-engineer-in-2026-join.md",
+            "sentence": "To understand the demand side, I collected more than 1500 job postings from the last three months across several major cities: Los Angeles, New York, London, Amsterdam, Berlin, and others."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-02-20-how-i-built-sqlitesearch-a-lightweight.md",
+            "sentence": "I already understand how LSH works because I have implemented random projections a few times, so I chose it for vector search instead of more advanced, complex techniques."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-03-04-what-1000-job-descriptions-reveal.md",
+            "sentence": "ML knowledge is still valuable, but it serves as a supportive context rather than the core of the role."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-03-04-what-1000-job-descriptions-reveal.md",
+            "sentence": "Preparing for these roles, therefore, requires understanding the key system architectures such as LLM integration, RAG, and agent workflows, rather than focusing on specific frameworks that may quickly change."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-03-06-how-i-dropped-our-production-database.md",
+            "sentence": "Instead of creating a separate setup for AI Shipping Labs, I added it to the existing one to save a small amount of money."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-03-06-how-i-dropped-our-production-database.md",
+            "sentence": "Instead of going through the plan manually, I let Claude Code run terraform plan and then terraform apply."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-03-06-how-i-dropped-our-production-database.md",
+            "sentence": "When Claude ran terraform destroy, it wiped out more than just the temporary duplicates."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-03-06-how-i-dropped-our-production-database.md",
+            "sentence": "It actually destroyed the real infrastructure behind the course platform instead of the state file it created."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-03-11-how-crisp-dm-still-applies-to-ai.md",
+            "sentence": "Instead of asking a user to fill in every field manually, we may want to create an AI feature that automatically suggests fields based on a user-uploaded photo."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-03-13-ai-set-up-my-infra-in-10-minutes.md",
+            "sentence": "For some reason, instead of incrementally modifying the existing background, it discarded the earlier work and generated a simplified version from scratch."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-03-13-ai-set-up-my-infra-in-10-minutes.md",
+            "sentence": "It ran 44 iterations, but instead of gradually converging toward the reference, each iteration introduced different stylistic variations."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-03-13-ai-set-up-my-infra-in-10-minutes.md",
+            "sentence": "But this pipeline is tailored to DataTalks.Club courses and for standalone workshops and external programs, I wanted to have a separate deployment process, so I set up a parallel system rather than extending the existing one."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-03-16-karpathys-autoresearch-went-viral.md",
+            "sentence": "Instead of selecting parameters from predefined spaces, the model edits the training script itself and proposes new ideas for the architecture or training procedure."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-03-16-karpathys-autoresearch-went-viral.md",
+            "sentence": "Instead of directly improving the model, the human is programming the experimental process using natural language."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-03-16-karpathys-autoresearch-went-viral.md",
+            "sentence": "He also noted that much of his recent effort has gone into refining the experimental setup rather than directly modifying the model."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-03-16-karpathys-autoresearch-went-viral.md",
+            "sentence": "Instead of refining the style guide manually, the system would treat the prompt or style guide itself as the artifact being optimized."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-03-16-karpathys-autoresearch-went-viral.md",
+            "sentence": "Instead of manually adjusting instructions, the agent iteratively improves the prompt based on measurable feedback."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-03-16-karpathys-autoresearch-went-viral.md",
+            "sentence": "Instead of manually exploring ideas, the human defines the rules and constraints of the research environment and lets the system explore it automatically."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-03-20-i-turned-my-telegram-bot-into-a-multi.md",
+            "sentence": "Instead of a single overloaded process, the system is now split into specialized agents with defined roles."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-03-20-i-turned-my-telegram-bot-into-a-multi.md",
+            "sentence": "To work around this, I added support for sending regular audio files instead of native voice notes.​"
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-03-20-i-turned-my-telegram-bot-into-a-multi.md",
+            "sentence": "Instead of re-explaining the workflow every time, you encode it once."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-03-20-i-turned-my-telegram-bot-into-a-multi.md",
+            "sentence": "Rather than prompting from scratch each time, you give the agent a defined process for the task."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-03-27-5-useful-utilities-i-built-with-ai.md",
+            "sentence": "In some cases, the missing piece was portability across machines; in others, it was better integration with tools I already use; and sometimes it was simply the ability to control and extend the behavior myself, rather than adapting to someone else’s assumptions."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-03-27-5-useful-utilities-i-built-with-ai.md",
+            "sentence": "At the same time, I wanted something more than a personal preference for .py files."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-03-27-5-useful-utilities-i-built-with-ai.md",
+            "sentence": "That way, if a dependency changes or an example stops working, I can catch it through tests instead of discovering it later in documentation."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-03-27-5-useful-utilities-i-built-with-ai.md",
+            "sentence": "My part was mostly to review what it produced, correct the behavior where necessary, and refine the design until it felt like a real tool rather than a proof of concept."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-03-27-5-useful-utilities-i-built-with-ai.md",
+            "sentence": "Microphone Booster is a good example of a utility that came from a small but persistent hardware problem rather than from a software workflow."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-03-27-5-useful-utilities-i-built-with-ai.md",
+            "sentence": "Since I sometimes record away from home with that setup, the issue kept recurring often enough that I wanted a dedicated solution rather than workarounds in post-processing."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-03-27-5-useful-utilities-i-built-with-ai.md",
+            "sentence": "In this case, I used OpenCode with GLM-5 rather than Claude Code, and I deliberately did not constrain the implementation too much because I wanted the model to choose whatever stack fit the problem best."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-03-27-5-useful-utilities-i-built-with-ai.md",
+            "sentence": "Bot Master emerged from an operational rather than a developmental problem."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-03-27-5-useful-utilities-i-built-with-ai.md",
+            "sentence": "This separation ensures that the monitoring UI is optional rather than foundational."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-04-03-i-built-an-ai-agent-team-for-software.md",
+            "sentence": "Instead of just seeing it as a single tool, I’ve started thinking of the main session as an orchestrator that directs a small team of agents."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-04-03-i-built-an-ai-agent-team-for-software.md",
+            "sentence": "That way, the process continues until the backlog is empty, rather than stopping after each batch is completed."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-04-03-i-built-an-ai-agent-team-for-software.md",
+            "sentence": "I followed the same overall methodology, but used the file system instead of GitHub Issues because I did not yet know whether the project would be useful enough to justify a full setup."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-04-03-i-built-an-ai-agent-team-for-software.md",
+            "sentence": "I still think it is a good choice for small sites, but the DataTalks.Club website has been growing for more than five years, and at this point, building it takes more than a minute on my computer."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-04-03-i-built-an-ai-agent-team-for-software.md",
+            "sentence": "I make a small change, wait more than a minute, check the result, and repeat."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-04-03-i-built-an-ai-agent-team-for-software.md",
+            "sentence": "The next day, I checked the output and saw that the result was tailored to our site rather than a generic engine that could support other Jekyll websites."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-04-03-i-built-an-ai-agent-team-for-software.md",
+            "sentence": "Claude Code stopping and waiting for input instead of continuing autonomously"
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-04-03-i-built-an-ai-agent-team-for-software.md",
+            "sentence": "Instead of sending a task through PM grooming and QA verification, it launches the SWE directly."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-04-03-i-built-an-ai-agent-team-for-software.md",
+            "sentence": "On top of that, I started hitting Claude Code usage limits, which made me want a setup where I can switch between tools rather than relying on a single provider."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-04-03-i-built-an-ai-agent-team-for-software.md",
+            "sentence": "What I want instead is an orchestrator in which the pipeline itself is built into the application: PM grooms, SWE implements, QA verifies, PM accepts, and the role responsibilities, grooming process, acceptance criteria, and definition of done are enforced by the tool rather than through prompts."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-04-07-an-unexpected-entry-into-ai-memory.md",
+            "sentence": "The design of MemPalace draws inspiration from the classical “memory palace” technique, arranging recalled information into spatial structures instead of treating memory as a simple retrieval problem."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-04-07-an-unexpected-entry-into-ai-memory.md",
+            "sentence": "Instead of stuffing everything into the context, you keep your documents in a searchable index and only pull in what’s relevant to the current question."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-04-07-an-unexpected-entry-into-ai-memory.md",
+            "sentence": "The spatial structure makes retrieval intuitive - instead of searching a flat list, you navigate a building."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-04-07-an-unexpected-entry-into-ai-memory.md",
+            "sentence": "Instead of dumping all past conversations into a single vector database and hoping semantic search finds the right thing, it organizes information into a navigable hierarchy of wings, rooms, halls, and drawers."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-04-07-last-call-for-ai-engineering-buildcamp.md",
+            "sentence": "It is intended for people who want to spend real time building and debugging, rather than just watching explanations and taking notes."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-04-24-from-google-docs-to-an-automated.md",
+            "sentence": "Open Google Docs meant no real moderation, and vandalism happened more than once."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-04-24-from-google-docs-to-an-automated.md",
+            "sentence": "Instead of opening a large Google Doc and scrolling through it, students could ask a question in the course channel and receive an automatic answer."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-04-24-from-google-docs-to-an-automated.md",
+            "sentence": "Instead of one large document per course, the new repository is organized like this:"
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-04-24-from-google-docs-to-an-automated.md",
+            "sentence": "So instead of fighting Jekyll, I wrote a custom static site generator."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-04-24-from-google-docs-to-an-automated.md",
+            "sentence": "One useful side effect of writing my own generator is that I could make it export JSON too, not just HTML."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-04-24-from-google-docs-to-an-automated.md",
+            "sentence": "Instead of treating the website as the only interface, I could expose the same content as a structured dataset that other tools could index directly."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-04-24-from-google-docs-to-an-automated.md",
+            "sentence": "That was useful for more than convenience."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-04-24-from-google-docs-to-an-automated.md",
+            "sentence": "The model returns a structured Pydantic object, FAQDecision, rather than free-form text."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-04-24-from-google-docs-to-an-automated.md",
+            "sentence": "What I find interesting here is that retrieval is doing more than helping answer questions."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-04-24-from-google-docs-to-an-automated.md",
+            "sentence": "I only look at one pull request at a time, instead of trying to keep the whole queue in my head."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-05-08-building-an-ai-book-generator-with.md",
+            "sentence": "The agent wrote bullet points instead of prose."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-05-08-building-an-ai-book-generator-with.md",
+            "sentence": "Coding agents are likely tuned for documentation rather than narrative writing."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-05-08-building-an-ai-book-generator-with.md",
+            "sentence": "Each refinement call sends the current plan, along with your new feedback, back to Gemini, so the model updates the existing outline rather than starting from scratch."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-05-08-building-an-ai-book-generator-with.md",
+            "sentence": "You run uv run python -m chapterbased.plan -p books/mybook/input.txt to build the plan from a text file instead of the Streamlit chat."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-05-08-building-an-ai-book-generator-with.md",
+            "sentence": "I added that part because my son sometimes wants to listen to the books rather than read them."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-05-08-building-an-ai-book-generator-with.md",
+            "sentence": "Planning, writing, audio generation, and publishing are connected through files rather than through one large process."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-05-08-building-an-ai-book-generator-with.md",
+            "sentence": "This design choice and operational convention make the pipeline idempotent and resumable: if a run is interrupted, it can continue from the missing pieces instead of starting from the beginning."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-05-08-building-an-ai-book-generator-with.md",
+            "sentence": "It also makes cost visible while the book is still being produced, rather than only after completion."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-05-15-11-workshops-to-build-production.md",
+            "sentence": "And more than 80 people did, by the way!"
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-05-15-11-workshops-to-build-production.md",
+            "sentence": "Instead of recordings on YouTube, code on GitHub, and notes scattered across various READMEs, everything is now in one place with a single sign-up."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-05-15-11-workshops-to-build-production.md",
+            "sentence": "The only difference is that for bigger features like auth, access tiers, the event system, and the course pages, I use my agent team rather than a single agent."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-05-22-the-system-i-built-to-ship-code-from.md",
+            "sentence": "I also use Makefiles for everything that requires more than a few characters of typing."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-05-29-minsearch-the-small-search-library.md",
+            "sentence": "This already required a little more than a plain text search."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-05-29-minsearch-the-small-search-library.md",
+            "sentence": "Matches in the question field should count more than matches in the answer field."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-05-29-minsearch-the-small-search-library.md",
+            "sentence": "I wanted to show that agents can do more than search existing documents, like adding data back to the index and modifying it."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-06-05-how-to-set-up-your-coding-agent-a.md",
+            "sentence": "Sometimes speed matters more than control."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-06-12-ai-design-for-non-designers.md",
+            "sentence": "For a simple website, one-shot is more than enough, and it’s way better than what I could ever design myself."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-06-19-the-system-i-built-for-aws-access.md",
+            "sentence": "It’s the same flow as instance profiles, but I provide the endpoint instead of AWS doing it via the metadata service."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-06-26-six-projects-that-didnt-make-it.md",
+            "sentence": "It turned out that instead of fixing the API problem, it just decided to display demo data, making the app look functional while the backend was broken."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-06-26-six-projects-that-didnt-make-it.md",
+            "sentence": "Claude can get sloppy and delete a test instead of fixing it."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-06-26-six-projects-that-didnt-make-it.md",
+            "sentence": "I spent more than a month on this project and burned a huge pile of tokens."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-07-03-choosing-a-portfolio-project-the.md",
+            "sentence": "The strongest signal for hiring managers is that other people saw, reviewed, or used your work’s product, meaning it serves others, not just you."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-07-03-choosing-a-portfolio-project-the.md",
+            "sentence": "Instead of applying to every role you can find, you choose a domain first and use it to guide your research, skill selection, and project ideas."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-07-03-choosing-a-portfolio-project-the.md",
+            "sentence": "Ask the agent to group the per-company problems into themes that appear across more than one company:"
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-07-03-choosing-a-portfolio-project-the.md",
+            "sentence": "Show problems that more than one company is interested in solving, or common themes among these companies."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-07-03-choosing-a-portfolio-project-the.md",
+            "sentence": "For an AI engineering portfolio or most data professionals, evaluations matter more than any other feature."
+          },
+          {
+            "path": "research/luna-100/sources/raw/2026-07-03-choosing-a-portfolio-project-the.md",
+            "sentence": "Over time, you build a small portfolio that shows the range of your skills and the tools you can work with, based on real market data rather than random choices."
+          }
+        ]
+      },
+      "generated": {
+        "documents": 71,
+        "occurrences": 121,
+        "examples": [
+          {
+            "path": "research/luna-100/output/round-2/001-account.md",
+            "sentence": "It now contains more than 1,200 stories."
+          },
+          {
+            "path": "research/luna-100/output/round-2/002-explanation.md",
+            "sentence": "If a later stage fails, the input can be moved to failed rather than silently disappearing."
+          },
+          {
+            "path": "research/luna-100/output/round-2/003-account.md",
+            "sentence": "The agent uses the backend's OpenAPI specification rather than RAG."
+          },
+          {
+            "path": "research/luna-100/output/round-2/007-account.md",
+            "sentence": "I had also interviewed more than 200 practitioners and learners for the DataTalks.Club podcast, and many described what happened when they made their work visible."
+          },
+          {
+            "path": "research/luna-100/output/round-2/007-account.md",
+            "sentence": "He had to understand evaluation metrics instead of skimming them."
+          },
+          {
+            "path": "research/luna-100/output/round-2/007-account.md",
+            "sentence": "In the Zoomcamp community, Dashel Ruiz Perez said that seeing other participants post in Slack made a demanding course feel collective rather than isolated."
+          },
+          {
+            "path": "research/luna-100/output/round-2/008-explanation.md",
+            "sentence": "Pastor found that turning notes into posts made him study evaluation metrics instead of skimming them."
+          },
+          {
+            "path": "research/luna-100/output/round-2/009-account.md",
+            "sentence": "The repository eventually contained more than 25 small projects."
+          },
+          {
+            "path": "research/luna-100/output/round-2/009-account.md",
+            "sentence": "Claude could be sloppy, and instead of fixing a failing test it might delete the test and call it an existing regression."
+          },
+          {
+            "path": "research/luna-100/output/round-2/010-explanation.md",
+            "sentence": "Running those commands repeatedly produced more than 25 small browser projects."
+          },
+          {
+            "path": "research/luna-100/output/round-2/011-account.md",
+            "sentence": "More than 2,500 applications arrived."
+          },
+          {
+            "path": "research/luna-100/output/round-2/011-account.md",
+            "sentence": "I used reusable Markdown workflows instead of writing a custom agent in Python."
+          },
+          {
+            "path": "research/luna-100/output/round-2/012-explanation.md",
+            "sentence": "More than 2,500 applications made identical manual attention impossible."
+          },
+          {
+            "path": "research/luna-100/output/round-2/012-explanation.md",
+            "sentence": "Authenticity, clarity of intent and likely follow-through mattered more than numeric ranking."
+          },
+          {
+            "path": "research/luna-100/output/round-2/016-explanation.md",
+            "sentence": "I can follow that link to the diff instead of trying to reconstruct the edits from the chat."
+          },
+          {
+            "path": "research/luna-100/output/round-2/017-account.md",
+            "sentence": "DataTalks.Club has more than 88,000 people across its Slack channels."
+          },
+          {
+            "path": "research/luna-100/output/round-2/017-account.md",
+            "sentence": "I find Claude Code useful for urgent maintenance when execution matters more than careful design."
+          },
+          {
+            "path": "research/luna-100/output/round-2/018-explanation.md",
+            "sentence": "In DataTalks.Club, more than 88,000 people use our Slack channels."
+          },
+          {
+            "path": "research/luna-100/output/round-2/018-explanation.md",
+            "sentence": "I asked Claude to read the last two hours of logs instead of opening CloudWatch and investigating manually."
+          },
+          {
+            "path": "research/luna-100/output/round-2/019-account.md",
+            "sentence": "I've worked with ML and AI for more than 15 years and regularly talk to people doing this kind of work."
+          },
+          {
+            "path": "research/luna-100/output/round-2/019-account.md",
+            "sentence": "For the employer side, I collected more than 1,500 job postings from the previous three months."
+          },
+          {
+            "path": "research/luna-100/output/round-2/020-explanation.md",
+            "sentence": "I've worked with ML and AI for more than 15 years, and I now teach AI Engineering Buildcamp."
+          },
+          {
+            "path": "research/luna-100/output/round-2/020-explanation.md",
+            "sentence": "For job postings, I collected more than 1,500 from the previous three months."
+          },
+          {
+            "path": "research/luna-100/output/round-2/021-account.md",
+            "sentence": "The source describes it as a system designed for large production deployments that can cost more than $200 per month."
+          },
+          {
+            "path": "research/luna-100/output/round-2/021-account.md",
+            "sentence": "I chose that approach instead of a more advanced technique that would be harder for me to debug."
+          },
+          {
+            "path": "research/luna-100/output/round-2/021-account.md",
+            "sentence": "That would let the Buildcamp participants use familiar operations rather than learn a completely different interface."
+          },
+          {
+            "path": "research/luna-100/output/round-2/021-account.md",
+            "sentence": "I reminded Claude to include tests because a reusable library needs more than a working demonstration."
+          },
+          {
+            "path": "research/luna-100/output/round-2/021-account.md",
+            "sentence": "That makes the library a fit for small personal and course projects where persistent search matters more than production-scale infrastructure."
+          },
+          {
+            "path": "research/luna-100/output/round-2/022-explanation.md",
+            "sentence": "Elasticsearch was described as a large production system and could cost more than $200 per month, which was excessive for this scale."
+          },
+          {
+            "path": "research/luna-100/output/round-2/022-explanation.md",
+            "sentence": "narrow-down supported SQLite, but it used a native Rust extension rather than remaining pure Python."
+          },
+          {
+            "path": "research/luna-100/output/round-2/022-explanation.md",
+            "sentence": "That familiarity mattered more than choosing a newer or more complex technique whose behavior I would have to understand through an assistant."
+          },
+          {
+            "path": "research/luna-100/output/round-2/023-account.md",
+            "sentence": "The work is less about training the foundation model and more about system integration, prompt design, structured outputs, evaluation and operational reliability."
+          },
+          {
+            "path": "research/luna-100/output/round-2/026-explanation.md",
+            "sentence": "The source describes it as a self-contained application with minimal configuration, rather than as a replacement for a larger data platform."
+          },
+          {
+            "path": "research/luna-100/output/round-2/027-account.md",
+            "sentence": "The title \"AI Engineer\" is still relatively new, so we wanted to understand it through market demand rather than intuition."
+          },
+          {
+            "path": "research/luna-100/output/round-2/027-account.md",
+            "sentence": "We analyzed more than 1,000 job descriptions from a large technology job site."
+          },
+          {
+            "path": "research/luna-100/output/round-2/027-account.md",
+            "sentence": "The sample showed how companies actually use the title, while also making clear that the percentages describe this dataset rather than a permanent definition."
+          },
+          {
+            "path": "research/luna-100/output/round-2/027-account.md",
+            "sentence": "The result suggested that employers valued architecting and operating GenAI systems more than prompt writing or pure model training in isolation."
+          },
+          {
+            "path": "research/luna-100/output/round-2/027-account.md",
+            "sentence": "Azure appeared in 23.9 percent and GCP in 23.0 percent, so familiarity with more than one cloud can be useful."
+          },
+          {
+            "path": "research/luna-100/output/round-2/028-explanation.md",
+            "sentence": "In our study, we analyzed more than 1,000 descriptions across five cities."
+          },
+          {
+            "path": "research/luna-100/output/round-2/028-explanation.md",
+            "sentence": "The percentages describe this dataset, so they're evidence about the market rather than guarantees about every role."
+          },
+          {
+            "path": "research/luna-100/output/round-2/028-explanation.md",
+            "sentence": "The ordering suggests that employers value architecting and operating GenAI systems more than prompt writing or model training in isolation."
+          },
+          {
+            "path": "research/luna-100/output/round-2/028-explanation.md",
+            "sentence": "Traditional ML remained useful context rather than the center of the role."
+          },
+          {
+            "path": "research/luna-100/output/round-2/029-account.md",
+            "sentence": "S3 versioning protects earlier backup versions, and Terraform state now lives in S3 rather than on one laptop."
+          },
+          {
+            "path": "research/luna-100/output/round-2/029-account.md",
+            "sentence": "After verification, it stops the restored instance rather than deleting it."
+          },
+          {
+            "path": "research/luna-100/output/round-2/030-explanation.md",
+            "sentence": "I also wanted to test restoration continuously instead of assuming a backup was usable."
+          },
+          {
+            "path": "research/luna-100/output/round-2/030-explanation.md",
+            "sentence": "When that succeeds, the instance is stopped instead of deleted."
+          },
+          {
+            "path": "research/luna-100/output/round-2/032-explanation.md",
+            "sentence": "It dates from the 1990s, but many stages still apply when you work with foundation models and retrieval instead of training a model yourself."
+          },
+          {
+            "path": "research/luna-100/output/round-2/033-account.md",
+            "sentence": "I narrowed the task to the background, but 44 iterations produced stylistic variations instead of getting closer to the reference."
+          },
+          {
+            "path": "research/luna-100/output/round-2/034-explanation.md",
+            "sentence": "Claude then replaced earlier background work with a simplified version instead of changing it incrementally."
+          },
+          {
+            "path": "research/luna-100/output/round-2/034-explanation.md",
+            "sentence": "It kept changing the style instead of approaching the reference, and I ultimately used the certificate from the manual feedback process."
+          },
+          {
+            "path": "research/luna-100/output/round-2/034-explanation.md",
+            "sentence": "That took ten minutes instead of the several hours certificate hosting usually took me."
+          },
+          {
+            "path": "research/luna-100/output/round-2/035-account.md",
+            "sentence": "The human is programming the experimental process rather than editing every model change directly."
+          },
+          {
+            "path": "research/luna-100/output/round-2/035-account.md",
+            "sentence": "The fixed evaluator is what lets me understand the reported improvement as an experiment rather than simply a large amount of generated code."
+          },
+          {
+            "path": "research/luna-100/output/round-2/036-explanation.md",
+            "sentence": "Without those, repeated generation is activity rather than a controlled search."
+          },
+          {
+            "path": "research/luna-100/output/round-2/037-account.md",
+            "sentence": "Articles are updated incrementally instead of being regenerated from scratch."
+          },
+          {
+            "path": "research/luna-100/output/round-2/037-account.md",
+            "sentence": "That makes it possible to see what the assistant changed rather than relying on an invisible conversation."
+          },
+          {
+            "path": "research/luna-100/output/round-2/038-explanation.md",
+            "sentence": "It receives structured outputs rather than ingesting every source in full."
+          },
+          {
+            "path": "research/luna-100/output/round-2/039-account.md",
+            "sentence": "They came from problems in my daily workflow rather than from a large product plan."
+          },
+          {
+            "path": "research/luna-100/output/round-2/041-account.md",
+            "sentence": "Claude tailored the first result to that site instead of making a general Jekyll engine."
+          },
+          {
+            "path": "research/luna-100/output/round-2/042-explanation.md",
+            "sentence": "Rustkyll showed the cost of skipping requirements: its first implementation fit one website instead of Jekyll generally."
+          },
+          {
+            "path": "research/luna-100/output/round-2/042-explanation.md",
+            "sentence": "Instead of watching every line, I define what each stage must produce, look at evidence at the boundaries, and intervene when the process drifts."
+          },
+          {
+            "path": "research/luna-100/output/round-2/043-account.md",
+            "sentence": "Instead of keeping recalled information as an undifferentiated collection of chunks, it arranges it in spatial structures."
+          },
+          {
+            "path": "research/luna-100/output/round-2/043-account.md",
+            "sentence": "The system also builds a knowledge graph and a navigation graph, so retrieval can follow relationships instead of relying only on similarity."
+          },
+          {
+            "path": "research/luna-100/output/round-2/043-account.md",
+            "sentence": "It doesn't mean every memory problem is solved, and the benchmark number is a project-reported result rather than a guarantee for every workload."
+          },
+          {
+            "path": "research/luna-100/output/round-2/044-explanation.md",
+            "sentence": "A separate navigation graph helps the system follow relationships instead of treating every chunk as an isolated search result."
+          },
+          {
+            "path": "research/luna-100/output/round-2/045-account.md",
+            "sentence": "Week 6 focuses on systematic evaluation through a Recipe Assistant, including more than 20 evaluation scenarios and hallucination detection."
+          },
+          {
+            "path": "research/luna-100/output/round-2/045-account.md",
+            "sentence": "The course is for building and debugging rather than passively watching lessons."
+          },
+          {
+            "path": "research/luna-100/output/round-2/046-explanation.md",
+            "sentence": "Week 6 evaluates a Recipe Assistant with more than 20 scenarios and checks for hallucinations."
+          },
+          {
+            "path": "research/luna-100/output/round-2/046-explanation.md",
+            "sentence": "It then adds observability, evaluation, and deployment rather than remaining a collection of disconnected examples."
+          },
+          {
+            "path": "research/luna-100/output/round-2/047-account.md",
+            "sentence": "Many people need a plan, a deadline, and a reason to arrive prepared more than they need a personal mentor."
+          },
+          {
+            "path": "research/luna-100/output/round-2/047-account.md",
+            "sentence": "We work on the problem instead of watching slides."
+          },
+          {
+            "path": "research/luna-100/output/round-2/048-explanation.md",
+            "sentence": "The group can then help with the blocker instead of leaving the problem private and vague."
+          },
+          {
+            "path": "research/luna-100/output/round-2/048-explanation.md",
+            "sentence": "I bring a real problem, or a member brings one, and the group works on it together instead of watching slides."
+          },
+          {
+            "path": "research/luna-100/output/round-2/050-explanation.md",
+            "sentence": "Rather than keep escaping those examples, I built a custom Python generator with help from GitHub Copilot."
+          },
+          {
+            "path": "research/luna-100/output/round-2/051-account.md",
+            "sentence": "Open Google Docs had no real moderation, and vandalism happened more than once."
+          },
+          {
+            "path": "research/luna-100/output/round-2/051-account.md",
+            "sentence": "The bot ingests more than the FAQ."
+          },
+          {
+            "path": "research/luna-100/output/round-2/052-explanation.md",
+            "sentence": "The model returns a Pydantic object called FAQDecision instead of free-form text, and its action is NEW, UPDATE or DUPLICATE."
+          },
+          {
+            "path": "research/luna-100/output/round-2/052-explanation.md",
+            "sentence": "A proposal about Kestra may land in the general section instead of the workflow orchestration module."
+          },
+          {
+            "path": "research/luna-100/output/round-2/054-explanation.md",
+            "sentence": "The escalation is part of the design rather than an afterthought."
+          },
+          {
+            "path": "research/luna-100/output/round-2/055-account.md",
+            "sentence": "The first version wrote bullet points instead of normal narrative text, probably because coding agents are tuned more toward documentation."
+          },
+          {
+            "path": "research/luna-100/output/round-2/055-account.md",
+            "sentence": "Each chapter receives a compressed summary of earlier chapters rather than the entire book."
+          },
+          {
+            "path": "research/luna-100/output/round-2/056-explanation.md",
+            "sentence": "Writing, audio generation and publishing all consume the same plan instead of relying on one long conversation."
+          },
+          {
+            "path": "research/luna-100/output/round-2/056-explanation.md",
+            "sentence": "Gemini updates the existing outline rather than starting from nothing."
+          },
+          {
+            "path": "research/luna-100/output/round-2/056-explanation.md",
+            "sentence": "Cohesion comes from the plan rather than passing the entire book through every call."
+          },
+          {
+            "path": "research/luna-100/output/round-2/057-account.md",
+            "sentence": "We wanted to see whether people would sign up before building a larger platform, and more than 80 did."
+          },
+          {
+            "path": "research/luna-100/output/round-2/057-account.md",
+            "sentence": "Each day's lesson now has a page and comments instead of arriving only by email."
+          },
+          {
+            "path": "research/luna-100/output/round-2/059-account.md",
+            "sentence": "We complete it in four to five hours instead of the days it used to take me to sit down and write."
+          },
+          {
+            "path": "research/luna-100/output/round-2/064-explanation.md",
+            "sentence": "Tools change, so a completed task teaches more than an endless comparison of current plans."
+          },
+          {
+            "path": "research/luna-100/output/round-2/066-explanation.md",
+            "sentence": "I make those corrections page by page instead of accepting the first plausible arrangement."
+          },
+          {
+            "path": "research/luna-100/output/round-2/066-explanation.md",
+            "sentence": "New pages then have both a visual example and a written boundary instead of asking the agent to improvise from scratch."
+          },
+          {
+            "path": "research/luna-100/output/round-2/068-explanation.md",
+            "sentence": "The workload receives short-lived credentials instead of someone copying a permanent secret into it."
+          },
+          {
+            "path": "research/luna-100/output/round-2/069-account.md",
+            "sentence": "Instead of fixing the API, Claude displayed demo data."
+          },
+          {
+            "path": "research/luna-100/output/round-2/069-account.md",
+            "sentence": "I spent more than a month on it and rewrote it several times, but it never became stable."
+          },
+          {
+            "path": "research/luna-100/output/round-2/070-explanation.md",
+            "sentence": "Claude displayed demo data instead of fixing the API."
+          },
+          {
+            "path": "research/luna-100/output/round-2/071-account.md",
+            "sentence": "A shared theme gives me a project that makes sense in more than one interview."
+          },
+          {
+            "path": "research/luna-100/output/round-2/072-explanation.md",
+            "sentence": "Then group problems that appear across more than one company."
+          },
+          {
+            "path": "research/luna-100/output/round-2/072-explanation.md",
+            "sentence": "An AI project needs more than generated output."
+          },
+          {
+            "path": "research/luna-100/output/round-2/072-explanation.md",
+            "sentence": "It shows more than a technically elaborate repository that nobody has run."
+          },
+          {
+            "path": "research/luna-100/output/round-2/073-account.md",
+            "sentence": "I start with a problem rather than a package."
+          },
+          {
+            "path": "research/luna-100/output/round-2/080-explanation.md",
+            "sentence": "The feedback can change the scope or show that the original request described a symptom rather than the need."
+          }
+        ]
+      }
+    },
+    "abstract_explanation": {
+      "reference": {
+        "documents": 1,
+        "occurrences": 1,
+        "examples": [
+          {
+            "path": "research/luna-100/sources/raw/2026-08-01-rebuilding-a-faq-system-for-datatalksclub.md",
+            "sentence": "This setup makes a lot of sense, but I couldn’t port it easily to the DataTalks.Club infra."
+          }
+        ]
+      },
+      "generated": {
+        "documents": 0,
+        "occurrences": 0,
+        "examples": []
+      }
+    }
+  },
+  "exact_source_overlap": [
+    {
+      "id": "056",
+      "exact_source_sentences": [
+        "Once plan.yaml exists, the writing scripts no longer need the chat history."
+      ]
+    },
+    {
+      "id": "074",
+      "exact_source_sentences": [
+        "I use Hatch with hatchling as the build backend and uv for tooling."
+      ]
+    }
+  ],
+  "repeated_generated_sentences": [],
+  "documents": [
+    {
+      "path": "research/luna-100/output/round-2/001-account.md",
+      "sha256": "b8539e7421040d0d5326a0a6ffded451be0e877d78e169dda48a1fcda4264a98",
+      "features": {
+        "words": 474,
+        "paragraphs": 12,
+        "sentences": 35,
+        "sentence_words_median": 12,
+        "sentence_words_p90": 21.6,
+        "paragraph_sentences_median": 3.0,
+        "short_sentences_pct": 31.429,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 27.426,
+        "because_so_but_per_1000_words": 6.329,
+        "contractions_per_1000_words": 4.219
+      },
+      "whitespace_words": 476,
+      "id": "001",
+      "source_id": "s01",
+      "mode": "account",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/002-explanation.md",
+      "sha256": "5ba4aa45ccc602da7100359d9ff965a500953695c1add4c2e1dfe39c6286c53e",
+      "features": {
+        "words": 449,
+        "paragraphs": 11,
+        "sentences": 37,
+        "sentence_words_median": 12,
+        "sentence_words_p90": 17.4,
+        "paragraph_sentences_median": 4,
+        "short_sentences_pct": 32.432,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 0.0,
+        "because_so_but_per_1000_words": 2.227,
+        "contractions_per_1000_words": 0.0
+      },
+      "whitespace_words": 472,
+      "id": "002",
+      "source_id": "s01",
+      "mode": "explanation",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/003-account.md",
+      "sha256": "4023e4d48dd6425bf4b15ac1db0aadf5a55e8a059144bf870bfa3fd914691ed3",
+      "features": {
+        "words": 400,
+        "paragraphs": 10,
+        "sentences": 27,
+        "sentence_words_median": 14,
+        "sentence_words_p90": 22.0,
+        "paragraph_sentences_median": 2.5,
+        "short_sentences_pct": 7.407,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 12.5,
+        "because_so_but_per_1000_words": 7.5,
+        "contractions_per_1000_words": 2.5
+      },
+      "whitespace_words": 402,
+      "id": "003",
+      "source_id": "s02",
+      "mode": "account",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/004-explanation.md",
+      "sha256": "4734b76f4b48000b3f577f35960183a4f29433aef78728cc39147c24cb7fbc26",
+      "features": {
+        "words": 398,
+        "paragraphs": 10,
+        "sentences": 27,
+        "sentence_words_median": 15,
+        "sentence_words_p90": 20.0,
+        "paragraph_sentences_median": 3.0,
+        "short_sentences_pct": 11.111,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 7.538,
+        "because_so_but_per_1000_words": 2.513,
+        "contractions_per_1000_words": 2.513
+      },
+      "whitespace_words": 401,
+      "id": "004",
+      "source_id": "s02",
+      "mode": "explanation",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/005-account.md",
+      "sha256": "31819d892652e97336b4619eb96ff0b3f6758057460624bc9dafcc7649f22fa8",
+      "features": {
+        "words": 415,
+        "paragraphs": 10,
+        "sentences": 27,
+        "sentence_words_median": 14,
+        "sentence_words_p90": 21.0,
+        "paragraph_sentences_median": 3.0,
+        "short_sentences_pct": 3.704,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 72.289,
+        "because_so_but_per_1000_words": 9.639,
+        "contractions_per_1000_words": 0.0
+      },
+      "whitespace_words": 419,
+      "id": "005",
+      "source_id": "s03",
+      "mode": "account",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/006-explanation.md",
+      "sha256": "aa87115979728b039393e5faf4274e44fd5d44ef38bb10824ba614a0e0ae5d5d",
+      "features": {
+        "words": 433,
+        "paragraphs": 11,
+        "sentences": 29,
+        "sentence_words_median": 16,
+        "sentence_words_p90": 20.0,
+        "paragraph_sentences_median": 3,
+        "short_sentences_pct": 10.345,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 69.284,
+        "because_so_but_per_1000_words": 11.547,
+        "contractions_per_1000_words": 4.619
+      },
+      "whitespace_words": 436,
+      "id": "006",
+      "source_id": "s03",
+      "mode": "explanation",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/007-account.md",
+      "sha256": "79f2ecda8c6f69aba5b7bf55a7acb9d9585fcf969f2c879e5a76866613446f5f",
+      "features": {
+        "words": 499,
+        "paragraphs": 11,
+        "sentences": 36,
+        "sentence_words_median": 13.5,
+        "sentence_words_p90": 22.5,
+        "paragraph_sentences_median": 3,
+        "short_sentences_pct": 30.556,
+        "long_sentences_pct": 2.778,
+        "first_person_per_1000_words": 4.008,
+        "because_so_but_per_1000_words": 6.012,
+        "contractions_per_1000_words": 10.02
+      },
+      "whitespace_words": 498,
+      "id": "007",
+      "source_id": "s04",
+      "mode": "account",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/008-explanation.md",
+      "sha256": "2b8e74c974e209e83eaac4e8bdc6a64f6b7bb96332fcb1338fdaeb803e4ef2c7",
+      "features": {
+        "words": 524,
+        "paragraphs": 13,
+        "sentences": 43,
+        "sentence_words_median": 12,
+        "sentence_words_p90": 18.8,
+        "paragraph_sentences_median": 3,
+        "short_sentences_pct": 34.884,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 0.0,
+        "because_so_but_per_1000_words": 7.634,
+        "contractions_per_1000_words": 9.542
+      },
+      "whitespace_words": 526,
+      "id": "008",
+      "source_id": "s04",
+      "mode": "explanation",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/009-account.md",
+      "sha256": "d0b3584768f8fc04e8557e1976b5a56744baa11ca398a4cb22ceb67a41a6b4e4",
+      "features": {
+        "words": 486,
+        "paragraphs": 11,
+        "sentences": 36,
+        "sentence_words_median": 12.5,
+        "sentence_words_p90": 21.5,
+        "paragraph_sentences_median": 3,
+        "short_sentences_pct": 30.556,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 49.383,
+        "because_so_but_per_1000_words": 18.519,
+        "contractions_per_1000_words": 14.403
+      },
+      "whitespace_words": 473,
+      "id": "009",
+      "source_id": "s05",
+      "mode": "account",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/010-explanation.md",
+      "sha256": "f152fd55abaa8077b3777a52cb94fd089a73c8ec56b21f7fafb2af6c86d4218a",
+      "features": {
+        "words": 584,
+        "paragraphs": 11,
+        "sentences": 46,
+        "sentence_words_median": 12.5,
+        "sentence_words_p90": 18.0,
+        "paragraph_sentences_median": 5,
+        "short_sentences_pct": 23.913,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 25.685,
+        "because_so_but_per_1000_words": 8.562,
+        "contractions_per_1000_words": 10.274
+      },
+      "whitespace_words": 595,
+      "id": "010",
+      "source_id": "s05",
+      "mode": "explanation",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/011-account.md",
+      "sha256": "997bdddd709fb92bbb89852b3291618539fe200ed3983637d191429af36bd868",
+      "features": {
+        "words": 492,
+        "paragraphs": 10,
+        "sentences": 36,
+        "sentence_words_median": 13.0,
+        "sentence_words_p90": 22.0,
+        "paragraph_sentences_median": 3.0,
+        "short_sentences_pct": 33.333,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 36.585,
+        "because_so_but_per_1000_words": 6.098,
+        "contractions_per_1000_words": 16.26
+      },
+      "whitespace_words": 502,
+      "id": "011",
+      "source_id": "s06",
+      "mode": "account",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/012-explanation.md",
+      "sha256": "51edbcb4067fc8abd6d976958d30220cdea2ad09c726682396669c8a5235fc85",
+      "features": {
+        "words": 444,
+        "paragraphs": 9,
+        "sentences": 33,
+        "sentence_words_median": 13,
+        "sentence_words_p90": 20.8,
+        "paragraph_sentences_median": 4,
+        "short_sentences_pct": 21.212,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 11.261,
+        "because_so_but_per_1000_words": 6.757,
+        "contractions_per_1000_words": 9.009
+      },
+      "whitespace_words": 463,
+      "id": "012",
+      "source_id": "s06",
+      "mode": "explanation",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/013-account.md",
+      "sha256": "76bad6dfec0c20b7cad864b83456596d149a1281831805c88929aa2bfc0b7196",
+      "features": {
+        "words": 415,
+        "paragraphs": 12,
+        "sentences": 29,
+        "sentence_words_median": 14,
+        "sentence_words_p90": 19.2,
+        "paragraph_sentences_median": 3.0,
+        "short_sentences_pct": 10.345,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 21.687,
+        "because_so_but_per_1000_words": 14.458,
+        "contractions_per_1000_words": 9.639
+      },
+      "whitespace_words": 432,
+      "id": "013",
+      "source_id": "s07",
+      "mode": "account",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/014-explanation.md",
+      "sha256": "0594bd25fb5ae7c99aa4160485ceeaea1b15d1c6a613477a11bfd61c7987acde",
+      "features": {
+        "words": 386,
+        "paragraphs": 11,
+        "sentences": 28,
+        "sentence_words_median": 15.0,
+        "sentence_words_p90": 18.3,
+        "paragraph_sentences_median": 3,
+        "short_sentences_pct": 17.857,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 10.363,
+        "because_so_but_per_1000_words": 5.181,
+        "contractions_per_1000_words": 5.181
+      },
+      "whitespace_words": 402,
+      "id": "014",
+      "source_id": "s07",
+      "mode": "explanation",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/015-account.md",
+      "sha256": "16481feb7c2d869c8f1c44ec512823b9244527c2aaa8c3603a9a0059433568d8",
+      "features": {
+        "words": 454,
+        "paragraphs": 13,
+        "sentences": 31,
+        "sentence_words_median": 15,
+        "sentence_words_p90": 20.0,
+        "paragraph_sentences_median": 2,
+        "short_sentences_pct": 19.355,
+        "long_sentences_pct": 3.226,
+        "first_person_per_1000_words": 57.269,
+        "because_so_but_per_1000_words": 8.811,
+        "contractions_per_1000_words": 2.203
+      },
+      "whitespace_words": 457,
+      "id": "015",
+      "source_id": "s08",
+      "mode": "account",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/016-explanation.md",
+      "sha256": "ace94d44058c5e109b1e7ee764dca11bca6b27d4388d10a7b095d2e59cc8c64a",
+      "features": {
+        "words": 449,
+        "paragraphs": 12,
+        "sentences": 30,
+        "sentence_words_median": 15.0,
+        "sentence_words_p90": 20.0,
+        "paragraph_sentences_median": 2.5,
+        "short_sentences_pct": 10.0,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 51.225,
+        "because_so_but_per_1000_words": 6.682,
+        "contractions_per_1000_words": 6.682
+      },
+      "whitespace_words": 453,
+      "id": "016",
+      "source_id": "s08",
+      "mode": "explanation",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/017-account.md",
+      "sha256": "93ba675759d9af51891d6b391c4a4b38a989dbfa5d248ab189a3aa3fe9f6405e",
+      "features": {
+        "words": 443,
+        "paragraphs": 12,
+        "sentences": 31,
+        "sentence_words_median": 14,
+        "sentence_words_p90": 19.0,
+        "paragraph_sentences_median": 3.0,
+        "short_sentences_pct": 9.677,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 49.661,
+        "because_so_but_per_1000_words": 6.772,
+        "contractions_per_1000_words": 11.287
+      },
+      "whitespace_words": 444,
+      "id": "017",
+      "source_id": "s09",
+      "mode": "account",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/018-explanation.md",
+      "sha256": "6d189c35388e1673772923a5a861bf4b0a17c739c4710d6753f3294af8b43e0d",
+      "features": {
+        "words": 435,
+        "paragraphs": 11,
+        "sentences": 30,
+        "sentence_words_median": 14.0,
+        "sentence_words_p90": 21.0,
+        "paragraph_sentences_median": 3,
+        "short_sentences_pct": 13.333,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 45.977,
+        "because_so_but_per_1000_words": 9.195,
+        "contractions_per_1000_words": 9.195
+      },
+      "whitespace_words": 437,
+      "id": "018",
+      "source_id": "s09",
+      "mode": "explanation",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/019-account.md",
+      "sha256": "d17f04c9c40c63893c642c1b45f1c76273858950d5e9202fb56728449dc2532f",
+      "features": {
+        "words": 454,
+        "paragraphs": 12,
+        "sentences": 31,
+        "sentence_words_median": 15,
+        "sentence_words_p90": 22.0,
+        "paragraph_sentences_median": 3.0,
+        "short_sentences_pct": 16.129,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 59.471,
+        "because_so_but_per_1000_words": 11.013,
+        "contractions_per_1000_words": 17.621
+      },
+      "whitespace_words": 455,
+      "id": "019",
+      "source_id": "s10",
+      "mode": "account",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/020-explanation.md",
+      "sha256": "51107030284cddb1fcce69b3af349a5a83e2e6f9b5be7735a710f87cd1a52578",
+      "features": {
+        "words": 425,
+        "paragraphs": 11,
+        "sentences": 29,
+        "sentence_words_median": 14,
+        "sentence_words_p90": 21.0,
+        "paragraph_sentences_median": 3,
+        "short_sentences_pct": 10.345,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 61.176,
+        "because_so_but_per_1000_words": 4.706,
+        "contractions_per_1000_words": 23.529
+      },
+      "whitespace_words": 428,
+      "id": "020",
+      "source_id": "s10",
+      "mode": "explanation",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/021-account.md",
+      "sha256": "b12205ba6ba7aa83edc64ae86d356f58136441361d5835b2a5970b0852e7d699",
+      "features": {
+        "words": 549,
+        "paragraphs": 10,
+        "sentences": 37,
+        "sentence_words_median": 16,
+        "sentence_words_p90": 20.4,
+        "paragraph_sentences_median": 4.0,
+        "short_sentences_pct": 16.216,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 38.251,
+        "because_so_but_per_1000_words": 21.858,
+        "contractions_per_1000_words": 5.464
+      },
+      "whitespace_words": 558,
+      "id": "021",
+      "source_id": "s11",
+      "mode": "account",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/022-explanation.md",
+      "sha256": "4fe2825102e5c0264cd7c5974fc361473cf315f0a4d9d7e6ff063ca39a6a24c9",
+      "features": {
+        "words": 552,
+        "paragraphs": 11,
+        "sentences": 38,
+        "sentence_words_median": 15.0,
+        "sentence_words_p90": 20.6,
+        "paragraph_sentences_median": 3,
+        "short_sentences_pct": 18.421,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 10.87,
+        "because_so_but_per_1000_words": 16.304,
+        "contractions_per_1000_words": 3.623
+      },
+      "whitespace_words": 578,
+      "id": "022",
+      "source_id": "s11",
+      "mode": "explanation",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/023-account.md",
+      "sha256": "73d0b8b76c97d0bf9d81698564a06f165362392b14b6f0003251c6656a861b88",
+      "features": {
+        "words": 580,
+        "paragraphs": 11,
+        "sentences": 35,
+        "sentence_words_median": 17,
+        "sentence_words_p90": 23.6,
+        "paragraph_sentences_median": 3,
+        "short_sentences_pct": 11.429,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 13.793,
+        "because_so_but_per_1000_words": 6.897,
+        "contractions_per_1000_words": 0.0
+      },
+      "whitespace_words": 600,
+      "id": "023",
+      "source_id": "s12",
+      "mode": "account",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/024-explanation.md",
+      "sha256": "9f9a79ce86f3f80c680a4158b05e8bcb93adf62167039fbcbc17d4d4514b7e94",
+      "features": {
+        "words": 541,
+        "paragraphs": 11,
+        "sentences": 39,
+        "sentence_words_median": 13,
+        "sentence_words_p90": 22.2,
+        "paragraph_sentences_median": 3,
+        "short_sentences_pct": 17.949,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 7.394,
+        "because_so_but_per_1000_words": 7.394,
+        "contractions_per_1000_words": 0.0
+      },
+      "whitespace_words": 557,
+      "id": "024",
+      "source_id": "s12",
+      "mode": "explanation",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/025-account.md",
+      "sha256": "42699f52c02d8f99a61e5c9af2af0e54ee485087f57782829d7a35cbfce1a387",
+      "features": {
+        "words": 533,
+        "paragraphs": 12,
+        "sentences": 39,
+        "sentence_words_median": 14,
+        "sentence_words_p90": 20.2,
+        "paragraph_sentences_median": 3.0,
+        "short_sentences_pct": 25.641,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 50.657,
+        "because_so_but_per_1000_words": 13.133,
+        "contractions_per_1000_words": 11.257
+      },
+      "whitespace_words": 537,
+      "id": "025",
+      "source_id": "s13",
+      "mode": "account",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/026-explanation.md",
+      "sha256": "926d7d3ddd7257df7182adf90b4bb60152354b4830a9c1fd88726bccb9de064c",
+      "features": {
+        "words": 505,
+        "paragraphs": 10,
+        "sentences": 36,
+        "sentence_words_median": 14.0,
+        "sentence_words_p90": 21.5,
+        "paragraph_sentences_median": 3.0,
+        "short_sentences_pct": 19.444,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 17.822,
+        "because_so_but_per_1000_words": 5.941,
+        "contractions_per_1000_words": 9.901
+      },
+      "whitespace_words": 521,
+      "id": "026",
+      "source_id": "s13",
+      "mode": "explanation",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/027-account.md",
+      "sha256": "2dcdf6f6167c6eb038a0fa56a09327fa74e760a7a8bed81de42348658713de7e",
+      "features": {
+        "words": 556,
+        "paragraphs": 11,
+        "sentences": 38,
+        "sentence_words_median": 14.0,
+        "sentence_words_p90": 21.3,
+        "paragraph_sentences_median": 4,
+        "short_sentences_pct": 23.684,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 0.0,
+        "because_so_but_per_1000_words": 3.597,
+        "contractions_per_1000_words": 0.0
+      },
+      "whitespace_words": 534,
+      "id": "027",
+      "source_id": "s14",
+      "mode": "account",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/028-explanation.md",
+      "sha256": "3db9b8e9113803d6b47cf91ec85c3ad5b2070379512b09d756a76055ba586c21",
+      "features": {
+        "words": 600,
+        "paragraphs": 13,
+        "sentences": 46,
+        "sentence_words_median": 13.0,
+        "sentence_words_p90": 18.5,
+        "paragraph_sentences_median": 4,
+        "short_sentences_pct": 23.913,
+        "long_sentences_pct": 2.174,
+        "first_person_per_1000_words": 0.0,
+        "because_so_but_per_1000_words": 1.667,
+        "contractions_per_1000_words": 1.667
+      },
+      "whitespace_words": 582,
+      "id": "028",
+      "source_id": "s14",
+      "mode": "explanation",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/029-account.md",
+      "sha256": "1acd4e82034c67633d3180f62ff1d6a72961b9461295a9244b651f9b72a963c9",
+      "features": {
+        "words": 541,
+        "paragraphs": 14,
+        "sentences": 37,
+        "sentence_words_median": 14,
+        "sentence_words_p90": 21.0,
+        "paragraph_sentences_median": 3.0,
+        "short_sentences_pct": 13.514,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 55.453,
+        "because_so_but_per_1000_words": 9.242,
+        "contractions_per_1000_words": 12.939
+      },
+      "whitespace_words": 547,
+      "id": "029",
+      "source_id": "s15",
+      "mode": "account",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/030-explanation.md",
+      "sha256": "456f767033552d1ec0dd07f07b4e67826004a58a6910cc46ffb160b413c6f951",
+      "features": {
+        "words": 460,
+        "paragraphs": 13,
+        "sentences": 34,
+        "sentence_words_median": 14.0,
+        "sentence_words_p90": 19.0,
+        "paragraph_sentences_median": 3,
+        "short_sentences_pct": 17.647,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 56.522,
+        "because_so_but_per_1000_words": 10.87,
+        "contractions_per_1000_words": 10.87
+      },
+      "whitespace_words": 465,
+      "id": "030",
+      "source_id": "s15",
+      "mode": "explanation",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/031-account.md",
+      "sha256": "ca166e21e2027948fc6e3fe5b8fc6765c1b59aa360def6a19a53d107752522a1",
+      "features": {
+        "words": 438,
+        "paragraphs": 15,
+        "sentences": 32,
+        "sentence_words_median": 13.5,
+        "sentence_words_p90": 18.0,
+        "paragraph_sentences_median": 2,
+        "short_sentences_pct": 6.25,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 4.566,
+        "because_so_but_per_1000_words": 2.283,
+        "contractions_per_1000_words": 11.416
+      },
+      "whitespace_words": 458,
+      "id": "031",
+      "source_id": "s16",
+      "mode": "account",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/032-explanation.md",
+      "sha256": "44e0eb82f2ec48c4ddefe9a8f9da2e1b371ac18e57f93ecff3d21c00c42f5e68",
+      "features": {
+        "words": 422,
+        "paragraphs": 13,
+        "sentences": 30,
+        "sentence_words_median": 13.0,
+        "sentence_words_p90": 19.1,
+        "paragraph_sentences_median": 2,
+        "short_sentences_pct": 3.333,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 0.0,
+        "because_so_but_per_1000_words": 2.37,
+        "contractions_per_1000_words": 0.0
+      },
+      "whitespace_words": 426,
+      "id": "032",
+      "source_id": "s16",
+      "mode": "explanation",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/033-account.md",
+      "sha256": "7c2906a5e463788ba253fe06f05ba40e744bd3780fe547615c44f8110c8cd72e",
+      "features": {
+        "words": 474,
+        "paragraphs": 13,
+        "sentences": 34,
+        "sentence_words_median": 14.5,
+        "sentence_words_p90": 20.0,
+        "paragraph_sentences_median": 3,
+        "short_sentences_pct": 20.588,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 46.414,
+        "because_so_but_per_1000_words": 10.549,
+        "contractions_per_1000_words": 8.439
+      },
+      "whitespace_words": 476,
+      "id": "033",
+      "source_id": "s17",
+      "mode": "account",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/034-explanation.md",
+      "sha256": "a789200275c464bf34646e68e22d7f3500485dce7b5d4055445b59ae6f658530",
+      "features": {
+        "words": 415,
+        "paragraphs": 11,
+        "sentences": 31,
+        "sentence_words_median": 13,
+        "sentence_words_p90": 20.0,
+        "paragraph_sentences_median": 3,
+        "short_sentences_pct": 22.581,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 45.783,
+        "because_so_but_per_1000_words": 9.639,
+        "contractions_per_1000_words": 12.048
+      },
+      "whitespace_words": 417,
+      "id": "034",
+      "source_id": "s17",
+      "mode": "explanation",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/035-account.md",
+      "sha256": "992f3be659b872a10ccd090ba86384d5277b62523572ea7da6563f928130bca3",
+      "features": {
+        "words": 455,
+        "paragraphs": 11,
+        "sentences": 33,
+        "sentence_words_median": 14,
+        "sentence_words_p90": 20.0,
+        "paragraph_sentences_median": 3,
+        "short_sentences_pct": 27.273,
+        "long_sentences_pct": 3.03,
+        "first_person_per_1000_words": 10.989,
+        "because_so_but_per_1000_words": 10.989,
+        "contractions_per_1000_words": 4.396
+      },
+      "whitespace_words": 450,
+      "id": "035",
+      "source_id": "s18",
+      "mode": "account",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/036-explanation.md",
+      "sha256": "99dc9ae05a247d954483e7b94a34119247c990cc6c6c8b62ff671464fba96d3f",
+      "features": {
+        "words": 409,
+        "paragraphs": 13,
+        "sentences": 32,
+        "sentence_words_median": 13.0,
+        "sentence_words_p90": 17.9,
+        "paragraph_sentences_median": 2,
+        "short_sentences_pct": 28.125,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 0.0,
+        "because_so_but_per_1000_words": 2.445,
+        "contractions_per_1000_words": 2.445
+      },
+      "whitespace_words": 450,
+      "id": "036",
+      "source_id": "s18",
+      "mode": "explanation",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/037-account.md",
+      "sha256": "4f78ad6547a78ad0c1fcdc8118066387958228067ba11918e19cf8c60b0b275f",
+      "features": {
+        "words": 460,
+        "paragraphs": 13,
+        "sentences": 35,
+        "sentence_words_median": 14,
+        "sentence_words_p90": 19.8,
+        "paragraph_sentences_median": 3,
+        "short_sentences_pct": 28.571,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 30.435,
+        "because_so_but_per_1000_words": 6.522,
+        "contractions_per_1000_words": 6.522
+      },
+      "whitespace_words": 465,
+      "id": "037",
+      "source_id": "s19",
+      "mode": "account",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/038-explanation.md",
+      "sha256": "f69417c1db2af6061d0757b120c06d63f8b5efb135f0b46b10ad74598bbca02f",
+      "features": {
+        "words": 425,
+        "paragraphs": 13,
+        "sentences": 32,
+        "sentence_words_median": 14.0,
+        "sentence_words_p90": 20.0,
+        "paragraph_sentences_median": 2,
+        "short_sentences_pct": 25.0,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 9.412,
+        "because_so_but_per_1000_words": 2.353,
+        "contractions_per_1000_words": 2.353
+      },
+      "whitespace_words": 425,
+      "id": "038",
+      "source_id": "s19",
+      "mode": "explanation",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/039-account.md",
+      "sha256": "763bb5838fda433bb0bcd3f9c05ddf8e06366f81cdb83fad5ce9794565c427f9",
+      "features": {
+        "words": 463,
+        "paragraphs": 12,
+        "sentences": 37,
+        "sentence_words_median": 12,
+        "sentence_words_p90": 19.0,
+        "paragraph_sentences_median": 3.0,
+        "short_sentences_pct": 24.324,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 41.037,
+        "because_so_but_per_1000_words": 15.119,
+        "contractions_per_1000_words": 10.799
+      },
+      "whitespace_words": 462,
+      "id": "039",
+      "source_id": "s20",
+      "mode": "account",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/040-explanation.md",
+      "sha256": "1a02043a68acad042ba717fc3e8ebd35ed75504b81b7133a5ec53084769b5f80",
+      "features": {
+        "words": 446,
+        "paragraphs": 18,
+        "sentences": 34,
+        "sentence_words_median": 12.0,
+        "sentence_words_p90": 19.7,
+        "paragraph_sentences_median": 2.0,
+        "short_sentences_pct": 35.294,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 17.937,
+        "because_so_but_per_1000_words": 13.453,
+        "contractions_per_1000_words": 6.726
+      },
+      "whitespace_words": 457,
+      "id": "040",
+      "source_id": "s20",
+      "mode": "explanation",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/041-account.md",
+      "sha256": "5325fa4042b522e9e86fd3d1e8b9cf49d9c66dccbe5d0e5dd01a17841c488a1c",
+      "features": {
+        "words": 504,
+        "paragraphs": 20,
+        "sentences": 38,
+        "sentence_words_median": 12.0,
+        "sentence_words_p90": 20.0,
+        "paragraph_sentences_median": 2.0,
+        "short_sentences_pct": 26.316,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 33.73,
+        "because_so_but_per_1000_words": 9.921,
+        "contractions_per_1000_words": 5.952
+      },
+      "whitespace_words": 505,
+      "id": "041",
+      "source_id": "s21",
+      "mode": "account",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/042-explanation.md",
+      "sha256": "8a47a8c9d11c822c305b25887e52a2410afa3ff387f9f43747cccdf0a39324cf",
+      "features": {
+        "words": 508,
+        "paragraphs": 20,
+        "sentences": 36,
+        "sentence_words_median": 14.0,
+        "sentence_words_p90": 22.0,
+        "paragraph_sentences_median": 2.0,
+        "short_sentences_pct": 22.222,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 15.748,
+        "because_so_but_per_1000_words": 9.843,
+        "contractions_per_1000_words": 7.874
+      },
+      "whitespace_words": 504,
+      "id": "042",
+      "source_id": "s21",
+      "mode": "explanation",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/043-account.md",
+      "sha256": "fab18148228b6cad041c962ae726a7d75c4a784f2a3db96fd5707abbd147f4de",
+      "features": {
+        "words": 427,
+        "paragraphs": 18,
+        "sentences": 34,
+        "sentence_words_median": 12.5,
+        "sentence_words_p90": 19.1,
+        "paragraph_sentences_median": 2.0,
+        "short_sentences_pct": 32.353,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 7.026,
+        "because_so_but_per_1000_words": 14.052,
+        "contractions_per_1000_words": 7.026
+      },
+      "whitespace_words": 427,
+      "id": "043",
+      "source_id": "s22",
+      "mode": "account",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/044-explanation.md",
+      "sha256": "b75e2dcb968e759cc8641ad1940bb2e1ab92c4f5277dcbf0fec528f3a2f0bf45",
+      "features": {
+        "words": 437,
+        "paragraphs": 19,
+        "sentences": 34,
+        "sentence_words_median": 13.0,
+        "sentence_words_p90": 18.0,
+        "paragraph_sentences_median": 2,
+        "short_sentences_pct": 17.647,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 0.0,
+        "because_so_but_per_1000_words": 4.577,
+        "contractions_per_1000_words": 13.73
+      },
+      "whitespace_words": 439,
+      "id": "044",
+      "source_id": "s22",
+      "mode": "explanation",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/045-account.md",
+      "sha256": "e8acc91fd7cc6dc41a4aeab04f0657ca4a55457fc8b314770e38de7090622563",
+      "features": {
+        "words": 482,
+        "paragraphs": 18,
+        "sentences": 34,
+        "sentence_words_median": 14.0,
+        "sentence_words_p90": 21.0,
+        "paragraph_sentences_median": 2.0,
+        "short_sentences_pct": 20.588,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 12.448,
+        "because_so_but_per_1000_words": 6.224,
+        "contractions_per_1000_words": 6.224
+      },
+      "whitespace_words": 483,
+      "id": "045",
+      "source_id": "s23",
+      "mode": "account",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/046-explanation.md",
+      "sha256": "251c9957772fb399d9215e747a458b076ccb018221405a89308145346ca1e825",
+      "features": {
+        "words": 480,
+        "paragraphs": 11,
+        "sentences": 36,
+        "sentence_words_median": 12.0,
+        "sentence_words_p90": 19.0,
+        "paragraph_sentences_median": 3,
+        "short_sentences_pct": 8.333,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 6.25,
+        "because_so_but_per_1000_words": 8.333,
+        "contractions_per_1000_words": 8.333
+      },
+      "whitespace_words": 484,
+      "id": "046",
+      "source_id": "s23",
+      "mode": "explanation",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/047-account.md",
+      "sha256": "497dcba56f8f3c111d6343eb21cf9f4294069e6519d15ba7349f1ea179a3b6f6",
+      "features": {
+        "words": 528,
+        "paragraphs": 12,
+        "sentences": 37,
+        "sentence_words_median": 14,
+        "sentence_words_p90": 21.0,
+        "paragraph_sentences_median": 3.0,
+        "short_sentences_pct": 21.622,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 13.258,
+        "because_so_but_per_1000_words": 7.576,
+        "contractions_per_1000_words": 11.364
+      },
+      "whitespace_words": 522,
+      "id": "047",
+      "source_id": "s24",
+      "mode": "account",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/048-explanation.md",
+      "sha256": "ed74c06b76ef48fc42146e17d9c2140345a5adcc622d63acc9e3854db2c2b68d",
+      "features": {
+        "words": 486,
+        "paragraphs": 10,
+        "sentences": 38,
+        "sentence_words_median": 13.0,
+        "sentence_words_p90": 19.3,
+        "paragraph_sentences_median": 4.0,
+        "short_sentences_pct": 34.211,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 6.173,
+        "because_so_but_per_1000_words": 4.115,
+        "contractions_per_1000_words": 12.346
+      },
+      "whitespace_words": 488,
+      "id": "048",
+      "source_id": "s24",
+      "mode": "explanation",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/049-account.md",
+      "sha256": "35162894d4ee2a8921f30ff65da55f5c9c2a88d21f940a238af33675ffd54eb4",
+      "features": {
+        "words": 575,
+        "paragraphs": 13,
+        "sentences": 40,
+        "sentence_words_median": 14.0,
+        "sentence_words_p90": 22.2,
+        "paragraph_sentences_median": 3,
+        "short_sentences_pct": 20.0,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 17.391,
+        "because_so_but_per_1000_words": 13.913,
+        "contractions_per_1000_words": 5.217
+      },
+      "whitespace_words": 569,
+      "id": "049",
+      "source_id": "s25",
+      "mode": "account",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/050-explanation.md",
+      "sha256": "e64317bde3d03d0df7f6e0e5f1e2e10301d1fac3db115e65e0fa9aead919e2b9",
+      "features": {
+        "words": 655,
+        "paragraphs": 14,
+        "sentences": 43,
+        "sentence_words_median": 15,
+        "sentence_words_p90": 21.8,
+        "paragraph_sentences_median": 3.0,
+        "short_sentences_pct": 13.953,
+        "long_sentences_pct": 2.326,
+        "first_person_per_1000_words": 6.107,
+        "because_so_but_per_1000_words": 10.687,
+        "contractions_per_1000_words": 1.527
+      },
+      "whitespace_words": 666,
+      "id": "050",
+      "source_id": "s25",
+      "mode": "explanation",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/051-account.md",
+      "sha256": "a97141756dda53e5a59ed3ef4a3e87d8936bca8f263364ba9206efe561dc164e",
+      "features": {
+        "words": 659,
+        "paragraphs": 12,
+        "sentences": 46,
+        "sentence_words_median": 13.0,
+        "sentence_words_p90": 21.0,
+        "paragraph_sentences_median": 4.0,
+        "short_sentences_pct": 17.391,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 7.587,
+        "because_so_but_per_1000_words": 10.622,
+        "contractions_per_1000_words": 1.517
+      },
+      "whitespace_words": 667,
+      "id": "051",
+      "source_id": "s26",
+      "mode": "account",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/052-explanation.md",
+      "sha256": "9373b3acf8b39df796466f3b708963594d786eb52b34f6eb1fbcb1a684ad703f",
+      "features": {
+        "words": 479,
+        "paragraphs": 11,
+        "sentences": 33,
+        "sentence_words_median": 14,
+        "sentence_words_p90": 22.0,
+        "paragraph_sentences_median": 3,
+        "short_sentences_pct": 21.212,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 6.263,
+        "because_so_but_per_1000_words": 2.088,
+        "contractions_per_1000_words": 4.175
+      },
+      "whitespace_words": 499,
+      "id": "052",
+      "source_id": "s26",
+      "mode": "explanation",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/053-account.md",
+      "sha256": "e0e618d459edb34b3d1b79c7e8df0549f37f0bc51841b232cf6e78695a609b50",
+      "features": {
+        "words": 598,
+        "paragraphs": 13,
+        "sentences": 44,
+        "sentence_words_median": 12.5,
+        "sentence_words_p90": 20.0,
+        "paragraph_sentences_median": 4,
+        "short_sentences_pct": 22.727,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 3.344,
+        "because_so_but_per_1000_words": 3.344,
+        "contractions_per_1000_words": 0.0
+      },
+      "whitespace_words": 612,
+      "id": "053",
+      "source_id": "s27",
+      "mode": "account",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/054-explanation.md",
+      "sha256": "e3f2088b90c4cd067e0093841af858d7cc93d3835e22d448e5458101c583ae6f",
+      "features": {
+        "words": 456,
+        "paragraphs": 10,
+        "sentences": 35,
+        "sentence_words_median": 13,
+        "sentence_words_p90": 17.6,
+        "paragraph_sentences_median": 3.5,
+        "short_sentences_pct": 17.143,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 0.0,
+        "because_so_but_per_1000_words": 0.0,
+        "contractions_per_1000_words": 0.0
+      },
+      "whitespace_words": 453,
+      "id": "054",
+      "source_id": "s27",
+      "mode": "explanation",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/055-account.md",
+      "sha256": "124261080ebc67806b46330be00fd3d709a718e7ae8d9fc10ebe42a14e3c0933",
+      "features": {
+        "words": 589,
+        "paragraphs": 13,
+        "sentences": 45,
+        "sentence_words_median": 14,
+        "sentence_words_p90": 19.6,
+        "paragraph_sentences_median": 4,
+        "short_sentences_pct": 28.889,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 35.654,
+        "because_so_but_per_1000_words": 11.885,
+        "contractions_per_1000_words": 8.489
+      },
+      "whitespace_words": 607,
+      "id": "055",
+      "source_id": "s28",
+      "mode": "account",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/056-explanation.md",
+      "sha256": "a31b5a1ba8dfb53ac83529ba3f34745bd3f161a4983299ad59dfe6c94b488d6f",
+      "features": {
+        "words": 595,
+        "paragraphs": 11,
+        "sentences": 44,
+        "sentence_words_median": 12.0,
+        "sentence_words_p90": 22.0,
+        "paragraph_sentences_median": 4,
+        "short_sentences_pct": 29.545,
+        "long_sentences_pct": 2.273,
+        "first_person_per_1000_words": 1.681,
+        "because_so_but_per_1000_words": 6.723,
+        "contractions_per_1000_words": 3.361
+      },
+      "whitespace_words": 593,
+      "id": "056",
+      "source_id": "s28",
+      "mode": "explanation",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/057-account.md",
+      "sha256": "9467b2cd86c29747732c2afe54bb35b2e547c7de2d8b819e3ff2ee54c0faa466",
+      "features": {
+        "words": 467,
+        "paragraphs": 12,
+        "sentences": 32,
+        "sentence_words_median": 14.5,
+        "sentence_words_p90": 19.9,
+        "paragraph_sentences_median": 3.0,
+        "short_sentences_pct": 12.5,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 23.555,
+        "because_so_but_per_1000_words": 6.424,
+        "contractions_per_1000_words": 6.424
+      },
+      "whitespace_words": 470,
+      "id": "057",
+      "source_id": "s29",
+      "mode": "account",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/058-explanation.md",
+      "sha256": "9c505675d3e14537aadacbe9103119eb96c26b0ef5dd72c5690dfdf1c8a8dad2",
+      "features": {
+        "words": 471,
+        "paragraphs": 14,
+        "sentences": 32,
+        "sentence_words_median": 15.0,
+        "sentence_words_p90": 20.8,
+        "paragraph_sentences_median": 2.0,
+        "short_sentences_pct": 12.5,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 8.493,
+        "because_so_but_per_1000_words": 6.369,
+        "contractions_per_1000_words": 0.0
+      },
+      "whitespace_words": 482,
+      "id": "058",
+      "source_id": "s29",
+      "mode": "explanation",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/059-account.md",
+      "sha256": "362cdfe025966692d43204a714c42181e83a1bdee0ceeeb3289f9c5984d5d08b",
+      "features": {
+        "words": 522,
+        "paragraphs": 15,
+        "sentences": 39,
+        "sentence_words_median": 13,
+        "sentence_words_p90": 19.2,
+        "paragraph_sentences_median": 3,
+        "short_sentences_pct": 23.077,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 80.46,
+        "because_so_but_per_1000_words": 15.326,
+        "contractions_per_1000_words": 3.831
+      },
+      "whitespace_words": 553,
+      "id": "059",
+      "source_id": "s30",
+      "mode": "account",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/060-explanation.md",
+      "sha256": "ae0b17287d0dd4fce685f7c389f99afb5f65e6cd63025084e943afbf75cbe13f",
+      "features": {
+        "words": 460,
+        "paragraphs": 12,
+        "sentences": 31,
+        "sentence_words_median": 14,
+        "sentence_words_p90": 21.0,
+        "paragraph_sentences_median": 3.0,
+        "short_sentences_pct": 12.903,
+        "long_sentences_pct": 3.226,
+        "first_person_per_1000_words": 65.217,
+        "because_so_but_per_1000_words": 6.522,
+        "contractions_per_1000_words": 2.174
+      },
+      "whitespace_words": 464,
+      "id": "060",
+      "source_id": "s30",
+      "mode": "explanation",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/061-account.md",
+      "sha256": "ba5923555bc522ed59bb2de3f7790a682416a3694a634ee7a1b6b818c083a926",
+      "features": {
+        "words": 482,
+        "paragraphs": 12,
+        "sentences": 32,
+        "sentence_words_median": 14.5,
+        "sentence_words_p90": 19.0,
+        "paragraph_sentences_median": 3.0,
+        "short_sentences_pct": 12.5,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 45.643,
+        "because_so_but_per_1000_words": 8.299,
+        "contractions_per_1000_words": 4.149
+      },
+      "whitespace_words": 483,
+      "id": "061",
+      "source_id": "s31",
+      "mode": "account",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/062-explanation.md",
+      "sha256": "83fdfec6538cc889b66bb408dd8b19c46746700659da81da2ef5e2bccfb90ef0",
+      "features": {
+        "words": 434,
+        "paragraphs": 12,
+        "sentences": 32,
+        "sentence_words_median": 14.0,
+        "sentence_words_p90": 20.8,
+        "paragraph_sentences_median": 3.0,
+        "short_sentences_pct": 25.0,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 27.65,
+        "because_so_but_per_1000_words": 0.0,
+        "contractions_per_1000_words": 9.217
+      },
+      "whitespace_words": 439,
+      "id": "062",
+      "source_id": "s31",
+      "mode": "explanation",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/063-account.md",
+      "sha256": "4d83a63b6516009b9490c0d45d46ee5052248fa623de8b9d7cd70743587d6e8c",
+      "features": {
+        "words": 531,
+        "paragraphs": 14,
+        "sentences": 37,
+        "sentence_words_median": 14,
+        "sentence_words_p90": 20.4,
+        "paragraph_sentences_median": 3.0,
+        "short_sentences_pct": 21.622,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 35.782,
+        "because_so_but_per_1000_words": 9.416,
+        "contractions_per_1000_words": 7.533
+      },
+      "whitespace_words": 522,
+      "id": "063",
+      "source_id": "s32",
+      "mode": "account",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/064-explanation.md",
+      "sha256": "8fd808192e3a3089342abfb4b54c42716a808416faf0b29ed542427cd54304a8",
+      "features": {
+        "words": 449,
+        "paragraphs": 15,
+        "sentences": 41,
+        "sentence_words_median": 11,
+        "sentence_words_p90": 15.0,
+        "paragraph_sentences_median": 3,
+        "short_sentences_pct": 34.146,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 2.227,
+        "because_so_but_per_1000_words": 4.454,
+        "contractions_per_1000_words": 2.227
+      },
+      "whitespace_words": 492,
+      "id": "064",
+      "source_id": "s32",
+      "mode": "explanation",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/065-account.md",
+      "sha256": "b567d717f841c2348aa200b1f627cee830560f5f5e2cc5fe7c0e6db9e656c15d",
+      "features": {
+        "words": 452,
+        "paragraphs": 13,
+        "sentences": 36,
+        "sentence_words_median": 13.5,
+        "sentence_words_p90": 17.0,
+        "paragraph_sentences_median": 3,
+        "short_sentences_pct": 25.0,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 46.46,
+        "because_so_but_per_1000_words": 6.637,
+        "contractions_per_1000_words": 8.85
+      },
+      "whitespace_words": 485,
+      "id": "065",
+      "source_id": "s33",
+      "mode": "account",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/066-explanation.md",
+      "sha256": "d82612126f7ca521913c3239c0fbdc99633ec1e2b0b396f9cb1c2b9a05385be6",
+      "features": {
+        "words": 470,
+        "paragraphs": 10,
+        "sentences": 35,
+        "sentence_words_median": 12,
+        "sentence_words_p90": 21.6,
+        "paragraph_sentences_median": 3.5,
+        "short_sentences_pct": 28.571,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 21.277,
+        "because_so_but_per_1000_words": 4.255,
+        "contractions_per_1000_words": 8.511
+      },
+      "whitespace_words": 484,
+      "id": "066",
+      "source_id": "s33",
+      "mode": "explanation",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/067-account.md",
+      "sha256": "fadf91a2ee82d6e661989f4c7bf92d75c0bd8673c51d60e9ac5192554a369782",
+      "features": {
+        "words": 506,
+        "paragraphs": 8,
+        "sentences": 35,
+        "sentence_words_median": 14,
+        "sentence_words_p90": 20.6,
+        "paragraph_sentences_median": 4.0,
+        "short_sentences_pct": 17.143,
+        "long_sentences_pct": 2.857,
+        "first_person_per_1000_words": 55.336,
+        "because_so_but_per_1000_words": 5.929,
+        "contractions_per_1000_words": 5.929
+      },
+      "whitespace_words": 508,
+      "id": "067",
+      "source_id": "s34",
+      "mode": "account",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/068-explanation.md",
+      "sha256": "eacb1262c3ac156ef6008a196fa8e982b4b7a9744ee505460523d4273ce9954b",
+      "features": {
+        "words": 511,
+        "paragraphs": 10,
+        "sentences": 40,
+        "sentence_words_median": 12.0,
+        "sentence_words_p90": 20.0,
+        "paragraph_sentences_median": 4.0,
+        "short_sentences_pct": 27.5,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 0.0,
+        "because_so_but_per_1000_words": 0.0,
+        "contractions_per_1000_words": 1.957
+      },
+      "whitespace_words": 515,
+      "id": "068",
+      "source_id": "s34",
+      "mode": "explanation",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/069-account.md",
+      "sha256": "3f129cf6a5be34df7334392091fb791d9dcefe644fc054553d8b95be9a79481e",
+      "features": {
+        "words": 748,
+        "paragraphs": 15,
+        "sentences": 59,
+        "sentence_words_median": 12,
+        "sentence_words_p90": 20.0,
+        "paragraph_sentences_median": 4,
+        "short_sentences_pct": 30.508,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 57.487,
+        "because_so_but_per_1000_words": 13.369,
+        "contractions_per_1000_words": 9.358
+      },
+      "whitespace_words": 747,
+      "id": "069",
+      "source_id": "s35",
+      "mode": "account",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/070-explanation.md",
+      "sha256": "2c607c93475dda60c4ece66c85ff0daa892d1012a4f67f4d1529023e1e876dc8",
+      "features": {
+        "words": 528,
+        "paragraphs": 10,
+        "sentences": 40,
+        "sentence_words_median": 12.5,
+        "sentence_words_p90": 20.0,
+        "paragraph_sentences_median": 4.0,
+        "short_sentences_pct": 22.5,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 0.0,
+        "because_so_but_per_1000_words": 15.152,
+        "contractions_per_1000_words": 11.364
+      },
+      "whitespace_words": 559,
+      "id": "070",
+      "source_id": "s35",
+      "mode": "explanation",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/071-account.md",
+      "sha256": "3e0a2930aaa7542cb7c8d476290ddc8180665c5a99d918b230c3c01398b322e6",
+      "features": {
+        "words": 528,
+        "paragraphs": 12,
+        "sentences": 38,
+        "sentence_words_median": 14.0,
+        "sentence_words_p90": 21.3,
+        "paragraph_sentences_median": 3.0,
+        "short_sentences_pct": 23.684,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 35.985,
+        "because_so_but_per_1000_words": 7.576,
+        "contractions_per_1000_words": 3.788
+      },
+      "whitespace_words": 531,
+      "id": "071",
+      "source_id": "s36",
+      "mode": "account",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/072-explanation.md",
+      "sha256": "9bf8de05836dadb2d645d5a3fe6e9fc0a0379f02f7df60c944b20c2295e1c720",
+      "features": {
+        "words": 506,
+        "paragraphs": 11,
+        "sentences": 42,
+        "sentence_words_median": 12.0,
+        "sentence_words_p90": 17.8,
+        "paragraph_sentences_median": 4,
+        "short_sentences_pct": 35.714,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 0.0,
+        "because_so_but_per_1000_words": 3.953,
+        "contractions_per_1000_words": 0.0
+      },
+      "whitespace_words": 540,
+      "id": "072",
+      "source_id": "s36",
+      "mode": "explanation",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/073-account.md",
+      "sha256": "b499c3f9d091f51aa427438b87a429623f40b76bc145c1d10d9c3e1e0606d883",
+      "features": {
+        "words": 521,
+        "paragraphs": 14,
+        "sentences": 37,
+        "sentence_words_median": 14,
+        "sentence_words_p90": 21.0,
+        "paragraph_sentences_median": 3.0,
+        "short_sentences_pct": 27.027,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 47.985,
+        "because_so_but_per_1000_words": 9.597,
+        "contractions_per_1000_words": 7.678
+      },
+      "whitespace_words": 519,
+      "id": "073",
+      "source_id": "s37",
+      "mode": "account",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/074-explanation.md",
+      "sha256": "d9ac30c427920875ea2acc7af1379b0e873a36d302ef16a065413efe089fee0f",
+      "features": {
+        "words": 566,
+        "paragraphs": 13,
+        "sentences": 42,
+        "sentence_words_median": 13.5,
+        "sentence_words_p90": 19.0,
+        "paragraph_sentences_median": 3,
+        "short_sentences_pct": 28.571,
+        "long_sentences_pct": 2.381,
+        "first_person_per_1000_words": 3.534,
+        "because_so_but_per_1000_words": 7.067,
+        "contractions_per_1000_words": 5.3
+      },
+      "whitespace_words": 587,
+      "id": "074",
+      "source_id": "s37",
+      "mode": "explanation",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/075-account.md",
+      "sha256": "dd5067e677f9fb07e7f67d5942044ca35865a1357d1891e025f620ddf5fda062",
+      "features": {
+        "words": 483,
+        "paragraphs": 13,
+        "sentences": 39,
+        "sentence_words_median": 11,
+        "sentence_words_p90": 17.0,
+        "paragraph_sentences_median": 3,
+        "short_sentences_pct": 20.513,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 43.478,
+        "because_so_but_per_1000_words": 4.141,
+        "contractions_per_1000_words": 6.211
+      },
+      "whitespace_words": 489,
+      "id": "075",
+      "source_id": "s38",
+      "mode": "account",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/076-explanation.md",
+      "sha256": "d539ad91b3e0fbe080a938ccb6e42f2b1aaa5976a8850bbd6c9bd311c968cd56",
+      "features": {
+        "words": 605,
+        "paragraphs": 14,
+        "sentences": 50,
+        "sentence_words_median": 12.0,
+        "sentence_words_p90": 17.0,
+        "paragraph_sentences_median": 4.0,
+        "short_sentences_pct": 30.0,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 0.0,
+        "because_so_but_per_1000_words": 6.612,
+        "contractions_per_1000_words": 4.959
+      },
+      "whitespace_words": 632,
+      "id": "076",
+      "source_id": "s38",
+      "mode": "explanation",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/077-account.md",
+      "sha256": "06536ff5fc5878719f9de847393ce89cd59c1bd1c9a78b2ea718e13028654597",
+      "features": {
+        "words": 501,
+        "paragraphs": 12,
+        "sentences": 36,
+        "sentence_words_median": 14.0,
+        "sentence_words_p90": 19.5,
+        "paragraph_sentences_median": 3.0,
+        "short_sentences_pct": 19.444,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 35.928,
+        "because_so_but_per_1000_words": 7.984,
+        "contractions_per_1000_words": 3.992
+      },
+      "whitespace_words": 490,
+      "id": "077",
+      "source_id": "s39",
+      "mode": "account",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/078-explanation.md",
+      "sha256": "2fec21080c82d8485790bc2e611abd4d82097c07bb66f87b7846e1561eafbafc",
+      "features": {
+        "words": 581,
+        "paragraphs": 12,
+        "sentences": 42,
+        "sentence_words_median": 14.0,
+        "sentence_words_p90": 21.9,
+        "paragraph_sentences_median": 4.0,
+        "short_sentences_pct": 26.19,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 0.0,
+        "because_so_but_per_1000_words": 6.885,
+        "contractions_per_1000_words": 8.606
+      },
+      "whitespace_words": 601,
+      "id": "078",
+      "source_id": "s39",
+      "mode": "explanation",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/079-account.md",
+      "sha256": "5c9f46507116ca69683ef345fc9594a165aeb99893f4fedc466b4ed515bdf23e",
+      "features": {
+        "words": 463,
+        "paragraphs": 11,
+        "sentences": 38,
+        "sentence_words_median": 13.0,
+        "sentence_words_p90": 18.0,
+        "paragraph_sentences_median": 3,
+        "short_sentences_pct": 42.105,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 6.479,
+        "because_so_but_per_1000_words": 6.479,
+        "contractions_per_1000_words": 2.16
+      },
+      "whitespace_words": 461,
+      "id": "079",
+      "source_id": "s40",
+      "mode": "account",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/080-explanation.md",
+      "sha256": "4048cca882e589a95be8631776c76278900e4c839f8d4ae68a02f6bc99f413bd",
+      "features": {
+        "words": 456,
+        "paragraphs": 9,
+        "sentences": 34,
+        "sentence_words_median": 12.0,
+        "sentence_words_p90": 21.7,
+        "paragraph_sentences_median": 4,
+        "short_sentences_pct": 17.647,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 0.0,
+        "because_so_but_per_1000_words": 8.772,
+        "contractions_per_1000_words": 2.193
+      },
+      "whitespace_words": 484,
+      "id": "080",
+      "source_id": "s40",
+      "mode": "explanation",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/081-account.md",
+      "sha256": "3634d6249840c1ae8e059a90f62cf0c5830eafee316a802070607b22ab68bbb1",
+      "features": {
+        "words": 577,
+        "paragraphs": 14,
+        "sentences": 44,
+        "sentence_words_median": 13.0,
+        "sentence_words_p90": 21.7,
+        "paragraph_sentences_median": 3.0,
+        "short_sentences_pct": 27.273,
+        "long_sentences_pct": 2.273,
+        "first_person_per_1000_words": 32.929,
+        "because_so_but_per_1000_words": 13.865,
+        "contractions_per_1000_words": 0.0
+      },
+      "whitespace_words": 568,
+      "id": "081",
+      "source_id": "s41",
+      "mode": "account",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/082-explanation.md",
+      "sha256": "81bf4cf68eed5f62bf990518f589f216a1e30354568336f15d236e411b0b0452",
+      "features": {
+        "words": 504,
+        "paragraphs": 16,
+        "sentences": 39,
+        "sentence_words_median": 13,
+        "sentence_words_p90": 20.4,
+        "paragraph_sentences_median": 2.0,
+        "short_sentences_pct": 20.513,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 19.841,
+        "because_so_but_per_1000_words": 3.968,
+        "contractions_per_1000_words": 1.984
+      },
+      "whitespace_words": 504,
+      "id": "082",
+      "source_id": "s41",
+      "mode": "explanation",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/083-account.md",
+      "sha256": "20b5e33fcac59006bb2e1decd2d24dca878d0c850847a734fb5f93a755183211",
+      "features": {
+        "words": 444,
+        "paragraphs": 12,
+        "sentences": 33,
+        "sentence_words_median": 14,
+        "sentence_words_p90": 18.8,
+        "paragraph_sentences_median": 2.0,
+        "short_sentences_pct": 27.273,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 45.045,
+        "because_so_but_per_1000_words": 4.505,
+        "contractions_per_1000_words": 2.252
+      },
+      "whitespace_words": 448,
+      "id": "083",
+      "source_id": "s42",
+      "mode": "account",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/084-explanation.md",
+      "sha256": "2408df35450ee2afd7f531cc9c08843fc0cc79676a78f8eb525da85a1583163e",
+      "features": {
+        "words": 426,
+        "paragraphs": 10,
+        "sentences": 31,
+        "sentence_words_median": 13,
+        "sentence_words_p90": 22.0,
+        "paragraph_sentences_median": 3.0,
+        "short_sentences_pct": 29.032,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 0.0,
+        "because_so_but_per_1000_words": 2.347,
+        "contractions_per_1000_words": 4.695
+      },
+      "whitespace_words": 433,
+      "id": "084",
+      "source_id": "s42",
+      "mode": "explanation",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/085-account.md",
+      "sha256": "d9f49a2310767bd8ee2f9532970605b3235f4a40139e8a38ccb08ddbf74ed775",
+      "features": {
+        "words": 425,
+        "paragraphs": 17,
+        "sentences": 36,
+        "sentence_words_median": 12.0,
+        "sentence_words_p90": 17.5,
+        "paragraph_sentences_median": 2,
+        "short_sentences_pct": 33.333,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 68.235,
+        "because_so_but_per_1000_words": 4.706,
+        "contractions_per_1000_words": 11.765
+      },
+      "whitespace_words": 489,
+      "id": "085",
+      "source_id": "s43",
+      "mode": "account",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/086-explanation.md",
+      "sha256": "b70773780f7614eed61f4f2e48d6b83d57dacc9c6f8aec526a52f958355b1236",
+      "features": {
+        "words": 451,
+        "paragraphs": 16,
+        "sentences": 37,
+        "sentence_words_median": 12,
+        "sentence_words_p90": 17.4,
+        "paragraph_sentences_median": 2.0,
+        "short_sentences_pct": 29.73,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 0.0,
+        "because_so_but_per_1000_words": 8.869,
+        "contractions_per_1000_words": 11.086
+      },
+      "whitespace_words": 484,
+      "id": "086",
+      "source_id": "s43",
+      "mode": "explanation",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/087-account.md",
+      "sha256": "5475d584fd8a0fbcfc0840b8d063e61a4cc86ce53de7c26c19438bb3c1748f96",
+      "features": {
+        "words": 439,
+        "paragraphs": 12,
+        "sentences": 35,
+        "sentence_words_median": 12,
+        "sentence_words_p90": 18.2,
+        "paragraph_sentences_median": 3.0,
+        "short_sentences_pct": 25.714,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 38.724,
+        "because_so_but_per_1000_words": 13.667,
+        "contractions_per_1000_words": 6.834
+      },
+      "whitespace_words": 439,
+      "id": "087",
+      "source_id": "s44",
+      "mode": "account",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/088-explanation.md",
+      "sha256": "2e859e8996d6687e1c5acb01f7aef4da44c522e9597648b4509cb602c8f6aa3e",
+      "features": {
+        "words": 435,
+        "paragraphs": 10,
+        "sentences": 34,
+        "sentence_words_median": 12.5,
+        "sentence_words_p90": 19.0,
+        "paragraph_sentences_median": 3.5,
+        "short_sentences_pct": 32.353,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 0.0,
+        "because_so_but_per_1000_words": 2.299,
+        "contractions_per_1000_words": 0.0
+      },
+      "whitespace_words": 437,
+      "id": "088",
+      "source_id": "s44",
+      "mode": "explanation",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/089-account.md",
+      "sha256": "7aa677ac49ab121d2b5bb61311b8efd26b7f6330f137bcdc8761c76868a2ac96",
+      "features": {
+        "words": 506,
+        "paragraphs": 19,
+        "sentences": 39,
+        "sentence_words_median": 12,
+        "sentence_words_p90": 20.0,
+        "paragraph_sentences_median": 2,
+        "short_sentences_pct": 23.077,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 53.36,
+        "because_so_but_per_1000_words": 13.834,
+        "contractions_per_1000_words": 11.858
+      },
+      "whitespace_words": 524,
+      "id": "089",
+      "source_id": "s45",
+      "mode": "account",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/090-explanation.md",
+      "sha256": "db9751f61d960daba2968e2c4a2465fd080cf3364f60f4e2a10bdf0fe2b64d5f",
+      "features": {
+        "words": 381,
+        "paragraphs": 13,
+        "sentences": 29,
+        "sentence_words_median": 12,
+        "sentence_words_p90": 21.0,
+        "paragraph_sentences_median": 2,
+        "short_sentences_pct": 27.586,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 0.0,
+        "because_so_but_per_1000_words": 7.874,
+        "contractions_per_1000_words": 2.625
+      },
+      "whitespace_words": 433,
+      "id": "090",
+      "source_id": "s45",
+      "mode": "explanation",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/091-account.md",
+      "sha256": "08424e7cada63fe4d6b82976eef3427173e26047d1d80ebc21b66c4bbcde15ef",
+      "features": {
+        "words": 466,
+        "paragraphs": 20,
+        "sentences": 36,
+        "sentence_words_median": 14.0,
+        "sentence_words_p90": 18.0,
+        "paragraph_sentences_median": 2.0,
+        "short_sentences_pct": 22.222,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 17.167,
+        "because_so_but_per_1000_words": 8.584,
+        "contractions_per_1000_words": 4.292
+      },
+      "whitespace_words": 472,
+      "id": "091",
+      "source_id": "s46",
+      "mode": "account",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/092-explanation.md",
+      "sha256": "36b1d3a6bb92779750499cdc11886db3c3fd6001c19574a53215c1e66f2aa2fe",
+      "features": {
+        "words": 411,
+        "paragraphs": 13,
+        "sentences": 34,
+        "sentence_words_median": 10.5,
+        "sentence_words_p90": 20.7,
+        "paragraph_sentences_median": 3,
+        "short_sentences_pct": 41.176,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 0.0,
+        "because_so_but_per_1000_words": 2.433,
+        "contractions_per_1000_words": 0.0
+      },
+      "whitespace_words": 413,
+      "id": "092",
+      "source_id": "s46",
+      "mode": "explanation",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/093-account.md",
+      "sha256": "7879f161d400875354dba30a31a245b4185e9c55c21991066f441d265f10a2f6",
+      "features": {
+        "words": 438,
+        "paragraphs": 17,
+        "sentences": 36,
+        "sentence_words_median": 11.0,
+        "sentence_words_p90": 17.0,
+        "paragraph_sentences_median": 2,
+        "short_sentences_pct": 25.0,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 41.096,
+        "because_so_but_per_1000_words": 4.566,
+        "contractions_per_1000_words": 4.566
+      },
+      "whitespace_words": 433,
+      "id": "093",
+      "source_id": "s47",
+      "mode": "account",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/094-explanation.md",
+      "sha256": "c8bc5cdea2d815f59b700275bedbc976cf43faecc23c7f36dcacef645db1d45f",
+      "features": {
+        "words": 402,
+        "paragraphs": 14,
+        "sentences": 32,
+        "sentence_words_median": 12.5,
+        "sentence_words_p90": 17.0,
+        "paragraph_sentences_median": 2.0,
+        "short_sentences_pct": 25.0,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 0.0,
+        "because_so_but_per_1000_words": 7.463,
+        "contractions_per_1000_words": 2.488
+      },
+      "whitespace_words": 413,
+      "id": "094",
+      "source_id": "s47",
+      "mode": "explanation",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/095-account.md",
+      "sha256": "581ad31221eeb5c86f7eb5c12146a17343616e10b616f08c6dfd28ee6125b2df",
+      "features": {
+        "words": 419,
+        "paragraphs": 18,
+        "sentences": 32,
+        "sentence_words_median": 13.0,
+        "sentence_words_p90": 17.9,
+        "paragraph_sentences_median": 2.0,
+        "short_sentences_pct": 25.0,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 0.0,
+        "because_so_but_per_1000_words": 7.16,
+        "contractions_per_1000_words": 0.0
+      },
+      "whitespace_words": 420,
+      "id": "095",
+      "source_id": "s48",
+      "mode": "account",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/096-explanation.md",
+      "sha256": "fb992ed1b0d67a2fb3fe19dd6c38be6605cc89bd09f845ab1ef8905a276e1699",
+      "features": {
+        "words": 380,
+        "paragraphs": 16,
+        "sentences": 33,
+        "sentence_words_median": 11,
+        "sentence_words_p90": 16.8,
+        "paragraph_sentences_median": 2.0,
+        "short_sentences_pct": 39.394,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 2.632,
+        "because_so_but_per_1000_words": 2.632,
+        "contractions_per_1000_words": 2.632
+      },
+      "whitespace_words": 414,
+      "id": "096",
+      "source_id": "s48",
+      "mode": "explanation",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/097-account.md",
+      "sha256": "7bca9a6c493720b0bf630e0b4ee448ddcfed3a222e2f76ffdd2ea2cd6c9a0a9a",
+      "features": {
+        "words": 427,
+        "paragraphs": 13,
+        "sentences": 32,
+        "sentence_words_median": 13.5,
+        "sentence_words_p90": 19.0,
+        "paragraph_sentences_median": 3,
+        "short_sentences_pct": 21.875,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 32.787,
+        "because_so_but_per_1000_words": 16.393,
+        "contractions_per_1000_words": 4.684
+      },
+      "whitespace_words": 429,
+      "id": "097",
+      "source_id": "s49",
+      "mode": "account",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/098-explanation.md",
+      "sha256": "7fb7dbd7632c2d6d6c908952ce7cd4a74dfc5c336743c76328e900146e3f2925",
+      "features": {
+        "words": 463,
+        "paragraphs": 12,
+        "sentences": 36,
+        "sentence_words_median": 13.0,
+        "sentence_words_p90": 17.5,
+        "paragraph_sentences_median": 3.0,
+        "short_sentences_pct": 25.0,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 0.0,
+        "because_so_but_per_1000_words": 6.479,
+        "contractions_per_1000_words": 2.16
+      },
+      "whitespace_words": 464,
+      "id": "098",
+      "source_id": "s49",
+      "mode": "explanation",
+      "lint": []
+    },
+    {
+      "path": "research/luna-100/output/round-2/099-account.md",
+      "sha256": "14f6b8b7eb806f52f6701eebc8850622940bee3cb278c33d93c59fc94423e0d0",
+      "features": {
+        "words": 459,
+        "paragraphs": 14,
+        "sentences": 34,
+        "sentence_words_median": 12.0,
+        "sentence_words_p90": 21.7,
+        "paragraph_sentences_median": 2.0,
+        "short_sentences_pct": 17.647,
+        "long_sentences_pct": 2.941,
+        "first_person_per_1000_words": 8.715,
+        "because_so_but_per_1000_words": 0.0,
+        "contractions_per_1000_words": 6.536
+      },
+      "whitespace_words": 452,
+      "id": "099",
+      "source_id": "s50",
+      "mode": "account",
+      "lint": [
+        {
+          "tag": "banned-word",
+          "line": 23,
+          "message": "'Foster' - use 'build' / 'help'"
+        }
+      ]
+    },
+    {
+      "path": "research/luna-100/output/round-2/100-explanation.md",
+      "sha256": "239e5cc3201b08cd769db3c172eeb2f61d237faff1580c540b2c8bb9714b3865",
+      "features": {
+        "words": 438,
+        "paragraphs": 9,
+        "sentences": 34,
+        "sentence_words_median": 12.0,
+        "sentence_words_p90": 18.7,
+        "paragraph_sentences_median": 3,
+        "short_sentences_pct": 26.471,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 2.283,
+        "because_so_but_per_1000_words": 4.566,
+        "contractions_per_1000_words": 2.283
+      },
+      "whitespace_words": 429,
+      "id": "100",
+      "source_id": "s50",
+      "mode": "explanation",
+      "lint": []
+    }
+  ],
+  "method": "Same-source article-body comparison. Exploratory n-grams and shapes are not approved rules. Two articles per source are correlated. Exact-sentence overlaps require review."
+}

@@ -1,0 +1,21 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-08-08-getting-an-ai-engineering-job.md",
+  "original_path": "research/luna-100/output/round-1/085-account.md",
+  "revised_path": "research/luna-100/output/round-2/085-account.md",
+  "word_count": 489,
+  "required_facts_checked": [
+    {"claim": "The search uses a six-step loop", "evidence": "Network ... Apply ... Build ... Interview ... Reflect ... Repeat."},
+    {"claim": "Networking uses LinkedIn and meetups", "evidence": "Use LinkedIn and meetups."},
+    {"claim": "Applications can precede full readiness", "evidence": "Apply even if you don’t qualify."},
+    {"claim": "Exploratory projects are timeboxed to 10–20 hours", "evidence": "Set the time limit to 10-20 hours."},
+    {"claim": "Projects should be shared publicly", "evidence": "Don’t build these projects silently."},
+    {"claim": "The source lists several interview types", "evidence": "Recruiter interview ... Theoretical ... Coding ... Project deep dive ... System design."},
+    {"claim": "AI interview preparation includes RAG and agents", "evidence": "LLM behavior ... RAG ... Agents."},
+    {"claim": "An interview journal records questions", "evidence": "Write that all down in your interview journal."},
+    {"claim": "Take-home assignments have warning signs", "evidence": "Watch out for warning signs."}
+  ],
+  "unsupported_claims_removed": ["Removed any promise that applications produce interviews or offers; preserved source qualifications about senior roles, weak matches, and rejection causes."],
+  "substantive_edits": ["Restored the personal six-step sequence and its purpose in the opening.", "Kept networking, readiness, public projects, interview formats, preparation topics, journaling, and take-home criteria.", "Converted long enumerations into readable prose and lists while retaining all source-supported options."],
+  "full_final_lint_findings": [],
+  "unresolved_source_conflicts": []
+}

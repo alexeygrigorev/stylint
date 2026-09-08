@@ -1,0 +1,23 @@
+{
+  "method": "Low-reasoning peer reviews are uneven and include false findings. Parent checked actionable claims against source, accepted substantive fixes, and rejected optional coverage requests that did not change meaning. Four independent high-reasoning final reviews add32 verified quote pairs; none establishes human preference approval.",
+  "accepted": {
+    "039": "Both env formats restored; Copilot origin omitted as optional selective coverage.",
+    "046": "About nine weeks restored.",
+    "048": "Cofounder and onboarding attribution restored; launch-event date outside selected explanation scope.",
+    "069": "Experiment qualification and probability language restored.",
+    "070": "Five roles were already described; no further role enumeration needed."
+  },
+  "false_findings": {
+    "014": "First two weeks alleged by low reviewer did not appear in draft; six-or-more count also supported.",
+    "034": "Low reviewer said infrastructure details were omitted although present.",
+    "037": "Low reviewer said context overflow motivation was missing although in the opening."
+  },
+  "known_source_conflict": {
+    "099": "Full default banned-word check flags Foster, an actual surname. The name and finding remain."
+  },
+  "review_counts": {
+    "low_review_files": 24,
+    "final_high_review_files": 4,
+    "high_literal_claim_pairs_verified": 32
+  }
+}

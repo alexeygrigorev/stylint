@@ -1,0 +1,1059 @@
+{
+  "schema_version": 1,
+  "stylint_version": "0.1.1",
+  "method": {
+    "parser": "Approximate Markdown paragraph extraction; see tools/voice_compare.py.",
+    "excluded": [
+      "frontmatter",
+      "headings",
+      "lists",
+      "code blocks",
+      "blockquotes",
+      "images",
+      "standalone links",
+      "HTML comments"
+    ],
+    "retained": [
+      "inline code identifiers",
+      "inline link labels",
+      "newsletter prose and captions"
+    ],
+    "aggregation": "Unweighted median of each document's features; empty documents excluded from medians.",
+    "warning": "Descriptive diagnostics, not a voice score. Match genre and length for comparisons. No human preference inferred."
+  },
+  "reference": {
+    "files": 54,
+    "measured_files": 54,
+    "empty_prose_files": 0,
+    "total_prose_words": 87611,
+    "median_per_document": {
+      "words": 1564.0,
+      "paragraphs": 56.5,
+      "sentences": 107.0,
+      "sentence_words_median": 14.0,
+      "sentence_words_p90": 24.0,
+      "paragraph_sentences_median": 1.0,
+      "short_sentences_pct": 26.182,
+      "long_sentences_pct": 8.333,
+      "first_person_per_1000_words": 25.589,
+      "because_so_but_per_1000_words": 8.64,
+      "contractions_per_1000_words": 7.206
+    },
+    "documents": [
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2025-12-04-coming-soon.md",
+        "sha256": "ce644c43233e65121caafe2e1fc780ab7a6f2e61e186a613cab7121560c521ef",
+        "features": {
+          "words": 87,
+          "paragraphs": 7,
+          "sentences": 10,
+          "sentence_words_median": 8.5,
+          "sentence_words_p90": 14.3,
+          "paragraph_sentences_median": 1,
+          "short_sentences_pct": 60.0,
+          "long_sentences_pct": 0.0,
+          "first_person_per_1000_words": 149.425,
+          "because_so_but_per_1000_words": 22.989,
+          "contractions_per_1000_words": 11.494
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2025-12-05-how-i-rebuilt-my-website-in-10-minutes.md",
+        "sha256": "f45fbcebd65e6471dce321fc6773a7db2e2c8dcfcfa399f67d0a94c79afd1098",
+        "features": {
+          "words": 627,
+          "paragraphs": 38,
+          "sentences": 48,
+          "sentence_words_median": 13.0,
+          "sentence_words_p90": 21.6,
+          "paragraph_sentences_median": 1.0,
+          "short_sentences_pct": 37.5,
+          "long_sentences_pct": 8.333,
+          "first_person_per_1000_words": 38.278,
+          "because_so_but_per_1000_words": 3.19,
+          "contractions_per_1000_words": 14.354
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2025-12-12-how-i-built-a-fully-automated-image.md",
+        "sha256": "6d69a4c2301f6f5cd3364123f163479e70bbde0233ecb913028bfb55099cb2c2",
+        "features": {
+          "words": 890,
+          "paragraphs": 50,
+          "sentences": 70,
+          "sentence_words_median": 10.0,
+          "sentence_words_p90": 23.1,
+          "paragraph_sentences_median": 1.0,
+          "short_sentences_pct": 45.714,
+          "long_sentences_pct": 7.143,
+          "first_person_per_1000_words": 32.584,
+          "because_so_but_per_1000_words": 7.865,
+          "contractions_per_1000_words": 3.371
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2025-12-19-5-ideas-for-ai-agents-and-openais.md",
+        "sha256": "fbf497522123c6375185f16232235449eb785cb50829b1afcebc9859063732d9",
+        "features": {
+          "words": 1255,
+          "paragraphs": 38,
+          "sentences": 77,
+          "sentence_words_median": 15,
+          "sentence_words_p90": 24.4,
+          "paragraph_sentences_median": 2.0,
+          "short_sentences_pct": 19.481,
+          "long_sentences_pct": 6.494,
+          "first_person_per_1000_words": 20.717,
+          "because_so_but_per_1000_words": 4.781,
+          "contractions_per_1000_words": 4.781
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2025-12-26-my-newsletter-now-has-a-referral.md",
+        "sha256": "ee58170ed6b4d8e3905379ebdefea6091a0994808a571e30bf8e825beddcc721",
+        "features": {
+          "words": 116,
+          "paragraphs": 6,
+          "sentences": 11,
+          "sentence_words_median": 9,
+          "sentence_words_p90": 21.0,
+          "paragraph_sentences_median": 1.5,
+          "short_sentences_pct": 54.545,
+          "long_sentences_pct": 0.0,
+          "first_person_per_1000_words": 25.862,
+          "because_so_but_per_1000_words": 0.0,
+          "contractions_per_1000_words": 8.621
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2025-12-26-shipping-features-from-a-tram-stop.md",
+        "sha256": "0255ef6daaba8a3aa129244a6900690eb9eddbbef1ab6e9e1e807b9166d90211",
+        "features": {
+          "words": 922,
+          "paragraphs": 39,
+          "sentences": 60,
+          "sentence_words_median": 16.0,
+          "sentence_words_p90": 24.0,
+          "paragraph_sentences_median": 1,
+          "short_sentences_pct": 25.0,
+          "long_sentences_pct": 8.333,
+          "first_person_per_1000_words": 40.13,
+          "because_so_but_per_1000_words": 4.338,
+          "contractions_per_1000_words": 10.846
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-01-02-benefits-of-learning-in-public-and.md",
+        "sha256": "f63f5fed7eb731eb1307aa2e7ad26e2b9c76ef4ff9ef726e1b3efdf94096f73b",
+        "features": {
+          "words": 1467,
+          "paragraphs": 59,
+          "sentences": 98,
+          "sentence_words_median": 14.5,
+          "sentence_words_p90": 23.3,
+          "paragraph_sentences_median": 2,
+          "short_sentences_pct": 27.551,
+          "long_sentences_pct": 7.143,
+          "first_person_per_1000_words": 14.315,
+          "because_so_but_per_1000_words": 3.408,
+          "contractions_per_1000_words": 8.862
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-01-09-my-experiments-with-claude-code.md",
+        "sha256": "4eab609e955a86c9ddce6786a062bbc714adacf6e120d164dde691bb1134414e",
+        "features": {
+          "words": 984,
+          "paragraphs": 43,
+          "sentences": 79,
+          "sentence_words_median": 11,
+          "sentence_words_p90": 22.2,
+          "paragraph_sentences_median": 2,
+          "short_sentences_pct": 40.506,
+          "long_sentences_pct": 6.329,
+          "first_person_per_1000_words": 54.878,
+          "because_so_but_per_1000_words": 16.26,
+          "contractions_per_1000_words": 17.276
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-01-16-how-i-reviewed-2500-ai-bootcamp-scholarship.md",
+        "sha256": "13d7fe1c456c5617381047aff41996445cc42448396fb21466b3b802fe842f3c",
+        "features": {
+          "words": 1740,
+          "paragraphs": 49,
+          "sentences": 108,
+          "sentence_words_median": 15.0,
+          "sentence_words_p90": 26.3,
+          "paragraph_sentences_median": 2,
+          "short_sentences_pct": 17.593,
+          "long_sentences_pct": 11.111,
+          "first_person_per_1000_words": 32.759,
+          "because_so_but_per_1000_words": 7.471,
+          "contractions_per_1000_words": 5.747
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-01-23-ai-bootcamp-becomes-ai-engineering.md",
+        "sha256": "c87bb0a42c19ce733e390260c0a51d14294265e72098977154515a64001869c3",
+        "features": {
+          "words": 1199,
+          "paragraphs": 42,
+          "sentences": 72,
+          "sentence_words_median": 16.0,
+          "sentence_words_p90": 27.8,
+          "paragraph_sentences_median": 1.0,
+          "short_sentences_pct": 19.444,
+          "long_sentences_pct": 12.5,
+          "first_person_per_1000_words": 28.357,
+          "because_so_but_per_1000_words": 5.004,
+          "contractions_per_1000_words": 5.838
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-01-30-telegram-assistant.md",
+        "sha256": "5d8fa283bfee1dd56f2eb613a26f6ddb5351704a5340000382d7bd8f09359736",
+        "features": {
+          "words": 1491,
+          "paragraphs": 52,
+          "sentences": 106,
+          "sentence_words_median": 13.5,
+          "sentence_words_p90": 24.0,
+          "paragraph_sentences_median": 2.0,
+          "short_sentences_pct": 31.132,
+          "long_sentences_pct": 6.604,
+          "first_person_per_1000_words": 38.9,
+          "because_so_but_per_1000_words": 6.036,
+          "contractions_per_1000_words": 3.353
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-02-06-building-and-maintaining-a-slack.md",
+        "sha256": "5c1e04f512c08d2a36dad0a5ea87d834499ed5a77a8e22bb852742155ec9cfac",
+        "features": {
+          "words": 1496,
+          "paragraphs": 53,
+          "sentences": 90,
+          "sentence_words_median": 16.0,
+          "sentence_words_p90": 25.1,
+          "paragraph_sentences_median": 2,
+          "short_sentences_pct": 13.333,
+          "long_sentences_pct": 10.0,
+          "first_person_per_1000_words": 30.749,
+          "because_so_but_per_1000_words": 6.016,
+          "contractions_per_1000_words": 6.016
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-02-13-what-is-an-ai-engineer-in-2026-join.md",
+        "sha256": "dfc612e415c7c97007a11e5ffe5cbf9c281dd8617e7cb5c80a0408bdd2da34ec",
+        "features": {
+          "words": 1569,
+          "paragraphs": 54,
+          "sentences": 91,
+          "sentence_words_median": 17,
+          "sentence_words_p90": 28.0,
+          "paragraph_sentences_median": 1.0,
+          "short_sentences_pct": 18.681,
+          "long_sentences_pct": 14.286,
+          "first_person_per_1000_words": 42.065,
+          "because_so_but_per_1000_words": 4.461,
+          "contractions_per_1000_words": 12.747
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-02-20-how-i-built-sqlitesearch-a-lightweight.md",
+        "sha256": "c279de0307a81bef85ed4496a0faaa1ae02daed3b027466a7a2e8523ea73b78d",
+        "features": {
+          "words": 1559,
+          "paragraphs": 48,
+          "sentences": 97,
+          "sentence_words_median": 15,
+          "sentence_words_p90": 26.4,
+          "paragraph_sentences_median": 2.0,
+          "short_sentences_pct": 22.68,
+          "long_sentences_pct": 12.371,
+          "first_person_per_1000_words": 40.411,
+          "because_so_but_per_1000_words": 15.394,
+          "contractions_per_1000_words": 3.849
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-02-26-what-is-an-ai-engineer-my-perspective.md",
+        "sha256": "654cc27204184d8c05a65abb7853d0371dcc383170dba43534ca4108a02a980e",
+        "features": {
+          "words": 811,
+          "paragraphs": 35,
+          "sentences": 53,
+          "sentence_words_median": 15,
+          "sentence_words_p90": 23.0,
+          "paragraph_sentences_median": 1,
+          "short_sentences_pct": 16.981,
+          "long_sentences_pct": 5.66,
+          "first_person_per_1000_words": 18.496,
+          "because_so_but_per_1000_words": 6.165,
+          "contractions_per_1000_words": 0.0
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-02-27-chatgpt-data-viewer.md",
+        "sha256": "95d070452a80ae81081c0d686e1dc6a95cb8dd8ec2105be012b1b080192e003e",
+        "features": {
+          "words": 1505,
+          "paragraphs": 59,
+          "sentences": 112,
+          "sentence_words_median": 12.5,
+          "sentence_words_p90": 21.9,
+          "paragraph_sentences_median": 1,
+          "short_sentences_pct": 26.786,
+          "long_sentences_pct": 3.571,
+          "first_person_per_1000_words": 56.478,
+          "because_so_but_per_1000_words": 8.638,
+          "contractions_per_1000_words": 13.953
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-03-04-what-1000-job-descriptions-reveal.md",
+        "sha256": "6c0de56ae0c9ec259354fcb080ed40f7b7a3b84a5010f4a1b9d9efebd39e0c6a",
+        "features": {
+          "words": 507,
+          "paragraphs": 18,
+          "sentences": 27,
+          "sentence_words_median": 19,
+          "sentence_words_p90": 29.0,
+          "paragraph_sentences_median": 1.0,
+          "short_sentences_pct": 3.704,
+          "long_sentences_pct": 18.519,
+          "first_person_per_1000_words": 0.0,
+          "because_so_but_per_1000_words": 5.917,
+          "contractions_per_1000_words": 0.0
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-03-06-how-i-dropped-our-production-database.md",
+        "sha256": "b70513c8ecd3648dd6a88238415a3549bc57979fd194ee0c5834c66ad7e81c39",
+        "features": {
+          "words": 2536,
+          "paragraphs": 104,
+          "sentences": 181,
+          "sentence_words_median": 13,
+          "sentence_words_p90": 23.0,
+          "paragraph_sentences_median": 1.5,
+          "short_sentences_pct": 31.492,
+          "long_sentences_pct": 8.84,
+          "first_person_per_1000_words": 42.981,
+          "because_so_but_per_1000_words": 8.675,
+          "contractions_per_1000_words": 7.098
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-03-11-how-crisp-dm-still-applies-to-ai.md",
+        "sha256": "834796f78afa9e37b958c68e0e0857abc9d12719d81d3ccd945953bc0aa708c9",
+        "features": {
+          "words": 736,
+          "paragraphs": 34,
+          "sentences": 44,
+          "sentence_words_median": 16.0,
+          "sentence_words_p90": 26.7,
+          "paragraph_sentences_median": 1.0,
+          "short_sentences_pct": 13.636,
+          "long_sentences_pct": 13.636,
+          "first_person_per_1000_words": 0.0,
+          "because_so_but_per_1000_words": 2.717,
+          "contractions_per_1000_words": 0.0
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-03-13-ai-set-up-my-infra-in-10-minutes.md",
+        "sha256": "df816c00eeee9d1f0f1c0c0bba7253acf18499a3b524803c3b779be5c19cc3f8",
+        "features": {
+          "words": 1597,
+          "paragraphs": 62,
+          "sentences": 97,
+          "sentence_words_median": 16,
+          "sentence_words_p90": 26.0,
+          "paragraph_sentences_median": 1.0,
+          "short_sentences_pct": 18.557,
+          "long_sentences_pct": 11.34,
+          "first_person_per_1000_words": 32.561,
+          "because_so_but_per_1000_words": 10.645,
+          "contractions_per_1000_words": 3.757
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-03-16-karpathys-autoresearch-went-viral.md",
+        "sha256": "78c02a62e5be3473549f602d7095a1b6f35a48bb2650395a92b87a8a6cedbb6e",
+        "features": {
+          "words": 911,
+          "paragraphs": 31,
+          "sentences": 60,
+          "sentence_words_median": 15.0,
+          "sentence_words_p90": 25.1,
+          "paragraph_sentences_median": 2,
+          "short_sentences_pct": 23.333,
+          "long_sentences_pct": 10.0,
+          "first_person_per_1000_words": 9.879,
+          "because_so_but_per_1000_words": 6.586,
+          "contractions_per_1000_words": 0.0
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-03-20-i-turned-my-telegram-bot-into-a-multi.md",
+        "sha256": "7df5370a72e64273b5c28d63ad329d58d1230eca92d030b51515de9a5c50fbe9",
+        "features": {
+          "words": 1529,
+          "paragraphs": 51,
+          "sentences": 98,
+          "sentence_words_median": 14.0,
+          "sentence_words_p90": 27.0,
+          "paragraph_sentences_median": 2,
+          "short_sentences_pct": 19.388,
+          "long_sentences_pct": 12.245,
+          "first_person_per_1000_words": 24.853,
+          "because_so_but_per_1000_words": 3.924,
+          "contractions_per_1000_words": 3.27
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-03-25-50-theory-interview-questions-for.md",
+        "sha256": "7f855c0a7cba5eaeccb3e2da2f1915cfbce4d00f2b138295c9cb83c982923727",
+        "features": {
+          "words": 157,
+          "paragraphs": 9,
+          "sentences": 9,
+          "sentence_words_median": 13,
+          "sentence_words_p90": 32.2,
+          "paragraph_sentences_median": 1,
+          "short_sentences_pct": 44.444,
+          "long_sentences_pct": 22.222,
+          "first_person_per_1000_words": 0.0,
+          "because_so_but_per_1000_words": 0.0,
+          "contractions_per_1000_words": 0.0
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-03-27-5-useful-utilities-i-built-with-ai.md",
+        "sha256": "c52dd675e66bbae7c7c7234d9095725e259390128d694875b1a876f9aff28e48",
+        "features": {
+          "words": 2324,
+          "paragraphs": 56,
+          "sentences": 117,
+          "sentence_words_median": 19,
+          "sentence_words_p90": 31.0,
+          "paragraph_sentences_median": 2.0,
+          "short_sentences_pct": 8.547,
+          "long_sentences_pct": 23.932,
+          "first_person_per_1000_words": 41.308,
+          "because_so_but_per_1000_words": 12.478,
+          "contractions_per_1000_words": 5.594
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-04-03-i-built-an-ai-agent-team-for-software.md",
+        "sha256": "8bcdd69113cefd01ab36e0e4f93b2b957ee40606f307e23612f7d71624def3b3",
+        "features": {
+          "words": 2777,
+          "paragraphs": 91,
+          "sentences": 158,
+          "sentence_words_median": 15.0,
+          "sentence_words_p90": 30.0,
+          "paragraph_sentences_median": 2,
+          "short_sentences_pct": 16.456,
+          "long_sentences_pct": 19.62,
+          "first_person_per_1000_words": 35.65,
+          "because_so_but_per_1000_words": 8.642,
+          "contractions_per_1000_words": 8.282
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-04-07-an-unexpected-entry-into-ai-memory.md",
+        "sha256": "0c372c34e85bfb6fff51d34554489d5475368de2be9daaebdbafeddbf7639589",
+        "features": {
+          "words": 1796,
+          "paragraphs": 52,
+          "sentences": 102,
+          "sentence_words_median": 14.5,
+          "sentence_words_p90": 31.9,
+          "paragraph_sentences_median": 2.0,
+          "short_sentences_pct": 25.49,
+          "long_sentences_pct": 22.549,
+          "first_person_per_1000_words": 1.114,
+          "because_so_but_per_1000_words": 3.898,
+          "contractions_per_1000_words": 2.227
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-04-07-last-call-for-ai-engineering-buildcamp.md",
+        "sha256": "aea23bee69e028c4da41bc5ef47f34d260ec2f4f9a3cee0d6143cd273e12d2c9",
+        "features": {
+          "words": 794,
+          "paragraphs": 31,
+          "sentences": 49,
+          "sentence_words_median": 15,
+          "sentence_words_p90": 24.6,
+          "paragraph_sentences_median": 1,
+          "short_sentences_pct": 14.286,
+          "long_sentences_pct": 10.204,
+          "first_person_per_1000_words": 21.411,
+          "because_so_but_per_1000_words": 6.297,
+          "contractions_per_1000_words": 11.335
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-04-10-tired-of-learning-ai-alone-were-launching.md",
+        "sha256": "3fb7b846c2f3dde8ad76374433870c30eb25b870d50fd4e6801e600959fdb632",
+        "features": {
+          "words": 1264,
+          "paragraphs": 46,
+          "sentences": 79,
+          "sentence_words_median": 15,
+          "sentence_words_p90": 27.0,
+          "paragraph_sentences_median": 2.0,
+          "short_sentences_pct": 17.722,
+          "long_sentences_pct": 11.392,
+          "first_person_per_1000_words": 25.316,
+          "because_so_but_per_1000_words": 7.911,
+          "contractions_per_1000_words": 26.108
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-04-17-how-we-built-ai-shipping-labs.md",
+        "sha256": "d6d23eaf082dda5e67979bdf06bfde11e3ad6ff7324aca7d9eedb3d0dbf458b3",
+        "features": {
+          "words": 2203,
+          "paragraphs": 69,
+          "sentences": 137,
+          "sentence_words_median": 14,
+          "sentence_words_p90": 26.8,
+          "paragraph_sentences_median": 2,
+          "short_sentences_pct": 26.277,
+          "long_sentences_pct": 12.409,
+          "first_person_per_1000_words": 32.229,
+          "because_so_but_per_1000_words": 9.079,
+          "contractions_per_1000_words": 3.177
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-04-24-from-google-docs-to-an-automated.md",
+        "sha256": "719b188f0d4f10596e33da4a3915c6bd679cc97b61a8f0f743477f60e187a8ab",
+        "features": {
+          "words": 3028,
+          "paragraphs": 108,
+          "sentences": 184,
+          "sentence_words_median": 15.0,
+          "sentence_words_p90": 27.7,
+          "paragraph_sentences_median": 1.0,
+          "short_sentences_pct": 21.196,
+          "long_sentences_pct": 14.674,
+          "first_person_per_1000_words": 13.871,
+          "because_so_but_per_1000_words": 12.219,
+          "contractions_per_1000_words": 2.642
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-05-02-9-real-life-ai-projects-from-ai-engineering.md",
+        "sha256": "75ea7c24350fb11706764f6e078ae14ef02aaeb8a0843da93f709c5ffe97f825",
+        "features": {
+          "words": 1257,
+          "paragraphs": 43,
+          "sentences": 82,
+          "sentence_words_median": 15.0,
+          "sentence_words_p90": 23.9,
+          "paragraph_sentences_median": 2,
+          "short_sentences_pct": 18.293,
+          "long_sentences_pct": 6.098,
+          "first_person_per_1000_words": 14.32,
+          "because_so_but_per_1000_words": 3.978,
+          "contractions_per_1000_words": 12.729
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-05-08-building-an-ai-book-generator-with.md",
+        "sha256": "3952fd7c3c3e344797f0e4d7fdae6e61c7c509bd8001bb514d9fc21e2b882f97",
+        "features": {
+          "words": 2879,
+          "paragraphs": 89,
+          "sentences": 204,
+          "sentence_words_median": 12.0,
+          "sentence_words_p90": 24.0,
+          "paragraph_sentences_median": 2,
+          "short_sentences_pct": 28.431,
+          "long_sentences_pct": 8.333,
+          "first_person_per_1000_words": 22.577,
+          "because_so_but_per_1000_words": 10.42,
+          "contractions_per_1000_words": 4.168
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-05-15-11-workshops-to-build-production.md",
+        "sha256": "719975bc9ba8c9a6672a1c6242805b0521f3d00b4d8733878a86cdcfa77c0daa",
+        "features": {
+          "words": 1751,
+          "paragraphs": 53,
+          "sentences": 115,
+          "sentence_words_median": 15,
+          "sentence_words_p90": 25.0,
+          "paragraph_sentences_median": 2,
+          "short_sentences_pct": 26.087,
+          "long_sentences_pct": 8.696,
+          "first_person_per_1000_words": 19.417,
+          "because_so_but_per_1000_words": 7.995,
+          "contractions_per_1000_words": 11.993
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-05-22-the-system-i-built-to-ship-code-from.md",
+        "sha256": "ec31ca9a192e3ca83f844f95fdb9de7a8c3696baffb56934fbd4157412448677",
+        "features": {
+          "words": 1747,
+          "paragraphs": 60,
+          "sentences": 128,
+          "sentence_words_median": 13.0,
+          "sentence_words_p90": 20.3,
+          "paragraph_sentences_median": 2.0,
+          "short_sentences_pct": 27.344,
+          "long_sentences_pct": 3.906,
+          "first_person_per_1000_words": 68.117,
+          "because_so_but_per_1000_words": 10.876,
+          "contractions_per_1000_words": 12.593
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-05-29-minsearch-the-small-search-library.md",
+        "sha256": "3d89fffff6bc331db36e78834bbeaf7f68cefc0b659c7d7ac0b9b76a5cbe3ed2",
+        "features": {
+          "words": 1780,
+          "paragraphs": 66,
+          "sentences": 119,
+          "sentence_words_median": 14,
+          "sentence_words_p90": 25.0,
+          "paragraph_sentences_median": 2.0,
+          "short_sentences_pct": 27.731,
+          "long_sentences_pct": 8.403,
+          "first_person_per_1000_words": 37.64,
+          "because_so_but_per_1000_words": 10.674,
+          "contractions_per_1000_words": 4.494
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-06-05-how-to-set-up-your-coding-agent-a.md",
+        "sha256": "dc47aeac62dfae0db6c12d054e55b71495b128f329253f919b02a6d60e2af55f",
+        "features": {
+          "words": 2170,
+          "paragraphs": 95,
+          "sentences": 153,
+          "sentence_words_median": 13,
+          "sentence_words_p90": 25.0,
+          "paragraph_sentences_median": 1,
+          "short_sentences_pct": 29.412,
+          "long_sentences_pct": 8.497,
+          "first_person_per_1000_words": 34.101,
+          "because_so_but_per_1000_words": 7.373,
+          "contractions_per_1000_words": 13.364
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-06-12-ai-design-for-non-designers.md",
+        "sha256": "f72c682cd04ba7f3cd387cef39dfca8bdaa174e1dbb4dd1ada97a1d11fbb02ea",
+        "features": {
+          "words": 1810,
+          "paragraphs": 67,
+          "sentences": 122,
+          "sentence_words_median": 14.0,
+          "sentence_words_p90": 24.0,
+          "paragraph_sentences_median": 2,
+          "short_sentences_pct": 18.033,
+          "long_sentences_pct": 8.197,
+          "first_person_per_1000_words": 53.039,
+          "because_so_but_per_1000_words": 15.47,
+          "contractions_per_1000_words": 11.05
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-06-19-the-system-i-built-for-aws-access.md",
+        "sha256": "08f13a4c73e72a4031bda45ff43786ca1e39e731c951b0cd92319b295ee08eff",
+        "features": {
+          "words": 2221,
+          "paragraphs": 57,
+          "sentences": 149,
+          "sentence_words_median": 13,
+          "sentence_words_p90": 26.0,
+          "paragraph_sentences_median": 2,
+          "short_sentences_pct": 28.188,
+          "long_sentences_pct": 13.423,
+          "first_person_per_1000_words": 62.584,
+          "because_so_but_per_1000_words": 16.659,
+          "contractions_per_1000_words": 14.858
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-06-26-six-projects-that-didnt-make-it.md",
+        "sha256": "c7127bcbeee81c84dbd7d73477e8d91f239a6e744aa828a509980ad0c1d6fc83",
+        "features": {
+          "words": 3555,
+          "paragraphs": 103,
+          "sentences": 225,
+          "sentence_words_median": 15,
+          "sentence_words_p90": 25.6,
+          "paragraph_sentences_median": 2,
+          "short_sentences_pct": 18.667,
+          "long_sentences_pct": 10.222,
+          "first_person_per_1000_words": 60.197,
+          "because_so_but_per_1000_words": 12.94,
+          "contractions_per_1000_words": 7.314
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-07-03-choosing-a-portfolio-project-the.md",
+        "sha256": "0e11af59df523e3e2af8f696b7085b6939f8c50fa53a7981d1f4ffe05f80c663",
+        "features": {
+          "words": 2550,
+          "paragraphs": 90,
+          "sentences": 172,
+          "sentence_words_median": 14.0,
+          "sentence_words_p90": 24.0,
+          "paragraph_sentences_median": 2.0,
+          "short_sentences_pct": 23.837,
+          "long_sentences_pct": 8.721,
+          "first_person_per_1000_words": 12.549,
+          "because_so_but_per_1000_words": 9.804,
+          "contractions_per_1000_words": 8.235
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-07-11-my-pypi-release-pipeline-for-python.md",
+        "sha256": "f5f8f4386d6f7cf9c0e8d5b9c03866093ab632492fa1acde666eade3ac1cf5a8",
+        "features": {
+          "words": 1754,
+          "paragraphs": 66,
+          "sentences": 126,
+          "sentence_words_median": 13.0,
+          "sentence_words_p90": 23.0,
+          "paragraph_sentences_median": 2.0,
+          "short_sentences_pct": 26.984,
+          "long_sentences_pct": 6.349,
+          "first_person_per_1000_words": 66.135,
+          "because_so_but_per_1000_words": 9.122,
+          "contractions_per_1000_words": 3.991
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-07-16-how-to-write-a-good-readme.md",
+        "sha256": "b7cb3e3bdc656bb4679171188be2a3b65337bb02584fe3ac99f4fb943a358e6b",
+        "features": {
+          "words": 3306,
+          "paragraphs": 147,
+          "sentences": 232,
+          "sentence_words_median": 14.0,
+          "sentence_words_p90": 22.0,
+          "paragraph_sentences_median": 1,
+          "short_sentences_pct": 26.293,
+          "long_sentences_pct": 4.31,
+          "first_person_per_1000_words": 10.284,
+          "because_so_but_per_1000_words": 10.284,
+          "contractions_per_1000_words": 2.117
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-07-22-ai-native-development-specifications.md",
+        "sha256": "3b963323f423c27ce00c8911c01e96b89d8e7f42b128909d873d561d6d3cabf6",
+        "features": {
+          "words": 2398,
+          "paragraphs": 123,
+          "sentences": 187,
+          "sentence_words_median": 12,
+          "sentence_words_p90": 21.0,
+          "paragraph_sentences_median": 1,
+          "short_sentences_pct": 30.481,
+          "long_sentences_pct": 1.07,
+          "first_person_per_1000_words": 17.098,
+          "because_so_but_per_1000_words": 7.923,
+          "contractions_per_1000_words": 15.43
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-07-25-what-ai-forward-deployed-engineers.md",
+        "sha256": "8452048ae18cfdef08902242640160f71e7f35a03550d8c9a122963f3cc1aac0",
+        "features": {
+          "words": 970,
+          "paragraphs": 41,
+          "sentences": 64,
+          "sentence_words_median": 14.0,
+          "sentence_words_p90": 24.0,
+          "paragraph_sentences_median": 1,
+          "short_sentences_pct": 23.438,
+          "long_sentences_pct": 3.125,
+          "first_person_per_1000_words": 2.062,
+          "because_so_but_per_1000_words": 10.309,
+          "contractions_per_1000_words": 1.031
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-08-01-rebuilding-a-faq-system-for-datatalksclub.md",
+        "sha256": "b66740bbc06b40d5db565a54b512bacc655083bdf9cc8de848da963e8327e75d",
+        "features": {
+          "words": 2553,
+          "paragraphs": 102,
+          "sentences": 185,
+          "sentence_words_median": 13,
+          "sentence_words_p90": 23.0,
+          "paragraph_sentences_median": 1.0,
+          "short_sentences_pct": 25.946,
+          "long_sentences_pct": 4.865,
+          "first_person_per_1000_words": 47.787,
+          "because_so_but_per_1000_words": 16.06,
+          "contractions_per_1000_words": 7.442
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-08-03-build-and-ship-a-full-stack-app-with.md",
+        "sha256": "a9c5aa7076d9b3f12238482323f98789dd70b7ceb4d051a5a43b7c6e242a5b56",
+        "features": {
+          "words": 1495,
+          "paragraphs": 83,
+          "sentences": 129,
+          "sentence_words_median": 11,
+          "sentence_words_p90": 19.0,
+          "paragraph_sentences_median": 1,
+          "short_sentences_pct": 40.31,
+          "long_sentences_pct": 0.0,
+          "first_person_per_1000_words": 16.054,
+          "because_so_but_per_1000_words": 14.716,
+          "contractions_per_1000_words": 10.033
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-08-08-getting-an-ai-engineering-job.md",
+        "sha256": "80219fa9a89d5c8de8c7d428c5261ed285f924bd93d0998a6decabd9d3f92c53",
+        "features": {
+          "words": 2400,
+          "paragraphs": 98,
+          "sentences": 185,
+          "sentence_words_median": 13,
+          "sentence_words_p90": 21.0,
+          "paragraph_sentences_median": 1.0,
+          "short_sentences_pct": 32.432,
+          "long_sentences_pct": 3.784,
+          "first_person_per_1000_words": 16.667,
+          "because_so_but_per_1000_words": 10.0,
+          "contractions_per_1000_words": 15.833
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-08-10-deploy-a-full-stack-app-with-ai-coding.md",
+        "sha256": "2142d15053a5103228784e68ecd86831f236639f804bc0b857938cbabaf98fea",
+        "features": {
+          "words": 1018,
+          "paragraphs": 64,
+          "sentences": 87,
+          "sentence_words_median": 11,
+          "sentence_words_p90": 19.4,
+          "paragraph_sentences_median": 1.0,
+          "short_sentences_pct": 42.529,
+          "long_sentences_pct": 1.149,
+          "first_person_per_1000_words": 9.823,
+          "because_so_but_per_1000_words": 14.735,
+          "contractions_per_1000_words": 11.788
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-08-14-how-to-do-evals-in-2026.md",
+        "sha256": "98e01f977dce5c587a514a02e34b3a313bcaa4553548101eeccba69ca4bfe906",
+        "features": {
+          "words": 1712,
+          "paragraphs": 79,
+          "sentences": 130,
+          "sentence_words_median": 12.0,
+          "sentence_words_p90": 23.0,
+          "paragraph_sentences_median": 1,
+          "short_sentences_pct": 33.846,
+          "long_sentences_pct": 6.154,
+          "first_person_per_1000_words": 14.019,
+          "because_so_but_per_1000_words": 12.85,
+          "contractions_per_1000_words": 11.682
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-08-18-devops-and-observability-for-an-ai.md",
+        "sha256": "9f4d38f182b24691f09a20fdce7b0370a5990dafc87925db85cd1b0145491855",
+        "features": {
+          "words": 1698,
+          "paragraphs": 80,
+          "sentences": 124,
+          "sentence_words_median": 12.0,
+          "sentence_words_p90": 22.7,
+          "paragraph_sentences_median": 1.0,
+          "short_sentences_pct": 27.419,
+          "long_sentences_pct": 6.452,
+          "first_person_per_1000_words": 6.478,
+          "because_so_but_per_1000_words": 11.19,
+          "contractions_per_1000_words": 6.478
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-08-28-from-idea-to-production.md",
+        "sha256": "ef44bc741d33a09a3f2bd90ea6c8cf6f4f2f341a73723f6656d8333dee14abfa",
+        "features": {
+          "words": 1985,
+          "paragraphs": 112,
+          "sentences": 166,
+          "sentence_words_median": 11.0,
+          "sentence_words_p90": 19.5,
+          "paragraph_sentences_median": 1.0,
+          "short_sentences_pct": 37.349,
+          "long_sentences_pct": 3.614,
+          "first_person_per_1000_words": 10.076,
+          "because_so_but_per_1000_words": 15.617,
+          "contractions_per_1000_words": 13.098
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-08-31-ai-dev-tools-zoomcamp-2026-starts.md",
+        "sha256": "e08aaba61b6bdf17b112b4a2b9154a1f943f87e6e8f5a6a211ce122bd213c7af",
+        "features": {
+          "words": 1400,
+          "paragraphs": 54,
+          "sentences": 95,
+          "sentence_words_median": 14,
+          "sentence_words_p90": 22.0,
+          "paragraph_sentences_median": 1.0,
+          "short_sentences_pct": 16.842,
+          "long_sentences_pct": 1.053,
+          "first_person_per_1000_words": 2.143,
+          "because_so_but_per_1000_words": 6.429,
+          "contractions_per_1000_words": 5.714
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-08-31-coding-agent-building-blocks-reusable.md",
+        "sha256": "5271405b9bf02056aebc704a5ed7d10486df08cda69f36030f0b32351da49137",
+        "features": {
+          "words": 1786,
+          "paragraphs": 93,
+          "sentences": 128,
+          "sentence_words_median": 13.0,
+          "sentence_words_p90": 22.3,
+          "paragraph_sentences_median": 1,
+          "short_sentences_pct": 27.344,
+          "long_sentences_pct": 5.469,
+          "first_person_per_1000_words": 33.595,
+          "because_so_but_per_1000_words": 13.438,
+          "contractions_per_1000_words": 11.758
+        }
+      },
+      {
+        "path": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-09-04-13-ai-projects-from-ai-engineering.md",
+        "sha256": "7c7370a31dee0b59576d1f6fa01792c4a0a637030db58d04f07d0483f416e315",
+        "features": {
+          "words": 1539,
+          "paragraphs": 73,
+          "sentences": 125,
+          "sentence_words_median": 12,
+          "sentence_words_p90": 19.0,
+          "paragraph_sentences_median": 1,
+          "short_sentences_pct": 36.8,
+          "long_sentences_pct": 0.8,
+          "first_person_per_1000_words": 6.498,
+          "because_so_but_per_1000_words": 5.848,
+          "contractions_per_1000_words": 5.848
+        }
+      }
+    ]
+  },
+  "candidate": {
+    "files": 2,
+    "measured_files": 2,
+    "empty_prose_files": 0,
+    "total_prose_words": 666,
+    "median_per_document": {
+      "words": 333.0,
+      "paragraphs": 6.0,
+      "sentences": 22.5,
+      "sentence_words_median": 13.5,
+      "sentence_words_p90": 22.5,
+      "paragraph_sentences_median": 3.5,
+      "short_sentences_pct": 15.587,
+      "long_sentences_pct": 0.0,
+      "first_person_per_1000_words": 73.017,
+      "because_so_but_per_1000_words": 14.871,
+      "contractions_per_1000_words": 6.684
+    },
+    "documents": [
+      {
+        "path": "/home/alexey/git/stylint/research/alexey-voice/output/experiment/holdout/sqlitesearch-clean-brief.md",
+        "sha256": "f25d4122a93baafb56166daec137b30f23898fd783aa7e83b2bb393a336057b7",
+        "features": {
+          "words": 292,
+          "paragraphs": 5,
+          "sentences": 19,
+          "sentence_words_median": 14,
+          "sentence_words_p90": 24.0,
+          "paragraph_sentences_median": 4,
+          "short_sentences_pct": 15.789,
+          "long_sentences_pct": 0.0,
+          "first_person_per_1000_words": 68.493,
+          "because_so_but_per_1000_words": 13.699,
+          "contractions_per_1000_words": 0.0
+        },
+        "lint": [
+          {
+            "line": 7,
+            "tag": "banned-phrase",
+            "message": "'hand (verb)' - drop the 'hand' metaphor. A tool, system, or workshop does not 'hand' the reader anything. Use 'give', or say it plainly: 'gives you a system', 'you get a repeatable process', 'it sets up'. (The noun 'hand', 'hands-on', and 'hand off' are fine.)"
+          }
+        ]
+      },
+      {
+        "path": "/home/alexey/git/stylint/research/alexey-voice/output/experiment/holdout/sqlitesearch-raw.md",
+        "sha256": "8241d7117e514f6f1b67f82e34db5a1b0ae730b4fd4fb355725461a8e23f2d09",
+        "features": {
+          "words": 374,
+          "paragraphs": 7,
+          "sentences": 26,
+          "sentence_words_median": 13.0,
+          "sentence_words_p90": 21.0,
+          "paragraph_sentences_median": 3,
+          "short_sentences_pct": 15.385,
+          "long_sentences_pct": 0.0,
+          "first_person_per_1000_words": 77.54,
+          "because_so_but_per_1000_words": 16.043,
+          "contractions_per_1000_words": 13.369
+        },
+        "lint": [
+          {
+            "line": 3,
+            "tag": "choppy-rhythm",
+            "message": "a very short sentence (4 words) sits right before a longer one; it is too small to stand alone. Fix: merge it into the next sentence with a comma or conjunction ('Retrieval becomes semantic, and the data moves to a store that survives restarts')."
+          },
+          {
+            "line": 5,
+            "tag": "repeated-and",
+            "message": "polysyndetic chain 'keep the setup easy and support both text and vector search. Google Colab': three or more items joined by 'and' instead of commas. Fix: use the oxford comma form ('Claude Code, Codex and OpenCode'). Keep the repeated 'and' only when the rhythm is intentional (rare)."
+          },
+          {
+            "line": 5,
+            "tag": "paragraph-too-long",
+            "message": "paragraph has 6 sentences (max 5); split into 2-4 sentence paragraphs"
+          },
+          {
+            "line": 7,
+            "tag": "semicolon",
+            "message": "semicolon in prose; use two sentences instead"
+          }
+        ]
+      }
+    ],
+    "lint": {
+      "findings": 5,
+      "tags": {
+        "banned-phrase": 1,
+        "choppy-rhythm": 1,
+        "paragraph-too-long": 1,
+        "repeated-and": 1,
+        "semicolon": 1
+      },
+      "files_without_findings": 0,
+      "scope": "Full Markdown, default tags, NLP off; reference is never linted."
+    }
+  }
+}

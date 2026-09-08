@@ -1,0 +1,18 @@
+{
+  "id": "008",
+  "source_path": "research/luna-100/sources/raw/2026-01-02-benefits-of-learning-in-public-and.md",
+  "purpose": "reader-facing explanation of the eight source-supported benefits of learning in public",
+  "required_facts": [
+    {"fact": "Public learning can increase the chance that recruiters, employers, or collaborators notice work.", "evidence": "Source line 24: visibility and unsolicited opportunities are listed as the first benefit."},
+    {"fact": "Explaining a topic publicly can clarify understanding and reveal knowledge gaps.", "evidence": "Source lines 25 and 55: the benefit list and Eugene Yan's writing observation support this."},
+    {"fact": "Public sharing invites feedback and alternative approaches from people working on similar problems.", "evidence": "Source lines 26 and 69: feedback is listed and illustrated by Will McGugan's updates."},
+    {"fact": "Consistent sharing can build a track record that signals competence and reliability.", "evidence": "Source lines 27 and 82-84: credibility over time and durable proof are described."},
+    {"fact": "Visible progress can create external pressure that helps learners complete difficult goals.", "evidence": "Source lines 28 and 95-100: accountability, peer updates, and leaderboards are described."},
+    {"fact": "Sharing blockers and imperfect explanations can bring help and turn private frustration into shared problem-solving.", "evidence": "Source lines 29 and 104-108: support when stuck and correction through discussion are described."},
+    {"fact": "Posts, notebooks, repositories, and projects can provide concrete evidence of applied skills.", "evidence": "Source lines 30 and 115-119: visible portfolio artifacts are described."},
+    {"fact": "Public work can lead to unplanned collaborations, invitations, or business opportunities.", "evidence": "Source lines 31 and 123-127: unexpected opportunities and Will McGugan's investor example are given."},
+    {"fact": "Pastor Soto received recruiter outreach, including from Meta, after sharing ML Zoomcamp progress without applying.", "evidence": "Source line 44: the concrete visibility example is stated."},
+    {"fact": "The source qualifies that learning in public does not guarantee outcomes.", "evidence": "Source lines 42 and 153: publication increases chances but does not guarantee outcomes."}
+  ],
+  "author_attribution": "Present the benefits as observations and examples from the DataTalks.Club community and podcast guests, preserving the source's qualification that outcomes are not guaranteed."
+}

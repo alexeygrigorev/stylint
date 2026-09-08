@@ -1,0 +1,58 @@
+{
+  "id": "038",
+  "source_path": "research/luna-100/sources/raw/2026-03-20-i-turned-my-telegram-bot-into-a-multi.md",
+  "article_purpose": "explanation",
+  "author_attribution_notes": "Facts and project ownership are attributed to the source author; no additional personal experience or results added.",
+  "required_facts": [
+    {
+      "id": 1,
+      "claim": "In one of my previous newsletters, I wrote about my [Telegram Writing Assistant], a bot that takes raw voice notes, text messages, and links sent to a private Telegram channel and turns them into structured Markdown draf",
+      "source_evidence": "In one of my previous newsletters, I wrote about my [Telegram Writing Assistant], a bot that takes raw voice notes, text messages, and links sent to a private Telegram channel and turns them into structured Markdown drafts.​ Over time, the system expanded."
+    },
+    {
+      "id": 2,
+      "claim": "It fetched external links, summarized long articles, organized research topics, and prepared newsletter resources.",
+      "source_evidence": "It fetched external links, summarized long articles, organized research topics, and prepared newsletter resources."
+    },
+    {
+      "id": 3,
+      "claim": "All of this happened inside a single context window.​ When multiple URLs or messages were processed together, the context filled up quickly.",
+      "source_evidence": "All of this happened inside a single context window.​ When multiple URLs or messages were processed together, the context filled up quickly."
+    },
+    {
+      "id": 4,
+      "claim": "That led to compaction, slower responses, and occasional loss of detail.",
+      "source_evidence": "That led to compaction, slower responses, and occasional loss of detail."
+    },
+    {
+      "id": 5,
+      "claim": "To address this, I refactored the workflow using Claude Code subagents.",
+      "source_evidence": "To address this, I refactored the workflow using Claude Code subagents."
+    },
+    {
+      "id": 6,
+      "claim": "Instead of a single overloaded process, the system is now split into specialized agents with defined roles.",
+      "source_evidence": "Instead of a single overloaded process, the system is now split into specialized agents with defined roles."
+    },
+    {
+      "id": 7,
+      "claim": "The main agent coordinates and processes voice messages.",
+      "source_evidence": "The main agent coordinates and processes voice messages."
+    },
+    {
+      "id": 8,
+      "claim": "Separate subagents handle research, link curation, and verification.",
+      "source_evidence": "Separate subagents handle research, link curation, and verification."
+    },
+    {
+      "id": 9,
+      "claim": "In this newsletter, I describe the subagents and new capabilities that I introduced to my Telegram Assistant.",
+      "source_evidence": "In this newsletter, I describe the subagents and new capabilities that I introduced to my Telegram Assistant."
+    },
+    {
+      "id": 10,
+      "claim": "Creating Subagents and Their Benefits Claude Code allows you to create subagents via the /agents command.",
+      "source_evidence": "Creating Subagents and Their Benefits Claude Code allows you to create subagents via the /agents command."
+    }
+  ]
+}

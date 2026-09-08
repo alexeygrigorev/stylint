@@ -1,0 +1,25 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-07-16-how-to-write-a-good-readme.md",
+  "original_path": "research/luna-100/output/round-1/076-explanation.md",
+  "revised_path": "research/luna-100/output/round-2/076-explanation.md",
+  "word_count": 632,
+  "required_facts_checked": [
+    {"claim": "A README functions as the landing page before readers inspect code.", "status": "present", "evidence": "source: first file people read"},
+    {"claim": "The page serves peer reviewers, hiring teams, and the future maintainer.", "status": "present", "evidence": "source: three audiences"},
+    {"claim": "The opening identifies the user, problem, and solution.", "status": "present", "evidence": "source: title and short description guidance"},
+    {"claim": "A demo should show the core workflow early and can use a live link, video, GIF, screenshots, or sample I/O.", "status": "present", "evidence": "source: demo section"},
+    {"claim": "Evaluation documents datasets, cases, metrics, baselines, and improvements.", "status": "present", "evidence": "source: evaluation evidence requirements"},
+    {"claim": "Testing should state available checks and limitations, including when there are no automated tests.", "status": "present", "evidence": "source: testing section"},
+    {"claim": "Monitoring names stored data and metrics used to diagnose failures.", "status": "present", "evidence": "source: monitoring guidance"},
+    {"claim": "A clean-machine quickstart includes prerequisites, dependencies, configuration, services, and start command.", "status": "present", "evidence": "source: shortest reliable sequence"},
+    {"claim": "Architecture, trade-offs, project structure, and limitations connect claims to implementation.", "status": "present", "evidence": "source: architecture, decisions, and limitations sections"}
+  ],
+  "unsupported_claims_removed": [],
+  "substantive_edits": [
+    "Revised the article as reader-facing guidance rather than a third-person account.",
+    "Preserved the README sequence from user/problem through demo, evidence, reproduction, architecture, and limitations.",
+    "Kept the testing limitation and trade-off reasoning explicit while removing redundant verdicts."
+  ],
+  "full_final_lint_findings": [],
+  "unresolved_source_conflicts": []
+}

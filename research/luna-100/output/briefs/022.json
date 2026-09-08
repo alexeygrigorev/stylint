@@ -1,0 +1,18 @@
+{
+  "id": "022",
+  "source_path": "research/luna-100/sources/raw/2026-02-20-how-i-built-sqlitesearch-a-lightweight.md",
+  "purpose": "reader-facing explanation of SQLiteSearch's requirements, LSH design, local architecture, and release workflow",
+  "required_facts": [
+    {"fact": "SQLiteSearch was intended as a persistent local middle ground between in-memory minsearch and infrastructure-heavy search systems.", "evidence": "Source lines 15-17 and 85-93: minsearch limitation, project need, and conceptual position are described."},
+    {"fact": "The library needed Python availability, easy setup, local execution without Docker, and text plus vector search.", "evidence": "Source lines 21-26: requirements are listed."},
+    {"fact": "Elasticsearch was described as aimed at large production systems, while Qdrant and PostgreSQL would require external services or Docker in this use case.", "evidence": "Source line 28: alternatives and setup trade-offs are specified."},
+    {"fact": "SQLite provided embedded text search and persistent storage but no built-in vector search.", "evidence": "Source lines 34-36: SQLite discovery and vector-search limitation are stated."},
+    {"fact": "lshashing stored hash tables in memory, SparseLSH lacked SQLite support, and narrow-down used a native Rust extension.", "evidence": "Source lines 43-49: candidate limitations are documented."},
+    {"fact": "The implementation used locality-sensitive hashing based on random projections familiar to Alexey.", "evidence": "Source line 55: algorithm and rationale are stated."},
+    {"fact": "The API was designed to resemble minsearch so Buildcamp participants would not need to learn a new interface.", "evidence": "Source line 57: API compatibility goal is specified."},
+    {"fact": "ChatGPT created the plan, Claude Code read plan.md and implemented the library, and tests were requested.", "evidence": "Source lines 64-69: plan, repository, implementation, and testing are described."},
+    {"fact": "The final index stores data tables, lookup structures, and metadata in one SQLite file and runs without a separate server.", "evidence": "Source lines 85-89: single-file architecture and operational properties are stated."},
+    {"fact": "A /release command automates PyPI publishing and can rerun after Claude diagnoses build or test failures.", "evidence": "Source lines 97-101: release workflow and failure handling are described."}
+  ],
+  "author_attribution": "Explain the historical design as documented by Alexey and preserve that SQLiteSearch targets small personal and course projects rather than every production workload."
+}

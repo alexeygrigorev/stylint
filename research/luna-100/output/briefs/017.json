@@ -1,0 +1,18 @@
+{
+  "id": "017",
+  "source_path": "research/luna-100/sources/raw/2026-02-06-building-and-maintaining-a-slack.md",
+  "purpose": "personal account of Alexey building AuTomator and repairing it with Claude Code",
+  "required_facts": [
+    {"fact": "The DataTalks.Club community had more than 88,000 people across many Slack channels.", "evidence": "Source line 3: community scale and Slack distribution are stated."},
+    {"fact": "Manual moderation of shameless-promotion channels required deleting rule-breaking messages and sending explanatory DMs.", "evidence": "Source lines 5-7: rules, manual actions, and motivation for automation are described."},
+    {"fact": "AuTomator was built in June 2022 and continued to gain features as new needs appeared.", "evidence": "Source line 12: origin date and continuing feature work are stated."},
+    {"fact": "AuTomator runs as an AWS Lambda backend split into three Lambdas.", "evidence": "Source lines 19-21: runtime and three-part architecture are specified."},
+    {"fact": "The router checks whether an admin added a reaction and stays lightweight because Slack requires rapid event acknowledgement.", "evidence": "Source lines 25-27: routing condition and timeout reason are described."},
+    {"fact": "The automator maps configured emoji reactions in YAML to actions such as deleting, reposting, or generating an AI reply.", "evidence": "Source lines 31-37: YAML mapping and reaction actions are listed."},
+    {"fact": "The moderator Lambda was implemented with GitHub Copilot but had not been deployed and still needed real-world testing.", "evidence": "Source lines 41-45: moderator status, purpose, and actions are stated."},
+    {"fact": "Claude Code was asked to inspect the previous two hours of logs after a reaction failed to delete a message.", "evidence": "Source lines 49-60: failure, context, and diagnostic request are described."},
+    {"fact": "The repair found a missing GROQ_API_KEY for ask-ai reactions and a curly-braces deletion error.", "evidence": "Source lines 62-67: both causes and fixes are specified."},
+    {"fact": "The repair finished while Alexey was preparing for a family trip and required no browser or AWS console interaction.", "evidence": "Source lines 58-71: time constraint, completion, and operational context are stated."}
+  ],
+  "author_attribution": "Attribute the bot, its maintenance, and tool preferences to Alexey; preserve that the moderator remained untested and the repair had two identified causes."
+}

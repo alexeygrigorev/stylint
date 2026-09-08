@@ -1,0 +1,17 @@
+{
+  "id": "050",
+  "source_path": "research/luna-100/sources/raw/2026-04-17-how-we-built-ai-shipping-labs.md",
+  "source_sha256": "4d1369596c27c86a31b0a793372b4a588096c29ad9e3442b9a76efae697c2d83",
+  "before_path": "research/luna-100/output/round-2/050-explanation.md",
+  "before_sha256": "e64317bde3d03d0df7f6e0e5f1e2e10301d1fac3db115e65e0fa9aead919e2b9",
+  "after_path": "research/luna-100/output/round-3/050-explanation.md",
+  "after_sha256": "b0e2fff2885a77d8562aa76b7a7c247383f44e025445b64ec143cbc4f48d0156",
+  "revision_author": "parent",
+  "substantive_edits": [
+    "Replaced the wrong FAQ article with the assigned website-construction source.",
+    "Preserved Valeriia/Alexey responsibilities, growing-backlog counts and Django preparation status."
+  ],
+  "new_rules_findings": 0,
+  "full_default_findings": 0,
+  "unresolved_source_conflicts": []
+}

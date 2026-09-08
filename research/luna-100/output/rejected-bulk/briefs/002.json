@@ -1,0 +1,48 @@
+{
+  "id": "002",
+  "source_path": "research/luna-100/sources/raw/2025-12-12-how-i-built-a-fully-automated-image.md",
+  "purpose": "reader-facing explanation of the supported workflow or idea",
+  "required_facts": [
+    {
+      "fact": "Podcast on Spotify Right now, the site contains **1200+ stories**.",
+      "evidence": "research/luna-100/sources/raw/2025-12-12-how-i-built-a-fully-automated-image.md"
+    },
+    {
+      "fact": "All the stories are in Russian, but I translated [one of them](https://alexeygrigorev.com/kids-horror-stories-ru/stories/1255-the-green-wall/) so you can get a sense of the format and tone: 0:00 -2:25 Audio playback is n",
+      "evidence": "research/luna-100/sources/raw/2025-12-12-how-i-built-a-fully-automated-image.md"
+    },
+    {
+      "fact": "In this post, I want to walk through how the project is built: its architecture, scripts, prompts, and automation.",
+      "evidence": "research/luna-100/sources/raw/2025-12-12-how-i-built-a-fully-automated-image.md"
+    },
+    {
+      "fact": "During a walk, he pointed at a parked car and asked if I could make up a horror story about it.",
+      "evidence": "research/luna-100/sources/raw/2025-12-12-how-i-built-a-fully-automated-image.md"
+    },
+    {
+      "fact": "I improvised something, and he liked it.",
+      "evidence": "research/luna-100/sources/raw/2025-12-12-how-i-built-a-fully-automated-image.md"
+    },
+    {
+      "fact": "I asked Gemini to make a comic about the story with my son After that, he started pointing at more and more objects.",
+      "evidence": "research/luna-100/sources/raw/2025-12-12-how-i-built-a-fully-automated-image.md"
+    },
+    {
+      "fact": "At some point, I ran out of ideas.",
+      "evidence": "research/luna-100/sources/raw/2025-12-12-how-i-built-a-fully-automated-image.md"
+    },
+    {
+      "fact": "When he asked for a story about a tree we passed, I did what felt natural to me: I took a photo of the tree and asked ChatGPT to write a scary story based on the image.",
+      "evidence": "research/luna-100/sources/raw/2025-12-12-how-i-built-a-fully-automated-image.md"
+    },
+    {
+      "fact": "The result was better than I expected.",
+      "evidence": "research/luna-100/sources/raw/2025-12-12-how-i-built-a-fully-automated-image.md"
+    },
+    {
+      "fact": "The tone reminded me of the short urban legends and campfire horror stories I grew up with: simple, sometimes a bit silly, but kids loved them.",
+      "evidence": "research/luna-100/sources/raw/2025-12-12-how-i-built-a-fully-automated-image.md"
+    }
+  ],
+  "author_attribution": "Attribute projects and outcomes to the named author or participants in the source; do not add personal experience."
+}

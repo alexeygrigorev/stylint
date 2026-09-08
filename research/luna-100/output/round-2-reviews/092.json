@@ -1,0 +1,20 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-08-18-devops-and-observability-for-an-ai.md",
+  "original_path": "research/luna-100/output/round-1/092-explanation.md",
+  "revised_path": "research/luna-100/output/round-2/092-explanation.md",
+  "word_count": 413,
+  "required_facts_checked": [
+    {"claim": "Development and production use separate environments.", "status": "present", "evidence": "source: two copies of the same environment"},
+    {"claim": "The exact tested image is promoted to production.", "status": "present", "evidence": "source: pull the same image to prod"},
+    {"claim": "Metrics, logs, and traces provide different kinds of evidence.", "status": "present", "evidence": "source: Metrics... Logs... Traces"},
+    {"claim": "An OpenTelemetry Collector routes telemetry.", "status": "present", "evidence": "source: define an OpenTelemetry Collector"},
+    {"claim": "Prometheus, Loki, Tempo, and Grafana are one possible stack.", "status": "present", "evidence": "source: I’ll use Prometheus for metrics"},
+    {"claim": "Metrics should include rooms, participants, elements, and failures.", "status": "present", "evidence": "source: rooms created, active participants"},
+    {"claim": "Alerts need a threshold, duration, owner, and dashboard details.", "status": "present", "evidence": "source: Add an actionable alert"},
+    {"claim": "A bounded on-call agent can receive alert details and investigate.", "status": "present", "evidence": "source: pass the alert details to a headless coding agent"}
+  ],
+  "unsupported_claims_removed": [],
+  "substantive_edits": ["Converted the source account into a teaching sequence from deployment through response.", "Preserved the distinction between a self-hosted stack and managed service.", "Kept false-positive handling, escalation, and access controls as limitations rather than promises."],
+  "full_final_lint_findings": [],
+  "unresolved_source_conflicts": []
+}

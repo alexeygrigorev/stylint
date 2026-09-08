@@ -1,0 +1,48 @@
+{
+  "id": "032",
+  "source_path": "research/luna-100/sources/raw/2026-03-11-how-crisp-dm-still-applies-to-ai.md",
+  "purpose": "reader-facing explanation of the supported workflow or idea",
+  "required_facts": [
+    {
+      "fact": "If you come from machine learning or data science backgrounds, there’s a high chance you already know CRISP-DM, a framework developed in the 1990s for structuring data projects and later actively adopted by the DS and ML",
+      "evidence": "research/luna-100/sources/raw/2026-03-11-how-crisp-dm-still-applies-to-ai.md"
+    },
+    {
+      "fact": "At first glance, AI engineering can look like a completely different discipline.",
+      "evidence": "research/luna-100/sources/raw/2026-03-11-how-crisp-dm-still-applies-to-ai.md"
+    },
+    {
+      "fact": "Today’s teams work with LLM APIs, retrieval pipelines, agents, prompts, evaluation tooling, and production observability.",
+      "evidence": "research/luna-100/sources/raw/2026-03-11-how-crisp-dm-still-applies-to-ai.md"
+    },
+    {
+      "fact": "But if you step back from the tools, the underlying development process is less new than it seems.",
+      "evidence": "research/luna-100/sources/raw/2026-03-11-how-crisp-dm-still-applies-to-ai.md"
+    },
+    {
+      "fact": "Many of the stages of the work still map reasonably well to the CRISP-DM lifecycle.",
+      "evidence": "research/luna-100/sources/raw/2026-03-11-how-crisp-dm-still-applies-to-ai.md"
+    },
+    {
+      "fact": "In this post, we use CRISP-DM as a reference point to look at AI engineering work phase by phase.",
+      "evidence": "research/luna-100/sources/raw/2026-03-11-how-crisp-dm-still-applies-to-ai.md"
+    },
+    {
+      "fact": "We show where the structure still holds and how it can help when planning or analyzing modern AI systems.",
+      "evidence": "research/luna-100/sources/raw/2026-03-11-how-crisp-dm-still-applies-to-ai.md"
+    },
+    {
+      "fact": "To create a new listing, they fill out the form with the item’s title, description, category, and price.",
+      "evidence": "research/luna-100/sources/raw/2026-03-11-how-crisp-dm-still-applies-to-ai.md"
+    },
+    {
+      "fact": "Instead of asking a user to fill in every field manually, we may want to create an AI feature that automatically suggests fields based on a user-uploaded photo.",
+      "evidence": "research/luna-100/sources/raw/2026-03-11-how-crisp-dm-still-applies-to-ai.md"
+    },
+    {
+      "fact": "With that example in mind, we can walk through the CRISP-DM phases.",
+      "evidence": "research/luna-100/sources/raw/2026-03-11-how-crisp-dm-still-applies-to-ai.md"
+    }
+  ],
+  "author_attribution": "Attribute projects and outcomes to the named author or participants in the source; do not add personal experience."
+}

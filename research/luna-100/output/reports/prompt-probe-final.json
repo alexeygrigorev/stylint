@@ -1,0 +1,31 @@
+{
+  "raw_findings": 29,
+  "same_source_baseline_findings": 70,
+  "final_findings": 0,
+  "documents": [
+    {
+      "path": "research/luna-100/output/prompt-probe/revised/p01-account.md",
+      "sha256": "2b17a55187308f044a646acac84791a72bc333643da92bf7296a07d5a500a046",
+      "words": 444,
+      "findings": 0
+    },
+    {
+      "path": "research/luna-100/output/prompt-probe/revised/p02-explanation.md",
+      "sha256": "e57a0d0cc8473ef7c0447f190d7799a7e2c2f75fe70b792340217766f3f320a0",
+      "words": 476,
+      "findings": 0
+    },
+    {
+      "path": "research/luna-100/output/prompt-probe/revised/p03-account.md",
+      "sha256": "a718e8d61e82227794b1b323e8ed8d0aa532c76671f1b7d98637a27694375b6b",
+      "words": 474,
+      "findings": 0
+    },
+    {
+      "path": "research/luna-100/output/prompt-probe/revised/p04-explanation.md",
+      "sha256": "80db5a7ba1a11348e8797a24db83de9c288317b38d5b76ae4cb7640992d38952",
+      "words": 459,
+      "findings": 0
+    }
+  ]
+}

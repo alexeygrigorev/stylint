@@ -1,0 +1,21 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-08-31-coding-agent-building-blocks-reusable.md",
+  "original_path": "research/luna-100/output/round-1/097-account.md",
+  "revised_path": "research/luna-100/output/round-2/097-account.md",
+  "word_count": 429,
+  "required_facts_checked": [
+    {"claim": "A skill describes a repeatable procedure.", "status": "present", "evidence": "source: A skill describes how to perform a repeatable task"},
+    {"claim": "A subagent runs in a separate context.", "status": "present", "evidence": "source: an agent that runs in a separate context"},
+    {"claim": "The release skill runs tests, pushes code, and verifies CI.", "status": "present", "evidence": "source: Run the tests... Push the code... Verify CI"},
+    {"claim": "Skills use frontmatter with a name and description.", "status": "present", "evidence": "source: frontmatter section with a name and description"},
+    {"claim": "Global examples include release, init-library, and repository creation.", "status": "present", "evidence": "source: release... init-library... create-github-repo"},
+    {"claim": "Project-specific skills should remain local.", "status": "present", "evidence": "source: Most skills are not useful globally"},
+    {"claim": "PM, software-engineer, and QA roles divide the agent work.", "status": "present", "evidence": "source: Product manager... Software engineer... QA engineer"},
+    {"claim": "A new skill records corrections discovered during real work.", "status": "present", "evidence": "source: record corrections I actually made"},
+    {"claim": "Separate worktrees isolate concurrent tasks.", "status": "present", "evidence": "source: For each new task, create a new git worktree"}
+  ],
+  "unsupported_claims_removed": [],
+  "substantive_edits": ["Rebuilt the account around skills, subagents, and orchestration as separate building blocks.", "Kept the release example concrete while distinguishing global and project-local skills.", "Preserved independent QA context, worktrees, and the orchestrator’s scheduling role."],
+  "full_final_lint_findings": [],
+  "unresolved_source_conflicts": []
+}

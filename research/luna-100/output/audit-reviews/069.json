@@ -1,0 +1,44 @@
+{
+  "id": "069",
+  "draft_path": "research/luna-100/output/round-3/069-account.md",
+  "source_path": "research/luna-100/sources/raw/2026-06-26-six-projects-that-didnt-make-it.md",
+  "draft_sha256": "ca9a98dd06c9926b21e30765a0e52c043c4f885c77f3d572169e8856b2b19afe",
+  "source_sha256": "7fa32caf44b50890160cc14694ad5e3eb882ff602c83602f5dd20e9a9e34daa2",
+  "quote_pairs": [
+    {
+      "draft_quote": "I have 195 repositories on my personal GitHub account",
+      "source_quote": "My GitHub profile shows 195 repositories",
+      "facts_checked": true
+    },
+    {
+      "draft_quote": "Code Explainer was a small Streamlit app I built in October 2025",
+      "source_quote": "In October 2025, I built a small Streamlit app",
+      "facts_checked": true
+    },
+    {
+      "draft_quote": "After three hours the interface existed, but its buttons did nothing",
+      "source_quote": "After three hours, Claude had built the interface",
+      "facts_checked": true
+    },
+    {
+      "draft_quote": "The project became too ambitious to finish",
+      "source_quote": "CodeHive got too ambitious",
+      "facts_checked": true
+    },
+    {
+      "draft_quote": "It became the project I use most from this group",
+      "source_quote": "This is probably the project from this whole list that I use the most right now",
+      "facts_checked": true
+    }
+  ],
+  "false_causality_found": false,
+  "invented_first_person_actions_found": false,
+  "third_person_alexey_reference_found": false,
+  "repeated_closing_verdict_found": false,
+  "required_corrections": [
+    "Add the source qualification that the metabolism simulator failed as an application but succeeded as an experiment; the draft currently states unreliability without that distinction.",
+    "The draft says \u201cI expect to remove more\u201d; preserve the source uncertainty (\u201clikely\u201d) if edited."
+  ],
+  "semantic_status": "needs_correction",
+  "notes": "Full source and draft read; Python asserted every recorded quote substring before writing this sidecar."
+}

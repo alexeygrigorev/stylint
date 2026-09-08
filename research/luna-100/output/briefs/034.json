@@ -1,0 +1,18 @@
+{
+  "id": "034",
+  "source_path": "research/luna-100/sources/raw/2026-03-13-ai-set-up-my-infra-in-10-minutes.md",
+  "purpose": "reader-facing explanation of why the certificate experiment automated infrastructure more reliably than visual design",
+  "required_facts": [
+    {"fact": "The certificate project separated visual recreation from infrastructure hosting, and the two tasks had different automation outcomes.", "evidence": "Source lines 1-14: project scope and contrast are stated."},
+    {"fact": "The design loop used a creator model and a judge model to compare output with a reference image.", "evidence": "Source lines 34-41: two-model design is described."},
+    {"fact": "Claude's image understanding was insufficient for detailed layout comparison, so Gemini Flash evaluated similarity.", "evidence": "Source lines 36-48: evaluator choice and analysis are specified."},
+    {"fact": "Claude discarded earlier background work in one iteration, though Git allowed the change to be reverted.", "evidence": "Source lines 48-56: discarded work and recovery are documented."},
+    {"fact": "Gemini often rated visibly different outputs around 8/10 and stopped the loop too early.", "evidence": "Source lines 58-63: evaluation mismatch is stated."},
+    {"fact": "Claude Opus 4.6 analyzed reference details accurately, but a 44-iteration background experiment still produced variations rather than convergence.", "evidence": "Source lines 65-89: Opus analysis and failed iteration outcome are described."},
+    {"fact": "The final design came from Claude iterating on Alexey's manual feedback rather than autonomous self-correction.", "evidence": "Source lines 91-100: final approach and manual-control conclusion are stated."},
+    {"fact": "Certificate hosting involved S3, CloudFront, HTTPS, DNS, and configuration issues but had well-defined infrastructure constraints.", "evidence": "Source lines 104-112: infrastructure requirements and normal effort are described."},
+    {"fact": "Claude Code handled S3, Cloudflare, GoDaddy DNS, CloudFront, and HTTPS configuration and completed it in ten minutes.", "evidence": "Source lines 114-116: automated infrastructure workflow and duration are stated."},
+    {"fact": "The source concludes that infrastructure automation was more reliable because tasks, constraints, and documentation were clearer than visual similarity judgments.", "evidence": "Source lines 93-100 and 112-116: reliability comparison and reasons are explained."}
+  ],
+  "author_attribution": "Explain the historical experiment and preserve its limitation: design evaluation remained manual while infrastructure execution was more repeatable."
+}

@@ -1,0 +1,68 @@
+{
+  "verified_at": "2026-09-07T23:47:15.877287+00:00",
+  "tests": {
+    "command": "uv run pytest -q",
+    "passed": 419,
+    "seconds": 1.49
+  },
+  "corpus": {
+    "raw_articles": 100,
+    "round2_articles": 100,
+    "final_articles": 100,
+    "round2_revised": 100,
+    "round2_revision_authors": {
+      "Luna": 73,
+      "parent": 27
+    },
+    "round3_targeted_edits": 11,
+    "final_findings": 1,
+    "final_clean_articles": 99,
+    "new_rule_findings": 0,
+    "retained_finding": [
+      "099",
+      {
+        "tag": "banned-word",
+        "line": 23,
+        "message": "'Foster' - use 'build' / 'help'"
+      }
+    ],
+    "exact_source_sentence_overlap_at_least12_words": 0,
+    "sentence_repeated_in_at_least3_final_articles": 0
+  },
+  "prompt_probe": {
+    "additional_articles": 4,
+    "same_source_original_findings": 70,
+    "new_first_draft_findings": 29,
+    "revised_findings": 0
+  },
+  "independent_high_review": {
+    "articles": [
+      "014",
+      "037",
+      "050",
+      "060"
+    ],
+    "literal_quote_pairs_verified": 32,
+    "required_corrections": 0
+  },
+  "reports": {
+    "integrity": "integrity-final.json",
+    "revision_hashes": "revision-integrity.json",
+    "comparison": "round-comparison.json",
+    "source_aligned_calibration": "source-aligned-calibration.json",
+    "source_alignment": "round-3-source-alignment.json",
+    "audit_dispositions": "audit-dispositions.json",
+    "packaged_files": "wheel-check-final.json"
+  },
+  "research_provenance_lint": {
+    "errors": 0,
+    "warnings": 0
+  },
+  "limits": [
+    "No author preference labels or approval.",
+    "Final paragraph and first-person distributions still differ from reference.",
+    "Existing generic word ban flags a correct surname.",
+    "Reviewer checks are sampled and some low-reasoning findings were false.",
+    "Repeated edited drafts are not fresh holdouts."
+  ]
+}

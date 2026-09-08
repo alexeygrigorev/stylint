@@ -1,0 +1,31 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-02-20-how-i-built-sqlitesearch-a-lightweight.md",
+  "original_path": "research/luna-100/output/round-1/021-account.md",
+  "revised_path": "research/luna-100/output/round-2/021-account.md",
+  "word_count": 558,
+  "required_facts_checked": [
+    "The goal was a compact Python search library that was local, easy to integrate and persistent.",
+    "minsearch supported text and vector search with a simple API but kept its index in memory and lost data after process restart.",
+    "The library was needed for an AI Engineering Buildcamp project with ingestion independent of the RAG agent.",
+    "Requirements included Python, easy local setup without Docker, and regular text plus vector search.",
+    "Elasticsearch was considered too large and costly for the small-scale use case, while Qdrant and PostgreSQL would require an external service or Docker.",
+    "ChatGPT suggested SQLite text search, but SQLite lacked vector search by default.",
+    "lshashing kept hash tables in memory, SparseLSH lacked SQLite support and narrow-down used a native Rust extension.",
+    "Locality-sensitive hashing was chosen because random projections were already understood and could be debugged directly.",
+    "The project began as LightSearch and was renamed SQLiteSearch because litesearch was already taken on PyPI.",
+    "ChatGPT produced the design plan, Claude Code implemented it from plan.md and tests were requested.",
+    "SQLiteSearch stores its index, tables and metadata in one SQLite file without a separate server process.",
+    "The release workflow uses Claude Code /release and /init-library commands for package publication and project setup."
+  ],
+  "unsupported_claims_removed": [
+    "Removed claims about production-scale performance, benchmark results or universal suitability not stated in the source.",
+    "Removed claims that implied the AI tools independently made the design decisions."
+  ],
+  "substantive_edits": [
+    "Rewrote the draft as a first-person account moving from requirements through research, implementation and architecture.",
+    "Preserved the small-project scope and the reasons for rejecting existing options.",
+    "Clarified the handoff from ChatGPT's research and plan to Claude Code's implementation."
+  ],
+  "full_final_lint_findings": [],
+  "unresolved_source_conflicts": []
+}

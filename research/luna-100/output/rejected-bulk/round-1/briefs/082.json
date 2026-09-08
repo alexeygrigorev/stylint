@@ -1,0 +1,57 @@
+{
+  "id": "082",
+  "source_path": "research/luna-100/sources/raw/2026-08-01-rebuilding-a-faq-system-for-datatalksclub.md",
+  "mode": "explanation",
+  "article_purpose": "explanation of the supported workflow or idea",
+  "author_attribution_notes": "Keep Alexey’s first-person framing only for actions and observations explicitly present in the supplied source; preserve attribution to DataTalks.Club, AI Shipping Labs, and other projects where named.",
+  "required_facts": [
+    {
+      "fact": "FAQ assistant is the system that we use in DataTalks.Club to help thousands of our students find the answers to their questions faster.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-01-rebuilding-a-faq-system-for-datatalksclub.md (source sentence 1)"
+    },
+    {
+      "fact": "There are two components:\n\n* FAQ curation: building the FAQ dataset from student contributions, Slack discussions, and YouTube transcripts.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-01-rebuilding-a-faq-system-for-datatalksclub.md (source sentence 2)"
+    },
+    {
+      "fact": "* FAQ retrieval: the Slack bot that answers students’ questions using this dataset.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-01-rebuilding-a-faq-system-for-datatalksclub.md (source sentence 3)"
+    },
+    {
+      "fact": "It lives in  and runs on AWS Lambda.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-01-rebuilding-a-faq-system-for-datatalksclub.md (source sentence 4)"
+    },
+    {
+      "fact": "In this article, I want to describe these components and the entire project in more detail:\n\n* the data sources and how they become the FAQ dataset\n* the architecture and how data flows through it\n* the decisions I made and why I made them\n",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-01-rebuilding-a-faq-system-for-datatalksclub.md (source sentence 5)"
+    },
+    {
+      "fact": "In that article, I described the `ZoomcampQABot` bot developed by Alex Litvinov.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-01-rebuilding-a-faq-system-for-datatalksclub.md (source sentence 6)"
+    },
+    {
+      "fact": "When it occasionally breaks down, I have to pull in Alex and ask him to fix the issue.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-01-rebuilding-a-faq-system-for-datatalksclub.md (source sentence 7)"
+    },
+    {
+      "fact": "Sometimes it would be handling an expired key, or sometimes it’s fixing a small bug.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-01-rebuilding-a-faq-system-for-datatalksclub.md (source sentence 8)"
+    },
+    {
+      "fact": "`ZoomcampQABot` in action\n\nTwo months ago his OpenAI account ran out of money, so the bot stopped working.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-01-rebuilding-a-faq-system-for-datatalksclub.md (source sentence 9)"
+    },
+    {
+      "fact": "I always felt bad that he uses his own money to pay for the project, so I offered to take it over and run it in the DataTalks.Club infra.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-01-rebuilding-a-faq-system-for-datatalksclub.md (source sentence 10)"
+    },
+    {
+      "fact": "Typically he’d decline it, but this time he agreed.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-01-rebuilding-a-faq-system-for-datatalksclub.md (source sentence 11)"
+    },
+    {
+      "fact": "This is the setup `ZoomcampQABot` uses:\n\n* OpenAI for generating the answers\n* Fly.io for hosting\n* HuggingFace for embeddings\n* Milvus for vector search, running on Zilliz Cloud in production, with four collections and query engines\n* Cohe",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-01-rebuilding-a-faq-system-for-datatalksclub.md (source sentence 12)"
+    }
+  ]
+}

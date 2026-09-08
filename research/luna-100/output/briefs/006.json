@@ -1,0 +1,18 @@
+{
+  "id": "006",
+  "source_path": "research/luna-100/sources/raw/2025-12-26-shipping-features-from-a-tram-stop.md",
+  "purpose": "reader-facing explanation of the historical phone-based Copilot review workflow used for the Wrapped feature",
+  "required_facts": [
+    {"fact": "The feature was added to the DataTalks.Club course management platform and presented a 2025 Spotify Wrapped-style experience.", "evidence": "Source line 22: the platform, feature, community highlights, popular courses, top learners, and participant pages are named."},
+    {"fact": "The feature idea was to summarize achievements across the year's Zoomcamps.", "evidence": "Source line 31: the motivation at the tram stop is described."},
+    {"fact": "Alexey dictated an issue into GitHub from his phone and assigned it to Copilot.", "evidence": "Source line 33: the phone, voice input, GitHub issue, and Copilot assignment are stated."},
+    {"fact": "Copilot opened a pull request with working pages, code, and screenshots after about 20–30 minutes.", "evidence": "Source line 33: the initial PR contents and time estimate are given."},
+    {"fact": "The workflow iterated through phone-based review, comments tagging Copilot, and review of each new version.", "evidence": "Source lines 42-44: the review and comment loop is described."},
+    {"fact": "Voice recognition changed 'top 100' to 'top 1200' in an early version.", "evidence": "Source line 46: the transcription error and correction are documented."},
+    {"fact": "Copilot could run the project, generate UI screenshots, and attach them to the pull request.", "evidence": "Source line 49: the screenshot workflow and purpose are stated."},
+    {"fact": "The screenshots were limited because Copilot had no internet access and some styles did not load, but they were sufficient to spot obvious breakage.", "evidence": "Source line 51: the screenshot limitation and usefulness are stated."},
+    {"fact": "Copilot took about 10–30 minutes after each comment, and the cycle worked for small and medium-sized changes.", "evidence": "Source line 58: revision timing and suitable change size are given."},
+    {"fact": "Complex changes and final approval remained laptop work, with CI/CD deploying merged changes to a development environment before production deployment.", "evidence": "Source lines 63-65: laptop boundary, dev deployment, and GitHub production button are described."}
+  ],
+  "author_attribution": "Explain Alexey's historical workflow and preserve its stated limits; do not turn the example into universal current technical advice."
+}

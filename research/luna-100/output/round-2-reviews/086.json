@@ -1,0 +1,21 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-08-08-getting-an-ai-engineering-job.md",
+  "original_path": "research/luna-100/output/round-1/086-explanation.md",
+  "revised_path": "research/luna-100/output/round-2/086-explanation.md",
+  "word_count": 484,
+  "required_facts_checked": [
+    {"claim": "The search is a loop", "evidence": "This is a while loop."},
+    {"claim": "Networking provides market context", "evidence": "Networking helps you understand the market."},
+    {"claim": "Candidates should not self-reject", "evidence": "Don’t reject yourself."},
+    {"claim": "Portfolio projects need public working code", "evidence": "Working code in a public GitHub repository."},
+    {"claim": "Interviews are two-way", "evidence": "You’re not in school."},
+    {"claim": "Interview stages vary", "evidence": "You probably won’t get all of them."},
+    {"claim": "AI theory topics include RAG and agents", "evidence": "RAG, reranking, agents."},
+    {"claim": "Take-home criteria should be clarified", "evidence": "Clarify the requirements."},
+    {"claim": "Interview questions should be recorded", "evidence": "Write down all the questions."}
+  ],
+  "unsupported_claims_removed": ["Removed universal hiring outcomes and kept the source's limits around senior roles, weak requirement matches, and rejection reasons."],
+  "substantive_edits": ["Organized the teaching article around the loop and its concrete activities.", "Preserved public-project, interview-format, take-home, journaling, and uncertainty guidance.", "Used explicit lists for the loop and QA-style interview guidance, then removed repeated closing advice."],
+  "full_final_lint_findings": [],
+  "unresolved_source_conflicts": []
+}

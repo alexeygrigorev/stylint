@@ -1,0 +1,31 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-02-26-what-is-an-ai-engineer-my-perspective.md",
+  "original_path": "research/luna-100/output/round-1/023-account.md",
+  "revised_path": "research/luna-100/output/round-2/023-account.md",
+  "word_count": 600,
+  "required_facts_checked": [
+    "The perspective is based on around 15 years in software engineering, 12 years building machine learning systems, teaching the AI Engineering Buildcamp and regular practitioner conversations.",
+    "The working definition makes an AI Engineer responsible for integrating AI into a product and operating systems that can be evaluated, maintained and improved.",
+    "Responsibilities include translating product requirements into scoped AI problems and selecting and integrating foundation models and tools.",
+    "Prompt design and versioning, success metrics, test suites, deployment, monitoring, cost optimization and security are included.",
+    "AI Engineering overlaps with data science and ML engineering but focuses on integration, prompts, structured outputs, evaluation and reliability around API-accessed foundation models.",
+    "Established ML organizations may distribute the work among existing members or delegate it to dedicated AI Engineers.",
+    "Startups often make the AI Engineer a product-focused generalist moving from experimentation to production hardening.",
+    "RAG work includes ingesting, chunking, embedding, searching and grounding responses in source content.",
+    "Tool-using agents involve function calling, structured tools, MCP and flows that determine when tools are used.",
+    "Evaluation includes real-input tests, structured-output checks, datasets, quality metrics and reruns after prompt or model updates.",
+    "Monitoring includes logging inputs and outputs, tracking errors and specific failures, dashboards and log analysis.",
+    "The accompanying example progresses from a simple AI feature in an online classifieds site to RAG and agentic systems."
+  ],
+  "unsupported_claims_removed": [
+    "Removed claims that presented this perspective as a universal definition of the title.",
+    "Removed unsupported hiring, salary or performance claims about AI Engineers."
+  ],
+  "substantive_edits": [
+    "Rewrote the material as a first-person account of the working definition and its practical responsibilities.",
+    "Organized the explanation around product integration, organizational context and the five skill areas.",
+    "Preserved the distinction between foundation-model development and engineering around API-accessed models."
+  ],
+  "full_final_lint_findings": [],
+  "unresolved_source_conflicts": []
+}

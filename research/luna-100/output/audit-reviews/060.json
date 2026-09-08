@@ -1,0 +1,32 @@
+{
+  "article_id": "060",
+  "source_path": "sources/raw/2026-05-22-the-system-i-built-to-ship-code-from.md",
+  "article_path": "output/round-2/060-explanation.md",
+  "source_sha256": "3379d8ac856b1d4efce6854ee09557f1a861d303b64a4b894282ecd117ead6c2",
+  "article_sha256": "ae0b17287d0dd4fce685f7c389f99afb5f65e6cd63025084e943afbf75cbe13f",
+  "fact_checks": [
+    {
+      "draft_quote": "I use my phone to communicate with coding agents that run on a dedicated Linux server",
+      "source_quote": "I connect to the server and run whatever I need.",
+      "status": "supported"
+    },
+    {
+      "draft_quote": "Termius on Android",
+      "source_quote": "Termius",
+      "status": "supported"
+    },
+    {
+      "draft_quote": "temporary one-hour session",
+      "source_quote": "temporary 1-hour session",
+      "status": "supported"
+    },
+    {
+      "draft_quote": "The Kotlin application detects remote ports and forwards them.",
+      "source_quote": "It created [ssh-auto-forward-android](https://github.com/alexeygrigorev/ssh-auto-forward-android) in Kotlin.",
+      "status": "supported"
+    }
+  ],
+  "voice_issues": [],
+  "required_corrections": [],
+  "source_copying_review": "No exhaustive plagiarism determination was attempted; comparisons are factual checks only."
+}

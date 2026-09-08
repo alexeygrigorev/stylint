@@ -1,0 +1,32 @@
+{
+  "article_id": "040",
+  "source_path": "sources/raw/2026-03-27-5-useful-utilities-i-built-with-ai.md",
+  "article_path": "output/round-2/040-explanation.md",
+  "source_sha256": "e031736e99187168f8e480139386c994d6f1ed241dda208f22cbdaa5148db935",
+  "article_sha256": "1a02043a68acad042ba717fc3e8ebd35ed75504b81b7133a5ec53084769b5f80",
+  "fact_checks": [
+    {
+      "draft_quote": "It supports both formats",
+      "source_quote": "supports both `.env` and `.envrc`",
+      "status": "supported"
+    },
+    {
+      "draft_quote": "The command-line mode executes blocks",
+      "source_quote": "Running `uv run nobook run example.py` executes the blocks",
+      "status": "supported"
+    },
+    {
+      "draft_quote": "The third attempt rewrote the application",
+      "source_quote": "third attempt did it become the tool I actually needed",
+      "status": "supported"
+    },
+    {
+      "draft_quote": "It runs Telegram bots under a background daemon",
+      "source_quote": "core responsibility lives in a background daemon",
+      "status": "supported"
+    }
+  ],
+  "voice_issues": [],
+  "required_corrections": [],
+  "source_copying_review": "No exhaustive plagiarism determination was attempted; comparisons are factual checks only."
+}

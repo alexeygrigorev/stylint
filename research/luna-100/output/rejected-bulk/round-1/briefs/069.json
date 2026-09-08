@@ -1,0 +1,57 @@
+{
+  "id": "069",
+  "source_path": "research/luna-100/sources/raw/2026-06-26-six-projects-that-didnt-make-it.md",
+  "mode": "account",
+  "article_purpose": "personal account of what happened and why",
+  "author_attribution_notes": "Keep Alexey’s first-person framing only for actions and observations explicitly present in the supplied source; preserve attribution to DataTalks.Club, AI Shipping Labs, and other projects where named.",
+  "required_facts": [
+    {
+      "fact": "I have a lot of projects that I started with some grand idea, spent time on, and then never really did anything with.",
+      "source_evidence": "research/luna-100/sources/raw/2026-06-26-six-projects-that-didnt-make-it.md (source sentence 1)"
+    },
+    {
+      "fact": "Some of them work, but I don’t need them anymore.",
+      "source_evidence": "research/luna-100/sources/raw/2026-06-26-six-projects-that-didnt-make-it.md (source sentence 2)"
+    },
+    {
+      "fact": "Some turned out to be more complex than I expected, or I couldn’t build them the way I imagined.",
+      "source_evidence": "research/luna-100/sources/raw/2026-06-26-six-projects-that-didnt-make-it.md (source sentence 3)"
+    },
+    {
+      "fact": "I abandoned many of them at different stages.",
+      "source_evidence": "research/luna-100/sources/raw/2026-06-26-six-projects-that-didnt-make-it.md (source sentence 4)"
+    },
+    {
+      "fact": "My GitHub profile shows 195 repositories, and that’s only my personal account.",
+      "source_evidence": "research/luna-100/sources/raw/2026-06-26-six-projects-that-didnt-make-it.md (source sentence 5)"
+    },
+    {
+      "fact": "I also experiment with projects in the DataTalks.Club and AI Shipping Labs organizations on GitHub.",
+      "source_evidence": "research/luna-100/sources/raw/2026-06-26-six-projects-that-didnt-make-it.md (source sentence 6)"
+    },
+    {
+      "fact": "With coding agents, I write a lot more code than ever before, because I can try ideas faster.",
+      "source_evidence": "research/luna-100/sources/raw/2026-06-26-six-projects-that-didnt-make-it.md (source sentence 7)"
+    },
+    {
+      "fact": "Naturally, I also create more projects that don’t go anywhere.",
+      "source_evidence": "research/luna-100/sources/raw/2026-06-26-six-projects-that-didnt-make-it.md (source sentence 8)"
+    },
+    {
+      "fact": "My GitHub profile page showing 195 repositories\n\nBut I don’t think this is a problem.",
+      "source_evidence": "research/luna-100/sources/raw/2026-06-26-six-projects-that-didnt-make-it.md (source sentence 9)"
+    },
+    {
+      "fact": "These projects may not reach their final form, and I may not use them afterward, but building them still teaches me something.",
+      "source_evidence": "research/luna-100/sources/raw/2026-06-26-six-projects-that-didnt-make-it.md (source sentence 10)"
+    },
+    {
+      "fact": "Some help me understand how to work with coding assistants.",
+      "source_evidence": "research/luna-100/sources/raw/2026-06-26-six-projects-that-didnt-make-it.md (source sentence 11)"
+    },
+    {
+      "fact": "Others help me think through a vague problem in practice.",
+      "source_evidence": "research/luna-100/sources/raw/2026-06-26-six-projects-that-didnt-make-it.md (source sentence 12)"
+    }
+  ]
+}

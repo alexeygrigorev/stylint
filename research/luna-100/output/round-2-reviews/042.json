@@ -1,0 +1,38 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-04-03-i-built-an-ai-agent-team-for-software.md",
+  "original_path": "research/luna-100/output/round-2/042-explanation.md",
+  "revised_path": "research/luna-100/output/round-2/042-explanation.md",
+  "word_count": 504,
+  "required_fact_evidence": [
+    {
+      "claim": "pipeline is PM grooming then SWE then QA then PM acceptance",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "two tasks are processed in parallel",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "trackers can be GitHub Issues or filename states",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "QA supplies evidence",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "Codehive aims to enforce roles",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "requirements omission hurt Rustkyll",
+      "evidence": "Verified against assigned source"
+    }
+  ],
+  "substantive_edits": [
+    "Recomposed article independently around assigned explanation purpose."
+  ],
+  "unsupported_claims_removed": [],
+  "unresolved_source_conflicts": [],
+  "full_final_lint_findings": []
+}

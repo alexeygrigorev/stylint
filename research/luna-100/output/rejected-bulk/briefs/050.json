@@ -1,0 +1,58 @@
+{
+  "id": "050",
+  "source_path": "research/luna-100/sources/raw/2026-04-17-how-we-built-ai-shipping-labs.md",
+  "article_purpose": "explanation",
+  "author_attribution_notes": "Facts and project ownership are attributed to the source author; no additional personal experience or results added.",
+  "required_facts": [
+    {
+      "id": 1,
+      "claim": "In the previous newsletter, [Valeriia and I] announced [AI Shipping Labs], a community for people who want to learn AI by building their projects, with a clear plan, support from other practitioners, and regular check-in",
+      "source_evidence": "In the previous newsletter, [Valeriia and I] announced [AI Shipping Labs], a community for people who want to learn AI by building their projects, with a clear plan, support from other practitioners, and regular check-ins to keep moving forward."
+    },
+    {
+      "id": 2,
+      "claim": "This Monday, we hosted a [live launch stream] where we introduced the community and answered your questions.",
+      "source_evidence": "This Monday, we hosted a [live launch stream] where we introduced the community and answered your questions."
+    },
+    {
+      "id": 3,
+      "claim": "If you missed it, here’s [the event recap].",
+      "source_evidence": "If you missed it, here’s [the event recap]."
+    },
+    {
+      "id": 4,
+      "claim": "In this newsletter, we want to share: How Valeriia built the current Next.js version of the platform with v0 and Cursor Why we’re planning to move it to Django and grow it into a more complete system for running the comm",
+      "source_evidence": "In this newsletter, we want to share: How Valeriia built the current Next.js version of the platform with v0 and Cursor Why we’re planning to move it to Django and grow it into a more complete system for running the community How I’m working on this new version of the platform with agent teams."
+    },
+    {
+      "id": 5,
+      "claim": "1) Our Philosophy: Starting Simple I believe in starting very simple.",
+      "source_evidence": "1) Our Philosophy: Starting Simple I believe in starting very simple."
+    },
+    {
+      "id": 6,
+      "claim": "When I launched DataTalks.Club, the website had just an email sign-up form and nothing more.",
+      "source_evidence": "When I launched DataTalks.Club, the website had just an email sign-up form and nothing more."
+    },
+    {
+      "id": 7,
+      "claim": "I wanted to find out whether people would join, and they did.",
+      "source_evidence": "I wanted to find out whether people would join, and they did."
+    },
+    {
+      "id": 8,
+      "claim": "This was the simplest version of a Minimum Viable Product (MVP).",
+      "source_evidence": "This was the simplest version of a Minimum Viable Product (MVP)."
+    },
+    {
+      "id": 9,
+      "claim": "You can still check out its original design in the [Wayback Machine], though the email form is unfortunately not visible there.",
+      "source_evidence": "You can still check out its original design in the [Wayback Machine], though the email form is unfortunately not visible there."
+    },
+    {
+      "id": 10,
+      "claim": "The first version of the DataTalks.Club website We followed the same idea with AI Shipping Labs.",
+      "source_evidence": "The first version of the DataTalks.Club website We followed the same idea with AI Shipping Labs."
+    }
+  ]
+}

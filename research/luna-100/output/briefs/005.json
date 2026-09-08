@@ -1,0 +1,18 @@
+{
+  "id": "005",
+  "source_path": "research/luna-100/sources/raw/2025-12-26-shipping-features-from-a-tram-stop.md",
+  "purpose": "personal account of Alexey shipping the DataTalks.Club Wrapped feature through phone-based review",
+  "required_facts": [
+    {"fact": "Alexey merged a pull request into the DataTalks.Club course management platform.", "evidence": "Source line 22: the merged PR and platform purpose are stated."},
+    {"fact": "The PR added a Spotify Wrapped-style 2025 experience with community highlights, popular courses, top learners, and shareable participant pages.", "evidence": "Source line 22: the feature contents are listed."},
+    {"fact": "Most of the work happened on a smartphone while Alexey commuted to pick up his child.", "evidence": "Source line 24: the phone and commute context are stated."},
+    {"fact": "The idea came at a tram stop as a way to summarize learner achievements across the year's Zoomcamps.", "evidence": "Source line 31: the setting and motivation are described."},
+    {"fact": "Alexey dictated an issue into GitHub on his phone and assigned it to Copilot.", "evidence": "Source line 33: voice input, GitHub, and Copilot are specified."},
+    {"fact": "Copilot opened a pull request with working pages, code, and screenshots after about 20–30 minutes.", "evidence": "Source line 33: the initial PR contents and time estimate are stated."},
+    {"fact": "Alexey iterated by reviewing diffs on his phone, commenting, tagging Copilot, and reviewing each pushed version.", "evidence": "Source lines 42-44: the review-and-comment cycle is described."},
+    {"fact": "Voice recognition changed 'top 100' into 'top 1200' in an early PR version.", "evidence": "Source line 46: the transcription error and correction loop are explicit."},
+    {"fact": "Copilot ran the project and attached UI screenshots, but missing internet access meant some styles did not load.", "evidence": "Source lines 49-51: screenshot generation and its limitation are described."},
+    {"fact": "Copilot updates took about 10–30 minutes, while complex changes and final production approval remained laptop work; CI/CD deployed merged changes to a dev environment.", "evidence": "Source lines 58 and 63-65: timing, boundary, dev deployment, and production button are stated."}
+  ],
+  "author_attribution": "Attribute the feature, workflow, timing estimates, and judgments to Alexey's historical account; preserve the stated boundary around complex and production changes."
+}

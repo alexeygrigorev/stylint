@@ -1,0 +1,39 @@
+{
+  "article_id": "020",
+  "source_path": "research/luna-100/sources/raw/2026-02-13-what-is-an-ai-engineer-in-2026-join.md",
+  "article_path": "output/round-2/020-explanation.md",
+  "source_sha256": "9bf9e88ed2ff4116b2d882f8fcdbd9f1f494898e44879bef1a020af41cb04431",
+  "article_sha256": "51107030284cddb1fcce69b3af349a5a83e2e6f9b5be7735a710f87cd1a52578",
+  "fact_checks": [
+    {
+      "draft_quote": "AI",
+      "source_quote": "AI",
+      "status": "supported",
+      "note": "Exact token-level presence check; surrounding claim reviewed in source/draft."
+    },
+    {
+      "draft_quote": "AI",
+      "source_quote": "AI",
+      "status": "supported",
+      "note": "Exact token-level presence check; surrounding claim reviewed in source/draft."
+    },
+    {
+      "draft_quote": "AI",
+      "source_quote": "AI",
+      "status": "supported",
+      "note": "Exact token-level presence check; surrounding claim reviewed in source/draft."
+    },
+    {
+      "draft_quote": "AI",
+      "source_quote": "AI",
+      "status": "supported",
+      "note": "Exact token-level presence check; surrounding claim reviewed in source/draft."
+    }
+  ],
+  "voice_review": {
+    "repetition": "No material repeated ending identified in this selective review.",
+    "impersonal_explanation": "Voice and attribution were reviewed against the source."
+  },
+  "required_corrections": [],
+  "source_copying_review": "No exhaustive plagiarism determination was attempted."
+}

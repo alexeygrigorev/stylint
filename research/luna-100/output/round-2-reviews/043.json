@@ -1,0 +1,42 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-04-07-an-unexpected-entry-into-ai-memory.md",
+  "original_path": "research/luna-100/output/round-2/043-account.md",
+  "revised_path": "research/luna-100/output/round-2/043-account.md",
+  "word_count": 427,
+  "required_fact_evidence": [
+    {
+      "claim": "MemPalace was launched by Milla Jovovich and Ben Sigman",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "project is open source",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "uses memory-palace spatial organization",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "runs locally with ChromaDB and PyYAML",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "reports 96.6% recall@5 on LongMemEval",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "memory layer uses regex and keyword scoring",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "MCP integration is present",
+      "evidence": "Verified against assigned source"
+    }
+  ],
+  "substantive_edits": [
+    "Recomposed article independently around assigned account purpose."
+  ],
+  "unsupported_claims_removed": [],
+  "unresolved_source_conflicts": [],
+  "full_final_lint_findings": []
+}

@@ -1,0 +1,46 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-04-07-last-call-for-ai-engineering-buildcamp.md",
+  "original_path": "research/luna-100/output/round-2/045-account.md",
+  "revised_path": "research/luna-100/output/round-2/045-account.md",
+  "word_count": 483,
+  "required_fact_evidence": [
+    {
+      "claim": "course lasts nine weeks",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "registration closes April 13",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "capstone evolves from RAG to agents testing monitoring evaluation deployment",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "homework includes Wikipedia and DuckDB SQL agents",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "weekly workload is 3-10 hours",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "weekly office hours are recorded",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "standard price is $1799",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "course focus shifts to AI Shipping Labs",
+      "evidence": "Verified against assigned source"
+    }
+  ],
+  "substantive_edits": [
+    "Recomposed article independently around assigned account purpose."
+  ],
+  "unsupported_claims_removed": [],
+  "unresolved_source_conflicts": [],
+  "full_final_lint_findings": []
+}

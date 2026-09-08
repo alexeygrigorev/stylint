@@ -1,0 +1,43 @@
+{
+  "id": "070",
+  "draft_path": "research/luna-100/output/round-3/070-explanation.md",
+  "source_path": "research/luna-100/sources/raw/2026-06-26-six-projects-that-didnt-make-it.md",
+  "draft_sha256": "0d8247303db43265907eaddc9a8bf33d1f655509f5536f29319f044698426982",
+  "source_sha256": "7fa32caf44b50890160cc14694ad5e3eb882ff602c83602f5dd20e9a9e34daa2",
+  "quote_pairs": [
+    {
+      "draft_quote": "An unfinished repository doesn't always mean that the project failed",
+      "source_quote": "But I don\u2019t think this is a problem.",
+      "facts_checked": true
+    },
+    {
+      "draft_quote": "Code Explainer wrapped an agent in a Streamlit interface",
+      "source_quote": "I built a small Streamlit app to help understand other people\u2019s repositories",
+      "facts_checked": true
+    },
+    {
+      "draft_quote": "After three hours the dashboard existed but its buttons didn't work",
+      "source_quote": "After three hours, Claude had built the interface",
+      "facts_checked": true
+    },
+    {
+      "draft_quote": "CodeHive tried to enforce that process with five agents",
+      "source_quote": "The team had five agents",
+      "facts_checked": true
+    },
+    {
+      "draft_quote": "Quse became a tool I use daily",
+      "source_quote": "This is probably the project from this whole list that I use the most right now",
+      "facts_checked": true
+    }
+  ],
+  "false_causality_found": false,
+  "invented_first_person_actions_found": false,
+  "third_person_alexey_reference_found": false,
+  "repeated_closing_verdict_found": false,
+  "required_corrections": [
+    "The five-agent CodeHive summary is accurate but should retain the source roles if more specificity is required."
+  ],
+  "semantic_status": "needs_correction",
+  "notes": "Full source and draft read; Python asserted every recorded quote substring before writing this sidecar."
+}

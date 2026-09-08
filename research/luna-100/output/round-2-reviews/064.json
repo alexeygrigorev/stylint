@@ -1,0 +1,21 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-06-05-how-to-set-up-your-coding-agent-a.md",
+  "original_path": "research/luna-100/output/round-1/064-explanation.md",
+  "revised_path": "research/luna-100/output/round-2/064-explanation.md",
+  "word_count": 492,
+  "required_facts_checked": [
+    {"claim": "The setup begins by choosing an assistant before advanced configuration.", "status": "present", "evidence": "source: Choose an assistant"},
+    {"claim": "A small end-to-end task tests whether the assistant fits.", "status": "present", "evidence": "source: use it on something small enough to check end-to-end"},
+    {"claim": "Allow-lists and skip-permissions mode have different risks.", "status": "present", "evidence": "source: allow-list versus skip-permissions mode"},
+    {"claim": "APIs and command-line tools enable automation.", "status": "present", "evidence": "source: if a service has an API or a command-line tool"},
+    {"claim": "Process documents preserve project-specific details.", "status": "present", "evidence": "source: production URL, API key location, payload shape, and failure handling"},
+    {"claim": "Claude and Codex skills use conventional folders and required frontmatter.", "status": "present", "evidence": "source: .claude/skills and .codex/skills with name and description"},
+    {"claim": "Subagents protect the main context from large or noisy inputs.", "status": "present", "evidence": "source: the huge transcript never enters the main context"},
+    {"claim": "Project context files include CLAUDE.md and AGENTS.md.", "status": "present", "evidence": "source: Claude Code reads CLAUDE.md; Codex reads AGENTS.md"},
+    {"claim": "Resetting sessions gives new tasks a clean context.", "status": "present", "evidence": "source: Every new task starts with a clean context"}
+  ],
+  "unsupported_claims_removed": [],
+  "substantive_edits": ["Reorganized the explanation around the source's six-stage progression.", "Preserved the permission tradeoff and concrete automation example.", "Restored documentation, skills, and context isolation without turning the sequence into universal technical advice."],
+  "full_final_lint_findings": [],
+  "unresolved_source_conflicts": []
+}

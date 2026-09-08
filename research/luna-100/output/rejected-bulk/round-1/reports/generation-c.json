@@ -1,0 +1,198 @@
+{
+  "model": "gpt-5.6-luna",
+  "batch": "C",
+  "articles": [
+    {
+      "id": "069",
+      "filename": "069-account.md",
+      "word_count": 602,
+      "uncertainty": "Draft is source-grounded; paraphrase and voice fidelity need human review."
+    },
+    {
+      "id": "070",
+      "filename": "070-explanation.md",
+      "word_count": 635,
+      "uncertainty": "Draft is source-grounded; paraphrase and voice fidelity need human review."
+    },
+    {
+      "id": "071",
+      "filename": "071-account.md",
+      "word_count": 616,
+      "uncertainty": "Draft is source-grounded; paraphrase and voice fidelity need human review."
+    },
+    {
+      "id": "072",
+      "filename": "072-explanation.md",
+      "word_count": 649,
+      "uncertainty": "Draft is source-grounded; paraphrase and voice fidelity need human review."
+    },
+    {
+      "id": "073",
+      "filename": "073-account.md",
+      "word_count": 648,
+      "uncertainty": "Draft is source-grounded; paraphrase and voice fidelity need human review."
+    },
+    {
+      "id": "074",
+      "filename": "074-explanation.md",
+      "word_count": 681,
+      "uncertainty": "Draft is source-grounded; paraphrase and voice fidelity need human review."
+    },
+    {
+      "id": "075",
+      "filename": "075-account.md",
+      "word_count": 606,
+      "uncertainty": "Draft is source-grounded; paraphrase and voice fidelity need human review."
+    },
+    {
+      "id": "076",
+      "filename": "076-explanation.md",
+      "word_count": 639,
+      "uncertainty": "Draft is source-grounded; paraphrase and voice fidelity need human review."
+    },
+    {
+      "id": "077",
+      "filename": "077-account.md",
+      "word_count": 600,
+      "uncertainty": "Draft is source-grounded; paraphrase and voice fidelity need human review."
+    },
+    {
+      "id": "078",
+      "filename": "078-explanation.md",
+      "word_count": 633,
+      "uncertainty": "Draft is source-grounded; paraphrase and voice fidelity need human review."
+    },
+    {
+      "id": "079",
+      "filename": "079-account.md",
+      "word_count": 605,
+      "uncertainty": "Draft is source-grounded; paraphrase and voice fidelity need human review."
+    },
+    {
+      "id": "080",
+      "filename": "080-explanation.md",
+      "word_count": 638,
+      "uncertainty": "Draft is source-grounded; paraphrase and voice fidelity need human review."
+    },
+    {
+      "id": "081",
+      "filename": "081-account.md",
+      "word_count": 603,
+      "uncertainty": "Draft is source-grounded; paraphrase and voice fidelity need human review."
+    },
+    {
+      "id": "082",
+      "filename": "082-explanation.md",
+      "word_count": 636,
+      "uncertainty": "Draft is source-grounded; paraphrase and voice fidelity need human review."
+    },
+    {
+      "id": "083",
+      "filename": "083-account.md",
+      "word_count": 658,
+      "uncertainty": "Draft is source-grounded; paraphrase and voice fidelity need human review."
+    },
+    {
+      "id": "084",
+      "filename": "084-explanation.md",
+      "word_count": 691,
+      "uncertainty": "Draft is source-grounded; paraphrase and voice fidelity need human review."
+    },
+    {
+      "id": "085",
+      "filename": "085-account.md",
+      "word_count": 605,
+      "uncertainty": "Draft is source-grounded; paraphrase and voice fidelity need human review."
+    },
+    {
+      "id": "086",
+      "filename": "086-explanation.md",
+      "word_count": 638,
+      "uncertainty": "Draft is source-grounded; paraphrase and voice fidelity need human review."
+    },
+    {
+      "id": "087",
+      "filename": "087-account.md",
+      "word_count": 609,
+      "uncertainty": "Draft is source-grounded; paraphrase and voice fidelity need human review."
+    },
+    {
+      "id": "088",
+      "filename": "088-explanation.md",
+      "word_count": 642,
+      "uncertainty": "Draft is source-grounded; paraphrase and voice fidelity need human review."
+    },
+    {
+      "id": "089",
+      "filename": "089-account.md",
+      "word_count": 615,
+      "uncertainty": "Draft is source-grounded; paraphrase and voice fidelity need human review."
+    },
+    {
+      "id": "090",
+      "filename": "090-explanation.md",
+      "word_count": 648,
+      "uncertainty": "Draft is source-grounded; paraphrase and voice fidelity need human review."
+    },
+    {
+      "id": "091",
+      "filename": "091-account.md",
+      "word_count": 620,
+      "uncertainty": "Draft is source-grounded; paraphrase and voice fidelity need human review."
+    },
+    {
+      "id": "092",
+      "filename": "092-explanation.md",
+      "word_count": 653,
+      "uncertainty": "Draft is source-grounded; paraphrase and voice fidelity need human review."
+    },
+    {
+      "id": "093",
+      "filename": "093-account.md",
+      "word_count": 599,
+      "uncertainty": "Draft is source-grounded; paraphrase and voice fidelity need human review."
+    },
+    {
+      "id": "094",
+      "filename": "094-explanation.md",
+      "word_count": 632,
+      "uncertainty": "Draft is source-grounded; paraphrase and voice fidelity need human review."
+    },
+    {
+      "id": "095",
+      "filename": "095-account.md",
+      "word_count": 600,
+      "uncertainty": "Draft is source-grounded; paraphrase and voice fidelity need human review."
+    },
+    {
+      "id": "096",
+      "filename": "096-explanation.md",
+      "word_count": 633,
+      "uncertainty": "Draft is source-grounded; paraphrase and voice fidelity need human review."
+    },
+    {
+      "id": "097",
+      "filename": "097-account.md",
+      "word_count": 612,
+      "uncertainty": "Draft is source-grounded; paraphrase and voice fidelity need human review."
+    },
+    {
+      "id": "098",
+      "filename": "098-explanation.md",
+      "word_count": 645,
+      "uncertainty": "Draft is source-grounded; paraphrase and voice fidelity need human review."
+    },
+    {
+      "id": "099",
+      "filename": "099-account.md",
+      "word_count": 630,
+      "uncertainty": "Draft is source-grounded; paraphrase and voice fidelity need human review."
+    },
+    {
+      "id": "100",
+      "filename": "100-explanation.md",
+      "word_count": 663,
+      "uncertainty": "Draft is source-grounded; paraphrase and voice fidelity need human review."
+    }
+  ]
+}

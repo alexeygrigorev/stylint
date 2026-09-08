@@ -1,0 +1,42 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-03-27-5-useful-utilities-i-built-with-ai.md",
+  "original_path": "research/luna-100/output/round-2/040-explanation.md",
+  "revised_path": "research/luna-100/output/round-2/040-explanation.md",
+  "word_count": 457,
+  "required_fact_evidence": [
+    {
+      "claim": "five utilities address recurring workflow problems",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "dirdotenv supports .env and .envrc",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "dirdotenv supports Windows Linux macOS and four shells",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "ssh-auto-forward handles remote ports and conflicts",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "nobook uses block-marked Python files",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "Microphone Booster used native Windows APIs after failed attempts",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "Bot Master separates daemon from TUI",
+      "evidence": "Verified against assigned source"
+    }
+  ],
+  "substantive_edits": [
+    "Recomposed article independently around assigned explanation purpose."
+  ],
+  "unsupported_claims_removed": [],
+  "unresolved_source_conflicts": [],
+  "full_final_lint_findings": []
+}

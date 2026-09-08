@@ -1,0 +1,58 @@
+{
+  "id": "047",
+  "source_path": "research/luna-100/sources/raw/2026-04-10-tired-of-learning-ai-alone-were-launching.md",
+  "article_purpose": "account",
+  "author_attribution_notes": "Facts and project ownership are attributed to the source author; no additional personal experience or results added.",
+  "required_facts": [
+    {
+      "id": 1,
+      "claim": "[Valeriia and I] are [launching] a new community for AI builders: [AI Shipping Labs].",
+      "source_evidence": "[Valeriia and I] are [launching] a new community for AI builders: [AI Shipping Labs]."
+    },
+    {
+      "id": 2,
+      "claim": "We’ve been collaborating on DataTalks.Club for quite some time, and now we’re creating something new.",
+      "source_evidence": "We’ve been collaborating on DataTalks.Club for quite some time, and now we’re creating something new."
+    },
+    {
+      "id": 3,
+      "claim": "I’ve mentioned AI Shipping Labs several times in this newsletter, but today we’re excited to officially announce the platform and invite you to join a [live event on April 13 to launch] the community for anyone intereste",
+      "source_evidence": "I’ve mentioned AI Shipping Labs several times in this newsletter, but today we’re excited to officially announce the platform and invite you to join a [live event on April 13 to launch] the community for anyone interested in learning more."
+    },
+    {
+      "id": 4,
+      "claim": "In this post, we’ll share what the community currently looks like, what’s included, the benefits of joining as an early member, and our plans for the future.",
+      "source_evidence": "In this post, we’ll share what the community currently looks like, what’s included, the benefits of joining as an early member, and our plans for the future."
+    },
+    {
+      "id": 5,
+      "claim": "[Join the launch stream] Why AI Shipping Labs?",
+      "source_evidence": "[Join the launch stream] Why AI Shipping Labs?"
+    },
+    {
+      "id": 6,
+      "claim": "We’re living in an era of rapid change, with fast-moving trends pushing us into a constant rush to learn new “must-learn” concepts, frameworks, and tools without a clear direction.",
+      "source_evidence": "We’re living in an era of rapid change, with fast-moving trends pushing us into a constant rush to learn new “must-learn” concepts, frameworks, and tools without a clear direction."
+    },
+    {
+      "id": 7,
+      "claim": "This is true in AI, especially for people who want to build with these technologies.",
+      "source_evidence": "This is true in AI, especially for people who want to build with these technologies."
+    },
+    {
+      "id": 8,
+      "claim": "You may find yourself in situations like these: You already have a full-time job and still need to keep up.",
+      "source_evidence": "You may find yourself in situations like these: You already have a full-time job and still need to keep up."
+    },
+    {
+      "id": 9,
+      "claim": "Meanwhile, your AI project keeps getting pushed to “next weekend.” You want to move into a new role that requires new tools and a broader skill set.",
+      "source_evidence": "Meanwhile, your AI project keeps getting pushed to “next weekend.” You want to move into a new role that requires new tools and a broader skill set."
+    },
+    {
+      "id": 10,
+      "claim": "You keep asking yourself where to start, what to focus on, what to ignore, and how to prepare.",
+      "source_evidence": "You keep asking yourself where to start, what to focus on, what to ignore, and how to prepare."
+    }
+  ]
+}

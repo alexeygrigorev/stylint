@@ -1,0 +1,37 @@
+{
+  "article_id": "008",
+  "source_path": "research/luna-100/sources/raw/2026-01-02-benefits-of-learning-in-public-and.md",
+  "article_path": "research/luna-100/output/round-2/008-explanation.md",
+  "mode": "explanation",
+  "factual_checks": [
+    {
+      "draft": "Pastor Soto joined ML Zoomcamp as a medical student without an industry role or LinkedIn presence",
+      "source_evidence": "The source states both facts.",
+      "status": "supported"
+    },
+    {
+      "draft": "Will McGugan ... eventually led to a pre-seed round",
+      "source_evidence": "The source says public demos attracted investor attention and eventually a pre-seed funding round.",
+      "status": "supported"
+    },
+    {
+      "draft": "Aaisha Muhammad connected visible progress and leaderboards with completing assignments",
+      "source_evidence": "The source says leaderboards and visible progress nudged her to finish assignments she might otherwise postpone.",
+      "status": "supported"
+    },
+    {
+      "draft": "Daniel Egbo encouraged learners to publish even basic work",
+      "source_evidence": "The source says he encouraged publishing notebooks, repositories, and analyses even when they felt basic.",
+      "status": "supported"
+    }
+  ],
+  "missing_or_needs_correction": [
+    "The article labels visibility, clearer thinking, peer feedback, credibility, accountability, support, and portfolio, but omits an explicit eighth numbered benefit for unexpected opportunities. The final opportunity paragraph covers it, so either label it as the eighth benefit or keep the structure intentionally unnumbered.",
+    "The source includes a practical project idea with batching, writing immediately after work, reuse, short posts, and a one-week action plan. Article 008 omits this entire actionable section. Add it if the explanation is intended to teach the supported workflow, or record the omission as deliberate scope.",
+    "The sentence 'A private delay became shared troubleshooting' is a compact interpretation of the source's claim that public learning turns problems into shared problem-solving. It is supported, but should not imply every public post receives help.",
+    "The closing 'Publishing helps when it stays close to real work and remains consistent enough for other people to follow' is a generic synthesis. It is compatible with the source but adds no concrete fact; consider ending with the source-supported portfolio or unexpected-opportunity example."
+  ],
+  "source_copying": "No complete source sentence was found in the draft; wording appears independently composed.",
+  "attribution_review": "Attribution to Pastor, Eugene, Will, Dashel, Aaisha, and Daniel is retained. The source also attributes credibility and personal-branding points to Admond Lee Kin Lim and Shawn Wang; those names are absent from the explanation, which narrows coverage.",
+  "required_corrections": []
+}

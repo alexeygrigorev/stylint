@@ -1,0 +1,48 @@
+{
+  "id": "026",
+  "source_path": "research/luna-100/sources/raw/2026-02-27-chatgpt-data-viewer.md",
+  "purpose": "reader-facing explanation of the supported workflow or idea",
+  "required_facts": [
+    {
+      "fact": "I often use ChatGPT for brainstorming.",
+      "evidence": "research/luna-100/sources/raw/2026-02-27-chatgpt-data-viewer.md"
+    },
+    {
+      "fact": "When I have an idea, I brain-dump it in dictation mode, and ChatGPT helps me organize my thoughts and formulate the right questions.",
+      "evidence": "research/luna-100/sources/raw/2026-02-27-chatgpt-data-viewer.md"
+    },
+    {
+      "fact": "Sometimes I switch to research mode to explore existing solutions or what has already been implemented for my idea.",
+      "evidence": "research/luna-100/sources/raw/2026-02-27-chatgpt-data-viewer.md"
+    },
+    {
+      "fact": "A while back, when the first cohort of my AI Engineering Buildcamp course on Maven launched in September 2025, I was considering my next project to be a course continuation.",
+      "evidence": "research/luna-100/sources/raw/2026-02-27-chatgpt-data-viewer.md"
+    },
+    {
+      "fact": "I discussed it with ChatGPT, created a solid outline, but then got busy with Buildcamp and couldn’t develop it further.",
+      "evidence": "research/luna-100/sources/raw/2026-02-27-chatgpt-data-viewer.md"
+    },
+    {
+      "fact": "Later, I wanted to find that conversation.",
+      "evidence": "research/luna-100/sources/raw/2026-02-27-chatgpt-data-viewer.md"
+    },
+    {
+      "fact": "I tried using the ChatGPT search, but it couldn’t locate it.",
+      "evidence": "research/luna-100/sources/raw/2026-02-27-chatgpt-data-viewer.md"
+    },
+    {
+      "fact": "I manually scrolled through the chat history and searched for keywords, reviewing many messages.",
+      "evidence": "research/luna-100/sources/raw/2026-02-27-chatgpt-data-viewer.md"
+    },
+    {
+      "fact": "I thought it was from December, but I wasn’t sure.",
+      "evidence": "research/luna-100/sources/raw/2026-02-27-chatgpt-data-viewer.md"
+    },
+    {
+      "fact": "Eventually, I decided the idea was lost and that I would need to start over.",
+      "evidence": "research/luna-100/sources/raw/2026-02-27-chatgpt-data-viewer.md"
+    }
+  ],
+  "author_attribution": "Attribute projects and outcomes to the named author or participants in the source; do not add personal experience."
+}

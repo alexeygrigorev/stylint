@@ -1,0 +1,18 @@
+{
+  "id": "018",
+  "source_path": "research/luna-100/sources/raw/2026-02-06-building-and-maintaining-a-slack.md",
+  "purpose": "reader-facing explanation of AuTomator's Slack event architecture and documented maintenance workflow",
+  "required_facts": [
+    {"fact": "AuTomator addressed manual moderation work in a Slack community of more than 88,000 people.", "evidence": "Source lines 3-7: scale, moderation problem, and automation goal are described."},
+    {"fact": "The bot runs on AWS Lambda and is split into router, automator, and moderator functions.", "evidence": "Source lines 19-21: backend and three-function structure are specified."},
+    {"fact": "The router checks admin reactions and forwards approved events to the automator.", "evidence": "Source lines 23-25: router behavior is stated."},
+    {"fact": "The router exists because Slack requires reaction events to be acknowledged within a strict time limit.", "evidence": "Source line 27: the event timing constraint and lightweight delegation are explained."},
+    {"fact": "The automator reads a YAML mapping from emoji reactions to actions such as deletion, thread reposting, and AI replies.", "evidence": "Source lines 31-35: configuration and actions are described."},
+    {"fact": "A shameless-rules reaction deletes a message and sends its author a direct explanation.", "evidence": "Source line 37: rule-removal behavior is specified."},
+    {"fact": "The moderator watches for patterns such as too many messages in a short time and offers delete, deactivate, or ignore buttons.", "evidence": "Source lines 39-45: monitoring and administrator actions are described."},
+    {"fact": "The moderator was not deployed and still required real-world testing at the time of the account.", "evidence": "Source lines 41 and 45: deployment and testing limitation are explicit."},
+    {"fact": "Claude Code inspected two hours of logs and found a missing GROQ_API_KEY plus an error deleting messages with curly braces.", "evidence": "Source lines 58-67: diagnostic request, causes, and fixes are stated."},
+    {"fact": "The source places Claude Code with urgent maintenance and prefers Cursor, Google Antigravity, or Copilot for slower interactive coding.", "evidence": "Source line 73: tool-use judgment is stated."}
+  ],
+  "author_attribution": "Explain the architecture and repair as Alexey's historical example, retaining the untested status of the moderator component and the human administrator's role."
+}

@@ -1,0 +1,26 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-08-01-rebuilding-a-faq-system-for-datatalksclub.md",
+  "original_path": "research/luna-100/output/round-1/081-account.md",
+  "revised_path": "research/luna-100/output/round-2/081-account.md",
+  "word_count": 568,
+  "required_facts_checked": [
+    {"claim": "The FAQ assistant runs for DataTalks.Club students and was moved toward Au-Tomator's AWS infrastructure.", "status": "present", "evidence": "source opening and AWS Lambda deployment"},
+    {"claim": "ZoomcampQABot was developed by Alex Litvinov and used Fly.io, Milvus/Zilliz, Cohere, HuggingFace, Redis, and ingestion jobs.", "status": "present", "evidence": "source ZoomcampQABot setup"},
+    {"claim": "FAQ data moved from frequently vandalized Google Docs to Markdown in DataTalksClub/faq.", "status": "present", "evidence": "source dataset migration"},
+    {"claim": "Questions come from GitHub, Slack, and YouTube transcripts.", "status": "present", "evidence": "source multiple FAQ sources"},
+    {"claim": "GitHub Actions uses minsearch and OpenAI to classify NEW, UPDATE, DUPLICATE, or WRONG_COURSE.", "status": "present", "evidence": "source user-contributed FAQ workflow"},
+    {"claim": "Evaluation uses leave-one-out for historical NEW cases and has 61 decision cases.", "status": "present", "evidence": "source leave-one-out explanation and 61-case set"},
+    {"claim": "Zerosearch replaced minsearch for a pure-Python Lambda-friendly deployment, and the index is about 8 MB.", "status": "present", "evidence": "source zero-dependency search and index size"},
+    {"claim": "Retrieval evaluation used 9,900 Slack threads and 130 questions with hit rate and MRR at k=1,3,5.", "status": "present", "evidence": "source Slack evaluation dataset"},
+    {"claim": "Query rewriting preserves exact errors, tool names, commands, and filenames.", "status": "present", "evidence": "source best query rewriting approach"},
+    {"claim": "Au-Tomator routes mentions and :faq: reactions to the FAQ Lambda, and incorrect answers feed future evaluation and records.", "status": "present", "evidence": "source deployment and data-correction loop"}
+  ],
+  "unsupported_claims_removed": [],
+  "substantive_edits": [
+    "Kept Alex Litvinov's authorship of ZoomcampQABot separate from Alexey's takeover and redesign.",
+    "Restored the migration motive, classification decisions, leave-one-out qualification, Lambda dependency constraint, index size, and evaluation counts.",
+    "Separated curation, deployment, retrieval evaluation, and Au-Tomator routing so the data loop remains clear."
+  ],
+  "full_final_lint_findings": [],
+  "unresolved_source_conflicts": []
+}

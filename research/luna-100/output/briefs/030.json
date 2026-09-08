@@ -1,0 +1,18 @@
+{
+  "id": "030",
+  "source_path": "research/luna-100/sources/raw/2026-03-06-how-i-dropped-our-production-database.md",
+  "purpose": "reader-facing explanation of the historical safeguards and failure conditions revealed by the Terraform incident",
+  "required_facts": [
+    {"fact": "The migration combined a new AI Shipping Labs site with existing Terraform infrastructure for the DataTalks.Club course platform.", "evidence": "Source lines 1-14 and 41-47: migration goal and reuse decision are stated."},
+    {"fact": "The missing Terraform state caused Terraform to believe existing resources were absent.", "evidence": "Source lines 49-57: state omission and resulting plan are described."},
+    {"fact": "The old state archive replaced the current state before terraform destroy was run, so the command targeted the production platform.", "evidence": "Source lines 65-86: archive replacement and destructive result are explained."},
+    {"fact": "The deleted infrastructure included RDS, VPC, ECS, load balancers, and a bastion host.", "evidence": "Source lines 73-78: production resources are listed."},
+    {"fact": "AWS Support found a snapshot that was not visible in the console and restored it after an escalation.", "evidence": "Source lines 111-141: support discovery and restoration are described."},
+    {"fact": "The database was recovered after 24 hours with 1,943,200 rows in courses_answer.", "evidence": "Source lines 132-163: timing, row count, and platform return are stated."},
+    {"fact": "The post-incident workflow disabled automatic agent execution, required manual plan review, and reserved command execution for Alexey.", "evidence": "Source lines 148-156 and 248-252: new Terraform control process is specified."},
+    {"fact": "Backups were created outside Terraform state, including separate S3 backups.", "evidence": "Source lines 174-180: independent backup strategy is described."},
+    {"fact": "A Lambda and Step Functions workflow recreated a database from nightly backups, checked it with a read query, and stopped it after validation.", "evidence": "Source lines 182-197: daily restore test and purpose are described."},
+    {"fact": "Deletion protection was enabled in Terraform and AWS, S3 versioning was enabled, and Terraform state was moved to S3.", "evidence": "Source lines 199-228: layered deletion and state protections are listed."}
+  ],
+  "author_attribution": "Explain the safeguards as the historical response described by Alexey, preserving that deletion protections add friction but can still be explicitly removed."
+}

@@ -1,0 +1,18 @@
+{
+  "id": "025",
+  "source_path": "research/luna-100/sources/raw/2026-02-27-chatgpt-data-viewer.md",
+  "purpose": "personal account of Alexey building ChatGPT Data Viewer after losing access to a conversation",
+  "required_facts": [
+    {"fact": "Alexey used ChatGPT in dictation mode for brainstorming and had outlined a possible Buildcamp continuation in September 2025.", "evidence": "Source lines 1-3: brainstorming workflow and course context are described."},
+    {"fact": "ChatGPT search failed to locate the conversation, and manually scrolling and keyword searches were ineffective.", "evidence": "Source lines 4-5: failed retrieval attempts are stated."},
+    {"fact": "A ChatGPT export was 775 MB, and its ZIP archive was incomplete and could not be opened by Windows.", "evidence": "Source lines 15-32: export size and corrupted ZIP problem are described."},
+    {"fact": "Claude Code extracted important content, but the conversations.json file was about 155 MB and was impractical to search manually.", "evidence": "Source lines 7 and 37-40: extraction and file size are stated."},
+    {"fact": "Alexey built ChatGPT Data Viewer overnight with Claude Code to visualize and search conversation history.", "evidence": "Source line 9: tool name and build timing are explicit."},
+    {"fact": "The UI idea was a GitHub-like contribution graph with a date-based conversation view, backed by planned API endpoints.", "evidence": "Source lines 47-61: visualization concept, mockup, and API planning are described."},
+    {"fact": "The workflow used no tests or TDD, and Claude managed implementation without Alexey examining the code.", "evidence": "Source lines 68-75: testing and code-review limitations are stated."},
+    {"fact": "The first working version stabilized in one or two iterations and took about two to three hours total.", "evidence": "Source line 82: iteration count and time estimate are given."},
+    {"fact": "The compact architecture used FastAPI, a Vite-bundled vanilla JavaScript frontend, minsearch, and one FastAPI server serving the frontend.", "evidence": "Source lines 89-96: components and single-server design are specified."},
+    {"fact": "The archive contained 2,808 conversations and 45,247 messages spanning 2022-12-21 to 2026-02-06, and the lost conversation was found immediately after indexing.", "evidence": "Source lines 104-107 and 123-127: archive statistics and search result are stated."}
+  ],
+  "author_attribution": "Attribute the viewer, its rapid implementation, limitations, and archive findings to Alexey; preserve the explicit absence of tests and code inspection."
+}

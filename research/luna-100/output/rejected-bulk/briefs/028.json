@@ -1,0 +1,48 @@
+{
+  "id": "028",
+  "source_path": "research/luna-100/sources/raw/2026-03-04-what-1000-job-descriptions-reveal.md",
+  "purpose": "reader-facing explanation of the supported workflow or idea",
+  "required_facts": [
+    {
+      "fact": "The term “AI engineer” is still relatively new, and the best way to understand its definition today is to examine market demand.",
+      "evidence": "research/luna-100/sources/raw/2026-03-04-what-1000-job-descriptions-reveal.md"
+    },
+    {
+      "fact": "To cut through the confusion, we analyzed 1,000+ “AI Engineer” job descriptions from a large tech job site across Berlin, Amsterdam, London, Los Angeles, and New York, and distilled them into a practical, market-driven d",
+      "evidence": "research/luna-100/sources/raw/2026-03-04-what-1000-job-descriptions-reveal.md"
+    },
+    {
+      "fact": "To see how companies use the title “AI Engineer” in practice, we asked our LLM to classify each of the 889 job descriptions into one of three main categories: * AI-first roles (≈70%): Work directly on LLM and GenAI syste",
+      "evidence": "research/luna-100/sources/raw/2026-03-04-what-1000-job-descriptions-reveal.md"
+    },
+    {
+      "fact": "These roles are closest to the “classic” image of an AI engineer building AI-powered product features.",
+      "evidence": "research/luna-100/sources/raw/2026-03-04-what-1000-job-descriptions-reveal.md"
+    },
+    {
+      "fact": "* AI-support roles (≈28.5%): Focus on infrastructure and platforms around AI rather than model behavior itself: internal AI platforms, GPU and inference infrastructure, data pipelines, deployment and monitoring tooling, ",
+      "evidence": "research/luna-100/sources/raw/2026-03-04-what-1000-job-descriptions-reveal.md"
+    },
+    {
+      "fact": "* Traditional ML/DL roles (<2%): Do standard ML or deep learning (scikit-learn, XGBoost, PyTorch, TensorFlow, CV, recommendations) but are labeled “AI Engineer.” Their day-to-day looks more like that of an ML Engineer or",
+      "evidence": "research/luna-100/sources/raw/2026-03-04-what-1000-job-descriptions-reveal.md"
+    },
+    {
+      "fact": "Looking at how the biggest category where the majority of roles fall into, we can suggest this practical definition: > An AI engineer is an engineer who owns the design, evaluation, and production operation of systems bu",
+      "evidence": "research/luna-100/sources/raw/2026-03-04-what-1000-job-descriptions-reveal.md"
+    },
+    {
+      "fact": "We also found that the roles are overwhelmingly production-focused (95.6%) and that most are backend-heavy (nearly 50%), often full-stack (20%).",
+      "evidence": "research/luna-100/sources/raw/2026-03-04-what-1000-job-descriptions-reveal.md"
+    },
+    {
+      "fact": "Overall, market signals point to AI engineers being primarily Python-based, cloud-native application builders who integrate LLM systems into production environments.",
+      "evidence": "research/luna-100/sources/raw/2026-03-04-what-1000-job-descriptions-reveal.md"
+    },
+    {
+      "fact": "ML knowledge is still valuable, but it serves as a supportive context rather than the core of the role.",
+      "evidence": "research/luna-100/sources/raw/2026-03-04-what-1000-job-descriptions-reveal.md"
+    }
+  ],
+  "author_attribution": "Attribute projects and outcomes to the named author or participants in the source; do not add personal experience."
+}

@@ -1,0 +1,16 @@
+{
+  "id": "056",
+  "source_path": "research/luna-100/sources/raw/2026-05-08-building-an-ai-book-generator-with.md",
+  "source_sha256": "124d752a08e0ab2bffce3f7cdc577ce2327c5e5241ce31acf5532afac6f622ef",
+  "before_path": "research/luna-100/output/round-2/056-explanation.md",
+  "before_sha256": "a31b5a1ba8dfb53ac83529ba3f34745bd3f161a4983299ad59dfe6c94b488d6f",
+  "after_path": "research/luna-100/output/round-3/056-explanation.md",
+  "after_sha256": "1b131ae7883dbf4ddf951e63d3a3f4c4cdfeb6e6fc1a6f8d50c899c96b82a373",
+  "revision_author": "parent",
+  "substantive_edits": [
+    "Rephrased an exact twelve-word source sentence without changing the plan-file dependency."
+  ],
+  "new_rules_findings": 0,
+  "full_default_findings": 0,
+  "unresolved_source_conflicts": []
+}

@@ -1,0 +1,18 @@
+{
+  "id": "035",
+  "source_path": "research/luna-100/sources/raw/2026-03-16-karpathys-autoresearch-went-viral.md",
+  "purpose": "Account of Alexey reading and explaining Karpathy's autoresearch repository",
+  "required_facts": [
+    {"fact": "Andrej Karpathy created the autoresearch project.", "evidence": "Opening paragraph"},
+    {"fact": "The project automates repeated model experiments.", "evidence": "Core Idea"},
+    {"fact": "prepare.py contains fixed preparation and evaluation components.", "evidence": "Repository Structure"},
+    {"fact": "train.py contains editable model and training code.", "evidence": "Repository Structure"},
+    {"fact": "program.md gives the agent natural-language instructions.", "evidence": "Repository Structure"},
+    {"fact": "The system establishes a baseline on a new branch.", "evidence": "Repository Structure"},
+    {"fact": "Improved commits are kept and worse or unchanged runs are reset.", "evidence": "Experiment loop"},
+    {"fact": "Experiments use a fixed time budget and validation bits per byte.", "evidence": "Optimization Process"},
+    {"fact": "Karpathy reported 110 successful changes in about twelve hours.", "evidence": "Results"},
+    {"fact": "Autosearcher and AutoVoiceEvals apply related patterns.", "evidence": "Others Experimenting"}
+  ],
+  "author_attribution": "Alexey is a reader of Karpathy's repository, not its creator."
+}

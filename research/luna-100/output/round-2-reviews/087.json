@@ -1,0 +1,20 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-08-10-deploy-a-full-stack-app-with-ai-coding.md",
+  "original_path": "research/luna-100/output/round-1/087-account.md",
+  "revised_path": "research/luna-100/output/round-2/087-account.md",
+  "word_count": 439,
+  "required_facts_checked": [
+    {"claim": "The deployed project is the interview canvas", "evidence": "Application for system-design interviews."},
+    {"claim": "The image uses a two-stage Docker build", "evidence": "Two-stage Docker build."},
+    {"claim": "FastAPI serves the frontend", "evidence": "Backend should serve the frontend."},
+    {"claim": "Postgres replaces SQLite for deployment", "evidence": "Switch from SQLite to Postgres."},
+    {"claim": "Compose uses a health check", "evidence": "Adds a health check."},
+    {"claim": "Playwright checks two sessions", "evidence": "Add an end-to-end test."},
+    {"claim": "CloudFormation puts Caddy, app, and Postgres on EC2", "evidence": "One EC2 instance runs Caddy, the app, and Postgres."},
+    {"claim": "CI/CD uses OpenID Connect", "evidence": "Use OpenID Connect."}
+  ],
+  "unsupported_claims_removed": ["Kept the proof-of-concept qualification and removed any implication that the single-instance layout was production-ready."],
+  "substantive_edits": ["Kept the account in first person and followed the local-to-deployment chronology.", "Restored container, database, Compose, two-session Playwright, CloudFormation, OIDC, and health-check details.", "Separated the watched administrative first deployment from the restricted normal pipeline."],
+  "full_final_lint_findings": [],
+  "unresolved_source_conflicts": []
+}

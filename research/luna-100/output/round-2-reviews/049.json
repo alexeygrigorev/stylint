@@ -1,0 +1,46 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-04-17-how-we-built-ai-shipping-labs.md",
+  "original_path": "research/luna-100/output/round-1/049-account.md",
+  "revised_path": "research/luna-100/output/round-2/049-account.md",
+  "word_count": 569,
+  "required_fact_evidence": [
+    {
+      "claim": "Valeriia built Next.js site with v0 and Cursor",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "three subscription tiers",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "newsletter import used Google Docs and scripts",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "Stripe and AWS S3",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "existing platforms lacked full workflow",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "15 specification files",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "41 of 46 and 51 of 56 task counts",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "integrations required manual testing",
+      "evidence": "Verified against assigned source"
+    }
+  ],
+  "substantive_edits": [
+    "Recomposed account with explicit attribution between Valeriia and Alexey."
+  ],
+  "unsupported_claims_removed": [],
+  "unresolved_source_conflicts": [],
+  "full_final_lint_findings": []
+}

@@ -1,0 +1,20 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-08-01-rebuilding-a-faq-system-for-datatalksclub.md",
+  "original_path": "research/luna-100/output/round-1/082-explanation.md",
+  "revised_path": "research/luna-100/output/round-2/082-explanation.md",
+  "word_count": 504,
+  "required_facts_checked": [
+    {"claim": "FAQ has curation and retrieval components", "evidence": "There are two components: FAQ curation and FAQ retrieval."},
+    {"claim": "Sources include GitHub, Slack, and YouTube", "evidence": "The questions come from GitHub contributions, Slack discussions, and YouTube Q&A videos."},
+    {"claim": "Classifications are NEW, UPDATE, DUPLICATE, and WRONG_COURSE", "evidence": "OpenAI returns a structured decision: NEW, UPDATE, DUPLICATE or WRONG_COURSE."},
+    {"claim": "Leave-one-out is needed for historical NEW cases", "evidence": "We have to use a leave-one-out setup."},
+    {"claim": "Zerosearch is pure Python", "evidence": "A zero-dependency search engine written entirely in pure-Python."},
+    {"claim": "Index size is 8 MB", "evidence": "It’s 8 MB total."},
+    {"claim": "Slack evaluation has 130 records from three courses", "evidence": "At the end, I had a sample of 130 records."},
+    {"claim": "Corrections improve FAQ records", "evidence": "Most of the time the way to fix these problems is ... fixing the FAQ dataset itself."}
+  ],
+  "unsupported_claims_removed": ["Removed the draft's generic claim that the architecture was simply 'reasonable'; kept the source's concrete deployment and evaluation reasons."],
+  "substantive_edits": ["Reframed the piece as an explanation of curation, evaluation, and retrieval decisions.", "Restored the costly decision distinction, leave-one-out logic, real Slack sample sizes, and feedback-to-record loop.", "Split dense paragraphs and removed checker-triggering filler while retaining technical names and qualifiers."],
+  "full_final_lint_findings": [],
+  "unresolved_source_conflicts": []
+}

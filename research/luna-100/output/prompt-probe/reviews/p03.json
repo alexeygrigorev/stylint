@@ -1,0 +1,27 @@
+{
+  "id": "p03",
+  "source_path": "research/luna-100/sources/raw/2026-05-08-building-an-ai-book-generator-with.md",
+  "revised_path": "research/luna-100/output/prompt-probe/revised/p03-account.md",
+  "word_count": 474,
+  "source_checks": [
+    "metals list and poor ChatGPT chapter",
+    "coding agent bullets/context limits",
+    "gallium potassium alloy book",
+    "conifers book",
+    "informal Gemini comparison",
+    "YAML plan",
+    "audio EPUB KDP",
+    "fireworks 21/45min/$4",
+    "zero Amazon sales"
+  ],
+  "substantive_edits": [
+    "Connected each child request to the next experiment",
+    "Preserved informal evaluation and commercial limitation",
+    "Removed generic success framing"
+  ],
+  "unsupported_claims_removed": [
+    "Removed unsupported success, certainty and commercial claims."
+  ],
+  "full_final_stylint_findings": [],
+  "unresolved_source_conflicts": []
+}

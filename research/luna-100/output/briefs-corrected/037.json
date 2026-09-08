@@ -1,0 +1,49 @@
+{
+  "id": "037",
+  "source_path": "research/luna-100/sources/raw/2026-03-20-i-turned-my-telegram-bot-into-a-multi.md",
+  "correction_reason": "Original brief used facts or a source path from a different archived post; original preserved.",
+  "original_brief": "research/luna-100/output/briefs/037.json",
+  "purpose": "account",
+  "required_facts": [
+    {
+      "fact": "Multiple URLs filled the main context, causing compaction, slower responses and lost detail.",
+      "evidence": "Actual assigned source; checked by parent"
+    },
+    {
+      "fact": "Main agent coordinates and processes voice messages.",
+      "evidence": "Actual assigned source; checked by parent"
+    },
+    {
+      "fact": "article-summarizer uses Jina Reader and adds structured research summaries.",
+      "evidence": "Actual assigned source; checked by parent"
+    },
+    {
+      "fact": "resource-describer writes 2–4 sentences in interesting-resources.md.",
+      "evidence": "Actual assigned source; checked by parent"
+    },
+    {
+      "fact": "verify-content compares generated drafts to original voice notes and restores missing details.",
+      "evidence": "Actual assigned source; checked by parent"
+    },
+    {
+      "fact": "Telegram backgrounding stops native voice recording.",
+      "evidence": "Actual assigned source; checked by parent"
+    },
+    {
+      "fact": "After debugging, MP4 and M4A files use the speech pipeline.",
+      "evidence": "Actual assigned source; checked by parent"
+    },
+    {
+      "fact": "YouTube links can provide transcripts.",
+      "evidence": "Actual assigned source; checked by parent"
+    },
+    {
+      "fact": "Corrections update the process command; slide skills support workshops.",
+      "evidence": "Actual assigned source; checked by parent"
+    },
+    {
+      "fact": "The slide workflow began with a Zalando workshop.",
+      "evidence": "Actual assigned source; checked by parent"
+    }
+  ]
+}

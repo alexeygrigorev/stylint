@@ -1,0 +1,18 @@
+{
+  "id": "031",
+  "source_path": "research/luna-100/sources/raw/2026-03-11-how-crisp-dm-still-applies-to-ai.md",
+  "purpose": "personal account of applying CRISP-DM as a reference framework to AI engineering work",
+  "required_facts": [
+    {"fact": "CRISP-DM was developed in the 1990s for structuring data projects and was later adopted by the data science and machine learning community.", "evidence": "Source line 1: framework origin and adoption are stated."},
+    {"fact": "Modern AI engineering uses LLM APIs, retrieval pipelines, agents, prompts, evaluation tools, and production observability.", "evidence": "Source lines 3-5: changed stack and continuing process structure are described."},
+    {"fact": "The six CRISP-DM phases are Business Understanding, Data Understanding, Data Preparation, Modeling, Evaluation, and Deployment.", "evidence": "Source lines 10-20: six phases are listed."},
+    {"fact": "The example is an online classifieds listing feature that suggests title, description, category, and price from a user-uploaded photo.", "evidence": "Source lines 22-29: classifieds scenario is introduced."},
+    {"fact": "Business Understanding defines success, such as reducing listing time from five minutes to one and abandonment from 15 percent to 5 percent.", "evidence": "Source lines 32-38: business objectives and AI-versus-simple-solution decision are described."},
+    {"fact": "Data Understanding examines image storage, formats, resolutions, frequency of images, and blurry, rotated, or incomplete inputs.", "evidence": "Source lines 40-51: data questions and related listing fields are listed."},
+    {"fact": "Data Preparation can validate formats, normalize image size or orientation, prepare metadata, and define structured outputs.", "evidence": "Source lines 53-64: preparation tasks and RAG equivalents are described."},
+    {"fact": "Modeling in a foundation-model system includes prompt design, output schema, validation, and tests for image extraction reliability.", "evidence": "Source lines 66-81: modeling shift, components, and iteration are stated."},
+    {"fact": "Evaluation may compare current and AI-assisted workflows with an A/B test against the original goals.", "evidence": "Source lines 83-94: evaluation metrics and return to earlier phases are described."},
+    {"fact": "Deployment integrates the service, handles errors and unexpected inputs, monitors performance, and can send production findings back to earlier phases.", "evidence": "Source lines 96-114: deployment responsibilities and iterative lifecycle are stated."}
+  ],
+  "author_attribution": "Attribute the CRISP-DM comparison and classifieds example to the source author; preserve that it is a reference structure rather than a claim that AI engineering is identical to traditional ML."
+}

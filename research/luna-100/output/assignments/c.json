@@ -1,0 +1,322 @@
+[
+  {
+    "id": "069",
+    "source_id": "s35",
+    "source_path": "research/luna-100/sources/raw/2026-06-26-six-projects-that-didnt-make-it.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-06-26-six-projects-that-didnt-make-it.md",
+    "split": "holdout",
+    "mode": "account",
+    "output": "069-account.md",
+    "brief": "069.json"
+  },
+  {
+    "id": "070",
+    "source_id": "s35",
+    "source_path": "research/luna-100/sources/raw/2026-06-26-six-projects-that-didnt-make-it.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-06-26-six-projects-that-didnt-make-it.md",
+    "split": "holdout",
+    "mode": "explanation",
+    "output": "070-explanation.md",
+    "brief": "070.json"
+  },
+  {
+    "id": "071",
+    "source_id": "s36",
+    "source_path": "research/luna-100/sources/raw/2026-07-03-choosing-a-portfolio-project-the.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-07-03-choosing-a-portfolio-project-the.md",
+    "split": "development",
+    "mode": "account",
+    "output": "071-account.md",
+    "brief": "071.json"
+  },
+  {
+    "id": "072",
+    "source_id": "s36",
+    "source_path": "research/luna-100/sources/raw/2026-07-03-choosing-a-portfolio-project-the.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-07-03-choosing-a-portfolio-project-the.md",
+    "split": "development",
+    "mode": "explanation",
+    "output": "072-explanation.md",
+    "brief": "072.json"
+  },
+  {
+    "id": "073",
+    "source_id": "s37",
+    "source_path": "research/luna-100/sources/raw/2026-07-11-my-pypi-release-pipeline-for-python.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-07-11-my-pypi-release-pipeline-for-python.md",
+    "split": "development",
+    "mode": "account",
+    "output": "073-account.md",
+    "brief": "073.json"
+  },
+  {
+    "id": "074",
+    "source_id": "s37",
+    "source_path": "research/luna-100/sources/raw/2026-07-11-my-pypi-release-pipeline-for-python.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-07-11-my-pypi-release-pipeline-for-python.md",
+    "split": "development",
+    "mode": "explanation",
+    "output": "074-explanation.md",
+    "brief": "074.json"
+  },
+  {
+    "id": "075",
+    "source_id": "s38",
+    "source_path": "research/luna-100/sources/raw/2026-07-16-how-to-write-a-good-readme.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-07-16-how-to-write-a-good-readme.md",
+    "split": "development",
+    "mode": "account",
+    "output": "075-account.md",
+    "brief": "075.json"
+  },
+  {
+    "id": "076",
+    "source_id": "s38",
+    "source_path": "research/luna-100/sources/raw/2026-07-16-how-to-write-a-good-readme.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-07-16-how-to-write-a-good-readme.md",
+    "split": "development",
+    "mode": "explanation",
+    "output": "076-explanation.md",
+    "brief": "076.json"
+  },
+  {
+    "id": "077",
+    "source_id": "s39",
+    "source_path": "research/luna-100/sources/raw/2026-07-22-ai-native-development-specifications.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-07-22-ai-native-development-specifications.md",
+    "split": "development",
+    "mode": "account",
+    "output": "077-account.md",
+    "brief": "077.json"
+  },
+  {
+    "id": "078",
+    "source_id": "s39",
+    "source_path": "research/luna-100/sources/raw/2026-07-22-ai-native-development-specifications.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-07-22-ai-native-development-specifications.md",
+    "split": "development",
+    "mode": "explanation",
+    "output": "078-explanation.md",
+    "brief": "078.json"
+  },
+  {
+    "id": "079",
+    "source_id": "s40",
+    "source_path": "research/luna-100/sources/raw/2026-07-25-what-ai-forward-deployed-engineers.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-07-25-what-ai-forward-deployed-engineers.md",
+    "split": "holdout",
+    "mode": "account",
+    "output": "079-account.md",
+    "brief": "079.json"
+  },
+  {
+    "id": "080",
+    "source_id": "s40",
+    "source_path": "research/luna-100/sources/raw/2026-07-25-what-ai-forward-deployed-engineers.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-07-25-what-ai-forward-deployed-engineers.md",
+    "split": "holdout",
+    "mode": "explanation",
+    "output": "080-explanation.md",
+    "brief": "080.json"
+  },
+  {
+    "id": "081",
+    "source_id": "s41",
+    "source_path": "research/luna-100/sources/raw/2026-08-01-rebuilding-a-faq-system-for-datatalksclub.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-08-01-rebuilding-a-faq-system-for-datatalksclub.md",
+    "split": "development",
+    "mode": "account",
+    "output": "081-account.md",
+    "brief": "081.json"
+  },
+  {
+    "id": "082",
+    "source_id": "s41",
+    "source_path": "research/luna-100/sources/raw/2026-08-01-rebuilding-a-faq-system-for-datatalksclub.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-08-01-rebuilding-a-faq-system-for-datatalksclub.md",
+    "split": "development",
+    "mode": "explanation",
+    "output": "082-explanation.md",
+    "brief": "082.json"
+  },
+  {
+    "id": "083",
+    "source_id": "s42",
+    "source_path": "research/luna-100/sources/raw/2026-08-03-build-and-ship-a-full-stack-app-with.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-08-03-build-and-ship-a-full-stack-app-with.md",
+    "split": "development",
+    "mode": "account",
+    "output": "083-account.md",
+    "brief": "083.json"
+  },
+  {
+    "id": "084",
+    "source_id": "s42",
+    "source_path": "research/luna-100/sources/raw/2026-08-03-build-and-ship-a-full-stack-app-with.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-08-03-build-and-ship-a-full-stack-app-with.md",
+    "split": "development",
+    "mode": "explanation",
+    "output": "084-explanation.md",
+    "brief": "084.json"
+  },
+  {
+    "id": "085",
+    "source_id": "s43",
+    "source_path": "research/luna-100/sources/raw/2026-08-08-getting-an-ai-engineering-job.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-08-08-getting-an-ai-engineering-job.md",
+    "split": "development",
+    "mode": "account",
+    "output": "085-account.md",
+    "brief": "085.json"
+  },
+  {
+    "id": "086",
+    "source_id": "s43",
+    "source_path": "research/luna-100/sources/raw/2026-08-08-getting-an-ai-engineering-job.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-08-08-getting-an-ai-engineering-job.md",
+    "split": "development",
+    "mode": "explanation",
+    "output": "086-explanation.md",
+    "brief": "086.json"
+  },
+  {
+    "id": "087",
+    "source_id": "s44",
+    "source_path": "research/luna-100/sources/raw/2026-08-10-deploy-a-full-stack-app-with-ai-coding.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-08-10-deploy-a-full-stack-app-with-ai-coding.md",
+    "split": "development",
+    "mode": "account",
+    "output": "087-account.md",
+    "brief": "087.json"
+  },
+  {
+    "id": "088",
+    "source_id": "s44",
+    "source_path": "research/luna-100/sources/raw/2026-08-10-deploy-a-full-stack-app-with-ai-coding.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-08-10-deploy-a-full-stack-app-with-ai-coding.md",
+    "split": "development",
+    "mode": "explanation",
+    "output": "088-explanation.md",
+    "brief": "088.json"
+  },
+  {
+    "id": "089",
+    "source_id": "s45",
+    "source_path": "research/luna-100/sources/raw/2026-08-14-how-to-do-evals-in-2026.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-08-14-how-to-do-evals-in-2026.md",
+    "split": "holdout",
+    "mode": "account",
+    "output": "089-account.md",
+    "brief": "089.json"
+  },
+  {
+    "id": "090",
+    "source_id": "s45",
+    "source_path": "research/luna-100/sources/raw/2026-08-14-how-to-do-evals-in-2026.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-08-14-how-to-do-evals-in-2026.md",
+    "split": "holdout",
+    "mode": "explanation",
+    "output": "090-explanation.md",
+    "brief": "090.json"
+  },
+  {
+    "id": "091",
+    "source_id": "s46",
+    "source_path": "research/luna-100/sources/raw/2026-08-18-devops-and-observability-for-an-ai.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-08-18-devops-and-observability-for-an-ai.md",
+    "split": "development",
+    "mode": "account",
+    "output": "091-account.md",
+    "brief": "091.json"
+  },
+  {
+    "id": "092",
+    "source_id": "s46",
+    "source_path": "research/luna-100/sources/raw/2026-08-18-devops-and-observability-for-an-ai.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-08-18-devops-and-observability-for-an-ai.md",
+    "split": "development",
+    "mode": "explanation",
+    "output": "092-explanation.md",
+    "brief": "092.json"
+  },
+  {
+    "id": "093",
+    "source_id": "s47",
+    "source_path": "research/luna-100/sources/raw/2026-08-28-from-idea-to-production.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-08-28-from-idea-to-production.md",
+    "split": "development",
+    "mode": "account",
+    "output": "093-account.md",
+    "brief": "093.json"
+  },
+  {
+    "id": "094",
+    "source_id": "s47",
+    "source_path": "research/luna-100/sources/raw/2026-08-28-from-idea-to-production.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-08-28-from-idea-to-production.md",
+    "split": "development",
+    "mode": "explanation",
+    "output": "094-explanation.md",
+    "brief": "094.json"
+  },
+  {
+    "id": "095",
+    "source_id": "s48",
+    "source_path": "research/luna-100/sources/raw/2026-08-31-ai-dev-tools-zoomcamp-2026-starts.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-08-31-ai-dev-tools-zoomcamp-2026-starts.md",
+    "split": "development",
+    "mode": "account",
+    "output": "095-account.md",
+    "brief": "095.json"
+  },
+  {
+    "id": "096",
+    "source_id": "s48",
+    "source_path": "research/luna-100/sources/raw/2026-08-31-ai-dev-tools-zoomcamp-2026-starts.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-08-31-ai-dev-tools-zoomcamp-2026-starts.md",
+    "split": "development",
+    "mode": "explanation",
+    "output": "096-explanation.md",
+    "brief": "096.json"
+  },
+  {
+    "id": "097",
+    "source_id": "s49",
+    "source_path": "research/luna-100/sources/raw/2026-08-31-coding-agent-building-blocks-reusable.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-08-31-coding-agent-building-blocks-reusable.md",
+    "split": "development",
+    "mode": "account",
+    "output": "097-account.md",
+    "brief": "097.json"
+  },
+  {
+    "id": "098",
+    "source_id": "s49",
+    "source_path": "research/luna-100/sources/raw/2026-08-31-coding-agent-building-blocks-reusable.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-08-31-coding-agent-building-blocks-reusable.md",
+    "split": "development",
+    "mode": "explanation",
+    "output": "098-explanation.md",
+    "brief": "098.json"
+  },
+  {
+    "id": "099",
+    "source_id": "s50",
+    "source_path": "research/luna-100/sources/raw/2026-09-04-13-ai-projects-from-ai-engineering.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-09-04-13-ai-projects-from-ai-engineering.md",
+    "split": "holdout",
+    "mode": "account",
+    "output": "099-account.md",
+    "brief": "099.json"
+  },
+  {
+    "id": "100",
+    "source_id": "s50",
+    "source_path": "research/luna-100/sources/raw/2026-09-04-13-ai-projects-from-ai-engineering.md",
+    "source_original": "/home/alexey/git/telegram-writing-assistant/reference/substack/2026-09-04-13-ai-projects-from-ai-engineering.md",
+    "split": "holdout",
+    "mode": "explanation",
+    "output": "100-explanation.md",
+    "brief": "100.json"
+  }
+]

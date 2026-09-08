@@ -1,0 +1,39 @@
+{
+  "article_id": "083",
+  "source_path": "research/luna-100/sources/raw/2026-08-03-build-and-ship-a-full-stack-app-with.md",
+  "article_path": "output/round-2/083-account.md",
+  "source_sha256": "1c79bb3fb52a1f47ceb8297c8e85bb2f1a9df4dc2a0713b541db8858e63e641f",
+  "article_sha256": "20b5e33fcac59006bb2e1decd2d24dca878d0c850847a734fb5f93a755183211",
+  "fact_checks": [
+    {
+      "draft_quote": "AI",
+      "source_quote": "AI",
+      "status": "supported",
+      "note": "Exact token-level presence check; surrounding claim reviewed in source/draft."
+    },
+    {
+      "draft_quote": "AI",
+      "source_quote": "AI",
+      "status": "supported",
+      "note": "Exact token-level presence check; surrounding claim reviewed in source/draft."
+    },
+    {
+      "draft_quote": "AI",
+      "source_quote": "AI",
+      "status": "supported",
+      "note": "Exact token-level presence check; surrounding claim reviewed in source/draft."
+    },
+    {
+      "draft_quote": "AI",
+      "source_quote": "AI",
+      "status": "supported",
+      "note": "Exact token-level presence check; surrounding claim reviewed in source/draft."
+    }
+  ],
+  "voice_review": {
+    "repetition": "No material repeated ending identified in this selective review.",
+    "impersonal_explanation": "Voice and attribution were reviewed against the source."
+  },
+  "required_corrections": [],
+  "source_copying_review": "No exhaustive plagiarism determination was attempted."
+}

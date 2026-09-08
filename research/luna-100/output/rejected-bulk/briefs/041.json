@@ -1,0 +1,58 @@
+{
+  "id": "041",
+  "source_path": "research/luna-100/sources/raw/2026-04-03-i-built-an-ai-agent-team-for-software.md",
+  "article_purpose": "account",
+  "author_attribution_notes": "Facts and project ownership are attributed to the source author; no additional personal experience or results added.",
+  "required_facts": [
+    {
+      "id": 1,
+      "claim": "Over the past few weeks, I’ve been trying out a new way of working with agent teams for software development using Claude Code.",
+      "source_evidence": "Over the past few weeks, I’ve been trying out a new way of working with agent teams for software development using Claude Code."
+    },
+    {
+      "id": 2,
+      "claim": "Instead of just seeing it as a single tool, I’ve started thinking of the main session as an orchestrator that directs a small team of agents.",
+      "source_evidence": "Instead of just seeing it as a single tool, I’ve started thinking of the main session as an orchestrator that directs a small team of agents."
+    },
+    {
+      "id": 3,
+      "claim": "I’ve tested this setup on a few projects now, and while it’s still a work in progress, I can already see what works, what doesn’t, and what controls are needed to let the agents build real projects with minimal oversight",
+      "source_evidence": "I’ve tested this setup on a few projects now, and while it’s still a work in progress, I can already see what works, what doesn’t, and what controls are needed to let the agents build real projects with minimal oversight."
+    },
+    {
+      "id": 4,
+      "claim": "In this post, I’ll share what my setup looks like: how I describe the agents, how they interact, how it all fits into a single-team workflow, and how I used this approach to build five different projects.",
+      "source_evidence": "In this post, I’ll share what my setup looks like: how I describe the agents, how they interact, how it all fits into a single-team workflow, and how I used this approach to build five different projects."
+    },
+    {
+      "id": 5,
+      "claim": "Background For small tools, I usually dump my idea into my [Telegram Writing Assistant] or [talk to ChatGPT] to refine it (or both).",
+      "source_evidence": "Background For small tools, I usually dump my idea into my [Telegram Writing Assistant] or [talk to ChatGPT] to refine it (or both)."
+    },
+    {
+      "id": 6,
+      "claim": "I iterate with Claude until the concept works.",
+      "source_evidence": "I iterate with Claude until the concept works."
+    },
+    {
+      "id": 7,
+      "claim": "This approach is sufficient for smaller utilities or projects that I can easily manage.",
+      "source_evidence": "This approach is sufficient for smaller utilities or projects that I can easily manage."
+    },
+    {
+      "id": 8,
+      "claim": "But it falls short for more complex projects with too many moving parts and tasks at different stages.",
+      "source_evidence": "But it falls short for more complex projects with too many moving parts and tasks at different stages."
+    },
+    {
+      "id": 9,
+      "claim": "For example, it doesn’t provide a way to verify the agent’s claims that a task is complete or test that it was implemented correctly according to the plan.",
+      "source_evidence": "For example, it doesn’t provide a way to verify the agent’s claims that a task is complete or test that it was implemented correctly according to the plan."
+    },
+    {
+      "id": 10,
+      "claim": "That’s why I decided to try building a team of agents, each with their own role, with the main session serving as the orchestrator: it launches agents, assigns tasks among them, ensures compliance with the process, and o",
+      "source_evidence": "That’s why I decided to try building a team of agents, each with their own role, with the main session serving as the orchestrator: it launches agents, assigns tasks among them, ensures compliance with the process, and only commits the work after the final acceptance step is completed."
+    }
+  ]
+}

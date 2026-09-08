@@ -1,0 +1,48 @@
+{
+  "id": "008",
+  "source_path": "research/luna-100/sources/raw/2026-01-02-benefits-of-learning-in-public-and.md",
+  "purpose": "reader-facing explanation of the supported workflow or idea",
+  "required_facts": [
+    {
+      "fact": "Learners can post updates about their work and earn bonus points.",
+      "evidence": "research/luna-100/sources/raw/2026-01-02-benefits-of-learning-in-public-and.md"
+    },
+    {
+      "fact": "We’ve noticed that those who share their progress tend to stay more engaged and gain benefits beyond just the course.",
+      "evidence": "research/luna-100/sources/raw/2026-01-02-benefits-of-learning-in-public-and.md"
+    },
+    {
+      "fact": "Many podcast guests have also spoken about the advantages of publicly sharing work.",
+      "evidence": "research/luna-100/sources/raw/2026-01-02-benefits-of-learning-in-public-and.md"
+    },
+    {
+      "fact": "Over the years, I’ve [interviewed over 200 practitioners and learners](https://datatalks.club/podcast.html), many of whom explained how sharing their work publicly affected their learning and career growth.",
+      "evidence": "research/luna-100/sources/raw/2026-01-02-benefits-of-learning-in-public-and.md"
+    },
+    {
+      "fact": "What are the benefits of learning in public?",
+      "evidence": "research/luna-100/sources/raw/2026-01-02-benefits-of-learning-in-public-and.md"
+    },
+    {
+      "fact": "I use examples from the DataTalks.Club community and our podcast to answer that question.",
+      "evidence": "research/luna-100/sources/raw/2026-01-02-benefits-of-learning-in-public-and.md"
+    },
+    {
+      "fact": "Here are the podcast episodes referenced throughout this post: * [Learn in Public: Personal Branding & Career Marketing for Developers](https://datatalks.club/podcast/developer-personal-brand-learn-in-public.html) with S",
+      "evidence": "research/luna-100/sources/raw/2026-01-02-benefits-of-learning-in-public-and.md"
+    },
+    {
+      "fact": "You increase the chance that recruiters, employers, or collaborators notice your work and reach out with opportunities you did not actively seek.",
+      "evidence": "research/luna-100/sources/raw/2026-01-02-benefits-of-learning-in-public-and.md"
+    },
+    {
+      "fact": "Explaining what you learn in public forces you to clarify your understanding, identify knowledge gaps, and internalize concepts more effectively.",
+      "evidence": "research/luna-100/sources/raw/2026-01-02-benefits-of-learning-in-public-and.md"
+    },
+    {
+      "fact": "Public learning invites feedback from others working on similar problems, which helps you correct mistakes and learn alternative approaches.",
+      "evidence": "research/luna-100/sources/raw/2026-01-02-benefits-of-learning-in-public-and.md"
+    }
+  ],
+  "author_attribution": "Attribute projects and outcomes to the named author or participants in the source; do not add personal experience."
+}

@@ -1,0 +1,20 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-08-10-deploy-a-full-stack-app-with-ai-coding.md",
+  "original_path": "research/luna-100/output/round-1/088-explanation.md",
+  "revised_path": "research/luna-100/output/round-2/088-explanation.md",
+  "word_count": 437,
+  "required_facts_checked": [
+    {"claim": "The frontend needs no runtime container", "evidence": "We don’t need a separate container for the frontend."},
+    {"claim": "SQLite suits local development", "evidence": "SQLite is very convenient for local development."},
+    {"claim": "Compose runs app and database", "evidence": "docker compose up."},
+    {"claim": "End-to-end tests verify two clients", "evidence": "Candidate ... interviewer sees the change."},
+    {"claim": "Build precedes deploy", "evidence": "Split the deploy step into two separate steps."},
+    {"claim": "The registry stores the image", "evidence": "Upload it to a container registry."},
+    {"claim": "The same tag is promoted", "evidence": "Simply pull the same image."},
+    {"claim": "OIDC avoids long-lived credentials", "evidence": "Runner will assume a role."}
+  ],
+  "unsupported_claims_removed": ["Kept the proof-of-concept and cleanup limitations instead of presenting the AWS layout as a mature production architecture."],
+  "substantive_edits": ["Reframed the explanation around preserving boundaries and proving each deployment step.", "Restored the two-stage image, SQLite/Postgres, Compose health check, Playwright, registry promotion, and OIDC reasons.", "Added the source-supported resource cleanup action without turning it into generic advice."],
+  "full_final_lint_findings": [],
+  "unresolved_source_conflicts": []
+}

@@ -1,0 +1,30 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-05-08-building-an-ai-book-generator-with.md",
+  "original_path": "research/luna-100/output/round-1/055-account.md",
+  "revised_path": "research/luna-100/output/round-2/055-account.md",
+  "word_count": 607,
+  "required_facts_checked": [
+    "The first request was a child-specific book about metals, including palladium, tin, magnesium, titanium, beryllium, lithium and tungsten.",
+    "Direct ChatGPT chapter generation produced a poor result.",
+    "Coding agents initially wrote bullet points and later hit context limits while rewriting chapters.",
+    "The metals book required substantial manual guidance and was liked by the author's child.",
+    "A second book covered gallium, potassium and their unusual alloy, and a third covered conifers.",
+    "The specialized agent compared GPT, Claude and Gemini informally, with Gemini producing the best result.",
+    "The generator uses a structured YAML plan and a plan-then-execute workflow.",
+    "The pipeline produces audio, EPUB and Amazon KDP artifacts.",
+    "A fireworks example produced 21 chapters in about 45 minutes for roughly $4 using Gemini 3 Pro.",
+    "The tested Amazon book sold zero copies over about five months, so publishing artifacts did not establish demand."
+  ],
+  "brief_corrections": [],
+  "unsupported_claims_removed": [
+    "Removed claims that generated books would sell or that the specialized agent guaranteed narrative quality.",
+    "Removed invented motives and commercial outcomes beyond the documented zero-copy experiment."
+  ],
+  "substantive_edits": [
+    "Rewrote the account from the child's requests through coding-agent experiments, specialization and publication testing.",
+    "Kept the child's interests distinct from the author's implementation choices.",
+    "Preserved exact project topics, cost, timing and commercial limitation."
+  ],
+  "full_final_lint_findings": [],
+  "unresolved_source_conflicts": []
+}

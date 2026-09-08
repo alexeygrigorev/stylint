@@ -1,0 +1,57 @@
+{
+  "id": "091",
+  "source_path": "research/luna-100/sources/raw/2026-08-18-devops-and-observability-for-an-ai.md",
+  "mode": "account",
+  "article_purpose": "personal account of what happened and why",
+  "author_attribution_notes": "Keep Alexey’s first-person framing only for actions and observations explicitly present in the supplied source; preserve attribution to DataTalks.Club, AI Shipping Labs, and other projects where named.",
+  "required_facts": [
+    {
+      "fact": "This is the fourth article in a series based on , the free course we run at DataTalks.Club.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-18-devops-and-observability-for-an-ai.md (source sentence 1)"
+    },
+    {
+      "fact": "All articles in the series:\n\n* Part 1: \n* Part 2: \n* Part 3: \n* Part 4:  (this article)\n* Part 5: TBA\n\nIn part 2, we developed an application for conducting system design interviews.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-18-devops-and-observability-for-an-ai.md (source sentence 2)"
+    },
+    {
+      "fact": "In part 3, we deployed it to a cloud environment and configured CI/CD.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-18-devops-and-observability-for-an-ai.md (source sentence 3)"
+    },
+    {
+      "fact": "In this part, we make the deployed application easier to operate:\n\n* Separate development and production environments.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-18-devops-and-observability-for-an-ai.md (source sentence 4)"
+    },
+    {
+      "fact": "* Promote the exact version tested in development.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-18-devops-and-observability-for-an-ai.md (source sentence 5)"
+    },
+    {
+      "fact": "* Use an AI agent as the first responder.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-18-devops-and-observability-for-an-ai.md (source sentence 6)"
+    },
+    {
+      "fact": "Deploy changes to development first, promote a tested release to production, and respond to observed failures\n\nWe will continue using AWS and CloudFormation, but the principles we show in this article are tool-agnostic and will work for any",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-18-devops-and-observability-for-an-ai.md (source sentence 7)"
+    },
+    {
+      "fact": "## Recap\n\nWe started building the  in :\n\n* We brainstormed with an AI assistant to come up with the specification\n* Based on that we created a React-based frontend with no backend\n* Next, we defined the frontend-backend OpenAPI schema\n* Usi",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-18-devops-and-observability-for-an-ai.md (source sentence 8)"
+    },
+    {
+      "fact": "## Dev and prod environments\n\nWhen we push the code, we automatically deploy the changes, and they go live immediately.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-18-devops-and-observability-for-an-ai.md (source sentence 9)"
+    },
+    {
+      "fact": "It’s okay when we are just starting to work on our project.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-18-devops-and-observability-for-an-ai.md (source sentence 10)"
+    },
+    {
+      "fact": "But when we have real users, we want to be more careful and check that our changes didn’t introduce any regressions.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-18-devops-and-observability-for-an-ai.md (source sentence 11)"
+    },
+    {
+      "fact": "To avoid having this problem, we usually have two copies of the same environment:\n\n* Dev (development): the environment we use internally for checking that everything works.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-18-devops-and-observability-for-an-ai.md (source sentence 12)"
+    }
+  ]
+}

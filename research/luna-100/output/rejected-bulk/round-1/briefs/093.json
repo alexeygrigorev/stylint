@@ -1,0 +1,57 @@
+{
+  "id": "093",
+  "source_path": "research/luna-100/sources/raw/2026-08-28-from-idea-to-production.md",
+  "mode": "account",
+  "article_purpose": "personal account of what happened and why",
+  "author_attribution_notes": "Keep Alexey’s first-person framing only for actions and observations explicitly present in the supplied source; preserve attribution to DataTalks.Club, AI Shipping Labs, and other projects where named.",
+  "required_facts": [
+    {
+      "fact": "is the free course we run at DataTalks.Club.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-28-from-idea-to-production.md (source sentence 1)"
+    },
+    {
+      "fact": "Across the series we build an application with AI coding agents from the idea to making it production-ready.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-28-from-idea-to-production.md (source sentence 2)"
+    },
+    {
+      "fact": "I showed how to do it in 3 stages:\n\n*  - coming up with an idea, creating frontend and backend, and running it locally\n*  - making the application testable and deployable, and setting up CI/CD\n*  - adding dev/prod environments, collecting m",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-28-from-idea-to-production.md (source sentence 3)"
+    },
+    {
+      "fact": "I’ll keep it tool-agnostic: I don’t assume any specific coding agent, programming language, framework, cloud, or observability tool.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-28-from-idea-to-production.md (source sentence 4)"
+    },
+    {
+      "fact": "It doesn’t really matter which assistant you use.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-28-from-idea-to-production.md (source sentence 5)"
+    },
+    {
+      "fact": "You can choose Codex, Claude Code, OpenCode, Grok Build, Cursor, OpenCode, or anything else you like.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-28-from-idea-to-production.md (source sentence 6)"
+    },
+    {
+      "fact": "I show a sequence of steps you can follow, one after another, to take your product from a vague idea to production.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-28-from-idea-to-production.md (source sentence 7)"
+    },
+    {
+      "fact": "Each step is a prompt that you can put directly into your coding assistant.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-28-from-idea-to-production.md (source sentence 8)"
+    },
+    {
+      "fact": "In most cases, it helps to start a new session for each step: this way, only the important things are in your agent’s context so it can finish the work faster and better.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-28-from-idea-to-production.md (source sentence 9)"
+    },
+    {
+      "fact": "## Stage 1: Build\n\nThis is the first stage of our process.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-28-from-idea-to-production.md (source sentence 10)"
+    },
+    {
+      "fact": "In the build stage, we:\n\n* Turn the raw idea into a concrete specification\n* Create frontend and backend, and connect them\n\n### 1.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-28-from-idea-to-production.md (source sentence 11)"
+    },
+    {
+      "fact": "Specification\n\nIf you give a coding agent a vague idea, it’ll fill in the gaps with its own assumptions, and you’ll get an app you didn’t want.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-28-from-idea-to-production.md (source sentence 12)"
+    }
+  ]
+}

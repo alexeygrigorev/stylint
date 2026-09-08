@@ -1,0 +1,18 @@
+{
+  "id": "016",
+  "source_path": "research/luna-100/sources/raw/2026-01-30-telegram-assistant.md",
+  "purpose": "reader-facing explanation of the Telegram writing assistant's capture, processing, versioning, and maintenance workflow",
+  "required_facts": [
+    {"fact": "The assistant was built to turn raw voice notes, files, and text messages into structured articles stored in a GitHub repository.", "evidence": "Source line 12: the assistant's purpose and outputs are stated."},
+    {"fact": "Telegram capture accepts text, voice notes, images, and files, saving raw input locally on a laptop.", "evidence": "Source lines 56-63: the capture workflow and input types are described."},
+    {"fact": "The /process command reads accumulated materials as a batch and assigns each item to an existing article or a new one.", "evidence": "Source line 70: batch processing and article assignment are specified."},
+    {"fact": "Articles are updated incrementally rather than regenerated from scratch.", "evidence": "Source line 70: incremental article updates are stated."},
+    {"fact": "After processing, the assistant commits changes to GitHub with a description and sends the commit link back to Telegram.", "evidence": "Source line 77: commit contents and feedback link are described."},
+    {"fact": "The /check-tasks command scans bug reports and feature suggestions and can update the prompt or code before committing.", "evidence": "Source line 84: configuration update workflow is specified."},
+    {"fact": "Whisper through Groq transcribes voice messages and removes the original audio, leaving extracted text for downstream steps.", "evidence": "Source line 95: transcription and audio removal are described."},
+    {"fact": "Groq Vision describes images and stores them under assets/images/{article_name}/.", "evidence": "Source line 99: image processing and structured storage are stated."},
+    {"fact": "Russian voice notes are translated into English during processing, and links are fetched and summarized into the relevant article.", "evidence": "Source lines 104-110: multilingual handling and link summarization are described."},
+    {"fact": "ChatGPT helped refine the workflow into summary.md, which became the specification, and Claude Code built the first working bot from it.", "evidence": "Source lines 34-50: specification creation, implementation, and testing are described."}
+  ],
+  "author_attribution": "Explain Alexey's historical implementation and preserve GitHub reviewability and the distinction between capture, processing, and maintenance."
+}

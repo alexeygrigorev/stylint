@@ -1,0 +1,18 @@
+{
+  "id": "048",
+  "source_path": "research/luna-100/sources/raw/2026-04-10-tired-of-learning-ai-alone-were-launching.md",
+  "source_sha256": "ff3ea934eb1d5984eaba195e8e38276054ff1886bb6ec8f496c35eed919d3dc4",
+  "before_path": "research/luna-100/output/round-2/048-explanation.md",
+  "before_sha256": "ed74c06b76ef48fc42146e17d9c2140345a5adcc622d63acc9e3854db2c2b68d",
+  "after_path": "research/luna-100/output/round-3/048-explanation.md",
+  "after_sha256": "93f0d8de58b8f22eca73009c539a2fcccc993805be00ea7538360e35f4e57712",
+  "revision_author": "parent",
+  "substantive_edits": [
+    "Kept the source-correct community explanation from round2 and created a corrected brief.",
+    "Restored cofounder attribution and personal onboarding from Alexey.",
+    "Removed the generic closing loop metaphor."
+  ],
+  "new_rules_findings": 0,
+  "full_default_findings": 0,
+  "unresolved_source_conflicts": []
+}

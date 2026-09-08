@@ -1,0 +1,21 @@
+{
+  "article_id": "007",
+  "source_path": "research/luna-100/sources/raw/2026-01-02-benefits-of-learning-in-public-and.md",
+  "article_path": "research/luna-100/output/round-2/007-account.md",
+  "mode": "account",
+  "factual_checks": [
+    {"draft": "At DataTalks.Club's Zoomcamps, participants can share their learning progress publicly and earn bonus points.", "source_evidence": "The source says Zoomcamp learners are encouraged to share progress and can earn bonus points.", "status": "supported"},
+    {"draft": "I had also interviewed more than 200 practitioners and learners", "source_evidence": "The source says Alexey interviewed over 200 practitioners and learners for the podcast.", "status": "supported"},
+    {"draft": "Pastor ... joined ML Zoomcamp as a medical student without an industry role or a LinkedIn presence", "source_evidence": "The source gives exactly those two qualifications.", "status": "supported"},
+    {"draft": "including a recruiter from Meta", "source_evidence": "The source says recruiters reached out without an application, including one from Meta.", "status": "supported"},
+    {"draft": "Will ... attracting investor attention and eventually leading to a pre-seed funding round", "source_evidence": "The source attributes unexpected investor attention and a pre-seed round to Will McGugan's public open-source demos.", "status": "supported"}
+  ],
+  "missing_or_needs_correction": [
+    "The source's practical project section is omitted: batching posts, writing immediately after work, reusing one assignment, keeping posts short, and the one-week action sequence. If the account is intended to cover the full source, add or explicitly accept this omission.",
+    "The source distinguishes Eugene Yan's public writing from the Zoomcamp examples and describes Admond Lee Kin Lim's role as an applied-ML writer. The draft preserves the claims but compresses those qualifications.",
+    "The final sentence, 'Those are the benefits I kept seeing across the community and podcast conversations,' is a generic recap. Consider ending on the concrete portfolio or accountability observation instead."
+  ],
+  "source_copying": "No complete source sentence was found in the draft; phrasing is independently composed.",
+  "attribution_review": "Attribution is generally accurate. Keep Will, Pastor, Dashel, Aaisha, Daniel, Admond, Shawn, Eugene, and McGugan's claims attached to their examples.",
+  "required_corrections": []
+}

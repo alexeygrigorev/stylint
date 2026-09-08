@@ -1,0 +1,43 @@
+{
+  "archive_files_unchanged": 54,
+  "readme_existing_lint_findings": 15,
+  "readme_current_lint_findings": 15,
+  "readme_added_lint_findings": 0,
+  "corrected_excerpts": {
+    "minsearch.md": {
+      "whitespace_words": 277,
+      "lint_findings": 0,
+      "required_facts": "manually checked in experiment/fidelity-review.json"
+    },
+    "phone.md": {
+      "whitespace_words": 266,
+      "lint_findings": 0,
+      "required_facts": "manually checked in experiment/fidelity-review.json"
+    },
+    "sqlitesearch.md": {
+      "whitespace_words": 253,
+      "lint_findings": 0,
+      "required_facts": "manually checked in experiment/fidelity-review.json"
+    }
+  },
+  "scope": "Full default checks without ignored tags; intentionally flawed raw drafts are retained as evidence.",
+  "tests": {
+    "command": "uv run pytest -q",
+    "passed": 377,
+    "failed": 0
+  },
+  "package": {
+    "wheel": "stylint-0.1.1-py3-none-any.whl",
+    "bundled_resources_verified": [
+      "alexey.md",
+      "prompt-alexey-brief.md",
+      "prompt-alexey-draft.md",
+      "prompt-alexey-rewrite.md"
+    ]
+  },
+  "research_lint": {
+    "errors": 0,
+    "warnings": 0
+  },
+  "git_diff_check": "passed"
+}

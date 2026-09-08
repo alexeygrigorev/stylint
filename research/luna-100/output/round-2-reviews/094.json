@@ -1,0 +1,21 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-08-28-from-idea-to-production.md",
+  "original_path": "research/luna-100/output/round-1/094-explanation.md",
+  "revised_path": "research/luna-100/output/round-2/094-explanation.md",
+  "word_count": 413,
+  "required_facts_checked": [
+    {"claim": "Build starts by turning the idea into a specification.", "status": "present", "evidence": "source: Turn the raw idea into a concrete specification"},
+    {"claim": "A mock frontend service makes the interface testable early.", "status": "present", "evidence": "source: create a mock implementation"},
+    {"claim": "The API specification precedes backend implementation.", "status": "present", "evidence": "source: create the API specification"},
+    {"claim": "The initial backend uses an in-memory store.", "status": "present", "evidence": "source: Use an in-memory store"},
+    {"claim": "SQLite is useful for local persistence.", "status": "present", "evidence": "source: I usually use SQLite"},
+    {"claim": "Postgres is introduced for production.", "status": "present", "evidence": "source: it’s not a database we can use in production"},
+    {"claim": "Integration and end-to-end tests cover different boundaries.", "status": "present", "evidence": "source: integration tests... End-to-end tests"},
+    {"claim": "Operate adds metrics, logs, traces, dashboards, and alerts.", "status": "present", "evidence": "source: Capture metrics, logs, and traces"},
+    {"claim": "The framework has 28 concrete steps and does not promise perfection.", "status": "present", "evidence": "source: 28 concrete steps"}
+  ],
+  "unsupported_claims_removed": [],
+  "substantive_edits": ["Rebuilt the explanation around explicit Build, Deploy, and Operate boundaries.", "Separated the local persistence progression from deployment and testing responsibilities.", "Preserved the remaining production concerns and the framework’s limited promise."],
+  "full_final_lint_findings": [],
+  "unresolved_source_conflicts": []
+}

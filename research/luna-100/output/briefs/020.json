@@ -1,0 +1,18 @@
+{
+  "id": "020",
+  "source_path": "research/luna-100/sources/raw/2026-02-13-what-is-an-ai-engineer-in-2026-join.md",
+  "purpose": "reader-facing explanation of the five evidence sources used to research the AI Engineer role",
+  "required_facts": [
+    {"fact": "The AI Engineer role depends on company, team, and problem, producing inconsistent and sometimes contradictory expectations.", "evidence": "Source lines 3-6: role instability and market-shaping factors are described."},
+    {"fact": "The first research source was Alexey's more than 15 years of ML and AI industry experience and his teaching at AI Engineering Buildcamp.", "evidence": "Source line 30: personal experience source is specified."},
+    {"fact": "The second source was more than 1,500 job postings collected over three months from several major cities.", "evidence": "Source line 39: job-posting dataset size, time range, and locations are stated."},
+    {"fact": "The job-posting dataset was used to study role names, responsibilities, repeated skills and tools, and overlap with ML Engineer positions.", "evidence": "Source lines 43-50: dataset questions and presentation focus are listed."},
+    {"fact": "The third source was Twitter/X and Reddit interview stories, with research-agent help including Grok analysis of X posts.", "evidence": "Source lines 52-59: social sources, agent assistance, and their value are described."},
+    {"fact": "The fourth source was planned direct conversations with hiring managers, community members, and engineers working in AI Engineering.", "evidence": "Source lines 61-74: conversation groups and public/private use are specified."},
+    {"fact": "Social stories and direct conversations were intended to inform a session about interview structure, evaluation criteria, and hiring decisions.", "evidence": "Source line 76: combined purpose of sources three and four is stated."},
+    {"fact": "The fifth source was around 60 public GitHub repositories containing take-home assignment solutions.", "evidence": "Source line 81: repository dataset is specified."},
+    {"fact": "Deep research agents from Google and OpenAI did not reliably find 100 repositories and sometimes hallucinated additional results.", "evidence": "Source lines 83-87: limitations and useful query-generation role are listed."},
+    {"fact": "The final repository workflow used agents to craft stronger queries and manual review and aggregation for local analysis.", "evidence": "Source line 89: hybrid workflow is stated."}
+  ],
+  "author_attribution": "Explain the five-source research plan as Alexey documented it, retaining the differences in reliability and purpose among the sources."
+}

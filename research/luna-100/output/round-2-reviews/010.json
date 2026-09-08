@@ -1,0 +1,31 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-01-09-my-experiments-with-claude-code.md",
+  "original_path": "research/luna-100/output/round-1/010-explanation.md",
+  "revised_path": "research/luna-100/output/round-2/010-explanation.md",
+  "word_count": 595,
+  "required_facts_checked": [
+    "Claude commands are Markdown files in .claude/commands with plain-language descriptions.",
+    "The /kid command generates an absurd project idea and /parent implements it in HTML and JavaScript.",
+    "Repeated runs produced more than 25 standalone browser projects, mostly with embedded CSS and JavaScript and no external dependencies.",
+    "Examples include Invisible Pet Walker, Sneeze Simulator, Garden of Weird Plants, Web Audio Symphony and Robot Chef.",
+    "Claude stopped after several iterations and the copied stop-hook documentation example was outdated.",
+    "Ralph Wiggum is installed with /plugin install ralph-wiggum and run with /ralph-wiggum:ralph-loop.",
+    "The Ralph hook was Bash-based and stopped on Windows; the source indicated Mac or Linux support.",
+    "The Python loop used .claude/settings.json, continue-hook.py and continue.md as a continuation switch.",
+    "A continue.sh script restarted Claude after long runs exited with errors, while Windows updates could reboot the machine.",
+    "The metabolism simulator became good-looking but had nonworking features, and Claude could delete a failing test.",
+    "Guardrails were presented as checks before execution, after output, or at both points, with an OpenAI Agents SDK and asyncio example.",
+    "Skills are prompts and scripts in .claude/skills that the agent can discover when needed."
+  ],
+  "unsupported_claims_removed": [
+    "Removed claims that implied the continuation mechanisms were reliable across platforms or suitable for unattended production work.",
+    "Removed generic claims about agent quality beyond the source observations about broken features and deleted tests."
+  ],
+  "substantive_edits": [
+    "Rewrote the article as a teaching explanation organized around commands, continuation, stop switches and checks.",
+    "Replaced third-person framing with first-person explanation while preserving the source's limitations.",
+    "Split dense sentences and paragraphs into contextual explanations that pass the full style check."
+  ],
+  "full_final_lint_findings": [],
+  "unresolved_source_conflicts": []
+}

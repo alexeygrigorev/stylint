@@ -1,0 +1,18 @@
+{
+  "id": "069",
+  "source_path": "research/luna-100/sources/raw/2026-06-26-six-projects-that-didnt-make-it.md",
+  "source_sha256": "7fa32caf44b50890160cc14694ad5e3eb882ff602c83602f5dd20e9a9e34daa2",
+  "before_path": "research/luna-100/output/round-2/069-account.md",
+  "before_sha256": "3f129cf6a5be34df7334392091fb791d9dcefe644fc054553d8b95be9a79481e",
+  "after_path": "research/luna-100/output/round-3/069-account.md",
+  "after_sha256": "540c1428a82f8b85c62de5981dbcfb859daf852fcb75dc4a5e2471fb204fe350",
+  "revision_author": "parent",
+  "substantive_edits": [
+    "Removed invented causal links between independent fitness requirements and between project complexity and Termius adoption.",
+    "Restored probably in the usage comparison and the distinction between a failed application and a useful experiment.",
+    "Replaced the generic final verdict with source-supported repository cleanup and daily quota use."
+  ],
+  "new_rules_findings": 0,
+  "full_default_findings": 0,
+  "unresolved_source_conflicts": []
+}

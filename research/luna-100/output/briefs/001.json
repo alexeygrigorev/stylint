@@ -1,0 +1,18 @@
+{
+  "id": "001",
+  "source_path": "research/luna-100/sources/raw/2025-12-12-how-i-built-a-fully-automated-image.md",
+  "purpose": "personal account of how the Kids Horror Stories project grew from a family activity into an automated publishing pipeline",
+  "required_facts": [
+    {"fact": "The project began when Alexey's son asked for a scary story about a parked car during a walk.", "evidence": "Source lines 20-22: son pointed at a parked car and asked for a horror story; Alexey improvised one."},
+    {"fact": "Alexey ran out of ideas after his son began pointing at more objects.", "evidence": "Source line 27: the son pointed at more objects and Alexey eventually ran out of ideas."},
+    {"fact": "A photograph of a tree was sent to ChatGPT to generate a story.", "evidence": "Source line 29: Alexey took a photo of the tree and asked ChatGPT for a scary story based on it."},
+    {"fact": "The generated tone reminded Alexey of simple urban legends and campfire stories, which children liked.", "evidence": "Source line 29: the tone was simple and sometimes silly, but kids loved it."},
+    {"fact": "Alexey and his son spent the rest of that day photographing objects and reading generated stories together.", "evidence": "Source line 31: they took photos of random objects and read the stories together."},
+    {"fact": "The first published version was a small Jekyll static site on GitHub Pages.", "evidence": "Source lines 38-40: a static Jekyll project was the fastest option, initially rendering photos and text."},
+    {"fact": "The project later automated story, illustration, audio, and podcast generation.", "evidence": "Source line 42: the site evolved into a fully automated pipeline for those outputs."},
+    {"fact": "Images can enter through a local folder or an S3 bucket, and GPT-4o generates a story with title and slug.", "evidence": "Source lines 49-54: input image sources and GPT-4o story generation are listed in the architecture."},
+    {"fact": "GPT-5 edits Russian grammar and phrasing, while DALL-E 3 creates an illustration from the first one or two paragraphs.", "evidence": "Source lines 52-54: the architecture assigns editing to GPT-5 and illustration generation to DALL-E 3."},
+    {"fact": "The site contains more than 1,200 stories, all in Russian.", "evidence": "Source line 8: the site contains 1200+ stories and all stories are in Russian."}
+  ],
+  "author_attribution": "Attribute the project and its outcomes to Alexey; preserve the son's role as the source of the initial request and do not invent additional family experiences."
+}

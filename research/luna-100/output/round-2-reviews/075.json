@@ -1,0 +1,24 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-07-16-how-to-write-a-good-readme.md",
+  "original_path": "research/luna-100/output/round-1/075-account.md",
+  "revised_path": "research/luna-100/output/round-2/075-account.md",
+  "word_count": 489,
+  "required_facts_checked": [
+    {"claim": "At a previous job, the author often decided within about ten seconds whether to continue after scanning a README.", "status": "present", "evidence": "source: first technical screening and ten-second scan"},
+    {"claim": "Course reviewers need evidence for evaluation, monitoring, and reproducibility.", "status": "present", "evidence": "source: peer review criteria and buried evaluation results"},
+    {"claim": "Fitness Assistant is the running retrieval example.", "status": "present", "evidence": "source: Fitness Assistant helps choose exercises and alternatives"},
+    {"claim": "The README serves peer reviewers, hiring teams, and the author's future self.", "status": "present", "evidence": "source: three audiences"},
+    {"claim": "The opening addresses project identity, whether it works, running it, and how it was built.", "status": "present", "evidence": "source: four reader questions"},
+    {"claim": "The demo should appear before readers install multiple services or create keys.", "status": "present", "evidence": "source: show live app, video, GIF, screenshots, or sample I/O"},
+    {"claim": "Evaluation, testing, and monitoring are separate evidence areas.", "status": "present", "evidence": "source: three kinds of evidence"},
+    {"claim": "The quickstart covers prerequisites, cloning, installation, environment configuration, services, and start command.", "status": "present", "evidence": "source: shortest reliable path from a clean machine"}
+  ],
+  "unsupported_claims_removed": [],
+  "substantive_edits": [
+    "Kept the first-person hiring and course-review experience attributed to Alexey.",
+    "Restored the Fitness Assistant example, the three audiences, the demo sequence, evidence sections, and quickstart requirements.",
+    "Reduced repeated closing advice and separated monitoring, quickstart, and repository-navigation ideas."
+  ],
+  "full_final_lint_findings": [],
+  "unresolved_source_conflicts": []
+}

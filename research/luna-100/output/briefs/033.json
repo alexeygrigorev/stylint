@@ -1,0 +1,18 @@
+{
+  "id": "033",
+  "source_path": "research/luna-100/sources/raw/2026-03-13-ai-set-up-my-infra-in-10-minutes.md",
+  "purpose": "personal account of testing AI automation on certificate design and hosting infrastructure",
+  "required_facts": [
+    {"fact": "Alexey ran a two-day workshop in Berlin and needed certificates, including design, HTML/CSS conversion, PDF generation, and hosting.", "evidence": "Source lines 1-5: workshop and certificate task are stated."},
+    {"fact": "Several design approaches with Claude and Gemini produced inconsistent results and required manual intervention.", "evidence": "Source lines 10-14: design experiment outcome is described."},
+    {"fact": "The first design approach used ChatGPT for a certificate and background image, then Claude for HTML/CSS recreation.", "evidence": "Source lines 18-26: first approach and tools are specified."},
+    {"fact": "Alexey spent about 40 minutes iterating on spacing, alignment, and placement through review and new instructions.", "evidence": "Source lines 28-32: manual feedback loop and duration are stated."},
+    {"fact": "A creator-and-judge experiment used Claude to generate designs and Gemini Flash to evaluate similarity.", "evidence": "Source lines 34-48: two-model feedback setup is described."},
+    {"fact": "Claude sometimes discarded earlier work, and Gemini overestimated similarity, rating clearly different results around 8/10.", "evidence": "Source lines 53-63: discarded design and inaccurate ratings are documented."},
+    {"fact": "Claude Opus 4.6 analyzed the reference accurately, but a 44-iteration background run still failed to converge.", "evidence": "Source lines 65-89: Opus experiment and non-convergence are stated."},
+    {"fact": "The final design used the first approach with Claude iterating on Alexey's own feedback.", "evidence": "Source lines 91-100: design result and manual-control conclusion are given."},
+    {"fact": "Certificate hosting required S3, CloudFront, HTTPS, DNS, and configuration work and was usually expected to take several hours.", "evidence": "Source lines 104-112: infrastructure context and normal effort are described."},
+    {"fact": "Claude Code configured hosting through S3, Cloudflare, GoDaddy DNS, CloudFront, and HTTPS in about ten minutes.", "evidence": "Source lines 114-116: access, actions, and setup duration are stated."}
+  ],
+  "author_attribution": "Attribute experiments, timings, model behavior, and conclusions to Alexey; preserve the contrast between manual design feedback and reliable infrastructure automation."
+}

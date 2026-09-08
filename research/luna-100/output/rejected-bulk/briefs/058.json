@@ -1,0 +1,58 @@
+{
+  "id": "058",
+  "source_path": "research/luna-100/sources/raw/2026-05-15-11-workshops-to-build-production.md",
+  "article_purpose": "explanation",
+  "author_attribution_notes": "Facts and project ownership are attributed to the source author; no additional personal experience or results added.",
+  "required_facts": [
+    {
+      "id": 1,
+      "claim": "For a while, my Gen AI workshops have been scattered across different places.",
+      "source_evidence": "For a while, my Gen AI workshops have been scattered across different places."
+    },
+    {
+      "id": 2,
+      "claim": "Some workshops I gave at conferences were never recorded, and the materials were stored in my archives, but never went anywhere afterward.",
+      "source_evidence": "Some workshops I gave at conferences were never recorded, and the materials were stored in my archives, but never went anywhere afterward."
+    },
+    {
+      "id": 3,
+      "claim": "Two of the more recent ones were published in Slack for AI Shipping Labs members.",
+      "source_evidence": "Two of the more recent ones were published in Slack for AI Shipping Labs members."
+    },
+    {
+      "id": 4,
+      "claim": "I decided to collect them all in one place and created the [Workshops section on the AI Shipping Labs Website].",
+      "source_evidence": "I decided to collect them all in one place and created the [Workshops section on the AI Shipping Labs Website]."
+    },
+    {
+      "id": 5,
+      "claim": "You sign up once and get access to all of them.",
+      "source_evidence": "You sign up once and get access to all of them."
+    },
+    {
+      "id": 6,
+      "claim": "In this post, I’ll share: What I did to put the workshops in one place, and how this fits into the larger AI Shipping Labs platform update How I reformatted the materials so they are easier to follow The full list of wor",
+      "source_evidence": "In this post, I’ll share: What I did to put the workshops in one place, and how this fits into the larger AI Shipping Labs platform update How I reformatted the materials so they are easier to follow The full list of workshops on the site, grouped by topic How access works: what’s free and what’s part of membership That AI Hero is now on the site too, in a new format How I Worked on this Update The workshops library is one piece of a larger update to AI Shipping Labs."
+    },
+    {
+      "id": 7,
+      "claim": "To explain what changed for the workshops, I have to start with the platform.",
+      "source_evidence": "To explain what changed for the workshops, I have to start with the platform."
+    },
+    {
+      "id": 8,
+      "claim": "The First Version of the Website and Why We Needed an Update The Next.js version of the AI Shipping Labs website with different sections Until recently, AI Shipping Labs ran on a simple Next.js site that Valeriia built w",
+      "source_evidence": "The First Version of the Website and Why We Needed an Update The Next.js version of the AI Shipping Labs website with different sections Until recently, AI Shipping Labs ran on a simple Next.js site that Valeriia built with v0 and Cursor."
+    },
+    {
+      "id": 9,
+      "claim": "It was a landing page with a few resource pages, a newsletter form, and a checkout.",
+      "source_evidence": "It was a landing page with a few resource pages, a newsletter form, and a checkout."
+    },
+    {
+      "id": 10,
+      "claim": "As a first version, it was the right call as we wanted to see whether people would sign up before we built anything heavier.",
+      "source_evidence": "As a first version, it was the right call as we wanted to see whether people would sign up before we built anything heavier."
+    }
+  ]
+}

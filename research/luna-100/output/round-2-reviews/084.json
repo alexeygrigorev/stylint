@@ -1,0 +1,20 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-08-03-build-and-ship-a-full-stack-app-with.md",
+  "original_path": "research/luna-100/output/round-1/084-explanation.md",
+  "revised_path": "research/luna-100/output/round-2/084-explanation.md",
+  "word_count": 433,
+  "required_facts_checked": [
+    {"claim": "The specification comes before code", "evidence": "Before building the frontend, we need to describe the application precisely."},
+    {"claim": "The frontend has a mock service layer", "evidence": "Create a mock implementation."},
+    {"claim": "OpenAPI describes endpoint details", "evidence": "Endpoints, paths, request bodies, response bodies."},
+    {"claim": "The backend starts with an in-memory store", "evidence": "Use an in-memory store."},
+    {"claim": "SQLite follows connection testing", "evidence": "Replace the in-memory store with a database."},
+    {"claim": "SQLAlchemy keeps database code portable", "evidence": "Make it database-agnostic."},
+    {"claim": "Each stage leaves a testable result", "evidence": "At each stage we get something concrete."},
+    {"claim": "Deployment comes later", "evidence": "This application is only working locally."}
+  ],
+  "unsupported_claims_removed": ["Removed broad claims about the workflow being universally safer; stated the concrete local, staged limitation instead."],
+  "substantive_edits": ["Rewrote the article as a teaching sequence from specification through persistence.", "Preserved the mock service, OpenAPI fields, in-memory stage, two-client test, and later deployment boundary.", "Removed redundant verdicts and adjusted sentences to pass full lint without deleting required facts."],
+  "full_final_lint_findings": [],
+  "unresolved_source_conflicts": []
+}

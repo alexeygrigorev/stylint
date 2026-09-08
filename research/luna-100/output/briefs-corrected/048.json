@@ -1,0 +1,41 @@
+{
+  "id": "048",
+  "source_path": "research/luna-100/sources/raw/2026-04-10-tired-of-learning-ai-alone-were-launching.md",
+  "correction_reason": "Original brief used facts or a source path from a different archived post; original preserved.",
+  "original_brief": "research/luna-100/output/briefs/048.json",
+  "purpose": "explanation",
+  "required_facts": [
+    {
+      "fact": "The community is launched by Alexey and Valeriia.",
+      "evidence": "Actual assigned source; checked by parent"
+    },
+    {
+      "fact": "Early members get Slack and personal onboarding while the group is small.",
+      "evidence": "Actual assigned source; checked by parent"
+    },
+    {
+      "fact": "Accountability circles run in sprints with deadlines and peer support.",
+      "evidence": "Actual assigned source; checked by parent"
+    },
+    {
+      "fact": "Alexey declines individual mentoring because bandwidth is limited.",
+      "evidence": "Actual assigned source; checked by parent"
+    },
+    {
+      "fact": "Building sessions occur once or twice monthly for 1.5–2 hours.",
+      "evidence": "Actual assigned source; checked by parent"
+    },
+    {
+      "fact": "Group learning includes shared research and presentations.",
+      "evidence": "Actual assigned source; checked by parent"
+    },
+    {
+      "fact": "Members can discuss careers privately and review resumes or LinkedIn profiles.",
+      "evidence": "Actual assigned source; checked by parent"
+    },
+    {
+      "fact": "Specialized courses are planned; members can vote on priorities.",
+      "evidence": "Actual assigned source; checked by parent"
+    }
+  ]
+}

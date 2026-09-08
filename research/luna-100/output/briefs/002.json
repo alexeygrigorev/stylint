@@ -1,0 +1,18 @@
+{
+  "id": "002",
+  "source_path": "research/luna-100/sources/raw/2025-12-12-how-i-built-a-fully-automated-image.md",
+  "purpose": "reader-facing explanation of the supported image-to-story-to-podcast workflow",
+  "required_facts": [
+    {"fact": "The published project turns a photo of an everyday object into a story, illustration, narration, website post, and Spotify podcast episode.", "evidence": "Source line 3: the AI writes, illustrates, and narrates from a photo and publishes to the website and Spotify via RSS."},
+    {"fact": "The input is selected from a local folder or an S3 input bucket.", "evidence": "Source lines 90-93: the script picks the first available image from images_input or the S3 input location."},
+    {"fact": "GPT-4o receives the image and a constrained prompt for a Russian horror story with a title and URL slug.", "evidence": "Source lines 95-113: image input is sent to GPT-4o and the prompt specifies story, title, and slug requirements."},
+    {"fact": "The story prompt requests eight to twelve paragraphs and excludes several title and plot patterns.", "evidence": "Source lines 102-106: paragraph count and exclusions for title words, whispers, rustling, and returning objects."},
+    {"fact": "GPT-5 is used after generation to clean up Russian grammar and phrasing.", "evidence": "Source lines 115-127: the raw GPT-4o story is passed through GPT-5 for editing."},
+    {"fact": "The illustration stage uses the first two paragraphs, GPT-4o-mini, and DALL-E 3.", "evidence": "Source lines 129-161: the first paragraphs are converted into a scene prompt and sent to DALL-E 3."},
+    {"fact": "DALL-E 3 produces a 1024-by-1024 image that is resized and stored in images/.", "evidence": "Source lines 161-163: output size, resizing, and storage are specified."},
+    {"fact": "Each story gets a sequential ID used in filenames and URLs, and Jekyll saves the post plus image files.", "evidence": "Source lines 168-176: sequential IDs and save_story outputs are described."},
+    {"fact": "OpenAI TTS tts-1 with the onyx voice creates an MP3 whose metadata is added to the story.", "evidence": "Source lines 194-205: text and slug go to generate_tts, then audio URL, size, duration, and assets are updated."},
+    {"fact": "RSS XML and GitHub Actions connect the generated files to podcast apps and automated publication.", "evidence": "Source lines 213-221: podcast.xml supplies RSS and GitHub Actions pulls, processes, and publishes images."}
+  ],
+  "author_attribution": "Explain Alexey's historical implementation as documented; do not present the project-specific model choices as universal technical advice."
+}

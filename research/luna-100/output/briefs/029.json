@@ -1,0 +1,18 @@
+{
+  "id": "029",
+  "source_path": "research/luna-100/sources/raw/2026-03-06-how-i-dropped-our-production-database.md",
+  "purpose": "personal account of the Terraform incident that deleted DataTalks.Club production infrastructure and the recovery",
+  "required_facts": [
+    {"fact": "The intended migration moved AI Shipping Labs from GitHub Pages to AWS, then planned a Django deployment on a subdomain before switching the main domain.", "evidence": "Source lines 1-10: migration sequence is listed."},
+    {"fact": "The existing Terraform setup was reused to save roughly $5–10 per month, mixing the new site with the DataTalks.Club platform infrastructure.", "evidence": "Source lines 41-47: reuse decision, savings, and increased risk are described."},
+    {"fact": "Terraform state remained on an old computer, so the plan treated existing infrastructure as absent and began creating resources.", "evidence": "Source lines 49-57: missing state and warning sign are described."},
+    {"fact": "Claude Code was asked to remove duplicate resources, then ran terraform destroy after the old state archive replaced the current state.", "evidence": "Source lines 59-71 and 82-86: cleanup, state replacement, and destroy sequence are stated."},
+    {"fact": "The destroy removed the production VPC, RDS database, ECS cluster, load balancers, and bastion host.", "evidence": "Source lines 73-80: destroyed infrastructure and outage are described."},
+    {"fact": "AWS snapshots were initially absent from the console, but AWS Support found one on its side after Alexey upgraded to Business Support.", "evidence": "Source lines 90-118: backup search, support upgrade, and hidden snapshot are described."},
+    {"fact": "The database snapshot was restored exactly 24 hours after deletion.", "evidence": "Source lines 132-141: restoration timing and visibility are stated."},
+    {"fact": "The restored courses_answer table contained 1,943,200 rows and the course platform came back online.", "evidence": "Source lines 146-166: data check and recovery are described."},
+    {"fact": "After recovery, Terraform plans were reviewed manually and commands were run by Alexey rather than automatically by the agent.", "evidence": "Source lines 148-156: changed execution process is stated."},
+    {"fact": "Preventive measures included external S3 backups, deletion protection, a daily restore workflow, and moving Terraform state to S3.", "evidence": "Source lines 168-228: safeguards and state migration are described."}
+  ],
+  "author_attribution": "Attribute the incident, mistakes, recovery, and safeguards to Alexey; preserve the uncertainty before AWS found the snapshot and the full-recovery timing."
+}

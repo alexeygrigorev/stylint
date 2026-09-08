@@ -1,0 +1,58 @@
+{
+  "id": "040",
+  "source_path": "research/luna-100/sources/raw/2026-03-27-5-useful-utilities-i-built-with-ai.md",
+  "article_purpose": "explanation",
+  "author_attribution_notes": "Facts and project ownership are attributed to the source author; no additional personal experience or results added.",
+  "required_facts": [
+    {
+      "id": 1,
+      "claim": "Over the last few months, I’ve developed small utilities using AI coding assistants, mainly Claude Code, to address specific inconveniences in my daily workflow.",
+      "source_evidence": "Over the last few months, I’ve developed small utilities using AI coding assistants, mainly Claude Code, to address specific inconveniences in my daily workflow."
+    },
+    {
+      "id": 2,
+      "claim": "[dirdotenv] for loading environment variables in the terminal [ssh-auto-forward] for automatic port forwarding from remote servers [nobook] for using plain Python files as Jupyter notebooks [Microphone Booster] for fixin",
+      "source_evidence": "[dirdotenv] for loading environment variables in the terminal [ssh-auto-forward] for automatic port forwarding from remote servers [nobook] for using plain Python files as Jupyter notebooks [Microphone Booster] for fixing quiet USB-C microphones on Windows [Bot Master] for keeping my Telegram bots running These tools originated from personal annoyances and have since become a regular part of my routine."
+    },
+    {
+      "id": 3,
+      "claim": "What’s notable about these tools is that I tackled areas I wouldn’t typically explore on my own: shell hooks, SSH tunneling, Jupyter internals, native Windows APIs, and background daemons.",
+      "source_evidence": "What’s notable about these tools is that I tackled areas I wouldn’t typically explore on my own: shell hooks, SSH tunneling, Jupyter internals, native Windows APIs, and background daemons."
+    },
+    {
+      "id": 4,
+      "claim": "But with AI help, it only took an evening or a few iterations to create something usable.",
+      "source_evidence": "But with AI help, it only took an evening or a few iterations to create something usable."
+    },
+    {
+      "id": 5,
+      "claim": "In this post, I explain what these utilities do, why they were developed, and how AI-assisted development allowed me to create new, personalized tools in areas I hadn't explored before.",
+      "source_evidence": "In this post, I explain what these utilities do, why they were developed, and how AI-assisted development allowed me to create new, personalized tools in areas I hadn't explored before."
+    },
+    {
+      "id": 6,
+      "claim": "Why I Built These Small Tools The existing tools and workflows had limitations that were becoming more frustrating.",
+      "source_evidence": "Why I Built These Small Tools The existing tools and workflows had limitations that were becoming more frustrating."
+    },
+    {
+      "id": 7,
+      "claim": "I was looking for something more tailored to how I work, but I couldn't find anything that would fit all my needs, so I ended up building my own tools.",
+      "source_evidence": "I was looking for something more tailored to how I work, but I couldn't find anything that would fit all my needs, so I ended up building my own tools."
+    },
+    {
+      "id": 8,
+      "claim": "In some cases, the missing piece was portability across machines; in others, it was better integration with tools I already use; and sometimes it was simply the ability to control and extend the behavior myself, rather t",
+      "source_evidence": "In some cases, the missing piece was portability across machines; in others, it was better integration with tools I already use; and sometimes it was simply the ability to control and extend the behavior myself, rather than adapting to someone else’s assumptions."
+    },
+    {
+      "id": 9,
+      "claim": "Before AI coding assistants came along, many of these ideas would have remained half-baked notes.",
+      "source_evidence": "Before AI coding assistants came along, many of these ideas would have remained half-baked notes."
+    },
+    {
+      "id": 10,
+      "claim": "Building a small utility still means thinking through how it should work, making sure it does what it’s supposed to, and sorting out any tricky situations.",
+      "source_evidence": "Building a small utility still means thinking through how it should work, making sure it does what it’s supposed to, and sorting out any tricky situations."
+    }
+  ]
+}

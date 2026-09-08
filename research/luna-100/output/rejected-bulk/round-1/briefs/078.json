@@ -1,0 +1,57 @@
+{
+  "id": "078",
+  "source_path": "research/luna-100/sources/raw/2026-07-22-ai-native-development-specifications.md",
+  "mode": "explanation",
+  "article_purpose": "explanation of the supported workflow or idea",
+  "author_attribution_notes": "Keep Alexey’s first-person framing only for actions and observations explicitly present in the supplied source; preserve attribution to DataTalks.Club, AI Shipping Labs, and other projects where named.",
+  "required_facts": [
+    {
+      "fact": "This is the first article in a series based on , the free course we run at DataTalks.Club.",
+      "source_evidence": "research/luna-100/sources/raw/2026-07-22-ai-native-development-specifications.md (source sentence 1)"
+    },
+    {
+      "fact": "I start with AI-native developer workflows: how to turn an idea into a specification, give coding agents the right context, and verify what they build.",
+      "source_evidence": "research/luna-100/sources/raw/2026-07-22-ai-native-development-specifications.md (source sentence 2)"
+    },
+    {
+      "fact": "* Part 1:  (this article)\n* Part 2: \n* Part 3: \n* Part 4: \n* Part 5: TBA\n\nSubscribe to receive the next article in the series.",
+      "source_evidence": "research/luna-100/sources/raw/2026-07-22-ai-native-development-specifications.md (source sentence 3)"
+    },
+    {
+      "fact": "Coding agents now write code faster than I can read it.",
+      "source_evidence": "research/luna-100/sources/raw/2026-07-22-ai-native-development-specifications.md (source sentence 4)"
+    },
+    {
+      "fact": "When we give an agent a task, it can quickly implement it.",
+      "source_evidence": "research/luna-100/sources/raw/2026-07-22-ai-native-development-specifications.md (source sentence 5)"
+    },
+    {
+      "fact": "But if a task is vague, the agent fills the gaps with its own assumptions.",
+      "source_evidence": "research/luna-100/sources/raw/2026-07-22-ai-native-development-specifications.md (source sentence 6)"
+    },
+    {
+      "fact": "A weak agent that misunderstands us writes fifty lines of broken code.",
+      "source_evidence": "research/luna-100/sources/raw/2026-07-22-ai-native-development-specifications.md (source sentence 7)"
+    },
+    {
+      "fact": "A strong agent that misunderstands us creates eight files, wires them together, and adds tests that pass.",
+      "source_evidence": "research/luna-100/sources/raw/2026-07-22-ai-native-development-specifications.md (source sentence 8)"
+    },
+    {
+      "fact": "The code works, but it isn’t what we needed.",
+      "source_evidence": "research/luna-100/sources/raw/2026-07-22-ai-native-development-specifications.md (source sentence 9)"
+    },
+    {
+      "fact": "We no longer spend most of our time typing.",
+      "source_evidence": "research/luna-100/sources/raw/2026-07-22-ai-native-development-specifications.md (source sentence 10)"
+    },
+    {
+      "fact": "We spend it saying precisely what we want and checking what came back.",
+      "source_evidence": "research/luna-100/sources/raw/2026-07-22-ai-native-development-specifications.md (source sentence 11)"
+    },
+    {
+      "fact": "In this article, I show how to make the request specific so the agents don’t need to guess.",
+      "source_evidence": "research/luna-100/sources/raw/2026-07-22-ai-native-development-specifications.md (source sentence 12)"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-02-20-how-i-built-sqlitesearch-a-lightweight.md",
+  "original_path": "research/luna-100/output/round-1/022-explanation.md",
+  "revised_path": "research/luna-100/output/round-2/022-explanation.md",
+  "word_count": 578,
+  "required_facts_checked": [
+    "SQLiteSearch targets small personal and course projects as a persistent local middle ground between minsearch and infrastructure-heavy systems.",
+    "Requirements were Python availability, easy setup, local execution without Docker and text plus vector search.",
+    "Elasticsearch was aimed at large production systems and described as costing more than $200 per month; Qdrant and PostgreSQL would require an external service or Docker in this use case.",
+    "minsearch had a simple text-and-vector API but stored its index in memory, losing data when the Python process ended.",
+    "SQLite provided embedded local text search and persistence but no vector search by default.",
+    "lshashing kept hash tables in memory, SparseLSH lacked SQLite support and narrow-down used a native Rust extension.",
+    "The implementation used locality-sensitive hashing based on random projections familiar to Alexey.",
+    "The API was designed to resemble minsearch for Buildcamp participants.",
+    "ChatGPT researched and planned the design, Claude Code read plan.md and implemented it, and tests were requested.",
+    "The project began as LightSearch and was renamed SQLiteSearch because litesearch was already taken on PyPI.",
+    "The final index stores data tables, lookup structures and metadata in one SQLite file without a separate server.",
+    "The /release command automates package publication and can rerun after Claude diagnoses build or test failures."
+  ],
+  "unsupported_claims_removed": [
+    "Removed claims about benchmark performance, universal scalability or guaranteed search quality not stated in the source.",
+    "Removed claims that would turn the small-project recommendation into a general replacement for production search systems."
+  ],
+  "substantive_edits": [
+    "Rewrote the article as a reader-facing explanation organized around requirements, candidate evaluation, LSH, architecture and release.",
+    "Preserved the reasons each alternative failed and the distinction between persistent local search and large infrastructure.",
+    "Explained the ChatGPT-to-Claude Code handoff without attributing independent design decisions to the tools."
+  ],
+  "full_final_lint_findings": [],
+  "unresolved_source_conflicts": []
+}

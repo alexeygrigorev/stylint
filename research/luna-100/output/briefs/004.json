@@ -1,0 +1,19 @@
+{
+  "id": "004",
+  "source_path": "research/luna-100/sources/raw/2025-12-19-5-ideas-for-ai-agents-and-openais.md",
+  "purpose": "reader-facing explanation of engineering patterns demonstrated by the five AI Bootcamp projects",
+  "required_facts": [
+    {"fact": "The Demo Day cohort moved beyond simple prompts toward end-to-end AI applications and agentic workflows.", "evidence": "Source line 5: systems were intended to interact with databases, manage tools, and handle messy data."},
+    {"fact": "The to-do agent used an OpenAPI specification to create tools for retrieving and completing tasks.", "evidence": "Source line 19: the model received the backend specification and created those tools."},
+    {"fact": "The to-do project deliberately did not use RAG or a knowledge base.", "evidence": "Source line 19: the source explicitly contrasts the design with RAG and a knowledge base."},
+    {"fact": "The to-do project used Logfire and 18 pytest tests to observe sessions and check tool selection.", "evidence": "Source line 19: monitoring, costs, and test coverage are described."},
+    {"fact": "The SEC disclosure agent handled valid and invalid XML and indexed converted data in Elasticsearch.", "evidence": "Source line 28: XML handling and Elasticsearch indexing are specified."},
+    {"fact": "The SEC agent needed to relate Change Healthcare to United Health Group and monitored token usage.", "evidence": "Source line 28: the subsidiary relationship and input/output token monitor are described."},
+    {"fact": "Carlos's system stored unstructured Stack Exchange data in MongoDB and graph data in Neo4j.", "evidence": "Source line 39: the Docker pipeline and two destinations are named."},
+    {"fact": "Carlos's orchestrator routed ordinary questions toward MongoDB and relationship questions toward a Cipher graph-query agent, but often called both.", "evidence": "Source line 39: routing conditions and the observed simultaneous calls are stated."},
+    {"fact": "Vancesca's pipeline transcribed podcast audio with Faster Whisper, stored embeddings in Qdrant, and rewrote queries three ways.", "evidence": "Source line 50: ingestion, vector storage, and query rewriting are described."},
+    {"fact": "Vancesca observed that the agent needed guardrails after it followed requests to draw a pig or translate into Romanian.", "evidence": "Source line 50: the unintended obedient behaviors are given as examples."},
+    {"fact": "Asia's email agent fetched Gmail messages, indexed them in Elasticsearch, and exposed a Streamlit interface for reading and finding emails.", "evidence": "Source lines 59-61: Gmail, Elasticsearch, Streamlit, and the read-focused scope are specified."}
+  ],
+  "author_attribution": "Treat the patterns as an explanation of the named students' demonstrated systems, retaining the source's limits and observations."
+}

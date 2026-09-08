@@ -1,0 +1,19 @@
+{
+  "id": "010",
+  "source_path": "research/luna-100/sources/raw/2026-01-09-my-experiments-with-claude-code.md",
+  "purpose": "reader-facing explanation of Claude Code commands, hooks, continuation loops, guardrails, and skills as documented in the source",
+  "required_facts": [
+    {"fact": "Claude commands are slash commands in Claude Code defined by Markdown files in .claude/commands.", "evidence": "Source lines 10 and 19: the command mechanism and location are specified."},
+    {"fact": "The /kid and /parent commands formed a loop in which one proposed a project and the other built it in HTML and JavaScript.", "evidence": "Source lines 21-26: command roles and repeated execution are described."},
+    {"fact": "The command loop generated more than 25 standalone projects without external dependencies.", "evidence": "Source lines 26-31: output count and project structure are stated."},
+    {"fact": "Claude stopped after a few iterations when asked to run forever.", "evidence": "Source line 36: the continuation failure is explicit."},
+    {"fact": "Stop hooks were investigated, but the copied documentation example was outdated and prompt hooks did not work.", "evidence": "Source line 38: the hook approach and documentation limitation are described."},
+    {"fact": "The Ralph Wiggum plugin automatically prompts Claude to continue after it stops.", "evidence": "Source line 40: the plugin's behavior is stated."},
+    {"fact": "Ralph did not execute properly on Windows because its hook was implemented as a Bash command.", "evidence": "Source lines 58-63: the implementation and platform limitation are specified."},
+    {"fact": "The Python alternative used a stop hook in .claude/settings.json, continue-hook.py, and continue.md as a stop switch.", "evidence": "Source lines 72-78: the Python implementation steps are listed."},
+    {"fact": "A separate script restarted Claude Code after errors, but the generated website was not fully functional and the agent could delete tests instead of fixing them.", "evidence": "Source lines 80-89: restart behavior and quality concerns are described."},
+    {"fact": "Guardrails were presented as checks before input or after output, and a workshop used the OpenAI Agents SDK plus asyncio for frameworks without native support.", "evidence": "Source lines 93-99: guardrail definition and workshop implementation are stated."},
+    {"fact": "Skills were described as reusable prompts and scripts in .claude/skills that the agent discovers when needed.", "evidence": "Source lines 101-106: skill location, reuse, and discovery are described."}
+  ],
+  "author_attribution": "Explain the mechanisms from Alexey's historical experiments and workshop descriptions; retain platform limitations and the need for supervision."
+}

@@ -1,0 +1,16 @@
+{
+  "id": "007",
+  "source_path": "research/luna-100/sources/raw/2026-01-02-benefits-of-learning-in-public-and.md",
+  "source_sha256": "d862717651686f08f12a8cf81e812e58bce91944b25f26e08f8b31acbbbb29c0",
+  "before_path": "research/luna-100/output/round-2/007-account.md",
+  "before_sha256": "79f2ecda8c6f69aba5b7bf55a7acb9d9585fcf969f2c879e5a76866613446f5f",
+  "after_path": "research/luna-100/output/round-3/007-account.md",
+  "after_sha256": "5c9aa08abeb74bc4aa40095dbc8fc178cdde70ae2db853e2eac66206807a0c7f",
+  "revision_author": "parent",
+  "substantive_edits": [
+    "Deleted a final sentence repeating the benefits already described."
+  ],
+  "new_rules_findings": 0,
+  "full_default_findings": 0,
+  "unresolved_source_conflicts": []
+}

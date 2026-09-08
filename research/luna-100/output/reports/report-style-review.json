@@ -1,0 +1,86 @@
+{
+  "path": "research/luna-100/README.md",
+  "sha256": "b71a160b71496b9ce4a0de4eff389a06445d636be8ca3bac27ea79609b2194d2",
+  "findings": [
+    {
+      "line": 5,
+      "tag": "third-person",
+      "message": "avoid third-person presenter references"
+    },
+    {
+      "line": 30,
+      "tag": "third-person",
+      "message": "avoid third-person presenter references"
+    },
+    {
+      "line": 64,
+      "tag": "tables",
+      "message": "markdown tables are not used"
+    },
+    {
+      "line": 65,
+      "tag": "tables",
+      "message": "markdown tables are not used"
+    },
+    {
+      "line": 66,
+      "tag": "tables",
+      "message": "markdown tables are not used"
+    },
+    {
+      "line": 67,
+      "tag": "tables",
+      "message": "markdown tables are not used"
+    },
+    {
+      "line": 195,
+      "tag": "tables",
+      "message": "markdown tables are not used"
+    },
+    {
+      "line": 196,
+      "tag": "tables",
+      "message": "markdown tables are not used"
+    },
+    {
+      "line": 197,
+      "tag": "tables",
+      "message": "markdown tables are not used"
+    },
+    {
+      "line": 198,
+      "tag": "tables",
+      "message": "markdown tables are not used"
+    },
+    {
+      "line": 199,
+      "tag": "tables",
+      "message": "markdown tables are not used"
+    },
+    {
+      "line": 200,
+      "tag": "tables",
+      "message": "markdown tables are not used"
+    },
+    {
+      "line": 201,
+      "tag": "tables",
+      "message": "markdown tables are not used"
+    },
+    {
+      "line": 203,
+      "tag": "banned-word",
+      "message": "'Foster' - use 'build' / 'help'"
+    },
+    {
+      "line": 272,
+      "tag": "third-person",
+      "message": "avoid third-person presenter references"
+    }
+  ],
+  "dispositions": {
+    "third-person": "Retain the named author in third-person research attribution; this report is not pretending to be his own article.",
+    "tables": "Retain comparison tables as required by the reporting format.",
+    "banned-word": "Retain actual participant surname in the explanation of the source conflict."
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "032",
+  "source_path": "research/luna-100/sources/raw/2026-03-11-how-crisp-dm-still-applies-to-ai.md",
+  "purpose": "reader-facing explanation of the six CRISP-DM phases using an AI-assisted classifieds listing example",
+  "required_facts": [
+    {"fact": "CRISP-DM remains a useful reference for AI engineering despite modern use of LLM APIs, retrieval, agents, prompts, evaluation, and observability.", "evidence": "Source lines 1-8: changed tools and continuing process mapping are stated."},
+    {"fact": "The example feature suggests listing fields from a photo on an online classifieds platform.", "evidence": "Source lines 22-29: listing fields and photo-based feature are described."},
+    {"fact": "Business Understanding defines the problem and measurable criteria, such as listing time and abandonment targets.", "evidence": "Source lines 32-38: objectives and AI suitability are explained."},
+    {"fact": "Data Understanding examines image storage, formats, resolutions, frequency, quality, and related titles, descriptions, and categories.", "evidence": "Source lines 40-51: data questions and contextual fields are listed."},
+    {"fact": "Data Preparation validates and normalizes images, prepares category metadata, and defines generated-attribute output formats.", "evidence": "Source lines 53-64: preparation tasks and RAG preparation examples are described."},
+    {"fact": "Modeling shifts toward system design around a foundation model, including prompts, schemas, validation, and extraction tests.", "evidence": "Source lines 66-81: modeling tasks and experimentation are specified."},
+    {"fact": "Evaluation checks whether an AI-assisted workflow improves original goals such as creation time and abandonment.", "evidence": "Source lines 83-94: A/B comparison and return to earlier phases are stated."},
+    {"fact": "Deployment connects the service to backend systems, handles errors and unexpected input, and monitors performance and product metrics.", "evidence": "Source lines 96-108: deployment responsibilities are listed."},
+    {"fact": "Production discoveries can send the team back to data preparation, modeling, or evaluation.", "evidence": "Source lines 110-114: iterative nature of the lifecycle is explicit."},
+    {"fact": "The framework connects product objectives to technical decisions throughout the AI system lifecycle.", "evidence": "Source lines 34-38 and 85-108: business criteria recur through evaluation and deployment."}
+  ],
+  "author_attribution": "Explain the source's historical framework mapping and retain the hypothetical nature of the classifieds feature and its example metrics."
+}

@@ -1,0 +1,18 @@
+{
+  "id": "069",
+  "source_path": "research/luna-100/sources/raw/2026-06-26-six-projects-that-didnt-make-it.md",
+  "article_purpose": "account",
+  "author_attribution_notes": "First-person account belongs to Alexey; projects and outcomes remain attributed to his source article.",
+  "required_facts": [
+    {"claim":"Personal GitHub had 195 repositories","source_evidence":"My GitHub profile shows 195 repositories"},
+    {"claim":"Code Explainer was a Streamlit repository-questioning app","source_evidence":"I built a small Streamlit app to help understand other people’s repositories"},
+    {"claim":"Claude Code made Code Explainer unnecessary","source_evidence":"I realized I didn’t need Code Explainer at all"},
+    {"claim":"Fitness tracker supported detailed workout and health data","source_evidence":"I wanted to define workout presets... warm-ups, bodyweight exercises, drop sets, weights, and reps"},
+    {"claim":"Fitness tracker was abandoned because custom logic did not work","source_evidence":"By that point, the project had a lot of custom logic, and none of it worked properly"},
+    {"claim":"Metabolism simulator exposed unreliable agent behavior","source_evidence":"It turned out that instead of fixing the API problem, it just decided to display demo data"},
+    {"claim":"CodeHive enforced a multi-agent pipeline","source_evidence":"Enforced PM, SWE, QA, and acceptance pipeline"},
+    {"claim":"Litehive was rewritten and never stabilized","source_evidence":"I rewrote it several times... but it never became stable"},
+    {"claim":"Heru and Quse survived as smaller tools","source_evidence":"two parts of it were useful enough to extract into separate projects"},
+    {"claim":"Merm works but is not regularly needed","source_evidence":"The tool works, but I do not have a strong need for it right now"}
+  ]
+}

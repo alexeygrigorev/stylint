@@ -1,0 +1,9 @@
+{
+  "change": "Existing repeated-and rule is now applied inside each sentence, avoiding false chains across full stops. New calibrated rules are unchanged.",
+  "motivating_revision": "013-account.md",
+  "example": "We cover Groq and Anthropic. Gemini and Z.ai are included too.",
+  "implementation": "stylint/rules/prose.py",
+  "sha256": "0638982cc02a886991fb17981286a28ec3a7d11c91793697cd02bbc1dafafd33",
+  "regression_tests": "tests/test_check_style.py",
+  "comparability": "Recompute raw and revised full-lint reports with the same corrected checker. Preserve former raw reports."
+}

@@ -1,0 +1,58 @@
+{
+  "id": "064",
+  "source_path": "research/luna-100/sources/raw/2026-06-05-how-to-set-up-your-coding-agent-a.md",
+  "article_purpose": "explanation",
+  "author_attribution_notes": "Facts and project ownership are attributed to the source author; no additional personal experience or results added.",
+  "required_facts": [
+    {
+      "id": 1,
+      "claim": "People keep asking me how to get started with coding agents.",
+      "source_evidence": "People keep asking me how to get started with coding agents."
+    },
+    {
+      "id": 2,
+      "claim": "The answer sounded obvious: install it and start using it.",
+      "source_evidence": "The answer sounded obvious: install it and start using it."
+    },
+    {
+      "id": 3,
+      "claim": "Anthropic offers a free [Claude Code 101] course and comprehensive [Claude Code docs], and OpenAI has a [Codex quickstart].",
+      "source_evidence": "Anthropic offers a free [Claude Code 101] course and comprehensive [Claude Code docs], and OpenAI has a [Codex quickstart]."
+    },
+    {
+      "id": 4,
+      "claim": "But that’s not what people are really asking.",
+      "source_evidence": "But that’s not what people are really asking."
+    },
+    {
+      "id": 5,
+      "claim": "The real question is bigger - It’s not “how do I start with Claude Code” but multiple questions in one: How do I configure Claude Code with the correct model and permissions?",
+      "source_evidence": "The real question is bigger - It’s not “how do I start with Claude Code” but multiple questions in one: How do I configure Claude Code with the correct model and permissions?"
+    },
+    {
+      "id": 6,
+      "claim": "Do I need [skills], [subagents], [plugins], and [MCP servers]?",
+      "source_evidence": "Do I need [skills], [subagents], [plugins], and [MCP servers]?"
+    },
+    {
+      "id": 7,
+      "claim": "Should I run it locally, in Docker, or remotely?",
+      "source_evidence": "Should I run it locally, in Docker, or remotely?"
+    },
+    {
+      "id": 8,
+      "claim": "What about all the tricks people post on X every day, like the Ralph loop or [teams of agents]?",
+      "source_evidence": "What about all the tricks people post on X every day, like the Ralph loop or [teams of agents]?"
+    },
+    {
+      "id": 9,
+      "claim": "Can someone show me exactly which buttons to press, and in which order?",
+      "source_evidence": "Can someone show me exactly which buttons to press, and in which order?"
+    },
+    {
+      "id": 10,
+      "claim": "Open X and you see an endless stream of people sharing what they built and which tricks they used.",
+      "source_evidence": "Open X and you see an endless stream of people sharing what they built and which tricks they used."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "007",
+  "source_path": "research/luna-100/sources/raw/2026-01-02-benefits-of-learning-in-public-and.md",
+  "purpose": "personal account of Alexey's observations from DataTalks.Club participants and podcast interviews about public learning",
+  "required_facts": [
+    {"fact": "DataTalks.Club Zoomcamps encourage learners to share progress publicly and award bonus points for updates.", "evidence": "Source line 3: the community practice and bonus points are stated."},
+    {"fact": "Participants who share progress tend to stay more engaged and gain benefits beyond the course.", "evidence": "Source line 5: the community's observation is stated."},
+    {"fact": "Alexey interviewed more than 200 practitioners and learners for the DataTalks.Club podcast.", "evidence": "Source line 7: interview count and audience are stated."},
+    {"fact": "Shawn Wang popularized the term 'learning in public' and argued that invisible work is less likely to attract opportunities.", "evidence": "Source line 42: Wang's role and visibility claim are described."},
+    {"fact": "Pastor Soto joined ML Zoomcamp as a medical student without an industry role or LinkedIn presence, then received recruiter outreach, including from Meta, after sharing publicly.", "evidence": "Source line 44: Soto's background and recruiter response are given."},
+    {"fact": "Eugene Yan described writing as a learning and validation tool because unclear explanations expose gaps.", "evidence": "Source line 55: Yan's explanation of writing is stated."},
+    {"fact": "Will McGugan's incremental public updates attracted people interested in similar technical problems and led to feedback and idea exchange.", "evidence": "Source line 69: McGugan's experience is described."},
+    {"fact": "Dashel Ruiz Perez said that seeing peers share progress in Slack made learning feel collective rather than isolating.", "evidence": "Source line 73: the Zoomcamp community effect is stated."},
+    {"fact": "Public posts, talks, and repositories were described as durable evidence of competence, and Pastor said public explanations changed how others perceived him.", "evidence": "Source lines 82-86: credibility and Pastor's shift in perception are described."},
+    {"fact": "Will McGugan reported that public open-source demos attracted investor attention and eventually a pre-seed funding round.", "evidence": "Source line 125: the unexpected investor outcome is stated."}
+  ],
+  "author_attribution": "Attribute observations and outcomes to Alexey, the DataTalks.Club community, and the named podcast guests; do not invent Alexey's own learning story."
+}

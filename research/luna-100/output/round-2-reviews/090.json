@@ -1,0 +1,21 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-08-14-how-to-do-evals-in-2026.md",
+  "original_path": "research/luna-100/output/round-1/090-explanation.md",
+  "revised_path": "research/luna-100/output/round-2/090-explanation.md",
+  "word_count": 433,
+  "required_facts_checked": [
+    {"claim": "Manual review begins the evaluation process.", "status": "present", "evidence": "source: ‘There’s nothing wrong with vibe-checking it’"},
+    {"claim": "A first dataset can contain 10–15 logged records.", "status": "present", "evidence": "source: ‘already have 10-15 logged records’"},
+    {"claim": "The initial labels form a gold standard.", "status": "present", "evidence": "source: gold standard / ground truth"},
+    {"claim": "A generic judge file should encode reusable rules.", "status": "present", "evidence": "source: rules are generic and not specific"},
+    {"claim": "Judge output is compared with human agree/disagree decisions.", "status": "present", "evidence": "source: decide whether I ‘agree’ or ‘disagree’"},
+    {"claim": "Equivalence partitions divide the input space.", "status": "present", "evidence": "source: ‘Equivalence partitions’"},
+    {"claim": "Boundary tests check category edges.", "status": "present", "evidence": "source: ‘Boundary testing’"},
+    {"claim": "The process can automate a fraction-of-good-results metric.", "status": "present", "evidence": "source: fraction of ‘good’ results"},
+    {"claim": "Real user cases and online evaluation extend the gold standard.", "status": "present", "evidence": "source: add new failing cases and evaluate online"}
+  ],
+  "unsupported_claims_removed": [],
+  "substantive_edits": ["Rebuilt the explanation around the source’s progression from manual labels to automated and online evaluation.", "Restored the category and boundary examples as article lists.", "Separated synthetic coverage from real production cases and preserved metric qualifications."],
+  "full_final_lint_findings": [],
+  "unresolved_source_conflicts": []
+}

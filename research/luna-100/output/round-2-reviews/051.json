@@ -1,0 +1,32 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-04-24-from-google-docs-to-an-automated.md",
+  "original_path": "research/luna-100/output/round-1/051-account.md",
+  "revised_path": "research/luna-100/output/round-2/051-account.md",
+  "word_count": 667,
+  "required_facts_checked": [
+    "DataTalks.Club has launched recurring free-course cohorts since 2021, with repeated questions arriving in Slack.",
+    "The first FAQ used shared Google Docs, including a one-point leaderboard incentive for useful contributions.",
+    "Open-document moderation problems included repeated vandalism, and the FAQ grew to about 1,300 entries, with roughly 500 for Data Engineering Zoomcamp.",
+    "Community member Alex Litvinov built the RAG-powered Slack bot.",
+    "The bot ingests FAQ entries, Slack history, GitHub repositories and YouTube subtitles with source-specific chunking.",
+    "The bot's daily Prefect/Docker pipeline uses LlamaIndex, BAAI/bge-base-en-v1.5, Zilliz Cloud, Cohere Rerank and GPT-4o-mini, among other components.",
+    "The bot routes by Slack channel ID, retrieves 20 documents, applies time weighting and reranks to four.",
+    "The FAQ migrated to Git and a static site after Google Docs moderation and parsing problems.",
+    "Google Docs were downloaded as DOCX, parsed with Python's docx module into JSON, and cleaned by GPT-4o.",
+    "A custom Python generator with GitHub Copilot help replaced Jekyll because dbt's Jinja syntax conflicted with Liquid, and it exports JSON indexes as well as HTML.",
+    "Fred Pearce built the GitHub Actions orchestration around the FAQ Automation Bot.",
+    "The bot's structured decision can be NEW, UPDATE or DUPLICATE, and Claude Code reviews pull requests because human review remains necessary."
+  ],
+  "brief_corrections": [],
+  "unsupported_claims_removed": [
+    "Removed claims that the Slack bot or Git workflow was error-free or fully autonomous.",
+    "Removed unsupported causal claims beyond the source's documented vandalism, parsing and contribution-friction problems."
+  ],
+  "substantive_edits": [
+    "Rewrote the account around the progression from shared document to retrieval bot, Git website and issue-driven automation.",
+    "Kept Alex Litvinov's bot, Fred Pearce's orchestration and Alexey's migration work explicitly distinct.",
+    "Preserved the concrete pipeline, repository, generator and review details while reducing repeated conclusions."
+  ],
+  "full_final_lint_findings": [],
+  "unresolved_source_conflicts": []
+}

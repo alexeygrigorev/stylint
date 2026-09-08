@@ -1,0 +1,18 @@
+{
+  "id": "012",
+  "source_path": "research/luna-100/sources/raw/2026-01-16-how-i-reviewed-2500-ai-bootcamp-scholarship.md",
+  "purpose": "reader-facing explanation of the source-supported scholarship criteria and two-stage review workflow",
+  "required_facts": [
+    {"fact": "The scholarship was intended for people with meaningful current work who wanted training to scale its impact, not general career exploration.", "evidence": "Source line 34: purpose and scope are defined."},
+    {"fact": "No prior AI experience was required, but the application needed a clear connection between current work and the timing of the Bootcamp.", "evidence": "Source line 34: prior experience and relevance requirements are stated."},
+    {"fact": "Generic or one-line responses and applications focused only on jobs, isolated tools, or short-term income were filtered early.", "evidence": "Source line 39: early filtering criteria are listed."},
+    {"fact": "A strong application described a specific problem, its beneficiaries, and why training mattered now.", "evidence": "Source line 42: the three parts of a strong response are specified."},
+    {"fact": "Reviewers considered whether applicants understood the Bootcamp and needed production-focused training to advance current work.", "evidence": "Source line 45: alignment and production-training criteria are described."},
+    {"fact": "Completion likelihood was assessed through project history, concrete plans, or accountability structures.", "evidence": "Source line 48: follow-through signals are stated."},
+    {"fact": "More than 2,500 applications made full manual review infeasible.", "evidence": "Source lines 6 and 54: application volume and manual-review constraint are given."},
+    {"fact": "Claude Code used detailed custom slash commands for an AI-assisted preliminary ranking and filtering pass.", "evidence": "Source line 56: evaluation logic, commands, ranking, and filtering are described."},
+    {"fact": "Parallel sub-agents processed large batches, while reusable Markdown workflows avoided building a custom coded agent.", "evidence": "Source lines 59 and 64: parallel commands and command-based workflows are stated."},
+    {"fact": "The top 50 were shuffled and manually checked, including full reading, profile or project checks, and comparison of AI scores with application substance.", "evidence": "Source line 66: final review procedure and qualitative priorities are described."}
+  ],
+  "author_attribution": "Explain the historical process as Alexey documented it, retaining the distinction between automated filtering and personal final review."
+}

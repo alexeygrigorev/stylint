@@ -1,0 +1,44 @@
+{
+  "id": "048",
+  "draft_path": "research/luna-100/output/round-3/048-explanation.md",
+  "source_path": "research/luna-100/sources/raw/2026-04-10-tired-of-learning-ai-alone-were-launching.md",
+  "draft_sha256": "7b19af9cbbd260791db17c8510c90459ce1bbd9501a973ca74aba6d99cd896c7",
+  "source_sha256": "ff3ea934eb1d5984eaba195e8e38276054ff1886bb6ec8f496c35eed919d3dc4",
+  "quote_pairs": [
+    {
+      "draft_quote": "A useful community adds those missing pieces through a plan",
+      "source_quote": "They need an accountability structure",
+      "facts_checked": true
+    },
+    {
+      "draft_quote": "Accountability circles are small mastermind groups that work in sprints",
+      "source_quote": "mastermind groups with regular check-ins",
+      "facts_checked": true
+    },
+    {
+      "draft_quote": "Building sessions add direct practice",
+      "source_quote": "Building Sessions and Group Learning",
+      "facts_checked": true
+    },
+    {
+      "draft_quote": "Members can get resume and LinkedIn reviews",
+      "source_quote": "Career support: resume reviews",
+      "facts_checked": true
+    },
+    {
+      "draft_quote": "Short specialized courses are planned as well",
+      "source_quote": "Mini-courses on specialized topics are also coming",
+      "facts_checked": true
+    }
+  ],
+  "false_causality_found": false,
+  "invented_first_person_actions_found": false,
+  "third_person_alexey_reference_found": false,
+  "repeated_closing_verdict_found": false,
+  "required_corrections": [
+    "The explanation omits that Alexey and Valeriia are launching the community together and the April 13 launch event; correct only if launch context is in scope.",
+    "The draft compresses early-member benefits and voting; no false claim found."
+  ],
+  "semantic_status": "needs_correction",
+  "notes": "Full source and draft read; Python asserted every recorded quote substring before writing this sidecar."
+}

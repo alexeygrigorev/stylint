@@ -1,0 +1,57 @@
+{
+  "id": "050",
+  "source_path": "research/luna-100/sources/raw/2026-04-17-how-we-built-ai-shipping-labs.md",
+  "correction_reason": "Original brief used facts or a source path from a different archived post; original preserved.",
+  "original_brief": "research/luna-100/output/briefs/050.json",
+  "purpose": "explanation",
+  "required_facts": [
+    {
+      "fact": "Valeriia built the first Next.js site with v0 and Cursor.",
+      "evidence": "Actual assigned source; checked by parent"
+    },
+    {
+      "fact": "Minimal functionality tested interest through updates and subscription purchases with analytics.",
+      "evidence": "Actual assigned source; checked by parent"
+    },
+    {
+      "fact": "Valeriia designed activity tiers before building the interface.",
+      "evidence": "Actual assigned source; checked by parent"
+    },
+    {
+      "fact": "She adapted Alexey’s scripts to import newsletters via Google Docs into Markdown.",
+      "evidence": "Actual assigned source; checked by parent"
+    },
+    {
+      "fact": "Alexey handled Stripe and hosting, then Django development.",
+      "evidence": "Actual assigned source; checked by parent"
+    },
+    {
+      "fact": "Existing platforms did not cover the required tiers and community workflow.",
+      "evidence": "Actual assigned source; checked by parent"
+    },
+    {
+      "fact": "Django was chosen because Alexey has known it since 2010.",
+      "evidence": "Actual assigned source; checked by parent"
+    },
+    {
+      "fact": "Claude created 15 specification files before GitHub implementation issues.",
+      "evidence": "Actual assigned source; checked by parent"
+    },
+    {
+      "fact": "Tasks needed scope, acceptance criteria and human-verification tags.",
+      "evidence": "Actual assigned source; checked by parent"
+    },
+    {
+      "fact": "Agent progress was 41/46 by morning and 51/56 after12hours with a growing backlog.",
+      "evidence": "Actual assigned source; checked by parent"
+    },
+    {
+      "fact": "Integrations still required keys, configuration and manual tests.",
+      "evidence": "Actual assigned source; checked by parent"
+    },
+    {
+      "fact": "Next.js remained the main site while Django ran on a separate subdomain awaiting production readiness.",
+      "evidence": "Actual assigned source; checked by parent"
+    }
+  ]
+}

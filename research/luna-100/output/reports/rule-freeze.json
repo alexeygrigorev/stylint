@@ -1,0 +1,23 @@
+{
+  "status": "rules frozen before reading held-out generated articles",
+  "evidence_at_freeze": {
+    "reference_documents": 50,
+    "development_drafts_available": 65,
+    "reference_findings": 0,
+    "development_dense_paragraph_runs": 51,
+    "development_evaluative_framing": 6
+  },
+  "new_tags": [
+    "dense-paragraph-run",
+    "evaluative-framing"
+  ],
+  "files": {
+    "stylint/patterns.py": "664f6405f84f5c46d0a27397b78d43c0812268aaba2d889ea5fdec48668431a0",
+    "stylint/rules/voice.py": "f4914b65a61352761364cac199d0a745c517b4c41db5193a0e02459808296d47",
+    "stylint/tags.py": "973c5ed7f0e7868ea21cef484e652c72624837649d264d70585c266975b46a7d",
+    "stylint/lint.py": "daef77ce367ed5c7f0fe48836445144d143a606523654b7370c23bc583e4f500",
+    "stylint/explanations.py": "5859be8b25058eb4e03acaffb1f485d5851c175db0f9b058ccce86d0e4919a8e"
+  },
+  "selection_notes": "Explored density thresholds; selected four adjacent paragraphs of at least 50 words and three sentences. Narrow evaluative forms exclude valuable part, important thing, main difference, ordinary reasons, enough and rather than.",
+  "split_correction": "The first content audit saw 069, so s35 is not blind. Replaced that source with previously unread/unmined s17 before any held-out evaluation. The rule definitions remain unchanged."
+}

@@ -1,0 +1,265 @@
+{
+  "model": "gpt-5.6-luna",
+  "reasoning_effort": "low",
+  "instructions": "Four fresh first drafts from sources+latest profile/draftprompt, no access to their earlier synthetic drafts and no lintfeedback before saving. Existing agent retained broader task context. These are additional to the100, not a blind model benchmark.",
+  "documents": [
+    {
+      "id": "p01-account",
+      "source_id": "s10",
+      "source_path": "research/luna-100/sources/raw/2026-02-13-what-is-an-ai-engineer-in-2026-join.md",
+      "baseline_article_id": "019",
+      "path": "research/luna-100/output/prompt-probe/raw/p01-account.md",
+      "sha256": "13cbf72780bc88298082ca807afb12070506fbd250d0a7bb39556c9c63bac4ea",
+      "words": 447,
+      "features": {
+        "words": 441,
+        "paragraphs": 8,
+        "sentences": 29,
+        "sentence_words_median": 15,
+        "sentence_words_p90": 22.6,
+        "paragraph_sentences_median": 3.5,
+        "short_sentences_pct": 24.138,
+        "long_sentences_pct": 3.448,
+        "first_person_per_1000_words": 45.351,
+        "because_so_but_per_1000_words": 9.07,
+        "contractions_per_1000_words": 0.0
+      },
+      "lint": [
+        {
+          "tag": "banned-word",
+          "line": 3,
+          "message": "'itself' - use sparingly; if it does not change the meaning, drop it"
+        },
+        {
+          "tag": "contraction",
+          "line": 5,
+          "message": "'I am' -> 'I'm'. The voice uses contractions. Skip only when the expanded form falls at the end of a sentence or carries deliberate emphasis."
+        },
+        {
+          "tag": "contraction",
+          "line": 5,
+          "message": "'did not' -> 'didn't'. The voice uses contractions. Skip only when the expanded form falls at the end of a sentence or carries deliberate emphasis."
+        },
+        {
+          "tag": "count-list",
+          "line": 7,
+          "message": "the opening sentence announces a count of items ('two things', 'three reasons') and the paragraph then lists them. That is a list. Fix: convert the items to a bullet list and drop the count - the bullets show it."
+        },
+        {
+          "tag": "many-commas",
+          "line": 9,
+          "message": "sentence has 4 commas (max 3). Fixes: (1) convert to a bullet list; (2) split into shorter sentences. Convert to a bullet list only when BOTH (a) each item is 3+ words and items are parallel in structure, AND (b) the author already signalled enumeration (colon + items, or 3+ adjacent sentences with the same opener). Skip conversion when items end in 'and others'/'and more'/'and so on', when commas are clausal (joining clauses, not items), or when inline reads fine."
+        },
+        {
+          "tag": "long-clause-likely",
+          "line": 13,
+          "message": "sentence has 30 words and 2 commas, and the commas look like clause boundaries (subordinating conjunction, chain of actions, or mixed subjects). Fix: make ONE split at a natural clause boundary, usually into two sentences. Do NOT chop into many short fragments (that trips choppy-rhythm) and do NOT convert to bullets (that would break the meaning). Test: can you write a single lead-in line that all the commas finish without re-introducing the subject or verb? Yes -> bullet list. No -> split into 2-3 sentences."
+        },
+        {
+          "tag": "contraction",
+          "line": 15,
+          "message": "'did not' -> 'didn't'. The voice uses contractions. Skip only when the expanded form falls at the end of a sentence or carries deliberate emphasis."
+        }
+      ],
+      "baseline_findings": 19
+    },
+    {
+      "id": "p02-explanation",
+      "source_id": "s10",
+      "source_path": "research/luna-100/sources/raw/2026-02-13-what-is-an-ai-engineer-in-2026-join.md",
+      "baseline_article_id": "020",
+      "path": "research/luna-100/output/prompt-probe/raw/p02-explanation.md",
+      "sha256": "8b2268bfe109419b9e0c893025dc7ea72dc6811b7f54cc2510d4c26e3ce6347f",
+      "words": 473,
+      "features": {
+        "words": 447,
+        "paragraphs": 9,
+        "sentences": 30,
+        "sentence_words_median": 15.0,
+        "sentence_words_p90": 21.0,
+        "paragraph_sentences_median": 3,
+        "short_sentences_pct": 10.0,
+        "long_sentences_pct": 0.0,
+        "first_person_per_1000_words": 22.371,
+        "because_so_but_per_1000_words": 6.711,
+        "contractions_per_1000_words": 0.0
+      },
+      "lint": [
+        {
+          "tag": "flat-definition",
+          "line": 11,
+          "message": "flat copular definition 'The second source is a...': it just equates the subject with a category and reads as dull and formal. Prefer active voice or lead with the thing itself: 'We use X', 'X does Y', or 'We will use `id`, a <description>'."
+        },
+        {
+          "tag": "many-commas",
+          "line": 11,
+          "message": "sentence has 4 commas (max 3). Fixes: (1) convert to a bullet list; (2) split into shorter sentences. Convert to a bullet list only when BOTH (a) each item is 3+ words and items are parallel in structure, AND (b) the author already signalled enumeration (colon + items, or 3+ adjacent sentences with the same opener). Skip conversion when items end in 'and others'/'and more'/'and so on', when commas are clausal (joining clauses, not items), or when inline reads fine."
+        },
+        {
+          "tag": "flat-definition",
+          "line": 23,
+          "message": "flat copular definition 'The fifth source is a...': it just equates the subject with a category and reads as dull and formal. Prefer active voice or lead with the thing itself: 'We use X', 'X does Y', or 'We will use `id`, a <description>'."
+        },
+        {
+          "tag": "contraction",
+          "line": 25,
+          "message": "'did not' -> 'didn't'. The voice uses contractions. Skip only when the expanded form falls at the end of a sentence or carries deliberate emphasis."
+        },
+        {
+          "tag": "many-commas",
+          "line": 27,
+          "message": "sentence has 4 commas (max 3). Fixes: (1) convert to a bullet list; (2) split into shorter sentences. Convert to a bullet list only when BOTH (a) each item is 3+ words and items are parallel in structure, AND (b) the author already signalled enumeration (colon + items, or 3+ adjacent sentences with the same opener). Skip conversion when items end in 'and others'/'and more'/'and so on', when commas are clausal (joining clauses, not items), or when inline reads fine."
+        }
+      ],
+      "baseline_findings": 22
+    },
+    {
+      "id": "p03-account",
+      "source_id": "s28",
+      "source_path": "research/luna-100/sources/raw/2026-05-08-building-an-ai-book-generator-with.md",
+      "baseline_article_id": "055",
+      "path": "research/luna-100/output/prompt-probe/raw/p03-account.md",
+      "sha256": "9bf549e298df14f55a6bbd043b94151f9455db1660d98d31f87719db99782444",
+      "words": 473,
+      "features": {
+        "words": 468,
+        "paragraphs": 8,
+        "sentences": 32,
+        "sentence_words_median": 16.0,
+        "sentence_words_p90": 23.7,
+        "paragraph_sentences_median": 4.0,
+        "short_sentences_pct": 28.125,
+        "long_sentences_pct": 6.25,
+        "first_person_per_1000_words": 36.325,
+        "because_so_but_per_1000_words": 10.684,
+        "contractions_per_1000_words": 0.0
+      },
+      "lint": [
+        {
+          "tag": "contraction",
+          "line": 3,
+          "message": "'do not' -> 'don't'. The voice uses contractions. Skip only when the expanded form falls at the end of a sentence or carries deliberate emphasis."
+        },
+        {
+          "tag": "contraction",
+          "line": 3,
+          "message": "'are not' -> 'aren't'. The voice uses contractions. Skip only when the expanded form falls at the end of a sentence or carries deliberate emphasis."
+        },
+        {
+          "tag": "contraction",
+          "line": 3,
+          "message": "'was not' -> 'wasn't'. The voice uses contractions. Skip only when the expanded form falls at the end of a sentence or carries deliberate emphasis."
+        },
+        {
+          "tag": "banned-word",
+          "line": 3,
+          "message": "'very' - drop"
+        },
+        {
+          "tag": "many-commas",
+          "line": 3,
+          "message": "sentence has 8 commas (max 3). Fixes: (1) convert to a bullet list; (2) split into shorter sentences. Convert to a bullet list only when BOTH (a) each item is 3+ words and items are parallel in structure, AND (b) the author already signalled enumeration (colon + items, or 3+ adjacent sentences with the same opener). Skip conversion when items end in 'and others'/'and more'/'and so on', when commas are clausal (joining clauses, not items), or when inline reads fine."
+        },
+        {
+          "tag": "repeated-and",
+          "line": 9,
+          "message": "polysyndetic chain 'one for writing and one for EPUB and MOBI publishing': three or more items joined by 'and' instead of commas. Fix: use the oxford comma form ('Claude Code, Codex and OpenCode'). Keep the repeated 'and' only when the rhythm is intentional (rare)."
+        },
+        {
+          "tag": "long-clause-likely",
+          "line": 9,
+          "message": "sentence has 26 words and 1 comma, and the commas look like clause boundaries (subordinating conjunction, chain of actions, or mixed subjects). Fix: make ONE split at a natural clause boundary, usually into two sentences. Do NOT chop into many short fragments (that trips choppy-rhythm) and do NOT convert to bullets (that would break the meaning). Test: can you write a single lead-in line that all the commas finish without re-introducing the subject or verb? Yes -> bullet list. No -> split into 2-3 sentences."
+        },
+        {
+          "tag": "contraction",
+          "line": 13,
+          "message": "'was not' -> 'wasn't'. The voice uses contractions. Skip only when the expanded form falls at the end of a sentence or carries deliberate emphasis."
+        },
+        {
+          "tag": "long-clause-likely",
+          "line": 15,
+          "message": "sentence has 29 words and 1 comma, and the commas look like clause boundaries (subordinating conjunction, chain of actions, or mixed subjects). Fix: make ONE split at a natural clause boundary, usually into two sentences. Do NOT chop into many short fragments (that trips choppy-rhythm) and do NOT convert to bullets (that would break the meaning). Test: can you write a single lead-in line that all the commas finish without re-introducing the subject or verb? Yes -> bullet list. No -> split into 2-3 sentences."
+        },
+        {
+          "tag": "contraction",
+          "line": 17,
+          "message": "'did not' -> 'didn't'. The voice uses contractions. Skip only when the expanded form falls at the end of a sentence or carries deliberate emphasis."
+        }
+      ],
+      "baseline_findings": 11
+    },
+    {
+      "id": "p04-explanation",
+      "source_id": "s28",
+      "source_path": "research/luna-100/sources/raw/2026-05-08-building-an-ai-book-generator-with.md",
+      "baseline_article_id": "056",
+      "path": "research/luna-100/output/prompt-probe/raw/p04-explanation.md",
+      "sha256": "0797a5ac321e33684ce880c377b6781a2938ed2eecef667a1601dcf53ce728ee",
+      "words": 448,
+      "features": {
+        "words": 455,
+        "paragraphs": 8,
+        "sentences": 34,
+        "sentence_words_median": 13.5,
+        "sentence_words_p90": 19.7,
+        "paragraph_sentences_median": 4.0,
+        "short_sentences_pct": 29.412,
+        "long_sentences_pct": 2.941,
+        "first_person_per_1000_words": 0.0,
+        "because_so_but_per_1000_words": 6.593,
+        "contractions_per_1000_words": 0.0
+      },
+      "lint": [
+        {
+          "tag": "flat-definition",
+          "line": 3,
+          "message": "flat copular definition '. The plan is the...': it just equates the subject with a category and reads as dull and formal. Prefer active voice or lead with the thing itself: 'We use X', 'X does Y', or 'We will use `id`, a <description>'."
+        },
+        {
+          "tag": "long-clause-likely",
+          "line": 3,
+          "message": "sentence has 27 words and 2 commas, and the commas look like clause boundaries (subordinating conjunction, chain of actions, or mixed subjects). Fix: make ONE split at a natural clause boundary, usually into two sentences. Do NOT chop into many short fragments (that trips choppy-rhythm) and do NOT convert to bullets (that would break the meaning). Test: can you write a single lead-in line that all the commas finish without re-introducing the subject or verb? Yes -> bullet list. No -> split into 2-3 sentences."
+        },
+        {
+          "tag": "past-tense-fragment",
+          "line": 11,
+          "message": "sentence starts with past-tense action or participle 'Completed'. Add the actor ('I ran...', 'we add...'), rewrite in present tense, or rewrite the participle clause."
+        },
+        {
+          "tag": "flat-definition",
+          "line": 15,
+          "message": "flat copular definition '. The output is a...': it just equates the subject with a category and reads as dull and formal. Prefer active voice or lead with the thing itself: 'We use X', 'X does Y', or 'We will use `id`, a <description>'."
+        },
+        {
+          "tag": "choppy-rhythm",
+          "line": 15,
+          "message": "2 consecutive short sentences (<= 9 words each). The staccato rhythm reads worse than one or two joined sentences. Fix: combine two of them with a conjunction ('so', 'because', 'and', 'but') or restructure as a single longer sentence."
+        },
+        {
+          "tag": "flat-definition",
+          "line": 17,
+          "message": "flat copular definition '. That is an...': it just equates the subject with a category and reads as dull and formal. Prefer active voice or lead with the thing itself: 'We use X', 'X does Y', or 'We will use `id`, a <description>'."
+        },
+        {
+          "tag": "contraction",
+          "line": 17,
+          "message": "'That is' -> 'that's'. The voice uses contractions. Skip only when the expanded form falls at the end of a sentence or carries deliberate emphasis."
+        }
+      ],
+      "baseline_findings": 18
+    }
+  ],
+  "findings": 29,
+  "same_source_baseline_findings": 70,
+  "tags": {
+    "banned-word": 2,
+    "contraction": 10,
+    "count-list": 1,
+    "many-commas": 4,
+    "long-clause-likely": 4,
+    "flat-definition": 5,
+    "repeated-and": 1,
+    "past-tense-fragment": 1,
+    "choppy-rhythm": 1
+  }
+}

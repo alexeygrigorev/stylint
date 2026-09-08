@@ -1,0 +1,15 @@
+{
+  "article_id":"023",
+  "source_path":"research/luna-100/sources/raw/2026-02-26-what-is-an-ai-engineer-my-perspective.md",
+  "article_path":"research/luna-100/output/round-2/023-account.md",
+  "factual_checks":[
+    {"draft":"around 15 years in software engineering and 12 years building machine learning systems","source":"The source says exactly those durations.","status":"supported"},
+    {"draft":"AI Engineer ... responsible for integrating AI into a product","source":"This is the source's central working definition.","status":"supported"},
+    {"draft":"Many current applications use a foundation model from ... OpenAI, Anthropic or Google through an API","source":"The source gives those providers and API-based integration as context.","status":"supported"},
+    {"draft":"The model is one component in a system whose behavior must be measured and maintained","source":"The source explicitly frames the model as one component requiring measurement and maintenance.","status":"supported"}
+  ],
+  "missing_or_needs_correction":["The account is source-faithful but compresses the accompanying classifieds example, which the source uses to show progression from a simple feature to RAG and agentic systems.","The conclusion is concrete and does not invent a career outcome. No unsupported causal leap was found."],
+  "attribution_review":"Alexey's qualifications and perspective are correctly attributed to him. The draft distinguishes data science, ML engineering, and AI Engineering rather than collapsing the roles.",
+  "source_copying":"No complete source sentence was identified in this review.",
+  "required_corrections":[]
+}

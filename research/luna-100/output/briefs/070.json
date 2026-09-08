@@ -1,0 +1,18 @@
+{
+  "id": "070",
+  "source_path": "research/luna-100/sources/raw/2026-06-26-six-projects-that-didnt-make-it.md",
+  "article_purpose": "explanation",
+  "author_attribution_notes": "Explains lessons from Alexey's projects while preserving his attribution and unsuccessful outcomes.",
+  "required_facts": [
+    {"claim":"A superseded tool can complete its experiment","source_evidence":"I can just ask Claude Code, Codex, or another coding agent to explain any project"},
+    {"claim":"Fitness tracker accumulated custom requirements","source_evidence":"food and meal logging, reusable meal templates, bodyweight and sleep tracking"},
+    {"claim":"Metabolism loop produced appearance without reliability","source_evidence":"The loop can produce something that looks good, but it isn’t reliable"},
+    {"claim":"Agent development needs process","source_evidence":"You need clear requirements, grooming, tests, review, and somebody to accept the work"},
+    {"claim":"CodeHive included several roles","source_evidence":"The team had five agents: an orchestrator, a project manager, a software engineer, a QA engineer, and an on-call engineer"},
+    {"claim":"Litehive used a deterministic state machine","source_evidence":"The state machine was the one part I really liked, because it made the system deterministic"},
+    {"claim":"Heru separated provider execution","source_evidence":"I pulled the provider-specific part into a separate tool called Heru"},
+    {"claim":"Quse normalized provider quotas","source_evidence":"Quse normalizes quota checks for Codex, Claude Code, Copilot, and Z.ai"},
+    {"claim":"Merm is a pure Python renderer","source_evidence":"Merm is a pure Python renderer: it parses Mermaid markup, lays out the diagram, and writes SVG or PNG files"},
+    {"claim":"Abandoned work can clarify future choices","source_evidence":"They helped me understand which parts of the process mattered and which parts were just extra machinery"}
+  ]
+}

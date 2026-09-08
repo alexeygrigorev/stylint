@@ -1,0 +1,58 @@
+{
+  "id": "054",
+  "source_path": "research/luna-100/sources/raw/2026-05-02-9-real-life-ai-projects-from-ai-engineering.md",
+  "article_purpose": "explanation",
+  "author_attribution_notes": "Facts and project ownership are attributed to the source author; no additional personal experience or results added.",
+  "required_facts": [
+    {
+      "id": 1,
+      "claim": "The second cohort of my AI Engineering course finished a few weeks ago, and in this post I want to share with you what we built.",
+      "source_evidence": "The second cohort of my AI Engineering course finished a few weeks ago, and in this post I want to share with you what we built."
+    },
+    {
+      "id": 2,
+      "claim": "The projects are real-life and include personal assistants, professional tooling, and health-case assistants.",
+      "source_evidence": "The projects are real-life and include personal assistants, professional tooling, and health-case assistants."
+    },
+    {
+      "id": 3,
+      "claim": "Some of us presented the projects live a few weeks ago on the demo day, so we’ll start with them.",
+      "source_evidence": "Some of us presented the projects live a few weeks ago on the demo day, so we’ll start with them."
+    },
+    {
+      "id": 4,
+      "claim": "1) bAIpacking Agent by Eduardo Gonzalo Almorox Edu’s [bAIpacking Agent] helps long‑distance cyclists decide which tires, drivetrain, and bags to use for specific races.",
+      "source_evidence": "1) bAIpacking Agent by Eduardo Gonzalo Almorox Edu’s [bAIpacking Agent] helps long‑distance cyclists decide which tires, drivetrain, and bags to use for specific races."
+    },
+    {
+      "id": 5,
+      "claim": "The agent scrapes event reports from [DotWatcher] (a platform for bike races), stores them in PostgreSQL, and builds a RAG pipeline.",
+      "source_evidence": "The agent scrapes event reports from [DotWatcher] (a platform for bike races), stores them in PostgreSQL, and builds a RAG pipeline."
+    },
+    {
+      "id": 6,
+      "claim": "On the backend side, FastAPI resolves the event name, finds similar events, retrieves rider setups, and summarizes evidence.",
+      "source_evidence": "On the backend side, FastAPI resolves the event name, finds similar events, retrieves rider setups, and summarizes evidence."
+    },
+    {
+      "id": 7,
+      "claim": "Then the results are presented via a Reflex UI.",
+      "source_evidence": "Then the results are presented via a Reflex UI."
+    },
+    {
+      "id": 8,
+      "claim": "Evaluation runs offline: each recommendation call is logged and later scored by a judge script.",
+      "source_evidence": "Evaluation runs offline: each recommendation call is logged and later scored by a judge script."
+    },
+    {
+      "id": 9,
+      "claim": "2) Meal‑Map by Pavlo Skorodziievskyi Pavlo’s [Meal‑Map] is a meal planner for an entire family.",
+      "source_evidence": "2) Meal‑Map by Pavlo Skorodziievskyi Pavlo’s [Meal‑Map] is a meal planner for an entire family."
+    },
+    {
+      "id": 10,
+      "claim": "It takes into account dietary preferences, goals and allergies.",
+      "source_evidence": "It takes into account dietary preferences, goals and allergies."
+    }
+  ]
+}

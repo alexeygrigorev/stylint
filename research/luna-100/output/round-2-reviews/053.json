@@ -1,0 +1,30 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-05-02-9-real-life-ai-projects-from-ai-engineering.md",
+  "original_path": "research/luna-100/output/round-1/053-account.md",
+  "revised_path": "research/luna-100/output/round-2/053-account.md",
+  "word_count": 612,
+  "required_facts_checked": [
+    "The second cohort built personal assistants, professional tools and health-related assistants.",
+    "Eduardo Gonzalo Almorox's bAIpacking Agent uses DotWatcher, PostgreSQL, FastAPI, Reflex, RAG and offline judge scoring.",
+    "Pavlo Skorodziievskyi's Meal-Map uses four nutrition sources chunked into 28 documents and nine tools, with 20-request and $0.50 daily limits.",
+    "Camila Gaitan Mosquera's Decision Memory Agent indexed around 21 documents in ChromaDB and returns structured decision context with monitoring.",
+    "Mladen Maric's VoiceIssue Agent creates GitHub issues from Telegram voice, asks for confirmation and uses Docker Compose, dashboards and an LLM judge.",
+    "Spyros Koumarianos's medical app uses local Whisper, diarisation and local Llama offline; a three-minute recording takes around ten minutes without GPUs.",
+    "Nirajan Acharya's Cyber Sachet supports Nepali cybersecurity awareness in English and Nepali with citations, Logfire and an LLM judge.",
+    "James Watkins's SnapSplit uses vision for receipts and escalates OCR mismatches to human review.",
+    "Juan Perez Prim's AMR platform ingests 15 sources including WHO, CDC, FAO, PubMed and Our World in Data and combines BM25 with BioBERT through reciprocal-rank fusion.",
+    "Léonore Tideman's regulation assistant covers European, US and Dutch jurisdictions and uses scope guarding, local retrieval, Brave Search, Jina Reader, Ansvar, integration tests and an LLM judge."
+  ],
+  "brief_corrections": [],
+  "unsupported_claims_removed": [
+    "Removed claims about project success, user adoption or production outcomes not stated in the source.",
+    "Removed invented student motives and preserved each project's documented scope and limitations."
+  ],
+  "substantive_edits": [
+    "Rewrote the project roundup as connected first-person account prose while naming every student contributor.",
+    "Preserved exact counts, model choices, evaluation methods, deployment constraints and human escalation points.",
+    "Grouped projects by theme without changing the source chronology or attribution."
+  ],
+  "full_final_lint_findings": [],
+  "unresolved_source_conflicts": []
+}

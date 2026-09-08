@@ -1,0 +1,57 @@
+{
+  "reason": "Raw037 and048 used a different source within development; raw050 reserved assignment used development source s26. Exclude these from source-aligned baseline. Assignment-level reports remain unchanged. Corrections are not a fresh held-out evaluation.",
+  "confirmed_content_mismatches": {
+    "037": {
+      "assigned": "s19",
+      "actual": "s08",
+      "corrected_round": 3
+    },
+    "048": {
+      "assigned": "s24",
+      "actual": "s25",
+      "corrected_round": 2
+    },
+    "050": {
+      "assigned": "s25",
+      "actual": "s26",
+      "corrected_round": 3
+    }
+  },
+  "groups": {
+    "development": {
+      "articles": 78,
+      "sources": 40,
+      "excluded_ids": [
+        "037",
+        "048"
+      ],
+      "rules": {
+        "dense-paragraph-run": {
+          "articles": 62,
+          "findings": 62
+        },
+        "evaluative-framing": {
+          "articles": 6,
+          "findings": 6
+        }
+      }
+    },
+    "holdout": {
+      "articles": 19,
+      "sources": 10,
+      "excluded_ids": [
+        "050"
+      ],
+      "rules": {
+        "dense-paragraph-run": {
+          "articles": 17,
+          "findings": 17
+        },
+        "evaluative-framing": {
+          "articles": 0,
+          "findings": 0
+        }
+      }
+    }
+  }
+}

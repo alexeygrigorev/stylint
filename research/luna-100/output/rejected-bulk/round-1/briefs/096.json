@@ -1,0 +1,57 @@
+{
+  "id": "096",
+  "source_path": "research/luna-100/sources/raw/2026-08-31-ai-dev-tools-zoomcamp-2026-starts.md",
+  "mode": "explanation",
+  "article_purpose": "explanation of the supported workflow or idea",
+  "author_attribution_notes": "Keep Alexey’s first-person framing only for actions and observations explicitly present in the supplied source; preserve attribution to DataTalks.Club, AI Shipping Labs, and other projects where named.",
+  "required_facts": [
+    {
+      "fact": "The 2026 cohort of  starts today (August 31).",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-31-ai-dev-tools-zoomcamp-2026-starts.md (source sentence 1)"
+    },
+    {
+      "fact": "The course is free, and registration is open for the next few weeks.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-31-ai-dev-tools-zoomcamp-2026-starts.md (source sentence 2)"
+    },
+    {
+      "fact": "In this course, we use AI coding tools across the full software-development lifecycle.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-31-ai-dev-tools-zoomcamp-2026-starts.md (source sentence 3)"
+    },
+    {
+      "fact": "* Part 1: \n* Part 2: \n* Part 3: \n* Part 4: \n* Part 5: \n\nIn this course we give you a tool-agnostic way to work with any coding agent and increate your productivity as a developer.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-31-ai-dev-tools-zoomcamp-2026-starts.md (source sentence 4)"
+    },
+    {
+      "fact": "Watch the launch stream:\n\n## Start Here\n\nUse these links to join the course and find the materials:\n\n* .",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-31-ai-dev-tools-zoomcamp-2026-starts.md (source sentence 5)"
+    },
+    {
+      "fact": "*  to see deadlines, submit homework and projects.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-31-ai-dev-tools-zoomcamp-2026-starts.md (source sentence 6)"
+    },
+    {
+      "fact": "It contains the module materials, recordings, homework, and final-project requirements.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-31-ai-dev-tools-zoomcamp-2026-starts.md (source sentence 7)"
+    },
+    {
+      "fact": "*  for prerequisites, setup, logistics, and detailed guidance.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-31-ai-dev-tools-zoomcamp-2026-starts.md (source sentence 8)"
+    },
+    {
+      "fact": "*  for talking to your peer course participants and join the `#course-ai-dev-tools-zoomcamp` channel.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-31-ai-dev-tools-zoomcamp-2026-starts.md (source sentence 9)"
+    },
+    {
+      "fact": "The repository is the source for module materials, homework, recordings, and project requirements\n\n## Course Curriculum\n\nIn this course, we use AI coding tools across the full software-development lifecycle.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-31-ai-dev-tools-zoomcamp-2026-starts.md (source sentence 10)"
+    },
+    {
+      "fact": "* Part 1: \n* Part 2: \n* Part 3: \n* Part 4: \n* Part 5: \n\n\nThe five modules take one application from specification through deployment, operations, and agent extensions\n\n## Module 1: AI-Native Developer Workflow\n\nGiving a coding agent a vague",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-31-ai-dev-tools-zoomcamp-2026-starts.md (source sentence 11)"
+    },
+    {
+      "fact": "We begin by improving the instructions and context we give it.",
+      "source_evidence": "research/luna-100/sources/raw/2026-08-31-ai-dev-tools-zoomcamp-2026-starts.md (source sentence 12)"
+    }
+  ]
+}

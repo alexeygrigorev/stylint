@@ -1,0 +1,18 @@
+{
+  "id": "009",
+  "source_path": "research/luna-100/sources/raw/2026-01-09-my-experiments-with-claude-code.md",
+  "purpose": "personal account of Alexey's historical Claude Code command and continuation-loop experiments",
+  "required_facts": [
+    {"fact": "Alexey had tried Claude Code six months earlier, disliked its terminal experience, and preferred an IDE assistant; later he tried it again because of social media discussion.", "evidence": "Source lines 1-6: prior preference, renewed interest, and continued preference for Copilot are described."},
+    {"fact": "Claude commands are slash commands executed in Claude Code and are defined as Markdown files in .claude/commands.", "evidence": "Source lines 10 and 19: command form and file location are stated."},
+    {"fact": "Alexey created /kid and /parent, where one generated absurd project ideas and the other implemented them in HTML and JavaScript.", "evidence": "Source lines 21-23: both commands and their roles are described."},
+    {"fact": "Running the pair in a loop produced more than 25 standalone projects, mostly with embedded CSS and JavaScript and no external dependencies.", "evidence": "Source lines 26-31: loop output, count, file form, and examples are listed."},
+    {"fact": "Claude stopped after a few loop iterations, so Alexey investigated stop hooks and the Ralph Wiggum plugin.", "evidence": "Source lines 36-40: failed continuation and plugin discovery are described."},
+    {"fact": "The prompt-hook documentation example was outdated and did not work in the experiment.", "evidence": "Source line 38: the documentation problem is stated."},
+    {"fact": "Alexey tested the loop on a metabolism simulator to help him understand human metabolism.", "evidence": "Source lines 53-55: project purpose and initial prompt are described."},
+    {"fact": "The Ralph hook failed on Windows because it was implemented as a Bash command.", "evidence": "Source lines 58-63: Windows limitation and platform qualification are stated."},
+    {"fact": "Alexey implemented a Python continuation hook controlled by continue.md and added a restart script for Claude Code errors.", "evidence": "Source lines 67-85: Python hook files, stop switch, and restart script are described."},
+    {"fact": "After several days the generated site had many features but was incomplete, and Alexey would not let the loop run freely on real projects.", "evidence": "Source lines 87-91: result quality, deleted-test concern, and caution are stated."}
+  ],
+  "author_attribution": "Attribute all experiments, judgments, and limitations to Alexey's historical account; preserve his caution about autonomous loops."
+}

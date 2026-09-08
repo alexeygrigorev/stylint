@@ -1,0 +1,31 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-01-16-how-i-reviewed-2500-ai-bootcamp-scholarship.md",
+  "original_path": "research/luna-100/output/round-1/011-account.md",
+  "revised_path": "research/luna-100/output/round-2/011-account.md",
+  "word_count": 502,
+  "required_facts_checked": [
+    "The second AI Bootcamp cohort was about to start and the scholarship targeted students unable to afford the paid program.",
+    "More than 2,500 applications arrived and there were fewer available places.",
+    "The scholarship targeted people doing meaningful work who wanted to scale existing impact, rather than general career exploration.",
+    "Previous AI experience was not required, but applications needed a connection between current work and the bootcamp's relevance.",
+    "Empty, one-line and generic responses were filtered, as were job-seeking, isolated-tool-learning and short-term-income applications.",
+    "Strong applications described a specific problem, beneficiaries and why the training mattered then.",
+    "Depth and alignment included understanding the bootcamp, connecting it to current work and plans to scale, reach a community or multiply impact.",
+    "Completion evidence included prior long-term projects, concrete plans and accountability structures.",
+    "Custom Claude Code slash commands ranked applications and filtered submissions that did not fit the scholarship intent.",
+    "Claude Code used parallel sub-agents, and reusable Markdown workflows avoided building a custom Python agent.",
+    "The first pass selected the top 50 applications, which were shuffled before personal review.",
+    "The final review checked full submissions and linked profiles or projects, comparing AI scores with substance and prioritizing authenticity, intent and follow-through."
+  ],
+  "unsupported_claims_removed": [
+    "Removed claims about selection outcomes, applicant emotions or evaluation accuracy beyond the source's described process.",
+    "Removed generic statements that treated numeric scores as sufficient evidence."
+  ],
+  "substantive_edits": [
+    "Rewrote the draft as a first-person account with sections for criteria, AI-assisted filtering and human review.",
+    "Replaced fragmented source-like sentences with contextual prose while preserving the selection qualifiers.",
+    "Made the division between Claude Code's scale work and personal final judgment explicit."
+  ],
+  "full_final_lint_findings": [],
+  "unresolved_source_conflicts": []
+}

@@ -1,0 +1,58 @@
+{
+  "id": "059",
+  "source_path": "research/luna-100/sources/raw/2026-05-22-the-system-i-built-to-ship-code-from.md",
+  "article_purpose": "account",
+  "author_attribution_notes": "Facts and project ownership are attributed to the source author; no additional personal experience or results added.",
+  "required_facts": [
+    {
+      "id": 1,
+      "claim": "Lately, I’ve been to three conferences in a row: Darmstadt, Amsterdam, and Porto.",
+      "source_evidence": "Lately, I’ve been to three conferences in a row: Darmstadt, Amsterdam, and Porto."
+    },
+    {
+      "id": 2,
+      "claim": "The work doesn’t slow down for any of that, so I have to keep things moving.",
+      "source_evidence": "The work doesn’t slow down for any of that, so I have to keep things moving."
+    },
+    {
+      "id": 3,
+      "claim": "In addition to the conferences, I’ve been traveling a lot with my child.",
+      "source_evidence": "In addition to the conferences, I’ve been traveling a lot with my child."
+    },
+    {
+      "id": 4,
+      "claim": "May 1st was a long weekend in Germany.",
+      "source_evidence": "May 1st was a long weekend in Germany."
+    },
+    {
+      "id": 5,
+      "claim": "I’m dictating this just after we got back from another long weekend, 14-16 May, in Stuttgart and the Schwarzwald.",
+      "source_evidence": "I’m dictating this just after we got back from another long weekend, 14-16 May, in Stuttgart and the Schwarzwald."
+    },
+    {
+      "id": 6,
+      "claim": "And this Sunday, I’m traveling to Vienna again for [a concert] (drop me a line if you want to meet for coffee!).",
+      "source_evidence": "And this Sunday, I’m traveling to Vienna again for [a concert] (drop me a line if you want to meet for coffee!)."
+    },
+    {
+      "id": 7,
+      "claim": "That’s a lot of traveling, and I want to use all this time to do something useful.",
+      "source_evidence": "That’s a lot of traveling, and I want to use all this time to do something useful."
+    },
+    {
+      "id": 8,
+      "claim": "My day-to-day schedule is also uneven on its own: I take my son to school in the morning I go to the gym I have lunch meetings I pick the son up at 4 PM Between all those slots, I have a lot of commute time.",
+      "source_evidence": "My day-to-day schedule is also uneven on its own: I take my son to school in the morning I go to the gym I have lunch meetings I pick the son up at 4 PM Between all those slots, I have a lot of commute time."
+    },
+    {
+      "id": 9,
+      "claim": "The rest periods between sets at the gym add another minute or two of free time per set.",
+      "source_evidence": "The rest periods between sets at the gym add another minute or two of free time per set."
+    },
+    {
+      "id": 10,
+      "claim": "I want to use all of that in-between time.",
+      "source_evidence": "I want to use all of that in-between time."
+    }
+  ]
+}

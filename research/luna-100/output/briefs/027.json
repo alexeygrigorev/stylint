@@ -1,0 +1,18 @@
+{
+  "id": "027",
+  "source_path": "research/luna-100/sources/raw/2026-03-04-what-1000-job-descriptions-reveal.md",
+  "purpose": "personal account of the market analysis of AI Engineer job descriptions",
+  "required_facts": [
+    {"fact": "The analysis covered more than 1,000 AI Engineer job descriptions from Berlin, Amsterdam, London, Los Angeles, and New York.", "evidence": "Source line 3: sample size and locations are stated."},
+    {"fact": "An LLM classified 889 descriptions into AI-first, AI-support, and traditional ML/DL categories.", "evidence": "Source line 6: classification method and count are specified."},
+    {"fact": "AI-first roles were about 70 percent and involved LLM or GenAI systems, RAG, agents, evaluation, and production deployment.", "evidence": "Source line 8: category share and work are described."},
+    {"fact": "AI-support roles were about 28.5 percent and focused on platforms, GPU/inference infrastructure, pipelines, deployment, monitoring, or experimentation interfaces.", "evidence": "Source line 9: support category and responsibilities are listed."},
+    {"fact": "Traditional ML/DL roles were fewer than 2 percent and resembled ML Engineer or Research Engineer work.", "evidence": "Source line 10: category size and character are stated."},
+    {"fact": "The proposed market definition centered on owning design, evaluation, and production operation of foundation-model systems.", "evidence": "Source line 14: practical definition is quoted."},
+    {"fact": "Roles were 95.6 percent production-focused, nearly 50 percent backend-heavy, and about 20 percent often full-stack.", "evidence": "Source line 16: role-shape statistics are given."},
+    {"fact": "RAG appeared in 35.9 percent of descriptions, prompt engineering in 29.1 percent, LLM integration in 25.4 percent, agents in 14.4 percent, and fine-tuning in 8.5 percent.", "evidence": "Source lines 25-29: GenAI skill frequencies are listed."},
+    {"fact": "Python appeared in 82.5 percent of roles, while TypeScript, React, and FastAPI appeared in 23.4, 14.8, and 10.7 percent.", "evidence": "Source lines 35-36: programming and application-layer frequencies are given."},
+    {"fact": "AWS, Docker, CI/CD, and Kubernetes were more frequent than any single GenAI framework, and no framework dominated.", "evidence": "Source lines 56-64: infrastructure and framework frequencies and interpretation are described."}
+  ],
+  "author_attribution": "Attribute the analysis and proposed definition to the authors' market study; preserve that the LLM classification and percentages describe this dataset rather than an eternal role definition."
+}

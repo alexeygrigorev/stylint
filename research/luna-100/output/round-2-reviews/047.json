@@ -1,0 +1,46 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-04-10-tired-of-learning-ai-alone-were-launching.md",
+  "original_path": "research/luna-100/output/round-1/047-account.md",
+  "revised_path": "research/luna-100/output/round-2/047-account.md",
+  "word_count": 522,
+  "required_fact_evidence": [
+    {
+      "claim": "Valeriia and Alexey launch AI Shipping Labs",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "April 13 launch event",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "Slack and personal onboarding",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "accountability circles",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "building sessions 1.5-2 hours",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "planned specialized courses",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "April and May events",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "DataTalks.Club free Zoomcamps continue",
+      "evidence": "Verified against assigned source"
+    }
+  ],
+  "substantive_edits": [
+    "Recomposed account around launch motives and actual community structure."
+  ],
+  "unsupported_claims_removed": [],
+  "unresolved_source_conflicts": [],
+  "full_final_lint_findings": []
+}

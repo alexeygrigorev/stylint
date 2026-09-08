@@ -1,0 +1,57 @@
+{
+  "id": "073",
+  "source_path": "research/luna-100/sources/raw/2026-07-11-my-pypi-release-pipeline-for-python.md",
+  "mode": "account",
+  "article_purpose": "personal account of what happened and why",
+  "author_attribution_notes": "Keep Alexey’s first-person framing only for actions and observations explicitly present in the supplied source; preserve attribution to DataTalks.Club, AI Shipping Labs, and other projects where named.",
+  "required_facts": [
+    {
+      "fact": "Since then, I’ve , and I use them regularly in my own projects.",
+      "source_evidence": "research/luna-100/sources/raw/2026-07-11-my-pypi-release-pipeline-for-python.md (source sentence 1)"
+    },
+    {
+      "fact": "I used to do everything manually, but in 2025, I started using coding agents and creating more libraries.",
+      "source_evidence": "research/luna-100/sources/raw/2026-07-11-my-pypi-release-pipeline-for-python.md (source sentence 2)"
+    },
+    {
+      "fact": "In this article, I’ll tell you how I do it and walk you through the entire workflow:\n\n* Starting a library and choosing a name\n* Publishing the first version\n* Releasing through CI\n* Automating the process with agents\n\n## 1.",
+      "source_evidence": "research/luna-100/sources/raw/2026-07-11-my-pypi-release-pipeline-for-python.md (source sentence 3)"
+    },
+    {
+      "fact": "Start with an Idea\n\nI build something to solve a specific problem that I’m facing.",
+      "source_evidence": "research/luna-100/sources/raw/2026-07-11-my-pypi-release-pipeline-for-python.md (source sentence 4)"
+    },
+    {
+      "fact": "Then I realize I may want to reuse it, either as a command-line utility or as a small library for other projects.",
+      "source_evidence": "research/luna-100/sources/raw/2026-07-11-my-pypi-release-pipeline-for-python.md (source sentence 5)"
+    },
+    {
+      "fact": "Before I create a repo, I do a brief validation step.",
+      "source_evidence": "research/luna-100/sources/raw/2026-07-11-my-pypi-release-pipeline-for-python.md (source sentence 6)"
+    },
+    {
+      "fact": "I try to understand what I’m building and whether it is worth packaging as a library.",
+      "source_evidence": "research/luna-100/sources/raw/2026-07-11-my-pypi-release-pipeline-for-python.md (source sentence 7)"
+    },
+    {
+      "fact": "I usually start brainstorming and researching with ChatGPT.",
+      "source_evidence": "research/luna-100/sources/raw/2026-07-11-my-pypi-release-pipeline-for-python.md (source sentence 8)"
+    },
+    {
+      "fact": "I explain the problem, explore what the library should do, and check whether similar tools already exist.",
+      "source_evidence": "research/luna-100/sources/raw/2026-07-11-my-pypi-release-pipeline-for-python.md (source sentence 9)"
+    },
+    {
+      "fact": "If they do, I look at how they solve the problem and whether they fit my needs.",
+      "source_evidence": "research/luna-100/sources/raw/2026-07-11-my-pypi-release-pipeline-for-python.md (source sentence 10)"
+    },
+    {
+      "fact": "Me looking for a library that didn’t exist, so I created SQLiteSearch\n\nThis also gives me a clear brief I can use if I decide to move forward with the library.",
+      "source_evidence": "research/luna-100/sources/raw/2026-07-11-my-pypi-release-pipeline-for-python.md (source sentence 11)"
+    },
+    {
+      "fact": "I described this process before when I wrote about building .",
+      "source_evidence": "research/luna-100/sources/raw/2026-07-11-my-pypi-release-pipeline-for-python.md (source sentence 12)"
+    }
+  ]
+}

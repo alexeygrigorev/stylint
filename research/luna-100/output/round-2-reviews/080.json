@@ -1,0 +1,24 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-07-25-what-ai-forward-deployed-engineers.md",
+  "original_path": "research/luna-100/output/round-1/080-explanation.md",
+  "revised_path": "research/luna-100/output/round-2/080-explanation.md",
+  "word_count": 484,
+  "required_facts_checked": [
+    {"claim": "Forward-deployed work combines software development with direct work alongside users.", "status": "present", "evidence": "source: role definition"},
+    {"claim": "The process starts by investigating the customer's workflow and desired outcome.", "status": "present", "evidence": "source: understand customer problem"},
+    {"claim": "A coding assistant can explore a repository, draft an integration, and provide a concrete prototype.", "status": "present", "evidence": "source: AI makes exploration and prototypes practical"},
+    {"claim": "A prototype must be checked for authentication, data access, errors, deployment, and unsafe cases.", "status": "present", "evidence": "source: production AI application checks"},
+    {"claim": "The user discussion after a prototype can change scope or reveal a symptom.", "status": "present", "evidence": "source: feedback loop"},
+    {"claim": "A manual review step may remain appropriate while automation is being tested.", "status": "present", "evidence": "source: explicit trade-off example"},
+    {"claim": "Evaluation and logging can be more valuable than another feature for uncertain AI output.", "status": "present", "evidence": "source: evaluation and logging trade-off"},
+    {"claim": "The role requires communication, domain curiosity, scope judgment, deployment, and debugging.", "status": "present", "evidence": "source: customer-facing skills and production responsibilities"}
+  ],
+  "unsupported_claims_removed": [],
+  "substantive_edits": [
+    "Revised the article as direct teaching guidance instead of a third-person biography.",
+    "Preserved the workflow-first investigation, prototype checks, user loop, manual-review qualification, and production responsibilities.",
+    "Removed redundant claims about the value of prototypes and kept trade-offs tied to user evidence."
+  ],
+  "full_final_lint_findings": [],
+  "unresolved_source_conflicts": []
+}

@@ -1,0 +1,34 @@
+{
+  "article_id": "014",
+  "source_path": "research/luna-100/sources/raw/2026-01-23-ai-bootcamp-becomes-ai-engineering.md",
+  "article_path": "research/luna-100/output/round-2/014-explanation.md",
+  "factual_checks": [
+    {
+      "draft": "The final two weeks are devoted to building and polishing it",
+      "source": "The source states the final two weeks are dedicated to building and polishing the capstone.",
+      "status": "supported"
+    },
+    {
+      "draft": "There are also six or more guided mini-projects in the homework",
+      "source": "The source explicitly describes 6+ guided mini-projects.",
+      "status": "supported"
+    },
+    {
+      "draft": "participants ... told me it was too dense and moved too quickly",
+      "source": "The source says first-cohort feedback led to changes because the content was too dense and fast.",
+      "status": "supported"
+    },
+    {
+      "draft": "We introduce PydanticAI after that foundation and use it throughout the main path",
+      "source": "The source says PydanticAI is introduced after manual foundations and used as the primary framework throughout the main path.",
+      "status": "supported"
+    }
+  ],
+  "missing_or_needs_correction": [
+    "The final sentence about reusable results is a mild generalization and should be tied to the course's project-based design."
+  ],
+  "attribution_review": "The draft keeps Alexey as course designer and uses first-person course decisions consistently.",
+  "source_copying": "No complete source sentence was identified in this review.",
+  "required_corrections": [],
+  "review_correction_note": "Earlier audit wording falsely claimed the draft said first two weeks and questioned the 6+ count. Exact draft and source both support final two weeks and 6+ mini-projects."
+}

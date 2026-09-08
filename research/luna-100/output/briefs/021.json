@@ -1,0 +1,18 @@
+{
+  "id": "021",
+  "source_path": "research/luna-100/sources/raw/2026-02-20-how-i-built-sqlitesearch-a-lightweight.md",
+  "purpose": "personal account of Alexey designing, implementing, and publishing SQLiteSearch",
+  "required_facts": [
+    {"fact": "Alexey wanted a compact Python search library that was local, easy to integrate, and persistent.", "evidence": "Source lines 1-3: requirements and motivation are stated."},
+    {"fact": "minsearch supported text and vector search with a simple API but stored its index in memory and lost data after process restart.", "evidence": "Source lines 3 and 15: minsearch limitations are described."},
+    {"fact": "The library was needed for an AI Engineering Buildcamp project where ingestion should operate independently of the RAG agent.", "evidence": "Source lines 12-17: course context and independent ingestion requirement are stated."},
+    {"fact": "The requirements included Python, easy local setup without Docker, and both regular text and vector search.", "evidence": "Source lines 21-26: all four requirements are listed."},
+    {"fact": "Elasticsearch was considered too large for the small-scale use case, while Qdrant and PostgreSQL would require an external service or Docker.", "evidence": "Source line 28: infrastructure trade-offs are described."},
+    {"fact": "ChatGPT suggested SQLite text search, but SQLite did not provide vector search out of the box.", "evidence": "Source line 36: text-search discovery and vector-search gap are stated."},
+    {"fact": "lshashing, SparseLSH, and narrow-down each failed at least one requirement.", "evidence": "Source lines 43-49: limitations of the three options and decision to build are given."},
+    {"fact": "Alexey chose locality-sensitive hashing because he understood random projections and wanted an implementation he could debug.", "evidence": "Source line 55: LSH choice and debugging rationale are stated."},
+    {"fact": "The project began as LightSearch and was renamed SQLiteSearch because 'litesearch' was already taken on PyPI.", "evidence": "Source line 59: naming history is explicit."},
+    {"fact": "Claude Code implemented the library from a plan, and the final index was stored in one SQLite file without a separate server.", "evidence": "Source lines 64-69 and 85-89: implementation workflow and final architecture are described."}
+  ],
+  "author_attribution": "Attribute the project requirements, design choices, naming, and publication workflow to Alexey; retain the intended small-project scope."
+}

@@ -1,0 +1,31 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-02-26-what-is-an-ai-engineer-my-perspective.md",
+  "original_path": "research/luna-100/output/round-1/024-explanation.md",
+  "revised_path": "research/luna-100/output/round-2/024-explanation.md",
+  "word_count": 557,
+  "required_facts_checked": [
+    "An AI Engineer integrates AI into a product and keeps the system reliable, evaluated, maintained and improved.",
+    "The role translates product requirements into scoped AI problems and selects and integrates appropriate foundation models and tools.",
+    "Prompt versioning, success metrics, comprehensive tests, deployment, monitoring, cost optimization and security are included.",
+    "AI Engineering overlaps with data science and ML engineering but often uses third-party foundation models through APIs such as OpenAI, Anthropic or Google.",
+    "Established ML teams may distribute AI work among data scientists, ML engineers and software engineers, increasing existing workload.",
+    "Dedicated AI Engineers may sit in product engineering, a centralized AI platform group or an applied ML team.",
+    "Startups often use a product-focused generalist who moves from experimentation to production hardening.",
+    "RAG includes ingesting source data, chunking, embeddings, semantic search and grounded response generation.",
+    "Agentic systems include function calling, structured tools, MCP and reasoning flows for tool use.",
+    "Evaluation includes real-input tests, structured-output checks, datasets, quality metrics and reruns after prompt or model updates.",
+    "Observability includes logging inputs and outputs, tracking errors and failures, dashboards and log analysis for quality drift.",
+    "The accompanying example progresses from a simple AI feature in an online classifieds site to RAG and agentic systems."
+  ],
+  "unsupported_claims_removed": [
+    "Removed universal claims about the AI Engineer title and organizational structure.",
+    "Removed unsupported deployment results or performance promises from the hypothetical classifieds example."
+  ],
+  "substantive_edits": [
+    "Rewrote the material as a reader-facing explanation organized around product work, organizational context and core skills.",
+    "Preserved the conditional wording around established teams, startups and the accompanying example.",
+    "Converted the source's skill list into connected teaching prose covering RAG, agents, evaluation, observability and system design."
+  ],
+  "full_final_lint_findings": [],
+  "unresolved_source_conflicts": []
+}

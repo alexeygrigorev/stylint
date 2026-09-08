@@ -1,0 +1,1 @@
+Expand each supplied fact-preserving brief into a clear, readable and engaging newsletter excerpt. Follow the assignment and required content in each brief. Write in the author's first person. Do not invent facts. Do not consult source articles or voice guides. Return only article prose in each output file.

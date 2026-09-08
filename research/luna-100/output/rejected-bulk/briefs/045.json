@@ -1,0 +1,58 @@
+{
+  "id": "045",
+  "source_path": "research/luna-100/sources/raw/2026-04-07-last-call-for-ai-engineering-buildcamp.md",
+  "article_purpose": "account",
+  "author_attribution_notes": "Facts and project ownership are attributed to the source author; no additional personal experience or results added.",
+  "required_facts": [
+    {
+      "id": 1,
+      "claim": "Next Monday (April 13), I start another iteration of [the AI Engineering Buildcamp], a course that teaches AI engineering by building.",
+      "source_evidence": "Next Monday (April 13), I start another iteration of [the AI Engineering Buildcamp], a course that teaches AI engineering by building."
+    },
+    {
+      "id": 2,
+      "claim": "After it concludes, I do not plan to run another cohort in the nearest future.",
+      "source_evidence": "After it concludes, I do not plan to run another cohort in the nearest future."
+    },
+    {
+      "id": 3,
+      "claim": "I want to take a break from the course and focus on [AI Shipping Labs] for a while.",
+      "source_evidence": "I want to take a break from the course and focus on [AI Shipping Labs] for a while."
+    },
+    {
+      "id": 4,
+      "claim": "So, if you’ve been thinking about joining, this cohort might be the right time.",
+      "source_evidence": "So, if you’ve been thinking about joining, this cohort might be the right time."
+    },
+    {
+      "id": 5,
+      "claim": "You can sign up using the SUBSTACK promo code for 20% off for newsletter subscribers.",
+      "source_evidence": "You can sign up using the SUBSTACK promo code for 20% off for newsletter subscribers."
+    },
+    {
+      "id": 6,
+      "claim": "[Join the course now with 20% off] In this post, I’ll go over the course content, the projects you can work on, and how to join this cohort.",
+      "source_evidence": "[Join the course now with 20% off] In this post, I’ll go over the course content, the projects you can work on, and how to join this cohort."
+    },
+    {
+      "id": 7,
+      "claim": "I’ll also explain how you can get special discounts or explore financing options for your participation.",
+      "source_evidence": "I’ll also explain how you can get special discounts or explore financing options for your participation."
+    },
+    {
+      "id": 8,
+      "claim": "What AI Engineering Buildcamp is The main idea of AI Engineering Buildcamp is that you learn AI engineering by building one system step by step.",
+      "source_evidence": "What AI Engineering Buildcamp is The main idea of AI Engineering Buildcamp is that you learn AI engineering by building one system step by step."
+    },
+    {
+      "id": 9,
+      "claim": "Over the course of the program, you work on several kinds of projects in parallel: A running example project that evolves throughout the course Optional example projects that show how the same ideas apply to other RAG an",
+      "source_evidence": "Over the course of the program, you work on several kinds of projects in parallel: A running example project that evolves throughout the course Optional example projects that show how the same ideas apply to other RAG and agent use cases Homework projects that help you practice each week on your own Your capstone project, where you apply everything to a use case you choose yourself This structure gives you both guidance and independence."
+    },
+    {
+      "id": 10,
+      "claim": "You follow a concrete example, see multiple variations of the same patterns, practice them in homework, and gradually build your own project into a more complete AI application.",
+      "source_evidence": "You follow a concrete example, see multiple variations of the same patterns, practice them in homework, and gradually build your own project into a more complete AI application."
+    }
+  ]
+}

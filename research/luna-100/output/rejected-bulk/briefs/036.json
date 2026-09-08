@@ -1,0 +1,58 @@
+{
+  "id": "036",
+  "source_path": "research/luna-100/sources/raw/2026-03-16-karpathys-autoresearch-went-viral.md",
+  "article_purpose": "explanation",
+  "author_attribution_notes": "Facts and project ownership are attributed to the source author; no additional personal experience or results added.",
+  "required_facts": [
+    {
+      "id": 1,
+      "claim": "Over the last few days, [Andrej Karpathy]’s [autoresearch project] has been widely shared and discussed.",
+      "source_evidence": "Over the last few days, [Andrej Karpathy]’s [autoresearch project] has been widely shared and discussed."
+    },
+    {
+      "id": 2,
+      "claim": "Many people on X (Twitter) are exploring the idea and trying to apply the same pattern to their own projects.",
+      "source_evidence": "Many people on X (Twitter) are exploring the idea and trying to apply the same pattern to their own projects."
+    },
+    {
+      "id": 3,
+      "claim": "I looked through the repository and decided to write a short note explaining what the project actually does and why it is attracting so much interest.",
+      "source_evidence": "I looked through the repository and decided to write a short note explaining what the project actually does and why it is attracting so much interest."
+    },
+    {
+      "id": 4,
+      "claim": "Core Idea At a high level, autoresearch automates something that normally takes a large amount of human time: running experiments and iterating on models.",
+      "source_evidence": "Core Idea At a high level, autoresearch automates something that normally takes a large amount of human time: running experiments and iterating on models."
+    },
+    {
+      "id": 5,
+      "claim": "In a typical workflow, a researcher modifies the training code or parameters, runs an experiment, evaluates the result, logs the metrics, and then repeats the process.",
+      "source_evidence": "In a typical workflow, a researcher modifies the training code or parameters, runs an experiment, evaluates the result, logs the metrics, and then repeats the process."
+    },
+    {
+      "id": 6,
+      "claim": "Autoresearch delegates this entire loop to an agent.",
+      "source_evidence": "Autoresearch delegates this entire loop to an agent."
+    },
+    {
+      "id": 7,
+      "claim": "You start the system, let it run for hours, and it performs many small experiments on its own, gradually improving the model.",
+      "source_evidence": "You start the system, let it run for hours, and it performs many small experiments on its own, gradually improving the model."
+    },
+    {
+      "id": 8,
+      "claim": "Conceptually, this resembles AutoML, where algorithms search through hyperparameters and architectures.",
+      "source_evidence": "Conceptually, this resembles AutoML, where algorithms search through hyperparameters and architectures."
+    },
+    {
+      "id": 9,
+      "claim": "The difference is that autoresearch uses an LLM to perform the search directly in code.",
+      "source_evidence": "The difference is that autoresearch uses an LLM to perform the search directly in code."
+    },
+    {
+      "id": 10,
+      "claim": "Instead of selecting parameters from predefined spaces, the model edits the training script itself and proposes new ideas for the architecture or training procedure.",
+      "source_evidence": "Instead of selecting parameters from predefined spaces, the model edits the training script itself and proposes new ideas for the architecture or training procedure."
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "article_id":"005",
+  "source_path":"research/luna-100/sources/raw/2025-12-26-shipping-features-from-a-tram-stop.md",
+  "article_path":"research/luna-100/output/round-2/005-account.md",
+  "factual_checks":[
+    {"draft":"20 to 30 minutes later, it opened a PR","source":"The source says about 20-30 minutes later Copilot opened a PR with working pages, code, and screenshots.","status":"supported"},
+    {"draft":"top 100 ... became top 1200","source":"The source says voice recognition changed top 100 to top 1200 in the issue and early PR.","status":"supported"},
+    {"draft":"some styles failed to load because Copilot had no internet access","source":"The source attributes imperfect screenshots and missing styles to no internet access.","status":"supported"},
+    {"draft":"I still sit down at my laptop for complex changes and final approval","source":"The source says the phone workflow is for small/medium changes and complex changes need a laptop and deeper testing.","status":"supported"}
+  ],
+  "missing_or_needs_correction":["The article omits the source's explicit tram-stop origin and the development-versus-production deployment sequence is compressed but retained.","The ending is concrete enough and does not add an unsupported outcome."],
+  "attribution_review":"The account correctly presents Alexey's experience and Copilot's actions. No other person's project is misattributed.",
+  "source_copying":"No complete source sentence was identified in this review; wording appears independently composed.",
+  "required_corrections":[]
+}

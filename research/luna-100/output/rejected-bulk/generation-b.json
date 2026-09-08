@@ -1,0 +1,209 @@
+{
+  "model": "gpt-5.6-luna",
+  "assignments": [
+    {
+      "id": "035",
+      "filename": "035-account.md",
+      "word_count": 654,
+      "uncertainty": "Generated from supplied source; paraphrase fidelity should receive human review."
+    },
+    {
+      "id": "036",
+      "filename": "036-explanation.md",
+      "word_count": 673,
+      "uncertainty": "Generated from supplied source; paraphrase fidelity should receive human review."
+    },
+    {
+      "id": "037",
+      "filename": "037-account.md",
+      "word_count": 637,
+      "uncertainty": "Generated from supplied source; paraphrase fidelity should receive human review."
+    },
+    {
+      "id": "038",
+      "filename": "038-explanation.md",
+      "word_count": 656,
+      "uncertainty": "Generated from supplied source; paraphrase fidelity should receive human review."
+    },
+    {
+      "id": "039",
+      "filename": "039-account.md",
+      "word_count": 750,
+      "uncertainty": "Generated from supplied source; paraphrase fidelity should receive human review."
+    },
+    {
+      "id": "040",
+      "filename": "040-explanation.md",
+      "word_count": 750,
+      "uncertainty": "Generated from supplied source; paraphrase fidelity should receive human review."
+    },
+    {
+      "id": "041",
+      "filename": "041-account.md",
+      "word_count": 736,
+      "uncertainty": "Generated from supplied source; paraphrase fidelity should receive human review."
+    },
+    {
+      "id": "042",
+      "filename": "042-explanation.md",
+      "word_count": 750,
+      "uncertainty": "Generated from supplied source; paraphrase fidelity should receive human review."
+    },
+    {
+      "id": "043",
+      "filename": "043-account.md",
+      "word_count": 750,
+      "uncertainty": "Generated from supplied source; paraphrase fidelity should receive human review."
+    },
+    {
+      "id": "044",
+      "filename": "044-explanation.md",
+      "word_count": 750,
+      "uncertainty": "Generated from supplied source; paraphrase fidelity should receive human review."
+    },
+    {
+      "id": "045",
+      "filename": "045-account.md",
+      "word_count": 721,
+      "uncertainty": "Generated from supplied source; paraphrase fidelity should receive human review."
+    },
+    {
+      "id": "046",
+      "filename": "046-explanation.md",
+      "word_count": 740,
+      "uncertainty": "Generated from supplied source; paraphrase fidelity should receive human review."
+    },
+    {
+      "id": "047",
+      "filename": "047-account.md",
+      "word_count": 682,
+      "uncertainty": "Generated from supplied source; paraphrase fidelity should receive human review."
+    },
+    {
+      "id": "048",
+      "filename": "048-explanation.md",
+      "word_count": 701,
+      "uncertainty": "Generated from supplied source; paraphrase fidelity should receive human review."
+    },
+    {
+      "id": "049",
+      "filename": "049-account.md",
+      "word_count": 671,
+      "uncertainty": "Generated from supplied source; paraphrase fidelity should receive human review."
+    },
+    {
+      "id": "050",
+      "filename": "050-explanation.md",
+      "word_count": 690,
+      "uncertainty": "Generated from supplied source; paraphrase fidelity should receive human review."
+    },
+    {
+      "id": "051",
+      "filename": "051-account.md",
+      "word_count": 750,
+      "uncertainty": "Generated from supplied source; paraphrase fidelity should receive human review."
+    },
+    {
+      "id": "052",
+      "filename": "052-explanation.md",
+      "word_count": 750,
+      "uncertainty": "Generated from supplied source; paraphrase fidelity should receive human review."
+    },
+    {
+      "id": "053",
+      "filename": "053-account.md",
+      "word_count": 641,
+      "uncertainty": "Generated from supplied source; paraphrase fidelity should receive human review."
+    },
+    {
+      "id": "054",
+      "filename": "054-explanation.md",
+      "word_count": 660,
+      "uncertainty": "Generated from supplied source; paraphrase fidelity should receive human review."
+    },
+    {
+      "id": "055",
+      "filename": "055-account.md",
+      "word_count": 673,
+      "uncertainty": "Generated from supplied source; paraphrase fidelity should receive human review."
+    },
+    {
+      "id": "056",
+      "filename": "056-explanation.md",
+      "word_count": 692,
+      "uncertainty": "Generated from supplied source; paraphrase fidelity should receive human review."
+    },
+    {
+      "id": "057",
+      "filename": "057-account.md",
+      "word_count": 734,
+      "uncertainty": "Generated from supplied source; paraphrase fidelity should receive human review."
+    },
+    {
+      "id": "058",
+      "filename": "058-explanation.md",
+      "word_count": 750,
+      "uncertainty": "Generated from supplied source; paraphrase fidelity should receive human review."
+    },
+    {
+      "id": "059",
+      "filename": "059-account.md",
+      "word_count": 652,
+      "uncertainty": "Generated from supplied source; paraphrase fidelity should receive human review."
+    },
+    {
+      "id": "060",
+      "filename": "060-explanation.md",
+      "word_count": 671,
+      "uncertainty": "Generated from supplied source; paraphrase fidelity should receive human review."
+    },
+    {
+      "id": "061",
+      "filename": "061-account.md",
+      "word_count": 676,
+      "uncertainty": "Generated from supplied source; paraphrase fidelity should receive human review."
+    },
+    {
+      "id": "062",
+      "filename": "062-explanation.md",
+      "word_count": 695,
+      "uncertainty": "Generated from supplied source; paraphrase fidelity should receive human review."
+    },
+    {
+      "id": "063",
+      "filename": "063-account.md",
+      "word_count": 620,
+      "uncertainty": "Generated from supplied source; paraphrase fidelity should receive human review."
+    },
+    {
+      "id": "064",
+      "filename": "064-explanation.md",
+      "word_count": 639,
+      "uncertainty": "Generated from supplied source; paraphrase fidelity should receive human review."
+    },
+    {
+      "id": "065",
+      "filename": "065-account.md",
+      "word_count": 601,
+      "uncertainty": "Generated from supplied source; paraphrase fidelity should receive human review."
+    },
+    {
+      "id": "066",
+      "filename": "066-explanation.md",
+      "word_count": 620,
+      "uncertainty": "Generated from supplied source; paraphrase fidelity should receive human review."
+    },
+    {
+      "id": "067",
+      "filename": "067-account.md",
+      "word_count": 626,
+      "uncertainty": "Generated from supplied source; paraphrase fidelity should receive human review."
+    },
+    {
+      "id": "068",
+      "filename": "068-explanation.md",
+      "word_count": 645,
+      "uncertainty": "Generated from supplied source; paraphrase fidelity should receive human review."
+    }
+  ]
+}

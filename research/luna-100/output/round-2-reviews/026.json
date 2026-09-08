@@ -1,0 +1,29 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-02-27-chatgpt-data-viewer.md",
+  "original_path": "research/luna-100/output/round-1/026-explanation.md",
+  "revised_path": "research/luna-100/output/round-2/026-explanation.md",
+  "word_count": 521,
+  "required_facts_checked": [
+    "The viewer followed ChatGPT search failing to find an earlier course conversation and ineffective manual scrolling and keyword searches.",
+    "The export download was 775 MB and its incomplete ZIP was unreadable by Windows, even after two downloads.",
+    "Claude Code extracted important content including conversations.json at about 155 MB and chat.html at about 160 MB.",
+    "The initial interface idea was a GitHub-style contribution graph with date-based conversation details.",
+    "Claude helped with the UI mockup and API response formats, while the planned architecture used FastAPI with Vite and vanilla JavaScript.",
+    "The workflow used no tests or TDD, and Claude managed implementation without the writer examining the code.",
+    "The first stable version took one or two iterations and about two to three hours.",
+    "The backend used FastAPI, the frontend used Vite-bundled vanilla JavaScript, minsearch powered search and one FastAPI server served the frontend.",
+    "The archive contained 2,808 conversations and 45,247 messages spanning 2022-12-21 to 2026-02-06.",
+    "The first search found the course conversation, and caching was added after initial indexing took time."
+  ],
+  "unsupported_claims_removed": [
+    "Removed claims about test coverage, robustness or production readiness that the source did not establish.",
+    "Removed causal explanations for the corrupted ZIP and search failure that were not documented."
+  ],
+  "substantive_edits": [
+    "Rewrote the article as a reader-facing explanation of input, interface planning, implementation, architecture and search results.",
+    "Kept the human and Claude Code actions distinct, including the explicit absence of tests and code inspection.",
+    "Preserved archive sizes, iteration count, time estimate, message totals and date range."
+  ],
+  "full_final_lint_findings": [],
+  "unresolved_source_conflicts": []
+}

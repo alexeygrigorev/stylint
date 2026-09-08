@@ -1,0 +1,24 @@
+{
+  "article_id": "014",
+  "source_path": "research/luna-100/sources/raw/2026-01-23-ai-bootcamp-becomes-ai-engineering.md",
+  "article_path": "research/luna-100/output/round-3/014-explanation.md",
+  "source_sha256": "0d63d15d71f5f25ca5b9edb31ce83173bdee52ab81528bbe9174e8f2fe384b61",
+  "article_sha256": "0594bd25fb5ae7c99aa4160485ceeaea1b15d1c6a613477a11bfd61c7987acde",
+  "fact_checks": [
+    {"draft_quote": "During the first week, you define your Capstone Project", "source_quote": "In Week 1, participants define what they want to build.", "status": "supported"},
+    {"draft_quote": "The final two weeks are devoted to building and polishing it", "source_quote": "the final two weeks dedicated entirely to building and polishing the system", "status": "supported"},
+    {"draft_quote": "six or more guided mini-projects in the homework", "source_quote": "6+ guided mini-projects through homework assignments", "status": "supported"},
+    {"draft_quote": "Participants valued the content but told me it was too dense and moved too quickly", "source_quote": "The content is extremely dense and valuable, but the pace felt too fast.", "status": "supported"},
+    {"draft_quote": "A main path takes you through a selected set of projects using one primary framework", "source_quote": "There is now a main path built around one primary framework and a selected set of projects.", "status": "supported"},
+    {"draft_quote": "we begin without a framework", "source_quote": "The agents section starts without any framework.", "status": "supported"},
+    {"draft_quote": "We build tool calling and the control loop manually", "source_quote": "implement tool calling and control loops manually", "status": "supported"},
+    {"draft_quote": "We introduce PydanticAI after that foundation and use it throughout the main path", "source_quote": "Only after this foundation is in place do we introduce PydanticAI and use it as the primary framework throughout the main path.", "status": "supported"}
+  ],
+  "optional_coverage": ["The article does not enumerate every alternative model provider or repeat the discount CTA; these are optional source details, not corrections."],
+  "unsupported_claims": [],
+  "causality_and_qualifiers": "The draft preserves the feedback-driven reason for restructuring, the sequence before PydanticAI, and the distinction between main and optional material.",
+  "personal_voice": "Supported. First-person course decisions belong to Alexey; the source is written by the course author and the draft does not assign his actions to participants.",
+  "ending_review": "The ending stops after the supported provider comparison. It is neither a repeated verdict nor a generic unsupported conclusion.",
+  "source_copying_review": "No full source sentence is reproduced; the checked phrases are short factual matches.",
+  "required_corrections": []
+}

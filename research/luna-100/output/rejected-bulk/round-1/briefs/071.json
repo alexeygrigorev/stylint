@@ -1,0 +1,57 @@
+{
+  "id": "071",
+  "source_path": "research/luna-100/sources/raw/2026-07-03-choosing-a-portfolio-project-the.md",
+  "mode": "account",
+  "article_purpose": "personal account of what happened and why",
+  "author_attribution_notes": "Keep Alexey’s first-person framing only for actions and observations explicitly present in the supplied source; preserve attribution to DataTalks.Club, AI Shipping Labs, and other projects where named.",
+  "required_facts": [
+    {
+      "fact": "When preparing personal plans for AI Shipping Labs members, I often get the question, “What should I build for my portfolio?” There are too many options, and no clear way to pick one.",
+      "source_evidence": "research/luna-100/sources/raw/2026-07-03-choosing-a-portfolio-project-the.md (source sentence 1)"
+    },
+    {
+      "fact": "In this newsletter, I want to share a repeatable process for selecting your next portfolio project.",
+      "source_evidence": "research/luna-100/sources/raw/2026-07-03-choosing-a-portfolio-project-the.md (source sentence 2)"
+    },
+    {
+      "fact": "We focus on the AI Engineering roles, but it will also work for any role in engineering or data.",
+      "source_evidence": "research/luna-100/sources/raw/2026-07-03-choosing-a-portfolio-project-the.md (source sentence 3)"
+    },
+    {
+      "fact": "## Why Building a Portfolio Project in the First Place\n\nFirst of all, an active portfolio that you usually store on your GitHub profile raises your chances of getting hired, because most hiring managers look at it.",
+      "source_evidence": "research/luna-100/sources/raw/2026-07-03-choosing-a-portfolio-project-the.md (source sentence 4)"
+    },
+    {
+      "fact": "Additionally, it helps others notice your work, leading to collaboration, freelance offers, and conversations you wouldn’t have otherwise.",
+      "source_evidence": "research/luna-100/sources/raw/2026-07-03-choosing-a-portfolio-project-the.md (source sentence 5)"
+    },
+    {
+      "fact": "You can think of it as your landing page that presents you and your skills without requiring you to talk about yourself.",
+      "source_evidence": "research/luna-100/sources/raw/2026-07-03-choosing-a-portfolio-project-the.md (source sentence 6)"
+    },
+    {
+      "fact": "## Types of Portfolio Projects\n\nI divide all the projects into several categories, and I think this categorization may also help you better understand what could become your portfolio project.",
+      "source_evidence": "research/luna-100/sources/raw/2026-07-03-choosing-a-portfolio-project-the.md (source sentence 7)"
+    },
+    {
+      "fact": "### 1) Role-targeted projects\n\nRole-targeted projects are the projects that you build to get hired for a specific role.",
+      "source_evidence": "research/luna-100/sources/raw/2026-07-03-choosing-a-portfolio-project-the.md (source sentence 8)"
+    },
+    {
+      "fact": "You pick a domain, research the companies in it, and build something that speaks to their work.",
+      "source_evidence": "research/luna-100/sources/raw/2026-07-03-choosing-a-portfolio-project-the.md (source sentence 9)"
+    },
+    {
+      "fact": "In this post, we’ll focus on role-targeted projects, and the framework I describe here gives you a way to find ideas for them.",
+      "source_evidence": "research/luna-100/sources/raw/2026-07-03-choosing-a-portfolio-project-the.md (source sentence 10)"
+    },
+    {
+      "fact": "But it’s also helpful to know about other project types I collected below.",
+      "source_evidence": "research/luna-100/sources/raw/2026-07-03-choosing-a-portfolio-project-the.md (source sentence 11)"
+    },
+    {
+      "fact": "### 2) Personal projects\n\nThese are the kinds of projects that solve the problems that you yourself regularly face and want to build a solution for them.",
+      "source_evidence": "research/luna-100/sources/raw/2026-07-03-choosing-a-portfolio-project-the.md (source sentence 12)"
+    }
+  ]
+}

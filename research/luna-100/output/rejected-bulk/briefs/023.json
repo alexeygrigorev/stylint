@@ -1,0 +1,48 @@
+{
+  "id": "023",
+  "source_path": "research/luna-100/sources/raw/2026-02-26-what-is-an-ai-engineer-my-perspective.md",
+  "purpose": "personal account of the reported work",
+  "required_facts": [
+    {
+      "fact": "Hey there, I got two to share with you: ## 1) The AI Shipping Labs community is now open for early members We are actively building the [AI Shipping Labs](https://aishippinglabs.com/) community and recently integrated St",
+      "evidence": "research/luna-100/sources/raw/2026-02-26-what-is-an-ai-engineer-my-perspective.md"
+    },
+    {
+      "fact": "At this stage, the community is intentionally small and evolving.",
+      "evidence": "research/luna-100/sources/raw/2026-02-26-what-is-an-ai-engineer-my-perspective.md"
+    },
+    {
+      "fact": "If you join now, you can influence the structure, session formats, and priorities.",
+      "evidence": "research/luna-100/sources/raw/2026-02-26-what-is-an-ai-engineer-my-perspective.md"
+    },
+    {
+      "fact": "You also get direct access to me to discuss your projects, positioning, or career questions.",
+      "evidence": "research/luna-100/sources/raw/2026-02-26-what-is-an-ai-engineer-my-perspective.md"
+    },
+    {
+      "fact": "Based on your votes, we chose Slack as the main platform.",
+      "evidence": "research/luna-100/sources/raw/2026-02-26-what-is-an-ai-engineer-my-perspective.md"
+    },
+    {
+      "fact": "It was the clear winner in the poll.",
+      "evidence": "research/luna-100/sources/raw/2026-02-26-what-is-an-ai-engineer-my-perspective.md"
+    },
+    {
+      "fact": "[Join here](https://aishippinglabs.com/#tiers) ## 2) New Wednesday series on AI Engineering I started sharing results of [my research on the AI Engineer role through a live event series](https://alexeyondata.substack.com",
+      "evidence": "research/luna-100/sources/raw/2026-02-26-what-is-an-ai-engineer-my-perspective.md"
+    },
+    {
+      "fact": "As interest grew, it became clear that we could not cover everything during those sessions.",
+      "evidence": "research/luna-100/sources/raw/2026-02-26-what-is-an-ai-engineer-my-perspective.md"
+    },
+    {
+      "fact": "Some of the material I had prepared did not fit within the agenda, and several of your questions remained unanswered due to time constraints.",
+      "evidence": "research/luna-100/sources/raw/2026-02-26-what-is-an-ai-engineer-my-perspective.md"
+    },
+    {
+      "fact": "So I decided to continue this work in a structured newsletter series.",
+      "evidence": "research/luna-100/sources/raw/2026-02-26-what-is-an-ai-engineer-my-perspective.md"
+    }
+  ],
+  "author_attribution": "Attribute projects and outcomes to the named author or participants in the source; do not add personal experience."
+}

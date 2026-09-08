@@ -1,0 +1,17 @@
+# Reading the Market Definition of AI Engineer
+
+Job titles alone do not define the AI Engineer role. A market analysis of 889 classified descriptions showed three different kinds of work hiding under the same label. About 70 percent were AI-first roles, roughly 28.5 percent were AI-support roles, and fewer than 2 percent were traditional ML or deep learning roles.
+
+AI-first roles worked directly on LLM and generative-AI systems. Their responsibilities included RAG, agents, evaluation, and production deployment. AI-support roles built the environment around those systems: internal platforms, GPU and inference infrastructure, data pipelines, deployment and monitoring tools, and interfaces for prompts or experiments. Traditional ML and deep learning roles used tools such as scikit-learn, XGBoost, PyTorch, TensorFlow, computer vision, or recommendation systems, even though their postings used the AI Engineer title.
+
+The largest category led to a practical definition: an AI Engineer owns the design, evaluation, and production operation of systems built on foundation models. The production emphasis was strong. About 95.6 percent of the roles were production-focused, nearly half were backend-heavy, and around 20 percent were often full-stack. This points toward an engineer building Python and cloud applications around models rather than concentrating only on model training.
+
+The most distinctive generative-AI skills followed the same pattern. RAG appeared in 35.9 percent of descriptions, prompt engineering in 29.1 percent, LLM integration in 25.4 percent, agents in 14.4 percent, and fine-tuning in 8.5 percent. Prompt work mattered, but the data placed it inside a larger system responsibility. Hosted model integration also involved tokens, latency, cost, and reliability.
+
+Python was the most common programming language, appearing in 82.5 percent of descriptions. TypeScript appeared in 23.4 percent, React in 14.8 percent, and FastAPI in 10.7 percent. These numbers suggest that many roles involve APIs and sometimes a user interface. Operations and cloud were also central, with operations mentioned in 17.4 percent and cloud in 13.4 percent of postings.
+
+Infrastructure tools formed a relatively stable baseline: AWS at 40.1 percent, Docker at 31 percent, CI/CD at 29.3 percent, and Kubernetes at 29.1 percent. Azure and GCP were each present in more than 20 percent. AI frameworks were less concentrated: LangChain appeared in 18.8 percent, LangGraph in 8 percent, and LlamaIndex in 5.8 percent. The comparison suggests that architectural and operational skills outlast any one framework.
+
+The work can be understood in three layers. Core responsibilities are end-to-end LLM applications, production APIs and deployment, monitoring, evaluation, and guardrails. Common work adds retrieval over private data, data pipelines, internal platforms, agent workflows, and product collaboration. Secondary duties include frontend interfaces, performance improvements, fine-tuning or self-hosting, customer implementations, and security or compliance.
+
+The market signal is therefore specific without being a permanent definition. Tools and titles will change, but the recurring responsibility is to turn foundation models into observable, dependable product features. Preparing for the role means understanding those system boundaries and the infrastructure that keeps them running.

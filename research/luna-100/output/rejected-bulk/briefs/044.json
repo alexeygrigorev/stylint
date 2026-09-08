@@ -1,0 +1,58 @@
+{
+  "id": "044",
+  "source_path": "research/luna-100/sources/raw/2026-04-07-an-unexpected-entry-into-ai-memory.md",
+  "article_purpose": "explanation",
+  "author_attribution_notes": "Facts and project ownership are attributed to the source author; no additional personal experience or results added.",
+  "required_facts": [
+    {
+      "id": 1,
+      "claim": "Milla Jovovich has unexpectedly entered the AI memory conversation with [MemPalace], an open-source project she [launched] with developer Ben Sigman.",
+      "source_evidence": "Milla Jovovich has unexpectedly entered the AI memory conversation with [MemPalace], an open-source project she [launched] with developer Ben Sigman."
+    },
+    {
+      "id": 2,
+      "claim": "What sets the MemPalace project apart is its approach to AI assistant memory.",
+      "source_evidence": "What sets the MemPalace project apart is its approach to AI assistant memory."
+    },
+    {
+      "id": 3,
+      "claim": "Unlike most AI memory systems that tend to rely on increased model calls, extensive infrastructure, and layers of abstraction, MemPalace shows that long-term assistant memory can be local, deterministic, and cost-effecti",
+      "source_evidence": "Unlike most AI memory systems that tend to rely on increased model calls, extensive infrastructure, and layers of abstraction, MemPalace shows that long-term assistant memory can be local, deterministic, and cost-effective."
+    },
+    {
+      "id": 4,
+      "claim": "The design of MemPalace draws inspiration from the classical “memory palace” technique, arranging recalled information into spatial structures instead of treating memory as a simple retrieval problem.",
+      "source_evidence": "The design of MemPalace draws inspiration from the classical “memory palace” technique, arranging recalled information into spatial structures instead of treating memory as a simple retrieval problem."
+    },
+    {
+      "id": 5,
+      "claim": "According to the project’s GitHub, MemPalace runs entirely on your local machine with just two dependencies: ChromaDB and PyYAML, and it achieves an impressive 96.6% recall@5 on the LongMemEval benchmark.",
+      "source_evidence": "According to the project’s GitHub, MemPalace runs entirely on your local machine with just two dependencies: ChromaDB and PyYAML, and it achieves an impressive 96.6% recall@5 on the LongMemEval benchmark."
+    },
+    {
+      "id": 6,
+      "claim": "The memory layer itself doesn’t use any LLM API calls - all classification, chunking, room detection, and compression run on regex heuristics and keyword scoring.",
+      "source_evidence": "The memory layer itself doesn’t use any LLM API calls - all classification, chunking, room detection, and compression run on regex heuristics and keyword scoring."
+    },
+    {
+      "id": 7,
+      "claim": "The LLM is still there for the actual conversation (answering questions, generating responses), but the memory infrastructure that decides what to store, where to put it, and what to retrieve is completely deterministic ",
+      "source_evidence": "The LLM is still there for the actual conversation (answering questions, generating responses), but the memory infrastructure that decides what to store, where to put it, and what to retrieve is completely deterministic and free to run."
+    },
+    {
+      "id": 8,
+      "claim": "Every conversation starts from scratch - the model doesn’t know who you are, what you discussed yesterday, or what decisions you made last week.",
+      "source_evidence": "Every conversation starts from scratch - the model doesn’t know who you are, what you discussed yesterday, or what decisions you made last week."
+    },
+    {
+      "id": 9,
+      "claim": "The context window (the text the model can “see” at once) is its only memory, and it resets with each new session.",
+      "source_evidence": "The context window (the text the model can “see” at once) is its only memory, and it resets with each new session."
+    },
+    {
+      "id": 10,
+      "claim": "But it breaks down for anything that needs continuity: A coding assistant that should remember your project’s architecture across sessions A personal assistant that knows your preferences and ongoing tasks A research age",
+      "source_evidence": "But it breaks down for anything that needs continuity: A coding assistant that should remember your project’s architecture across sessions A personal assistant that knows your preferences and ongoing tasks A research agent that builds on previous findings over days or weeks The naive solution - stuff everything into the context window - hits limits fast."
+    }
+  ]
+}

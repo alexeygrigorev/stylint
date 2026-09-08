@@ -1,0 +1,42 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-04-07-last-call-for-ai-engineering-buildcamp.md",
+  "original_path": "research/luna-100/output/round-1/046-explanation.md",
+  "revised_path": "research/luna-100/output/round-2/046-explanation.md",
+  "word_count": 484,
+  "required_fact_evidence": [
+    {
+      "claim": "nine-week course",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "Documentation Agent running example",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "RAG and agent optional projects",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "homework sequence",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "capstone stages",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "3-10 hour weekly workload",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "weekly office hours",
+      "evidence": "Verified against assigned source"
+    }
+  ],
+  "substantive_edits": [
+    "Recomposed explanation around the course workflow and capstone progression."
+  ],
+  "unsupported_claims_removed": [],
+  "unresolved_source_conflicts": [],
+  "full_final_lint_findings": []
+}

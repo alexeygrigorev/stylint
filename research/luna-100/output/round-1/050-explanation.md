@@ -1,0 +1,15 @@
+# Evolving an FAQ from a document into a workflow
+
+DataTalks.Club courses bring thousands of learners into Slack each year, and many questions repeat: joining a course, setting up Windows, submitting homework, or fixing a broken step. The first solution was a shared Google Docs FAQ. It was easy for students to read and contribute, but the document became too large and too open to moderation problems.
+
+Across the Zoomcamps, the FAQ reached about 1,300 entries. The Data Engineering FAQ alone had roughly 500. At that size, asking people to read the whole document before posting in Slack stopped being practical. A community member, Alex Litvinov, built a RAG-powered Slack bot that brought retrieval into the conversation.
+
+The bot reads more than the FAQ. It ingests Slack discussions, GitHub course repositories, and YouTube subtitles. Each source gets chunks that preserve its structure: question and answer pairs, complete Slack threads, or repository files. The daily Prefect pipeline runs in Docker, uses LlamaIndex and BGE embeddings, stores vectors in Zilliz Cloud, reranks with Cohere, and generates answers with GPT-4o-mini. It maintains a separate query engine per course and uses the Slack channel ID for routing.
+
+Retrieval is also useful for maintaining the knowledge base. I moved the FAQ into a Git repository and a static website after repeated vandalism and parsing problems. The migration downloads Google Docs as DOCX, extracts headings and answers with Python, sends entries to GPT-4o for formatting cleanup, and stores each question as a Markdown file with frontmatter. The repository is organized by course, module, and question.
+
+Jekyll was the obvious first choice for GitHub Pages, but it conflicted with dbt examples that used Jinja’s double curly braces. Rather than keep escaping templates, I built a small Python generator with Copilot. It reads Markdown, parses YAML frontmatter, renders HTML with Jinja2, and writes static pages. The same generator exports `courses.json` and per-course JSON files, so other tools can index the FAQ through minsearch.
+
+The website improved maintenance but made contributions harder. Students could no longer edit a shared document. The FAQ Automation Bot restores that ease through GitHub Issues. A student supplies a course, question, and answer. GitHub Actions loads the current entries, retrieves similar records, and sends the proposal with section metadata to a model. The structured `FAQDecision` can choose `NEW`, `UPDATE`, or `DUPLICATE`, identify a section and order, and produce a pull request. A human reviews and merges it.
+
+The bot still makes mistakes, so I review batches of pull requests with Claude Code. I explain a correction, Claude edits the branch, and I review and merge it. Those corrections can become examples for later decisions. Each stage appeared because the previous one stopped fitting: documents enabled easy contribution, retrieval made the content usable, Git made it maintainable, automation reopened contribution, and human review kept errors controlled.

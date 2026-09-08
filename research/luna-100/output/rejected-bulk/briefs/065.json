@@ -1,0 +1,58 @@
+{
+  "id": "065",
+  "source_path": "research/luna-100/sources/raw/2026-06-12-ai-design-for-non-designers.md",
+  "article_purpose": "account",
+  "author_attribution_notes": "Facts and project ownership are attributed to the source author; no additional personal experience or results added.",
+  "required_facts": [
+    {
+      "id": 1,
+      "claim": "You can usually tell when a website was created by AI.",
+      "source_evidence": "You can usually tell when a website was created by AI."
+    },
+    {
+      "id": 2,
+      "claim": "It often happens with “one-shot designs”: you ask a coding assistant to create a website, open the result, and immediately see that it is AI-generated.",
+      "source_evidence": "It often happens with “one-shot designs”: you ask a coding assistant to create a website, open the result, and immediately see that it is AI-generated."
+    },
+    {
+      "id": 3,
+      "claim": "A lot of the time, that is completely fine.",
+      "source_evidence": "A lot of the time, that is completely fine."
+    },
+    {
+      "id": 4,
+      "claim": "For a simple website, one-shot is more than enough, and it’s way better than what I could ever design myself.",
+      "source_evidence": "For a simple website, one-shot is more than enough, and it’s way better than what I could ever design myself."
+    },
+    {
+      "id": 5,
+      "claim": "But I don’t want my websites to look too generic.",
+      "source_evidence": "But I don’t want my websites to look too generic."
+    },
+    {
+      "id": 6,
+      "claim": "There are thousands of web pages now that all look the same.",
+      "source_evidence": "There are thousands of web pages now that all look the same."
+    },
+    {
+      "id": 7,
+      "claim": "In writing, we have markers like “delve” or excessive bold formatting that give away AI-generated text.",
+      "source_evidence": "In writing, we have markers like “delve” or excessive bold formatting that give away AI-generated text."
+    },
+    {
+      "id": 8,
+      "claim": "In design, there are similar elements you notice immediately.",
+      "source_evidence": "In design, there are similar elements you notice immediately."
+    },
+    {
+      "id": 9,
+      "claim": "They tend to grow overly complex, with elements not always where I’d expect them.",
+      "source_evidence": "They tend to grow overly complex, with elements not always where I’d expect them."
+    },
+    {
+      "id": 10,
+      "claim": "Each new page brings elements that don’t match the rest.",
+      "source_evidence": "Each new page brings elements that don’t match the rest."
+    }
+  ]
+}

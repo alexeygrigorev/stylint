@@ -1,0 +1,18 @@
+{
+  "id": "028",
+  "source_path": "research/luna-100/sources/raw/2026-03-04-what-1000-job-descriptions-reveal.md",
+  "purpose": "reader-facing explanation of the market categories, skills, and responsibility layers found in AI Engineer job descriptions",
+  "required_facts": [
+    {"fact": "The study analyzed 1,000+ job descriptions and classified 889 into three categories.", "evidence": "Source lines 3 and 6: dataset size and classification count are stated."},
+    {"fact": "AI-first roles were about 70 percent and worked on LLM/GenAI systems, RAG, agents, evaluation, and production deployment.", "evidence": "Source line 8: category and responsibilities are specified."},
+    {"fact": "AI-support roles were about 28.5 percent and focused on infrastructure and platforms around AI.", "evidence": "Source line 9: support category and examples are listed."},
+    {"fact": "Traditional ML/DL roles were under 2 percent and used standard ML or deep-learning tools under the AI Engineer title.", "evidence": "Source line 10: category and tool examples are described."},
+    {"fact": "The practical definition was an engineer owning foundation-model system design, evaluation, and production operation.", "evidence": "Source line 14: market-driven definition is stated."},
+    {"fact": "The roles were 95.6 percent production-focused, nearly 50 percent backend-heavy, and 20 percent often full-stack.", "evidence": "Source line 16: production and application-layer statistics are given."},
+    {"fact": "The leading GenAI signals were RAG at 35.9 percent, prompt engineering at 29.1 percent, LLM integration at 25.4 percent, agents at 14.4 percent, and fine-tuning at 8.5 percent.", "evidence": "Source lines 25-29: skill mentions are listed."},
+    {"fact": "Python was mentioned in 82.5 percent of roles, with TypeScript, React, and FastAPI also appearing.", "evidence": "Source lines 35-38: language and app-layer signals are described."},
+    {"fact": "Operations and cloud were mentioned in 17.4 and 13.4 percent of postings, while AWS, Docker, CI/CD, and Kubernetes formed a common infrastructure baseline.", "evidence": "Source lines 40-44 and 56-60: operations, cloud, and tooling signals are stated."},
+    {"fact": "Day-to-day work had core, common, and secondary layers, ranging from end-to-end RAG and agents to proprietary retrieval, platforms, frontend work, fine-tuning, and security.", "evidence": "Source lines 71-77: responsibility layers and evolving core are described."}
+  ],
+  "author_attribution": "Explain the dataset's signals and qualifications without turning its percentages into universal guarantees or prescribing a specific framework."
+}

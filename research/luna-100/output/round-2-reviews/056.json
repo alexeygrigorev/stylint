@@ -1,0 +1,30 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-05-08-building-an-ai-book-generator-with.md",
+  "original_path": "research/luna-100/output/round-1/056-explanation.md",
+  "revised_path": "research/luna-100/output/round-2/056-explanation.md",
+  "word_count": 593,
+  "required_facts_checked": [
+    "Planning begins interactively in Streamlit with a topic, size and Gemini 3 Pro Preview chat.",
+    "Gemini refines the existing outline using the current plan and new feedback.",
+    "The Ready - Create Structured Plan step produces plan.yaml from a Pydantic BookPlan schema.",
+    "The same plan is used by writing, audio, cover and publishing steps.",
+    "Chapters are generated from specifications and progress markers rather than full prior chapter text.",
+    "The repository has section-based and chapter-based implementations.",
+    "Existing artifacts are skipped on reruns, and a _ready sentinel marks completion.",
+    "Cost is tracked during planning and writing.",
+    "The pipeline produces audio, EPUB and KDP artifacts, but publishing files do not guarantee sales.",
+    "A fireworks example produced 21 chapters in about 45 minutes for roughly $4 using Gemini 3 Pro."
+  ],
+  "brief_corrections": [],
+  "unsupported_claims_removed": [
+    "Removed claims that the plan guarantees narrative quality or commercial success.",
+    "Removed unsupported fixed cost estimates beyond the documented fireworks example."
+  ],
+  "substantive_edits": [
+    "Rewrote the pipeline as a teaching explanation from interactive planning through chapter execution, audio and publishing.",
+    "Explained plan.yaml as the shared interface between stages and preserved resumability details.",
+    "Kept the cost, artifact and commercial limitations explicit."
+  ],
+  "full_final_lint_findings": [],
+  "unresolved_source_conflicts": []
+}

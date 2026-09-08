@@ -1,0 +1,48 @@
+{
+  "id": "014",
+  "source_path": "research/luna-100/sources/raw/2026-01-23-ai-bootcamp-becomes-ai-engineering.md",
+  "purpose": "reader-facing explanation of the supported workflow or idea",
+  "required_facts": [
+    {
+      "fact": "Expanded the optional framework coverage All of these changes are a result of feedback from the participants of the first cohort.",
+      "evidence": "research/luna-100/sources/raw/2026-01-23-ai-bootcamp-becomes-ai-engineering.md"
+    },
+    {
+      "fact": "Based on that feedback, I’m re-recording around 90% of the material for the [second cohort](https://maven.com/alexey-grigorev/from-rag-to-agents?promoCode=SUBSTACK), which starts in 2 days.",
+      "evidence": "research/luna-100/sources/raw/2026-01-23-ai-bootcamp-becomes-ai-engineering.md"
+    },
+    {
+      "fact": "In this newsletter, I want to explain why the name changed, how the course was redesigned, and share what’s new in this iteration.",
+      "evidence": "research/luna-100/sources/raw/2026-01-23-ai-bootcamp-becomes-ai-engineering.md"
+    },
+    {
+      "fact": "New Name: AI Engineering Buildcamp I decided to rename the course because the new name better reflects what it is about: building AI systems with an engineering mindset through hands-on work instead of learning theory in",
+      "evidence": "research/luna-100/sources/raw/2026-01-23-ai-bootcamp-becomes-ai-engineering.md"
+    },
+    {
+      "fact": "Each course participant will: * Build real systems * Practice an engineering mindset (trade-offs, reliability, maintainability) * Do a lot of hands-on work * Finish with concrete, reusable results AI Engineering Buildcam",
+      "evidence": "research/luna-100/sources/raw/2026-01-23-ai-bootcamp-becomes-ai-engineering.md"
+    },
+    {
+      "fact": "From the first week, course participants start working toward their final Capstone Project.",
+      "evidence": "research/luna-100/sources/raw/2026-01-23-ai-bootcamp-becomes-ai-engineering.md"
+    },
+    {
+      "fact": "In Week 1, participants define what they want to build.",
+      "evidence": "research/luna-100/sources/raw/2026-01-23-ai-bootcamp-becomes-ai-engineering.md"
+    },
+    {
+      "fact": "As the course progresses, they gradually refine this idea, first conceptually and then through implementation, with the final two weeks dedicated entirely to building and polishing the system.",
+      "evidence": "research/luna-100/sources/raw/2026-01-23-ai-bootcamp-becomes-ai-engineering.md"
+    },
+    {
+      "fact": "Alongside the Capstone, course participants work on 6+ guided mini-projects through homework assignments.",
+      "evidence": "research/luna-100/sources/raw/2026-01-23-ai-bootcamp-becomes-ai-engineering.md"
+    },
+    {
+      "fact": "These include FAQ assistants, YouTube Q&A systems, documentation agents, coding agents, and deep research agents.",
+      "evidence": "research/luna-100/sources/raw/2026-01-23-ai-bootcamp-becomes-ai-engineering.md"
+    }
+  ],
+  "author_attribution": "Attribute projects and outcomes to the named author or participants in the source; do not add personal experience."
+}

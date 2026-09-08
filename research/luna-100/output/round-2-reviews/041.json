@@ -1,0 +1,42 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-04-03-i-built-an-ai-agent-team-for-software.md",
+  "original_path": "research/luna-100/output/round-2/041-account.md",
+  "revised_path": "research/luna-100/output/round-2/041-account.md",
+  "word_count": 505,
+  "required_fact_evidence": [
+    {
+      "claim": "agent roles are PM SWE QA and on-call",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "AI Shipping Labs reached 41 of 46 tasks overnight",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "DataTasks uses Lambda and DynamoDB",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "DataTasks was paused for lack of evaluation time",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "Merm is a pure Python Mermaid renderer",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "Rustkyll first targeted one site",
+      "evidence": "Verified against assigned source"
+    },
+    {
+      "claim": "Codehive addresses orchestration failures",
+      "evidence": "Verified against assigned source"
+    }
+  ],
+  "substantive_edits": [
+    "Recomposed article independently around assigned account purpose."
+  ],
+  "unsupported_claims_removed": [],
+  "unresolved_source_conflicts": [],
+  "full_final_lint_findings": []
+}

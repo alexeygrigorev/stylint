@@ -1,0 +1,27 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-07-03-choosing-a-portfolio-project-the.md",
+  "original_path": "research/luna-100/output/round-1/072-explanation.md",
+  "revised_path": "research/luna-100/output/round-2/072-explanation.md",
+  "word_count": 540,
+  "required_facts_checked": [
+    {"claim": "A portfolio project should begin with a domain or direction.", "status": "present", "evidence": "source step one: pick a domain"},
+    {"claim": "Targeting a domain is more durable than targeting one company or every job at random.", "status": "present", "evidence": "source: domain focus versus one company or spray-and-pray"},
+    {"claim": "Research should cover five to ten companies and include openings, engineering blogs, case studies, and product material.", "status": "present", "evidence": "source steps two and three"},
+    {"claim": "Job descriptions and engineering blogs provide different kinds of evidence.", "status": "present", "evidence": "source: responsibilities/context/skills versus systems/problems"},
+    {"claim": "Technology names should be treated as clues while the underlying problem is extracted.", "status": "present", "evidence": "source: stack clue, not project idea"},
+    {"claim": "For each problem, record the affected user, input, desired outcome, and evidence source.", "status": "present", "evidence": "source step four"},
+    {"claim": "Group recurring problems and create about five comparable project candidates.", "status": "present", "evidence": "source steps five and six"},
+    {"claim": "The agent can suggest a stack, but the builder makes the final choice.", "status": "present", "evidence": "source: agent suggests, final decision yours"},
+    {"claim": "An AI project needs evaluation, logging or monitoring, tests, and a readable README.", "status": "present", "evidence": "source evaluation and monitoring guidance"},
+    {"claim": "End-to-end use with real input provides stronger evidence than an unused elaborate repository.", "status": "present", "evidence": "source: usable end-to-end project"}
+  ],
+  "unsupported_claims_removed": [],
+  "substantive_edits": [
+    "Turned the account into a stepwise explanation with headings that describe actions rather than questions.",
+    "Preserved the source's distinctions between domains, companies, evidence types, problems, stacks, and evaluation.",
+    "Kept the final decision with the builder and retained the warning against learning too many tools.",
+    "Reworked list-heavy sentences and README guidance for clear, lint-clean prose."
+  ],
+  "full_final_lint_findings": [],
+  "unresolved_source_conflicts": []
+}

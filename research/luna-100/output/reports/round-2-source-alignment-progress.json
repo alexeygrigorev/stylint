@@ -1,0 +1,1832 @@
+{
+  "method": "TF-IDF cosine vocabulary overlap; diagnostic signal, not factual proof. Compare against all50selected sources.",
+  "documents": [
+    {
+      "id": "001",
+      "assigned": "s01",
+      "rank": 1,
+      "assigned_similarity": 0.572,
+      "nearest": [
+        {
+          "source": "s01",
+          "similarity": 0.572
+        },
+        {
+          "source": "s28",
+          "similarity": 0.177
+        },
+        {
+          "source": "s08",
+          "similarity": 0.163
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "002",
+      "assigned": "s01",
+      "rank": 1,
+      "assigned_similarity": 0.434,
+      "nearest": [
+        {
+          "source": "s01",
+          "similarity": 0.434
+        },
+        {
+          "source": "s08",
+          "similarity": 0.189
+        },
+        {
+          "source": "s28",
+          "similarity": 0.175
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "003",
+      "assigned": "s02",
+      "rank": 1,
+      "assigned_similarity": 0.62,
+      "nearest": [
+        {
+          "source": "s02",
+          "similarity": 0.62
+        },
+        {
+          "source": "s27",
+          "similarity": 0.179
+        },
+        {
+          "source": "s50",
+          "similarity": 0.164
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "004",
+      "assigned": "s02",
+      "rank": 1,
+      "assigned_similarity": 0.577,
+      "nearest": [
+        {
+          "source": "s02",
+          "similarity": 0.577
+        },
+        {
+          "source": "s27",
+          "similarity": 0.16
+        },
+        {
+          "source": "s50",
+          "similarity": 0.157
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "005",
+      "assigned": "s03",
+      "rank": 1,
+      "assigned_similarity": 0.563,
+      "nearest": [
+        {
+          "source": "s03",
+          "similarity": 0.563
+        },
+        {
+          "source": "s21",
+          "similarity": 0.211
+        },
+        {
+          "source": "s33",
+          "similarity": 0.201
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "006",
+      "assigned": "s03",
+      "rank": 1,
+      "assigned_similarity": 0.539,
+      "nearest": [
+        {
+          "source": "s03",
+          "similarity": 0.539
+        },
+        {
+          "source": "s33",
+          "similarity": 0.216
+        },
+        {
+          "source": "s21",
+          "similarity": 0.21
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "007",
+      "assigned": "s04",
+      "rank": 1,
+      "assigned_similarity": 0.673,
+      "nearest": [
+        {
+          "source": "s04",
+          "similarity": 0.673
+        },
+        {
+          "source": "s36",
+          "similarity": 0.193
+        },
+        {
+          "source": "s24",
+          "similarity": 0.186
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "008",
+      "assigned": "s04",
+      "rank": 1,
+      "assigned_similarity": 0.534,
+      "nearest": [
+        {
+          "source": "s04",
+          "similarity": 0.534
+        },
+        {
+          "source": "s36",
+          "similarity": 0.189
+        },
+        {
+          "source": "s24",
+          "similarity": 0.189
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "009",
+      "assigned": "s05",
+      "rank": 1,
+      "assigned_similarity": 0.61,
+      "nearest": [
+        {
+          "source": "s05",
+          "similarity": 0.61
+        },
+        {
+          "source": "s35",
+          "similarity": 0.225
+        },
+        {
+          "source": "s20",
+          "similarity": 0.201
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "010",
+      "assigned": "s05",
+      "rank": 1,
+      "assigned_similarity": 0.492,
+      "nearest": [
+        {
+          "source": "s05",
+          "similarity": 0.492
+        },
+        {
+          "source": "s35",
+          "similarity": 0.211
+        },
+        {
+          "source": "s32",
+          "similarity": 0.198
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "011",
+      "assigned": "s06",
+      "rank": 1,
+      "assigned_similarity": 0.559,
+      "nearest": [
+        {
+          "source": "s06",
+          "similarity": 0.559
+        },
+        {
+          "source": "s35",
+          "similarity": 0.178
+        },
+        {
+          "source": "s05",
+          "similarity": 0.162
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "012",
+      "assigned": "s06",
+      "rank": 1,
+      "assigned_similarity": 0.441,
+      "nearest": [
+        {
+          "source": "s06",
+          "similarity": 0.441
+        },
+        {
+          "source": "s38",
+          "similarity": 0.185
+        },
+        {
+          "source": "s35",
+          "similarity": 0.165
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "013",
+      "assigned": "s07",
+      "rank": 1,
+      "assigned_similarity": 0.586,
+      "nearest": [
+        {
+          "source": "s07",
+          "similarity": 0.586
+        },
+        {
+          "source": "s23",
+          "similarity": 0.293
+        },
+        {
+          "source": "s48",
+          "similarity": 0.227
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "014",
+      "assigned": "s07",
+      "rank": 1,
+      "assigned_similarity": 0.542,
+      "nearest": [
+        {
+          "source": "s07",
+          "similarity": 0.542
+        },
+        {
+          "source": "s23",
+          "similarity": 0.288
+        },
+        {
+          "source": "s48",
+          "similarity": 0.202
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "015",
+      "assigned": "s08",
+      "rank": 1,
+      "assigned_similarity": 0.595,
+      "nearest": [
+        {
+          "source": "s08",
+          "similarity": 0.595
+        },
+        {
+          "source": "s19",
+          "similarity": 0.255
+        },
+        {
+          "source": "s21",
+          "similarity": 0.21
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "016",
+      "assigned": "s08",
+      "rank": 1,
+      "assigned_similarity": 0.54,
+      "nearest": [
+        {
+          "source": "s08",
+          "similarity": 0.54
+        },
+        {
+          "source": "s19",
+          "similarity": 0.259
+        },
+        {
+          "source": "s39",
+          "similarity": 0.192
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "017",
+      "assigned": "s09",
+      "rank": 1,
+      "assigned_similarity": 0.681,
+      "nearest": [
+        {
+          "source": "s09",
+          "similarity": 0.681
+        },
+        {
+          "source": "s41",
+          "similarity": 0.191
+        },
+        {
+          "source": "s26",
+          "similarity": 0.171
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "018",
+      "assigned": "s09",
+      "rank": 1,
+      "assigned_similarity": 0.696,
+      "nearest": [
+        {
+          "source": "s09",
+          "similarity": 0.696
+        },
+        {
+          "source": "s41",
+          "similarity": 0.204
+        },
+        {
+          "source": "s15",
+          "similarity": 0.16
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "019",
+      "assigned": "s10",
+      "rank": 1,
+      "assigned_similarity": 0.575,
+      "nearest": [
+        {
+          "source": "s10",
+          "similarity": 0.575
+        },
+        {
+          "source": "s43",
+          "similarity": 0.265
+        },
+        {
+          "source": "s36",
+          "similarity": 0.257
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "020",
+      "assigned": "s10",
+      "rank": 1,
+      "assigned_similarity": 0.587,
+      "nearest": [
+        {
+          "source": "s10",
+          "similarity": 0.587
+        },
+        {
+          "source": "s43",
+          "similarity": 0.263
+        },
+        {
+          "source": "s36",
+          "similarity": 0.257
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "021",
+      "assigned": "s11",
+      "rank": 1,
+      "assigned_similarity": 0.59,
+      "nearest": [
+        {
+          "source": "s11",
+          "similarity": 0.59
+        },
+        {
+          "source": "s31",
+          "similarity": 0.275
+        },
+        {
+          "source": "s37",
+          "similarity": 0.231
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "022",
+      "assigned": "s11",
+      "rank": 1,
+      "assigned_similarity": 0.516,
+      "nearest": [
+        {
+          "source": "s11",
+          "similarity": 0.516
+        },
+        {
+          "source": "s31",
+          "similarity": 0.256
+        },
+        {
+          "source": "s37",
+          "similarity": 0.217
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "023",
+      "assigned": "s12",
+      "rank": 1,
+      "assigned_similarity": 0.541,
+      "nearest": [
+        {
+          "source": "s12",
+          "similarity": 0.541
+        },
+        {
+          "source": "s16",
+          "similarity": 0.277
+        },
+        {
+          "source": "s40",
+          "similarity": 0.231
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "024",
+      "assigned": "s12",
+      "rank": 1,
+      "assigned_similarity": 0.488,
+      "nearest": [
+        {
+          "source": "s12",
+          "similarity": 0.488
+        },
+        {
+          "source": "s16",
+          "similarity": 0.261
+        },
+        {
+          "source": "s40",
+          "similarity": 0.233
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "025",
+      "assigned": "s13",
+      "rank": 1,
+      "assigned_similarity": 0.612,
+      "nearest": [
+        {
+          "source": "s13",
+          "similarity": 0.612
+        },
+        {
+          "source": "s25",
+          "similarity": 0.193
+        },
+        {
+          "source": "s42",
+          "similarity": 0.188
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "026",
+      "assigned": "s13",
+      "rank": 1,
+      "assigned_similarity": 0.516,
+      "nearest": [
+        {
+          "source": "s13",
+          "similarity": 0.516
+        },
+        {
+          "source": "s25",
+          "similarity": 0.202
+        },
+        {
+          "source": "s42",
+          "similarity": 0.192
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "027",
+      "assigned": "s14",
+      "rank": 1,
+      "assigned_similarity": 0.497,
+      "nearest": [
+        {
+          "source": "s14",
+          "similarity": 0.497
+        },
+        {
+          "source": "s40",
+          "similarity": 0.211
+        },
+        {
+          "source": "s16",
+          "similarity": 0.18
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "028",
+      "assigned": "s14",
+      "rank": 1,
+      "assigned_similarity": 0.472,
+      "nearest": [
+        {
+          "source": "s14",
+          "similarity": 0.472
+        },
+        {
+          "source": "s40",
+          "similarity": 0.253
+        },
+        {
+          "source": "s16",
+          "similarity": 0.203
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "029",
+      "assigned": "s15",
+      "rank": 1,
+      "assigned_similarity": 0.657,
+      "nearest": [
+        {
+          "source": "s15",
+          "similarity": 0.657
+        },
+        {
+          "source": "s34",
+          "similarity": 0.202
+        },
+        {
+          "source": "s25",
+          "similarity": 0.19
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "030",
+      "assigned": "s15",
+      "rank": 1,
+      "assigned_similarity": 0.586,
+      "nearest": [
+        {
+          "source": "s15",
+          "similarity": 0.586
+        },
+        {
+          "source": "s34",
+          "similarity": 0.187
+        },
+        {
+          "source": "s44",
+          "similarity": 0.162
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "031",
+      "assigned": "s16",
+      "rank": 1,
+      "assigned_similarity": 0.54,
+      "nearest": [
+        {
+          "source": "s16",
+          "similarity": 0.54
+        },
+        {
+          "source": "s38",
+          "similarity": 0.192
+        },
+        {
+          "source": "s12",
+          "similarity": 0.183
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "032",
+      "assigned": "s16",
+      "rank": 1,
+      "assigned_similarity": 0.504,
+      "nearest": [
+        {
+          "source": "s16",
+          "similarity": 0.504
+        },
+        {
+          "source": "s12",
+          "similarity": 0.2
+        },
+        {
+          "source": "s45",
+          "similarity": 0.198
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "033",
+      "assigned": "s17",
+      "rank": 1,
+      "assigned_similarity": 0.615,
+      "nearest": [
+        {
+          "source": "s17",
+          "similarity": 0.615
+        },
+        {
+          "source": "s25",
+          "similarity": 0.183
+        },
+        {
+          "source": "s21",
+          "similarity": 0.182
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "034",
+      "assigned": "s17",
+      "rank": 1,
+      "assigned_similarity": 0.559,
+      "nearest": [
+        {
+          "source": "s17",
+          "similarity": 0.559
+        },
+        {
+          "source": "s33",
+          "similarity": 0.165
+        },
+        {
+          "source": "s25",
+          "similarity": 0.154
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "035",
+      "assigned": "s18",
+      "rank": 1,
+      "assigned_similarity": 0.509,
+      "nearest": [
+        {
+          "source": "s18",
+          "similarity": 0.509
+        },
+        {
+          "source": "s45",
+          "similarity": 0.154
+        },
+        {
+          "source": "s35",
+          "similarity": 0.153
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "036",
+      "assigned": "s18",
+      "rank": 1,
+      "assigned_similarity": 0.379,
+      "nearest": [
+        {
+          "source": "s18",
+          "similarity": 0.379
+        },
+        {
+          "source": "s38",
+          "similarity": 0.172
+        },
+        {
+          "source": "s45",
+          "similarity": 0.164
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "037",
+      "assigned": "s19",
+      "rank": 2,
+      "assigned_similarity": 0.287,
+      "nearest": [
+        {
+          "source": "s08",
+          "similarity": 0.591
+        },
+        {
+          "source": "s19",
+          "similarity": 0.287
+        },
+        {
+          "source": "s21",
+          "similarity": 0.19
+        }
+      ],
+      "review_signal": true
+    },
+    {
+      "id": "038",
+      "assigned": "s19",
+      "rank": 1,
+      "assigned_similarity": 0.556,
+      "nearest": [
+        {
+          "source": "s19",
+          "similarity": 0.556
+        },
+        {
+          "source": "s08",
+          "similarity": 0.291
+        },
+        {
+          "source": "s32",
+          "similarity": 0.188
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "039",
+      "assigned": "s20",
+      "rank": 1,
+      "assigned_similarity": 0.567,
+      "nearest": [
+        {
+          "source": "s20",
+          "similarity": 0.567
+        },
+        {
+          "source": "s30",
+          "similarity": 0.18
+        },
+        {
+          "source": "s21",
+          "similarity": 0.165
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "040",
+      "assigned": "s20",
+      "rank": 1,
+      "assigned_similarity": 0.559,
+      "nearest": [
+        {
+          "source": "s20",
+          "similarity": 0.559
+        },
+        {
+          "source": "s30",
+          "similarity": 0.171
+        },
+        {
+          "source": "s35",
+          "similarity": 0.149
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "041",
+      "assigned": "s21",
+      "rank": 1,
+      "assigned_similarity": 0.536,
+      "nearest": [
+        {
+          "source": "s21",
+          "similarity": 0.536
+        },
+        {
+          "source": "s35",
+          "similarity": 0.293
+        },
+        {
+          "source": "s25",
+          "similarity": 0.267
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "042",
+      "assigned": "s21",
+      "rank": 1,
+      "assigned_similarity": 0.449,
+      "nearest": [
+        {
+          "source": "s21",
+          "similarity": 0.449
+        },
+        {
+          "source": "s39",
+          "similarity": 0.274
+        },
+        {
+          "source": "s49",
+          "similarity": 0.264
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "043",
+      "assigned": "s22",
+      "rank": 1,
+      "assigned_similarity": 0.411,
+      "nearest": [
+        {
+          "source": "s22",
+          "similarity": 0.411
+        },
+        {
+          "source": "s31",
+          "similarity": 0.166
+        },
+        {
+          "source": "s26",
+          "similarity": 0.16
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "044",
+      "assigned": "s22",
+      "rank": 1,
+      "assigned_similarity": 0.397,
+      "nearest": [
+        {
+          "source": "s22",
+          "similarity": 0.397
+        },
+        {
+          "source": "s38",
+          "similarity": 0.19
+        },
+        {
+          "source": "s31",
+          "similarity": 0.177
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "045",
+      "assigned": "s23",
+      "rank": 1,
+      "assigned_similarity": 0.461,
+      "nearest": [
+        {
+          "source": "s23",
+          "similarity": 0.461
+        },
+        {
+          "source": "s07",
+          "similarity": 0.28
+        },
+        {
+          "source": "s48",
+          "similarity": 0.204
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "046",
+      "assigned": "s23",
+      "rank": 1,
+      "assigned_similarity": 0.394,
+      "nearest": [
+        {
+          "source": "s23",
+          "similarity": 0.394
+        },
+        {
+          "source": "s07",
+          "similarity": 0.249
+        },
+        {
+          "source": "s48",
+          "similarity": 0.222
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "047",
+      "assigned": "s24",
+      "rank": 1,
+      "assigned_similarity": 0.57,
+      "nearest": [
+        {
+          "source": "s24",
+          "similarity": 0.57
+        },
+        {
+          "source": "s29",
+          "similarity": 0.265
+        },
+        {
+          "source": "s25",
+          "similarity": 0.243
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "048",
+      "assigned": "s24",
+      "rank": 1,
+      "assigned_similarity": 0.491,
+      "nearest": [
+        {
+          "source": "s24",
+          "similarity": 0.491
+        },
+        {
+          "source": "s36",
+          "similarity": 0.223
+        },
+        {
+          "source": "s29",
+          "similarity": 0.203
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "049",
+      "assigned": "s25",
+      "rank": 1,
+      "assigned_similarity": 0.575,
+      "nearest": [
+        {
+          "source": "s25",
+          "similarity": 0.575
+        },
+        {
+          "source": "s29",
+          "similarity": 0.279
+        },
+        {
+          "source": "s21",
+          "similarity": 0.244
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "050",
+      "assigned": "s25",
+      "rank": 7,
+      "assigned_similarity": 0.171,
+      "nearest": [
+        {
+          "source": "s26",
+          "similarity": 0.582
+        },
+        {
+          "source": "s41",
+          "similarity": 0.286
+        },
+        {
+          "source": "s31",
+          "similarity": 0.21
+        }
+      ],
+      "review_signal": true
+    },
+    {
+      "id": "051",
+      "assigned": "s26",
+      "rank": 1,
+      "assigned_similarity": 0.593,
+      "nearest": [
+        {
+          "source": "s26",
+          "similarity": 0.593
+        },
+        {
+          "source": "s41",
+          "similarity": 0.288
+        },
+        {
+          "source": "s31",
+          "similarity": 0.227
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "057",
+      "assigned": "s29",
+      "rank": 1,
+      "assigned_similarity": 0.579,
+      "nearest": [
+        {
+          "source": "s29",
+          "similarity": 0.579
+        },
+        {
+          "source": "s25",
+          "similarity": 0.295
+        },
+        {
+          "source": "s21",
+          "similarity": 0.257
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "058",
+      "assigned": "s29",
+      "rank": 1,
+      "assigned_similarity": 0.428,
+      "nearest": [
+        {
+          "source": "s29",
+          "similarity": 0.428
+        },
+        {
+          "source": "s48",
+          "similarity": 0.248
+        },
+        {
+          "source": "s31",
+          "similarity": 0.239
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "059",
+      "assigned": "s30",
+      "rank": 1,
+      "assigned_similarity": 0.58,
+      "nearest": [
+        {
+          "source": "s30",
+          "similarity": 0.58
+        },
+        {
+          "source": "s34",
+          "similarity": 0.232
+        },
+        {
+          "source": "s35",
+          "similarity": 0.203
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "060",
+      "assigned": "s30",
+      "rank": 1,
+      "assigned_similarity": 0.526,
+      "nearest": [
+        {
+          "source": "s30",
+          "similarity": 0.526
+        },
+        {
+          "source": "s34",
+          "similarity": 0.218
+        },
+        {
+          "source": "s32",
+          "similarity": 0.205
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "061",
+      "assigned": "s31",
+      "rank": 1,
+      "assigned_similarity": 0.617,
+      "nearest": [
+        {
+          "source": "s31",
+          "similarity": 0.617
+        },
+        {
+          "source": "s11",
+          "similarity": 0.233
+        },
+        {
+          "source": "s26",
+          "similarity": 0.207
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "062",
+      "assigned": "s31",
+      "rank": 1,
+      "assigned_similarity": 0.566,
+      "nearest": [
+        {
+          "source": "s31",
+          "similarity": 0.566
+        },
+        {
+          "source": "s11",
+          "similarity": 0.221
+        },
+        {
+          "source": "s41",
+          "similarity": 0.191
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "063",
+      "assigned": "s32",
+      "rank": 1,
+      "assigned_similarity": 0.531,
+      "nearest": [
+        {
+          "source": "s32",
+          "similarity": 0.531
+        },
+        {
+          "source": "s49",
+          "similarity": 0.287
+        },
+        {
+          "source": "s19",
+          "similarity": 0.243
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "069",
+      "assigned": "s35",
+      "rank": 1,
+      "assigned_similarity": 0.595,
+      "nearest": [
+        {
+          "source": "s35",
+          "similarity": 0.595
+        },
+        {
+          "source": "s21",
+          "similarity": 0.264
+        },
+        {
+          "source": "s25",
+          "similarity": 0.211
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "070",
+      "assigned": "s35",
+      "rank": 1,
+      "assigned_similarity": 0.507,
+      "nearest": [
+        {
+          "source": "s35",
+          "similarity": 0.507
+        },
+        {
+          "source": "s21",
+          "similarity": 0.26
+        },
+        {
+          "source": "s38",
+          "similarity": 0.199
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "071",
+      "assigned": "s36",
+      "rank": 1,
+      "assigned_similarity": 0.549,
+      "nearest": [
+        {
+          "source": "s36",
+          "similarity": 0.549
+        },
+        {
+          "source": "s38",
+          "similarity": 0.274
+        },
+        {
+          "source": "s43",
+          "similarity": 0.251
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "072",
+      "assigned": "s36",
+      "rank": 1,
+      "assigned_similarity": 0.521,
+      "nearest": [
+        {
+          "source": "s36",
+          "similarity": 0.521
+        },
+        {
+          "source": "s38",
+          "similarity": 0.263
+        },
+        {
+          "source": "s43",
+          "similarity": 0.229
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "073",
+      "assigned": "s37",
+      "rank": 1,
+      "assigned_similarity": 0.629,
+      "nearest": [
+        {
+          "source": "s37",
+          "similarity": 0.629
+        },
+        {
+          "source": "s11",
+          "similarity": 0.242
+        },
+        {
+          "source": "s49",
+          "similarity": 0.238
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "074",
+      "assigned": "s37",
+      "rank": 1,
+      "assigned_similarity": 0.603,
+      "nearest": [
+        {
+          "source": "s37",
+          "similarity": 0.603
+        },
+        {
+          "source": "s49",
+          "similarity": 0.233
+        },
+        {
+          "source": "s47",
+          "similarity": 0.21
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "075",
+      "assigned": "s38",
+      "rank": 1,
+      "assigned_similarity": 0.512,
+      "nearest": [
+        {
+          "source": "s38",
+          "similarity": 0.512
+        },
+        {
+          "source": "s36",
+          "similarity": 0.202
+        },
+        {
+          "source": "s43",
+          "similarity": 0.182
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "076",
+      "assigned": "s38",
+      "rank": 1,
+      "assigned_similarity": 0.535,
+      "nearest": [
+        {
+          "source": "s38",
+          "similarity": 0.535
+        },
+        {
+          "source": "s36",
+          "similarity": 0.214
+        },
+        {
+          "source": "s43",
+          "similarity": 0.209
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "077",
+      "assigned": "s39",
+      "rank": 1,
+      "assigned_similarity": 0.451,
+      "nearest": [
+        {
+          "source": "s39",
+          "similarity": 0.451
+        },
+        {
+          "source": "s21",
+          "similarity": 0.301
+        },
+        {
+          "source": "s35",
+          "similarity": 0.249
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "078",
+      "assigned": "s39",
+      "rank": 1,
+      "assigned_similarity": 0.445,
+      "nearest": [
+        {
+          "source": "s39",
+          "similarity": 0.445
+        },
+        {
+          "source": "s21",
+          "similarity": 0.275
+        },
+        {
+          "source": "s49",
+          "similarity": 0.268
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "079",
+      "assigned": "s40",
+      "rank": 1,
+      "assigned_similarity": 0.61,
+      "nearest": [
+        {
+          "source": "s40",
+          "similarity": 0.61
+        },
+        {
+          "source": "s14",
+          "similarity": 0.186
+        },
+        {
+          "source": "s12",
+          "similarity": 0.182
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "080",
+      "assigned": "s40",
+      "rank": 2,
+      "assigned_similarity": 0.23,
+      "nearest": [
+        {
+          "source": "s38",
+          "similarity": 0.259
+        },
+        {
+          "source": "s40",
+          "similarity": 0.23
+        },
+        {
+          "source": "s36",
+          "similarity": 0.227
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "081",
+      "assigned": "s41",
+      "rank": 1,
+      "assigned_similarity": 0.517,
+      "nearest": [
+        {
+          "source": "s41",
+          "similarity": 0.517
+        },
+        {
+          "source": "s26",
+          "similarity": 0.304
+        },
+        {
+          "source": "s31",
+          "similarity": 0.223
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "082",
+      "assigned": "s41",
+      "rank": 1,
+      "assigned_similarity": 0.448,
+      "nearest": [
+        {
+          "source": "s41",
+          "similarity": 0.448
+        },
+        {
+          "source": "s26",
+          "similarity": 0.269
+        },
+        {
+          "source": "s31",
+          "similarity": 0.221
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "083",
+      "assigned": "s42",
+      "rank": 1,
+      "assigned_similarity": 0.446,
+      "nearest": [
+        {
+          "source": "s42",
+          "similarity": 0.446
+        },
+        {
+          "source": "s44",
+          "similarity": 0.27
+        },
+        {
+          "source": "s47",
+          "similarity": 0.211
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "084",
+      "assigned": "s42",
+      "rank": 1,
+      "assigned_similarity": 0.395,
+      "nearest": [
+        {
+          "source": "s42",
+          "similarity": 0.395
+        },
+        {
+          "source": "s47",
+          "similarity": 0.251
+        },
+        {
+          "source": "s44",
+          "similarity": 0.23
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "085",
+      "assigned": "s43",
+      "rank": 1,
+      "assigned_similarity": 0.462,
+      "nearest": [
+        {
+          "source": "s43",
+          "similarity": 0.462
+        },
+        {
+          "source": "s36",
+          "similarity": 0.302
+        },
+        {
+          "source": "s10",
+          "similarity": 0.264
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "086",
+      "assigned": "s43",
+      "rank": 1,
+      "assigned_similarity": 0.446,
+      "nearest": [
+        {
+          "source": "s43",
+          "similarity": 0.446
+        },
+        {
+          "source": "s36",
+          "similarity": 0.298
+        },
+        {
+          "source": "s38",
+          "similarity": 0.238
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "087",
+      "assigned": "s44",
+      "rank": 1,
+      "assigned_similarity": 0.551,
+      "nearest": [
+        {
+          "source": "s44",
+          "similarity": 0.551
+        },
+        {
+          "source": "s47",
+          "similarity": 0.287
+        },
+        {
+          "source": "s42",
+          "similarity": 0.265
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "088",
+      "assigned": "s44",
+      "rank": 1,
+      "assigned_similarity": 0.469,
+      "nearest": [
+        {
+          "source": "s44",
+          "similarity": 0.469
+        },
+        {
+          "source": "s47",
+          "similarity": 0.339
+        },
+        {
+          "source": "s46",
+          "similarity": 0.257
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "089",
+      "assigned": "s45",
+      "rank": 1,
+      "assigned_similarity": 0.466,
+      "nearest": [
+        {
+          "source": "s45",
+          "similarity": 0.466
+        },
+        {
+          "source": "s38",
+          "similarity": 0.232
+        },
+        {
+          "source": "s39",
+          "similarity": 0.197
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "090",
+      "assigned": "s45",
+      "rank": 1,
+      "assigned_similarity": 0.401,
+      "nearest": [
+        {
+          "source": "s45",
+          "similarity": 0.401
+        },
+        {
+          "source": "s38",
+          "similarity": 0.211
+        },
+        {
+          "source": "s39",
+          "similarity": 0.184
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "091",
+      "assigned": "s46",
+      "rank": 1,
+      "assigned_similarity": 0.426,
+      "nearest": [
+        {
+          "source": "s46",
+          "similarity": 0.426
+        },
+        {
+          "source": "s47",
+          "similarity": 0.25
+        },
+        {
+          "source": "s44",
+          "similarity": 0.235
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "092",
+      "assigned": "s46",
+      "rank": 1,
+      "assigned_similarity": 0.429,
+      "nearest": [
+        {
+          "source": "s46",
+          "similarity": 0.429
+        },
+        {
+          "source": "s47",
+          "similarity": 0.289
+        },
+        {
+          "source": "s44",
+          "similarity": 0.219
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "093",
+      "assigned": "s47",
+      "rank": 1,
+      "assigned_similarity": 0.449,
+      "nearest": [
+        {
+          "source": "s47",
+          "similarity": 0.449
+        },
+        {
+          "source": "s42",
+          "similarity": 0.377
+        },
+        {
+          "source": "s44",
+          "similarity": 0.306
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "094",
+      "assigned": "s47",
+      "rank": 1,
+      "assigned_similarity": 0.395,
+      "nearest": [
+        {
+          "source": "s47",
+          "similarity": 0.395
+        },
+        {
+          "source": "s42",
+          "similarity": 0.291
+        },
+        {
+          "source": "s46",
+          "similarity": 0.276
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "095",
+      "assigned": "s48",
+      "rank": 1,
+      "assigned_similarity": 0.536,
+      "nearest": [
+        {
+          "source": "s48",
+          "similarity": 0.536
+        },
+        {
+          "source": "s47",
+          "similarity": 0.221
+        },
+        {
+          "source": "s38",
+          "similarity": 0.213
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "096",
+      "assigned": "s48",
+      "rank": 1,
+      "assigned_similarity": 0.489,
+      "nearest": [
+        {
+          "source": "s48",
+          "similarity": 0.489
+        },
+        {
+          "source": "s47",
+          "similarity": 0.243
+        },
+        {
+          "source": "s42",
+          "similarity": 0.22
+        }
+      ],
+      "review_signal": false
+    },
+    {
+      "id": "097",
+      "assigned": "s49",
+      "rank": 1,
+      "assigned_similarity": 0.428,
+      "nearest": [
+        {
+          "source": "s49",
+          "similarity": 0.428
+        },
+        {
+          "source": "s39",
+          "similarity": 0.24
+        },
+        {
+          "source": "s32",
+          "similarity": 0.228
+        }
+      ],
+      "review_signal": false
+    }
+  ]
+}

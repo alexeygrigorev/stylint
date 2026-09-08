@@ -1,0 +1,31 @@
+{
+  "source_path": "research/luna-100/sources/raw/2026-01-16-how-i-reviewed-2500-ai-bootcamp-scholarship.md",
+  "original_path": "research/luna-100/output/round-1/012-explanation.md",
+  "revised_path": "research/luna-100/output/round-2/012-explanation.md",
+  "word_count": 463,
+  "required_facts_checked": [
+    "The scholarship served people already doing meaningful work who wanted to scale its impact, rather than general career exploration.",
+    "Previous AI experience was optional, but applications needed a connection between current work and the bootcamp's relevance.",
+    "Empty, one-line and generic responses were filtered, as were job-seeking, isolated-tool-learning and short-term-income applications.",
+    "Strong applications described a specific problem, beneficiaries and why training mattered at that time.",
+    "Alignment included understanding the bootcamp, connecting it to existing work and having plans to scale, reach a community or multiply impact.",
+    "Depth meant enough detail to distinguish a real project from a vague idea, including prior attempts, remaining problems and expected changes.",
+    "Completion evidence included a long-term project, concrete plan or accountability structure because the Bootcamp was demanding.",
+    "More than 2,500 applications made identical manual review impossible.",
+    "Claude Code used custom slash commands for preliminary ranking and filtering, with parallel sub-agents processing batches.",
+    "The top 50 applications were shuffled and then personally reviewed in full, including linked profiles or projects where available.",
+    "AI scores were compared with application substance, while authenticity, clarity of intent and likely follow-through outweighed numeric ranking.",
+    "Rejection could reflect scholarship mismatch or competition exceeding available places, rather than weak quality."
+  ],
+  "unsupported_claims_removed": [
+    "Removed claims that treated the criteria as a universal measure of applicant potential.",
+    "Removed unsupported assumptions about why an individual applicant was rejected."
+  ],
+  "substantive_edits": [
+    "Rewrote the draft as a teaching explanation with sections for motivation, alignment, depth, automation and final review.",
+    "Converted fragmented criteria into direct guidance while preserving the source's qualifications.",
+    "Clarified that automation narrows the field and human review handles context rather than treating scores as the decision."
+  ],
+  "full_final_lint_findings": [],
+  "unresolved_source_conflicts": []
+}

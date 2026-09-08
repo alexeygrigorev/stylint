@@ -1,0 +1,11 @@
+{
+  "source_path": "research/luna-100/sources/raw/2025-12-12-how-i-built-a-fully-automated-image.md",
+  "original_path": "research/luna-100/output/round-1/001-account.md",
+  "revised_path": "research/luna-100/output/round-2/001-account.md",
+  "word_count": 476,
+  "required_facts_checked": "Compared against assigned source; image pipeline / agent projects / phone PR details retained.",
+  "unsupported_claims_removed": "Removed generic framing and unsupported conclusions from prior draft.",
+  "substantive_edits": "Recomposed article with source-specific chronology, motives, constraints and outcomes.",
+  "full_final_lint_findings": [],
+  "unresolved_source_conflicts": []
+}

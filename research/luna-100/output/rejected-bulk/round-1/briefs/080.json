@@ -1,0 +1,57 @@
+{
+  "id": "080",
+  "source_path": "research/luna-100/sources/raw/2026-07-25-what-ai-forward-deployed-engineers.md",
+  "mode": "explanation",
+  "article_purpose": "explanation of the supported workflow or idea",
+  "author_attribution_notes": "Keep Alexey’s first-person framing only for actions and observations explicitly present in the supplied source; preserve attribution to DataTalks.Club, AI Shipping Labs, and other projects where named.",
+  "required_facts": [
+    {
+      "fact": "Forward-deployed engineering became a growing part of the AI engineering market in 2026.",
+      "source_evidence": "research/luna-100/sources/raw/2026-07-25-what-ai-forward-deployed-engineers.md (source sentence 1)"
+    },
+    {
+      "fact": "So far we have 4,894 descriptions, and among them, the number of FDE-related postings increased from 28 in January to 108 in July.",
+      "source_evidence": "research/luna-100/sources/raw/2026-07-25-what-ai-forward-deployed-engineers.md (source sentence 2)"
+    },
+    {
+      "fact": "According to this dataset, the AI Engineering job market doubled in these 6 months.",
+      "source_evidence": "research/luna-100/sources/raw/2026-07-25-what-ai-forward-deployed-engineers.md (source sentence 3)"
+    },
+    {
+      "fact": "But the number of FDE listings grew 4 times!",
+      "source_evidence": "research/luna-100/sources/raw/2026-07-25-what-ai-forward-deployed-engineers.md (source sentence 4)"
+    },
+    {
+      "fact": "That is, it’s growing at twice the overall AI Engineering market rate.",
+      "source_evidence": "research/luna-100/sources/raw/2026-07-25-what-ai-forward-deployed-engineers.md (source sentence 5)"
+    },
+    {
+      "fact": "Live FDE job postings nearly quadrupled between January and June 2026\n\nIn this article, I analyze 113 FDE postings to understand what this work involves.",
+      "source_evidence": "research/luna-100/sources/raw/2026-07-25-what-ai-forward-deployed-engineers.md (source sentence 6)"
+    },
+    {
+      "fact": "Since our dataset focuses on AI Engineering roles, it’s limited to FDEs working in AI.",
+      "source_evidence": "research/luna-100/sources/raw/2026-07-25-what-ai-forward-deployed-engineers.md (source sentence 7)"
+    },
+    {
+      "fact": "We discuss\n\n* how companies define the role\n* which skills they expect\n* how FDE differs from applied AI engineering, solutions engineering, and consulting\n\nAt the end of the article, we also include a quick self-assessment checklist to hel",
+      "source_evidence": "research/luna-100/sources/raw/2026-07-25-what-ai-forward-deployed-engineers.md (source sentence 8)"
+    },
+    {
+      "fact": "## Forward-Deployed Engineer\n\nPalantir created the forward-deployed engineering model in 2006.",
+      "source_evidence": "research/luna-100/sources/raw/2026-07-25-what-ai-forward-deployed-engineers.md (source sentence 9)"
+    },
+    {
+      "fact": "They had a general platform, but making it useful required adapting it to each customer’s data, workflows, and infrastructure.",
+      "source_evidence": "research/luna-100/sources/raw/2026-07-25-what-ai-forward-deployed-engineers.md (source sentence 10)"
+    },
+    {
+      "fact": "To solve it, they placed their engineers in their customer’s teams.",
+      "source_evidence": "research/luna-100/sources/raw/2026-07-25-what-ai-forward-deployed-engineers.md (source sentence 11)"
+    },
+    {
+      "fact": "FDEs identified their problem, configured Palantir’s platforms, built integrations and custom components.",
+      "source_evidence": "research/luna-100/sources/raw/2026-07-25-what-ai-forward-deployed-engineers.md (source sentence 12)"
+    }
+  ]
+}

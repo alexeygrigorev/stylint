@@ -1,0 +1,48 @@
+{
+  "id": "019",
+  "source_path": "research/luna-100/sources/raw/2026-02-13-what-is-an-ai-engineer-in-2026-join.md",
+  "purpose": "personal account of the reported work",
+  "required_facts": [
+    {
+      "fact": "Over the past year, I’ve noticed that the titles AI Engineer and Gen AI Engineer are appearing more frequently: on job boards, in LinkedIn profiles, in community discussions.",
+      "evidence": "research/luna-100/sources/raw/2026-02-13-what-is-an-ai-engineer-in-2026-join.md"
+    },
+    {
+      "fact": "At the same time, the role itself is still forming.",
+      "evidence": "research/luna-100/sources/raw/2026-02-13-what-is-an-ai-engineer-in-2026-join.md"
+    },
+    {
+      "fact": "There is no stable, commonly accepted definition.",
+      "evidence": "research/luna-100/sources/raw/2026-02-13-what-is-an-ai-engineer-in-2026-join.md"
+    },
+    {
+      "fact": "What an AI Engineer is supposed to do depends heavily on the company, the team, and the problem they are solving.",
+      "evidence": "research/luna-100/sources/raw/2026-02-13-what-is-an-ai-engineer-in-2026-join.md"
+    },
+    {
+      "fact": "The role is being shaped in real time through the interaction between two sides of the market: what companies expect and what candidates can deliver.",
+      "evidence": "research/luna-100/sources/raw/2026-02-13-what-is-an-ai-engineer-in-2026-join.md"
+    },
+    {
+      "fact": "As a result, expectations remain inconsistent and sometimes contradictory.",
+      "evidence": "research/luna-100/sources/raw/2026-02-13-what-is-an-ai-engineer-in-2026-join.md"
+    },
+    {
+      "fact": "That prompted me to start my own research on the topic.",
+      "evidence": "research/luna-100/sources/raw/2026-02-13-what-is-an-ai-engineer-in-2026-join.md"
+    },
+    {
+      "fact": "In this newsletter, I’ll share how I structured that research and what sources I’m using.",
+      "evidence": "research/luna-100/sources/raw/2026-02-13-what-is-an-ai-engineer-in-2026-join.md"
+    },
+    {
+      "fact": "And I also want to invite you to a four-part live Zoom series in which I’ll present the findings in greater depth.",
+      "evidence": "research/luna-100/sources/raw/2026-02-13-what-is-an-ai-engineer-in-2026-join.md"
+    },
+    {
+      "fact": "Recently, during an Office Hours session, one participant asked for concrete examples of AI Engineer take-home assignments used in interviews.",
+      "evidence": "research/luna-100/sources/raw/2026-02-13-what-is-an-ai-engineer-in-2026-join.md"
+    }
+  ],
+  "author_attribution": "Attribute projects and outcomes to the named author or participants in the source; do not add personal experience."
+}
