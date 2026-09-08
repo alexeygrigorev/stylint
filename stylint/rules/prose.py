@@ -499,7 +499,12 @@ def check_prose_line(
                     "'We use X', 'X does Y', or 'We will use `id`, a <description>'.",
                 )
             )
-    for match in REPEATED_AND_RE.finditer(plain):
+    # Dotted names belong in an item, but a full stop must not join two
+    # separate two-item sentences into one apparent polysyndetic chain.
+    for match in (
+        match for sentence in split_sentences(plain)
+        for match in REPEATED_AND_RE.finditer(sentence)
+    ):
         findings.append(
             Finding(
                 rel,

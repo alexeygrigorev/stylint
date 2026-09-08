@@ -2,6 +2,23 @@
 
 import re
 
+# Calibrated on the Luna article experiment. These labels announce an
+# evaluation before the sentence states the action or consequence. Keep
+# ordinary technical distinctions ("the main difference") and the author's
+# "valuable part" / "important thing" constructions outside this check.
+EVALUATIVE_FRAMING_RE = re.compile(
+    r"^(?:For\s+(?:me|us),\s+)?(?:"
+    r"The\s+(?:important|useful|interesting|practical)\s+part"
+    r"(?:\s+(?:for\s+(?:me|us)|here))?\s+(?:is|was)\b"
+    r"|(?:This|That|It)(?:\s+(?:is|was)|['’]s)\s+the\s+"
+    r"(?:(?:main|useful|important|practical|real)\s+)?"
+    r"(?:point|lesson|takeaway)\b)",
+    re.IGNORECASE,
+)
+DENSE_PARAGRAPH_MIN_WORDS = 50
+DENSE_PARAGRAPH_MIN_SENTENCES = 3
+DENSE_PARAGRAPH_MIN_RUN = 4
+
 
 LINK_RE = re.compile(r"\[([^\]]+)\]\([^)]+\)")
 QUESTION_HEADING_RE = re.compile(

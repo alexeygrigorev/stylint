@@ -14,6 +14,7 @@ from .rules.file_level import check_now_lets_overuse
 from .rules.headings import check_heading
 from .rules.markdown import check_markdown_line, check_table_row
 from .rules.prose import check_paragraph, check_prose_line
+from .rules.voice import check_dense_paragraph_runs, check_evaluative_framing
 from .tags import Tag
 from .text import (
     count_words,
@@ -97,6 +98,7 @@ def check_page(
     prev_block_kind = "start"
 
     paragraph_lines: list[tuple[int, str]] = []
+    voice_paragraphs: list[list[tuple[int, str]]] = []
     list_block: list[tuple[int, str]] = []
 
     def list_item_text(line: str) -> str:
@@ -175,6 +177,8 @@ def check_page(
     def flush_paragraph() -> None:
         if not paragraph_lines:
             return
+        voice_paragraphs.append(list(paragraph_lines))
+        errors.extend(check_evaluative_framing(paragraph_lines, rel))
         findings, pending_multi_colon_line = check_paragraph(
             paragraph_lines,
             rel,
@@ -411,6 +415,7 @@ def check_page(
     flush_blockquote()
 
     errors.extend(check_now_lets_overuse(now_lets_hits, rel))
+    errors.extend(check_dense_paragraph_runs(voice_paragraphs, text.splitlines(), rel))
 
     if nlp and nlp_lines:
         from .nlp import check_line

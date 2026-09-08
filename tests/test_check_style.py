@@ -1342,12 +1342,21 @@ def test_repeated_and_positive(body, tmp_path):
         "I am using more and more Codex over time.\n",
         # 'date and time' standalone is a 2-item compound - no chain.
         "Add date and time to the schedule.\n",
+        # Separate sentences are not one three-item chain.
+        "We cover Groq and Anthropic. Gemini and Z.ai are included too.\n",
+        "I checked input and output. Logs and traces were saved.\n",
     ],
 )
 def test_repeated_and_negative(body, tmp_path):
     root, page = make_page(tmp_path, body)
     errors = check_page(root, page)
     assert not any("repeated-and" in e for e in errors), f"false positive: {body!r}"
+
+
+def test_repeated_and_keeps_dotted_names_within_sentence(tmp_path):
+    root, page = make_page(tmp_path, "We cover Groq and Z.ai and Gemini.\n")
+    errors = check_page(root, page)
+    assert any("repeated-and" in error for error in errors)
 
 
 # ---------------------------------------------------------------------------

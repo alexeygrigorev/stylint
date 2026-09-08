@@ -69,7 +69,9 @@ class Tag(str, Enum):
     QUESTION_OPENER = "question-opener"
     PROSE_QUESTION = "prose-question"
     REPEATED_AND = "repeated-and"
+    EVALUATIVE_FRAMING = "evaluative-framing"
     # File-level
+    DENSE_PARAGRAPH_RUN = "dense-paragraph-run"
     NOW_LETS_OVERUSE = "now-lets-overuse"
     NOW_LETS_COMBO = "now-lets-combo"
     # NLP-based (only emitted with --nlp; see stylint/nlp.py)

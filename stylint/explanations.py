@@ -67,6 +67,32 @@ _E = Explanation
 
 
 _EXPLANATIONS: dict[str, Explanation] = {
+    Tag.EVALUATIVE_FRAMING.value: _E(
+        Tag.EVALUATIVE_FRAMING.value, "Evaluative lead-in",
+        "A sentence begins with a vague evaluation such as 'The useful part is' "
+        "or 'That was the point'. State the concrete action or consequence, "
+        "and delete a recap that repeats the preceding explanation.",
+        (("The useful part is that I can resume the session.",
+          "I can resume the session after reconnecting."),
+         ("That was the lesson: save the baseline before editing.",
+          "I save the baseline before editing.")),
+        "Calibrated against Alexey's published article bodies and Luna drafts. "
+        "This is a house-style preference, not an AI detector. Exact quotations "
+        "and code are excluded. Ordinary distinctions such as 'the main "
+        "difference' and concrete reasons are not banned.",
+    ),
+    Tag.DENSE_PARAGRAPH_RUN.value: _E(
+        Tag.DENSE_PARAGRAPH_RUN.value, "Run of dense paragraphs",
+        "Four or more consecutive prose paragraphs each have at least three "
+        "sentences and 50 words. This recurring generated shape is denser than "
+        "the author's reference articles. A structural block ends the run.",
+        (("Four adjacent paragraphs each combine a need, an action and a result.",
+          "Separate the need from the action where the topic changes; keep the "
+          "result with the sentence it explains."),),
+        "One finding covers a whole run. This does not ban an individual long "
+        "paragraph or impose a sentence-length target. Don't add filler or "
+        "decorative headings, and don't delete facts to satisfy the check.",
+    ),
     Tag.BOLD.value: _E(
         Tag.BOLD.value, "Bold markdown",
         "Bold markers (** or __) appear in prose. This house style does not "
