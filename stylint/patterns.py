@@ -190,6 +190,8 @@ BANNED_WORDS: dict[str, str] = {
     "harden": "use 'make more robust', 'add safeguards to', or name the specific improvement",
     "hardens": "use 'makes more robust', 'adds safeguards to', or name the specific improvement",
     "foreground": "use 'highlight', 'emphasize', 'draw attention to', or name what you actually do",
+    "gap": "name the concrete difference or what is missing ('we don't cover X', 'the two versions differ in Y')",
+    "bite": "drop the metaphor; for 'bite-sized' say 'short' or 'small' and give the actual length",
 }
 
 # Multi-word banned phrases. Substring match, case-insensitive.
@@ -777,6 +779,8 @@ OPENER_RE = re.compile(
 # trailing word boundary.
 BANNED_WORD_SUFFIXES: dict[str, str] = {
     "signal": r"(?:s|ed|ing|ling)?",  # signal, signals, signaled, signaling, signalling
+    "gap": r"s?",  # gap, gaps
+    "bite": r"s?",  # bite, bites
 }
 
 WORD_RES: dict[str, re.Pattern[str]] = {
