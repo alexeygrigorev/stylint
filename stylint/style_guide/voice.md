@@ -28,13 +28,15 @@ Some words depend on context:
   production concerns. Replace it when the sentence only means "real",
   "larger", or "more complete".
 - `build` is fine for constructing the app (`we build the agent`, `the build
-  step`), but never use it for the workshop session itself. Call the session
-  `the session` or `the live session`. `I used Claude Code for the live build`
-  becomes `I used Claude Code in the live session`. Same for `during the build`
-  or `in the build` when you mean the recorded session.
-- `decides` reads fine when a person decides. When an agent, router, or other
-  component is the subject (`the agent decides which tool to run`), name the
-  coordinating action instead — prefer `orchestrates`, `routes`, or `picks`.
+  step`), but never use it for the workshop session itself. The write-up is
+  standalone, so usually drop the time reference and state what happened.
+  `I used Claude Code for the live build` becomes `I used Claude Code`. When
+  the session must be named, call it `the session`. `the live session` is
+  banned for the same reason.
+- `decides` reads fine when a person decides. When an agent, model, router, or
+  other component is the subject (`the agent decides which tool to run`), name
+  the action instead: `picks`, `chooses`, `routes`, or `sets`. Stylint flags
+  `agent/model/LLM decides`.
 
 ## Voice rules
 

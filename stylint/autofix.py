@@ -9,6 +9,7 @@ from pathlib import Path
 
 from .patterns import CONTRACTION_RES
 from .tags import Tag
+from .text import contraction_is_stranded
 
 
 def apply_auto_fixes(findings: list, pages: list[tuple[Path, Path]]) -> int:
@@ -49,7 +50,7 @@ def apply_auto_fixes(findings: list, pages: list[tuple[Path, Path]]) -> int:
             original = lines[idx]
             new = original
             for pattern, replacement in CONTRACTION_RES:
-                new = pattern.sub(_replace_with_case(replacement), new)
+                new = pattern.sub(_replace_with_case(replacement, new), new)
             if new != original:
                 lines[idx] = new
                 fixed += 1
@@ -58,10 +59,13 @@ def apply_auto_fixes(findings: list, pages: list[tuple[Path, Path]]) -> int:
     return fixed
 
 
-def _replace_with_case(replacement: str):
-    """Return a repl function that preserves the case of the match."""
+def _replace_with_case(replacement: str, text: str):
+    """Return a repl function that preserves the case of the match and
+    leaves stranded forms ("how similar they are.") expanded."""
     def repl(match):
         matched = match.group(0)
+        if contraction_is_stranded(text, match.start(), match.end()):
+            return matched
         if matched[0].isupper():
             return replacement[0].upper() + replacement[1:]
         return replacement

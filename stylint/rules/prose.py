@@ -1,7 +1,10 @@
 """Prose shape rule patterns and thresholds."""
 
+import re
+
 from ..patterns import (
     ANAPHORIC_NO_RE,
+    EXTRA_CLEFT_RES,
     CALLOUT_LABELS,
     CHOPPY_SENTENCE_MAX_WORDS,
     CHOPPY_SENTENCE_MIN_RUN,
@@ -38,6 +41,7 @@ from ..models import Finding
 from ..tags import Tag
 from ..text import (
     classify_long_with_commas,
+    contraction_is_stranded,
     count_sentences,
     count_words,
     find_gerund_starts,
@@ -218,7 +222,17 @@ def check_paragraph(
     # "Or hand them a new task. I don't have a lot of free time.
     # This is how I make more of it." -> combine: "I don't have a lot
     # of free time, so this is how I make more of it."
-    short_flags = [count_words(s) <= CHOPPY_SENTENCE_MAX_WORDS for s in sentences]
+    # Count inline code as one word: "We use `docs.py` for this." has five
+    # words, not four. `sentences` strips code entirely.
+    # A sentence made only of code (a wrapped list item's continuation line)
+    # was dropped before, so keep dropping it.
+    rhythm_sentences = [
+        s for s in split_sentences(
+            re.sub(r"`[^`]*`", " INLINECODE ", strip_link_urls(joined_raw))
+        )
+        if s.replace("INLINECODE", "").strip(" .,;:!?")
+    ]
+    short_flags = [count_words(s) <= CHOPPY_SENTENCE_MAX_WORDS for s in rhythm_sentences]
     short_run_start = 0
     for i in range(1, len(short_flags) + 1):
         in_run = i < len(short_flags) and short_flags[i]
@@ -245,8 +259,8 @@ def check_paragraph(
     # left neighbour is not short). "Retrieval becomes semantic. The data
     # moves somewhere it survives restarts..." -> join the small clause
     # onto the longer sentence.
-    word_counts = [count_words(s) for s in sentences]
-    for i in range(len(sentences) - 1):
+    word_counts = [count_words(s) for s in rhythm_sentences]
+    for i in range(len(rhythm_sentences) - 1):
         prev_short = i > 0 and word_counts[i - 1] <= CHOPPY_SENTENCE_MAX_WORDS
         if (
             word_counts[i] <= MERGE_SHORT_MAX_WORDS
@@ -394,8 +408,9 @@ def check_paragraph(
             "cause directly ('people found it useful because ...', 'the "
             "honest tone earned the goodwill')",
         ),
+        *EXTRA_CLEFT_RES,
     ):
-        if regex.search(joined):
+        if regex.search(strip_double_quoted(joined)):
             already_flagged = any(
                 regex.search(strip_inline_code(strip_link_urls(line)))
                 for _, line in paragraph_lines
@@ -466,6 +481,9 @@ def check_prose_line(
                 "pointless cleft '[This/That/It] is what X is about'; state directly what X does or is",
             )
         )
+    for regex, cleft_hint in EXTRA_CLEFT_RES:
+        if regex.search(strip_double_quoted(plain)):
+            findings.append(Finding(rel, line_no, Tag.CLEFT, cleft_hint))
     if PSEUDO_CLEFT_MADE_RE.search(plain):
         findings.append(
             Finding(
@@ -522,7 +540,11 @@ def check_prose_line(
             )
         )
     for pattern, replacement in CONTRACTION_RES:
-        match = pattern.search(plain)
+        match = next(
+            (m for m in pattern.finditer(plain)
+             if not contraction_is_stranded(plain, m.start(), m.end())),
+            None,
+        )
         # A bare "we will:" is a natural heading for a roadmap, while
         # "we will cover:" is ordinary prose and should still contract.
         # Only exempt the will -> 'll forms when will is the final word

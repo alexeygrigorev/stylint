@@ -57,6 +57,10 @@ The package has these main files:
 - `stylint/style_guide/prompt-abstract-subject.md` - required final-pass
   prompt for abstract nouns used as sentence subjects. Print it with
   `stylint --prompt abstract-subject`.
+- `stylint/style_guide/prompt-simplify.md` - required final-pass prompt that
+  makes text easier to read for readers whose first language may not be
+  English: literal words over idioms, direct claims over clefts, terms
+  defined on first use. Print it with `stylint --prompt simplify`.
 These style guide docs are bundled in the Python package.
 
 Print their installed paths:

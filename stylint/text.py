@@ -84,6 +84,34 @@ def split_sentences(text: str) -> list[str]:
     return [s.strip() for s in SENTENCE_END_RE.split(text) if s.strip()]
 
 
+# "how close they are to each other", "what it is", "where we are." - the
+# verb has lost its complement (it moved to the front or the sentence ends),
+# and English won't contract a stranded "be"/"will": "how similar they're."
+# is ungrammatical. Negations ("do not") are unaffected.
+_STRANDED_AFTER_RE = re.compile(r"^\s*(?:$|[.,;:!?)\"'\]])")
+_STRANDED_WH_BEFORE_RE = re.compile(
+    r"\b(?:how|what|where|whatever|wherever|who|as|than)\s+(?:[\w'-]+\s+){0,2}$",
+    re.IGNORECASE,
+)
+_PROGRESSIVE_NEXT_RE = re.compile(r"^\s+(?:\w+ing|\w+ed|going|not)\b", re.IGNORECASE)
+
+
+def contraction_is_stranded(text: str, start: int, end: int) -> bool:
+    """True when the expanded form at text[start:end] can't be contracted:
+    it ends the clause, or a wh-/degree word pulled its complement to the
+    front ("how close they are to X"). Only pronoun + be/will forms can
+    strand; "do not" and friends always contract."""
+    span = text[start:end].lower()
+    if span.endswith(" not") or span in {"cannot", "can not"}:
+        return False
+    after = text[end:]
+    if _STRANDED_AFTER_RE.match(after):
+        return True
+    if _STRANDED_WH_BEFORE_RE.search(text[:start]) and not _PROGRESSIVE_NEXT_RE.match(after):
+        return True
+    return False
+
+
 def count_words(text: str) -> int:
     """Count whitespace-delimited tokens that contain at least one word char."""
     return sum(1 for token in text.split() if re.search(r"\w", token))

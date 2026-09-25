@@ -115,7 +115,7 @@ def test_package_exposes_agents_guide():
 def test_package_exposes_review_prompts():
     files = prompt_files()
 
-    assert set(files) == {"abstract-subject", "noun-phrase-smell", "alexey-brief", "alexey-draft", "alexey-rewrite"}
+    assert set(files) == {"abstract-subject", "noun-phrase-smell", "simplify", "alexey-brief", "alexey-draft", "alexey-rewrite"}
     path = prompt_file("abstract-subject")
     assert path == files["abstract-subject"]
     assert path.is_file()

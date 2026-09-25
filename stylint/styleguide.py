@@ -47,6 +47,7 @@ def prompt_files() -> dict[str, Path]:
     return {
         "abstract-subject": guide / "prompt-abstract-subject.md",
         "noun-phrase-smell": guide / "prompt-noun-phrase-smell.md",
+        "simplify": guide / "prompt-simplify.md",
         "alexey-brief": guide / "prompt-alexey-brief.md",
         "alexey-draft": guide / "prompt-alexey-draft.md",
         "alexey-rewrite": guide / "prompt-alexey-rewrite.md",

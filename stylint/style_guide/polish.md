@@ -123,6 +123,34 @@ sequence changed, or which constraint forced the design.
 
 Use `stylint --prompt noun-phrase-smell` for this judgment pass.
 
+## Write for readers whose first language may not be English
+
+Many readers translate as they read. An idiom they can't look up word by word
+stops them, even inside a short sentence. Use the literal word. Stylint already
+flags the idioms that are almost never literal (`kicks in`, `the hard way`,
+`under the hood`, `house rules`, `speaks to`, `box` for a server, clefts like
+`this is where` and `X is what lets Y`). These need judgment, because they have
+a literal sense too:
+
+- `lives in` / `lives at` for a file or setting. Fine for "the config lives in
+  `.env`". For a value or component, say `is in` or `runs in`.
+- `hits` a URL or endpoint -> `calls` or `sends a request to`.
+- `steer` the model -> `tell`, `instruct`, or `control`. Keep it for a real
+  steering API.
+- `clean` / `cleaner` -> name the property: `short`, `no extra shell`,
+  `one function per job`.
+- Phrasal verbs with a one-word equivalent: `bring up` -> `start`, `tear down`
+  -> `delete` (keep `teardown` as the name of a step), `spin up` -> `start` or
+  `create`, `take care of` -> name the actions.
+- `mint`, `grab`, `poke at`, `nudge`, `trip` -> `create`, `copy`, `test`,
+  `ask`, `trigger`.
+
+Define a term the first time it appears, in the same sentence: `the
+trajectory (the sequence of tool calls the agent made)`. A definition three
+paragraphs later doesn't help the reader who stopped at the first use.
+
+Use `stylint --prompt simplify` for the full pass.
+
 ## Don't use "loop" as a vague metaphor
 
 Keep "loop" for a literal loop: a `for` or `while` loop, or the agent,

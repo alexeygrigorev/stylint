@@ -120,6 +120,34 @@ PSEUDO_CLEFT_MADE_RE = re.compile(
     r"(?:it|them|this|that|him|her|us)\b",
     re.IGNORECASE,
 )
+# Cleft framings that wrap a plain claim in "is where" / "is what" /
+# "what X is". Each rewrite is shorter and names the actor:
+# "This is where RAG helps" -> "RAG helps here";
+# "Separating them is what stops the agent" -> "Separating them stops the
+# agent"; "What matters is that you narrow" -> "Narrow ...".
+EXTRA_CLEFT_RES: tuple[tuple[re.Pattern[str], str], ...] = (
+    (
+        re.compile(r"\b(?:this|that|which|here)\s+(?:is|was)\s+where\b", re.IGNORECASE),
+        "cleft 'this is where X'; state X directly ('RAG helps most here', "
+        "'input guardrails stop bad requests early')",
+    ),
+    (
+        re.compile(
+            r"\b(?:is|are|was|were)\s+(?:exactly\s+|really\s+)?what\s+"
+            r"(?:lets|let|stops|stop|keeps|keep|gives|give|turns|turn|allows|"
+            r"allow|drives|drive|decides|decide|prevents|prevent|protects|"
+            r"separates|ties|connects|holds)\b",
+            re.IGNORECASE,
+        ),
+        "pseudo-cleft 'X is what lets/stops Y'; drop 'is what' and use the "
+        "verb directly ('keeping them separate stops the agent from ...')",
+    ),
+    (
+        re.compile(r"(?:^|[.!?:]\s+)What\s+(?:matters|changes|stays|counts|helps)\s+(?:most\s+)?is\b"),
+        "cleft 'What matters/changes is X'; state X directly ('Narrow the "
+        "field first', 'Only the input changes')",
+    ),
+)
 THIS_IS_CODE_LEAD_IN_RE = re.compile(r"^This is\b.*:\s*$")
 
 # Lazy headings starting with "The X". Catches both the bare "## The
@@ -163,7 +191,7 @@ BANNED_WORDS: dict[str, str] = {
     "basically": "drop",
     "very": "drop",
     "really": "drop",
-    "underneath": "use 'under the hood' / 'inside' / 'behind'",
+    "underneath": "use 'inside' / 'behind', or name the layer ('the OpenAI client calls the HTTP API')",
     "surprisingly": "drop the editorializing",
     "remarkably": "drop the editorializing",
     "faithful": "drop the metaphor; describe the concrete match",
@@ -193,6 +221,11 @@ BANNED_WORDS: dict[str, str] = {
     "gap": "name the concrete difference or what is missing ('we don't cover X', 'the two versions differ in Y')",
     "bite": "drop the metaphor; for 'bite-sized' say 'short' or 'small' and give the actual length",
     "survive": "describe what remains or continues instead of using a survival metaphor",
+    "mirror": "use 'match', 'copy', or 'follow'; keep only for a literal mirror (a package mirror, a mirrored repo)",
+    "cadence": "use 'pace', 'schedule', or say how often ('three posts a week')",
+    "synthesize": "use 'write', 'combine', or 'summarize'; keep only for speech synthesis",
+    "overkill": "say what is too much ('a database is more than we need for 20 rows')",
+    "box": "for a server say 'server' or 'machine'; keep for UI boxes ('text box', 'search box')",
     "surviving": "describe what remains or continues instead of using a survival metaphor",
 }
 
@@ -214,8 +247,8 @@ BANNED_PHRASES: dict[str, str] = {
     "the longer answer": "drop the preamble; give the answer",
     "the long answer": "drop the preamble; give the answer",
     "the important difference": "rewrite as a direct contrast",
-    "the live build": "the workshop session is not a 'build'; use 'the live session' / 'the session'",
-    "for the live build": "the workshop session is not a 'build'; use 'in the live session'",
+    "the live build": "the workshop session is not a 'build'; state what happened directly, or say 'the session'",
+    "for the live build": "the workshop session is not a 'build'; state what happened directly, or say 'in the session'",
     "reference implementation": "use 'finished app' / 'example app' / 'working version'",
     "demo artifact": "name the file/app/output",
     "framework-agnostic": "use 'works across frameworks'",
@@ -322,6 +355,16 @@ BANNED_PHRASES: dict[str, str] = {
     "an audience member": "state the content directly without attributing it to an audience member. The workshop is standalone",
     "in the live session": "the workshop is standalone - state what happened directly, not when or to whom",
     "the live session": "the workshop is standalone - state what happened directly, not when or to whom",
+    "house rules": "use 'project rules' or name the file ('the rules in AGENTS.md')",
+    "earns its keep": "drop the idiom; say what it does for the reader ('saves a deploy', 'catches the typo')",
+    "earns its place": "drop the idiom; say what it does for the reader ('saves a deploy', 'catches the typo')",
+    "the hard way": "drop the idiom; say what went wrong ('I found out after the bill arrived')",
+    "the expensive way": "drop the idiom; say what went wrong ('I found out after the bill arrived')",
+    "under the hood": "use 'inside' or name the layer ('the SDK sends an HTTP request')",
+    "moving parts": "name the parts ('the API, the worker, and the queue')",
+    "next step up": "use 'the next step' or name it",
+    "first-class": "use 'built-in' or 'native'",
+    "is a passenger": "drop the metaphor; say what the component can't do ('the model can't search again')",
     "suffer": "do not anthropomorphize - inanimate things don't suffer; "
                "describe what actually goes wrong "
                "('the answer is wrong', 'the latency doubles')",
@@ -330,6 +373,36 @@ BANNED_PHRASES: dict[str, str] = {
 # Regex banned phrases. Use these for phrasing families where exact
 # substring matching would miss the pattern.
 BANNED_PHRASE_PATTERNS: dict[str, tuple[re.Pattern[str], str]] = {
+    "speaks to": (
+        re.compile(r"\bspeak(?:s|ing)?\s+to\s+(?!(?:the|a|an|your|our|my)\s+(?:agent|model|api|llm|server|endpoint|database)\b)", re.IGNORECASE),
+        "use 'is relevant to', 'fits', or 'matches'. Keep only the literal "
+        "sense (a person or a client talking to a server)",
+    ),
+    "kick in / kick off": (
+        re.compile(r"\bkick(?:s|ed|ing)?\s+(?:in|off)\b", re.IGNORECASE),
+        "use 'start', 'apply', or 'take effect'",
+    ),
+    "bake in": (
+        re.compile(r"\bbak(?:e|es|ed|ing)\s+(?:\w+\s+){0,3}?(?:in|into)\b", re.IGNORECASE),
+        "use 'include', 'put into', or 'build into'; name what goes where "
+        "('we copy the model weights into the image')",
+    ),
+    "agent decides": (
+        re.compile(
+            r"\b(?:agent|model|llm|router|orchestrator|assistant|workflow)s?\s+"
+            r"(?:then\s+|now\s+|itself\s+|still\s+)?decide[sd]\b",
+            re.IGNORECASE,
+        ),
+        "a component doesn't decide; use 'picks', 'chooses', 'routes', or "
+        "'sets'. Keep 'decides' for people",
+    ),
+    "here we cover (meta)": (
+        re.compile(
+            r"(?:^|[.!?]\s+)Here,?\s+we(?:'ll| will)?\s+(?:cover|list|give|make\s+the\s+case|walk\s+through|go\s+over|explain|talk\s+about)\b"
+        ),
+        "drop the meta-narration; the heading already says what the part "
+        "covers. Start with the first real statement",
+    ),
     "close the loop": (
         re.compile(r"\bclos(?:e|es|ed|ing)\s+the\s+loop\b", re.IGNORECASE),
         "drop the cliche; state plainly what now works or what connects to what",
@@ -784,6 +857,9 @@ BANNED_WORD_SUFFIXES: dict[str, str] = {
     "gap": r"s?",  # gap, gaps
     "bite": r"s?",  # bite, bites
     "survive": r"(?:s|d)?",  # survive, survives, survived
+    "mirror": r"(?:s|ed|ing)?",
+    "synthesize": r"(?:s|d)?",
+    "box": r"(?:es)?",
 }
 
 WORD_RES: dict[str, re.Pattern[str]] = {
@@ -819,6 +895,31 @@ WORD_EXCEPTION_RES: dict[str, re.Pattern[str]] = {
     ),
     # "contract" is fine as the technical term "API contract".
     "contract": re.compile(r"\bAPIs?\s+contract\b", re.IGNORECASE),
+    # UI widgets and literal containers are boxes; only the server slang
+    # ("a Hetzner box", "ssh into the box") is banned.
+    "box": re.compile(
+        r"\b(?:text|input|check|search|dialog|chat|select|combo|message|"
+        r"comment|list|drop-down|dropdown|edit|prompt|answer|question|"
+        r"bounding|tool|black|white|gray|grey|call-?out|info|warning|note|"
+        r"password|email|login)[\s-]+box(?:es)?\b"
+        r"|\bbox(?:es)?\s+(?:model|shadow|plot)\b"
+        r"|\bout\s+of\s+the\s+box\b",
+        re.IGNORECASE,
+    ),
+    "mirror": re.compile(
+        r"\b(?:package|pypi|npm|apt|git|repo|registry|docker|local)\s+mirrors?\b"
+        r"|\bmirror(?:s|ed|ing)?\s+(?:repo|repository|registry)\b",
+        re.IGNORECASE,
+    ),
+    "synthesize": re.compile(
+        r"\bsynthesi[sz](?:e|es|ed|ing)\s+(?:speech|audio|voice)\b"
+        r"|\b(?:speech|audio|voice)\b[^.!?`]{0,30}\bsynthesi[sz]",
+        re.IGNORECASE,
+    ),
+    "foreground": re.compile(
+        r"\b(?:in|to)\s+the\s+foreground\b|\bforeground\s+(?:process|job|task)\b",
+        re.IGNORECASE,
+    ),
 }
 
 # Per-phrase exception contexts for BANNED_PHRASE_PATTERNS (same idea as
