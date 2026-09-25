@@ -533,8 +533,9 @@ _EXPLANATIONS: dict[str, Explanation] = {
     ),
     Tag.CHOPPY_RHYTHM.value: _E(
         Tag.CHOPPY_RHYTHM.value, "Choppy rhythm",
-        "Two or more consecutive short sentences (9 words or fewer each) "
-        "read as staccato. Also fires when a single very short sentence (4 "
+        "Three or more consecutive short sentences (9 words or fewer each), "
+        "or two very short ones (6 words or fewer each), read as staccato. "
+        "Also fires when a single very short sentence (4 "
         "words or fewer) sits right before a longer one and is too small to "
         "stand alone. Fix: combine them with a conjunction or restructure "
         "as a single longer sentence.",

@@ -1414,6 +1414,53 @@ def test_choppy_rhythm_negative_after_join(tmp_path):
     assert not any("choppy-rhythm" in e for e in errors)
 
 
+def test_choppy_rhythm_mid_paragraph_run(tmp_path):
+    # A short run after a long sentence is flagged too, not only a run
+    # that opens the paragraph.
+    body = (
+        "The local environment works for everyone who already has Python installed. "
+        "It is fine. Nothing here needs Codespaces.\n"
+    )
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert any("choppy-rhythm" in e for e in errors)
+
+
+def test_choppy_rhythm_pair_of_plain_sentences_negative(tmp_path):
+    # Two 8-9 word sentences in a row are plain English, not staccato.
+    body = (
+        "Temporal runs the ingestion side of the pipeline for us. "
+        "It also loops over many videos in one run. "
+        "The script wraps the whole flow in three subcommands that you call from the shell.\n"
+    )
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert not any("choppy-rhythm" in e for e in errors)
+
+
+def test_choppy_rhythm_three_medium_sentences_positive(tmp_path):
+    body = (
+        "Temporal runs the ingestion side of the pipeline. "
+        "It also loops over many videos in one run. "
+        "The script wraps this in three subcommands.\n"
+    )
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert any("choppy-rhythm" in e for e in errors)
+
+
+def test_merge_short_after_medium_sentence_positive(tmp_path):
+    # The tiny sentence is not part of a flagged run (8 + 3 words is not a
+    # very-short pair), so the merge check still catches it.
+    body = (
+        "We ran the full evaluation on every model. It failed. "
+        "The judge returned a malformed JSON object for the third test case.\n"
+    )
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert any("very short sentence" in e for e in errors)
+
+
 # ---------------------------------------------------------------------------
 # Smoke test: clean known-good page
 # ---------------------------------------------------------------------------

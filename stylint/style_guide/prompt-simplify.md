@@ -76,8 +76,10 @@ Work through the text in this order.
 - Pad. The result should be the same length or shorter.
 - Turn text into bullet lists, or add headings.
 - Chop every sentence into five-word pieces. Stylint's `choppy-rhythm` flags
-  two short sentences in a row. When a split trips it, join the two halves
-  with `because`, `so`, `but`, or `when` instead of undoing the split.
+  two very short sentences (6 words or fewer) or three short ones (9 words or
+  fewer) in a row. A split that leaves each half at 8-15 words is fine. When a
+  split trips the rule, join the two halves with `because`, `so`, `but`, or
+  `when` instead of undoing the split.
 - Swap plain words for "better" synonyms. `simple`, `works`, and `like` stay.
 - Add em dashes. Use a period, a comma, or parentheses.
 

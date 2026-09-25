@@ -988,15 +988,17 @@ PARAGRAPH_MAX_SENTENCES = 5
 # short ones - the rule messages say so.
 SENTENCE_MAX_WORDS = 25
 SENTENCE_MAX_COMMAS = 3
-# Choppy-rhythm threshold: a sentence with at most this many words
-# counts as "short". TWO short sentences in a row already read as
-# staccato - especially with a longer sentence right after - so the run
-# bar is 2, not 3 ("So we make two changes. Retrieval becomes semantic.
-# The data moves somewhere it survives restarts without paying for a
-# server." -> "We make two changes: retrieval becomes semantic, and the
-# data moves to a store that survives restarts without a paid server.").
+# Choppy-rhythm thresholds. A sentence with at most
+# CHOPPY_SENTENCE_MAX_WORDS words counts as "short", and three short
+# sentences in a row read as staccato. Two in a row only do when both are
+# very short (CHOPPY_PAIR_MAX_WORDS or fewer): "So we make two changes.
+# Retrieval becomes semantic." is staccato, but "It also loops over many
+# videos. The script wraps this in three subcommands." is plain English,
+# and flagging it undoes the one-idea-per-sentence splits the simplify pass
+# asks for.
 CHOPPY_SENTENCE_MAX_WORDS = 9
-CHOPPY_SENTENCE_MIN_RUN = 2
+CHOPPY_SENTENCE_MIN_RUN = 3
+CHOPPY_PAIR_MAX_WORDS = 6
 # A single very short sentence (this many words or fewer) sitting right
 # before a longer one is a merge candidate on its own, even when it is
 # not part of a run of short sentences: "Retrieval becomes semantic. The

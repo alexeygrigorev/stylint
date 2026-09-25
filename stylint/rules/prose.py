@@ -8,6 +8,7 @@ from ..patterns import (
     CALLOUT_LABELS,
     CHOPPY_SENTENCE_MAX_WORDS,
     CHOPPY_SENTENCE_MIN_RUN,
+    CHOPPY_PAIR_MAX_WORDS,
     COLON_INLINE_LIST_RE,
     CONTRACTION_RES,
     COUNT_LIST_LEAD_RE,
@@ -218,7 +219,8 @@ def check_paragraph(
                 )
             run_start = i
 
-    # Choppy rhythm: 3+ short sentences in a row read as staccato.
+    # Choppy rhythm: 3+ short sentences in a row, or 2 very short ones,
+    # read as staccato.
     # "Or hand them a new task. I don't have a lot of free time.
     # This is how I make more of it." -> combine: "I don't have a lot
     # of free time, so this is how I make more of it."
@@ -232,40 +234,47 @@ def check_paragraph(
         )
         if s.replace("INLINECODE", "").strip(" .,;:!?")
     ]
-    short_flags = [count_words(s) <= CHOPPY_SENTENCE_MAX_WORDS for s in rhythm_sentences]
-    short_run_start = 0
-    for i in range(1, len(short_flags) + 1):
-        in_run = i < len(short_flags) and short_flags[i]
-        if not in_run:
-            run_len = i - short_run_start
-            if run_len >= CHOPPY_SENTENCE_MIN_RUN and short_flags[short_run_start]:
-                findings.append(
-                    Finding(
-                        rel,
-                        start_line,
-                        Tag.CHOPPY_RHYTHM,
-                        f"{run_len} consecutive short sentences "
-                        f"(<= {CHOPPY_SENTENCE_MAX_WORDS} words each). "
-                        "The staccato rhythm reads worse than one or two joined "
-                        "sentences. Fix: combine two of them with a conjunction "
-                        "('so', 'because', 'and', 'but') or restructure as a "
-                        "single longer sentence.",
-                    )
+    word_counts = [count_words(s) for s in rhythm_sentences]
+    in_flagged_run: set[int] = set()
+    i = 0
+    while i < len(word_counts):
+        if word_counts[i] > CHOPPY_SENTENCE_MAX_WORDS:
+            i += 1
+            continue
+        run_end = i
+        while run_end < len(word_counts) and word_counts[run_end] <= CHOPPY_SENTENCE_MAX_WORDS:
+            run_end += 1
+        run = word_counts[i:run_end]
+        very_short_pair = any(
+            a <= CHOPPY_PAIR_MAX_WORDS and b <= CHOPPY_PAIR_MAX_WORDS
+            for a, b in zip(run, run[1:])
+        )
+        if len(run) >= CHOPPY_SENTENCE_MIN_RUN or very_short_pair:
+            in_flagged_run.update(range(i, run_end))
+            findings.append(
+                Finding(
+                    rel,
+                    start_line,
+                    Tag.CHOPPY_RHYTHM,
+                    f"{len(run)} consecutive short sentences "
+                    f"({', '.join(str(n) for n in run)} words). "
+                    "The staccato rhythm reads worse than one or two joined "
+                    "sentences. Fix: combine two of them with a conjunction "
+                    "('so', 'because', 'and', 'but') or restructure as a "
+                    "single longer sentence.",
                 )
-            short_run_start = i
+            )
+        i = run_end
 
     # Merge candidate: a single very short sentence sitting right before a
-    # longer one, when it is NOT already part of a flagged short run (its
-    # left neighbour is not short). "Retrieval becomes semantic. The data
-    # moves somewhere it survives restarts..." -> join the small clause
-    # onto the longer sentence.
-    word_counts = [count_words(s) for s in rhythm_sentences]
+    # longer one, when it is NOT already part of a flagged short run.
+    # "Retrieval becomes semantic. The data moves somewhere it survives
+    # restarts..." -> join the small clause onto the longer sentence.
     for i in range(len(rhythm_sentences) - 1):
-        prev_short = i > 0 and word_counts[i - 1] <= CHOPPY_SENTENCE_MAX_WORDS
         if (
             word_counts[i] <= MERGE_SHORT_MAX_WORDS
             and word_counts[i + 1] > CHOPPY_SENTENCE_MAX_WORDS
-            and not prev_short
+            and i not in in_flagged_run
         ):
             findings.append(
                 Finding(
