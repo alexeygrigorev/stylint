@@ -211,6 +211,21 @@ def test_survive_inflections_are_banned(tmp_path, body, word):
     assert any(f"[banned-word] '{word}'" in e for e in errors)
 
 
+@pytest.mark.parametrize(
+    "body, word",
+    [
+        ("## The Trap\n", "Trap"),
+        ("Many students fall into this trap.\n", "trap"),
+        ("There are two traps here.\n", "traps"),
+        ("They got trapped in planning.\n", "trapped"),
+    ],
+)
+def test_trap_inflections_are_banned(tmp_path, body, word):
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert any(f"[banned-word] '{word}'" in e for e in errors)
+
+
 def test_banned_phrase_pattern_below_positive(tmp_path):
     root, page = make_page(tmp_path, "The type below matches that shape.\n")
     errors = check_page(root, page)

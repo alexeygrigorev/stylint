@@ -227,6 +227,7 @@ BANNED_WORDS: dict[str, str] = {
     "overkill": "say what is too much ('a database is more than we need for 20 rows')",
     "box": "for a server say 'server' or 'machine'; keep for UI boxes ('text box', 'search box')",
     "surviving": "describe what remains or continues instead of using a survival metaphor",
+    "trap": "drop the metaphor; name the mistake or risk directly ('the common mistake', 'what goes wrong')",
 }
 
 # Multi-word banned phrases. Substring match, case-insensitive.
@@ -857,6 +858,7 @@ BANNED_WORD_SUFFIXES: dict[str, str] = {
     "gap": r"s?",  # gap, gaps
     "bite": r"s?",  # bite, bites
     "survive": r"(?:s|d)?",  # survive, survives, survived
+    "trap": r"(?:s|ped|ping)?",  # trap, traps, trapped, trapping
     "mirror": r"(?:s|ed|ing)?",
     "synthesize": r"(?:s|d)?",
     "box": r"(?:es)?",
