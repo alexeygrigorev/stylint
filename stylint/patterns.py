@@ -167,6 +167,10 @@ LAZY_HEADING_RE = re.compile(
     re.IGNORECASE,
 )
 
+# "## About X" - a heading that opens with "About" announces the topic
+# instead of naming what the section says.
+ABOUT_HEADING_RE = re.compile(r"^#{1,6}\s+About\b", re.IGNORECASE)
+
 # Single banned tokens. Whole-word, case-insensitive in prose.
 BANNED_WORDS: dict[str, str] = {
     "twist": "drop the narrative cliche; state what actually changed",

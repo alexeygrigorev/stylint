@@ -613,6 +613,18 @@ def test_question_word_heading_negative(tmp_path):
     assert not any("avoid question-word headings" in e for e in errors)
 
 
+def test_about_heading_positive(tmp_path):
+    root, page = make_page(tmp_path, "## About GitHub Codespaces\n\nSome prose here.\n")
+    errors = check_page(root, page)
+    assert any("[heading-about]" in e for e in errors)
+
+
+def test_about_heading_negative(tmp_path):
+    root, page = make_page(tmp_path, "## Aboutness and GitHub Codespaces\n\nSome prose here.\n")
+    errors = check_page(root, page)
+    assert not any("[heading-about]" in e for e in errors)
+
+
 def test_question_in_prose_positive(tmp_path):
     body = "We need to decide this first. How do we wait for one async call?\n"
     root, page = make_page(tmp_path, body)

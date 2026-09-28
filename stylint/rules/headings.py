@@ -1,6 +1,7 @@
 """Heading rule patterns."""
 
 from ..patterns import (
+    ABOUT_HEADING_RE,
     DEEP_HEADING_RE,
     LAZY_HEADING_RE,
     QUESTION_HEADING_ALLOWLIST,
@@ -11,6 +12,7 @@ from ..models import Finding
 from ..tags import Tag
 
 __all__ = [
+    "ABOUT_HEADING_RE",
     "DEEP_HEADING_RE",
     "LAZY_HEADING_RE",
     "QUESTION_HEADING_ALLOWLIST",
@@ -42,6 +44,15 @@ def check_heading(line: str, line_no: int, rel) -> list[Finding]:
                 line_no,
                 Tag.LAZY_HEADING,
                 "lazy heading 'The <problem|issue|...>'; name what the section is actually about",
+            )
+        )
+    if ABOUT_HEADING_RE.match(line):
+        findings.append(
+            Finding(
+                rel,
+                line_no,
+                Tag.HEADING_ABOUT,
+                "heading starts with 'About'; name what the section says instead",
             )
         )
     return findings

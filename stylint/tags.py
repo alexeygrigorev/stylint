@@ -28,6 +28,7 @@ class Tag(str, Enum):
     HEADING_QUESTION_MARK = "heading-question-mark"
     HEADING_TOO_DEEP = "heading-too-deep"
     LAZY_HEADING = "lazy-heading"
+    HEADING_ABOUT = "heading-about"
     # Code blocks
     CODE_NO_LANG = "code-no-lang"
     CODE_TOO_LONG = "code-too-long"

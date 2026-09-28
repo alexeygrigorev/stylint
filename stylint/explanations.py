@@ -259,6 +259,15 @@ _EXPLANATIONS: dict[str, Explanation] = {
             ("## The big idea", "## Semantic search with embeddings"),
         ),
     ),
+    Tag.HEADING_ABOUT.value: _E(
+        Tag.HEADING_ABOUT.value, "Heading starts with 'About'",
+        "A heading opens with 'About'. It announces the topic instead of "
+        "naming what the section says. Name the content directly.",
+        (
+            ("## About GitHub Codespaces", "## GitHub Codespaces"),
+            ("## About the dataset", "## The FAQ dataset"),
+        ),
+    ),
     Tag.CODE_NO_LANG.value: _E(
         Tag.CODE_NO_LANG.value, "Code block missing language tag",
         "A code fence has no language tag after the backticks. Add one so "
