@@ -886,7 +886,9 @@ WORD_EXCEPTION_RES: dict[str, re.Pattern[str]] = {
     # "signal" is fine in technical contexts: OS signals (SIGTERM), queue
     # sentinels, or a programmatic flag/field that indicates state.
     "signal": re.compile(
-        r"\b(?:os\s+)?signals?\s+(?:from|to|handler|processing|flow)\b"
+        r"\b(?:os|unix|posix|process|kernel)\s+signals?\b"
+        r"|\bsignals?\s+(?:handler|processing)\b"
+        r"|\bsignals?\s+(?:from|to)\s+(?:the\s+)?(?:os|process|kernel|parent|child|worker|thread)\b"
         r"|\bsignal(?:s|ed|ing)?\s+(?:the|a|an)\s+(?:end|start|stop|done|completion)\b"
         r"|\b(?:is|as|the)\s+signal\s+(?:that|for|to)\b"
         r"|\bsignals?\s+(?:propagat|handl|flow|rout)\b",

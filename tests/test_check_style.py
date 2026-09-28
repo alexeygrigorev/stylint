@@ -226,6 +226,32 @@ def test_trap_inflections_are_banned(tmp_path, body, word):
     assert any(f"[banned-word] '{word}'" in e for e in errors)
 
 
+@pytest.mark.parametrize(
+    "body",
+    [
+        "## Other Signals to Track\n",
+        "Clicks send signals to the dashboard.\n",
+    ],
+)
+def test_signal_to_is_banned(tmp_path, body):
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert any("[banned-word] 'Signals'" in e or "[banned-word] 'signals'" in e for e in errors)
+
+
+@pytest.mark.parametrize(
+    "body",
+    [
+        "The worker sends signals to the child process on shutdown.\n",
+        "Register an OS signal handler for SIGTERM.\n",
+    ],
+)
+def test_technical_signal_is_allowed(tmp_path, body):
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert not any("[banned-word] 'signal" in e for e in errors)
+
+
 def test_banned_phrase_pattern_below_positive(tmp_path):
     root, page = make_page(tmp_path, "The type below matches that shape.\n")
     errors = check_page(root, page)
