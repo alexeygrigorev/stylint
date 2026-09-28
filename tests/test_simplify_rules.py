@@ -29,6 +29,8 @@ def findings(tmp_path: Path, text: str, tag: Tag):
     ('The SDK sends a POST request under the hood.', Tag.BANNED_PHRASE),
     ('We bake the model weights into the image.', Tag.BANNED_PHRASE),
     ('The model decides which tool to call next.', Tag.BANNED_PHRASE),
+    ('The failures teach us the most.', Tag.BANNED_PHRASE),
+    ('This course teaches you how to build AI apps.', Tag.BANNED_PHRASE),
     ('The script works. Here, we cover the deployment steps in order.', Tag.BANNED_PHRASE),
     ('The framework has a first-class guardrail API.', Tag.BANNED_PHRASE),
     ('The fixed pipeline cannot retry, and the model is a passenger.', Tag.BANNED_PHRASE),
@@ -48,6 +50,9 @@ def test_simplify_rules_fire(tmp_path, text, tag):
     ('Vite runs in the foreground until you stop it.', Tag.BANNED_WORD),
     ('The client speaks to the server over HTTP.', Tag.BANNED_PHRASE),
     ('The person reviewing the pull request decides whether to merge.', Tag.BANNED_PHRASE),
+    ('In this lesson, I teach you how to build an agent.', Tag.BANNED_PHRASE),
+    ("In this lesson, I'll teach you how to build an agent.", Tag.BANNED_PHRASE),
+    ('We learn the most from failures.', Tag.BANNED_PHRASE),
     ('A common question is where to put the logic.', Tag.CLEFT),
     ('The quote said "this is where it breaks" and we moved on.', Tag.CLEFT),
 ])

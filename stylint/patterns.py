@@ -378,6 +378,15 @@ BANNED_PHRASES: dict[str, str] = {
 # Regex banned phrases. Use these for phrasing families where exact
 # substring matching would miss the pattern.
 BANNED_PHRASE_PATTERNS: dict[str, tuple[re.Pattern[str], str]] = {
+    "teaches us (non-human)": (
+        re.compile(
+            r"(?<!')\b(?!(?:I|we|he|she|they|you|who|people|instructors?|teachers?|mentors?|ll)\b)"
+            r"[A-Za-z]+\s+(?:teach(?:es)?|taught)\s+(?:us|you)\b",
+            re.IGNORECASE,
+        ),
+        "don't make things the teacher; put a person in the subject "
+        "('We learn the most from failures', 'In this course, we learn ...')",
+    ),
     "speaks to": (
         re.compile(r"\bspeak(?:s|ing)?\s+to\s+(?!(?:the|a|an|your|our|my)\s+(?:agent|model|api|llm|server|endpoint|database)\b)", re.IGNORECASE),
         "use 'is relevant to', 'fits', or 'matches'. Keep only the literal "
