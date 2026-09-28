@@ -246,10 +246,10 @@ def test_signal_to_is_banned(tmp_path, body):
         "Register an OS signal handler for SIGTERM.\n",
     ],
 )
-def test_technical_signal_is_allowed(tmp_path, body):
+def test_os_signal_is_banned(tmp_path, body):
     root, page = make_page(tmp_path, body)
     errors = check_page(root, page)
-    assert not any("[banned-word] 'signal" in e for e in errors)
+    assert any("[banned-word] 'signal" in e for e in errors)
 
 
 def test_banned_phrase_pattern_below_positive(tmp_path):
