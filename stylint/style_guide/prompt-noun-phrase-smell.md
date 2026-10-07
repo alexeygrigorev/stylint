@@ -136,21 +136,23 @@ we <do the job> with <Tool>.` A trigger or condition that belongs to the
 tool's own mechanism isn't a setting we chose: `when a file changes`, `on each
 request`, `from the routes`, `at startup`.
 
-AI coding agents, assistants, chatbots, subagents, and our own commands,
-skills, bots, and scripts count as tools, named or not (`the assistant`, `the
-agent`, `the /deploy command`). An agent does whatever we prompt it to do, so
-every piece of project work it performs is work we directed, including
-concrete steps: `<Agent> reads <our file> and produces <our artifact>`,
-`<Agent> installs <packages> and creates <module>`, `it watches <source>
-and responds to <events>`, `<our command> reads <N> files and edits <M>`.
-Flag these and name who directs the agent: `We ask <Agent> to <step>`, `We use
-<Agent> to <job>`, `When I run <command>, the agent <step>`. Only a built-in
-mechanism of the product, which happens for every user without a task-specific
-prompt, stays fine: `<Agent> reads <its config file> at startup`, `<Agent> asks
-for permission before running a command`, `<Agent> compacts the context when
-the window fills up`. A clause that reports a mistake or default the agent
-made on its own (`the agent assumed <default>`) is also fine, because nobody
-assigned it.
+AI coding agents, assistants, chatbots, subagents, and our own commands and
+skills that drive an agent count as tools, named or not (`the assistant`, `the
+agent`, `the /deploy command`). Our own ordinary code (a bot, a class, a
+function, a script) doing what we wrote it to do is literal component behavior,
+so it's `runtime`. An agent does whatever we prompt it to do, so every piece of
+project work it performs is work we directed, including concrete steps:
+`<Agent> reads <our file> and produces <our artifact>`, `<Agent> installs
+<packages> and creates <module>`, `it watches <source> and responds to
+<events>`, `<our command> reads <N> files and edits <M>`. Flag these and name
+who directs the agent: `We ask <Agent> to <step>`, `We use <Agent> to <job>`,
+`When I run <command>, I have the agent <step>`. Only a built-in mechanism of
+the product, which happens for every user without a task-specific prompt, stays
+fine: `<Agent> reads <its config file> at startup`, `<Agent> asks for
+permission before running a command`, `<Agent> compacts the context when the
+window fills up`. A clause that reports a mistake or default the agent made on
+its own (`the agent assumed <default>`) is also fine, because nobody assigned
+it.
 
 Configured behavior is a role too. When a tool does something only because of
 configuration, code, or infrastructure we wrote (proxy rules, build stages,
@@ -182,9 +184,75 @@ This applies to other teams' projects in case studies too. If a company or a
 student built the setup, their tool choices are roles they assigned, and the
 rewrite names them: `<Team> runs <agent> in <setting>`.
 
-Don't exempt a clause because an earlier sentence already said who assigned
-the job. If the tool is still the actor in this clause, flag it. The rewrite
-can be light, such as adding a lead-in that names us, but it must exist.
+### Three labels
+
+Label every entry `role`, `borderline`, or `runtime`:
+
+- `role`: the decision test says it's a job we assigned. Rewrite it.
+- `borderline`: the rules point both ways. Report it with a one-line reason
+  and a suggested rewrite, but don't apply the rewrite. The author decides.
+- `runtime`: the tool's own behavior, or not this smell. Leave it.
+
+Use `borderline` in these cases, and only when nothing else in the clause
+makes it a clear `role`:
+
+- A standard function placed in a phase or environment that may or may not be
+  our choice, such as a development phase or a local machine. (`in CI`, `on
+  AWS`, `in production`, and `for our users` are clear settings, so they stay
+  `role`.)
+- A requirement or limit stated about a tool (`<Tool> needs <N> variables`,
+  `<Tool> requires <X>`), where the hidden actor is only the person who
+  supplies it.
+- An explicit request already names us in the same sentence or in the lead-in
+  right before it, and the clause only reports the tool carrying out that same
+  task: `We ask <Agent> for <artifact>. <Agent> reads <file> and produces
+  <artifact>.`, or a list whose lead-in says `We assign these roles to
+  agents:`. Only request verbs count here: ask, tell, prompt, have <Agent> do,
+  give <Agent> the job. Picking, switching to, or moving to a tool is a choice,
+  not a request, so a later clause where the tool does the work stays `role`.
+- A behavior that could be the tool's built-in default or our configuration,
+  and the text doesn't say which.
+
+### What to skip
+
+Some text isn't the author's to reword, and some text has no tool acting.
+Don't rewrite these:
+
+- Verbatim prompts, quoted speech, quotations, code blocks, command output,
+  and diagram source code (such as Mermaid). If the enumeration meets one,
+  list it as `quoted - skip` with no rewrite. Image alt text, captions, and
+  illustration descriptions are the author's own prose, so check them.
+- Imperative instructions to the reader (`Run the tests with <Tool>`, `Deploy
+  with <Tool>`, `Set up <Tool> for <job>`). The reader is the implied subject
+  and the tool is the instrument. List them as `imperative - skip`.
+- Clauses whose subject is a policy level, a rule, a file, a step, or a test
+  suite, and no tool is named or clearly referred to. They may have other
+  smells from the general pass, but they aren't entries here.
+- General claims about what a category of tools does everywhere, not in a
+  specific project, ours or a case study's (`<Tool category> speeds up
+  <task>`, `Chat assistants answer in many languages`). Label them `runtime`, or
+  `borderline` if they use a role verb such as `handles`.
+
+Stack lists and tables without verbs: a list or table that pairs jobs with
+tools in noun phrases (`- a <Framework> backend in <Language>`, `- <Tool> for
+<job>`, `| <job> | <Tool> |`) is one entry for the whole list, not one per
+item. If the lead-in names who chose (`We use:`, `We picked:`), label it
+`runtime`. If nothing names an actor (`The stack is:`, a table with only
+`Area | Tool` headers), label it `role` and rewrite the lead-in to name us
+(`We picked an ordinary stack:`). When there's no lead-in to fix, rewrite the
+items themselves.
+
+Grouping keeps one problem from being counted many times:
+
+- Several verbs that share one tool as subject in the same sentence form one
+  entry (`It <does A>, <does B>, and <does C>`). Different tools in the same
+  sentence stay separate entries, even when they share one verb.
+- An item that names our agent or command and its job, together with the
+  bullets under it that list that agent's steps, forms one entry, labelled by
+  the strongest part.
+- A tool used as the instrument inside another tool's or agent's step
+  (`<Agent> fetches <X> via <Tool>`, `<Agent> used <Tool> to <step>`) belongs
+  to that step's entry. It doesn't get its own entry.
 
 ### Forms that hide the smell
 
@@ -287,12 +355,14 @@ text line by line, including lists, tables, captions, and headings, and list
 every clause where a named tool, product, library, framework, service, AI
 agent, or our own command or script does a job or is assigned one. Include
 all the forms from "Forms that hide the smell", not only clauses with the tool
-as grammatical subject. Split compound sentences into clauses, so `X does A,
-Y does B, and Z does C` gives three entries, and a list of tools sharing one
-verb gives one entry per tool.
-Then classify each entry as `role` (flag and rewrite) or `runtime` (leave
-alone) with the decision test from "Named tools as actors". Give a one-line
-reason for each. Don't drop an entry because it looks harmless.
+as grammatical subject. Split compound sentences into one entry per tool,
+so `X does A, Y does B, and Z does C` gives three entries, and a list of tools
+sharing one verb gives one entry per tool. Follow the grouping rules in "What
+to skip" for verbs that share one subject and for an agent's list of steps.
+Mark the skips from "What to skip" as `quoted - skip` or `imperative - skip`.
+Label every other entry `role`, `borderline`, or `runtime` with the decision
+test from "Named tools as actors". Give a one-line reason for each. Don't drop
+an entry because it looks harmless.
 
 Then, for each sentence, ask:
 
@@ -412,8 +482,16 @@ and keep the reason out.
 Use this reporting format:
 
 First, give the named-tool enumeration: each clause where a named tool does
-or is assigned a job, its classification (`role` or `runtime`), and the one-line
-reason.
+or is assigned a job, its label (`role`, `borderline`, `runtime`, `quoted -
+skip`, or `imperative - skip`), and the one-line reason. End it with the count
+for each label.
 
-Then, for each change, give the original line and your rewrite, then apply
-it. If a page has no offenders, say so plainly and change nothing.
+Then list the `role` rewrites. For each one, give the original line and your
+rewrite, then apply it. Include rewrites from the general noun-phrase pass
+here too.
+
+Then give a separate list headed "Borderline - author decides". For each
+entry, give the original line, the one-line reason, and a suggested rewrite.
+Don't apply these.
+
+If a page has no offenders, say so plainly and change nothing.
