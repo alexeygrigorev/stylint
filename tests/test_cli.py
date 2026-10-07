@@ -69,6 +69,19 @@ def test_cli_lists_review_prompts(monkeypatch, capsys):
     assert "noun-phrase-smell" in output
 
 
+def test_help_lists_smell_checks(monkeypatch, capsys):
+    monkeypatch.setattr(sys, "argv", ["stylint", "--help"])
+
+    with pytest.raises(SystemExit):
+        main()
+
+    output = capsys.readouterr().out
+    assert "LLM smell checks" in output
+    assert "noun-phrase-smell" in output
+    assert "Lovable generates the frontend" in output
+    assert "empty-rhetoric" in output
+
+
 def test_cli_prints_one_review_prompt(monkeypatch, capsys):
     monkeypatch.setattr(sys, "argv", ["stylint", "--prompt", "abstract-subject"])
 

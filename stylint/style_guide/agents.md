@@ -21,10 +21,14 @@ polishing. The author's requested form takes priority over a fixed template.
 6. Run `stylint --prompt noun-phrase-smell` and apply it to the edited files.
    This required judgment pass catches concrete noun phrases that hide the
    person, decision, sequence, or design constraint.
-7. Run `stylint --prompt simplify` and apply it to the edited files. This
+7. Run `stylint --prompt empty-rhetoric` and apply it to the edited files.
+   This required judgment pass deletes sentences that sound punchy but carry
+   no content: throat-clearing announcements, mirrored short-aphorism pairs,
+   manufactured decisiveness, and redundant recaps.
+8. Run `stylint --prompt simplify` and apply it to the edited files. This
    required judgment pass replaces idioms, cleft framings, undefined terms,
    meta-narration, and repeated points with plain text for readers whose
    first language may not be English.
-8. After editing, run the full `stylint` check without `--ignore`.
+9. After editing, run the full `stylint` check without `--ignore`.
 
 Use `--ignore` only for investigation because it isn't a verification pass.

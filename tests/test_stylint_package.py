@@ -26,6 +26,7 @@ def test_package_exports_public_api():
     assert find_gerund_starts("Reading this, we see the point.") == ["Reading"]
     assert prompt_file("abstract-subject").name == "prompt-abstract-subject.md"
     assert prompt_file("noun-phrase-smell").name == "prompt-noun-phrase-smell.md"
+    assert prompt_file("empty-rhetoric").name == "prompt-empty-rhetoric.md"
 
 
 def test_package_exposes_discovery_helpers():
@@ -110,12 +111,13 @@ def test_package_exposes_agents_guide():
     assert text.startswith("Use this before and after editing technical text.")
     assert "stylint --prompt abstract-subject" in text
     assert "stylint --prompt noun-phrase-smell" in text
+    assert "stylint --prompt empty-rhetoric" in text
 
 
 def test_package_exposes_review_prompts():
     files = prompt_files()
 
-    assert set(files) == {"abstract-subject", "noun-phrase-smell", "simplify", "alexey-brief", "alexey-draft", "alexey-rewrite"}
+    assert set(files) == {"abstract-subject", "noun-phrase-smell", "empty-rhetoric", "simplify", "alexey-brief", "alexey-draft", "alexey-rewrite"}
     path = prompt_file("abstract-subject")
     assert path == files["abstract-subject"]
     assert path.is_file()
@@ -127,4 +129,9 @@ def test_package_exposes_review_prompts():
     assert noun_path.is_file()
     assert noun_path.read_text(encoding="utf-8").startswith(
         "# Review prompt: noun phrase doing hidden work"
+    )
+    rhetoric_path = prompt_file("empty-rhetoric")
+    assert rhetoric_path == files["empty-rhetoric"]
+    assert rhetoric_path.read_text(encoding="utf-8").startswith(
+        "# Review prompt: empty rhetoric"
     )

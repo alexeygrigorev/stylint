@@ -47,11 +47,28 @@ def prompt_files() -> dict[str, Path]:
     return {
         "abstract-subject": guide / "prompt-abstract-subject.md",
         "noun-phrase-smell": guide / "prompt-noun-phrase-smell.md",
+        "empty-rhetoric": guide / "prompt-empty-rhetoric.md",
         "simplify": guide / "prompt-simplify.md",
         "alexey-brief": guide / "prompt-alexey-brief.md",
         "alexey-draft": guide / "prompt-alexey-draft.md",
         "alexey-rewrite": guide / "prompt-alexey-rewrite.md",
     }
+
+
+# One-line summaries shown by `stylint --help` and `stylint --prompt`.
+# Smell checks are LLM review passes for patterns no regex catches reliably.
+SMELL_PROMPTS: dict[str, str] = {
+    "abstract-subject": "an abstraction is the subject ('A vague request makes this visible')",
+    "noun-phrase-smell": "a tool or component stands in for our choice ('Lovable generates the frontend')",
+    "empty-rhetoric": "announcements, mirrored aphorisms, staged choices, and recaps ('The star count is noise. The postmortems are signal.')",
+    "simplify": "idioms, clefts, undefined terms, and repeated points for non-native readers",
+}
+
+DRAFTING_PROMPTS: dict[str, str] = {
+    "alexey-brief": "turn source material into a brief before drafting",
+    "alexey-draft": "draft from a brief in Alexey's voice",
+    "alexey-rewrite": "rewrite an AI draft into Alexey's voice",
+}
 
 
 def prompt_file(name: str) -> Path:

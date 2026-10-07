@@ -9,6 +9,8 @@ from .lint import check_page
 from .output import print_findings
 from . import explanations
 from .styleguide import (
+    DRAFTING_PROMPTS,
+    SMELL_PROMPTS,
     agents_guide_file,
     prompt_file,
     prompt_files,
@@ -19,22 +21,83 @@ from .styleguide import (
 from .tags import DEFAULT_OFF_TAGS, Tag
 from .version import __version__
 from .autofix import apply_auto_fixes
+from .candidates import find_candidates
+
+# The prompt that classifies tool-as-actor candidates found by the finder.
+CANDIDATES_PROMPT = "noun-phrase-smell"
+
+
+def _exclude_patterns(args: argparse.Namespace) -> list[str]:
+    return [
+        pattern.strip()
+        for raw_exclude in args.exclude
+        for pattern in raw_exclude.split(",")
+        if pattern.strip()
+    ]
+
+
+def _print_candidates_section(args: argparse.Namespace) -> None:
+    """Append the static tool-as-actor candidates to the printed prompt."""
+    pages = iter_markdown_pages([Path(p) for p in args.paths], _exclude_patterns(args))
+    candidates = find_candidates(pages)
+    print("\n## Candidates found by stylint\n")
+    print(
+        "Classify every candidate below as role or runtime. These are the "
+        "minimum list; also check the text for anything the list missed.\n"
+    )
+    if not candidates:
+        print("(no candidates found)")
+    for candidate in candidates:
+        print(candidate.render())
+
+
+def _print_candidates_hint(args: argparse.Namespace, pages) -> None:
+    """One non-failing line pointing at the review prompt when the static
+    finder sees tool-as-actor candidates. Not a finding."""
+    count = len(find_candidates(pages))
+    if not count:
+        return
+    targets = " ".join(args.paths) or "."
+    suffix = "s" if count != 1 else ""
+    print(
+        f"note: {count} tool-as-actor candidate{suffix}; run "
+        f"`stylint --prompt {CANDIDATES_PROMPT} {targets}` to review them"
+    )
+
+
+def _prompt_table(prompts: dict[str, str]) -> str:
+    width = max(len(name) for name in prompts)
+    return "\n".join(f"  {name:<{width}}  {text}" for name, text in prompts.items())
+
+
+def _epilog() -> str:
+    return (
+        "LLM smell checks (no regex catches these; print the prompt with\n"
+        "'stylint --prompt NAME' and apply it to the edited files):\n"
+        + _prompt_table(SMELL_PROMPTS)
+        + "\n\nDrafting prompts:\n"
+        + _prompt_table(DRAFTING_PROMPTS)
+        + "\n\nAgent workflow: run 'stylint --agents' first to see which style\n"
+        "guide to use before editing, during structure changes, and before\n"
+        "the final full check."
+    )
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Check mechanical markdown style rules.",
-        epilog=(
-            "Agent workflow: run 'stylint --agents' first to see which "
-            "style guide to use before editing, during structure changes, "
-            "and before the final full check."
-        ),
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog=_epilog(),
     )
     parser.add_argument(
         "paths",
         nargs="*",
-        default=["."],
-        help="Files or directories to scan. Defaults to the current directory.",
+        default=[],
+        help=(
+            "Files or directories to scan. Defaults to the current directory. "
+            "With --prompt noun-phrase-smell, the files to list "
+            "tool-as-actor candidates for."
+        ),
     )
     parser.add_argument(
         "--ignore",
@@ -119,9 +182,10 @@ def parse_args() -> argparse.Namespace:
         nargs="?",
         const="",
         help=(
-            "Print a drafting or review prompt for an LLM or subagent. "
-            "Pass a name (alexey-draft, alexey-rewrite, abstract-subject) "
-            "to print it; pass nothing to list names."
+            "Print an LLM smell check or drafting prompt. Pass a name "
+            "(see the list below) to print it; pass nothing to list names "
+            "with descriptions. With paths, noun-phrase-smell also appends "
+            "the tool-as-actor candidates stylint finds in those files."
         ),
     )
     parser.add_argument(
@@ -183,8 +247,10 @@ def main() -> int:
         return 0
 
     if args.prompt == "":
-        for name in prompt_files():
-            print(name)
+        print("LLM smell checks:")
+        print(_prompt_table(SMELL_PROMPTS))
+        print("\nDrafting prompts:")
+        print(_prompt_table(DRAFTING_PROMPTS))
         return 0
 
     if args.prompt:
@@ -198,6 +264,8 @@ def main() -> int:
             )
             return 2
         print(path.read_text(encoding="utf-8"), end="")
+        if args.paths and path == prompt_file(CANDIDATES_PROMPT):
+            _print_candidates_section(args)
         return 0
 
     if args.style_guide == "":
@@ -252,14 +320,9 @@ def main() -> int:
     enable_tags = {Tag(t) for t in raw_enable}
     effective_off = DEFAULT_OFF_TAGS - enable_tags
 
-    exclude_patterns = [
-        pattern.strip()
-        for raw_exclude in args.exclude
-        for pattern in raw_exclude.split(",")
-        if pattern.strip()
-    ]
+    exclude_patterns = _exclude_patterns(args)
 
-    paths = [Path(p) for p in args.paths]
+    paths = [Path(p) for p in args.paths or ["."]]
     pages = iter_markdown_pages(paths, exclude_patterns)
     if not pages:
         print("No markdown files found.", file=sys.stderr)
@@ -304,8 +367,10 @@ def main() -> int:
 
     if findings:
         print_findings(findings)
+        _print_candidates_hint(args, pages)
         return 1
 
     suffix = "s" if len(pages) != 1 else ""
     print(f"Style check passed ({len(pages)} file{suffix}).")
+    _print_candidates_hint(args, pages)
     return 0

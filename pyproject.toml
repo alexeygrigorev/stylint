@@ -40,6 +40,7 @@ py-modules = ["check_style", "version"]
 
 [tool.setuptools.package-data]
 "stylint.style_guide" = ["*.md"]
+"stylint.data" = ["*.txt"]
 
 [tool.setuptools.dynamic]
 version = { attr = "stylint.__version__" }

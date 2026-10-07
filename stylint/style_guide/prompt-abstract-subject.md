@@ -77,6 +77,15 @@ These forms usually need a rewrite:
   `The interesting part ... is ...`, `The first step ... is ...`. Any
   sentence that opens with `A/The <abstract noun> ... is ...` is a
   suspect and usually needs a real actor.
+- A pointer sentence: a short sentence where an abstraction "makes this
+  visible", "makes this clear", "makes it obvious", "shows this", or
+  "exposes this". It points back at the previous claim with `this`, `it`,
+  or `that` and states nothing new: `A vague request makes this visible.`
+  The abstraction is really a condition (`when the request is vague`), so
+  fold that condition into the claim it points at. Catch it even when the
+  subject looks concrete (`A failing test makes it obvious.`): the test
+  is whether the object is a pronoun pointing back and the sentence adds
+  no new fact.
 
 ## Search checklist
 
@@ -95,6 +104,10 @@ Make a deliberate pass for these patterns:
 - `<Abstract noun> is why...`
 - `<Abstract noun> means...`
 - `<Abstract noun> lets/allows/enables...`
+- `<Noun> makes this/it/that visible/clear/obvious/apparent/explicit.`
+- `<Noun> shows/reveals/exposes/highlights this/it/that.`
+- `This is where/when <noun> shows it.` and other short sentences whose
+  object is only a pronoun pointing back at the previous sentence
 
 If the sentence starts with a determiner or number, slow down and find the real
 subject:
@@ -168,6 +181,10 @@ sentence only announces what comes next, delete it.
   three places.`
 - `The process blocks on long polling.` -> `The bot waits for messages with
   long polling.`
+- `A vague request makes this visible.` (after a claim that strong agents
+  fill gaps with guesses) -> `When our request is vague, a strong agent
+  doesn't fail. It fills the gaps with its own guesses.` Fold the condition
+  into the claim and delete the pointer sentence.
 
 ## Leave Alone
 
@@ -178,6 +195,9 @@ Leave these cases alone:
 - Sentences where the abstraction genuinely is the topic and the claim
   is specific: `The latency dropped from 800ms to 120ms.`
 - Precise technical nouns: `The data structure stores one entry per account.`
+- Show or reveal verbs with a concrete object that carries new
+  information: `The trace shows two retries before the timeout.` This isn't
+  a pointer sentence because the reader learns something new.
 - Don't manufacture a cause the source never stated. If you don't know
   why, cut the claim rather than invent one.
 

@@ -1,0 +1,299 @@
+# Tool and product names for `stylint --prompt noun-phrase-smell` candidates.
+# One name per line. Matching is case-sensitive and on word boundaries, so
+# names that look like ordinary words (Lovable, Cursor, Linear, Render)
+# only match with this exact casing. Multi-word names win over their
+# shorter prefixes (GitHub Actions before GitHub).
+# Seeded from telegram-writing-assistant articles/ and reference/substack/,
+# hand-checked: no generic words (Agent, Code, Cloud, Search, Memory).
+
+# AI coding tools and agents
+Claude Code
+Claude Desktop
+Claude
+Codex CLI
+Codex
+GitHub Copilot
+Copilot
+Cursor
+Windsurf
+Lovable
+Bolt
+Replit
+v0
+Gemini CLI
+Gemini
+OpenCode
+Aider
+Cline
+Devin
+Antigravity
+Kiro
+Grok
+ChatGPT
+Perplexity
+OpenClaw
+Ralphex
+NotebookLM
+Midjourney
+Nano Banana
+Whisper
+
+# Models and AI providers
+OpenAI
+Anthropic
+DeepSeek
+Mistral
+Ollama
+OpenRouter
+Hugging Face
+Groq
+Opus
+Sonnet
+Haiku
+GPT-4o
+GPT-5
+Llama
+Qwen
+Nemotron
+MiniMax
+
+# Agent, LLM and RAG frameworks
+LangChain
+LangGraph
+LangSmith
+LangMem
+LlamaIndex
+CrewAI
+AutoGen
+DSPy
+Pydantic AI
+PydanticAI
+OpenAI Agents SDK
+Agents SDK
+Vercel AI SDK
+AI SDK
+Mem0
+Letta
+Graphiti
+MemPalace
+toyaikit
+minsearch
+SQLiteSearch
+Logfire
+Langfuse
+Weights & Biases
+MLflow
+vLLM
+SGLang
+TensorRT-LLM
+TensorRT
+Temporal
+DBOS
+Inngest
+E2B
+
+# Python libraries and frameworks
+FastAPI
+Flask
+Django
+Pydantic
+SQLAlchemy
+Alembic
+Uvicorn
+Gunicorn
+Celery
+Streamlit
+Gradio
+Jupyter
+Jupyter Notebook
+pandas
+NumPy
+Polars
+scikit-learn
+PyTorch
+TensorFlow
+Keras
+XGBoost
+LightGBM
+sentence-transformers
+spaCy
+NLTK
+pytest
+Playwright
+Selenium
+httpx
+Typer
+uv
+pip
+Poetry
+Ruff
+mypy
+dirdotenv
+
+# JavaScript and frontend
+React
+Next.js
+Vue
+Svelte
+Angular
+Vite
+Tailwind
+Tailwind CSS
+shadcn/ui
+Node.js
+TypeScript
+npm
+Bun
+Deno
+Astro
+Hugo
+Jekyll
+Rustkyll
+Mermaid
+Storybook
+
+# Databases, search and storage
+PostgreSQL
+Postgres
+SQLite
+MySQL
+MongoDB
+Redis
+DynamoDB
+Elasticsearch
+OpenSearch
+Qdrant
+ChromaDB
+Chroma
+Pinecone
+Weaviate
+Milvus
+Zilliz Cloud
+pgvector
+LanceDB
+DuckDB
+Snowflake
+BigQuery
+Databricks
+ClickHouse
+Kafka
+Flink
+Spark
+Apache Spark
+Apache Kafka
+Apache Flink
+Airflow
+Apache Airflow
+Prefect
+Dagster
+dbt
+Supabase
+Firebase
+Exasol
+
+# Cloud, hosting and infrastructure
+AWS
+AWS Lambda
+AWS CLI
+AWS SDK
+Lambda
+EC2
+ECS
+EKS
+S3
+RDS
+Fargate
+CloudFormation
+Step Functions
+API Gateway
+SageMaker
+Bedrock
+Amazon Bedrock
+GCP
+Google Cloud
+Cloud Run
+Vertex AI
+Azure
+Cloudflare
+Cloudflare Workers
+Cloudflare Pages
+Vercel
+Netlify
+Render
+Railway
+Fly.io
+Heroku
+Hetzner
+DigitalOcean
+Docker
+Docker Compose
+Kubernetes
+Helm
+Terraform
+Pulumi
+Ansible
+Nginx
+Caddy
+Traefik
+Grafana
+Prometheus
+OpenTelemetry
+OTel
+Jaeger
+Sentry
+Datadog
+Tailscale
+GitHub Actions
+GitHub Pages
+GitHub CLI
+GitHub
+GitLab CI
+GitLab
+Jenkins
+CircleCI
+Git
+Makefile
+
+# Product, collaboration and SaaS tools
+Linear
+Jira
+Notion
+Slack
+Discord
+Telegram
+Zoom
+Loom
+Figma
+Canva
+Stripe
+Substack
+Maven
+Gumroad
+Zapier
+n8n
+Make.com
+Airtable
+Google Sheets
+Google Docs
+Google Drive
+Gmail
+YouTube
+Obsidian
+VS Code
+Visual Studio Code
+Excel
+Calendly
+Mailchimp
+Typeform
+
+# Email, auth and payments services
+Resend
+Postmark
+SendGrid
+Twilio
+Auth0
+Clerk
+Okta
+Upstash
+PlanetScale
+Flower
