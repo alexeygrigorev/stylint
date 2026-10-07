@@ -170,6 +170,14 @@ to`), a whole layer or area as the object, a setting we chose (`in CI`), or
 behavior whose details come from our own configuration (which paths, which
 stages, which permissions, what gets served).
 
+Contrasted division of labor is a role too. When the text explicitly
+contrasts what each tool is responsible for in a design (`<Tool A> does X,
+while <Tool B> does Y`, `<Tool A> covers X. <Tool B>, in contrast, does Y`),
+each clause states the part that someone assigned to that tool, even if the
+verb names its standard function. Flag every clause in the contrast and name
+who designed it. A plain list of what each tool does, with no contrast between
+them, falls back to the rules above.
+
 This applies to other teams' projects in case studies too. If a company or a
 student built the setup, their tool choices are roles they assigned, and the
 rewrite names them: `<Team> runs <agent> in <setting>`.
