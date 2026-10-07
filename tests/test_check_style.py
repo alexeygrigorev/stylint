@@ -102,6 +102,7 @@ def test_frontmatter_with_blank_line_is_clean(tmp_path):
     "word",
     [
         "very",
+        "awkward",
         "delve",
         "faithful",
         "prose",

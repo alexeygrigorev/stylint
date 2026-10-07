@@ -173,6 +173,8 @@ ABOUT_HEADING_RE = re.compile(r"^#{1,6}\s+About\b", re.IGNORECASE)
 
 # Single banned tokens. Whole-word, case-insensitive in prose.
 BANNED_WORDS: dict[str, str] = {
+    "awkward": "name the specific difficulty instead of using a vague judgment",
+    "deliberately": "drop the intensifier; if the choice matters, give the reason ('we use SQLite because it needs no setup')",
     "twist": "drop the narrative cliche; state what actually changed",
     "angle": "drop the vague writing-jargon; name the focus ('what the post is about', 'the decision you made')",
     "delve": "use 'look at' / 'dig into' / 'explore'",
@@ -416,6 +418,12 @@ BANNED_PHRASE_PATTERNS: dict[str, tuple[re.Pattern[str], str]] = {
         ),
         "drop the meta-narration; the heading already says what the part "
         "covers. Start with the first real statement",
+    ),
+    "below/above (meta)": (
+        re.compile(r"(?:^|[.!?]\s+)(?:Below|Above),"),
+        "drop the document-position narration ('Below, I show', 'Above, we "
+        "saw'); put the content where it belongs and start with the first "
+        "real statement",
     ),
     "close the loop": (
         re.compile(r"\bclos(?:e|es|ed|ing)\s+the\s+loop\b", re.IGNORECASE),
