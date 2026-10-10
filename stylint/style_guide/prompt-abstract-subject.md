@@ -207,3 +207,7 @@ Use this reporting format:
 
 For each change, give the original line and your rewrite, then apply it.
 If a page has no offenders, say so plainly and change nothing.
+
+Run this prompt in its own subagent, one prompt per pass, so this review
+isn't mixed with other edits. After applying the rewrites, re-run the static
+check (`stylint PATHS`) and fix anything the rewrites introduced.

@@ -32,7 +32,8 @@ stylint docs/
 stylint --list-tags
 stylint --ignore tables docs/
 stylint --exclude _docs docs/
-stylint --agents
+stylint --workflow
+stylint --workflow final docs/
 stylint --style-guide
 stylint --style-guide voice
 stylint --prompt abstract-subject
@@ -52,8 +53,9 @@ The package has these main files:
 - `stylint/style_guide/polish.md` - judgment-level text patterns the script can't detect
   (plain words over abstractions, banned-but-context-sensitive words).
   Print it with `stylint --style-guide polish`.
-- `stylint/style_guide/agents.md` - short agent-facing checklist for which
-  guide to read at each editing stage. Print it with `stylint --agents`.
+- `stylint/style_guide/agents.md` - the agent workflow (draft, edit, final)
+  as a readable document. `stylint --workflow STAGE PATHS` prints the same
+  steps with your file names filled in.
 - `stylint/style_guide/prompt-abstract-subject.md` - required final-pass
   prompt for abstract nouns used as sentence subjects. Print it with
   `stylint --prompt abstract-subject`.
@@ -128,6 +130,10 @@ Before calling work done, run the full checker without ignored tags:
 stylint path/to/docs
 ```
 
+A passing check covers the mechanical rules only. Every run ends with a
+`Next:` footer that lists the remaining steps. Hide it with `--no-next` or
+`STYLINT_NO_NEXT=1`, for example in CI.
+
 To skip files, drop a `.prose-style-ignore` at the scan root.
 
 Use one fnmatch pattern per line:
@@ -149,19 +155,52 @@ Every finding starts with a `[tag]`. Run `stylint --list-tags` for the current
 list. The finding text includes the fix guidance, so the README does not repeat
 the rule catalog.
 
-## Reading order for a write-up
+## Agent workflow
 
-Run `stylint --agents` first when an agent edits text.
+Agents tend to run the static check, fix the findings, and stop before the
+LLM smell passes and the final re-check.
 
-Use the full guides in this order:
+`stylint --workflow` prints the ordered steps for each stage:
 
-1. `voice.md` while drafting.
-2. `formatting.md` for any markdown syntax question.
-3. `code-style.md` for example code blocks.
-4. Run `stylint` and fix every reported finding.
-5. `polish.md` for a final judgment-level pass.
-6. `stylint --prompt abstract-subject` as a required final pass for abstract
-   nouns used as sentence subjects.
+```bash
+stylint --workflow                  # overview of the three stages
+stylint --workflow draft docs/      # guides, then a fix-verify loop per file
+stylint --workflow edit docs/       # the same loop for changes to existing text
+stylint --workflow final docs/      # smell passes, re-check, repo checks
+```
+
+With paths, the commands name your files and end with the current static
+status. The final stage lists every smell prompt from `stylint --prompt` and
+asks for one subagent per prompt. Then it lists a re-check, a polish read, and
+the repo's own checks. `stylint --agents` prints the overview.
+
+The exit codes don't change. A static run exits 0 when it passes, 1 with
+findings, and 2 on bad usage. The footer says "Not done yet" on a pass, so a
+clean check doesn't read as the end of the job.
+
+## Configuration
+
+Stylint reads `[tool.stylint]` from the nearest `pyproject.toml` that has
+one, or from the nearest `.stylint.toml`. It searches upward from the first
+path, or from the current directory.
+
+```toml
+[tool.stylint]
+author_name = "Alexey"     # default for --author-name
+profile = "alexey"         # adds the alexey-brief/draft step to the draft stage
+exclude = ["_docs", "AGENTS.md"]
+
+[tool.stylint.workflow]
+smell_prompts = ["abstract-subject", "noun-phrase-smell", "empty-rhetoric", "simplify"]
+final_steps = [
+  "uv run python scripts/check_workshops.py",
+  "Walk _docs/05-01-checklist.md",
+]
+```
+
+CLI flags override the config, and `--exclude` adds to the configured
+patterns. In `.stylint.toml`, put the keys at the top level and the workflow
+keys under `[workflow]`.
 
 ## Hooking it into a project
 

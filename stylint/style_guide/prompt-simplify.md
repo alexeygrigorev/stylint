@@ -92,3 +92,7 @@ report. Don't work around the rule by making the text vaguer.
 Report the changes as `original -> rewrite`, grouped by the numbered item
 above. List facts you found wrong but left alone, such as a count that
 doesn't match its list, or a link to the wrong page.
+
+Run this prompt in its own subagent, one prompt per pass, so this review
+isn't mixed with other edits. After applying the rewrites, re-run the static
+check (`stylint PATHS`) and fix anything the rewrites introduced.

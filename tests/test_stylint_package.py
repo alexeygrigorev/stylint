@@ -16,6 +16,7 @@ from stylint import (
     style_guide_path,
 )
 from stylint.discovery import iter_markdown_pages
+from stylint.styleguide import SMELL_PROMPTS
 
 
 def test_package_exports_public_api():
@@ -109,9 +110,11 @@ def test_package_exposes_agents_guide():
     assert path.name == "agents.md"
     text = path.read_text(encoding="utf-8")
     assert text.startswith("Use this before and after editing technical text.")
-    assert "stylint --prompt abstract-subject" in text
-    assert "stylint --prompt noun-phrase-smell" in text
-    assert "stylint --prompt empty-rhetoric" in text
+    assert "stylint --workflow" in text
+    for heading in ("## Draft", "## Edit", "## Final"):
+        assert heading in text
+    for name in SMELL_PROMPTS:
+        assert f"stylint --prompt {name}" in text
 
 
 def test_package_exposes_review_prompts():

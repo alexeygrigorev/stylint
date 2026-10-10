@@ -161,18 +161,21 @@ def run_check(monkeypatch, capsys, page: Path) -> tuple[int, str]:
     "Lovable generates the React frontend.\n",
     "Lovable generates the React frontend. This is **bold**.\n",
 ])
-def test_plain_check_prints_hint_and_keeps_exit_code(monkeypatch, capsys, tmp_path, text):
+def test_plain_check_footer_lists_candidates_and_keeps_exit_code(
+    monkeypatch, capsys, tmp_path, text
+):
+    monkeypatch.delenv("STYLINT_NO_NEXT", raising=False)
     page = write(tmp_path, text)
     code, out = run_check(monkeypatch, capsys, page)
 
-    hints = [line for line in out.splitlines() if line.startswith("note:")]
-    assert hints == [
-        f"note: 1 tool-as-actor candidate; run "
-        f"`stylint --prompt noun-phrase-smell {page}` to review them"
+    candidate_lines = [
+        "1 tool-as-actor candidate for the noun-phrase-smell pass:",
+        f"  stylint --prompt noun-phrase-smell {page}",
     ]
+    assert "\n".join(candidate_lines) in out
 
     monkeypatch.setattr(cli, "find_candidates", lambda pages: [])
     code_without, out_without = run_check(monkeypatch, capsys, page)
     assert code == code_without
-    assert "note:" not in out_without
-    assert out.replace(hints[0] + "\n", "") == out_without
+    assert "tool-as-actor candidate" not in out_without
+    assert out.replace("\n".join(candidate_lines) + "\n", "") == out_without

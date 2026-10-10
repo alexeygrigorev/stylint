@@ -48,15 +48,18 @@ def test_cli_rejects_unknown_style_guide(monkeypatch, capsys):
     assert "voice, formatting, code-style, polish" in err
 
 
-def test_cli_prints_agents_checklist(monkeypatch, capsys):
+def test_cli_agents_is_workflow_overview(monkeypatch, capsys):
     monkeypatch.setattr(sys, "argv", ["stylint", "--agents"])
-
     assert main() == 0
+    agents = capsys.readouterr().out
 
-    output = capsys.readouterr().out
-    assert output.startswith("Use this before and after editing technical text.")
-    assert "stylint --style-guide voice" in output
-    assert "stylint --prompt abstract-subject" in output
+    monkeypatch.setattr(sys, "argv", ["stylint", "--workflow"])
+    assert main() == 0
+    workflow = capsys.readouterr().out
+
+    assert agents == workflow
+    assert agents.startswith("stylint workflow - three stages.")
+    assert "stylint --workflow final PATHS" in agents
 
 
 def test_cli_lists_review_prompts(monkeypatch, capsys):
@@ -112,7 +115,8 @@ def test_cli_help_points_agents_to_checklist(monkeypatch, capsys):
 
     output = capsys.readouterr().out
     assert "Agent workflow" in output
-    assert "stylint --agents" in output
+    assert "stylint --workflow final PATHS" in output
+    assert "STYLINT_NO_NEXT" in output
 
 
 def _write_backticks_in_link_page(tmp_path):
