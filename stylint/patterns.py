@@ -429,6 +429,15 @@ BANNED_PHRASE_PATTERNS: dict[str, tuple[re.Pattern[str], str]] = {
         re.compile(r"\bclos(?:e|es|ed|ing)\s+the\s+loop\b", re.IGNORECASE),
         "drop the cliche; state plainly what now works or what connects to what",
     ),
+    "stay human": (
+        re.compile(
+            r"\b(?:stay|stays|stayed|staying|remain|remains|remained|remaining)\s+"
+            r"(?:\w+ly\s+)?human\b",
+            re.IGNORECASE,
+        ),
+        "drop the AI-era slogan; name the task and who does it ('People "
+        "still decide what to build', 'I review the pull requests myself')",
+    ),
     "rough edges": (
         re.compile(r"\b(?:rough|sharp)\s+edges?\b", re.IGNORECASE),
         "drop the cliche; name the concrete problems or limitations",

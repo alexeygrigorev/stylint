@@ -339,6 +339,26 @@ def test_banned_phrase_new_general_patterns_positive(tmp_path, body, label):
 @pytest.mark.parametrize(
     "body",
     [
+        "Which skills stay human, and why does it matter?\n",
+        "Taste remains uniquely human.\n",
+        "Some parts of the job stayed human.\n",
+    ],
+)
+def test_banned_phrase_stay_human_positive(tmp_path, body):
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert any("[banned-phrase] 'stay human'" in e for e in errors), errors
+
+
+def test_banned_phrase_stay_human_negative(tmp_path):
+    root, page = make_page(tmp_path, "We stay with human reviewers for releases.\n")
+    errors = check_page(root, page)
+    assert not any("'stay human'" in e for e in errors), errors
+
+
+@pytest.mark.parametrize(
+    "body",
+    [
         "We hid the pattern behind a helper function.\n",
         "I reuse the same pattern behind every endpoint.\n",
     ],
