@@ -7,6 +7,24 @@ import pytest
 from stylint.cli import main
 
 
+def _nlp_engine_ready():
+    """The tagger needs nltk AND its downloaded data; mirror the CLI's
+    warm-up so the tests skip cleanly when either is missing."""
+    try:
+        from stylint import nlp as _nlp
+        _nlp.check_line("warm up the tagger")
+    except Exception:
+        return False
+    return True
+
+
+# The --nlp tests below exercise the real tagger and need the optional
+# 'nlp' extra (pip install "stylint[nlp]").
+_needs_nltk = pytest.mark.skipif(
+    not _nlp_engine_ready(), reason="nltk/tagger data not installed (optional 'nlp' extra)"
+)
+
+
 @pytest.mark.parametrize('option,name,title', [
     ('--style-guide', 'alexey', "# Alexey's published voice"),
     ('--prompt', 'alexey-brief', "# Brief prompt: preserve the author's material"),
@@ -183,6 +201,7 @@ def test_cli_passive_off_without_nlp_flag(tmp_path, monkeypatch, capsys):
     assert "passive-voice" not in output
 
 
+@_needs_nltk
 def test_cli_passive_flagged_with_nlp_flag(tmp_path, monkeypatch, capsys):
     folder = _write_passive_page(tmp_path)
     monkeypatch.setattr(sys, "argv", ["stylint", str(folder), "--nlp"])
@@ -196,6 +215,7 @@ def test_cli_passive_flagged_with_nlp_flag(tmp_path, monkeypatch, capsys):
     assert output.count("passive-voice") == 1
 
 
+@_needs_nltk
 def test_cli_passive_suppressed_with_ignore(tmp_path, monkeypatch, capsys):
     folder = _write_passive_page(tmp_path)
     monkeypatch.setattr(
