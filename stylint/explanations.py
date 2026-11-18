@@ -137,6 +137,25 @@ _EXPLANATIONS: dict[str, Explanation] = {
              "The model is a 384-dim embedder. It runs on CPU."),
         ),
     ),
+    Tag.EN_DASH.value: _E(
+        Tag.EN_DASH.value, "En dash",
+        "An en dash character (–) appears in prose. Replace it with a "
+        "hyphen. The en dash is a hard tell for generated prose; write "
+        "ranges with a plain hyphen ('10-20') or spell them out.",
+        (
+            ("The workshop runs 2020–2024.",
+             "The workshop runs 2020-2024, or 'from 2020 to 2024'."),
+        ),
+    ),
+    Tag.EMOJI_BULLET.value: _E(
+        Tag.EMOJI_BULLET.value, "Emoji bullet",
+        "A list item starts with an emoji instead of a plain marker. Emoji "
+        "bullets are a soft tell for generated prose; use '-' or a numbered "
+        "marker.",
+        (
+            ("- 🚀 Fast setup", "- Fast setup takes under a minute"),
+        ),
+    ),
     Tag.DOUBLE_HYPHEN.value: _E(
         Tag.DOUBLE_HYPHEN.value, "Double hyphen",
         "A double hyphen (--) appears in prose outside HTML comments or "
@@ -706,7 +725,64 @@ _EXPLANATIONS: dict[str, Explanation] = {
              "The script deleted the file."),
         ),
     ),
+    Tag.SLOP_SCORE.value: _E(
+        Tag.SLOP_SCORE.value, "AI slop classifier score",
+        "The document's score from VoightKampffLabs/voi-slop-detect-380M "
+        "(quantized ONNX model, CPU) met or exceeded the threshold (default "
+        "0.10). Runs only with --slop enabled, which requires the optional "
+        "'stylint[slop]' extra. Rewrite flagged passages in plain, concrete "
+        "prose.",
+        (
+            ("In today's fast-paced digital landscape, this robust framework "
+             "empowers teams to unlock seamless productivity.",
+             "This tool cuts build time from 12 minutes to 90 seconds."),
+        ),
+    ),
+    Tag.SLOP_TRIGGER.value: _E(
+        Tag.SLOP_TRIGGER.value, "Clear-trigger passage for slop score",
+        "A sentence or paragraph identified by leave-one-out ablation as "
+        "driving up the VoightKampffLabs/voi-slop-detect-380M slop score. "
+        "Removing or rewriting this specific passage lowers the document's "
+        "slop score.",
+        (
+            ("Moreover, it serves as a testament to how modern tooling "
+             "elevates developer workflows.",
+             "The script runs in 0.4s on a 10k-line repo."),
+        ),
+    ),
+    Tag.ANNOUNCEMENT_REGISTER.value: _E(
+        Tag.ANNOUNCEMENT_REGISTER.value, "Announcement register flag",
+        "The text matches a pattern from the register-class analysis of "
+        "voi-slop-detect-380M: the guest-announcement template ('X joins "
+        "the ... podcast to talk about ...'), 'We will cover ...', 'Join "
+        "us live on ...', mirror pairs ('X is one thing. Y is another.'), "
+        "balanced concessive hooks ('can ... and still ...'), tri-list "
+        "covers, 'When you ... When you ...' pairs, or meta-sentences that "
+        "comment on the text itself. The finding names the pattern it "
+        "matched.\n"
+        "This is a flag for review, not a ban: the first patterns fire on "
+        "the legitimate DataTalks.Club announcement format, which the model "
+        "scores >= 0.99. Phrase edits do not move that score (measured "
+        "effect <= 0.01), so don't rewrite word by word - change the "
+        "register (chat-style lines, questions, fragments) or route the "
+        "post for human approval.",
+        (
+            ("Jane Smith, Master Gardener, joins the DataTalks.Club podcast "
+             "to talk about compost. We will cover where bins break down, "
+             "how to check results, and what to buy. Join us live on "
+             "Wednesday at 12:30 CET.",
+             "Chat-style rewrite: 'Guest: Jane Smith, Master Gardener. "
+             "Topic: do compost bins actually work? Three questions. "
+             "Wednesday, 2 December, 12:30 CET. See you there.' (scores "
+             "~0.46 instead of ~1.0)"),
+        ),
+        "Measured in Orin's clear-trigger analysis (2026-11-18): these "
+        "regexes had no false positives below a 0.5 slop score on the "
+        "57-post corpus. Ignoring this tag is fine when the announcement "
+        "format is approved as-is.",
+    ),
 }
+
 
 del _E
 

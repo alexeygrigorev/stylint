@@ -14,6 +14,7 @@ from .rules.file_level import check_now_lets_overuse
 from .rules.headings import check_heading
 from .rules.markdown import check_markdown_line, check_table_row
 from .rules.prose import check_paragraph, check_prose_line
+from .rules.register import check_register_line
 from .rules.voice import check_dense_paragraph_runs, check_evaluative_framing
 from .tags import Tag
 from .text import (
@@ -41,7 +42,12 @@ LIST_INTRODUCER_BLOCK_KINDS = frozenset({"code", "table", "quote", "html", "foot
 CODE_INTRODUCER_BLOCK_KINDS = frozenset({"list", "table", "quote", "html", "footnote"})
 
 def check_page(
-    root: Path, path: Path, nlp: bool = False, author_name: str = "Alexey"
+    root: Path,
+    path: Path,
+    nlp: bool = False,
+    author_name: str = "Alexey",
+    slop: bool = False,
+    slop_threshold: float = 0.10,
 ) -> list[Finding]:
     errors: list[Finding] = []
     now_lets_hits: list[tuple[int, str]] = []
@@ -327,6 +333,7 @@ def check_page(
             errors.extend(check_heading(line, line_no, rel))
             plain = strip_inline_code(strip_link_urls(line))
             errors.extend(check_banned_line(line, plain, line_no, rel))
+            errors.extend(check_register_line(plain, line_no, rel))
             last_heading_line = line_no
             seen_prose_since_heading = False
             allow_questions_in_section = page_is_qa or heading_allows_questions(line)
@@ -421,6 +428,7 @@ def check_page(
         errors.extend(prose_findings)
         now_lets_hits.extend(line_now_lets_hits)
         errors.extend(check_banned_line(line, plain, line_no, rel))
+        errors.extend(check_register_line(plain, line_no, rel))
         # Skip HTML markup lines for NLP (attribute strings tag poorly).
         if nlp and not line.lstrip().startswith("<"):
             nlp_lines.append((line_no, plain))
@@ -441,5 +449,16 @@ def check_page(
                 errors.append(Finding(
                     rel, line_no, nlp_finding.tag, nlp_finding.message,
                 ))
+
+    if slop and body.strip():
+        from .slop import check_slop
+
+        _, slop_findings = check_slop(
+            body,
+            rel,
+            line_offset=line_offset,
+            threshold=slop_threshold,
+        )
+        errors.extend(slop_findings)
 
     return errors

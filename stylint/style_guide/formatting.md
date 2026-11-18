@@ -8,8 +8,18 @@ Use these formatting conventions.
 
 - One dash per sentence. If you are reaching for two dashes to insert
   a parenthetical, split the sentence instead.
+- Hyphens, not en dashes: write `10-20`, not `10–20`. The en dash is a
+  hard tell for generated prose.
 - Use code ticks around code-like identifiers: filenames, function names,
   class names, env vars, module names, and regexes.
+- Plain list markers: `-`, `*`, or numbers. No emoji bullets.
+
+The check also carries register-class flags (`announcement-register`):
+patterns that mark the smooth announcement prose the slop detector scores
+near 1.0 (guest-announcement template, "We will cover ...", "Join us
+live on ...", mirror pairs, balanced concessive hooks). They are
+flag-for-review guidance, not bans - see
+`stylint --explain announcement-register`.
 
 ## Headings
 

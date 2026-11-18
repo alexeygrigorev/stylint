@@ -51,6 +51,18 @@ DASH_PARENTHETICAL_RE = re.compile(
     r"[a-zA-Z]\s+-\s+.*?\s+-\s+[a-zA-Z]"
 )
 LIST_ITEM_RE = re.compile(r"^\s*(?:[-*]|\d+\.)\s+")
+# Emoji used in place of a list marker ("- 🚀 Fast setup"). A generated-prose
+# soft tell (voi-slop-detect 'emoji-bullet'); this house style uses plain
+# '-'/'*' or numbered markers.
+EMOJI_BULLET_RE = re.compile(
+    r"^\s*(?:[-*]|\d+\.)\s+"
+    r"["
+    r"\U0001F000-\U0001FAFF"  # emoji pictographs (🚀 💡 📌 ✅ core ranges)
+    r"\u2600-\u27BF"          # misc symbols and dingbats (✅ ✨ ➡ ★)
+    r"\u2B00-\u2BFF"          # stars and circles (⭐ ⭕)
+    r"\uFE0F"                 # variation selector
+    r"]"
+)
 # Sentence-start "No X, no Y..." anaphora — typical verbless rhetorical
 # fragment like "No frameworks, no magic - just Python and an LLM."
 # Also catches the lazy "There's no X, no Y" / "There is no..." /
@@ -221,8 +233,8 @@ BANNED_WORDS: dict[str, str] = {
     "wrinkle": "drop the cliche; name the complication directly ('one complication is', 'a detail we need to handle')",
     "terse": "use 'short', 'compact', or name what makes them short",
     "loose": "say what is actually wrong with the code: 'a single function with no structure', 'hardcoded dependencies', 'not reusable'. 'Loose' is vague",
-    "harden": "use 'make more robust', 'add safeguards to', or name the specific improvement",
-    "hardens": "use 'makes more robust', 'adds safeguards to', or name the specific improvement",
+    "harden": "name the specific improvement ('add safeguards', 'add retries', 'validate the input')",
+    "hardens": "name the specific improvement ('adds safeguards', 'adds retries', 'validates the input')",
     "foreground": "use 'highlight', 'emphasize', 'draw attention to', or name what you actually do",
     "gap": "name the concrete difference or what is missing ('we don't cover X', 'the two versions differ in Y')",
     "bite": "drop the metaphor; for 'bite-sized' say 'short' or 'small' and give the actual length",
@@ -234,6 +246,20 @@ BANNED_WORDS: dict[str, str] = {
     "box": "for a server say 'server' or 'machine'; keep for UI boxes ('text box', 'search box')",
     "surviving": "describe what remains or continues instead of using a survival metaphor",
     "trap": "drop the metaphor; name the mistake or risk directly ('the common mistake', 'what goes wrong')",
+    # Vocabulary soft tells ported from voi-slop-detect-380M (clear-trigger
+    # analysis, 2026-11-18). These words mark generated-prose register.
+    "tapestry": "drop the metaphor; name the concrete parts",
+    "landscape": "drop the metaphor; name the concrete category or set ('the tools available', 'the job market')",
+    "robust": "name the concrete property ('retries on failure', 'survives a restart')",
+    "seamless": "name what actually happens ('in one step', 'without manual work')",
+    "unlock": "state the outcome directly ('now you can...')",
+    "empower": "drop the puffery; name what the reader can now do",
+    "navigate": "use 'go to' / 'open' ('go to Settings'), or name the action. The UI sense 'navigate to a page' is exempt",
+    "game-changer": "drop the hype; name the concrete effect",
+    "bustling": "drop the puffery",
+    "paradigm": "drop the jargon; name the change ('a new approach', 'a different model of...')",
+    "unleash": "drop the hype; name the action",
+    "supercharge": "drop the hype; name the improvement ('twice as fast', 'cuts the build time')",
 }
 
 # Multi-word banned phrases. Substring match, case-insensitive.
@@ -272,7 +298,13 @@ BANNED_PHRASES: dict[str, str] = {
     "nails it": "use 'works' or name the concrete behavior",
     "marks a pivotal moment": "drop the puffery",
     "turning point": "drop the puffery; name what actually changed",
-    "a testament to": "drop the puffery",
+    "testament to": "drop the puffery; state the evidence directly",
+    # Vocabulary soft tells ported from voi-slop-detect-380M
+    # (clear-trigger analysis, 2026-11-18).
+    "deep dive": "use 'detailed look' / 'in depth', or name what is covered",
+    "double-edged sword": "drop the cliche; name both the benefit and the cost",
+    "treasure trove": "drop the cliche; name what it contains",
+    "in today's": "drop the filler; start with the fact, or name the timeframe",
     "reflects broader trends": "drop the puffery",
     "experts argue": "drop the vague attribution",
     "industry reports suggest": "drop the vague attribution",
@@ -843,6 +875,20 @@ BANNED_PHRASE_PATTERNS: dict[str, tuple[re.Pattern[str], str]] = {
         "use a real subject: 'the Flex code is in a separate folder', "
         "'the repo contains...' becomes 'we keep... in the repo'",
     ),
+    "negative parallelism (it's not X, it's Y)": (
+        # Ported from voi-slop-detect-380M's mechanical tell list
+        # (clear-trigger analysis, 2026-11-18); previously only an
+        # empty-rhetoric LLM prompt, now enforceable by the static check.
+        re.compile(
+            r"\b(?:it'?s|this is|that'?s|they'?re)\s+not\s+"
+            r"[^.!?\n]{2,80}[.;,]\s*"
+            r"(?:it'?s|this is|that'?s|but)\b",
+            re.IGNORECASE,
+        ),
+        "drop the 'It's not X, it's Y' rhetorical template; state both "
+        "sides plainly ('The star count doesn't measure quality. The "
+        "postmortems do.')",
+    ),
 }
 
 # Labels in BANNED_PHRASE_PATTERNS that belong to the "abstract noun as the
@@ -948,6 +994,13 @@ WORD_EXCEPTION_RES: dict[str, re.Pattern[str]] = {
     ),
     "foreground": re.compile(
         r"\b(?:in|to)\s+the\s+foreground\b|\bforeground\s+(?:process|job|task)\b",
+        re.IGNORECASE,
+    ),
+    # "navigate" is fine in the literal UI sense ("navigate to the Settings
+    # page", "navigate to https://..."). The banned sense is the vague
+    # metaphor ("navigate the challenges", "navigate the AI landscape").
+    "navigate": re.compile(
+        r"\bnavigate\s+to\b",
         re.IGNORECASE,
     ),
 }
@@ -1372,3 +1425,103 @@ FLAT_DEFINITION_DEMO_RE = re.compile(
     r"(?:is|are)\s+(?:not\s+)?an?\b",
     re.IGNORECASE,
 )
+
+# ---------------------------------------------------------------------------
+# Register-class flags (the announcement-register tag).
+#
+# These patterns identify the smooth, declarative announcement prose that
+# voi-slop-detect-380M scores >= 0.99 (Orin's clear-trigger analysis,
+# 2026-11-18: on the 57-post corpus they fire with no false positives below
+# 0.5, and the first four fire exactly on the legitimate, hand-approved
+# DataTalks.Club announcement format). They are flag-for-review guidance,
+# NOT banned phrases: measured phrase-level edits move the slop score by at
+# most 0.01, so the fix is to change the register (chat-style lines,
+# questions, fragments) or route the text for human approval.
+# ---------------------------------------------------------------------------
+REGISTER_GUIDANCE = (
+    "Register flag, not a ban: this pattern marks the announcement register "
+    "that voi-slop-detect-380M scores >= 0.99. Don't chase the score with "
+    "phrase edits (measured effect <= 0.01); change the register (chat-style "
+    "lines, questions, fragments) or route the post for human approval."
+)
+REGISTER_PATTERNS: list[tuple[str, re.Pattern[str], str]] = [
+    (
+        "guest-announcement",
+        re.compile(
+            r"\bjoins?\s+the\s+[^!?\n]{3,60}?"
+            r"\b(?:podcast|course|workshop|webinar|session|stream)\b",
+            re.IGNORECASE,
+        ),
+        "guest-announcement template ('X, Title at Company, joins the "
+        "... podcast to talk about ...')",
+    ),
+    (
+        "we-will-cover",
+        re.compile(r"^We(?: will|'ll|’ll) cover\b"),
+        "'We will cover ...' announcement opener",
+    ),
+    (
+        "join-us-live",
+        re.compile(r"\bJoin us live on\b", re.IGNORECASE),
+        "'Join us live on ...' call to action",
+    ),
+    (
+        "mirror-pair",
+        re.compile(
+            r"\bis one thing\b[.!?\n]+\s*[^!?\n]{3,80}\bis another\b",
+            re.IGNORECASE,
+        ),
+        "'X is one thing. Y is another.' mirror pair",
+    ),
+    (
+        "concessive-still",
+        re.compile(
+            r"\b(?:can|will|may|might)\b[^!?\n]{5,70}?\band still\b"
+            r"[^!?\n]{3,70}[.!?]",
+            re.IGNORECASE,
+        ),
+        "balanced concessive hook ('X can look great in A and still be "
+        "hard to trust in B.')",
+    ),
+    (
+        "tri-list-cover",
+        re.compile(
+            r"\bcover (?:where|how|what|why)[^!?\n]{10,80},\s*"
+            r"(?:how|what|where|why)[^!?\n]{3,80},\s*and\s",
+            re.IGNORECASE,
+        ),
+        "'cover where ..., how ..., and ...' tri-list enumeration",
+    ),
+    (
+        "when-you-pair",
+        re.compile(r"When you [^!?\n]{5,80}\.\s+When you "),
+        "'When you X. When you Y.' balanced sentence pair",
+    ),
+    (
+        "self-comment (line narration)",
+        re.compile(
+            r"(?:^|[.!?]\s+)"
+            r"(?:The|This|That)\s+"
+            r"(?:last|first|next|final|previous|following|above|below)\s+"
+            r"(?:line|sentence|paragraph|section|block|part)\s+"
+            r"(?:answers?|shows?|explains?|covers?|summarizes?|sums|makes|"
+            r"holds|tells|gives)\b"
+            r"[^.!?\n]{0,60}\b(?:question|point|answer|main|idea|summary|"
+            r"argument)\b",
+            re.IGNORECASE,
+        ),
+        "meta-sentence commenting on the text itself ('The last line "
+        "answers the main question.'); delete it - the content already "
+        "says it",
+    ),
+    (
+        "self-comment (what you have at the end)",
+        re.compile(
+            r"(?:^|[.!?]\s+)What\s+you(?:'ll|’ll|\s+will)?\s+"
+            r"(?:have|get|end\s+up\s+with)\b",
+            re.IGNORECASE,
+        ),
+        "meta-sentence commenting on the text itself ('What you have at "
+        "the end:'); state the concrete outcome instead",
+    ),
+]

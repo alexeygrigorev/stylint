@@ -175,6 +175,25 @@ def parse_args() -> argparse.Namespace:
         ),
     )
     parser.add_argument(
+        "--slop",
+        action="store_true",
+        help=(
+            "Enable local ONNX slop detection (VoightKampffLabs/voi-slop-detect-380M) "
+            "and clear-trigger analysis. Off by default. Requires the "
+            "optional extra: pip install \"stylint[slop]\"."
+        ),
+    )
+    parser.add_argument(
+        "--slop-threshold",
+        type=float,
+        default=None,
+        metavar="FLOAT",
+        help=(
+            "Fail --slop when score >= FLOAT (default 0.10, or slop_threshold "
+            "in config). Must be in (0, 1]."
+        ),
+    )
+    parser.add_argument(
         "--list-tags",
         action="store_true",
         help="Print all known rule tags and exit.",
@@ -306,10 +325,28 @@ def _parse_tag_options(args: argparse.Namespace):
     return ignore_tags, DEFAULT_OFF_TAGS - enable_tags
 
 
-def _check_pages(pages, *, nlp, author_name, ignore_tags, effective_off):
+def _check_pages(
+    pages,
+    *,
+    nlp,
+    author_name,
+    ignore_tags,
+    effective_off,
+    slop=False,
+    slop_threshold=0.10,
+):
     findings = []
     for root, page in pages:
-        findings.extend(check_page(root, page, nlp=nlp, author_name=author_name))
+        findings.extend(
+            check_page(
+                root,
+                page,
+                nlp=nlp,
+                author_name=author_name,
+                slop=slop,
+                slop_threshold=slop_threshold,
+            )
+        )
     return [
         f for f in findings
         if f.tag not in effective_off and f.tag not in ignore_tags
@@ -477,6 +514,19 @@ def main() -> int:
         print("No markdown files found.", file=sys.stderr)
         return 0
 
+    if args.slop_threshold is not None and not 0 < args.slop_threshold <= 1:
+        print(
+            f"Invalid --slop-threshold {args.slop_threshold}: must be in (0, 1].",
+            file=sys.stderr,
+        )
+        return 2
+
+    slop_threshold = (
+        args.slop_threshold
+        if args.slop_threshold is not None
+        else config.slop_threshold
+    )
+
     if args.nlp:
         # Surface a missing dependency/data up front with one clean
         # message instead of failing partway through the first page.
@@ -488,6 +538,15 @@ def main() -> int:
             print(str(exc), file=sys.stderr)
             return 2
 
+    if args.slop:
+        from .slop import SlopUnavailableError, _load_engine
+
+        try:
+            _load_engine()
+        except SlopUnavailableError as exc:
+            print(str(exc), file=sys.stderr)
+            return 2
+
     def run_check():
         return _check_pages(
             pages,
@@ -495,6 +554,8 @@ def main() -> int:
             author_name=author_name,
             ignore_tags=ignore_tags,
             effective_off=effective_off,
+            slop=args.slop,
+            slop_threshold=slop_threshold,
         )
 
     findings = run_check()

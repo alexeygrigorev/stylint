@@ -275,3 +275,15 @@ stylint --explain evaluative-framing
 
 These checks express drafting preferences without attempting to identify
 AI authorship.
+
+## Local slop detection (`--slop`)
+
+Install the optional `slop` extra to score text locally on CPU with `VoightKampffLabs/voi-slop-detect-380M` (quantized ONNX):
+
+```bash
+pip install "stylint[slop]"
+stylint --slop path/to/post.md
+stylint --slop --slop-threshold 0.25 docs/
+```
+
+When a file's score meets or exceeds the threshold (default `0.10`), `stylint` emits a `slop-score` finding and runs hierarchical leave-one-out ablation (`slop-trigger` findings) to pinpoint the exact sentences or paragraphs driving the score. The model files are downloaded once to `~/.cache/stylint/voi-slop-detect-380M` (or reused from `~/.local/share/slop-detect/model` / `STYLINT_SLOP_MODEL_DIR`).

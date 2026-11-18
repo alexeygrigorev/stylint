@@ -19,6 +19,13 @@ classifiers = [
 # Heavier NLP-based checks (passive voice, ...), enabled with --nlp.
 # Kept out of the base install so default runs stay light and fast.
 nlp = ["nltk>=3.8"]
+# Local ONNX slop classifier (VoightKampffLabs/voi-slop-detect-380M), enabled with --slop.
+slop = [
+    "huggingface-hub>=0.20",
+    "numpy>=1.24",
+    "onnxruntime>=1.17",
+    "tokenizers>=0.15",
+]
 
 [project.urls]
 Homepage = "https://github.com/alexeygrigorev/stylint"

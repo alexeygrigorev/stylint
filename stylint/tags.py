@@ -14,7 +14,9 @@ class Tag(str, Enum):
     TABLES = "tables"
     HR = "hr"
     EM_DASH = "em-dash"
+    EN_DASH = "en-dash"
     DOUBLE_HYPHEN = "double-hyphen"
+    EMOJI_BULLET = "emoji-bullet"
     DASH_PARENTHETICAL = "dash-parenthetical"
     SMART_QUOTES = "smart-quotes"
     QUOTE_PUNCTUATION = "quote-punctuation"
@@ -75,8 +77,14 @@ class Tag(str, Enum):
     DENSE_PARAGRAPH_RUN = "dense-paragraph-run"
     NOW_LETS_OVERUSE = "now-lets-overuse"
     NOW_LETS_COMBO = "now-lets-combo"
+    # Register-class flags (guidance, not bans): patterns that identify the
+    # smooth announcement prose voi-slop-detect-380M scores >= 0.99.
+    ANNOUNCEMENT_REGISTER = "announcement-register"
     # NLP-based (only emitted with --nlp; see stylint/nlp.py)
     PASSIVE_VOICE = "passive-voice"
+    # Local ONNX slop classifier (only emitted with --slop; see stylint/slop.py)
+    SLOP_SCORE = "slop-score"
+    SLOP_TRIGGER = "slop-trigger"
 
 
 # Tags that emit findings but are suppressed by the CLI unless the user

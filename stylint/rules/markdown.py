@@ -5,6 +5,7 @@ from ..patterns import (
     BARE_URL_RE,
     DASH_PARENTHETICAL_RE,
     DOUBLE_HYPHEN_RE,
+    EMOJI_BULLET_RE,
     ITALIC_RE,
     LINK_RE,
     QUOTE_PUNCTUATION_RE,
@@ -19,6 +20,7 @@ __all__ = [
     "BARE_URL_RE",
     "DASH_PARENTHETICAL_RE",
     "DOUBLE_HYPHEN_RE",
+    "EMOJI_BULLET_RE",
     "ITALIC_RE",
     "LINK_RE",
     "QUOTE_PUNCTUATION_RE",
@@ -44,6 +46,19 @@ def check_markdown_line(line: str, plain: str, line_no: int, rel) -> list[Findin
             "em dash in prose; replace it with a hyphen. The exception is a "
             "parenthetical aside set off by two dashes: split that into two "
             "sentences rather than re-bracketing it with commas.",
+        ))
+    if "–" in line:
+        findings.append(Finding(
+            rel, line_no, Tag.EN_DASH,
+            "en dash in prose; replace it with a hyphen. An en dash is a "
+            "generated-prose hard tell - write '10-20' with a hyphen, or "
+            "spell out the range.",
+        ))
+    if EMOJI_BULLET_RE.match(line):
+        findings.append(Finding(
+            rel, line_no, Tag.EMOJI_BULLET,
+            "emoji used as a list marker; use a plain '-' or numbered "
+            "marker. Emoji bullets are a generated-prose soft tell.",
         ))
     if DOUBLE_HYPHEN_RE.search(plain) and not line.lstrip().startswith("|"):
         findings.append(Finding(
