@@ -706,6 +706,31 @@ _EXPLANATIONS: dict[str, Explanation] = {
              "The script deleted the file."),
         ),
     ),
+    Tag.SLOP_SCORE.value: _E(
+        Tag.SLOP_SCORE.value, "AI slop classifier score",
+        "The document's score from VoightKampffLabs/voi-slop-detect-380M "
+        "(quantized ONNX model, CPU) met or exceeded the threshold (default "
+        "0.10). Runs only with --slop enabled, which requires the optional "
+        "'stylint[slop]' extra. Rewrite flagged passages in plain, concrete "
+        "prose.",
+        (
+            ("In today's fast-paced digital landscape, this robust framework "
+             "empowers teams to unlock seamless productivity.",
+             "This tool cuts build time from 12 minutes to 90 seconds."),
+        ),
+    ),
+    Tag.SLOP_TRIGGER.value: _E(
+        Tag.SLOP_TRIGGER.value, "Clear-trigger passage for slop score",
+        "A sentence or paragraph identified by leave-one-out ablation as "
+        "driving up the VoightKampffLabs/voi-slop-detect-380M slop score. "
+        "Removing or rewriting this specific passage lowers the document's "
+        "slop score.",
+        (
+            ("Moreover, it serves as a testament to how modern tooling "
+             "elevates developer workflows.",
+             "The script runs in 0.4s on a 10k-line repo."),
+        ),
+    ),
 }
 
 del _E

@@ -46,6 +46,7 @@ class Config:
     exclude: list[str] = field(default_factory=list)
     smell_prompts: list[str] = field(default_factory=lambda: list(SMELL_PROMPTS))
     final_steps: list[str] = field(default_factory=list)
+    slop_threshold: float = 0.10
     source: Path | None = None
 
 
@@ -106,6 +107,14 @@ def parse_config(table: dict, source: Path) -> Config:
         config.profile = profile or None
     if "exclude" in table:
         config.exclude = _str_list(table["exclude"], "exclude", source)
+    if "slop_threshold" in table:
+        raw_threshold = table["slop_threshold"]
+        if isinstance(raw_threshold, bool) or not isinstance(raw_threshold, (int, float)):
+            raise ConfigError(f"{source}: 'slop_threshold' must be a number in (0, 1]")
+        threshold = float(raw_threshold)
+        if not 0 < threshold <= 1:
+            raise ConfigError(f"{source}: 'slop_threshold' must be in (0, 1]")
+        config.slop_threshold = threshold
 
     workflow = table.get("workflow", {})
     if not isinstance(workflow, dict):

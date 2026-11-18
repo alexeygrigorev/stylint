@@ -41,7 +41,12 @@ LIST_INTRODUCER_BLOCK_KINDS = frozenset({"code", "table", "quote", "html", "foot
 CODE_INTRODUCER_BLOCK_KINDS = frozenset({"list", "table", "quote", "html", "footnote"})
 
 def check_page(
-    root: Path, path: Path, nlp: bool = False, author_name: str = "Alexey"
+    root: Path,
+    path: Path,
+    nlp: bool = False,
+    author_name: str = "Alexey",
+    slop: bool = False,
+    slop_threshold: float = 0.10,
 ) -> list[Finding]:
     errors: list[Finding] = []
     now_lets_hits: list[tuple[int, str]] = []
@@ -441,5 +446,16 @@ def check_page(
                 errors.append(Finding(
                     rel, line_no, nlp_finding.tag, nlp_finding.message,
                 ))
+
+    if slop and body.strip():
+        from .slop import check_slop
+
+        _, slop_findings = check_slop(
+            body,
+            rel,
+            line_offset=line_offset,
+            threshold=slop_threshold,
+        )
+        errors.extend(slop_findings)
 
     return errors

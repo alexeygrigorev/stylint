@@ -77,6 +77,9 @@ class Tag(str, Enum):
     NOW_LETS_COMBO = "now-lets-combo"
     # NLP-based (only emitted with --nlp; see stylint/nlp.py)
     PASSIVE_VOICE = "passive-voice"
+    # Local ONNX slop classifier (only emitted with --slop; see stylint/slop.py)
+    SLOP_SCORE = "slop-score"
+    SLOP_TRIGGER = "slop-trigger"
 
 
 # Tags that emit findings but are suppressed by the CLI unless the user
