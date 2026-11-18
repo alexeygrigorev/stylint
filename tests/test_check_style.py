@@ -1972,3 +1972,226 @@ def test_author_name_third_person(body, author, flags, tmp_path):
     root, page = make_page(tmp_path, body)
     errors = check_page(root, page, author_name=author)
     assert any("third-person" in e for e in errors) is flags, errors
+
+
+# ---------------------------------------------------------------------------
+# En dash and emoji bullets (ported from the voi-slop-detect tell list)
+# ---------------------------------------------------------------------------
+
+
+def test_en_dash_flagged(tmp_path):
+    root, page = make_page(tmp_path, "The course runs 2020–2024.\n")
+    errors = check_page(root, page)
+    assert any("[en-dash]" in e for e in errors)
+
+
+def test_en_dash_negative(tmp_path):
+    root, page = make_page(tmp_path, "The course runs 2020-2024.\n")
+    errors = check_page(root, page)
+    assert not any("[en-dash]" in e for e in errors)
+
+
+def test_emoji_bullet_flagged(tmp_path):
+    root, page = make_page(tmp_path, "- 🚀 Fast setup\n")
+    errors = check_page(root, page)
+    assert any("[emoji-bullet]" in e for e in errors)
+
+
+def test_emoji_bullet_numbered_flagged(tmp_path):
+    root, page = make_page(tmp_path, "1. 💡 Pick a topic\n")
+    errors = check_page(root, page)
+    assert any("[emoji-bullet]" in e for e in errors)
+
+
+def test_emoji_bullet_negative(tmp_path):
+    root, page = make_page(tmp_path, "- Fast setup\n\n1. Pick a topic\n")
+    errors = check_page(root, page)
+    assert not any("[emoji-bullet]" in e for e in errors)
+
+
+# ---------------------------------------------------------------------------
+# Negative parallelism (ported mechanical catch, previously only in the
+# empty-rhetoric LLM prompt)
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.parametrize(
+    "body",
+    [
+        "It's not about the tools. It's about the workflow.\n",
+        "This is not a demo. This is the product.\n",
+        "That's not a bug, but a missing feature.\n",
+        "They're not slow, but throttled to the free tier.\n",
+        "Its not the model, but the retrieval that fails.\n",
+    ],
+)
+def test_negative_parallelism_flagged(tmp_path, body):
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert any("negative parallelism" in e for e in errors), errors
+
+
+@pytest.mark.parametrize(
+    "body",
+    [
+        "It's not the tools that matter here.\n",
+        "This is not a retrieval demo but the real pipeline.\n",
+    ],
+)
+def test_negative_parallelism_negative(tmp_path, body):
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert not any("negative parallelism" in e for e in errors), errors
+
+
+# ---------------------------------------------------------------------------
+# Vocabulary soft tells ported from voi-slop-detect-380M
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.parametrize(
+    "body, expected",
+    [
+        ("The data is a rich tapestry.\n", "[banned-word] 'tapestry'"),
+        ("The hiring landscape changed.\n", "[banned-word] 'landscape'"),
+        ("This makes the setup robust.\n", "[banned-word] 'robust'"),
+        ("Setup is seamless.\n", "[banned-word] 'seamless'"),
+        ("This will unlock new workflows.\n", "[banned-word] 'unlock'"),
+        ("Tools empower the team.\n", "[banned-word] 'empower'"),
+        ("navigate the complex API surface.\n", "[banned-word] 'navigate'"),
+        ("It is a game-changer for us.\n", "[banned-word] 'game-changer'"),
+        ("The bustling market grew.\n", "[banned-word] 'bustling'"),
+        ("A new paradigm for search.\n", "[banned-word] 'paradigm'"),
+        ("unleash the model on the data.\n", "[banned-word] 'unleash'"),
+        ("supercharge your workflow.\n", "[banned-word] 'supercharge'"),
+        ("We take a deep dive into retrieval.\n", "[banned-phrase] 'deep dive'"),
+        ("Caching is a double-edged sword.\n", "[banned-phrase] 'double-edged sword'"),
+        ("The repo is a treasure trove.\n", "[banned-phrase] 'treasure trove'"),
+        ("The runtime is a testament to the design.\n", "[banned-phrase] 'testament to'"),
+        ("In today's market, speed matters.\n", "[banned-phrase] 'in today's'"),
+    ],
+)
+def test_slop_vocab_port_flagged(tmp_path, body, expected):
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert any(expected in e for e in errors), errors
+
+
+def test_slop_vocab_port_negative(tmp_path):
+    body = (
+        "Navigate to the settings page and set the key. "
+        "The retries rerun the job after a restart, so failures stay rare.\n"
+    )
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    for word in (
+        "tapestry", "landscape", "robust", "seamless", "unlock", "empower",
+        "navigate", "game-changer", "bustling", "paradigm", "unleash",
+        "supercharge",
+    ):
+        assert not any(f"[banned-word] '{word}'" in e for e in errors), errors
+    for phrase in (
+        "deep dive", "double-edged sword", "treasure trove",
+        "testament to", "in today's",
+    ):
+        assert not any(f"[banned-phrase] '{phrase}'" in e for e in errors), errors
+
+
+# ---------------------------------------------------------------------------
+# Register-class flags (announcement-register tag, flag-for-review)
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.parametrize(
+    "body, name",
+    [
+        (
+            "Jane Smith, Master Gardener, joins the DataTalks.Club podcast "
+            "to talk about compost bins.\n",
+            "guest-announcement",
+        ),
+        (
+            "We will cover where they break down, how to check their "
+            "results, and what to buy.\n",
+            "we-will-cover",
+        ),
+        (
+            "Join us live on Wednesday, 2 December at 12:30 CET.\n",
+            "join-us-live",
+        ),
+        (
+            "Shipping a demo is one thing. Making it useful is another.\n",
+            "mirror-pair",
+        ),
+        (
+            "AI agents that query live data can look impressive in a demo "
+            "and still be hard to trust in production.\n",
+            "concessive-still",
+        ),
+        (
+            "We cover where pipelines fail, how to verify each stage, and "
+            "what to monitor.\n",
+            "tri-list-cover",
+        ),
+        (
+            "When you host a workshop, you plan the run of show. When you "
+            "write the post, you reuse the outline.\n",
+            "when-you-pair",
+        ),
+        (
+            "The last line answers the main question.\n",
+            "self-comment (line narration)",
+        ),
+        (
+            "What you have at the end: a working RAG script.\n",
+            "self-comment (what you have at the end)",
+        ),
+    ],
+)
+def test_announcement_register_flagged(tmp_path, body, name):
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert any(f"[announcement-register] '{name}'" in e for e in errors), errors
+
+
+def test_announcement_register_carries_guidance(tmp_path):
+    root, page = make_page(
+        tmp_path, "Join us live on Wednesday, 2 December at 12:30 CET.\n"
+    )
+    errors = check_page(root, page)
+    finding = next(e for e in errors if "[announcement-register]" in e)
+    assert "Register flag, not a ban" in finding
+
+
+def test_register_pair_across_lines(tmp_path):
+    # The two sentences sit on separate wrapped lines of one paragraph;
+    # the paragraph-level pass must still catch the mirror pair.
+    root, page = make_page(
+        tmp_path, "Shipping a demo is one thing.\nMaking it useful is another.\n"
+    )
+    errors = check_page(root, page)
+    assert any("[announcement-register] 'mirror-pair'" in e for e in errors), errors
+
+
+@pytest.mark.parametrize(
+    "body",
+    [
+        "We covered retrieval last week.\n",
+        "The section explains how the index works.\n",
+        "Use these links to join the course and find the materials.\n",
+        "You can run the eval on CPU.\n",
+        "This is not a retrieval demo.\n",
+        "I will cover the setup in the next lesson.\n",
+    ],
+)
+def test_announcement_register_negative(tmp_path, body):
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert not any("[announcement-register]" in e for e in errors), errors
+
+
+def test_plain_prose_has_no_new_tell_flags(tmp_path):
+    root, page = make_page(tmp_path, "Plain prose with no special formatting.\n")
+    errors = check_page(root, page)
+    for needle in ("en dash", "emoji", "negative parallelism", "announcement-register"):
+        assert not any(needle in e for e in errors), errors

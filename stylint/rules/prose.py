@@ -40,6 +40,7 @@ from ..patterns import (
 )
 from ..models import Finding
 from ..tags import Tag
+from .register import check_register_paragraph
 from ..text import (
     classify_long_with_commas,
     contraction_is_stranded,
@@ -426,6 +427,8 @@ def check_paragraph(
             )
             if not already_flagged:
                 findings.append(Finding(rel, start_line, Tag.CLEFT, cleft_hint))
+
+    findings.extend(check_register_paragraph(paragraph_lines, rel))
 
     for word in find_gerund_starts(joined):
         findings.append(
