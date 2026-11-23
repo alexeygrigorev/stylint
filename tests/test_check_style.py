@@ -359,6 +359,34 @@ def test_banned_phrase_stay_human_negative(tmp_path):
 @pytest.mark.parametrize(
     "body",
     [
+        "A sentence or two is plenty.\n",
+        "SQLite is plenty here.\n",
+        "A sentence or two\nis plenty.\n",
+    ],
+)
+def test_banned_phrase_is_plenty_positive(tmp_path, body):
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert any("[banned-phrase] 'is plenty'" in e for e in errors), errors
+
+
+@pytest.mark.parametrize(
+    "body",
+    [
+        "There is plenty of documentation online.\n",
+        "Plenty could go wrong.\n",
+        "Write a sentence or two.\n",
+    ],
+)
+def test_banned_phrase_is_plenty_negative(tmp_path, body):
+    root, page = make_page(tmp_path, body)
+    errors = check_page(root, page)
+    assert not any("'is plenty'" in e for e in errors), errors
+
+
+@pytest.mark.parametrize(
+    "body",
+    [
         "We hid the pattern behind a helper function.\n",
         "I reuse the same pattern behind every endpoint.\n",
     ],

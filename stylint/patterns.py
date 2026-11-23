@@ -889,6 +889,11 @@ BANNED_PHRASE_PATTERNS: dict[str, tuple[re.Pattern[str], str]] = {
         "sides plainly ('The star count doesn't measure quality. The "
         "postmortems do.')",
     ),
+    "is plenty": (
+        re.compile(r"\bis\s+plenty\b(?!\s+of\b)", re.IGNORECASE),
+        "drop the 'is plenty' filler; use 'is enough' or state the requirement "
+        "directly ('Write a sentence or two')",
+    ),
 }
 
 # Labels in BANNED_PHRASE_PATTERNS that belong to the "abstract noun as the
