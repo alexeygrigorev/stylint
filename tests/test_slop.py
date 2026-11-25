@@ -125,7 +125,71 @@ def test_resolve_model_dir_env_and_shared_fallback(monkeypatch, tmp_path):
     shared.mkdir(parents=True)
     for name in slop.REQUIRED_LOCAL_FILES:
         (shared / name).write_text("x")
+    # An unstamped shared copy of unknown weights is not treated as the
+    # pinned revision; downloads go to the versioned cache instead.
+    assert slop.resolve_model_dir() == slop._versioned_cache_dir(
+        slop.DEFAULT_REVISION, home=tmp_path
+    )
+
+    (shared / slop.REVISION_FILENAME).write_text(slop.DEFAULT_REVISION + "\n")
     assert slop.resolve_model_dir() == shared
+    assert slop.resolve_fallback_model_dir() is None
+
+
+def test_resolve_falls_back_to_older_shared_copy(monkeypatch, tmp_path):
+    monkeypatch.setattr(Path, "home", lambda: tmp_path)
+    monkeypatch.delenv("STYLINT_SLOP_MODEL_DIR", raising=False)
+    monkeypatch.delenv("SLOP_DETECT_MODEL_DIR", raising=False)
+    shared = tmp_path / ".local" / "share" / "slop-detect" / "model"
+    shared.mkdir(parents=True)
+    for name in slop.REQUIRED_LOCAL_FILES:
+        (shared / name).write_text("old-weights")
+    (shared / slop.REVISION_FILENAME).write_text("oldrev\n")
+
+    assert slop.resolve_model_dir() == slop._versioned_cache_dir(
+        slop.DEFAULT_REVISION, home=tmp_path
+    )
+    assert slop.resolve_fallback_model_dir() == shared
+
+
+def test_ensure_downloads_pinned_revision(monkeypatch, tmp_path):
+    monkeypatch.setattr(slop, "_ENGINE", None)
+    calls: list[tuple[str, str]] = []
+
+    def fake_download(repo_id, rel_file, revision=None):
+        calls.append((repo_id, rel_file, revision))
+        src = tmp_path / "hf" / rel_file.replace("/", "_")
+        src.parent.mkdir(parents=True, exist_ok=True)
+        src.write_text(rel_file)
+        return str(src)
+
+    import types, sys
+    hub = types.SimpleNamespace(hf_hub_download=fake_download)
+    monkeypatch.setitem(sys.modules, "huggingface_hub", hub)
+
+    dest = tmp_path / "fresh"
+    slop._ensure_model_files(dest, download=True, revision=slop.DEFAULT_REVISION)
+    assert (dest / slop.REVISION_FILENAME).read_text().strip() == slop.DEFAULT_REVISION
+    assert {rel for _, rel, _ in calls} == set(slop.MODEL_FILES)
+    assert all(rev == slop.DEFAULT_REVISION for _, _, rev in calls)
+    assert (dest / "model_quantized.onnx").is_file()
+
+
+def test_ensure_does_not_overwrite_other_revision(tmp_path):
+    dest = tmp_path / "old"
+    dest.mkdir()
+    for name in slop.REQUIRED_LOCAL_FILES:
+        (dest / name).write_text("keep")
+    (dest / slop.REVISION_FILENAME).write_text("oldrev\n")
+    with pytest.raises(slop.SlopUnavailableError, match="not revision"):
+        slop._ensure_model_files(dest, download=True, revision=slop.DEFAULT_REVISION)
+    assert (dest / "model_quantized.onnx").read_text() == "keep"
+
+
+def test_model_label_reads_revision_file(tmp_path):
+    (tmp_path / slop.REVISION_FILENAME).write_text(slop.DEFAULT_REVISION + "\n")
+    engine = _make_engine(lambda toks: -3.0, tmp_path)
+    assert slop.model_label(engine) == f"{slop.REPO_ID}@{slop.DEFAULT_REVISION}"
 
 
 def test_score_text_strips_code_fences_and_chunks_long_text():

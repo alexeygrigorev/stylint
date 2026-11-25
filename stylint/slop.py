@@ -9,7 +9,10 @@ Design notes:
   runtime cost when ``--slop`` is off.
 - Uses the same model, chunking (510 tokens + BOS, up to 40 chunks, max chunk
   score), fenced-code-block stripping, and 0.10 default threshold as
-  ``bots-management/tools/slop-detect``.
+  ``bots-management/tools/slop-detect``. The Hugging Face revision is pinned
+  (``DEFAULT_REVISION``) and recorded in a ``REVISION`` file next to the
+  weights; set ``STYLINT_SLOP_REVISION`` to use another commit. An older
+  shared install is kept as a load fallback.
 - When a file's score meets or exceeds the threshold, runs hierarchical
   leave-one-out (ablation) clear-trigger analysis to pinpoint the exact
   sentences or paragraphs driving the score.
@@ -30,6 +33,23 @@ from .models import Finding
 from .tags import Tag
 
 REPO_ID = "VoightKampffLabs/voi-slop-detect-380M"
+# v6 weights, published 17 Nov 2026. Pin a commit so a later move of
+# ``main`` does not silently change scores. Override with STYLINT_SLOP_REVISION
+# (a Hugging Face revision, usually a commit sha).
+DEFAULT_REVISION = "a109d591b8b62541f362d873765900380b2bd0ea"
+REVISION_FILENAME = "REVISION"
+# File sha256 digests for DEFAULT_REVISION, used to recognize an unstamped
+# copy of these weights (for example the shared slop-detect install).
+REVISION_CHECKSUMS: dict[str, dict[str, str]] = {
+    DEFAULT_REVISION: {
+        "model_quantized.onnx": (
+            "f993da1ef82c08065486a689e7854124c34055a995e9c833fbd83255318f6e26"
+        ),
+        "model_quantized.onnx_data": (
+            "f1710149049d4c2616c006ce1b74b258f0b24a2b85841f2058cee56e87b3a52e"
+        ),
+    }
+}
 MODEL_FILES = (
     "onnx/model_quantized.onnx",
     "onnx/model_quantized.onnx_data",
@@ -69,7 +89,9 @@ _INSTALL_HINT = (
     "The model (VoightKampffLabs/voi-slop-detect-380M, ~433 MB) is\n"
     "downloaded automatically on first use, or set STYLINT_SLOP_MODEL_DIR\n"
     "to a directory containing model_quantized.onnx, model_quantized.onnx_data,\n"
-    "tokenizer.json, and bands.json."
+    "tokenizer.json, and bands.json.\n"
+    "The default revision is pinned; set STYLINT_SLOP_REVISION to use another,\n"
+    "or STYLINT_SLOP_MODEL_DIR to a previous download if a new fetch fails."
 )
 
 # Cached engine: (np, tokenizer, ort_session, bands_dict, model_dir)
@@ -110,30 +132,144 @@ class _ProseBlock:
         return "\n".join(line for _, line in self.lines)
 
 
-def resolve_model_dir() -> Path:
-    """Return the directory where the quantized ONNX model files live."""
+def requested_revision() -> str:
+    """Return the Hugging Face revision stylint should load."""
+    return os.environ.get("STYLINT_SLOP_REVISION", "").strip() or DEFAULT_REVISION
+
+
+def _sha256(path: Path) -> str:
+    import hashlib
+
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def _has_required_files(model_dir: Path) -> bool:
+    return all((model_dir / name).is_file() for name in REQUIRED_LOCAL_FILES)
+
+
+def _read_revision(model_dir: Path) -> str | None:
+    path = model_dir / REVISION_FILENAME
+    if not path.is_file():
+        return None
+    text = path.read_text(encoding="utf-8").strip()
+    return text or None
+
+
+def _write_revision(model_dir: Path, revision: str) -> None:
+    (model_dir / REVISION_FILENAME).write_text(revision + "\n", encoding="utf-8")
+
+
+def _checksums_match(model_dir: Path, revision: str) -> bool:
+    expected = REVISION_CHECKSUMS.get(revision)
+    if not expected:
+        return False
+    try:
+        return all(_sha256(model_dir / name) == digest for name, digest in expected.items())
+    except OSError:
+        return False
+
+
+def _dir_is_revision(model_dir: Path, revision: str) -> bool:
+    """True when ``model_dir`` holds the required files for ``revision``."""
+    if not _has_required_files(model_dir):
+        return False
+    recorded = _read_revision(model_dir)
+    if recorded is not None:
+        return recorded == revision or recorded.startswith(revision) or revision.startswith(recorded)
+    return _checksums_match(model_dir, revision)
+
+
+def _stamp_revision(model_dir: Path, revision: str) -> None:
+    if _read_revision(model_dir) != revision:
+        _write_revision(model_dir, revision)
+
+
+def _shared_model_dir(home: Path | None = None) -> Path:
+    return (home or Path.home()) / ".local" / "share" / "slop-detect" / "model"
+
+
+def _versioned_cache_dir(revision: str, home: Path | None = None) -> Path:
+    return (home or Path.home()) / ".cache" / "stylint" / "voi-slop-detect-380M" / revision
+
+
+def _env_model_dir() -> Path | None:
     for env_var in ("STYLINT_SLOP_MODEL_DIR", "SLOP_DETECT_MODEL_DIR"):
         override = os.environ.get(env_var, "").strip()
         if override:
             return Path(override).expanduser()
+    return None
 
-    shared = Path.home() / ".local" / "share" / "slop-detect" / "model"
-    if all((shared / name).is_file() for name in REQUIRED_LOCAL_FILES):
+
+def resolve_model_dir() -> Path:
+    """Return the directory where the quantized ONNX model files live.
+
+    Precedence: STYLINT_SLOP_MODEL_DIR or SLOP_DETECT_MODEL_DIR, then the
+    shared slop-detect install if it already holds the requested revision,
+    then a versioned cache under ``~/.cache/stylint/voi-slop-detect-380M/<rev>``.
+    An older shared copy is left in place and used only as a load fallback.
+    """
+    override = _env_model_dir()
+    if override is not None:
+        return override
+
+    revision = requested_revision()
+    shared = _shared_model_dir()
+    if _dir_is_revision(shared, revision):
+        _stamp_revision(shared, revision)
         return shared
 
-    return Path.home() / ".cache" / "stylint" / "voi-slop-detect-380M"
+    return _versioned_cache_dir(revision)
 
 
-def _ensure_model_files(model_dir: Path, *, download: bool = True) -> None:
+def resolve_fallback_model_dir(primary: Path | None = None) -> Path | None:
+    """Return an older local copy to try if ``primary`` cannot be loaded.
+
+    Used when a requested revision is missing and cannot be downloaded.
+    Environment overrides are explicit, so they have no fallback.
+    """
+    if _env_model_dir() is not None:
+        return None
+    target = primary if primary is not None else resolve_model_dir()
+    shared = _shared_model_dir()
+    if shared != target and _has_required_files(shared):
+        return shared
+    return None
+
+
+def _ensure_model_files(
+    model_dir: Path, *, download: bool = True, revision: str | None = None
+) -> None:
     """Ensure all required ONNX and tokenizer files exist in ``model_dir``."""
-    missing = [name for name in REQUIRED_LOCAL_FILES if not (model_dir / name).is_file()]
-    if not missing:
+    rev = revision or requested_revision()
+    if _dir_is_revision(model_dir, rev):
+        _stamp_revision(model_dir, rev)
         return
 
+    recorded = _read_revision(model_dir)
+    if _has_required_files(model_dir):
+        # Unstamped copy of a revision we cannot checksum (a custom pin or
+        # a user-supplied directory): trust what is already there.
+        if recorded is None and rev not in REVISION_CHECKSUMS:
+            _stamp_revision(model_dir, rev)
+            return
+        raise SlopUnavailableError(
+            f"{model_dir} has slop model files that are not revision {rev} "
+            f"(recorded {recorded or 'unknown'}). "
+            "Set STYLINT_SLOP_MODEL_DIR to a fresh directory to download "
+            "the pinned weights, or set STYLINT_SLOP_REVISION to the "
+            "revision already on disk. The previous copy is left in place."
+        )
+
+    missing = [name for name in REQUIRED_LOCAL_FILES if not (model_dir / name).is_file()]
     no_dl = os.environ.get("STYLINT_SLOP_NO_DOWNLOAD", "").strip().lower()
     if not download or no_dl not in ("", "0", "false", "no"):
         raise SlopUnavailableError(
-            f"Slop model files missing in {model_dir}: {', '.join(missing)}.\n"
+            f"Slop model files missing in {model_dir}: {', '.join(missing) or 'revision mismatch'}.\n"
+            f"Requested revision: {rev}.\n"
             f"{_INSTALL_HINT}"
         )
 
@@ -149,15 +285,32 @@ def _ensure_model_files(model_dir: Path, *, download: bool = True) -> None:
     try:
         for rel_file in MODEL_FILES:
             dest = model_dir / os.path.basename(rel_file)
-            if dest.is_file():
-                continue
-            cached = Path(hf_hub_download(REPO_ID, rel_file))
+            cached = Path(hf_hub_download(REPO_ID, rel_file, revision=rev))
             shutil.copyfile(os.path.realpath(cached), dest)
+        _stamp_revision(model_dir, rev)
     except Exception as exc:
         raise SlopUnavailableError(
-            f"Failed to download {REPO_ID} into {model_dir}: {exc}.\n"
+            f"Failed to download {REPO_ID}@{rev} into {model_dir}: {exc}.\n"
             f"{_INSTALL_HINT}"
         ) from exc
+
+
+def _bind_engine(model_dir: Path):
+    """Import dependencies and load the ONNX session from ``model_dir``."""
+    import numpy as np
+    import onnxruntime as ort
+    from tokenizers import Tokenizer
+
+    tok = Tokenizer.from_file(str(model_dir / "tokenizer.json"))
+    opts = ort.SessionOptions()
+    opts.log_severity_level = 3
+    sess = ort.InferenceSession(
+        str(model_dir / "model_quantized.onnx"),
+        opts,
+        providers=["CPUExecutionProvider"],
+    )
+    bands = json.loads((model_dir / "bands.json").read_text(encoding="utf-8"))
+    return (np, tok, sess, bands, model_dir)
 
 
 def _load_engine(model_dir: Path | None = None, *, download: bool = True):
@@ -168,34 +321,50 @@ def _load_engine(model_dir: Path | None = None, *, download: bool = True):
         return _ENGINE
 
     try:
-        import numpy as np
-        import onnxruntime as ort
-        from tokenizers import Tokenizer
+        import numpy as np  # noqa: F401
+        import onnxruntime as ort  # noqa: F401
+        from tokenizers import Tokenizer  # noqa: F401
     except ImportError as exc:
         raise SlopUnavailableError(
             f"Could not import slop detection dependencies: {exc}.\n{_INSTALL_HINT}"
         ) from exc
 
-    _ensure_model_files(target_dir, download=download)
-
+    last_error: Exception | None = None
     try:
-        tok = Tokenizer.from_file(str(target_dir / "tokenizer.json"))
-        opts = ort.SessionOptions()
-        opts.log_severity_level = 3
-        sess = ort.InferenceSession(
-            str(target_dir / "model_quantized.onnx"),
-            opts,
-            providers=["CPUExecutionProvider"],
-        )
-        bands = json.loads((target_dir / "bands.json").read_text(encoding="utf-8"))
-    except Exception as exc:
-        raise SlopUnavailableError(
-            f"Failed to load slop model from {target_dir}: {exc}.\n{_INSTALL_HINT}"
-        ) from exc
+        _ensure_model_files(target_dir, download=download)
+        _ENGINE = _bind_engine(target_dir)
+        return _ENGINE
+    except (SlopUnavailableError, OSError, ValueError) as exc:
+        last_error = exc
 
-    _ENGINE = (np, tok, sess, bands, target_dir)
-    return _ENGINE
+    fallback = resolve_fallback_model_dir(target_dir)
+    if fallback is not None:
+        try:
+            _ENGINE = _bind_engine(fallback)
+            return _ENGINE
+        except Exception:
+            pass
 
+    if isinstance(last_error, SlopUnavailableError):
+        raise last_error
+    raise SlopUnavailableError(
+        f"Failed to load slop model from {target_dir}: {last_error}.\n{_INSTALL_HINT}"
+    ) from last_error
+
+
+def model_label(engine: Any = None) -> str:
+    """Return a short ``repo@revision`` label for logs and findings."""
+    directory: Path | None
+    if engine is not None:
+        directory = engine[4] if len(engine) > 4 else None
+    elif _ENGINE is not None:
+        directory = _ENGINE[4]
+    else:
+        directory = None
+    revision = _read_revision(directory) if directory is not None else None
+    if revision is None:
+        revision = requested_revision()
+    return f"{REPO_ID}@{revision}"
 
 def _classify_band(score: float, bands: dict[str, float]) -> str:
     if score < bands["human_max"]:
@@ -489,7 +658,7 @@ def check_slop(
             (
                 f"slop score {result.score:.3f} >= threshold {threshold:.2f} "
                 f"({result.band}, mean {result.mean_score:.3f}, "
-                f"{result.chunks} chunk(s))"
+                f"{result.chunks} chunk(s), {model_label(eng)})"
             ),
         )
     ]
